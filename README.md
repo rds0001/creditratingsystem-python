@@ -1,5 +1,10 @@
 # creditratingsystem
 
+[![Minimal tests](https://github.com/rds0001/creditratingsystem-python/actions/workflows/minimal-tests.yml/badge.svg)](https://github.com/rds0001/creditratingsystem-python/actions/workflows/minimal-tests.yml)
+
+GitHub Actions installs the package and runs `tests/test_core.py` on Python 3.11
+and Linux. This is a minimal core check; the full test suite is separate.
+
 A Python library for granular credit risk modelling with local user data.
 
 See [getting started](docs/getting_started.md) for local installation, typed CSV
