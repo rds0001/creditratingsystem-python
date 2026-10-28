@@ -1,0 +1,80 @@
+name: Publish to PyPI
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-pypi
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and verify distributions
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install build tools
+        run: python -m pip install build twine pytest
+      - name: Build source distribution and wheel
+        run: python -m build
+      - name: Check distribution metadata and upload sizes
+        run: |
+          python -m twine check --strict dist/*
+          python - <<'PY'
+          from pathlib import Path
+          artifacts = list(Path('dist').iterdir())
+          assert len(artifacts) == 2, artifacts
+          for artifact in artifacts:
+              assert artifact.stat().st_size < 100_000_000, artifact
+              print(f'{artifact.name}: {artifact.stat().st_size:,} bytes')
+          PY
+      - name: Install the built wheel
+        run: python -m pip install dist/*.whl
+      - name: Run minimal core and bundled resource checks
+        run: |
+          python -m pytest tests/test_core.py -q
+          python - <<'PY'
+          from importlib.resources import files
+          from creditratingsystem.synthetic import validate_synthetic_world
+          root = files('creditratingsystem').joinpath('datasets', 'synthetic_tiny')
+          for world in ('macro', 'obligors', 'workouts', 'retail', 'pools', 'events'):
+              report = validate_synthetic_world(str(root.joinpath(world))).value
+              assert report['passed'], (world, report['issues'])
+              print(f'{world}: bundled data verified')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: python-distributions
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    name: Publish creditratingsystem
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: pypi
+      url: https://pypi.org/project/creditratingsystem/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: python-distributions
+          path: dist/
+      - name: Upload to PyPI using Trusted Publishing
+        uses: pypa/gh-action-pypi-publish@release/v1

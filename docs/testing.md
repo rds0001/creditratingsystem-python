@@ -17,3 +17,7 @@ and large stress-tier generation should run in separately selected jobs. Track
 individual test timings and total elapsed time; do not weaken tolerances or remove
 method coverage to meet a budget. Large synthetic datasets remain available
 offline and need not be regenerated for every code change.
+
+Run extended checks from an editable GitHub checkout (`python -m pip install -e ".[test]"`).
+The standard reference panel used by those checks is retained in the repository
+and is not included in PyPI distributions; see [synthetic data](synthetic.md).

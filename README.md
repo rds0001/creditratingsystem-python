@@ -10,7 +10,7 @@ A Python library for granular credit risk modelling with local user data.
 See [getting started](docs/getting_started.md) for local installation, typed CSV
 input and a workflow for fitting and validating models with your own data.
 
-Development version; product integration and final package acceptance are in progress.
+Version 0.1.0.
 Available methods include train-only preprocessing and monotone binning,
 scorecards, binary GLMs, frozen PD calibration, Merton and first-passage models,
 Gaussian-factor PIT/TTC conversion, observed long-run PD, and discrete and
@@ -53,8 +53,10 @@ Contact: riskdatascience@web.de.
 Licensed under the GNU Affero General Public License, version 3 only
 (`AGPL-3.0-only`); see [LICENSE](LICENSE).
 
-Bundled synthetic data include six connected tiny reference worlds and a standard
-wholesale/macro/workout panel. Native offline generators also create larger retail,
+Bundled synthetic data include six connected tiny reference worlds. The larger
+standard wholesale/macro/workout panel is available in the GitHub repository;
+it is excluded from PyPI distributions to keep downloads small.
+Native offline generators also create larger retail,
 asset-pool and system-event worlds from shared innovation files. Observable inputs,
 latent truth, frozen predictions, decisions and outcomes are stored separately.
 See [synthetic data](docs/synthetic.md) for tier sizes and generation contracts.

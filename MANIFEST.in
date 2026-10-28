@@ -5,44 +5,6 @@ recursive-include docs *.md *.rst
 recursive-include examples *.py
 recursive-include src/creditratingsystem/datasets *.json
 include src/creditratingsystem/datasets/synthetic_innovations.py
-include src/creditratingsystem/datasets/synthetic_standard/innovations/country_transfer.u32le
-include src/creditratingsystem/datasets/synthetic_standard/innovations/facilities.u32le
-include src/creditratingsystem/datasets/synthetic_standard/innovations/macro_history.u32le
-include src/creditratingsystem/datasets/synthetic_standard/innovations/macro_paths.u32le
-include src/creditratingsystem/datasets/synthetic_standard/innovations/macro_revision.u32le
-include src/creditratingsystem/datasets/synthetic_standard/innovations/manifest.json
-include src/creditratingsystem/datasets/synthetic_standard/innovations/obligor_groups.u32le
-include src/creditratingsystem/datasets/synthetic_standard/innovations/obligor_static.u32le
-include src/creditratingsystem/datasets/synthetic_standard/innovations/obligor_year.u32le
-include src/creditratingsystem/datasets/synthetic_standard/macro/latent_truth/macro_factors.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/macro/latent_truth/scenario_cube.f64le
-include src/creditratingsystem/datasets/synthetic_standard/macro/manifest.json
-include src/creditratingsystem/datasets/synthetic_standard/macro/observable_inputs/macro_releases.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/frozen_predictions/obligor_predictions.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/latent_truth/country_transfer.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/latent_truth/foreign_currency_risk.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/latent_truth/obligor_period.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/manifest.json
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/external_opinions.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/financial_statements.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/obligors.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/operating_assets.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/operating_contracts.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/rating_overrides.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/support_edges.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observed_outcomes/default_events.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/obligors/observed_outcomes/obligor_labels.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/validation.json
-include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/analytical_workout_fixtures.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/constructed_open_workouts.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/future_recoveries.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/workout_parameters.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/manifest.json
-include src/creditratingsystem/datasets/synthetic_standard/workouts/observable_inputs/collateral.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/observable_inputs/facilities.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/observable_inputs/facility_exposures.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/observed_outcomes/recovery_cashflows.jsonl.gz
-include src/creditratingsystem/datasets/synthetic_standard/workouts/observed_outcomes/workouts.jsonl.gz
 include src/creditratingsystem/datasets/synthetic_tiny/events/latent_truth/independent_checkpoints.jsonl.gz
 include src/creditratingsystem/datasets/synthetic_tiny/events/manifest.json
 include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/calibration_versions.jsonl.gz
@@ -146,3 +108,5 @@ include src/creditratingsystem/datasets/specialized_positions.csv
 include src/creditratingsystem/datasets/specialized_releases.csv
 include src/creditratingsystem/datasets/wholesale_sme_positions.csv
 include src/creditratingsystem/datasets/wholesale_sme_releases.csv
+
+prune src/creditratingsystem/datasets/synthetic_standard

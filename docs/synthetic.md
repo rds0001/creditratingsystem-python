@@ -172,9 +172,23 @@ Actual survivor, funded, recovery and pool rows depend on supplied draws and
 cutoffs. These capacities never force acceptance or realized default counts.
 Manifests record actual rows, file hashes, versions, dependencies and runtime.
 
-The package contains `datasets/synthetic_tiny` (all six coupled worlds and actual
-draws) and `datasets/synthetic_standard` (full wholesale/macro/workout worlds and
-actual draws). R resources are under `system.file("extdata", package =
+The PyPI package contains `datasets/synthetic_tiny` (all six coupled worlds and
+actual draws). The larger `datasets/synthetic_standard` panel (full
+wholesale/macro/workout worlds and actual draws) is retained in the
+[GitHub source repository](https://github.com/rds0001/creditratingsystem-python/tree/main/src/creditratingsystem/datasets/synthetic_standard),
+and is excluded from the wheel and source distribution to meet PyPI's file size
+limit. Clone the repository to obtain the exact reference files for offline use:
+
+```sh
+git clone https://github.com/rds0001/creditratingsystem-python.git
+```
+
+The standard panel is then at
+`creditratingsystem-python/src/creditratingsystem/datasets/synthetic_standard`.
+Pass this directory's world and innovation subdirectories to the same public
+interfaces. No data are downloaded implicitly by the library.
+
+R resources are under `system.file("extdata", package =
 "creditratingsystem")`. Every stored path is relative to its world or innovation
 manifest. Resources can be read directly as ordinary gzip JSONL and binary files.
 
