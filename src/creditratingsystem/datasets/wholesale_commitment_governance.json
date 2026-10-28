@@ -1,0 +1,1636 @@
+{
+  "data_origin": "SYNTHETIC",
+  "scope": "Four revolving commitment and three leveraged loan histories; actual component fitted artifacts, contractual horizons, independent observed events. Revolver cancellation is a legal right not executed in this funded observed branch; executed cancellation remains separate component evidence. Leveraged default occurs at unfunded January 2026 maturity; earlier covenant warnings are not default.",
+  "cases": [
+    {
+      "case_id": "revolver-working_capital_line",
+      "product": "CORPORATE_REVOLVING_COMMITMENT",
+      "variant": "working_capital_line",
+      "model_resource": "wholesale_revolver_history_model.json",
+      "source_component": "wholesale_revolver",
+      "source_case_id": "working_capital_line",
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "net_debt_ebitda"
+      ],
+      "features": [
+        [
+          2
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "hierarchical",
+        "method_id": "calibration.fit_hierarchical_calibration",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": 3.3776809317961505e-08,
+          "variance": 9.999999999999982e-09,
+          "groups": [
+            {
+              "group": "contingent",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "other",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "working",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            }
+          ],
+          "unknown_group": "logistic_normal_marginal",
+          "known_group": "conditional_mode",
+          "quadrature_points": 40
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30.0,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 30.0,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Synthetic performing revolving commitments",
+          "outcome_policy": "Observed default within30calendar days",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "c323b78b016ec69e93f5d617f9e88979f4d9629d0ac1401ade8e9904488f4f72",
+        "diagnostics": {
+          "laplace_log_likelihood": -9.752489215243447,
+          "gradient": [
+            2.6240895419354577e-12,
+            -1.350000028432774e-08
+          ],
+          "variance_at_boundary": true,
+          "variance_bounds": [
+            1e-08,
+            25.0
+          ],
+          "uncertainty_note": "Conditional group inverse curvature; hyperparameter and approximation uncertainty not included"
+        },
+        "artifact_hash": "4796f4ef7ada74bcb25828d2d1b4fe3670cfbf3e3f8a77fd65e5b48aaee11ed0"
+      },
+      "reference_pd": 0.10000000303991291,
+      "facts": {
+        "product": "CORPORATE_REVOLVING_COMMITMENT",
+        "variant": "working_capital_line",
+        "contract_verified": true,
+        "legal_cancellation": false,
+        "maintenance_covenant": false
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 30,
+        "debt_service_due": 20,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+        "scheduled_due": 5,
+        "received": 0,
+        "exit_reason": "Legal settlement and residual write-off, not cure",
+        "default_at": "2024-01-31",
+        "closure_at": "2024-06-03",
+        "legal_cancellation_executed": false,
+        "contractual_balloon_unfunded": false
+      },
+      "later_training": {
+        "data_fingerprint": "revolver-working_capital_line-later-observed-cohort",
+        "split_id": "revolver-working_capital_line-later",
+        "known_at": "2024-07-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "revolver-working_capital_line-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-01-01",
+        "effective_from": "2024-01-01",
+        "effective_until": "2024-09-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "subject_type": "facility",
+      "calibrator_arguments": {
+        "groups": [
+          "working"
+        ]
+      },
+      "independent_pd_oracle": 0.1,
+      "reference_action": "APPROVE",
+      "timeline": {
+        "routing_start": "2023-01-01",
+        "origination": "2024-01-01",
+        "processing": "2024-01-02",
+        "review": "2024-01-03",
+        "finalize": "2024-01-04",
+        "performing_review": "2024-01-05",
+        "payment_due": "2024-01-10",
+        "warning": "2024-01-15",
+        "warning_known": "2024-01-16",
+        "delinquency": "2024-01-20",
+        "delinquency_known": "2024-01-21",
+        "proposal": "2024-01-25",
+        "default": "2024-01-31",
+        "default_known": "2024-02-01",
+        "closure": "2024-06-03",
+        "replay": "2024-07-01",
+        "later_registration": "2024-08-01",
+        "later_replay": "2024-09-01"
+      }
+    },
+    {
+      "case_id": "revolver-contingent_commitment",
+      "product": "CORPORATE_REVOLVING_COMMITMENT",
+      "variant": "contingent_commitment",
+      "model_resource": "wholesale_revolver_history_model.json",
+      "source_component": "wholesale_revolver",
+      "source_case_id": "contingent_commitment",
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "net_debt_ebitda"
+      ],
+      "features": [
+        [
+          2
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "hierarchical",
+        "method_id": "calibration.fit_hierarchical_calibration",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": 3.3776809317961505e-08,
+          "variance": 9.999999999999982e-09,
+          "groups": [
+            {
+              "group": "contingent",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "other",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "working",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            }
+          ],
+          "unknown_group": "logistic_normal_marginal",
+          "known_group": "conditional_mode",
+          "quadrature_points": 40
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30.0,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 30.0,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Synthetic performing revolving commitments",
+          "outcome_policy": "Observed default within30calendar days",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "c323b78b016ec69e93f5d617f9e88979f4d9629d0ac1401ade8e9904488f4f72",
+        "diagnostics": {
+          "laplace_log_likelihood": -9.752489215243447,
+          "gradient": [
+            2.6240895419354577e-12,
+            -1.350000028432774e-08
+          ],
+          "variance_at_boundary": true,
+          "variance_bounds": [
+            1e-08,
+            25.0
+          ],
+          "uncertainty_note": "Conditional group inverse curvature; hyperparameter and approximation uncertainty not included"
+        },
+        "artifact_hash": "4796f4ef7ada74bcb25828d2d1b4fe3670cfbf3e3f8a77fd65e5b48aaee11ed0"
+      },
+      "reference_pd": 0.10000000303991291,
+      "facts": {
+        "product": "CORPORATE_REVOLVING_COMMITMENT",
+        "variant": "contingent_commitment",
+        "contract_verified": true,
+        "legal_cancellation": false,
+        "maintenance_covenant": false
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 30,
+        "debt_service_due": 20,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+        "scheduled_due": 5,
+        "received": 0,
+        "exit_reason": "Legal settlement and residual write-off, not cure",
+        "default_at": "2024-01-31",
+        "closure_at": "2024-06-03",
+        "legal_cancellation_executed": false,
+        "contractual_balloon_unfunded": false
+      },
+      "later_training": {
+        "data_fingerprint": "revolver-contingent_commitment-later-observed-cohort",
+        "split_id": "revolver-contingent_commitment-later",
+        "known_at": "2024-07-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "revolver-contingent_commitment-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-01-01",
+        "effective_from": "2024-01-01",
+        "effective_until": "2024-09-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "subject_type": "facility",
+      "calibrator_arguments": {
+        "groups": [
+          "contingent"
+        ]
+      },
+      "independent_pd_oracle": 0.1,
+      "reference_action": "APPROVE",
+      "timeline": {
+        "routing_start": "2023-01-01",
+        "origination": "2024-01-01",
+        "processing": "2024-01-02",
+        "review": "2024-01-03",
+        "finalize": "2024-01-04",
+        "performing_review": "2024-01-05",
+        "payment_due": "2024-01-10",
+        "warning": "2024-01-15",
+        "warning_known": "2024-01-16",
+        "delinquency": "2024-01-20",
+        "delinquency_known": "2024-01-21",
+        "proposal": "2024-01-25",
+        "default": "2024-01-31",
+        "default_known": "2024-02-01",
+        "closure": "2024-06-03",
+        "replay": "2024-07-01",
+        "later_registration": "2024-08-01",
+        "later_replay": "2024-09-01"
+      }
+    },
+    {
+      "case_id": "revolver-cancellable",
+      "product": "CORPORATE_REVOLVING_COMMITMENT",
+      "variant": "cancellable",
+      "model_resource": "wholesale_revolver_history_model.json",
+      "source_component": "wholesale_revolver",
+      "source_case_id": "cancellable",
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "net_debt_ebitda"
+      ],
+      "features": [
+        [
+          2
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "hierarchical",
+        "method_id": "calibration.fit_hierarchical_calibration",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": 3.3776809317961505e-08,
+          "variance": 9.999999999999982e-09,
+          "groups": [
+            {
+              "group": "contingent",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "other",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "working",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            }
+          ],
+          "unknown_group": "logistic_normal_marginal",
+          "known_group": "conditional_mode",
+          "quadrature_points": 40
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30.0,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 30.0,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Synthetic performing revolving commitments",
+          "outcome_policy": "Observed default within30calendar days",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "c323b78b016ec69e93f5d617f9e88979f4d9629d0ac1401ade8e9904488f4f72",
+        "diagnostics": {
+          "laplace_log_likelihood": -9.752489215243447,
+          "gradient": [
+            2.6240895419354577e-12,
+            -1.350000028432774e-08
+          ],
+          "variance_at_boundary": true,
+          "variance_bounds": [
+            1e-08,
+            25.0
+          ],
+          "uncertainty_note": "Conditional group inverse curvature; hyperparameter and approximation uncertainty not included"
+        },
+        "artifact_hash": "4796f4ef7ada74bcb25828d2d1b4fe3670cfbf3e3f8a77fd65e5b48aaee11ed0"
+      },
+      "reference_pd": 0.10000000303991291,
+      "facts": {
+        "product": "CORPORATE_REVOLVING_COMMITMENT",
+        "variant": "cancellable",
+        "contract_verified": true,
+        "legal_cancellation": true,
+        "maintenance_covenant": false
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 30,
+        "debt_service_due": 20,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+        "scheduled_due": 5,
+        "received": 0,
+        "exit_reason": "Legal settlement and residual write-off, not cure",
+        "default_at": "2024-01-31",
+        "closure_at": "2024-06-03",
+        "legal_cancellation_executed": false,
+        "contractual_balloon_unfunded": false
+      },
+      "later_training": {
+        "data_fingerprint": "revolver-cancellable-later-observed-cohort",
+        "split_id": "revolver-cancellable-later",
+        "known_at": "2024-07-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "revolver-cancellable-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-01-01",
+        "effective_from": "2024-01-01",
+        "effective_until": "2024-09-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "subject_type": "facility",
+      "calibrator_arguments": {
+        "groups": [
+          "other"
+        ]
+      },
+      "independent_pd_oracle": 0.1,
+      "reference_action": "APPROVE",
+      "timeline": {
+        "routing_start": "2023-01-01",
+        "origination": "2024-01-01",
+        "processing": "2024-01-02",
+        "review": "2024-01-03",
+        "finalize": "2024-01-04",
+        "performing_review": "2024-01-05",
+        "payment_due": "2024-01-10",
+        "warning": "2024-01-15",
+        "warning_known": "2024-01-16",
+        "delinquency": "2024-01-20",
+        "delinquency_known": "2024-01-21",
+        "proposal": "2024-01-25",
+        "default": "2024-01-31",
+        "default_known": "2024-02-01",
+        "closure": "2024-06-03",
+        "replay": "2024-07-01",
+        "later_registration": "2024-08-01",
+        "later_replay": "2024-09-01"
+      }
+    },
+    {
+      "case_id": "revolver-uncancellable",
+      "product": "CORPORATE_REVOLVING_COMMITMENT",
+      "variant": "uncancellable",
+      "model_resource": "wholesale_revolver_history_model.json",
+      "source_component": "wholesale_revolver",
+      "source_case_id": "uncancellable",
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "net_debt_ebitda"
+      ],
+      "features": [
+        [
+          2
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "hierarchical",
+        "method_id": "calibration.fit_hierarchical_calibration",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": 3.3776809317961505e-08,
+          "variance": 9.999999999999982e-09,
+          "groups": [
+            {
+              "group": "contingent",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "other",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            },
+            {
+              "group": "working",
+              "mode": 3.6008747016319596e-17,
+              "conditional_variance": 9.99999990999998e-09,
+              "shrinkage_information_fraction": 9.000000189551827e-09
+            }
+          ],
+          "unknown_group": "logistic_normal_marginal",
+          "known_group": "conditional_mode",
+          "quadrature_points": 40
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30.0,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 30.0,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Synthetic performing revolving commitments",
+          "outcome_policy": "Observed default within30calendar days",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "c323b78b016ec69e93f5d617f9e88979f4d9629d0ac1401ade8e9904488f4f72",
+        "diagnostics": {
+          "laplace_log_likelihood": -9.752489215243447,
+          "gradient": [
+            2.6240895419354577e-12,
+            -1.350000028432774e-08
+          ],
+          "variance_at_boundary": true,
+          "variance_bounds": [
+            1e-08,
+            25.0
+          ],
+          "uncertainty_note": "Conditional group inverse curvature; hyperparameter and approximation uncertainty not included"
+        },
+        "artifact_hash": "4796f4ef7ada74bcb25828d2d1b4fe3670cfbf3e3f8a77fd65e5b48aaee11ed0"
+      },
+      "reference_pd": 0.10000000303991291,
+      "facts": {
+        "product": "CORPORATE_REVOLVING_COMMITMENT",
+        "variant": "uncancellable",
+        "contract_verified": true,
+        "legal_cancellation": false,
+        "maintenance_covenant": false
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 30,
+        "debt_service_due": 20,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+        "scheduled_due": 5,
+        "received": 0,
+        "exit_reason": "Legal settlement and residual write-off, not cure",
+        "default_at": "2024-01-31",
+        "closure_at": "2024-06-03",
+        "legal_cancellation_executed": false,
+        "contractual_balloon_unfunded": false
+      },
+      "later_training": {
+        "data_fingerprint": "revolver-uncancellable-later-observed-cohort",
+        "split_id": "revolver-uncancellable-later",
+        "known_at": "2024-07-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "revolver-uncancellable-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-01-01",
+        "effective_from": "2024-01-01",
+        "effective_until": "2024-09-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "subject_type": "facility",
+      "calibrator_arguments": {
+        "groups": [
+          "other"
+        ]
+      },
+      "independent_pd_oracle": 0.1,
+      "reference_action": "APPROVE",
+      "timeline": {
+        "routing_start": "2023-01-01",
+        "origination": "2024-01-01",
+        "processing": "2024-01-02",
+        "review": "2024-01-03",
+        "finalize": "2024-01-04",
+        "performing_review": "2024-01-05",
+        "payment_due": "2024-01-10",
+        "warning": "2024-01-15",
+        "warning_known": "2024-01-16",
+        "delinquency": "2024-01-20",
+        "delinquency_known": "2024-01-21",
+        "proposal": "2024-01-25",
+        "default": "2024-01-31",
+        "default_known": "2024-02-01",
+        "closure": "2024-06-03",
+        "replay": "2024-07-01",
+        "later_registration": "2024-08-01",
+        "later_replay": "2024-09-01"
+      }
+    },
+    {
+      "case_id": "leveraged-sponsor_backed",
+      "product": "LEVERAGED_LOAN",
+      "variant": "sponsor_backed",
+      "model_resource": "wholesale_leveraged_history_model.json",
+      "source_component": "wholesale_leveraged",
+      "source_case_id": "sponsor_backed",
+      "target": {
+        "event": "default",
+        "horizon": 2,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "net_debt_ebitda"
+      ],
+      "features": [
+        [
+          6.0
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -1.9539925233402755e-14,
+          "slope": 0.9999999999999527,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 2.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 2.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2020-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_origination_2020",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Synthetic leveraged loan obligors",
+          "outcome_policy": "Fully mature two-year obligor default",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "3cefeef4cbeeda75d852ec71a1bf65c4acdbce4412baa02abd3617e6a06b8d18",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 4,
+          "gradient_max": 3.747002708109903e-15,
+          "solver_converged": true,
+          "negative_log_likelihood": 11.734140905474444,
+          "standard_errors": [
+            0.9691079786299356,
+            1.0405692153101462
+          ],
+          "covariance": [
+            [
+              0.9391702742441996,
+              0.8638418532129524
+            ],
+            [
+              0.8638418532129523,
+              1.0827842918511736
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 20.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "5dfcd463d612672c3523a9b6c3f64b0db5d88c83774673c2383220172339a77c"
+      },
+      "reference_pd": 0.2898979485566614,
+      "facts": {
+        "product": "LEVERAGED_LOAN",
+        "variant": "sponsor_backed",
+        "contract_verified": true,
+        "legal_cancellation": false,
+        "maintenance_covenant": true
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 18,
+        "debt_service_due": 12.032876712328767,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+        "scheduled_due": 132.0,
+        "received": 18,
+        "exit_reason": "Legal settlement and residual write-off, not cure",
+        "default_at": "2026-01-01",
+        "closure_at": "2026-07-03",
+        "legal_cancellation_executed": false,
+        "contractual_balloon_unfunded": true
+      },
+      "later_training": {
+        "data_fingerprint": "leveraged-sponsor_backed-later-observed-cohort",
+        "split_id": "leveraged-sponsor_backed-later",
+        "known_at": "2026-08-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "leveraged-sponsor_backed-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-01-01",
+        "effective_from": "2024-01-01",
+        "effective_until": "2026-10-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "subject_type": "facility",
+      "calibrator_arguments": {},
+      "independent_pd_oracle": 0.28989794855663564,
+      "reference_action": "REFER",
+      "timeline": {
+        "routing_start": "2023-01-01",
+        "origination": "2024-01-01",
+        "processing": "2024-01-02",
+        "review": "2024-01-03",
+        "finalize": "2024-01-04",
+        "performing_review": "2024-01-05",
+        "payment_due": "2026-01-01",
+        "warning": "2025-12-01",
+        "warning_known": "2025-12-02",
+        "delinquency": "2026-01-11",
+        "delinquency_known": "2026-01-12",
+        "proposal": "2025-12-20",
+        "default": "2026-01-01",
+        "default_known": "2026-01-02",
+        "closure": "2026-07-03",
+        "replay": "2026-08-01",
+        "later_registration": "2026-09-01",
+        "later_replay": "2026-10-01"
+      }
+    },
+    {
+      "case_id": "leveraged-high_leverage",
+      "product": "LEVERAGED_LOAN",
+      "variant": "high_leverage",
+      "model_resource": "wholesale_leveraged_history_model.json",
+      "source_component": "wholesale_leveraged",
+      "source_case_id": "high_leverage",
+      "target": {
+        "event": "default",
+        "horizon": 2,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "net_debt_ebitda"
+      ],
+      "features": [
+        [
+          8.0
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -1.9539925233402755e-14,
+          "slope": 0.9999999999999527,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 2.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 2.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2020-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_origination_2020",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Synthetic leveraged loan obligors",
+          "outcome_policy": "Fully mature two-year obligor default",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "3cefeef4cbeeda75d852ec71a1bf65c4acdbce4412baa02abd3617e6a06b8d18",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 4,
+          "gradient_max": 3.747002708109903e-15,
+          "solver_converged": true,
+          "negative_log_likelihood": 11.734140905474444,
+          "standard_errors": [
+            0.9691079786299356,
+            1.0405692153101462
+          ],
+          "covariance": [
+            [
+              0.9391702742441996,
+              0.8638418532129524
+            ],
+            [
+              0.8638418532129523,
+              1.0827842918511736
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 20.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "5dfcd463d612672c3523a9b6c3f64b0db5d88c83774673c2383220172339a77c"
+      },
+      "reference_pd": 0.4000000000000002,
+      "facts": {
+        "product": "LEVERAGED_LOAN",
+        "variant": "high_leverage",
+        "contract_verified": true,
+        "legal_cancellation": false,
+        "maintenance_covenant": true
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 20,
+        "debt_service_due": 16.043835616438358,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+        "scheduled_due": 176.0,
+        "received": 20,
+        "exit_reason": "Legal settlement and residual write-off, not cure",
+        "default_at": "2026-01-01",
+        "closure_at": "2026-07-03",
+        "legal_cancellation_executed": false,
+        "contractual_balloon_unfunded": true
+      },
+      "later_training": {
+        "data_fingerprint": "leveraged-high_leverage-later-observed-cohort",
+        "split_id": "leveraged-high_leverage-later",
+        "known_at": "2026-08-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "leveraged-high_leverage-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-01-01",
+        "effective_from": "2024-01-01",
+        "effective_until": "2026-10-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "subject_type": "facility",
+      "calibrator_arguments": {},
+      "independent_pd_oracle": 0.4,
+      "reference_action": "REFER",
+      "timeline": {
+        "routing_start": "2023-01-01",
+        "origination": "2024-01-01",
+        "processing": "2024-01-02",
+        "review": "2024-01-03",
+        "finalize": "2024-01-04",
+        "performing_review": "2024-01-05",
+        "payment_due": "2026-01-01",
+        "warning": "2025-12-01",
+        "warning_known": "2025-12-02",
+        "delinquency": "2026-01-11",
+        "delinquency_known": "2026-01-12",
+        "proposal": "2025-12-20",
+        "default": "2026-01-01",
+        "default_known": "2026-01-02",
+        "closure": "2026-07-03",
+        "replay": "2026-08-01",
+        "later_registration": "2026-09-01",
+        "later_replay": "2026-10-01"
+      }
+    },
+    {
+      "case_id": "leveraged-covenant_lite",
+      "product": "LEVERAGED_LOAN",
+      "variant": "covenant_lite",
+      "model_resource": "wholesale_leveraged_history_model.json",
+      "source_component": "wholesale_leveraged",
+      "source_case_id": "covenant_lite",
+      "target": {
+        "event": "default",
+        "horizon": 2,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "net_debt_ebitda"
+      ],
+      "features": [
+        [
+          6.0
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -1.9539925233402755e-14,
+          "slope": 0.9999999999999527,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 2.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 2.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2020-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_origination_2020",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Synthetic leveraged loan obligors",
+          "outcome_policy": "Fully mature two-year obligor default",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "3cefeef4cbeeda75d852ec71a1bf65c4acdbce4412baa02abd3617e6a06b8d18",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 4,
+          "gradient_max": 3.747002708109903e-15,
+          "solver_converged": true,
+          "negative_log_likelihood": 11.734140905474444,
+          "standard_errors": [
+            0.9691079786299356,
+            1.0405692153101462
+          ],
+          "covariance": [
+            [
+              0.9391702742441996,
+              0.8638418532129524
+            ],
+            [
+              0.8638418532129523,
+              1.0827842918511736
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 20.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "5dfcd463d612672c3523a9b6c3f64b0db5d88c83774673c2383220172339a77c"
+      },
+      "reference_pd": 0.2898979485566614,
+      "facts": {
+        "product": "LEVERAGED_LOAN",
+        "variant": "covenant_lite",
+        "contract_verified": true,
+        "legal_cancellation": false,
+        "maintenance_covenant": false
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 18,
+        "debt_service_due": 12.032876712328767,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+        "scheduled_due": 132.0,
+        "received": 18,
+        "exit_reason": "Legal settlement and residual write-off, not cure",
+        "default_at": "2026-01-01",
+        "closure_at": "2026-07-03",
+        "legal_cancellation_executed": false,
+        "contractual_balloon_unfunded": true
+      },
+      "later_training": {
+        "data_fingerprint": "leveraged-covenant_lite-later-observed-cohort",
+        "split_id": "leveraged-covenant_lite-later",
+        "known_at": "2026-08-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "leveraged-covenant_lite-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-01-01",
+        "effective_from": "2024-01-01",
+        "effective_until": "2026-10-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      },
+      "subject_type": "facility",
+      "calibrator_arguments": {},
+      "independent_pd_oracle": 0.28989794855663564,
+      "reference_action": "REFER",
+      "timeline": {
+        "routing_start": "2023-01-01",
+        "origination": "2024-01-01",
+        "processing": "2024-01-02",
+        "review": "2024-01-03",
+        "finalize": "2024-01-04",
+        "performing_review": "2024-01-05",
+        "payment_due": "2026-01-01",
+        "warning": "2025-12-01",
+        "warning_known": "2025-12-02",
+        "delinquency": "2026-01-11",
+        "delinquency_known": "2026-01-12",
+        "proposal": "2025-12-20",
+        "default": "2026-01-01",
+        "default_known": "2026-01-02",
+        "closure": "2026-07-03",
+        "replay": "2026-08-01",
+        "later_registration": "2026-09-01",
+        "later_replay": "2026-10-01"
+      }
+    }
+  ]
+}

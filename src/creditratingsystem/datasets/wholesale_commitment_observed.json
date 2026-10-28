@@ -1,0 +1,2274 @@
+{
+  "data_origin": "SYNTHETIC",
+  "scope": "Different contractual horizons evaluated separately, never pooled as interchangeable observations. Twenty mature plus two censored accounts each. Revolver actual draw60 differs from learned conditional EAD50; leveraged unpaid claim120+12-18=114 at balloon default.",
+  "cohorts": [
+    {
+      "data_origin": "SYNTHETIC",
+      "cohort_contract": {
+        "forecast_at": "2024-01-01",
+        "forecast_known_at": "2024-01-01",
+        "horizon_days": 30,
+        "outcome_known_at": "2024-02-02",
+        "evaluation_cutoff": "2024-02-02",
+        "reference_window": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "total_count": 22,
+        "mature_count": 20,
+        "censored_count": 2,
+        "reporting_currency": "EUR"
+      },
+      "journeys": [
+        {
+          "case_id": "revolver-working_capital_line",
+          "product": "CORPORATE_REVOLVING_COMMITMENT",
+          "generation_model_id": "wholesale-revolver",
+          "forecast_contract": {
+            "model_resource": "wholesale_revolver_history_model.json",
+            "model_hash": "e3ce5a11b36f3e5d3eb21b70dc57724ca21db72ae12f545b9484eddab2293fbf",
+            "features": [
+              [
+                2
+              ]
+            ],
+            "feature_order": [
+              "net_debt_ebitda"
+            ],
+            "target": {
+              "event": "default",
+              "horizon": 30,
+              "time_unit": "days",
+              "probability_measure": "PHYSICAL",
+              "conditioning": "PIT"
+            },
+            "calibrator": {
+              "schema_version": "1.0",
+              "artifact_type": "CalibrationArtifact",
+              "calibration_type": "hierarchical",
+              "method_id": "calibration.fit_hierarchical_calibration",
+              "parameter_version": "1.0",
+              "input_kind": "probability",
+              "parameters": {
+                "intercept": 3.3776809317961505e-08,
+                "variance": 9.999999999999982e-09,
+                "groups": [
+                  {
+                    "group": "contingent",
+                    "mode": 3.6008747016319596e-17,
+                    "conditional_variance": 9.99999990999998e-09,
+                    "shrinkage_information_fraction": 9.000000189551827e-09
+                  },
+                  {
+                    "group": "other",
+                    "mode": 3.6008747016319596e-17,
+                    "conditional_variance": 9.99999990999998e-09,
+                    "shrinkage_information_fraction": 9.000000189551827e-09
+                  },
+                  {
+                    "group": "working",
+                    "mode": 3.6008747016319596e-17,
+                    "conditional_variance": 9.99999990999998e-09,
+                    "shrinkage_information_fraction": 9.000000189551827e-09
+                  }
+                ],
+                "unknown_group": "logistic_normal_marginal",
+                "known_group": "conditional_mode",
+                "quadrature_points": 40
+              },
+              "target": {
+                "event": "default",
+                "horizon": 30.0,
+                "time_unit": "days",
+                "probability_measure": "PHYSICAL",
+                "conditioning": "PIT"
+              },
+              "metadata": {
+                "target": {
+                  "event": "default",
+                  "horizon": 30.0,
+                  "time_unit": "days",
+                  "probability_measure": "PHYSICAL",
+                  "conditioning": "PIT"
+                },
+                "calibration": {
+                  "start": "2021-01-01",
+                  "end": "2022-01-01",
+                  "known_at": "2022-01-02",
+                  "split_id": "calibration_2021",
+                  "prediction_origin": "HOLDOUT"
+                },
+                "base_model_version": "1",
+                "population_definition": "Synthetic performing revolving commitments",
+                "outcome_policy": "Observed default within30calendar days",
+                "weight_type": "frequency",
+                "data_origin": "SYNTHETIC"
+              },
+              "calibration_input_fingerprint": "c323b78b016ec69e93f5d617f9e88979f4d9629d0ac1401ade8e9904488f4f72",
+              "diagnostics": {
+                "laplace_log_likelihood": -9.752489215243447,
+                "gradient": [
+                  2.6240895419354577e-12,
+                  -1.350000028432774e-08
+                ],
+                "variance_at_boundary": true,
+                "variance_bounds": [
+                  1e-08,
+                  25.0
+                ],
+                "uncertainty_note": "Conditional group inverse curvature; hyperparameter and approximation uncertainty not included"
+              },
+              "artifact_hash": "4796f4ef7ada74bcb25828d2d1b4fe3670cfbf3e3f8a77fd65e5b48aaee11ed0"
+            },
+            "calibrator_arguments": {
+              "groups": [
+                "working"
+              ]
+            }
+          },
+          "reference_pd": 0.10000000303991291,
+          "cohort_defaults": 2,
+          "observed": {
+            "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+            "scheduled_due": 5,
+            "received": 0,
+            "exit_reason": "Legal settlement and residual write-off, not cure",
+            "default_at": "2024-01-31",
+            "closure_at": "2024-06-03",
+            "legal_cancellation_executed": false,
+            "contractual_balloon_unfunded": false,
+            "ead": 60,
+            "gross_recovery": 42,
+            "direct_cost": 3,
+            "settlement_at": "2024-05-31",
+            "settlement_known_at": "2024-06-01",
+            "closure_known_at": "2024-06-04",
+            "default_known_at": "2024-02-01",
+            "currency": "EUR",
+            "annual_discount_rate": 0.05
+          },
+          "observation_windows": {
+            "ratings": [
+              {
+                "observation_id": "revolver-working_capital_line-observed-0-forecast",
+                "entity_id": "revolver-working_capital_line-observed-0",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-1-forecast",
+                "entity_id": "revolver-working_capital_line-observed-1",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-2-forecast",
+                "entity_id": "revolver-working_capital_line-observed-2",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-3-forecast",
+                "entity_id": "revolver-working_capital_line-observed-3",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-4-forecast",
+                "entity_id": "revolver-working_capital_line-observed-4",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-5-forecast",
+                "entity_id": "revolver-working_capital_line-observed-5",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-6-forecast",
+                "entity_id": "revolver-working_capital_line-observed-6",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-7-forecast",
+                "entity_id": "revolver-working_capital_line-observed-7",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-8-forecast",
+                "entity_id": "revolver-working_capital_line-observed-8",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-9-forecast",
+                "entity_id": "revolver-working_capital_line-observed-9",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-10-forecast",
+                "entity_id": "revolver-working_capital_line-observed-10",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-11-forecast",
+                "entity_id": "revolver-working_capital_line-observed-11",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-12-forecast",
+                "entity_id": "revolver-working_capital_line-observed-12",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-13-forecast",
+                "entity_id": "revolver-working_capital_line-observed-13",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-14-forecast",
+                "entity_id": "revolver-working_capital_line-observed-14",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-15-forecast",
+                "entity_id": "revolver-working_capital_line-observed-15",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-16-forecast",
+                "entity_id": "revolver-working_capital_line-observed-16",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-17-forecast",
+                "entity_id": "revolver-working_capital_line-observed-17",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-18-forecast",
+                "entity_id": "revolver-working_capital_line-observed-18",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-19-forecast",
+                "entity_id": "revolver-working_capital_line-observed-19",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-20-forecast",
+                "entity_id": "revolver-working_capital_line-observed-20",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0,
+                "followup_end": "2024-01-11"
+              },
+              {
+                "observation_id": "revolver-working_capital_line-observed-21-forecast",
+                "entity_id": "revolver-working_capital_line-observed-21",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              }
+            ],
+            "default_events": [
+              {
+                "event_id": "revolver-working_capital_line-observed-0-default",
+                "entity_id": "revolver-working_capital_line-observed-0",
+                "default_at": "2024-01-31",
+                "known_at": "2024-02-01"
+              },
+              {
+                "event_id": "revolver-working_capital_line-observed-1-default",
+                "entity_id": "revolver-working_capital_line-observed-1",
+                "default_at": "2024-01-31",
+                "known_at": "2024-02-01"
+              }
+            ],
+            "exits": [
+              {
+                "entity_id": "revolver-working_capital_line-observed-21",
+                "exit_at": "2024-01-16",
+                "known_at": "2024-01-17"
+              }
+            ],
+            "horizon_days": 30,
+            "evaluation_cutoff": "2024-02-02"
+          },
+          "monitoring": {
+            "predictions": [
+              {
+                "forecast_id": "revolver-working_capital_line-observed-0-forecast",
+                "case_id": "revolver-working_capital_line-observed-0",
+                "entity_id": "revolver-working_capital_line-observed-0",
+                "cluster_id": "revolver-working_capital_line-observed-0",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-1-forecast",
+                "case_id": "revolver-working_capital_line-observed-1",
+                "entity_id": "revolver-working_capital_line-observed-1",
+                "cluster_id": "revolver-working_capital_line-observed-1",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-2-forecast",
+                "case_id": "revolver-working_capital_line-observed-2",
+                "entity_id": "revolver-working_capital_line-observed-2",
+                "cluster_id": "revolver-working_capital_line-observed-2",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-3-forecast",
+                "case_id": "revolver-working_capital_line-observed-3",
+                "entity_id": "revolver-working_capital_line-observed-3",
+                "cluster_id": "revolver-working_capital_line-observed-3",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-4-forecast",
+                "case_id": "revolver-working_capital_line-observed-4",
+                "entity_id": "revolver-working_capital_line-observed-4",
+                "cluster_id": "revolver-working_capital_line-observed-4",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-5-forecast",
+                "case_id": "revolver-working_capital_line-observed-5",
+                "entity_id": "revolver-working_capital_line-observed-5",
+                "cluster_id": "revolver-working_capital_line-observed-5",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-6-forecast",
+                "case_id": "revolver-working_capital_line-observed-6",
+                "entity_id": "revolver-working_capital_line-observed-6",
+                "cluster_id": "revolver-working_capital_line-observed-6",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-7-forecast",
+                "case_id": "revolver-working_capital_line-observed-7",
+                "entity_id": "revolver-working_capital_line-observed-7",
+                "cluster_id": "revolver-working_capital_line-observed-7",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-8-forecast",
+                "case_id": "revolver-working_capital_line-observed-8",
+                "entity_id": "revolver-working_capital_line-observed-8",
+                "cluster_id": "revolver-working_capital_line-observed-8",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-9-forecast",
+                "case_id": "revolver-working_capital_line-observed-9",
+                "entity_id": "revolver-working_capital_line-observed-9",
+                "cluster_id": "revolver-working_capital_line-observed-9",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-10-forecast",
+                "case_id": "revolver-working_capital_line-observed-10",
+                "entity_id": "revolver-working_capital_line-observed-10",
+                "cluster_id": "revolver-working_capital_line-observed-10",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-11-forecast",
+                "case_id": "revolver-working_capital_line-observed-11",
+                "entity_id": "revolver-working_capital_line-observed-11",
+                "cluster_id": "revolver-working_capital_line-observed-11",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-12-forecast",
+                "case_id": "revolver-working_capital_line-observed-12",
+                "entity_id": "revolver-working_capital_line-observed-12",
+                "cluster_id": "revolver-working_capital_line-observed-12",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-13-forecast",
+                "case_id": "revolver-working_capital_line-observed-13",
+                "entity_id": "revolver-working_capital_line-observed-13",
+                "cluster_id": "revolver-working_capital_line-observed-13",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-14-forecast",
+                "case_id": "revolver-working_capital_line-observed-14",
+                "entity_id": "revolver-working_capital_line-observed-14",
+                "cluster_id": "revolver-working_capital_line-observed-14",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-15-forecast",
+                "case_id": "revolver-working_capital_line-observed-15",
+                "entity_id": "revolver-working_capital_line-observed-15",
+                "cluster_id": "revolver-working_capital_line-observed-15",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-16-forecast",
+                "case_id": "revolver-working_capital_line-observed-16",
+                "entity_id": "revolver-working_capital_line-observed-16",
+                "cluster_id": "revolver-working_capital_line-observed-16",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-17-forecast",
+                "case_id": "revolver-working_capital_line-observed-17",
+                "entity_id": "revolver-working_capital_line-observed-17",
+                "cluster_id": "revolver-working_capital_line-observed-17",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-18-forecast",
+                "case_id": "revolver-working_capital_line-observed-18",
+                "entity_id": "revolver-working_capital_line-observed-18",
+                "cluster_id": "revolver-working_capital_line-observed-18",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-19-forecast",
+                "case_id": "revolver-working_capital_line-observed-19",
+                "entity_id": "revolver-working_capital_line-observed-19",
+                "cluster_id": "revolver-working_capital_line-observed-19",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-20-forecast",
+                "case_id": "revolver-working_capital_line-observed-20",
+                "entity_id": "revolver-working_capital_line-observed-20",
+                "cluster_id": "revolver-working_capital_line-observed-20",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "revolver-working_capital_line-observed-21-forecast",
+                "case_id": "revolver-working_capital_line-observed-21",
+                "entity_id": "revolver-working_capital_line-observed-21",
+                "cluster_id": "revolver-working_capital_line-observed-21",
+                "cohort": "2024",
+                "segment": "CORPORATE_REVOLVING_COMMITMENT",
+                "model_id": "wholesale-revolver",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.10000000303991291,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 30,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              }
+            ],
+            "outcome_events": [
+              {
+                "event_id": "revolver-working_capital_line-observed-0-default",
+                "entity_id": "revolver-working_capital_line-observed-0",
+                "event_at": "2024-01-31",
+                "known_at": "2024-02-01",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "revolver-working_capital_line-observed-1-default",
+                "entity_id": "revolver-working_capital_line-observed-1",
+                "event_at": "2024-01-31",
+                "known_at": "2024-02-01",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "revolver-working_capital_line-observed-21-exit",
+                "entity_id": "revolver-working_capital_line-observed-21",
+                "event_at": "2024-01-16",
+                "known_at": "2024-01-17",
+                "event": "exit",
+                "default_definition": "first_default"
+              }
+            ],
+            "coverage": [
+              {
+                "entity_id": "revolver-working_capital_line-observed-0",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-1",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-2",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-3",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-4",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-5",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-6",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-7",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-8",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-9",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-10",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-11",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-12",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-13",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-14",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-15",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-16",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-17",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-18",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-19",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-20",
+                "complete_through": "2024-01-11",
+                "known_at": "2024-02-02"
+              },
+              {
+                "entity_id": "revolver-working_capital_line-observed-21",
+                "complete_through": "2024-01-31",
+                "known_at": "2024-02-02"
+              }
+            ],
+            "target_contract": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "first_default",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "evaluation_cutoff": "2024-02-02"
+          },
+          "recovery_episodes": {
+            "default_events": [
+              {
+                "episode_id": "revolver-working_capital_line-workout",
+                "entity_id": "revolver-working_capital_line",
+                "default_at": "2024-01-31",
+                "known_at": "2024-02-01",
+                "ead": 60,
+                "currency": "EUR"
+              }
+            ],
+            "recovery_cashflows": [
+              {
+                "cashflow_id": "revolver-working_capital_line-workout-recovery",
+                "episode_id": "revolver-working_capital_line-workout",
+                "cashflow_at": "2024-05-31",
+                "known_at": "2024-06-01",
+                "amount": 42,
+                "kind": "recovery",
+                "currency": "EUR"
+              },
+              {
+                "cashflow_id": "revolver-working_capital_line-workout-cost",
+                "episode_id": "revolver-working_capital_line-workout",
+                "cashflow_at": "2024-05-31",
+                "known_at": "2024-06-01",
+                "amount": 3,
+                "kind": "cost",
+                "currency": "EUR"
+              }
+            ],
+            "cures": [],
+            "reopening_days": 90,
+            "evaluation_cutoff": "2024-06-04"
+          },
+          "recovery_value": {
+            "cashflows": [
+              {
+                "cashflow_id": "revolver-working_capital_line-workout-recovery",
+                "cashflow_date": "2024-05-31",
+                "known_at": "2024-06-01",
+                "currency": "EUR",
+                "kind": "RECOVERY",
+                "amount": 42
+              },
+              {
+                "cashflow_id": "revolver-working_capital_line-workout-cost",
+                "cashflow_date": "2024-05-31",
+                "known_at": "2024-06-01",
+                "currency": "EUR",
+                "kind": "DIRECT_COST",
+                "amount": 3
+              }
+            ],
+            "discount_curve": {
+              "anchor_date": "2024-01-31",
+              "known_at": "2024-01-31",
+              "discount_basis": "Declared effective annual five-percent default-date valuation",
+              "points": [
+                {
+                  "cashflow_date": "2024-05-31",
+                  "discount_factor": 0.9839558275867483
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2024-01-31",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2024-05-31",
+                  "rate": 1
+                }
+              ]
+            },
+            "default_date": "2024-01-31",
+            "evaluation_cutoff": "2024-06-04",
+            "reporting_currency": "EUR"
+          }
+        }
+      ]
+    },
+    {
+      "data_origin": "SYNTHETIC",
+      "cohort_contract": {
+        "forecast_at": "2024-01-01",
+        "forecast_known_at": "2024-01-01",
+        "horizon_days": 731,
+        "outcome_known_at": "2026-01-03",
+        "evaluation_cutoff": "2026-01-03",
+        "reference_window": {
+          "start": "2024-01-01",
+          "end": "2024-12-31"
+        },
+        "total_count": 22,
+        "mature_count": 20,
+        "censored_count": 2,
+        "reporting_currency": "EUR"
+      },
+      "journeys": [
+        {
+          "case_id": "leveraged-covenant_lite",
+          "product": "LEVERAGED_LOAN",
+          "generation_model_id": "leveraged-fundamental",
+          "forecast_contract": {
+            "model_resource": "wholesale_leveraged_history_model.json",
+            "model_hash": "59f9fdfdb712eff9246569c7734a954c6abb55b9a58c4ef07f878d07c702680d",
+            "features": [
+              [
+                6.0
+              ]
+            ],
+            "feature_order": [
+              "net_debt_ebitda"
+            ],
+            "target": {
+              "event": "default",
+              "horizon": 2,
+              "time_unit": "years",
+              "probability_measure": "PHYSICAL",
+              "conditioning": "PIT"
+            },
+            "calibrator": {
+              "schema_version": "1.0",
+              "artifact_type": "CalibrationArtifact",
+              "calibration_type": "logistic",
+              "method_id": "calibration.calibrate_logistic",
+              "parameter_version": "1.0",
+              "input_kind": "probability",
+              "parameters": {
+                "intercept": -1.9539925233402755e-14,
+                "slope": 0.9999999999999527,
+                "boundary_policy": "reject"
+              },
+              "target": {
+                "event": "default",
+                "horizon": 2.0,
+                "time_unit": "years",
+                "probability_measure": "PHYSICAL",
+                "conditioning": "PIT"
+              },
+              "metadata": {
+                "target": {
+                  "event": "default",
+                  "horizon": 2.0,
+                  "time_unit": "years",
+                  "probability_measure": "PHYSICAL",
+                  "conditioning": "PIT"
+                },
+                "calibration": {
+                  "start": "2020-01-01",
+                  "end": "2022-01-01",
+                  "known_at": "2022-01-02",
+                  "split_id": "calibration_origination_2020",
+                  "prediction_origin": "HOLDOUT"
+                },
+                "base_model_version": "1",
+                "population_definition": "Synthetic leveraged loan obligors",
+                "outcome_policy": "Fully mature two-year obligor default",
+                "weight_type": "frequency",
+                "data_origin": "SYNTHETIC"
+              },
+              "calibration_input_fingerprint": "3cefeef4cbeeda75d852ec71a1bf65c4acdbce4412baa02abd3617e6a06b8d18",
+              "diagnostics": {
+                "converged": true,
+                "iterations": 4,
+                "gradient_max": 3.747002708109903e-15,
+                "solver_converged": true,
+                "negative_log_likelihood": 11.734140905474444,
+                "standard_errors": [
+                  0.9691079786299356,
+                  1.0405692153101462
+                ],
+                "covariance": [
+                  [
+                    0.9391702742441996,
+                    0.8638418532129524
+                  ],
+                  [
+                    0.8638418532129523,
+                    1.0827842918511736
+                  ]
+                ],
+                "uncertainty": "IID_FREQUENCY_FISHER",
+                "slope_nonpositive": false,
+                "n_observations": 4,
+                "weight_sum": 20.0,
+                "zero_weight_count": 0,
+                "boundary_policy": "reject"
+              },
+              "artifact_hash": "5dfcd463d612672c3523a9b6c3f64b0db5d88c83774673c2383220172339a77c"
+            },
+            "calibrator_arguments": {}
+          },
+          "reference_pd": 0.2898979485566614,
+          "cohort_defaults": 6,
+          "observed": {
+            "source": "Separately declared synthetic servicing observations; not scenario outcomes used as labels",
+            "scheduled_due": 132.0,
+            "received": 18,
+            "exit_reason": "Legal settlement and residual write-off, not cure",
+            "default_at": "2026-01-01",
+            "closure_at": "2026-07-03",
+            "legal_cancellation_executed": false,
+            "contractual_balloon_unfunded": true,
+            "ead": 114,
+            "gross_recovery": 95,
+            "direct_cost": 8,
+            "settlement_at": "2026-07-01",
+            "settlement_known_at": "2026-07-02",
+            "closure_known_at": "2026-07-04",
+            "default_known_at": "2026-01-02",
+            "currency": "EUR",
+            "annual_discount_rate": 0.05
+          },
+          "observation_windows": {
+            "ratings": [
+              {
+                "observation_id": "leveraged-covenant_lite-observed-0-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-0",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-1-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-1",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-2-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-2",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-3-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-3",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-4-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-4",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-5-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-5",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-6-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-6",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-7-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-7",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-8-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-8",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-9-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-9",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-10-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-10",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-11-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-11",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-12-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-12",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-13-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-13",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-14-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-14",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-15-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-15",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-16-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-16",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-17-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-17",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-18-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-18",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-19-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-19",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 0
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-20-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-20",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120,
+                "followup_end": "2024-08-31"
+              },
+              {
+                "observation_id": "leveraged-covenant_lite-observed-21-forecast",
+                "entity_id": "leveraged-covenant_lite-observed-21",
+                "as_of": "2024-01-01",
+                "funded": true,
+                "drawn_balance_at_origin": 120
+              }
+            ],
+            "default_events": [
+              {
+                "event_id": "leveraged-covenant_lite-observed-0-default",
+                "entity_id": "leveraged-covenant_lite-observed-0",
+                "default_at": "2026-01-01",
+                "known_at": "2026-01-02"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-1-default",
+                "entity_id": "leveraged-covenant_lite-observed-1",
+                "default_at": "2026-01-01",
+                "known_at": "2026-01-02"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-2-default",
+                "entity_id": "leveraged-covenant_lite-observed-2",
+                "default_at": "2026-01-01",
+                "known_at": "2026-01-02"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-3-default",
+                "entity_id": "leveraged-covenant_lite-observed-3",
+                "default_at": "2026-01-01",
+                "known_at": "2026-01-02"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-4-default",
+                "entity_id": "leveraged-covenant_lite-observed-4",
+                "default_at": "2026-01-01",
+                "known_at": "2026-01-02"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-5-default",
+                "entity_id": "leveraged-covenant_lite-observed-5",
+                "default_at": "2026-01-01",
+                "known_at": "2026-01-02"
+              }
+            ],
+            "exits": [
+              {
+                "entity_id": "leveraged-covenant_lite-observed-21",
+                "exit_at": "2024-12-31",
+                "known_at": "2025-01-01"
+              }
+            ],
+            "horizon_days": 731,
+            "evaluation_cutoff": "2026-01-03"
+          },
+          "monitoring": {
+            "predictions": [
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-0-forecast",
+                "case_id": "leveraged-covenant_lite-observed-0",
+                "entity_id": "leveraged-covenant_lite-observed-0",
+                "cluster_id": "leveraged-covenant_lite-observed-0",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-1-forecast",
+                "case_id": "leveraged-covenant_lite-observed-1",
+                "entity_id": "leveraged-covenant_lite-observed-1",
+                "cluster_id": "leveraged-covenant_lite-observed-1",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-2-forecast",
+                "case_id": "leveraged-covenant_lite-observed-2",
+                "entity_id": "leveraged-covenant_lite-observed-2",
+                "cluster_id": "leveraged-covenant_lite-observed-2",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-3-forecast",
+                "case_id": "leveraged-covenant_lite-observed-3",
+                "entity_id": "leveraged-covenant_lite-observed-3",
+                "cluster_id": "leveraged-covenant_lite-observed-3",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-4-forecast",
+                "case_id": "leveraged-covenant_lite-observed-4",
+                "entity_id": "leveraged-covenant_lite-observed-4",
+                "cluster_id": "leveraged-covenant_lite-observed-4",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-5-forecast",
+                "case_id": "leveraged-covenant_lite-observed-5",
+                "entity_id": "leveraged-covenant_lite-observed-5",
+                "cluster_id": "leveraged-covenant_lite-observed-5",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-6-forecast",
+                "case_id": "leveraged-covenant_lite-observed-6",
+                "entity_id": "leveraged-covenant_lite-observed-6",
+                "cluster_id": "leveraged-covenant_lite-observed-6",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-7-forecast",
+                "case_id": "leveraged-covenant_lite-observed-7",
+                "entity_id": "leveraged-covenant_lite-observed-7",
+                "cluster_id": "leveraged-covenant_lite-observed-7",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-8-forecast",
+                "case_id": "leveraged-covenant_lite-observed-8",
+                "entity_id": "leveraged-covenant_lite-observed-8",
+                "cluster_id": "leveraged-covenant_lite-observed-8",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-9-forecast",
+                "case_id": "leveraged-covenant_lite-observed-9",
+                "entity_id": "leveraged-covenant_lite-observed-9",
+                "cluster_id": "leveraged-covenant_lite-observed-9",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-10-forecast",
+                "case_id": "leveraged-covenant_lite-observed-10",
+                "entity_id": "leveraged-covenant_lite-observed-10",
+                "cluster_id": "leveraged-covenant_lite-observed-10",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-11-forecast",
+                "case_id": "leveraged-covenant_lite-observed-11",
+                "entity_id": "leveraged-covenant_lite-observed-11",
+                "cluster_id": "leveraged-covenant_lite-observed-11",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-12-forecast",
+                "case_id": "leveraged-covenant_lite-observed-12",
+                "entity_id": "leveraged-covenant_lite-observed-12",
+                "cluster_id": "leveraged-covenant_lite-observed-12",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-13-forecast",
+                "case_id": "leveraged-covenant_lite-observed-13",
+                "entity_id": "leveraged-covenant_lite-observed-13",
+                "cluster_id": "leveraged-covenant_lite-observed-13",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-14-forecast",
+                "case_id": "leveraged-covenant_lite-observed-14",
+                "entity_id": "leveraged-covenant_lite-observed-14",
+                "cluster_id": "leveraged-covenant_lite-observed-14",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-15-forecast",
+                "case_id": "leveraged-covenant_lite-observed-15",
+                "entity_id": "leveraged-covenant_lite-observed-15",
+                "cluster_id": "leveraged-covenant_lite-observed-15",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-16-forecast",
+                "case_id": "leveraged-covenant_lite-observed-16",
+                "entity_id": "leveraged-covenant_lite-observed-16",
+                "cluster_id": "leveraged-covenant_lite-observed-16",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-17-forecast",
+                "case_id": "leveraged-covenant_lite-observed-17",
+                "entity_id": "leveraged-covenant_lite-observed-17",
+                "cluster_id": "leveraged-covenant_lite-observed-17",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-18-forecast",
+                "case_id": "leveraged-covenant_lite-observed-18",
+                "entity_id": "leveraged-covenant_lite-observed-18",
+                "cluster_id": "leveraged-covenant_lite-observed-18",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-19-forecast",
+                "case_id": "leveraged-covenant_lite-observed-19",
+                "entity_id": "leveraged-covenant_lite-observed-19",
+                "cluster_id": "leveraged-covenant_lite-observed-19",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-20-forecast",
+                "case_id": "leveraged-covenant_lite-observed-20",
+                "entity_id": "leveraged-covenant_lite-observed-20",
+                "cluster_id": "leveraged-covenant_lite-observed-20",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              },
+              {
+                "forecast_id": "leveraged-covenant_lite-observed-21-forecast",
+                "case_id": "leveraged-covenant_lite-observed-21",
+                "entity_id": "leveraged-covenant_lite-observed-21",
+                "cluster_id": "leveraged-covenant_lite-observed-21",
+                "cohort": "2024",
+                "segment": "LEVERAGED_LOAN",
+                "model_id": "leveraged-fundamental",
+                "model_version": "1",
+                "forecast_at": "2024-01-01",
+                "known_at": "2024-01-01",
+                "pd": 0.2898979485566614,
+                "target": {
+                  "event": "default",
+                  "probability_measure": "PHYSICAL",
+                  "default_definition": "first_default",
+                  "unit": "obligor",
+                  "horizon_days": 731,
+                  "default_grade": "D"
+                },
+                "origin_grade": "B",
+                "decision": null,
+                "override": false,
+                "prediction_origin": "OUT_OF_TIME"
+              }
+            ],
+            "outcome_events": [
+              {
+                "event_id": "leveraged-covenant_lite-observed-0-default",
+                "entity_id": "leveraged-covenant_lite-observed-0",
+                "event_at": "2026-01-01",
+                "known_at": "2026-01-02",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-1-default",
+                "entity_id": "leveraged-covenant_lite-observed-1",
+                "event_at": "2026-01-01",
+                "known_at": "2026-01-02",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-2-default",
+                "entity_id": "leveraged-covenant_lite-observed-2",
+                "event_at": "2026-01-01",
+                "known_at": "2026-01-02",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-3-default",
+                "entity_id": "leveraged-covenant_lite-observed-3",
+                "event_at": "2026-01-01",
+                "known_at": "2026-01-02",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-4-default",
+                "entity_id": "leveraged-covenant_lite-observed-4",
+                "event_at": "2026-01-01",
+                "known_at": "2026-01-02",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-5-default",
+                "entity_id": "leveraged-covenant_lite-observed-5",
+                "event_at": "2026-01-01",
+                "known_at": "2026-01-02",
+                "event": "default",
+                "default_definition": "first_default"
+              },
+              {
+                "event_id": "leveraged-covenant_lite-observed-21-exit",
+                "entity_id": "leveraged-covenant_lite-observed-21",
+                "event_at": "2024-12-31",
+                "known_at": "2025-01-01",
+                "event": "exit",
+                "default_definition": "first_default"
+              }
+            ],
+            "coverage": [
+              {
+                "entity_id": "leveraged-covenant_lite-observed-0",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-1",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-2",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-3",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-4",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-5",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-6",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-7",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-8",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-9",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-10",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-11",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-12",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-13",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-14",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-15",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-16",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-17",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-18",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-19",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-20",
+                "complete_through": "2024-08-31",
+                "known_at": "2026-01-03"
+              },
+              {
+                "entity_id": "leveraged-covenant_lite-observed-21",
+                "complete_through": "2026-01-01",
+                "known_at": "2026-01-03"
+              }
+            ],
+            "target_contract": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "first_default",
+              "unit": "obligor",
+              "horizon_days": 731,
+              "default_grade": "D"
+            },
+            "evaluation_cutoff": "2026-01-03"
+          },
+          "recovery_episodes": {
+            "default_events": [
+              {
+                "episode_id": "leveraged-covenant_lite-workout",
+                "entity_id": "leveraged-covenant_lite",
+                "default_at": "2026-01-01",
+                "known_at": "2026-01-02",
+                "ead": 114,
+                "currency": "EUR"
+              }
+            ],
+            "recovery_cashflows": [
+              {
+                "cashflow_id": "leveraged-covenant_lite-workout-recovery",
+                "episode_id": "leveraged-covenant_lite-workout",
+                "cashflow_at": "2026-07-01",
+                "known_at": "2026-07-02",
+                "amount": 95,
+                "kind": "recovery",
+                "currency": "EUR"
+              },
+              {
+                "cashflow_id": "leveraged-covenant_lite-workout-cost",
+                "episode_id": "leveraged-covenant_lite-workout",
+                "cashflow_at": "2026-07-01",
+                "known_at": "2026-07-02",
+                "amount": 8,
+                "kind": "cost",
+                "currency": "EUR"
+              }
+            ],
+            "cures": [],
+            "reopening_days": 90,
+            "evaluation_cutoff": "2026-07-04"
+          },
+          "recovery_value": {
+            "cashflows": [
+              {
+                "cashflow_id": "leveraged-covenant_lite-workout-recovery",
+                "cashflow_date": "2026-07-01",
+                "known_at": "2026-07-02",
+                "currency": "EUR",
+                "kind": "RECOVERY",
+                "amount": 95
+              },
+              {
+                "cashflow_id": "leveraged-covenant_lite-workout-cost",
+                "cashflow_date": "2026-07-01",
+                "known_at": "2026-07-02",
+                "currency": "EUR",
+                "kind": "DIRECT_COST",
+                "amount": 8
+              }
+            ],
+            "discount_curve": {
+              "anchor_date": "2026-01-01",
+              "known_at": "2026-01-01",
+              "discount_basis": "Declared effective annual five-percent default-date valuation",
+              "points": [
+                {
+                  "cashflow_date": "2026-07-01",
+                  "discount_factor": 0.9760957678743127
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2026-01-01",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2026-07-01",
+                  "rate": 1
+                }
+              ]
+            },
+            "default_date": "2026-01-01",
+            "evaluation_cutoff": "2026-07-04",
+            "reporting_currency": "EUR"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2274 @@
+{
+  "data_origin": "SYNTHETIC",
+  "description": "Independent historical event cohorts for retail competing exits; all fits precede the 2024 application/transition examples.",
+  "cases": {
+    "RETAIL_RESIDENTIAL_MORTGAGE": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_RESIDENTIAL_MORTGAGE-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. monthly mortgage instalment; capital remains after temporary relief"
+    },
+    "RETAIL_HOME_EQUITY_LINE": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_HOME_EQUITY_LINE-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. interest-only line; undrawn commitment is not past-due principal"
+    },
+    "RETAIL_UNSECURED_INSTALLMENT": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_UNSECURED_INSTALLMENT-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. fixed instalment; reduced first payment is recovered in period three"
+    },
+    "RETAIL_EDUCATION_LOAN": {
+      "step_days": 90,
+      "target": {
+        "event": "default",
+        "horizon": 360,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_EDUCATION_LOAN-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-0",
+          "start": 0,
+          "stop": 90,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-1",
+          "start": 0,
+          "stop": 90,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-2",
+          "start": 0,
+          "stop": 90,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-3",
+          "start": 0,
+          "stop": 180,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-4",
+          "start": 0,
+          "stop": 180,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-5",
+          "start": 0,
+          "stop": 180,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-6",
+          "start": 0,
+          "stop": 180,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-cs-7",
+          "start": 0,
+          "stop": 180,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        90,
+        180,
+        270,
+        360,
+        360
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-0",
+          "start": 0,
+          "stop": 90,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-1",
+          "start": 0,
+          "stop": 90,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-2",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-3",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-4",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-5",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-6",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-7",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-8",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-grouped-9",
+          "start": 0,
+          "stop": 90,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        20.081714413358682,
+        33.10914970542981,
+        54.58775937413701,
+        148.38491436301155,
+        244.64536456131407,
+        403.3520163304258
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. first contractual payment after documented grace, not during grace"
+    },
+    "RETAIL_AUTO_LOAN": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_AUTO_LOAN-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. unpaid balloon; prospective extension preserves principal and accrued interest"
+    },
+    "RETAIL_AUTO_LEASE": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_AUTO_LEASE-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. finance-lease monetary claim; returned asset residual value is separate"
+    },
+    "RETAIL_CREDIT_CARD": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_CREDIT_CARD-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. minimum due is 50, not full statement balance; revolving principal remains"
+    },
+    "RETAIL_CHARGE_CARD": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_CHARGE_CARD-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. full statement due; instalment conversion is a proposal only"
+    },
+    "RETAIL_OVERDRAFT": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_OVERDRAFT-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_OVERDRAFT-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. explicit demand for excess over authorized 1000; authorized balance is not demanded"
+    },
+    "RETAIL_BNPL": {
+      "step_days": 7,
+      "target": {
+        "event": "default",
+        "horizon": 28,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_BNPL-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_BNPL-cs-0",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-cs-1",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-cs-2",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-cs-3",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-cs-4",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-cs-5",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-cs-6",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-cs-7",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        7,
+        14,
+        21,
+        28,
+        28
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_BNPL-grouped-0",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-1",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-2",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-3",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-4",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-5",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-6",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-7",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-8",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_BNPL-grouped-9",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        1.5619111210390086,
+        2.5751560882000963,
+        4.245714617988434,
+        11.541048894900896,
+        19.027972799213316,
+        31.371823492366453
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. four-payment plan; missed first instalment plus second due, no annualized good label"
+    },
+    "RETAIL_MICRO_LOAN": {
+      "step_days": 7,
+      "target": {
+        "event": "default",
+        "horizon": 28,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_MICRO_LOAN-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-0",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-1",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-2",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-3",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-4",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-5",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-6",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-cs-7",
+          "start": 0,
+          "stop": 14,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        7,
+        14,
+        21,
+        28,
+        28
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-0",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-1",
+          "start": 0,
+          "stop": 7,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-2",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-3",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-4",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-5",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-6",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-7",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-8",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-grouped-9",
+          "start": 0,
+          "stop": 7,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        1.5619111210390086,
+        2.5751560882000963,
+        4.245714617988434,
+        11.541048894900896,
+        19.027972799213316,
+        31.371823492366453
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. weekly collection with seasonal capacity; later catch-up can remain unaffordable"
+    },
+    "RETAIL_SMALL_BUSINESS_FINANCE": {
+      "step_days": 30,
+      "target": {
+        "event": "default",
+        "horizon": 120,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "active_at_origin"
+      },
+      "training": {
+        "data_fingerprint": "RETAIL_SMALL_BUSINESS_FINANCE-2022-observed-event-cohorts",
+        "split_id": "historical_development_2022",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC"
+      },
+      "cause_panel": [
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-2",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-4",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-5",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-6",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-cs-7",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "cause_events": [
+        "default",
+        "exit",
+        "exit",
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "fine_gray_times": [
+        30,
+        60,
+        90,
+        120,
+        120
+      ],
+      "fine_gray_events": [
+        "exit",
+        null,
+        "default",
+        "default",
+        null
+      ],
+      "grouped_panel": [
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        },
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-grouped-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled"
+        }
+      ],
+      "exit_durations": [
+        6.693904804452894,
+        11.03638323514327,
+        18.195919791379,
+        49.461638121003844,
+        81.54845485377135,
+        134.45067211014194
+      ],
+      "interpretation": "Time unit days; separate observed cohorts for competing-risk, grouped and time-to-exit estimands. working-capital principal; owner transfer is not additional operating income"
+    }
+  }
+}

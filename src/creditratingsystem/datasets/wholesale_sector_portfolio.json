@@ -1,0 +1,984 @@
+{
+  "data_origin": "SYNTHETIC",
+  "positions": [
+    {
+      "position_id": "sector-history-bank-position",
+      "claim_id": "sector-history-bank-claim",
+      "facility_id": "sector-history-bank-facility",
+      "entity_id": "sector-history-bank",
+      "currency": "EUR",
+      "ead": 165.13346403257427,
+      "facility_ead": 165.13346403257427,
+      "sector": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "region": "SYNTHETIC_REFERENCE",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "sector-history-life-position",
+      "claim_id": "sector-history-life-claim",
+      "facility_id": "sector-history-life-facility",
+      "entity_id": "sector-history-life",
+      "currency": "EUR",
+      "ead": 176.14236163474587,
+      "facility_ead": 176.14236163474587,
+      "sector": "INSURER_EXPOSURE",
+      "region": "SYNTHETIC_REFERENCE",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "sector-history-NAV_backed-position",
+      "claim_id": "sector-history-NAV_backed-claim",
+      "facility_id": "sector-history-NAV_backed-facility",
+      "entity_id": "sector-history-NAV_backed",
+      "currency": "EUR",
+      "ead": 187.1512592369175,
+      "facility_ead": 187.1512592369175,
+      "sector": "FUND_FINANCE",
+      "region": "SYNTHETIC_REFERENCE",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "sector-history-foreign_currency-position",
+      "claim_id": "sector-history-foreign_currency-claim",
+      "facility_id": "sector-history-foreign_currency-facility",
+      "entity_id": "sector-history-foreign_currency",
+      "currency": "EUR",
+      "ead": 178.3441411551802,
+      "facility_ead": 178.3441411551802,
+      "sector": "SOVEREIGN_DEBT",
+      "region": "SYNTHETIC_REFERENCE",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "sector-history-region-position",
+      "claim_id": "sector-history-region-claim",
+      "facility_id": "sector-history-region-facility",
+      "entity_id": "sector-history-region",
+      "currency": "EUR",
+      "ead": 209.16905444126073,
+      "facility_ead": 209.16905444126073,
+      "sector": "PUBLIC_SECTOR_DEBT",
+      "region": "SYNTHETIC_REFERENCE",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "sector-history-multilateral_lender-position",
+      "claim_id": "sector-history-multilateral_lender-claim",
+      "facility_id": "sector-history-multilateral_lender-facility",
+      "entity_id": "sector-history-multilateral_lender",
+      "currency": "EUR",
+      "ead": 220.17795204343236,
+      "facility_ead": 220.17795204343236,
+      "sector": "SUPRANATIONAL_DEBT",
+      "region": "SYNTHETIC_REFERENCE",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "sector-history-housing_association-position",
+      "claim_id": "sector-history-housing_association-claim",
+      "facility_id": "sector-history-housing_association-facility",
+      "entity_id": "sector-history-housing_association",
+      "currency": "EUR",
+      "ead": 231.18684964560396,
+      "facility_ead": 231.18684964560396,
+      "sector": "PUBLIC_SERVICE_FINANCE",
+      "region": "SYNTHETIC_REFERENCE",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    }
+  ],
+  "loss_records": [
+    {
+      "prediction_id": "sector-history-bank-loss-forecast",
+      "entity_id": "sector-history-bank",
+      "cluster_id": "sector-history-bank",
+      "segment": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "as_of": "2024-03-01",
+      "forecast_known_at": "2024-03-01",
+      "horizon_end": "2025-03-01",
+      "model_id": "sector-conditional-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-04",
+      "workout_closed_at": "2024-09-03",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.21149322652747238,
+      "realized_lgd": 0.24583551334209142,
+      "ead_at_default": 150,
+      "predicted_ead": 133.48665359674257,
+      "realized_ead": 150,
+      "drawn_at_reference": 165.13346403257427,
+      "limit_at_reference": 165.13346403257427,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "sector-history-life-loss-forecast",
+      "entity_id": "sector-history-life",
+      "cluster_id": "sector-history-life",
+      "segment": "INSURER_EXPOSURE",
+      "as_of": "2024-03-01",
+      "forecast_known_at": "2024-03-01",
+      "horizon_end": "2025-03-01",
+      "model_id": "sector-conditional-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-04",
+      "workout_closed_at": "2024-09-03",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.4334910447598078,
+      "realized_lgd": 0.5204497557664386,
+      "ead_at_default": 160,
+      "predicted_ead": 142.3857638365254,
+      "realized_ead": 160,
+      "drawn_at_reference": 176.14236163474587,
+      "limit_at_reference": 176.14236163474587,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "sector-history-NAV_backed-loss-forecast",
+      "entity_id": "sector-history-NAV_backed",
+      "cluster_id": "sector-history-NAV_backed",
+      "segment": "FUND_FINANCE",
+      "as_of": "2024-03-01",
+      "forecast_known_at": "2024-03-01",
+      "horizon_end": "2025-03-01",
+      "model_id": "sector-conditional-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-04",
+      "workout_closed_at": "2024-09-03",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.7269052956087452,
+      "realized_lgd": 0.81483429483591,
+      "ead_at_default": 170,
+      "predicted_ead": 151.28487407630826,
+      "realized_ead": 170,
+      "drawn_at_reference": 187.1512592369175,
+      "limit_at_reference": 187.1512592369175,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "sector-history-foreign_currency-loss-forecast",
+      "entity_id": "sector-history-foreign_currency",
+      "cluster_id": "sector-history-foreign_currency",
+      "segment": "SOVEREIGN_DEBT",
+      "as_of": "2024-03-01",
+      "forecast_known_at": "2024-03-01",
+      "horizon_end": "2025-03-01",
+      "model_id": "sector-conditional-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-04",
+      "workout_closed_at": "2024-09-03",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.5578466690808257,
+      "realized_lgd": 0.6611724770087657,
+      "ead_at_default": 162.0,
+      "predicted_ead": 144.165585884482,
+      "realized_ead": 162.0,
+      "drawn_at_reference": 178.3441411551802,
+      "limit_at_reference": 178.3441411551802,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "sector-history-region-loss-forecast",
+      "entity_id": "sector-history-region",
+      "cluster_id": "sector-history-region",
+      "segment": "PUBLIC_SECTOR_DEBT",
+      "as_of": "2024-03-01",
+      "forecast_known_at": "2024-03-01",
+      "horizon_end": "2025-03-01",
+      "model_id": "sector-conditional-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-04",
+      "workout_closed_at": "2024-09-03",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.6683850018106192,
+      "realized_lgd": 0.6738281739625979,
+      "ead_at_default": 190,
+      "predicted_ead": 169.0830945558739,
+      "realized_ead": 190,
+      "drawn_at_reference": 209.16905444126073,
+      "limit_at_reference": 209.16905444126073,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "sector-history-multilateral_lender-loss-forecast",
+      "entity_id": "sector-history-multilateral_lender",
+      "cluster_id": "sector-history-multilateral_lender",
+      "segment": "SUPRANATIONAL_DEBT",
+      "as_of": "2024-03-01",
+      "forecast_known_at": "2024-03-01",
+      "horizon_end": "2025-03-01",
+      "model_id": "sector-conditional-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-04",
+      "workout_closed_at": "2024-09-03",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.5191582526253978,
+      "realized_lgd": 0.5376643799184126,
+      "ead_at_default": 200,
+      "predicted_ead": 177.98220479565677,
+      "realized_ead": 200,
+      "drawn_at_reference": 220.17795204343236,
+      "limit_at_reference": 220.17795204343236,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "sector-history-housing_association-loss-forecast",
+      "entity_id": "sector-history-housing_association",
+      "cluster_id": "sector-history-housing_association",
+      "segment": "PUBLIC_SERVICE_FINANCE",
+      "as_of": "2024-03-01",
+      "forecast_known_at": "2024-03-01",
+      "horizon_end": "2025-03-01",
+      "model_id": "sector-conditional-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-04",
+      "workout_closed_at": "2024-09-03",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.8684067467502457,
+      "realized_lgd": 0.8688409588421029,
+      "ead_at_default": 210,
+      "predicted_ead": 186.8813150354396,
+      "realized_ead": 210,
+      "drawn_at_reference": 231.18684964560396,
+      "limit_at_reference": 231.18684964560396,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    }
+  ],
+  "design": {
+    "model_id": "sector-conditional-loss",
+    "model_version": "1",
+    "parameter_version": "1",
+    "data_fingerprint": "seven-independent-observed-sector-claims",
+    "population_id": "seven-defaulted-sector-claims",
+    "split_id": "out_of_time_2024",
+    "prediction_origin": "HOLDOUT",
+    "evaluation_cutoff": "2025-03-02",
+    "target": {
+      "event": "default",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "default"
+    },
+    "currency": "EUR"
+  },
+  "exposures": [
+    {
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "arguments": {
+        "contract": {
+          "facility_id": "sector-history-bank-facility",
+          "currency": "EUR",
+          "as_of": "2024-03-01",
+          "drawn_principal": 165.13346403257427,
+          "credit_limit": 165.13346403257427,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-05-01",
+            "known_at": "2024-03-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 33.02669280651485
+          }
+        ],
+        "annual_interest_rates": [
+          0.05
+        ],
+        "period_end_dates": [
+          "2024-05-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 166.51334640325743,
+      "reference_ead_after": 133.48665359674257
+    },
+    {
+      "product": "INSURER_EXPOSURE",
+      "arguments": {
+        "contract": {
+          "facility_id": "sector-history-life-facility",
+          "currency": "EUR",
+          "as_of": "2024-03-01",
+          "drawn_principal": 176.14236163474587,
+          "credit_limit": 176.14236163474587,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-05-01",
+            "known_at": "2024-03-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 35.22847232694917
+          }
+        ],
+        "annual_interest_rates": [
+          0.05
+        ],
+        "period_end_dates": [
+          "2024-05-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 177.61423616347457,
+      "reference_ead_after": 142.3857638365254
+    },
+    {
+      "product": "FUND_FINANCE",
+      "arguments": {
+        "contract": {
+          "facility_id": "sector-history-NAV_backed-facility",
+          "currency": "EUR",
+          "as_of": "2024-03-01",
+          "drawn_principal": 187.1512592369175,
+          "credit_limit": 187.1512592369175,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-05-01",
+            "known_at": "2024-03-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 37.4302518473835
+          }
+        ],
+        "annual_interest_rates": [
+          0.05
+        ],
+        "period_end_dates": [
+          "2024-05-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 188.71512592369174,
+      "reference_ead_after": 151.28487407630826
+    },
+    {
+      "product": "SOVEREIGN_DEBT",
+      "arguments": {
+        "contract": {
+          "facility_id": "sector-history-foreign_currency-facility",
+          "currency": "USD",
+          "as_of": "2024-03-01",
+          "drawn_principal": 198.16015683908913,
+          "credit_limit": 198.16015683908913,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-05-01",
+            "known_at": "2024-03-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 39.63203136781783
+          }
+        ],
+        "annual_interest_rates": [
+          0.05
+        ],
+        "period_end_dates": [
+          "2024-05-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "USD"
+      },
+      "reference_ead_before": 199.81601568390892,
+      "reference_ead_after": 160.1839843160911
+    },
+    {
+      "product": "PUBLIC_SECTOR_DEBT",
+      "arguments": {
+        "contract": {
+          "facility_id": "sector-history-region-facility",
+          "currency": "EUR",
+          "as_of": "2024-03-01",
+          "drawn_principal": 209.16905444126073,
+          "credit_limit": 209.16905444126073,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-05-01",
+            "known_at": "2024-03-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 41.833810888252145
+          }
+        ],
+        "annual_interest_rates": [
+          0.05
+        ],
+        "period_end_dates": [
+          "2024-05-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 210.91690544412606,
+      "reference_ead_after": 169.0830945558739
+    },
+    {
+      "product": "SUPRANATIONAL_DEBT",
+      "arguments": {
+        "contract": {
+          "facility_id": "sector-history-multilateral_lender-facility",
+          "currency": "EUR",
+          "as_of": "2024-03-01",
+          "drawn_principal": 220.17795204343236,
+          "credit_limit": 220.17795204343236,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-05-01",
+            "known_at": "2024-03-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 44.035590408686474
+          }
+        ],
+        "annual_interest_rates": [
+          0.05
+        ],
+        "period_end_dates": [
+          "2024-05-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 222.01779520434323,
+      "reference_ead_after": 177.98220479565677
+    },
+    {
+      "product": "PUBLIC_SERVICE_FINANCE",
+      "arguments": {
+        "contract": {
+          "facility_id": "sector-history-housing_association-facility",
+          "currency": "EUR",
+          "as_of": "2024-03-01",
+          "drawn_principal": 231.18684964560396,
+          "credit_limit": 231.18684964560396,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-05-01",
+            "known_at": "2024-03-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 46.237369929120796
+          }
+        ],
+        "annual_interest_rates": [
+          0.05
+        ],
+        "period_end_dates": [
+          "2024-05-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 233.11868496456037,
+      "reference_ead_after": 186.8813150354396
+    }
+  ],
+  "forecast_sources": [
+    {
+      "case_id": "sector-history-bank",
+      "model_id": "financial_institution_exposure-bank-scorecard",
+      "model_hash": "2cd381673d433bee03b8af603eb6047c71245e04f705cd4a742387e7ad53e899",
+      "forecast_pd": 0.01594142257483962,
+      "conditional_loss_scenario": {
+        "default_date": "2024-05-01",
+        "recovery_date": "2024-09-01",
+        "net_recovery": 107,
+        "discount_rate": 0.05,
+        "forecast_known_at": "2024-03-01",
+        "reference": "Independent prospective claim cash assumption; not later realized settlement"
+      },
+      "currency": "EUR",
+      "reporting_currency": "EUR",
+      "fx_rate": 1,
+      "fx_known_at": "2024-03-01",
+      "fx_contract": "Frozen reference translation at all comparison dates; no currency stress or hedge claim",
+      "observed_ead_bridge": {
+        "principal_at_origin": 165.13346403257427,
+        "scheduled_principal_repayment": 33.02669280651485,
+        "actual_principal_repayment": 16.513346403257426,
+        "accrued_interest": 1.3798823706831547,
+        "repayment_date": "2024-05-01",
+        "repayment_known_at": "2024-05-02",
+        "default_timing": "AFTER_PERIOD_END_EVENTS",
+        "observed_ead": 150.0
+      }
+    },
+    {
+      "case_id": "sector-history-life",
+      "model_id": "insurer_exposure-life-scorecard",
+      "model_hash": "236f030db9968ea306b36849cb179d5524fc88f5d8e5b6695ab754c2bbc451f3",
+      "forecast_pd": 0.056869203152701976,
+      "conditional_loss_scenario": {
+        "default_date": "2024-05-01",
+        "recovery_date": "2024-09-01",
+        "net_recovery": 82,
+        "discount_rate": 0.05,
+        "forecast_known_at": "2024-03-01",
+        "reference": "Independent prospective claim cash assumption; not later realized settlement"
+      },
+      "currency": "EUR",
+      "reporting_currency": "EUR",
+      "fx_rate": 1,
+      "fx_known_at": "2024-03-01",
+      "fx_contract": "Frozen reference translation at all comparison dates; no currency stress or hedge claim",
+      "observed_ead_bridge": {
+        "principal_at_origin": 176.14236163474587,
+        "scheduled_principal_repayment": 35.22847232694917,
+        "actual_principal_repayment": 17.614236163474587,
+        "accrued_interest": 1.4718745287286983,
+        "repayment_date": "2024-05-01",
+        "repayment_known_at": "2024-05-02",
+        "default_timing": "AFTER_PERIOD_END_EVENTS",
+        "observed_ead": 160.0
+      }
+    },
+    {
+      "case_id": "sector-history-NAV_backed",
+      "model_id": "fund-NAV_backed-score",
+      "model_hash": "99ac76caa5c8d454f5b803a669ff495c12b492d31cf62067409af16efe274f2c",
+      "forecast_pd": 0.03465796004024968,
+      "conditional_loss_scenario": {
+        "default_date": "2024-05-01",
+        "recovery_date": "2024-09-01",
+        "net_recovery": 42,
+        "discount_rate": 0.05,
+        "forecast_known_at": "2024-03-01",
+        "reference": "Independent prospective claim cash assumption; not later realized settlement"
+      },
+      "currency": "EUR",
+      "reporting_currency": "EUR",
+      "fx_rate": 1,
+      "fx_known_at": "2024-03-01",
+      "fx_contract": "Frozen reference translation at all comparison dates; no currency stress or hedge claim",
+      "observed_ead_bridge": {
+        "principal_at_origin": 187.1512592369175,
+        "scheduled_principal_repayment": 37.4302518473835,
+        "actual_principal_repayment": 18.71512592369175,
+        "accrued_interest": 1.5638666867742421,
+        "repayment_date": "2024-05-01",
+        "repayment_known_at": "2024-05-02",
+        "default_timing": "AFTER_PERIOD_END_EVENTS",
+        "observed_ead": 170.0
+      }
+    },
+    {
+      "case_id": "sector-history-foreign_currency",
+      "model_id": "sovereign-foreign_currency",
+      "model_hash": "728cef681d7d4a3829f667914f7d349ad26d2bde5cde0c9a6c4dd35428ebdd45",
+      "forecast_pd": 0.08000000000011705,
+      "conditional_loss_scenario": {
+        "default_date": "2024-05-01",
+        "recovery_date": "2024-09-01",
+        "net_recovery": 72,
+        "discount_rate": 0.05,
+        "forecast_known_at": "2024-03-01",
+        "reference": "Independent prospective claim cash assumption; not later realized settlement"
+      },
+      "currency": "USD",
+      "reporting_currency": "EUR",
+      "fx_rate": 0.9,
+      "fx_known_at": "2024-03-01",
+      "fx_contract": "Frozen reference translation at all comparison dates; no currency stress or hedge claim",
+      "observed_ead_bridge": {
+        "principal_at_origin": 198.16015683908913,
+        "scheduled_principal_repayment": 39.63203136781783,
+        "actual_principal_repayment": 19.816015683908915,
+        "accrued_interest": 1.6558588448197862,
+        "repayment_date": "2024-05-01",
+        "repayment_known_at": "2024-05-02",
+        "default_timing": "AFTER_PERIOD_END_EVENTS",
+        "observed_ead": 180.0
+      }
+    },
+    {
+      "case_id": "sector-history-region",
+      "model_id": "public_sector_debt-region-scorecard",
+      "model_hash": "c396cc2debf0a169dd18a9485823cc09301844d0b8fc670f16f4694931962236",
+      "forecast_pd": 0.08378807860679709,
+      "conditional_loss_scenario": {
+        "default_date": "2024-05-01",
+        "recovery_date": "2024-09-01",
+        "net_recovery": 57,
+        "discount_rate": 0.05,
+        "forecast_known_at": "2024-03-01",
+        "reference": "Independent prospective claim cash assumption; not later realized settlement"
+      },
+      "currency": "EUR",
+      "reporting_currency": "EUR",
+      "fx_rate": 1,
+      "fx_known_at": "2024-03-01",
+      "fx_contract": "Frozen reference translation at all comparison dates; no currency stress or hedge claim",
+      "observed_ead_bridge": {
+        "principal_at_origin": 209.16905444126073,
+        "scheduled_principal_repayment": 41.833810888252145,
+        "actual_principal_repayment": 20.916905444126073,
+        "accrued_interest": 1.7478510028653294,
+        "repayment_date": "2024-05-01",
+        "repayment_known_at": "2024-05-02",
+        "default_timing": "AFTER_PERIOD_END_EVENTS",
+        "observed_ead": 190.0
+      }
+    },
+    {
+      "case_id": "sector-history-multilateral_lender",
+      "model_id": "supranational_debt-multilateral_lender-scorecard",
+      "model_hash": "79d80b93c8c316690b48f61e9e7edaf68b2b67fc1a54927a33db47732bc34d5f",
+      "forecast_pd": 0.11045274035067928,
+      "conditional_loss_scenario": {
+        "default_date": "2024-05-01",
+        "recovery_date": "2024-09-01",
+        "net_recovery": 87,
+        "discount_rate": 0.05,
+        "forecast_known_at": "2024-03-01",
+        "reference": "Independent prospective claim cash assumption; not later realized settlement"
+      },
+      "currency": "EUR",
+      "reporting_currency": "EUR",
+      "fx_rate": 1,
+      "fx_known_at": "2024-03-01",
+      "fx_contract": "Frozen reference translation at all comparison dates; no currency stress or hedge claim",
+      "observed_ead_bridge": {
+        "principal_at_origin": 220.17795204343236,
+        "scheduled_principal_repayment": 44.035590408686474,
+        "actual_principal_repayment": 22.017795204343237,
+        "accrued_interest": 1.8398431609108734,
+        "repayment_date": "2024-05-01",
+        "repayment_known_at": "2024-05-02",
+        "default_timing": "AFTER_PERIOD_END_EVENTS",
+        "observed_ead": 200.0
+      }
+    },
+    {
+      "case_id": "sector-history-housing_association",
+      "model_id": "service-housing_association",
+      "model_hash": "16af638b22ee5ccb2afd18c7c48b1f46003d23be246e474696f721c412a1bbf9",
+      "forecast_pd": 0.07173408420761407,
+      "conditional_loss_scenario": {
+        "default_date": "2024-05-01",
+        "recovery_date": "2024-09-01",
+        "net_recovery": 25,
+        "discount_rate": 0.05,
+        "forecast_known_at": "2024-03-01",
+        "reference": "Independent prospective claim cash assumption; not later realized settlement"
+      },
+      "currency": "EUR",
+      "reporting_currency": "EUR",
+      "fx_rate": 1,
+      "fx_known_at": "2024-03-01",
+      "fx_contract": "Frozen reference translation at all comparison dates; no currency stress or hedge claim",
+      "observed_ead_bridge": {
+        "principal_at_origin": 231.18684964560396,
+        "scheduled_principal_repayment": 46.237369929120796,
+        "actual_principal_repayment": 23.118684964560398,
+        "accrued_interest": 1.9318353189564168,
+        "repayment_date": "2024-05-01",
+        "repayment_known_at": "2024-05-02",
+        "default_timing": "AFTER_PERIOD_END_EVENTS",
+        "observed_ead": 209.99999999999997
+      }
+    }
+  ],
+  "graph_policy": {
+    "policy_id": "wholesale-connections",
+    "version": "1",
+    "edge_types": [
+      "CROSS_DEFAULT"
+    ]
+  },
+  "default_link_policy": {
+    "policy_id": "wholesale-default",
+    "version": "1",
+    "edge_types": [
+      "CROSS_DEFAULT"
+    ],
+    "direction_policy": "mutual_only",
+    "transitive": true
+  },
+  "portfolio_contract": {
+    "portfolio_id": "seven-sector-claims",
+    "version": "1",
+    "currency": "EUR",
+    "as_of": "2024-03-01",
+    "known_at": "2024-03-01",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "initially_performing",
+    "event": "first_default"
+  },
+  "workout_policy": {
+    "method": "closed_only",
+    "reference": "Separate observed settlements; estimated open workouts never substituted for realized LGD"
+  },
+  "weighting_policy": {
+    "method": "equal",
+    "reference": "Each observed defaulted facility counted once"
+  },
+  "event_losses": [
+    {
+      "case_id": "sector-history-bank",
+      "arguments": {
+        "states": [
+          {
+            "state_id": "performing",
+            "events": {
+              "default": false
+            },
+            "probability": 0.9840585774251603,
+            "conditional_loss": 0
+          },
+          {
+            "state_id": "default",
+            "events": {
+              "default": true
+            },
+            "probability": 0.01594142257483962,
+            "conditional_loss": 28.231523067530105
+          }
+        ],
+        "event_names": [
+          "default"
+        ],
+        "currency": "EUR",
+        "probability_measure": "PHYSICAL"
+      },
+      "reference_expected_loss": 0.45005063915082993
+    },
+    {
+      "case_id": "sector-history-life",
+      "arguments": {
+        "states": [
+          {
+            "state_id": "performing",
+            "events": {
+              "default": false
+            },
+            "probability": 0.9431307968472981,
+            "conditional_loss": 0
+          },
+          {
+            "state_id": "default",
+            "events": {
+              "default": true
+            },
+            "probability": 0.056869203152701976,
+            "conditional_loss": 61.72295352441866
+          }
+        ],
+        "event_names": [
+          "default"
+        ],
+        "currency": "EUR",
+        "probability_measure": "PHYSICAL"
+      },
+      "reference_expected_loss": 3.510135183164947
+    },
+    {
+      "case_id": "sector-history-NAV_backed",
+      "arguments": {
+        "states": [
+          {
+            "state_id": "performing",
+            "events": {
+              "default": false
+            },
+            "probability": 0.9653420399597503,
+            "conditional_loss": 0
+          },
+          {
+            "state_id": "default",
+            "events": {
+              "default": true
+            },
+            "probability": 0.03465796004024968,
+            "conditional_loss": 109.96977611157065
+          }
+        ],
+        "event_names": [
+          "default"
+        ],
+        "currency": "EUR",
+        "probability_measure": "PHYSICAL"
+      },
+      "reference_expected_loss": 3.8113281061100195
+    },
+    {
+      "case_id": "sector-history-foreign_currency",
+      "arguments": {
+        "states": [
+          {
+            "state_id": "performing",
+            "events": {
+              "default": false
+            },
+            "probability": 0.9199999999998829,
+            "conditional_loss": 0
+          },
+          {
+            "state_id": "default",
+            "events": {
+              "default": true
+            },
+            "probability": 0.08000000000011705,
+            "conditional_loss": 89.35810209082665
+          }
+        ],
+        "event_names": [
+          "default"
+        ],
+        "currency": "USD",
+        "probability_measure": "PHYSICAL"
+      },
+      "reference_expected_loss": 7.148648167276591
+    },
+    {
+      "case_id": "sector-history-region",
+      "arguments": {
+        "states": [
+          {
+            "state_id": "performing",
+            "events": {
+              "default": false
+            },
+            "probability": 0.916211921393203,
+            "conditional_loss": 0
+          },
+          {
+            "state_id": "default",
+            "events": {
+              "default": true
+            },
+            "probability": 0.08378807860679709,
+            "conditional_loss": 113.01260446087288
+          }
+        ],
+        "event_names": [
+          "default"
+        ],
+        "currency": "EUR",
+        "probability_measure": "PHYSICAL"
+      },
+      "reference_expected_loss": 9.469108986126484
+    },
+    {
+      "case_id": "sector-history-multilateral_lender",
+      "arguments": {
+        "states": [
+          {
+            "state_id": "performing",
+            "events": {
+              "default": false
+            },
+            "probability": 0.8895472596493207,
+            "conditional_loss": 0
+          },
+          {
+            "state_id": "default",
+            "events": {
+              "default": true
+            },
+            "probability": 0.11045274035067928,
+            "conditional_loss": 92.40093044012887
+          }
+        ],
+        "event_names": [
+          "default"
+        ],
+        "currency": "EUR",
+        "probability_measure": "PHYSICAL"
+      },
+      "reference_expected_loss": 10.205935978064732
+    },
+    {
+      "case_id": "sector-history-housing_association",
+      "arguments": {
+        "states": [
+          {
+            "state_id": "performing",
+            "events": {
+              "default": false
+            },
+            "probability": 0.9282659157923859,
+            "conditional_loss": 0
+          },
+          {
+            "state_id": "default",
+            "events": {
+              "default": true
+            },
+            "probability": 0.07173408420761407,
+            "conditional_loss": 162.2889948183339
+          }
+        ],
+        "event_names": [
+          "default"
+        ],
+        "currency": "EUR",
+        "probability_measure": "PHYSICAL"
+      },
+      "reference_expected_loss": 11.641652420267407
+    }
+  ]
+}

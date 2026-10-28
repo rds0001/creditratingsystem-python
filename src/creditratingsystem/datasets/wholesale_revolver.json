@@ -1,0 +1,387 @@
+{
+  "version": "1",
+  "product": "CORPORATE_REVOLVING_COMMITMENT",
+  "data_origin": "SYNTHETIC",
+  "as_of": "2024-01-01",
+  "known_at": "2024-01-01",
+  "target": {
+    "event": "default",
+    "horizon": 30,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "ratio_spec": [
+    {
+      "name": "net_debt_ebitda",
+      "numerator": {
+        "debt": 1,
+        "cash": -1
+      },
+      "denominator": {
+        "ebitda": 1
+      },
+      "denominator_policy": "positive",
+      "output_unit": "dimensionless"
+    }
+  ],
+  "training": {
+    "X": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      9,
+      1,
+      9,
+      1
+    ],
+    "feature_order": [
+      "net_debt_ebitda"
+    ],
+    "metadata": {
+      "data_fingerprint": "synthetic-revolver-observed-2020",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "calibration": {
+    "base_pd": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "outcomes": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "groups": [
+      "working",
+      "working",
+      "contingent",
+      "contingent",
+      "other",
+      "other"
+    ],
+    "weights": [
+      9,
+      1,
+      9,
+      1,
+      9,
+      1
+    ],
+    "metadata": {
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "calibration": {
+        "start": "2021-01-01",
+        "end": "2022-01-01",
+        "known_at": "2022-01-02",
+        "split_id": "calibration_2021",
+        "prediction_origin": "HOLDOUT"
+      },
+      "base_model_version": "1",
+      "population_definition": "Synthetic performing revolving commitments",
+      "outcome_policy": "Observed default within30calendar days",
+      "weight_type": "frequency",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "elicitation": {
+    "elicitation": {
+      "method": "moments",
+      "mean": 0.1,
+      "concentration": 20
+    },
+    "elicitation_contract": {
+      "population_id": "synthetic-wholesale-revolvers",
+      "reference": "Declared independent expert benchmark; not pseudo-observed outcomes",
+      "known_at": "2023-12-01",
+      "expert_ids": [
+        "credit-expert"
+      ],
+      "evidence_ids": [
+        "expert-session-1"
+      ],
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      }
+    }
+  },
+  "rubric": {
+    "criteria": [
+      {
+        "criterion_id": "management",
+        "kind": "categorical",
+        "weight": 1,
+        "categories": [
+          "experienced",
+          "weak"
+        ],
+        "required_evidence_types": [
+          "audit"
+        ],
+        "minimum_independent_sources": 1,
+        "missing_policy": "refer",
+        "not_applicable_policy": "refer",
+        "levels": [
+          {
+            "level_id": "experienced",
+            "values": [
+              "experienced"
+            ],
+            "points": 20
+          },
+          {
+            "level_id": "weak",
+            "values": [
+              "weak"
+            ],
+            "points": 80
+          }
+        ]
+      }
+    ],
+    "rubric_contract": {
+      "rubric_id": "revolver-management",
+      "version": "1",
+      "population_id": "wholesale",
+      "reference": "Synthetic management risk evidence; not a PD mapping",
+      "known_at": "2023-12-01",
+      "ordered_grades": [
+        "A",
+        "B"
+      ],
+      "score_direction": "higher_is_worse",
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      }
+    },
+    "score_policy": {
+      "score_floor": 0,
+      "score_cap": 100,
+      "minimum_evidence_coverage": 1,
+      "unresolved_interaction_policy": "apply_adverse"
+    },
+    "interactions": [],
+    "rating_limits": []
+  },
+  "evidence": [
+    {
+      "valid_from": "2023-12-01",
+      "valid_until": "2024-12-01",
+      "known_at": "2023-12-01",
+      "evidence_id": "management-audit",
+      "evidence_type": "audit",
+      "source_id": "independent-auditor",
+      "independence_group": "auditor",
+      "content_fingerprint": "synthetic-management-report-v1",
+      "status": "VERIFIED"
+    }
+  ],
+  "observations": [
+    {
+      "valid_from": "2023-12-01",
+      "valid_until": "2024-12-01",
+      "known_at": "2023-12-01",
+      "observation_id": "management-observation",
+      "criterion_id": "management",
+      "value": "experienced",
+      "not_applicable": false,
+      "evidence_ids": [
+        "management-audit"
+      ],
+      "observed_at": "2023-12-01"
+    }
+  ],
+  "variants": [
+    {
+      "id": "working_capital_line",
+      "limit": 100,
+      "planned_draw": 60,
+      "cancellable": false,
+      "group": "working"
+    },
+    {
+      "id": "contingent_commitment",
+      "limit": 200,
+      "planned_draw": 80,
+      "cancellable": false,
+      "group": "contingent"
+    },
+    {
+      "id": "cancellable",
+      "limit": 100,
+      "planned_draw": 60,
+      "cancellable": true,
+      "group": "other"
+    },
+    {
+      "id": "uncancellable",
+      "limit": 100,
+      "planned_draw": 60,
+      "cancellable": false,
+      "group": "other"
+    }
+  ],
+  "lgd_target": {
+    "event": "economic_loss",
+    "horizon": 30,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "given_default"
+  },
+  "lgd_training": {
+    "data_fingerprint": "synthetic-closed-workouts",
+    "split_id": "closed_2020",
+    "known_at": "2021-01-01",
+    "data_origin": "SYNTHETIC",
+    "workout_population": "closed_defaulted_episodes"
+  },
+  "ead_target": {
+    "event": "ead",
+    "horizon": 30,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "given_default",
+    "currency": "EUR"
+  },
+  "ead_training": {
+    "data_fingerprint": "synthetic-observed-undrawn-defaults",
+    "split_id": "default_2020",
+    "known_at": "2021-01-01",
+    "data_origin": "SYNTHETIC"
+  },
+  "exposure_episodes": [
+    {
+      "episode_id": "observed-0",
+      "reference_date": "2020-01-01",
+      "reference_known_at": "2020-01-01",
+      "default_date": "2020-01-31",
+      "default_known_at": "2020-01-31",
+      "features_observed_at": "2020-01-01",
+      "features_known_at": "2020-01-01",
+      "reference_drawn": 0,
+      "reference_limit": 100,
+      "ead_at_default": 25,
+      "currency": "EUR"
+    },
+    {
+      "episode_id": "observed-1",
+      "reference_date": "2020-01-01",
+      "reference_known_at": "2020-01-01",
+      "default_date": "2020-01-31",
+      "default_known_at": "2020-01-31",
+      "features_observed_at": "2020-01-01",
+      "features_known_at": "2020-01-01",
+      "reference_drawn": 0,
+      "reference_limit": 100,
+      "ead_at_default": 50,
+      "currency": "EUR"
+    },
+    {
+      "episode_id": "observed-2",
+      "reference_date": "2020-01-01",
+      "reference_known_at": "2020-01-01",
+      "default_date": "2020-01-31",
+      "default_known_at": "2020-01-31",
+      "features_observed_at": "2020-01-01",
+      "features_known_at": "2020-01-01",
+      "reference_drawn": 0,
+      "reference_limit": 100,
+      "ead_at_default": 75,
+      "currency": "EUR"
+    }
+  ],
+  "decision_policy": {
+    "schema_version": "1.0",
+    "policy_id": "synthetic-wholesale",
+    "version": "1",
+    "approval_reference": "Synthetic local demonstration only",
+    "known_at": "2023-12-01",
+    "effective_from": "2024-01-01",
+    "effective_until": "2025-01-01",
+    "default_action": "REFER",
+    "missing_action": "BLOCKED",
+    "target": {
+      "event": "default",
+      "horizon": 30,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "fields": {
+      "risk.pd": {
+        "type": "number"
+      }
+    },
+    "rules": [
+      {
+        "rule_id": "low-risk",
+        "priority": 1,
+        "action": "APPROVE",
+        "reason_code": "RISK_AND_GATES",
+        "when": [
+          {
+            "field": "risk.pd",
+            "op": "le",
+            "value": 0.11
+          }
+        ]
+      }
+    ]
+  },
+  "credit_gate_inputs": {
+    "available_cashflow": 20,
+    "debt_service_due": 10,
+    "currency": "EUR",
+    "operations_status": "CLEAR",
+    "evidence_reference": "Synthetic reviewed next30day cash budget and completed operations checks"
+  },
+  "hidden_truth": {
+    "pd": 0.1,
+    "ccf": 0.5,
+    "lgd": 0.4,
+    "expert_beta_alpha": 2,
+    "expert_beta_beta": 18,
+    "active_zero_balance_retained": true
+  }
+}

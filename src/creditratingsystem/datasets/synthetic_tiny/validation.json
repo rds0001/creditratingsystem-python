@@ -1,0 +1,156 @@
+{
+  "macro": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 612,
+    "table_counts": {
+      "latent_truth/macro_factors": 36,
+      "observable_inputs/macro_releases": 576
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 0,
+      "sum_conditional_pd": 0.0,
+      "latent_default_count": 0,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  },
+  "obligors": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 1762,
+    "table_counts": {
+      "latent_truth/country_transfer": 18,
+      "observable_inputs/obligors": 64,
+      "observable_inputs/financial_statements": 192,
+      "observable_inputs/external_opinions": 192,
+      "frozen_predictions/obligor_predictions": 192,
+      "latent_truth/obligor_period": 192,
+      "latent_truth/foreign_currency_risk": 192,
+      "observed_outcomes/obligor_labels": 192,
+      "observable_inputs/operating_assets": 192,
+      "observable_inputs/operating_contracts": 270,
+      "observable_inputs/rating_overrides": 18,
+      "observable_inputs/support_edges": 48
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 192,
+      "sum_conditional_pd": 4.23939677839638,
+      "latent_default_count": 0,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  },
+  "workouts": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 4869,
+    "table_counts": {
+      "observable_inputs/facilities": 128,
+      "observable_inputs/collateral": 128,
+      "observable_inputs/facility_exposures": 4608,
+      "latent_truth/analytical_workout_fixtures": 4,
+      "latent_truth/constructed_open_workouts": 1
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 0,
+      "sum_conditional_pd": 0.0,
+      "latent_default_count": 0,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  },
+  "retail": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 13808,
+    "table_counts": {
+      "observable_inputs/households": 160,
+      "observable_inputs/persons": 240,
+      "observable_inputs/household_memberships": 240,
+      "observable_inputs/applications": 320,
+      "observable_inputs/application_parties": 440,
+      "observable_inputs/bureau_pulls": 320,
+      "observable_inputs/bureau_revisions": 17,
+      "observable_inputs/transactions": 5760,
+      "frozen_predictions/application_predictions": 320,
+      "decision_history/decisions": 960,
+      "latent_truth/application_parameters": 320,
+      "observed_outcomes/application_labels": 320,
+      "observable_inputs/bureau_tradelines": 876,
+      "observable_inputs/accounts": 144,
+      "observable_inputs/account_months": 2830,
+      "observed_outcomes/account_events": 126,
+      "observed_outcomes/collections": 415
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 27,
+    "design_vs_realized": {
+      "risk_observations": 320,
+      "sum_conditional_pd": 57.70401007804042,
+      "latent_default_count": 59,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  },
+  "pools": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 2981,
+    "table_counts": {
+      "observable_inputs/pool_memberships": 80,
+      "latent_truth/contractual_asset_cashflows": 1920,
+      "observed_outcomes/servicing_cashflows": 971,
+      "observable_inputs/pools": 2,
+      "observable_inputs/tranches": 8
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 0,
+      "sum_conditional_pd": 0.0,
+      "latent_default_count": 0,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  },
+  "events": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 4401,
+    "table_counts": {
+      "observable_inputs/model_versions": 2,
+      "observable_inputs/policy_versions": 2,
+      "observable_inputs/calibration_versions": 1,
+      "observable_inputs/source_model_versions": 2,
+      "observable_inputs/subjects": 338,
+      "observable_inputs/source_obligors": 64,
+      "observed_outcomes/system_events": 2366,
+      "latent_truth/independent_checkpoints": 1352,
+      "observable_inputs/source_accounts": 144,
+      "observable_inputs/source_facilities": 128,
+      "observable_inputs/source_pools": 2
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 0,
+      "sum_conditional_pd": 0.0,
+      "latent_default_count": 0,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  }
+}

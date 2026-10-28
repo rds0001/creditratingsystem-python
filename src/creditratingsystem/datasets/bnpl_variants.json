@@ -1,0 +1,485 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "RETAIL_BNPL",
+  "cases": {
+    "pay_in_installments": {
+      "plans": [
+        {
+          "plan_id": "a",
+          "release_seq": 1,
+          "customer_id": "customer",
+          "provider_id": "provider",
+          "purchased_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "currency": "EUR",
+          "closed_at": null,
+          "refinances_plan_id": null,
+          "schedule_complete": true
+        }
+      ],
+      "installments": [
+        {
+          "installment_id": "a0",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-01",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a1",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-08",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a2",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-15",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a3",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-22",
+          "amount": 25,
+          "currency": "EUR"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "paid",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "occurred_at": "2025-01-01",
+          "plan_id": "a",
+          "installment_id": "a0",
+          "kind": "PAYMENT",
+          "amount": 25,
+          "currency": "EUR",
+          "related_event_id": null
+        }
+      ],
+      "provider_coverage": {
+        "status": "COMPLETE",
+        "sources": [
+          "provider"
+        ],
+        "known_at": "2025-01-10"
+      },
+      "customer_id": "customer",
+      "as_of": "2025-01-10",
+      "information_cutoff": "2025-01-10",
+      "lookback_days": 10,
+      "near_term_days": 10,
+      "currency": "EUR"
+    },
+    "pay_later": {
+      "plans": [
+        {
+          "plan_id": "a",
+          "release_seq": 1,
+          "customer_id": "customer",
+          "provider_id": "provider",
+          "purchased_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "currency": "EUR",
+          "closed_at": null,
+          "refinances_plan_id": null,
+          "schedule_complete": true
+        }
+      ],
+      "installments": [
+        {
+          "installment_id": "one",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-22",
+          "amount": 100,
+          "currency": "EUR"
+        }
+      ],
+      "events": [],
+      "provider_coverage": {
+        "status": "COMPLETE",
+        "sources": [
+          "provider"
+        ],
+        "known_at": "2025-01-10"
+      },
+      "customer_id": "customer",
+      "as_of": "2025-01-10",
+      "information_cutoff": "2025-01-10",
+      "lookback_days": 10,
+      "near_term_days": 10,
+      "currency": "EUR"
+    },
+    "repeat_purchases": {
+      "plans": [
+        {
+          "plan_id": "a",
+          "release_seq": 1,
+          "customer_id": "customer",
+          "provider_id": "provider",
+          "purchased_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "currency": "EUR",
+          "closed_at": null,
+          "refinances_plan_id": null,
+          "schedule_complete": true
+        },
+        {
+          "plan_id": "b",
+          "release_seq": 1,
+          "customer_id": "customer",
+          "provider_id": "provider",
+          "purchased_at": "2025-01-03",
+          "known_at": "2025-01-03",
+          "currency": "EUR",
+          "closed_at": null,
+          "refinances_plan_id": null,
+          "schedule_complete": true
+        }
+      ],
+      "installments": [
+        {
+          "installment_id": "a0",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-01",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a1",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-08",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a2",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-15",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a3",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-22",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "b0",
+          "plan_id": "b",
+          "release_seq": 1,
+          "known_at": "2025-01-03",
+          "due_at": "2025-01-03",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "b1",
+          "plan_id": "b",
+          "release_seq": 1,
+          "known_at": "2025-01-03",
+          "due_at": "2025-01-10",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "b2",
+          "plan_id": "b",
+          "release_seq": 1,
+          "known_at": "2025-01-03",
+          "due_at": "2025-01-17",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "b3",
+          "plan_id": "b",
+          "release_seq": 1,
+          "known_at": "2025-01-03",
+          "due_at": "2025-01-24",
+          "amount": 25,
+          "currency": "EUR"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "paid",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "occurred_at": "2025-01-01",
+          "plan_id": "a",
+          "installment_id": "a0",
+          "kind": "PAYMENT",
+          "amount": 25,
+          "currency": "EUR",
+          "related_event_id": null
+        },
+        {
+          "event_id": "paid_b",
+          "release_seq": 1,
+          "known_at": "2025-01-03",
+          "occurred_at": "2025-01-03",
+          "plan_id": "b",
+          "installment_id": "b0",
+          "kind": "PAYMENT",
+          "amount": 25,
+          "currency": "EUR",
+          "related_event_id": null
+        },
+        {
+          "event_id": "return",
+          "release_seq": 1,
+          "known_at": "2025-01-03",
+          "occurred_at": "2025-01-03",
+          "plan_id": "a",
+          "installment_id": "a1",
+          "kind": "MERCHANT_REFUND",
+          "amount": 10,
+          "currency": "EUR",
+          "related_event_id": null
+        }
+      ],
+      "provider_coverage": {
+        "status": "COMPLETE",
+        "sources": [
+          "provider"
+        ],
+        "known_at": "2025-01-05"
+      },
+      "customer_id": "customer",
+      "as_of": "2025-01-05",
+      "information_cutoff": "2025-01-05",
+      "lookback_days": 5,
+      "near_term_days": 10,
+      "currency": "EUR"
+    },
+    "effective_return": {
+      "plans": [
+        {
+          "plan_id": "a",
+          "release_seq": 1,
+          "customer_id": "customer",
+          "provider_id": "provider",
+          "purchased_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "currency": "EUR",
+          "closed_at": null,
+          "refinances_plan_id": null,
+          "schedule_complete": true
+        }
+      ],
+      "installments": [
+        {
+          "installment_id": "returned",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-03",
+          "amount": 100,
+          "currency": "EUR"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "refund",
+          "release_seq": 1,
+          "known_at": "2025-01-02",
+          "occurred_at": "2025-01-02",
+          "plan_id": "a",
+          "installment_id": "returned",
+          "kind": "MERCHANT_REFUND",
+          "amount": 100,
+          "currency": "EUR",
+          "related_event_id": null
+        }
+      ],
+      "provider_coverage": {
+        "status": "COMPLETE",
+        "sources": [
+          "provider"
+        ],
+        "known_at": "2025-01-05"
+      },
+      "customer_id": "customer",
+      "as_of": "2025-01-05",
+      "information_cutoff": "2025-01-05",
+      "lookback_days": 5,
+      "near_term_days": 10,
+      "currency": "EUR"
+    },
+    "completed_short_plan": {
+      "plans": [
+        {
+          "plan_id": "a",
+          "release_seq": 1,
+          "customer_id": "customer",
+          "provider_id": "provider",
+          "purchased_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "currency": "EUR",
+          "closed_at": null,
+          "refinances_plan_id": null,
+          "schedule_complete": true
+        },
+        {
+          "plan_id": "a",
+          "release_seq": 2,
+          "customer_id": "customer",
+          "provider_id": "provider",
+          "purchased_at": "2025-01-01",
+          "known_at": "2025-01-22",
+          "currency": "EUR",
+          "closed_at": "2025-01-22",
+          "refinances_plan_id": null,
+          "schedule_complete": true
+        }
+      ],
+      "installments": [
+        {
+          "installment_id": "a0",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-01",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a1",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-08",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a2",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-15",
+          "amount": 25,
+          "currency": "EUR"
+        },
+        {
+          "installment_id": "a3",
+          "plan_id": "a",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "due_at": "2025-01-22",
+          "amount": 25,
+          "currency": "EUR"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "p0",
+          "release_seq": 1,
+          "known_at": "2025-01-01",
+          "occurred_at": "2025-01-01",
+          "plan_id": "a",
+          "installment_id": "a0",
+          "kind": "PAYMENT",
+          "amount": 25,
+          "currency": "EUR",
+          "related_event_id": null
+        },
+        {
+          "event_id": "p1",
+          "release_seq": 1,
+          "known_at": "2025-01-08",
+          "occurred_at": "2025-01-08",
+          "plan_id": "a",
+          "installment_id": "a1",
+          "kind": "PAYMENT",
+          "amount": 25,
+          "currency": "EUR",
+          "related_event_id": null
+        },
+        {
+          "event_id": "p2",
+          "release_seq": 1,
+          "known_at": "2025-01-15",
+          "occurred_at": "2025-01-15",
+          "plan_id": "a",
+          "installment_id": "a2",
+          "kind": "PAYMENT",
+          "amount": 25,
+          "currency": "EUR",
+          "related_event_id": null
+        },
+        {
+          "event_id": "p3",
+          "release_seq": 1,
+          "known_at": "2025-01-22",
+          "occurred_at": "2025-01-22",
+          "plan_id": "a",
+          "installment_id": "a3",
+          "kind": "PAYMENT",
+          "amount": 25,
+          "currency": "EUR",
+          "related_event_id": null
+        }
+      ],
+      "provider_coverage": {
+        "status": "COMPLETE",
+        "sources": [
+          "provider"
+        ],
+        "known_at": "2025-01-25"
+      },
+      "customer_id": "customer",
+      "as_of": "2025-01-25",
+      "information_cutoff": "2025-01-25",
+      "lookback_days": 25,
+      "near_term_days": 10,
+      "currency": "EUR"
+    }
+  },
+  "observation": {
+    "ratings": [
+      {
+        "observation_id": "origin",
+        "facility_id": "a",
+        "as_of": "2025-01-01",
+        "performance_start": "2025-01-01",
+        "funded": true
+      }
+    ],
+    "default_events": [],
+    "exits": [
+      {
+        "facility_id": "a",
+        "exit_at": "2025-01-22",
+        "known_at": "2025-01-22"
+      }
+    ],
+    "evaluation_cutoff": "2025-01-25",
+    "entity_key": "facility_id"
+  }
+}

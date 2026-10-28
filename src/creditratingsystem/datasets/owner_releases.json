@@ -1,0 +1,82 @@
+[
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+    "release_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+    "observed_at": "2024-12-28",
+    "available_at": "2024-12-28",
+    "income": 1200,
+    "driver": -1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+    "release_id": "late-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+    "observed_at": "2024-12-28",
+    "available_at": "2025-03-01",
+    "income": 9999,
+    "driver": 1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+    "release_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+    "observed_at": "2024-12-28",
+    "available_at": "2024-12-28",
+    "income": 1200,
+    "driver": 1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+    "release_id": "late-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+    "observed_at": "2024-12-28",
+    "available_at": "2025-03-01",
+    "income": 9999,
+    "driver": -1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+    "release_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+    "observed_at": "2024-12-28",
+    "available_at": "2024-12-28",
+    "income": 60,
+    "driver": -1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+    "release_id": "late-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+    "observed_at": "2024-12-28",
+    "available_at": "2025-03-01",
+    "income": 9999,
+    "driver": 1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+    "release_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+    "observed_at": "2024-12-28",
+    "available_at": "2024-12-28",
+    "income": 1200,
+    "driver": -1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+    "release_id": "late-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+    "observed_at": "2024-12-28",
+    "available_at": "2025-03-01",
+    "income": 9999,
+    "driver": 1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+    "release_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+    "observed_at": "2025-01-28",
+    "available_at": "2025-01-28",
+    "income": 1200,
+    "driver": -1
+  },
+  {
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+    "release_id": "late-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+    "observed_at": "2025-01-28",
+    "available_at": "2025-03-01",
+    "income": 9999,
+    "driver": 1
+  }
+]

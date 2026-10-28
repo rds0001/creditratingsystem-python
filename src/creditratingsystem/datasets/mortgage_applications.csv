@@ -1,0 +1,7 @@
+record_id,entity_id,product_id,as_of,known_at,balance
+A,A,residential_mortgage,2024-02-01,2024-02-01,100000
+B,B,residential_mortgage,2024-02-01,2024-02-01,100000
+C,C,residential_mortgage,2024-02-01,2024-02-01,100000
+D,D,residential_mortgage,2024-02-01,2024-02-01,100000
+E,E,residential_mortgage,2024-02-01,2024-02-01,100000
+F,F,residential_mortgage,2024-02-01,2024-02-01,100000

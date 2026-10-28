@@ -1,0 +1,5327 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1.0",
+  "product": "RETAIL_GOVERNANCE",
+  "application_target": {
+    "event": "first_default",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT_given_funding",
+    "performance_origin": "first_draw_at"
+  },
+  "application_training": {
+    "X": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      490,
+      10,
+      450,
+      50
+    ],
+    "metadata": {
+      "data_fingerprint": "synthetic-training-counts-2019",
+      "split_id": "train-2019",
+      "known_at": "2020-12-31",
+      "data_origin": "SYNTHETIC",
+      "population_definition": "Explicit pooled synthetic illustration across all twelve product IDs; common conditional arrears coefficient, not an empirical product-equivalence claim",
+      "product_ids": [
+        "RETAIL_RESIDENTIAL_MORTGAGE",
+        "RETAIL_HOME_EQUITY_LINE",
+        "RETAIL_UNSECURED_INSTALLMENT",
+        "RETAIL_EDUCATION_LOAN",
+        "RETAIL_AUTO_LOAN",
+        "RETAIL_AUTO_LEASE",
+        "RETAIL_CREDIT_CARD",
+        "RETAIL_CHARGE_CARD",
+        "RETAIL_OVERDRAFT",
+        "RETAIL_BNPL",
+        "RETAIL_MICRO_LOAN",
+        "RETAIL_SMALL_BUSINESS_FINANCE"
+      ]
+    }
+  },
+  "application_model": {
+    "schema_version": "1.0",
+    "model_id": "retail-governance-pooled-application",
+    "model_version": "1",
+    "method_id": "classification.fit_binary_glm",
+    "feature_order": [
+      "recent_arrears"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -3.8918202981106256,
+        1.694595720774406
+      ],
+      "covariance": [
+        [
+          0.10204081632653035,
+          -0.10204081632653034
+        ],
+        [
+          -0.10204081632653034,
+          0.12426303854875254
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "first_default",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT_given_funding",
+      "performance_origin": "first_draw_at"
+    },
+    "training": {
+      "data_fingerprint": "synthetic-training-counts-2019",
+      "split_id": "train-2019",
+      "known_at": "2020-12-31",
+      "data_origin": "SYNTHETIC",
+      "population_definition": "Explicit pooled synthetic illustration across all twelve product IDs; common conditional arrears coefficient, not an empirical product-equivalence claim",
+      "product_ids": [
+        "RETAIL_RESIDENTIAL_MORTGAGE",
+        "RETAIL_HOME_EQUITY_LINE",
+        "RETAIL_UNSECURED_INSTALLMENT",
+        "RETAIL_EDUCATION_LOAN",
+        "RETAIL_AUTO_LOAN",
+        "RETAIL_AUTO_LEASE",
+        "RETAIL_CREDIT_CARD",
+        "RETAIL_CHARGE_CARD",
+        "RETAIL_OVERDRAFT",
+        "RETAIL_BNPL",
+        "RETAIL_MICRO_LOAN",
+        "RETAIL_SMALL_BUSINESS_FINANCE"
+      ]
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 7,
+      "log_likelihood": -211.5610433355901,
+      "deviance": 423.1220866711802,
+      "aic": 427.1220866711802,
+      "bic": 436.9375972291445,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 1000.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 2.6180339887498953,
+      "scaled_gradient": 1.1998029835387207e-15,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        -8.881784197001252e-15,
+        0.0
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "application_contract": {
+      "product_ids": [
+        "RETAIL_RESIDENTIAL_MORTGAGE",
+        "RETAIL_HOME_EQUITY_LINE",
+        "RETAIL_UNSECURED_INSTALLMENT",
+        "RETAIL_EDUCATION_LOAN",
+        "RETAIL_AUTO_LOAN",
+        "RETAIL_AUTO_LEASE",
+        "RETAIL_CREDIT_CARD",
+        "RETAIL_CHARGE_CARD",
+        "RETAIL_OVERDRAFT",
+        "RETAIL_BNPL",
+        "RETAIL_MICRO_LOAN",
+        "RETAIL_SMALL_BUSINESS_FINANCE"
+      ],
+      "population_ids": [
+        "synthetic_pooled_new_customer"
+      ],
+      "performance_origin": "first_draw_at",
+      "term_stage": "requested",
+      "term_features": {}
+    }
+  },
+  "behavioral_target": {
+    "event": "first_default",
+    "horizon": 12,
+    "time_unit": "months",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT_active_account"
+  },
+  "behavioral_training": {
+    "X": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        30
+      ],
+      [
+        30
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      495,
+      5,
+      90,
+      10
+    ],
+    "metadata": {
+      "data_fingerprint": "synthetic-behavioral-counts-2019",
+      "split_id": "behavioral-train-2019",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC",
+      "population_definition": "Explicit pooled synthetic active-account illustration; independent from application population",
+      "product_ids": [
+        "RETAIL_RESIDENTIAL_MORTGAGE",
+        "RETAIL_HOME_EQUITY_LINE",
+        "RETAIL_UNSECURED_INSTALLMENT",
+        "RETAIL_EDUCATION_LOAN",
+        "RETAIL_AUTO_LOAN",
+        "RETAIL_AUTO_LEASE",
+        "RETAIL_CREDIT_CARD",
+        "RETAIL_CHARGE_CARD",
+        "RETAIL_OVERDRAFT",
+        "RETAIL_BNPL",
+        "RETAIL_MICRO_LOAN",
+        "RETAIL_SMALL_BUSINESS_FINANCE"
+      ]
+    }
+  },
+  "behavioral_model": {
+    "schema_version": "1.0",
+    "model_id": "retail-governance-pooled-behavioral",
+    "model_version": "1",
+    "method_id": "classification.fit_binary_glm",
+    "feature_order": [
+      "dpd"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -4.59511985013459,
+        0.0799298424266124
+      ],
+      "covariance": [
+        [
+          0.2020202020202017,
+          -0.006734006734006723
+        ],
+        [
+          -0.006734006734006723,
+          0.00034792368125701405
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "first_default",
+      "horizon": 12,
+      "time_unit": "months",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT_active_account"
+    },
+    "training": {
+      "data_fingerprint": "synthetic-behavioral-counts-2019",
+      "split_id": "behavioral-train-2019",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC",
+      "population_definition": "Explicit pooled synthetic active-account illustration; independent from application population",
+      "product_ids": [
+        "RETAIL_RESIDENTIAL_MORTGAGE",
+        "RETAIL_HOME_EQUITY_LINE",
+        "RETAIL_UNSECURED_INSTALLMENT",
+        "RETAIL_EDUCATION_LOAN",
+        "RETAIL_AUTO_LOAN",
+        "RETAIL_AUTO_LEASE",
+        "RETAIL_CREDIT_CARD",
+        "RETAIL_CHARGE_CARD",
+        "RETAIL_OVERDRAFT",
+        "RETAIL_BNPL",
+        "RETAIL_MICRO_LOAN",
+        "RETAIL_SMALL_BUSINESS_FINANCE"
+      ]
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 8,
+      "log_likelihood": -60.50906451656849,
+      "deviance": 121.01812903313699,
+      "aic": 125.01812903313699,
+      "bic": 133.81198834356928,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 600.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 30.033370370324647,
+      "scaled_gradient": 4.421154800285065e-15,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        -1.3322676295501878e-14,
+        -3.979039320256561e-13
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "behavioral_contract": {
+      "risk_unit": "account",
+      "event_policy": "first_default",
+      "product_ids": [
+        "RETAIL_RESIDENTIAL_MORTGAGE",
+        "RETAIL_HOME_EQUITY_LINE",
+        "RETAIL_UNSECURED_INSTALLMENT",
+        "RETAIL_EDUCATION_LOAN",
+        "RETAIL_AUTO_LOAN",
+        "RETAIL_AUTO_LEASE",
+        "RETAIL_CREDIT_CARD",
+        "RETAIL_CHARGE_CARD",
+        "RETAIL_OVERDRAFT",
+        "RETAIL_BNPL",
+        "RETAIL_MICRO_LOAN",
+        "RETAIL_SMALL_BUSINESS_FINANCE"
+      ],
+      "allowed_states": [
+        "ACTIVE"
+      ],
+      "maximum_source_age_days": 31
+    }
+  },
+  "pool_target": {
+    "event": "default",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "not_defaulted_at_index",
+    "default_unit": "facility",
+    "default_definition": "DECLARED_FIRST_DEFAULT",
+    "currency": "EUR"
+  },
+  "pool_spec": {
+    "spec_id": "product-stratified-reference",
+    "version": "1",
+    "known_at": "2022-01-01",
+    "stratum_fields": [
+      "product",
+      "borrower_type",
+      "facility_type",
+      "delinquency_state"
+    ],
+    "score_field": "score",
+    "segments": [
+      {
+        "segment_id": "RETAIL_RESIDENTIAL_MORTGAGE",
+        "values": {
+          "product": "RETAIL_RESIDENTIAL_MORTGAGE",
+          "borrower_type": "person",
+          "facility_type": "MORTGAGE",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_HOME_EQUITY_LINE",
+        "values": {
+          "product": "RETAIL_HOME_EQUITY_LINE",
+          "borrower_type": "person",
+          "facility_type": "HELOC",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_UNSECURED_INSTALLMENT",
+        "values": {
+          "product": "RETAIL_UNSECURED_INSTALLMENT",
+          "borrower_type": "person",
+          "facility_type": "CONSOLIDATION",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_EDUCATION_LOAN",
+        "values": {
+          "product": "RETAIL_EDUCATION_LOAN",
+          "borrower_type": "person",
+          "facility_type": "EDUCATION",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_AUTO_LOAN",
+        "values": {
+          "product": "RETAIL_AUTO_LOAN",
+          "borrower_type": "person",
+          "facility_type": "AUTO_BALLOON",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_AUTO_LEASE",
+        "values": {
+          "product": "RETAIL_AUTO_LEASE",
+          "borrower_type": "person",
+          "facility_type": "OPERATING_LEASE",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_CREDIT_CARD",
+        "values": {
+          "product": "RETAIL_CREDIT_CARD",
+          "borrower_type": "person",
+          "facility_type": "CREDIT_CARD",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_CHARGE_CARD",
+        "values": {
+          "product": "RETAIL_CHARGE_CARD",
+          "borrower_type": "person",
+          "facility_type": "CHARGE_CARD",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_OVERDRAFT",
+        "values": {
+          "product": "RETAIL_OVERDRAFT",
+          "borrower_type": "person",
+          "facility_type": "OVERDRAFT",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_BNPL",
+        "values": {
+          "product": "RETAIL_BNPL",
+          "borrower_type": "person",
+          "facility_type": "BNPL",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_MICRO_LOAN",
+        "values": {
+          "product": "RETAIL_MICRO_LOAN",
+          "borrower_type": "person",
+          "facility_type": "MICRO",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      },
+      {
+        "segment_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+        "values": {
+          "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+          "borrower_type": "person",
+          "facility_type": "OWNER_BUSINESS",
+          "delinquency_state": "not_defaulted"
+        },
+        "cutpoints": [
+          0.05
+        ],
+        "score_min": 0,
+        "score_max": 1,
+        "monotonicity": {
+          "pd": "none",
+          "lgd": "none",
+          "ead": "none"
+        }
+      }
+    ],
+    "minimum_cases": 2,
+    "minimum_defaults": 0,
+    "minimum_lgd_count": 0,
+    "minimum_ead_count": 0,
+    "maximum_bin_mean_spread": {
+      "pd": null,
+      "lgd": null,
+      "ead": null
+    }
+  },
+  "pool_training_rows": [
+    {
+      "observation_id": "RETAIL_RESIDENTIAL_MORTGAGE0",
+      "default_unit_id": "RETAIL_RESIDENTIAL_MORTGAGE0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_RESIDENTIAL_MORTGAGE",
+      "borrower_type": "person",
+      "facility_type": "MORTGAGE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_RESIDENTIAL_MORTGAGE1",
+      "default_unit_id": "RETAIL_RESIDENTIAL_MORTGAGE1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_RESIDENTIAL_MORTGAGE",
+      "borrower_type": "person",
+      "facility_type": "MORTGAGE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_RESIDENTIAL_MORTGAGE2",
+      "default_unit_id": "RETAIL_RESIDENTIAL_MORTGAGE2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_RESIDENTIAL_MORTGAGE",
+      "borrower_type": "person",
+      "facility_type": "MORTGAGE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_RESIDENTIAL_MORTGAGE3",
+      "default_unit_id": "RETAIL_RESIDENTIAL_MORTGAGE3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_RESIDENTIAL_MORTGAGE",
+      "borrower_type": "person",
+      "facility_type": "MORTGAGE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_HOME_EQUITY_LINE0",
+      "default_unit_id": "RETAIL_HOME_EQUITY_LINE0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_HOME_EQUITY_LINE",
+      "borrower_type": "person",
+      "facility_type": "HELOC",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_HOME_EQUITY_LINE1",
+      "default_unit_id": "RETAIL_HOME_EQUITY_LINE1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_HOME_EQUITY_LINE",
+      "borrower_type": "person",
+      "facility_type": "HELOC",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_HOME_EQUITY_LINE2",
+      "default_unit_id": "RETAIL_HOME_EQUITY_LINE2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_HOME_EQUITY_LINE",
+      "borrower_type": "person",
+      "facility_type": "HELOC",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_HOME_EQUITY_LINE3",
+      "default_unit_id": "RETAIL_HOME_EQUITY_LINE3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_HOME_EQUITY_LINE",
+      "borrower_type": "person",
+      "facility_type": "HELOC",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_UNSECURED_INSTALLMENT0",
+      "default_unit_id": "RETAIL_UNSECURED_INSTALLMENT0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_UNSECURED_INSTALLMENT",
+      "borrower_type": "person",
+      "facility_type": "CONSOLIDATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_UNSECURED_INSTALLMENT1",
+      "default_unit_id": "RETAIL_UNSECURED_INSTALLMENT1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_UNSECURED_INSTALLMENT",
+      "borrower_type": "person",
+      "facility_type": "CONSOLIDATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_UNSECURED_INSTALLMENT2",
+      "default_unit_id": "RETAIL_UNSECURED_INSTALLMENT2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_UNSECURED_INSTALLMENT",
+      "borrower_type": "person",
+      "facility_type": "CONSOLIDATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_UNSECURED_INSTALLMENT3",
+      "default_unit_id": "RETAIL_UNSECURED_INSTALLMENT3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_UNSECURED_INSTALLMENT",
+      "borrower_type": "person",
+      "facility_type": "CONSOLIDATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_EDUCATION_LOAN0",
+      "default_unit_id": "RETAIL_EDUCATION_LOAN0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_EDUCATION_LOAN",
+      "borrower_type": "person",
+      "facility_type": "EDUCATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_EDUCATION_LOAN1",
+      "default_unit_id": "RETAIL_EDUCATION_LOAN1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_EDUCATION_LOAN",
+      "borrower_type": "person",
+      "facility_type": "EDUCATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_EDUCATION_LOAN2",
+      "default_unit_id": "RETAIL_EDUCATION_LOAN2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_EDUCATION_LOAN",
+      "borrower_type": "person",
+      "facility_type": "EDUCATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_EDUCATION_LOAN3",
+      "default_unit_id": "RETAIL_EDUCATION_LOAN3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_EDUCATION_LOAN",
+      "borrower_type": "person",
+      "facility_type": "EDUCATION",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LOAN0",
+      "default_unit_id": "RETAIL_AUTO_LOAN0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_AUTO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "AUTO_BALLOON",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LOAN1",
+      "default_unit_id": "RETAIL_AUTO_LOAN1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_AUTO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "AUTO_BALLOON",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LOAN2",
+      "default_unit_id": "RETAIL_AUTO_LOAN2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_AUTO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "AUTO_BALLOON",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LOAN3",
+      "default_unit_id": "RETAIL_AUTO_LOAN3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_AUTO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "AUTO_BALLOON",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LEASE0",
+      "default_unit_id": "RETAIL_AUTO_LEASE0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_AUTO_LEASE",
+      "borrower_type": "person",
+      "facility_type": "OPERATING_LEASE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LEASE1",
+      "default_unit_id": "RETAIL_AUTO_LEASE1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_AUTO_LEASE",
+      "borrower_type": "person",
+      "facility_type": "OPERATING_LEASE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LEASE2",
+      "default_unit_id": "RETAIL_AUTO_LEASE2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_AUTO_LEASE",
+      "borrower_type": "person",
+      "facility_type": "OPERATING_LEASE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_AUTO_LEASE3",
+      "default_unit_id": "RETAIL_AUTO_LEASE3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_AUTO_LEASE",
+      "borrower_type": "person",
+      "facility_type": "OPERATING_LEASE",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CREDIT_CARD0",
+      "default_unit_id": "RETAIL_CREDIT_CARD0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_CREDIT_CARD",
+      "borrower_type": "person",
+      "facility_type": "CREDIT_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CREDIT_CARD1",
+      "default_unit_id": "RETAIL_CREDIT_CARD1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_CREDIT_CARD",
+      "borrower_type": "person",
+      "facility_type": "CREDIT_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CREDIT_CARD2",
+      "default_unit_id": "RETAIL_CREDIT_CARD2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_CREDIT_CARD",
+      "borrower_type": "person",
+      "facility_type": "CREDIT_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CREDIT_CARD3",
+      "default_unit_id": "RETAIL_CREDIT_CARD3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_CREDIT_CARD",
+      "borrower_type": "person",
+      "facility_type": "CREDIT_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CHARGE_CARD0",
+      "default_unit_id": "RETAIL_CHARGE_CARD0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_CHARGE_CARD",
+      "borrower_type": "person",
+      "facility_type": "CHARGE_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CHARGE_CARD1",
+      "default_unit_id": "RETAIL_CHARGE_CARD1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_CHARGE_CARD",
+      "borrower_type": "person",
+      "facility_type": "CHARGE_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CHARGE_CARD2",
+      "default_unit_id": "RETAIL_CHARGE_CARD2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_CHARGE_CARD",
+      "borrower_type": "person",
+      "facility_type": "CHARGE_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_CHARGE_CARD3",
+      "default_unit_id": "RETAIL_CHARGE_CARD3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_CHARGE_CARD",
+      "borrower_type": "person",
+      "facility_type": "CHARGE_CARD",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_OVERDRAFT0",
+      "default_unit_id": "RETAIL_OVERDRAFT0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_OVERDRAFT",
+      "borrower_type": "person",
+      "facility_type": "OVERDRAFT",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_OVERDRAFT1",
+      "default_unit_id": "RETAIL_OVERDRAFT1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_OVERDRAFT",
+      "borrower_type": "person",
+      "facility_type": "OVERDRAFT",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_OVERDRAFT2",
+      "default_unit_id": "RETAIL_OVERDRAFT2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_OVERDRAFT",
+      "borrower_type": "person",
+      "facility_type": "OVERDRAFT",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_OVERDRAFT3",
+      "default_unit_id": "RETAIL_OVERDRAFT3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_OVERDRAFT",
+      "borrower_type": "person",
+      "facility_type": "OVERDRAFT",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_BNPL0",
+      "default_unit_id": "RETAIL_BNPL0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_BNPL",
+      "borrower_type": "person",
+      "facility_type": "BNPL",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_BNPL1",
+      "default_unit_id": "RETAIL_BNPL1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_BNPL",
+      "borrower_type": "person",
+      "facility_type": "BNPL",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_BNPL2",
+      "default_unit_id": "RETAIL_BNPL2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_BNPL",
+      "borrower_type": "person",
+      "facility_type": "BNPL",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_BNPL3",
+      "default_unit_id": "RETAIL_BNPL3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_BNPL",
+      "borrower_type": "person",
+      "facility_type": "BNPL",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_MICRO_LOAN0",
+      "default_unit_id": "RETAIL_MICRO_LOAN0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_MICRO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "MICRO",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_MICRO_LOAN1",
+      "default_unit_id": "RETAIL_MICRO_LOAN1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_MICRO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "MICRO",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_MICRO_LOAN2",
+      "default_unit_id": "RETAIL_MICRO_LOAN2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_MICRO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "MICRO",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_MICRO_LOAN3",
+      "default_unit_id": "RETAIL_MICRO_LOAN3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_MICRO_LOAN",
+      "borrower_type": "person",
+      "facility_type": "MICRO",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_SMALL_BUSINESS_FINANCE0",
+      "default_unit_id": "RETAIL_SMALL_BUSINESS_FINANCE0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+      "borrower_type": "person",
+      "facility_type": "OWNER_BUSINESS",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_SMALL_BUSINESS_FINANCE1",
+      "default_unit_id": "RETAIL_SMALL_BUSINESS_FINANCE1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.02,
+      "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+      "borrower_type": "person",
+      "facility_type": "OWNER_BUSINESS",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_SMALL_BUSINESS_FINANCE2",
+      "default_unit_id": "RETAIL_SMALL_BUSINESS_FINANCE2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+      "borrower_type": "person",
+      "facility_type": "OWNER_BUSINESS",
+      "delinquency_state": "not_defaulted"
+    },
+    {
+      "observation_id": "RETAIL_SMALL_BUSINESS_FINANCE3",
+      "default_unit_id": "RETAIL_SMALL_BUSINESS_FINANCE3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2023-01-01",
+      "label_known_at": "2023-01-02",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "score": 0.1,
+      "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+      "borrower_type": "person",
+      "facility_type": "OWNER_BUSINESS",
+      "delinquency_state": "not_defaulted"
+    }
+  ],
+  "pool_training": {
+    "role": "TRAIN",
+    "known_at": "2023-01-02",
+    "split_id": "prior-2024-pool-reference",
+    "data_fingerprint": "synthetic-48-distinct-facility-reference",
+    "data_origin": "SYNTHETIC"
+  },
+  "pool_model": {
+    "schema_version": "1.0",
+    "model_id": "retail-governance-pools",
+    "model_version": "1",
+    "method_id": "retail_features.fit_retail_risk_pools",
+    "feature_order": [
+      "product",
+      "borrower_type",
+      "facility_type",
+      "delinquency_state",
+      "score"
+    ],
+    "parameters": {
+      "stratum_fields": [
+        "product",
+        "borrower_type",
+        "facility_type",
+        "delinquency_state"
+      ],
+      "score_field": "score",
+      "segments": [
+        {
+          "segment_id": "RETAIL_RESIDENTIAL_MORTGAGE",
+          "values": {
+            "product": "RETAIL_RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "MORTGAGE",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_RESIDENTIAL_MORTGAGE:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_RESIDENTIAL_MORTGAGE:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_HOME_EQUITY_LINE",
+          "values": {
+            "product": "RETAIL_HOME_EQUITY_LINE",
+            "borrower_type": "person",
+            "facility_type": "HELOC",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_HOME_EQUITY_LINE:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_HOME_EQUITY_LINE:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_UNSECURED_INSTALLMENT",
+          "values": {
+            "product": "RETAIL_UNSECURED_INSTALLMENT",
+            "borrower_type": "person",
+            "facility_type": "CONSOLIDATION",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_UNSECURED_INSTALLMENT:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_UNSECURED_INSTALLMENT:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_EDUCATION_LOAN",
+          "values": {
+            "product": "RETAIL_EDUCATION_LOAN",
+            "borrower_type": "person",
+            "facility_type": "EDUCATION",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_EDUCATION_LOAN:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_EDUCATION_LOAN:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_AUTO_LOAN",
+          "values": {
+            "product": "RETAIL_AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "AUTO_BALLOON",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_AUTO_LOAN:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_AUTO_LOAN:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_AUTO_LEASE",
+          "values": {
+            "product": "RETAIL_AUTO_LEASE",
+            "borrower_type": "person",
+            "facility_type": "OPERATING_LEASE",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_AUTO_LEASE:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_AUTO_LEASE:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_CREDIT_CARD",
+          "values": {
+            "product": "RETAIL_CREDIT_CARD",
+            "borrower_type": "person",
+            "facility_type": "CREDIT_CARD",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_CREDIT_CARD:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_CREDIT_CARD:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_CHARGE_CARD",
+          "values": {
+            "product": "RETAIL_CHARGE_CARD",
+            "borrower_type": "person",
+            "facility_type": "CHARGE_CARD",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_CHARGE_CARD:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_CHARGE_CARD:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_OVERDRAFT",
+          "values": {
+            "product": "RETAIL_OVERDRAFT",
+            "borrower_type": "person",
+            "facility_type": "OVERDRAFT",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_OVERDRAFT:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_OVERDRAFT:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_BNPL",
+          "values": {
+            "product": "RETAIL_BNPL",
+            "borrower_type": "person",
+            "facility_type": "BNPL",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_BNPL:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_BNPL:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_MICRO_LOAN",
+          "values": {
+            "product": "RETAIL_MICRO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "MICRO",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_MICRO_LOAN:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_MICRO_LOAN:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        },
+        {
+          "segment_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+          "values": {
+            "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "borrower_type": "person",
+            "facility_type": "OWNER_BUSINESS",
+            "delinquency_state": "not_defaulted"
+          },
+          "score_min": 0,
+          "score_max": 1,
+          "cutpoints": [
+            0.05
+          ],
+          "monotonicity": {
+            "pd": "none",
+            "lgd": "none",
+            "ead": "none"
+          },
+          "status": "APPLICABLE",
+          "pools": [
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_SMALL_BUSINESS_FINANCE:0-0",
+              "first_bin": 0,
+              "last_bin": 0,
+              "statistics": {
+                "cases": 2,
+                "defaults": 0,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.0,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            },
+            {
+              "pool_id": "retail-governance-pools@1:9efa3d555c53:RETAIL_SMALL_BUSINESS_FINANCE:1-1",
+              "first_bin": 1,
+              "last_bin": 1,
+              "statistics": {
+                "cases": 2,
+                "defaults": 1,
+                "lgd_count": 0,
+                "ead_count": 0,
+                "means": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                },
+                "within_population_sd": {
+                  "pd": 0.5,
+                  "lgd": null,
+                  "ead": null
+                }
+              },
+              "initial_bin_mean_spread": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "support_violations": []
+            }
+          ],
+          "violations": [],
+          "initial_bin_statistics": [
+            {
+              "cases": 2,
+              "defaults": 0,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.0,
+                "lgd": null,
+                "ead": null
+              }
+            },
+            {
+              "cases": 2,
+              "defaults": 1,
+              "lgd_count": 0,
+              "ead_count": 0,
+              "means": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              },
+              "within_population_sd": {
+                "pd": 0.5,
+                "lgd": null,
+                "ead": null
+              }
+            }
+          ]
+        }
+      ],
+      "ruleset_hash": "9efa3d555c531d5c0761184b4bcb91b3a69df637c69678540373d6368b49d118",
+      "pooling_spec": {
+        "spec_id": "product-stratified-reference",
+        "version": "1",
+        "known_at": "2022-01-01",
+        "stratum_fields": [
+          "product",
+          "borrower_type",
+          "facility_type",
+          "delinquency_state"
+        ],
+        "score_field": "score",
+        "segments": [
+          {
+            "segment_id": "RETAIL_RESIDENTIAL_MORTGAGE",
+            "values": {
+              "product": "RETAIL_RESIDENTIAL_MORTGAGE",
+              "borrower_type": "person",
+              "facility_type": "MORTGAGE",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_HOME_EQUITY_LINE",
+            "values": {
+              "product": "RETAIL_HOME_EQUITY_LINE",
+              "borrower_type": "person",
+              "facility_type": "HELOC",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_UNSECURED_INSTALLMENT",
+            "values": {
+              "product": "RETAIL_UNSECURED_INSTALLMENT",
+              "borrower_type": "person",
+              "facility_type": "CONSOLIDATION",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_EDUCATION_LOAN",
+            "values": {
+              "product": "RETAIL_EDUCATION_LOAN",
+              "borrower_type": "person",
+              "facility_type": "EDUCATION",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_AUTO_LOAN",
+            "values": {
+              "product": "RETAIL_AUTO_LOAN",
+              "borrower_type": "person",
+              "facility_type": "AUTO_BALLOON",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_AUTO_LEASE",
+            "values": {
+              "product": "RETAIL_AUTO_LEASE",
+              "borrower_type": "person",
+              "facility_type": "OPERATING_LEASE",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_CREDIT_CARD",
+            "values": {
+              "product": "RETAIL_CREDIT_CARD",
+              "borrower_type": "person",
+              "facility_type": "CREDIT_CARD",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_CHARGE_CARD",
+            "values": {
+              "product": "RETAIL_CHARGE_CARD",
+              "borrower_type": "person",
+              "facility_type": "CHARGE_CARD",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_OVERDRAFT",
+            "values": {
+              "product": "RETAIL_OVERDRAFT",
+              "borrower_type": "person",
+              "facility_type": "OVERDRAFT",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_BNPL",
+            "values": {
+              "product": "RETAIL_BNPL",
+              "borrower_type": "person",
+              "facility_type": "BNPL",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_MICRO_LOAN",
+            "values": {
+              "product": "RETAIL_MICRO_LOAN",
+              "borrower_type": "person",
+              "facility_type": "MICRO",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          },
+          {
+            "segment_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "values": {
+              "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+              "borrower_type": "person",
+              "facility_type": "OWNER_BUSINESS",
+              "delinquency_state": "not_defaulted"
+            },
+            "cutpoints": [
+              0.05
+            ],
+            "score_min": 0,
+            "score_max": 1,
+            "monotonicity": {
+              "pd": "none",
+              "lgd": "none",
+              "ead": "none"
+            }
+          }
+        ],
+        "minimum_cases": 2,
+        "minimum_defaults": 0,
+        "minimum_lgd_count": 0,
+        "minimum_ead_count": 0,
+        "maximum_bin_mean_spread": {
+          "pd": null,
+          "lgd": null,
+          "ead": null
+        }
+      },
+      "merge_path": []
+    },
+    "preprocessing": {
+      "boundary_convention": "LEFT_CLOSED_RIGHT_OPEN_FINAL_CLOSED",
+      "missing_policy": "UNASSIGNED",
+      "unseen_policy": "UNASSIGNED"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "not_defaulted_at_index",
+      "default_unit": "facility",
+      "default_definition": "DECLARED_FIRST_DEFAULT",
+      "currency": "EUR"
+    },
+    "training": {
+      "role": "TRAIN",
+      "known_at": "2023-01-02",
+      "split_id": "prior-2024-pool-reference",
+      "data_fingerprint": "synthetic-48-distinct-facility-reference",
+      "data_origin": "SYNTHETIC",
+      "actual_input_fingerprint": "4c2cfcd82394b6dd1a89e25b7d2eff1a4cd377938b8b1e471793935ecb1eb58d",
+      "observation_count": 48
+    },
+    "diagnostics": {
+      "algorithm": "GREEDY_ADJACENT_CONSTRAINED_MERGING",
+      "global_feasibility_claim": false,
+      "applicable_segments": 12,
+      "insufficient_segments": 0,
+      "training_cases": 48,
+      "training_defaults": 12
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "artifact_hash": "fef43f1784d5845f490aa80c9349b87949c3cece350ea639cda1266c436d4b4e"
+  },
+  "policy": {
+    "schema_version": "1.1",
+    "policy_id": "retail-governance",
+    "version": "1",
+    "approval_reference": "synthetic-example-policy",
+    "known_at": "2024-12-31",
+    "effective_from": "2025-01-01",
+    "effective_until": "2027-01-01",
+    "target": {
+      "event": "first_default",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT_given_funding",
+      "performance_origin": "first_draw_at"
+    },
+    "default_action": "REFER",
+    "missing_action": "BLOCKED",
+    "fields": {
+      "risk.pd": {
+        "type": "number"
+      },
+      "affordability.status": {
+        "type": "category",
+        "values": [
+          "AFFORDABLE",
+          "NOT_AFFORDABLE",
+          "INSUFFICIENT_EVIDENCE"
+        ]
+      },
+      "eligibility.status": {
+        "type": "category",
+        "values": [
+          "ELIGIBLE",
+          "INELIGIBLE"
+        ]
+      }
+    },
+    "rules": [
+      {
+        "rule_id": "eligibility",
+        "priority": 0,
+        "action": "DECLINE",
+        "reason_code": "ELIGIBILITY",
+        "when": [
+          {
+            "field": "eligibility.status",
+            "op": "eq",
+            "value": "INELIGIBLE"
+          }
+        ]
+      },
+      {
+        "rule_id": "affordability",
+        "priority": 1,
+        "action": "DECLINE",
+        "reason_code": "AFFORDABILITY",
+        "when": [
+          {
+            "field": "affordability.status",
+            "op": "eq",
+            "value": "NOT_AFFORDABLE"
+          }
+        ]
+      },
+      {
+        "rule_id": "risk_high",
+        "priority": 2,
+        "action": "DECLINE",
+        "reason_code": "RISK_HIGH",
+        "when": [
+          {
+            "field": "risk.pd",
+            "op": "gt",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "rule_id": "risk_low",
+        "priority": 3,
+        "action": "APPROVE",
+        "reason_code": "RISK_LOW",
+        "when": [
+          {
+            "field": "risk.pd",
+            "op": "le",
+            "value": 0.05
+          }
+        ]
+      }
+    ],
+    "approval_contract": {
+      "domain": "RETAIL_CREDIT",
+      "affordability": {
+        "mode": "REQUIRED"
+      },
+      "required_gates": []
+    }
+  },
+  "affordability_profile": {
+    "schema_version": "1.0",
+    "policy_id": "explicit-period-capacity",
+    "version": "1",
+    "required_evidence": [
+      "income_verified",
+      "terms_verified"
+    ],
+    "rules": [
+      {
+        "rule_id": "minimum_buffer",
+        "metric": "minimum_residual",
+        "operator": ">=",
+        "threshold": 0
+      }
+    ]
+  },
+  "cases": {
+    "RETAIL_RESIDENTIAL_MORTGAGE": {
+      "kind": "MORTGAGE",
+      "terms": {
+        "principal": 120000,
+        "annual_rate": 0.03,
+        "annual_principal": 6000
+      },
+      "budget": {
+        "net_income": [
+          36000
+        ],
+        "recurring_expenses": [
+          18000
+        ],
+        "existing_debt_service": [
+          2400
+        ],
+        "period": "annual",
+        "currency": "EUR"
+      },
+      "reference_due": 9600,
+      "contract_note": "fixed mortgage annual interest plus contractual principal",
+      "term_evidence": {
+        "reference": "RETAIL_RESIDENTIAL_MORTGAGE-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_RESIDENTIAL_MORTGAGE-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 120000,
+        "currency": "EUR",
+        "term_months": 240
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_RESIDENTIAL_MORTGAGE-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_RESIDENTIAL_MORTGAGE-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account-due",
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 9600,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account-partial",
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 4800.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+            "customer_id": "RETAIL_RESIDENTIAL_MORTGAGE-customer",
+            "product_id": "RETAIL_RESIDENTIAL_MORTGAGE",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 120000
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+            "statement_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 120000,
+            "credit_limit": 120000,
+            "dpd": 0,
+            "past_due_amount": 4800.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+            "statement_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 120000,
+            "credit_limit": 120000,
+            "dpd": 28,
+            "past_due_amount": 4800.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account-default",
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_HOME_EQUITY_LINE": {
+      "kind": "HELOC",
+      "terms": {
+        "drawn": 40000,
+        "annual_rate": 0.06,
+        "monthly_principal": [
+          0,
+          0,
+          40000
+        ]
+      },
+      "budget": {
+        "net_income": [
+          4000,
+          4000,
+          4000
+        ],
+        "recurring_expenses": [
+          2000,
+          2000,
+          2000
+        ],
+        "existing_debt_service": [
+          200,
+          200,
+          200
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 40200,
+      "contract_note": "draw phase interest followed by full contractual repayment; no assumed refinancing",
+      "term_evidence": {
+        "reference": "RETAIL_HOME_EQUITY_LINE-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_HOME_EQUITY_LINE-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 40000,
+        "currency": "EUR",
+        "term_months": 3
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_HOME_EQUITY_LINE-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_HOME_EQUITY_LINE-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_HOME_EQUITY_LINE-existing-account-due",
+            "account_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 40200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_HOME_EQUITY_LINE-existing-account-partial",
+            "account_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 20100.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+            "customer_id": "RETAIL_HOME_EQUITY_LINE-customer",
+            "product_id": "RETAIL_HOME_EQUITY_LINE",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 40000
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+            "statement_id": "RETAIL_HOME_EQUITY_LINE-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 40000,
+            "credit_limit": 40000,
+            "dpd": 0,
+            "past_due_amount": 20100.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+            "statement_id": "RETAIL_HOME_EQUITY_LINE-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 40000,
+            "credit_limit": 40000,
+            "dpd": 28,
+            "past_due_amount": 20100.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_HOME_EQUITY_LINE-existing-account-default",
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_HOME_EQUITY_LINE-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_UNSECURED_INSTALLMENT": {
+      "kind": "CONSOLIDATION",
+      "terms": {
+        "new_payment": 350,
+        "old_payments": [
+          300,
+          200
+        ],
+        "settlement_known_at": "2025-02-03"
+      },
+      "budget": {
+        "net_income": [
+          2500
+        ],
+        "recurring_expenses": [
+          1400
+        ],
+        "existing_debt_service": [
+          500
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 350,
+      "contract_note": "old facilities still open at application cutoff; no premature closure credit",
+      "term_evidence": {
+        "reference": "RETAIL_UNSECURED_INSTALLMENT-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_UNSECURED_INSTALLMENT-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 10000,
+        "currency": "EUR",
+        "term_months": 36
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_UNSECURED_INSTALLMENT-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_UNSECURED_INSTALLMENT-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account-due",
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 350,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account-partial",
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 175.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+            "customer_id": "RETAIL_UNSECURED_INSTALLMENT-customer",
+            "product_id": "RETAIL_UNSECURED_INSTALLMENT",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 10000
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+            "statement_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 10000,
+            "credit_limit": 10000,
+            "dpd": 0,
+            "past_due_amount": 175.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+            "statement_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 10000,
+            "credit_limit": 10000,
+            "dpd": 28,
+            "past_due_amount": 175.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account-default",
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_EDUCATION_LOAN": {
+      "kind": "EDUCATION",
+      "terms": {
+        "monthly_dues": [
+          0,
+          0,
+          600
+        ],
+        "phase": [
+          "GRACE",
+          "GRACE",
+          "REPAYMENT"
+        ]
+      },
+      "budget": {
+        "net_income": [
+          1500,
+          1500,
+          2200
+        ],
+        "recurring_expenses": [
+          1000,
+          1000,
+          1000
+        ],
+        "existing_debt_service": [
+          0,
+          0,
+          0
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 600,
+      "contract_note": "grace has no due; capacity also tested in repayment phase",
+      "term_evidence": {
+        "reference": "RETAIL_EDUCATION_LOAN-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_EDUCATION_LOAN-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 12000,
+        "currency": "EUR",
+        "term_months": 24
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_EDUCATION_LOAN-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_EDUCATION_LOAN-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_EDUCATION_LOAN-existing-account-due",
+            "account_id": "RETAIL_EDUCATION_LOAN-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 600,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_EDUCATION_LOAN-existing-account-partial",
+            "account_id": "RETAIL_EDUCATION_LOAN-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 300.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_EDUCATION_LOAN-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-existing-account",
+            "customer_id": "RETAIL_EDUCATION_LOAN-customer",
+            "product_id": "RETAIL_EDUCATION_LOAN",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 12000
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-existing-account",
+            "statement_id": "RETAIL_EDUCATION_LOAN-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 12000,
+            "credit_limit": 12000,
+            "dpd": 0,
+            "past_due_amount": 300.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-existing-account",
+            "statement_id": "RETAIL_EDUCATION_LOAN-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 12000,
+            "credit_limit": 12000,
+            "dpd": 28,
+            "past_due_amount": 300.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_EDUCATION_LOAN-existing-account-default",
+          "entity_id": "RETAIL_EDUCATION_LOAN-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_EDUCATION_LOAN-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_AUTO_LOAN": {
+      "kind": "AUTO_BALLOON",
+      "terms": {
+        "principal": 20000,
+        "annual_rate": 0.05,
+        "annual_principal": [
+          5000,
+          15000
+        ]
+      },
+      "budget": {
+        "net_income": [
+          30000,
+          30000
+        ],
+        "recurring_expenses": [
+          16000,
+          16000
+        ],
+        "existing_debt_service": [
+          1000,
+          1000
+        ],
+        "period": "annual",
+        "currency": "EUR"
+      },
+      "reference_due": 15750,
+      "contract_note": "balloon is a customer debt; resale guarantee is not household income",
+      "term_evidence": {
+        "reference": "RETAIL_AUTO_LOAN-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_AUTO_LOAN-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 20000,
+        "currency": "EUR",
+        "term_months": 24
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_AUTO_LOAN-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_AUTO_LOAN-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_AUTO_LOAN-existing-account-due",
+            "account_id": "RETAIL_AUTO_LOAN-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 15750,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_AUTO_LOAN-existing-account-partial",
+            "account_id": "RETAIL_AUTO_LOAN-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 7875.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_AUTO_LOAN-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-existing-account",
+            "customer_id": "RETAIL_AUTO_LOAN-customer",
+            "product_id": "RETAIL_AUTO_LOAN",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 20000
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-existing-account",
+            "statement_id": "RETAIL_AUTO_LOAN-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 20000,
+            "credit_limit": 20000,
+            "dpd": 0,
+            "past_due_amount": 7875.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LOAN-existing-account",
+            "statement_id": "RETAIL_AUTO_LOAN-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 20000,
+            "credit_limit": 20000,
+            "dpd": 28,
+            "past_due_amount": 7875.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_AUTO_LOAN-existing-account-default",
+          "entity_id": "RETAIL_AUTO_LOAN-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_AUTO_LOAN-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_AUTO_LEASE": {
+      "kind": "OPERATING_LEASE",
+      "terms": {
+        "rent": 300,
+        "lessor_residual_value": 12000,
+        "customer_bears_residual": false
+      },
+      "budget": {
+        "net_income": [
+          2000
+        ],
+        "recurring_expenses": [
+          1400
+        ],
+        "existing_debt_service": [
+          100
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 300,
+      "contract_note": "only rental due belongs to customer; lessor residual not customer debt",
+      "term_evidence": {
+        "reference": "RETAIL_AUTO_LEASE-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_AUTO_LEASE-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 10800,
+        "currency": "EUR",
+        "term_months": 36
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_AUTO_LEASE-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_AUTO_LEASE-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_AUTO_LEASE-existing-account-due",
+            "account_id": "RETAIL_AUTO_LEASE-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 300,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_AUTO_LEASE-existing-account-partial",
+            "account_id": "RETAIL_AUTO_LEASE-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 150.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_AUTO_LEASE-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-existing-account",
+            "customer_id": "RETAIL_AUTO_LEASE-customer",
+            "product_id": "RETAIL_AUTO_LEASE",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 10800
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-existing-account",
+            "statement_id": "RETAIL_AUTO_LEASE-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 10800,
+            "credit_limit": 10800,
+            "dpd": 0,
+            "past_due_amount": 150.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LEASE-existing-account",
+            "statement_id": "RETAIL_AUTO_LEASE-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 10800,
+            "credit_limit": 10800,
+            "dpd": 28,
+            "past_due_amount": 150.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_AUTO_LEASE-existing-account-default",
+          "entity_id": "RETAIL_AUTO_LEASE-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_AUTO_LEASE-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_CREDIT_CARD": {
+      "kind": "CREDIT_CARD",
+      "terms": {
+        "statement_balance": 1000,
+        "minimum_fraction": 0.05,
+        "minimum_floor": 25
+      },
+      "budget": {
+        "net_income": [
+          1800
+        ],
+        "recurring_expenses": [
+          1300
+        ],
+        "existing_debt_service": [
+          100
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 50,
+      "contract_note": "contractual minimum due; full repayment is a distinct capacity scenario",
+      "term_evidence": {
+        "reference": "RETAIL_CREDIT_CARD-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_CREDIT_CARD-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 1000,
+        "currency": "EUR",
+        "term_months": 12
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_CREDIT_CARD-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_CREDIT_CARD-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_CREDIT_CARD-existing-account-due",
+            "account_id": "RETAIL_CREDIT_CARD-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 50,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_CREDIT_CARD-existing-account-partial",
+            "account_id": "RETAIL_CREDIT_CARD-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 25.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_CREDIT_CARD-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-existing-account",
+            "customer_id": "RETAIL_CREDIT_CARD-customer",
+            "product_id": "RETAIL_CREDIT_CARD",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 1000
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-existing-account",
+            "statement_id": "RETAIL_CREDIT_CARD-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 25.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_CREDIT_CARD-existing-account",
+            "statement_id": "RETAIL_CREDIT_CARD-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 28,
+            "past_due_amount": 25.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_CREDIT_CARD-existing-account-default",
+          "entity_id": "RETAIL_CREDIT_CARD-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_CREDIT_CARD-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_CHARGE_CARD": {
+      "kind": "CHARGE_CARD",
+      "terms": {
+        "statement_balance": 1000,
+        "deferred": false
+      },
+      "budget": {
+        "net_income": [
+          1800
+        ],
+        "recurring_expenses": [
+          1300
+        ],
+        "existing_debt_service": [
+          100
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 1000,
+      "contract_note": "full statement amount due; no revolving minimum substituted",
+      "term_evidence": {
+        "reference": "RETAIL_CHARGE_CARD-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_CHARGE_CARD-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 1000,
+        "currency": "EUR",
+        "term_months": 12
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_CHARGE_CARD-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_CHARGE_CARD-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_CHARGE_CARD-existing-account-due",
+            "account_id": "RETAIL_CHARGE_CARD-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 1000,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_CHARGE_CARD-existing-account-partial",
+            "account_id": "RETAIL_CHARGE_CARD-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 500.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_CHARGE_CARD-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-existing-account",
+            "customer_id": "RETAIL_CHARGE_CARD-customer",
+            "product_id": "RETAIL_CHARGE_CARD",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 1000
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-existing-account",
+            "statement_id": "RETAIL_CHARGE_CARD-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 500.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_CHARGE_CARD-existing-account",
+            "statement_id": "RETAIL_CHARGE_CARD-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 28,
+            "past_due_amount": 500.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_CHARGE_CARD-existing-account-default",
+          "entity_id": "RETAIL_CHARGE_CARD-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_CHARGE_CARD-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_OVERDRAFT": {
+      "kind": "OVERDRAFT",
+      "terms": {
+        "demand_amount": 800,
+        "demand_known_at": "2024-12-31",
+        "demand_due_at": "2025-02-01"
+      },
+      "budget": {
+        "net_income": [
+          1200
+        ],
+        "recurring_expenses": [
+          700
+        ],
+        "existing_debt_service": [
+          0
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 800,
+      "contract_note": "dated contractual demand; no conversion to amortizing instalment",
+      "term_evidence": {
+        "reference": "RETAIL_OVERDRAFT-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_OVERDRAFT-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 800,
+        "currency": "EUR",
+        "term_months": 1
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_OVERDRAFT-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_OVERDRAFT-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_OVERDRAFT-existing-account-due",
+            "account_id": "RETAIL_OVERDRAFT-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 800,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_OVERDRAFT-existing-account-partial",
+            "account_id": "RETAIL_OVERDRAFT-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 400.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_OVERDRAFT-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-existing-account",
+            "customer_id": "RETAIL_OVERDRAFT-customer",
+            "product_id": "RETAIL_OVERDRAFT",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 800
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-existing-account",
+            "statement_id": "RETAIL_OVERDRAFT-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 800,
+            "credit_limit": 800,
+            "dpd": 0,
+            "past_due_amount": 400.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_OVERDRAFT-existing-account",
+            "statement_id": "RETAIL_OVERDRAFT-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 800,
+            "credit_limit": 800,
+            "dpd": 28,
+            "past_due_amount": 400.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_OVERDRAFT-existing-account-default",
+          "entity_id": "RETAIL_OVERDRAFT-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_OVERDRAFT-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_BNPL": {
+      "kind": "BNPL",
+      "terms": {
+        "weekly_plan_dues": [
+          [
+            50,
+            50
+          ],
+          [
+            50,
+            50
+          ],
+          [
+            50,
+            0
+          ]
+        ]
+      },
+      "budget": {
+        "net_income": [
+          250,
+          250,
+          250
+        ],
+        "recurring_expenses": [
+          200,
+          200,
+          200
+        ],
+        "existing_debt_service": [
+          0,
+          0,
+          0
+        ],
+        "period": "weekly",
+        "currency": "EUR"
+      },
+      "reference_due": 100,
+      "contract_note": "parallel plans aggregated by due week without refinancing netting",
+      "term_evidence": {
+        "reference": "RETAIL_BNPL-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_BNPL-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 250,
+        "currency": "EUR",
+        "term_months": 1
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_BNPL-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_BNPL-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_BNPL-existing-account-due",
+            "account_id": "RETAIL_BNPL-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 100,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_BNPL-existing-account-partial",
+            "account_id": "RETAIL_BNPL-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 50.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_BNPL-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_BNPL-existing-account",
+            "customer_id": "RETAIL_BNPL-customer",
+            "product_id": "RETAIL_BNPL",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 250
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_BNPL-existing-account",
+            "statement_id": "RETAIL_BNPL-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 250,
+            "credit_limit": 250,
+            "dpd": 0,
+            "past_due_amount": 50.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_BNPL-existing-account",
+            "statement_id": "RETAIL_BNPL-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 250,
+            "credit_limit": 250,
+            "dpd": 28,
+            "past_due_amount": 50.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_BNPL-existing-account-default",
+          "entity_id": "RETAIL_BNPL-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_BNPL-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_MICRO_LOAN": {
+      "kind": "MICRO",
+      "terms": {
+        "weekly_dues": [
+          100,
+          100,
+          100,
+          100
+        ]
+      },
+      "budget": {
+        "net_income": [
+          0,
+          0,
+          900,
+          0
+        ],
+        "recurring_expenses": [
+          100,
+          100,
+          100,
+          100
+        ],
+        "existing_debt_service": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "period": "weekly",
+        "currency": "EUR"
+      },
+      "reference_due": 100,
+      "contract_note": "weekly liquidity shortfalls remain despite positive average income",
+      "term_evidence": {
+        "reference": "RETAIL_MICRO_LOAN-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_MICRO_LOAN-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 400,
+        "currency": "EUR",
+        "term_months": 1
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_MICRO_LOAN-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_MICRO_LOAN-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_MICRO_LOAN-existing-account-due",
+            "account_id": "RETAIL_MICRO_LOAN-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 100,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_MICRO_LOAN-existing-account-partial",
+            "account_id": "RETAIL_MICRO_LOAN-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 50.0,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_MICRO_LOAN-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-existing-account",
+            "customer_id": "RETAIL_MICRO_LOAN-customer",
+            "product_id": "RETAIL_MICRO_LOAN",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 400
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-existing-account",
+            "statement_id": "RETAIL_MICRO_LOAN-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 400,
+            "credit_limit": 400,
+            "dpd": 0,
+            "past_due_amount": 50.0,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_MICRO_LOAN-existing-account",
+            "statement_id": "RETAIL_MICRO_LOAN-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 400,
+            "credit_limit": 400,
+            "dpd": 28,
+            "past_due_amount": 50.0,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_MICRO_LOAN-existing-account-default",
+          "entity_id": "RETAIL_MICRO_LOAN-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_MICRO_LOAN-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    },
+    "RETAIL_SMALL_BUSINESS_FINANCE": {
+      "kind": "OWNER_BUSINESS",
+      "terms": {
+        "sales": 200,
+        "operating_cost": 60,
+        "tax": 10,
+        "capex": 20,
+        "business_debt": 30,
+        "owner_draw": 40,
+        "other_household_income": 100,
+        "new_payment": 15
+      },
+      "budget": {
+        "net_income": [
+          140
+        ],
+        "recurring_expenses": [
+          100
+        ],
+        "existing_debt_service": [
+          10
+        ],
+        "period": "monthly",
+        "currency": "EUR"
+      },
+      "reference_due": 15,
+      "contract_note": "owner draw transferred once; business receipts and financing are not household income",
+      "term_evidence": {
+        "reference": "RETAIL_SMALL_BUSINESS_FINANCE-signed-terms-v1",
+        "known_at": "2024-12-31",
+        "currency": "EUR"
+      },
+      "income_evidence": {
+        "reference": "RETAIL_SMALL_BUSINESS_FINANCE-budget-v1",
+        "known_at": "2024-12-31",
+        "income_verified": true
+      },
+      "requested_terms": {
+        "amount": 150,
+        "currency": "EUR",
+        "term_months": 12
+      },
+      "recent_arrears": 0,
+      "application_features": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-application",
+          "feature": "recent_arrears",
+          "value": 0,
+          "observed_at": "2024-12-30",
+          "known_at": "2024-12-31",
+          "source_id": "synthetic-dated-bureau"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-application",
+          "feature": "recent_arrears",
+          "value": 1,
+          "observed_at": "2024-12-31",
+          "known_at": "2025-01-02",
+          "source_id": "future-bureau-release"
+        }
+      ],
+      "payment_history": {
+        "obligations": [
+          {
+            "obligation_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account-due",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+            "due_at": "2025-01-31",
+            "known_at": "2024-12-31",
+            "amount": 15,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "payment_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account-partial",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+            "paid_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "amount": 7.5,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-02-28",
+          "observed_from": "2025-01-31",
+          "complete_through": "2025-02-28"
+        },
+        "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+        "as_of": "2025-02-28",
+        "information_cutoff": "2025-02-28",
+        "lookback_days": 28,
+        "allocation_policy": "fifo",
+        "currency": "EUR",
+        "grace_days": 0
+      },
+      "historical_account": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+            "customer_id": "RETAIL_SMALL_BUSINESS_FINANCE-customer",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "currency": "EUR",
+            "original_balance": 150
+          }
+        ],
+        "statements": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+            "statement_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account-2025-01-31",
+            "observed_at": "2025-01-31",
+            "known_at": "2025-01-31",
+            "balance": 150,
+            "credit_limit": 150,
+            "dpd": 0,
+            "past_due_amount": 7.5,
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+            "statement_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account-2025-02-28",
+            "observed_at": "2025-02-28",
+            "known_at": "2025-02-28",
+            "balance": 150,
+            "credit_limit": 150,
+            "dpd": 28,
+            "past_due_amount": 7.5,
+            "currency": "EUR"
+          }
+        ],
+        "observation_dates": [
+          "2025-01-31",
+          "2025-02-28"
+        ],
+        "account_events": []
+      },
+      "monitoring_events": [
+        {
+          "event_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account-default",
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+          "event_at": "2025-06-01",
+          "known_at": "2025-06-02",
+          "event": "default",
+          "default_definition": "DECLARED_FIRST_DEFAULT"
+        }
+      ],
+      "monitoring_coverage": [
+        {
+          "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-existing-account",
+          "complete_through": "2026-01-31",
+          "known_at": "2026-02-01"
+        }
+      ]
+    }
+  }
+}

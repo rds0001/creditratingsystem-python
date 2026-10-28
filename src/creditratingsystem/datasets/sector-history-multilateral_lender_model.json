@@ -1,0 +1,93 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "supranational_debt-multilateral_lender-scorecard",
+    "model_version": "1",
+    "method_id": "scorecard.fit_scorecard",
+    "feature_order": [
+      "risk_ratio"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -2.049091669264632,
+        0.1481329080715858
+      ],
+      "covariance": [
+        [
+          0.049882110226937754,
+          -0.005673445328617725
+        ],
+        [
+          -0.005673445328617725,
+          0.04988211022693776
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 1,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "data_fingerprint": "supranational_debt-multilateral_lender-historical-weighted-default-counts",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 5,
+      "log_likelihood": -71.1469679680052,
+      "deviance": 142.2939359360104,
+      "aic": 146.2939359360104,
+      "bic": 152.89057066910647,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 200.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 1.0000000000000002,
+      "scaled_gradient": 5.124111874047537e-15,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        -2.3092638912203256e-14,
+        1.7763568394002505e-15
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "scorecard_spec": {
+      "neutral_profile": [
+        -1.0
+      ],
+      "feature_kinds": [
+        "expert"
+      ],
+      "design_status": "CALLER_FROZEN",
+      "design_fingerprint": "44181ffd92cffe3c2f5b762aafa895784652e353d432a6becfbe960e6a207b30"
+    }
+  },
+  "sha256": "79d80b93c8c316690b48f61e9e7edaf68b2b67fc1a54927a33db47732bc34d5f"
+}

@@ -1,0 +1,351 @@
+{
+  "data_origin": "SYNTHETIC",
+  "product": "SOVEREIGN_DEBT",
+  "target": {
+    "event": "pre_transfer_sovereign_payment_default",
+    "horizon": 1,
+    "time_unit": "years",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "rating_scale": {
+    "schema_version": "1.0",
+    "scale_id": "synthetic-corporate",
+    "version": "1",
+    "boundary_convention": "left_closed",
+    "grades": [
+      {
+        "grade": "A",
+        "lower": 0,
+        "upper": 0.2,
+        "representative_pd": 0.1,
+        "is_default": false
+      },
+      {
+        "grade": "B",
+        "lower": 0.2,
+        "upper": 1,
+        "representative_pd": 0.4,
+        "is_default": false
+      }
+    ]
+  },
+  "precision_contract": {
+    "pd_decimal_places": 6,
+    "raw_fit_oracle_absolute_tolerance": 1e-07
+  },
+  "cases": [
+    {
+      "case_id": "sovereign-local_currency",
+      "variant": "local_currency",
+      "currency": "LOC",
+      "legal_claim": "SENIOR_SOVEREIGN_BOND",
+      "cashflow_type": "FIXED_COUPON",
+      "fiscal_balance": -2,
+      "reserves_months": 8,
+      "institution_index": 0.8,
+      "series": [
+        {
+          "entity_id": "sovereign-local_currency",
+          "feature": "fiscal_balance",
+          "observed_at": "2023-01-01",
+          "available_at": "2023-01-01",
+          "known_at": "2023-01-01",
+          "value": -1
+        },
+        {
+          "entity_id": "sovereign-local_currency",
+          "feature": "fiscal_balance",
+          "observed_at": "2024-01-01",
+          "available_at": "2024-01-01",
+          "known_at": "2024-01-01",
+          "value": -2
+        },
+        {
+          "entity_id": "sovereign-local_currency",
+          "feature": "fiscal_balance",
+          "observed_at": "2024-01-01",
+          "available_at": "2024-04-01",
+          "known_at": "2024-04-01",
+          "value": -20
+        }
+      ],
+      "training": {
+        "data_fingerprint": "sovereign-local_currency-historical-cohort",
+        "split_id": "train_2020",
+        "known_at": "2021-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "calibration": {
+        "values": [
+          0.04,
+          0.04,
+          0.08,
+          0.08
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          96.0,
+          4.0,
+          92.0,
+          8.0
+        ],
+        "metadata": {
+          "target": {
+            "event": "pre_transfer_sovereign_payment_default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Separate synthetic sovereign cohort with pre-transfer payment default target",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "pretransfer_pd": 0.04,
+      "event_probability": 0.1,
+      "failure_given_event": 0.5,
+      "mitigation_success": 0.2,
+      "joint": 0.01,
+      "losses": {
+        "neither": 0,
+        "default_only": 40,
+        "transfer_only": 5,
+        "joint": 55
+      },
+      "restructured_cashflows": [],
+      "discount_rate": 0.1,
+      "original_claim": 100
+    },
+    {
+      "case_id": "sovereign-foreign_currency",
+      "variant": "foreign_currency",
+      "currency": "USD",
+      "legal_claim": "SENIOR_SOVEREIGN_BOND",
+      "cashflow_type": "FIXED_COUPON",
+      "fiscal_balance": -5,
+      "reserves_months": 4,
+      "institution_index": 0.5,
+      "series": [
+        {
+          "entity_id": "sovereign-foreign_currency",
+          "feature": "fiscal_balance",
+          "observed_at": "2023-01-01",
+          "available_at": "2023-01-01",
+          "known_at": "2023-01-01",
+          "value": -3
+        },
+        {
+          "entity_id": "sovereign-foreign_currency",
+          "feature": "fiscal_balance",
+          "observed_at": "2024-01-01",
+          "available_at": "2024-01-01",
+          "known_at": "2024-01-01",
+          "value": -5
+        },
+        {
+          "entity_id": "sovereign-foreign_currency",
+          "feature": "fiscal_balance",
+          "observed_at": "2024-01-01",
+          "available_at": "2024-04-01",
+          "known_at": "2024-04-01",
+          "value": -20
+        }
+      ],
+      "training": {
+        "data_fingerprint": "sovereign-foreign_currency-historical-cohort",
+        "split_id": "train_2020",
+        "known_at": "2021-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "calibration": {
+        "values": [
+          0.08,
+          0.08,
+          0.16,
+          0.16
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          92.0,
+          8.0,
+          84.0,
+          16.0
+        ],
+        "metadata": {
+          "target": {
+            "event": "pre_transfer_sovereign_payment_default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Separate synthetic sovereign cohort with pre-transfer payment default target",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "pretransfer_pd": 0.08,
+      "event_probability": 0.2,
+      "failure_given_event": 0.6,
+      "mitigation_success": 0.25,
+      "joint": 0.03,
+      "losses": {
+        "neither": 0,
+        "default_only": 50,
+        "transfer_only": 10,
+        "joint": 70
+      },
+      "restructured_cashflows": [],
+      "discount_rate": 0.1,
+      "original_claim": 100
+    },
+    {
+      "case_id": "sovereign-restructuring",
+      "variant": "restructuring",
+      "currency": "USD",
+      "legal_claim": "RESTRUCTURED_BOND",
+      "cashflow_type": "EXCHANGED_SCHEDULE",
+      "fiscal_balance": -8,
+      "reserves_months": 2,
+      "institution_index": 0.3,
+      "series": [
+        {
+          "entity_id": "sovereign-restructuring",
+          "feature": "fiscal_balance",
+          "observed_at": "2023-01-01",
+          "available_at": "2023-01-01",
+          "known_at": "2023-01-01",
+          "value": -4
+        },
+        {
+          "entity_id": "sovereign-restructuring",
+          "feature": "fiscal_balance",
+          "observed_at": "2024-01-01",
+          "available_at": "2024-01-01",
+          "known_at": "2024-01-01",
+          "value": -8
+        },
+        {
+          "entity_id": "sovereign-restructuring",
+          "feature": "fiscal_balance",
+          "observed_at": "2024-01-01",
+          "available_at": "2024-04-01",
+          "known_at": "2024-04-01",
+          "value": -20
+        }
+      ],
+      "training": {
+        "data_fingerprint": "sovereign-restructuring-historical-cohort",
+        "split_id": "train_2020",
+        "known_at": "2021-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "calibration": {
+        "values": [
+          0.12,
+          0.12,
+          0.24,
+          0.24
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          88.0,
+          12.0,
+          76.0,
+          24.0
+        ],
+        "metadata": {
+          "target": {
+            "event": "pre_transfer_sovereign_payment_default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Separate synthetic sovereign cohort with pre-transfer payment default target",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "pretransfer_pd": 0.12,
+      "event_probability": 0.3,
+      "failure_given_event": 0.8,
+      "mitigation_success": 0,
+      "joint": 0.1,
+      "losses": {
+        "neither": 0,
+        "default_only": 60,
+        "transfer_only": 15,
+        "joint": 85
+      },
+      "restructured_cashflows": [
+        {
+          "time_years": 1,
+          "amount": 40
+        },
+        {
+          "time_years": 2,
+          "amount": 40
+        }
+      ],
+      "discount_rate": 0.1,
+      "original_claim": 100
+    }
+  ]
+}

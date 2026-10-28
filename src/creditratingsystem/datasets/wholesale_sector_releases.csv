@@ -1,0 +1,8 @@
+entity_id,release_id,observed_at,available_at,x
+sector-history-bank,sector-history-bank-initial,2024-03-01,2024-03-01,-0.3333333333333333
+sector-history-life,sector-history-life-initial,2024-03-01,2024-03-01,0.24999999999999967
+sector-history-NAV_backed,sector-history-NAV_backed-initial,2024-03-01,2024-03-01,-0.33333333333333326
+sector-history-foreign_currency,sector-history-foreign_currency-initial,2024-03-01,2024-03-01,6.0
+sector-history-region,sector-history-region-initial,2024-03-01,2024-03-01,0.0
+sector-history-multilateral_lender,sector-history-multilateral_lender-initial,2024-03-01,2024-03-01,-0.25
+sector-history-housing_association,sector-history-housing_association-initial,2024-03-01,2024-03-01,0.5714285714285716

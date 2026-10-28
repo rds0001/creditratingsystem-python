@@ -1,0 +1,8 @@
+record_id,entity_id,product_id,as_of,known_at,balance
+sector-history-bank-source,sector-history-bank,FINANCIAL_INSTITUTION_EXPOSURE,2024-03-01,2024-03-01,165.13346403257427
+sector-history-life-source,sector-history-life,INSURER_EXPOSURE,2024-03-01,2024-03-01,176.14236163474587
+sector-history-NAV_backed-source,sector-history-NAV_backed,FUND_FINANCE,2024-03-01,2024-03-01,187.1512592369175
+sector-history-foreign_currency-source,sector-history-foreign_currency,SOVEREIGN_DEBT,2024-03-01,2024-03-01,178.3441411551802
+sector-history-region-source,sector-history-region,PUBLIC_SECTOR_DEBT,2024-03-01,2024-03-01,209.16905444126073
+sector-history-multilateral_lender-source,sector-history-multilateral_lender,SUPRANATIONAL_DEBT,2024-03-01,2024-03-01,220.17795204343236
+sector-history-housing_association-source,sector-history-housing_association,PUBLIC_SERVICE_FINANCE,2024-03-01,2024-03-01,231.18684964560396

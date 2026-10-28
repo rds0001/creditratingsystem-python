@@ -1,0 +1,1299 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_REFERENCE",
+  "version": "1.0",
+  "product": "STRUCTURED_AND_COUNTERPARTY_GOVERNANCE",
+  "variants": {
+    "SECURITIZATION_TRANCHE": {
+      "subject_id": "SECURITIZATION_TRANCHE-position",
+      "subject_type": "issue",
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "SECURITIZATION_TRANCHE-monitor",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "issue"
+        },
+        "training": {
+          "data_fingerprint": "independent-analytical-monitor-SECURITIZATION_TRANCHE",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "snapshot": {
+        "subject_id": "SECURITIZATION_TRANCHE-position",
+        "subject_type": "issue",
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01",
+        "attributes": {
+          "product": {
+            "value": "SECURITIZATION_TRANCHE",
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          },
+          "x": {
+            "value": 0,
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          }
+        }
+      },
+      "rules": [
+        {
+          "profile_version": "1",
+          "priority": 1,
+          "effective_from": "2024-01-01",
+          "effective_to": null,
+          "known_at": "2023-12-31",
+          "rule_id": "SECURITIZATION_TRANCHE",
+          "profile_id": "SECURITIZATION_TRANCHE-monitor",
+          "conditions": [
+            {
+              "field": "product",
+              "operator": "eq",
+              "value": "SECURITIZATION_TRANCHE"
+            }
+          ]
+        }
+      ],
+      "applicability_contract": {
+        "contract_id": "SECURITIZATION_TRANCHE-support",
+        "version": "1",
+        "required_features": [
+          "product",
+          "x"
+        ],
+        "allowed_values": {
+          "product": [
+            "SECURITIZATION_TRANCHE"
+          ]
+        },
+        "support_bounds": {
+          "x": [
+            -1,
+            1
+          ]
+        },
+        "maximum_age_days": {
+          "x": 30
+        }
+      },
+      "policy": {
+        "schema_version": "1.1",
+        "policy_id": "SECURITIZATION_TRANCHE-investment",
+        "version": "1",
+        "approval_reference": "synthetic-investment-committee-policy",
+        "known_at": "2023-12-31",
+        "effective_from": "2024-01-01",
+        "effective_until": "2025-01-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "issue"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "operations.legal_status": {
+            "type": "category",
+            "values": [
+              "VERIFIED",
+              "UNVERIFIED"
+            ]
+          }
+        },
+        "rules": [
+          {
+            "rule_id": "committee",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "WITHIN_DECLARED_SYNTHETIC_POLICY",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "ge",
+                "value": 0
+              }
+            ]
+          }
+        ],
+        "approval_contract": {
+          "domain": "INVESTMENT",
+          "affordability": {
+            "mode": "NOT_APPLICABLE",
+            "reason": "Investment/CSA governance does not estimate household repayment capacity",
+            "reference": "SECURITIZATION_TRANCHE-scope-v1",
+            "maximum_age_days": 30
+          },
+          "required_gates": [
+            {
+              "field": "operations.legal_status",
+              "value": "VERIFIED"
+            }
+          ]
+        }
+      },
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "SECURITIZATION_TRANCHE-f0",
+            "case_id": "SECURITIZATION_TRANCHE-case0",
+            "entity_id": "SECURITIZATION_TRANCHE-position0",
+            "cluster_id": "SECURITIZATION_TRANCHE-cluster0",
+            "cohort": "2024-01",
+            "segment": "SECURITIZATION_TRANCHE",
+            "model_id": "SECURITIZATION_TRANCHE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "SECURITIZATION_TRANCHE-f1",
+            "case_id": "SECURITIZATION_TRANCHE-case1",
+            "entity_id": "SECURITIZATION_TRANCHE-position1",
+            "cluster_id": "SECURITIZATION_TRANCHE-cluster1",
+            "cohort": "2024-01",
+            "segment": "SECURITIZATION_TRANCHE",
+            "model_id": "SECURITIZATION_TRANCHE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "SECURITIZATION_TRANCHE-f2",
+            "case_id": "SECURITIZATION_TRANCHE-case2",
+            "entity_id": "SECURITIZATION_TRANCHE-position2",
+            "cluster_id": "SECURITIZATION_TRANCHE-cluster2",
+            "cohort": "2024-01",
+            "segment": "SECURITIZATION_TRANCHE",
+            "model_id": "SECURITIZATION_TRANCHE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "SECURITIZATION_TRANCHE-f3",
+            "case_id": "SECURITIZATION_TRANCHE-case3",
+            "entity_id": "SECURITIZATION_TRANCHE-position3",
+            "cluster_id": "SECURITIZATION_TRANCHE-cluster3",
+            "cohort": "2024-01",
+            "segment": "SECURITIZATION_TRANCHE",
+            "model_id": "SECURITIZATION_TRANCHE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "SECURITIZATION_TRANCHE-d1",
+            "entity_id": "SECURITIZATION_TRANCHE-position1",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "SECURITIZATION_TRANCHE-d3",
+            "entity_id": "SECURITIZATION_TRANCHE-position3",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "SECURITIZATION_TRANCHE-position0",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "SECURITIZATION_TRANCHE-position1",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "SECURITIZATION_TRANCHE-position2",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "SECURITIZATION_TRANCHE-position3",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "issue",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-02-15"
+      },
+      "source_recipe_reference": {
+        "example": "securitization_products",
+        "variant": "static_pool",
+        "assessment_hash": "7a92b46b6d5d9754b0b8359ba68b33aa755df89a54c4e085a74382c4a98074f7"
+      },
+      "applicability_reason": "Investment or netting-limit governance; household affordability is not this product target. A local investment recommendation requires explicit legal and operational evidence."
+    },
+    "COVERED_BOND": {
+      "subject_id": "COVERED_BOND-position",
+      "subject_type": "issue",
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "COVERED_BOND-monitor",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "issue"
+        },
+        "training": {
+          "data_fingerprint": "independent-analytical-monitor-COVERED_BOND",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "snapshot": {
+        "subject_id": "COVERED_BOND-position",
+        "subject_type": "issue",
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01",
+        "attributes": {
+          "product": {
+            "value": "COVERED_BOND",
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          },
+          "x": {
+            "value": 0,
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          }
+        }
+      },
+      "rules": [
+        {
+          "profile_version": "1",
+          "priority": 1,
+          "effective_from": "2024-01-01",
+          "effective_to": null,
+          "known_at": "2023-12-31",
+          "rule_id": "COVERED_BOND",
+          "profile_id": "COVERED_BOND-monitor",
+          "conditions": [
+            {
+              "field": "product",
+              "operator": "eq",
+              "value": "COVERED_BOND"
+            }
+          ]
+        }
+      ],
+      "applicability_contract": {
+        "contract_id": "COVERED_BOND-support",
+        "version": "1",
+        "required_features": [
+          "product",
+          "x"
+        ],
+        "allowed_values": {
+          "product": [
+            "COVERED_BOND"
+          ]
+        },
+        "support_bounds": {
+          "x": [
+            -1,
+            1
+          ]
+        },
+        "maximum_age_days": {
+          "x": 30
+        }
+      },
+      "policy": {
+        "schema_version": "1.1",
+        "policy_id": "COVERED_BOND-investment",
+        "version": "1",
+        "approval_reference": "synthetic-investment-committee-policy",
+        "known_at": "2023-12-31",
+        "effective_from": "2024-01-01",
+        "effective_until": "2025-01-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "issue"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "operations.legal_status": {
+            "type": "category",
+            "values": [
+              "VERIFIED",
+              "UNVERIFIED"
+            ]
+          }
+        },
+        "rules": [
+          {
+            "rule_id": "committee",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "WITHIN_DECLARED_SYNTHETIC_POLICY",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "ge",
+                "value": 0
+              }
+            ]
+          }
+        ],
+        "approval_contract": {
+          "domain": "INVESTMENT",
+          "affordability": {
+            "mode": "NOT_APPLICABLE",
+            "reason": "Investment/CSA governance does not estimate household repayment capacity",
+            "reference": "COVERED_BOND-scope-v1",
+            "maximum_age_days": 30
+          },
+          "required_gates": [
+            {
+              "field": "operations.legal_status",
+              "value": "VERIFIED"
+            }
+          ]
+        }
+      },
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "COVERED_BOND-f0",
+            "case_id": "COVERED_BOND-case0",
+            "entity_id": "COVERED_BOND-position0",
+            "cluster_id": "COVERED_BOND-cluster0",
+            "cohort": "2024-01",
+            "segment": "COVERED_BOND",
+            "model_id": "COVERED_BOND-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COVERED_BOND-f1",
+            "case_id": "COVERED_BOND-case1",
+            "entity_id": "COVERED_BOND-position1",
+            "cluster_id": "COVERED_BOND-cluster1",
+            "cohort": "2024-01",
+            "segment": "COVERED_BOND",
+            "model_id": "COVERED_BOND-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COVERED_BOND-f2",
+            "case_id": "COVERED_BOND-case2",
+            "entity_id": "COVERED_BOND-position2",
+            "cluster_id": "COVERED_BOND-cluster2",
+            "cohort": "2024-01",
+            "segment": "COVERED_BOND",
+            "model_id": "COVERED_BOND-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COVERED_BOND-f3",
+            "case_id": "COVERED_BOND-case3",
+            "entity_id": "COVERED_BOND-position3",
+            "cluster_id": "COVERED_BOND-cluster3",
+            "cohort": "2024-01",
+            "segment": "COVERED_BOND",
+            "model_id": "COVERED_BOND-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "issue",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "COVERED_BOND-d1",
+            "entity_id": "COVERED_BOND-position1",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "COVERED_BOND-d3",
+            "entity_id": "COVERED_BOND-position3",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "COVERED_BOND-position0",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "COVERED_BOND-position1",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "COVERED_BOND-position2",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "COVERED_BOND-position3",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "issue",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-02-15"
+      },
+      "source_recipe_reference": {
+        "example": "covered_bond_products",
+        "variant": "mortgage_cover_pool",
+        "assessment_hash": "8b2ff70a8e135f4e814bfa89438ee59bf73f8e015fc20a8433b7fce61b63b9df"
+      },
+      "applicability_reason": "Investment or netting-limit governance; household affordability is not this product target. A local investment recommendation requires explicit legal and operational evidence."
+    },
+    "TRADE_RECEIVABLES": {
+      "subject_id": "TRADE_RECEIVABLES-position",
+      "subject_type": "portfolio",
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "TRADE_RECEIVABLES-monitor",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "portfolio"
+        },
+        "training": {
+          "data_fingerprint": "independent-analytical-monitor-TRADE_RECEIVABLES",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "snapshot": {
+        "subject_id": "TRADE_RECEIVABLES-position",
+        "subject_type": "portfolio",
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01",
+        "attributes": {
+          "product": {
+            "value": "TRADE_RECEIVABLES",
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          },
+          "x": {
+            "value": 0,
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          }
+        }
+      },
+      "rules": [
+        {
+          "profile_version": "1",
+          "priority": 1,
+          "effective_from": "2024-01-01",
+          "effective_to": null,
+          "known_at": "2023-12-31",
+          "rule_id": "TRADE_RECEIVABLES",
+          "profile_id": "TRADE_RECEIVABLES-monitor",
+          "conditions": [
+            {
+              "field": "product",
+              "operator": "eq",
+              "value": "TRADE_RECEIVABLES"
+            }
+          ]
+        }
+      ],
+      "applicability_contract": {
+        "contract_id": "TRADE_RECEIVABLES-support",
+        "version": "1",
+        "required_features": [
+          "product",
+          "x"
+        ],
+        "allowed_values": {
+          "product": [
+            "TRADE_RECEIVABLES"
+          ]
+        },
+        "support_bounds": {
+          "x": [
+            -1,
+            1
+          ]
+        },
+        "maximum_age_days": {
+          "x": 30
+        }
+      },
+      "policy": {
+        "schema_version": "1.1",
+        "policy_id": "TRADE_RECEIVABLES-investment",
+        "version": "1",
+        "approval_reference": "synthetic-investment-committee-policy",
+        "known_at": "2023-12-31",
+        "effective_from": "2024-01-01",
+        "effective_until": "2025-01-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "portfolio"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "operations.legal_status": {
+            "type": "category",
+            "values": [
+              "VERIFIED",
+              "UNVERIFIED"
+            ]
+          }
+        },
+        "rules": [
+          {
+            "rule_id": "committee",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "WITHIN_DECLARED_SYNTHETIC_POLICY",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "ge",
+                "value": 0
+              }
+            ]
+          }
+        ],
+        "approval_contract": {
+          "domain": "INVESTMENT",
+          "affordability": {
+            "mode": "NOT_APPLICABLE",
+            "reason": "Investment/CSA governance does not estimate household repayment capacity",
+            "reference": "TRADE_RECEIVABLES-scope-v1",
+            "maximum_age_days": 30
+          },
+          "required_gates": [
+            {
+              "field": "operations.legal_status",
+              "value": "VERIFIED"
+            }
+          ]
+        }
+      },
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "TRADE_RECEIVABLES-f0",
+            "case_id": "TRADE_RECEIVABLES-case0",
+            "entity_id": "TRADE_RECEIVABLES-position0",
+            "cluster_id": "TRADE_RECEIVABLES-cluster0",
+            "cohort": "2024-01",
+            "segment": "TRADE_RECEIVABLES",
+            "model_id": "TRADE_RECEIVABLES-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "portfolio",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "TRADE_RECEIVABLES-f1",
+            "case_id": "TRADE_RECEIVABLES-case1",
+            "entity_id": "TRADE_RECEIVABLES-position1",
+            "cluster_id": "TRADE_RECEIVABLES-cluster1",
+            "cohort": "2024-01",
+            "segment": "TRADE_RECEIVABLES",
+            "model_id": "TRADE_RECEIVABLES-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "portfolio",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "TRADE_RECEIVABLES-f2",
+            "case_id": "TRADE_RECEIVABLES-case2",
+            "entity_id": "TRADE_RECEIVABLES-position2",
+            "cluster_id": "TRADE_RECEIVABLES-cluster2",
+            "cohort": "2024-01",
+            "segment": "TRADE_RECEIVABLES",
+            "model_id": "TRADE_RECEIVABLES-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "portfolio",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "TRADE_RECEIVABLES-f3",
+            "case_id": "TRADE_RECEIVABLES-case3",
+            "entity_id": "TRADE_RECEIVABLES-position3",
+            "cluster_id": "TRADE_RECEIVABLES-cluster3",
+            "cohort": "2024-01",
+            "segment": "TRADE_RECEIVABLES",
+            "model_id": "TRADE_RECEIVABLES-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "portfolio",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "TRADE_RECEIVABLES-d1",
+            "entity_id": "TRADE_RECEIVABLES-position1",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "TRADE_RECEIVABLES-d3",
+            "entity_id": "TRADE_RECEIVABLES-position3",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "TRADE_RECEIVABLES-position0",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "TRADE_RECEIVABLES-position1",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "TRADE_RECEIVABLES-position2",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "TRADE_RECEIVABLES-position3",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "portfolio",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-02-15"
+      },
+      "source_recipe_reference": {
+        "example": "trade_receivable_products",
+        "variant": "recourse",
+        "assessment_hash": "16cdfce0747a3dc242e035123605afa88c5a1894c0eaeabde13db34f85c81ab5"
+      },
+      "applicability_reason": "Investment or netting-limit governance; household affordability is not this product target. A local investment recommendation requires explicit legal and operational evidence."
+    },
+    "COUNTERPARTY_EXPOSURE": {
+      "subject_id": "COUNTERPARTY_EXPOSURE-position",
+      "subject_type": "obligor",
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "obligor"
+        },
+        "training": {
+          "data_fingerprint": "independent-analytical-monitor-COUNTERPARTY_EXPOSURE",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "snapshot": {
+        "subject_id": "COUNTERPARTY_EXPOSURE-position",
+        "subject_type": "obligor",
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01",
+        "attributes": {
+          "product": {
+            "value": "COUNTERPARTY_EXPOSURE",
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          },
+          "x": {
+            "value": 0,
+            "observed_at": "2024-01-01",
+            "known_at": "2024-01-01"
+          }
+        }
+      },
+      "rules": [
+        {
+          "profile_version": "1",
+          "priority": 1,
+          "effective_from": "2024-01-01",
+          "effective_to": null,
+          "known_at": "2023-12-31",
+          "rule_id": "COUNTERPARTY_EXPOSURE",
+          "profile_id": "COUNTERPARTY_EXPOSURE-monitor",
+          "conditions": [
+            {
+              "field": "product",
+              "operator": "eq",
+              "value": "COUNTERPARTY_EXPOSURE"
+            }
+          ]
+        }
+      ],
+      "applicability_contract": {
+        "contract_id": "COUNTERPARTY_EXPOSURE-support",
+        "version": "1",
+        "required_features": [
+          "product",
+          "x"
+        ],
+        "allowed_values": {
+          "product": [
+            "COUNTERPARTY_EXPOSURE"
+          ]
+        },
+        "support_bounds": {
+          "x": [
+            -1,
+            1
+          ]
+        },
+        "maximum_age_days": {
+          "x": 30
+        }
+      },
+      "policy": {
+        "schema_version": "1.1",
+        "policy_id": "COUNTERPARTY_EXPOSURE-investment",
+        "version": "1",
+        "approval_reference": "synthetic-investment-committee-policy",
+        "known_at": "2023-12-31",
+        "effective_from": "2024-01-01",
+        "effective_until": "2025-01-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "obligor"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "operations.legal_status": {
+            "type": "category",
+            "values": [
+              "VERIFIED",
+              "UNVERIFIED"
+            ]
+          }
+        },
+        "rules": [
+          {
+            "rule_id": "committee",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "WITHIN_DECLARED_SYNTHETIC_POLICY",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "ge",
+                "value": 0
+              }
+            ]
+          }
+        ],
+        "approval_contract": {
+          "domain": "COUNTERPARTY_LIMIT",
+          "affordability": {
+            "mode": "NOT_APPLICABLE",
+            "reason": "Investment/CSA governance does not estimate household repayment capacity",
+            "reference": "COUNTERPARTY_EXPOSURE-scope-v1",
+            "maximum_age_days": 30
+          },
+          "required_gates": [
+            {
+              "field": "operations.legal_status",
+              "value": "VERIFIED"
+            }
+          ]
+        }
+      },
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "COUNTERPARTY_EXPOSURE-f0",
+            "case_id": "COUNTERPARTY_EXPOSURE-case0",
+            "entity_id": "COUNTERPARTY_EXPOSURE-position0",
+            "cluster_id": "COUNTERPARTY_EXPOSURE-cluster0",
+            "cohort": "2024-01",
+            "segment": "COUNTERPARTY_EXPOSURE",
+            "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COUNTERPARTY_EXPOSURE-f1",
+            "case_id": "COUNTERPARTY_EXPOSURE-case1",
+            "entity_id": "COUNTERPARTY_EXPOSURE-position1",
+            "cluster_id": "COUNTERPARTY_EXPOSURE-cluster1",
+            "cohort": "2024-01",
+            "segment": "COUNTERPARTY_EXPOSURE",
+            "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COUNTERPARTY_EXPOSURE-f2",
+            "case_id": "COUNTERPARTY_EXPOSURE-case2",
+            "entity_id": "COUNTERPARTY_EXPOSURE-position2",
+            "cluster_id": "COUNTERPARTY_EXPOSURE-cluster2",
+            "cohort": "2024-01",
+            "segment": "COUNTERPARTY_EXPOSURE",
+            "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COUNTERPARTY_EXPOSURE-f3",
+            "case_id": "COUNTERPARTY_EXPOSURE-case3",
+            "entity_id": "COUNTERPARTY_EXPOSURE-position3",
+            "cluster_id": "COUNTERPARTY_EXPOSURE-cluster3",
+            "cohort": "2024-01",
+            "segment": "COUNTERPARTY_EXPOSURE",
+            "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+            "model_version": "v1",
+            "forecast_at": "2024-01-01",
+            "known_at": "2024-01-01",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "COUNTERPARTY_EXPOSURE-d1",
+            "entity_id": "COUNTERPARTY_EXPOSURE-position1",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "COUNTERPARTY_EXPOSURE-d3",
+            "entity_id": "COUNTERPARTY_EXPOSURE-position3",
+            "event_at": "2024-01-10",
+            "known_at": "2024-01-11",
+            "event": "default",
+            "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "COUNTERPARTY_EXPOSURE-position0",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "COUNTERPARTY_EXPOSURE-position1",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "COUNTERPARTY_EXPOSURE-position2",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          },
+          {
+            "entity_id": "COUNTERPARTY_EXPOSURE-position3",
+            "complete_through": "2024-01-31",
+            "known_at": "2024-02-01"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_CONTRACTUAL_PAYMENT_FAILURE",
+          "unit": "obligor",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-02-15"
+      },
+      "source_recipe_reference": {
+        "example": "counterparty_credit_products",
+        "variant": "collateralized",
+        "assessment_hash": "512bf5fa74c4a422e8850560411afe796faf1ef2b9d43b1cde4f030f5bfbb361"
+      },
+      "applicability_reason": "Investment or netting-limit governance; household affordability is not this product target. A local investment recommendation requires explicit legal and operational evidence."
+    }
+  }
+}

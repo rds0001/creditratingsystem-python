@@ -1,0 +1,525 @@
+{
+  "data_origin": "SYNTHETIC",
+  "product": "PUBLIC_SERVICE_FINANCE",
+  "target": {
+    "event": "default",
+    "horizon": 1,
+    "time_unit": "years",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "rating_scale": {
+    "schema_version": "1.0",
+    "scale_id": "synthetic-corporate",
+    "version": "1",
+    "boundary_convention": "left_closed",
+    "grades": [
+      {
+        "grade": "A",
+        "lower": 0,
+        "upper": 0.2,
+        "representative_pd": 0.1,
+        "is_default": false
+      },
+      {
+        "grade": "B",
+        "lower": 0.2,
+        "upper": 1,
+        "representative_pd": 0.4,
+        "is_default": false
+      }
+    ]
+  },
+  "precision_contract": {
+    "pd_decimal_places": 6,
+    "market_output_decimal_places": 8,
+    "raw_fit_oracle_absolute_tolerance": 1e-07
+  },
+  "market_inputs": {
+    "equity_value": 23.223991292486758,
+    "equity_volatility": 0.7871052000240558,
+    "debt_face": 80,
+    "risk_free_rate": 0.03,
+    "maturity": 1,
+    "asset_bounds": [
+      1,
+      1000
+    ],
+    "volatility_bounds": [
+      0.001,
+      2
+    ],
+    "currency": "EUR"
+  },
+  "physical_drift": 0.1,
+  "distance_calibration": {
+    "distances": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "outcomes": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      7,
+      3,
+      8,
+      2,
+      9,
+      1
+    ],
+    "metadata": {
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "calibration": {
+        "start": "2021-01-01",
+        "end": "2022-01-01",
+        "known_at": "2022-01-02",
+        "split_id": "calibration_2021",
+        "prediction_origin": "HOLDOUT"
+      },
+      "base_model_version": "1",
+      "population_definition": "Synthetic listed utility obligors with mature independent distance/default observations",
+      "outcome_policy": "Fully mature observed obligor default over one year",
+      "weight_type": "frequency",
+      "data_origin": "SYNTHETIC"
+    },
+    "out_of_bounds": "clip"
+  },
+  "cases": [
+    {
+      "case_id": "service-housing_association",
+      "variant": "housing_association",
+      "listed": false,
+      "legal_claim": "UNRESTRICTED_REVENUE_PLEDGE",
+      "cashflow_type": "RENTAL_SERVICE",
+      "quantity": 90,
+      "stress_quantity": 70,
+      "unit_price": 1,
+      "stress_unit_price": 1,
+      "operating_cost": 55,
+      "capex": 10,
+      "general_grant": 0,
+      "restricted_grant": 20,
+      "restricted_purpose": "CAPITAL_PROJECT",
+      "opening_unrestricted_cash": 5,
+      "debt_service": 45,
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          98,
+          2,
+          90,
+          10
+        ],
+        "feature_order": [
+          "debt_service_to_unrestricted_cfads"
+        ],
+        "training": {
+          "data_fingerprint": "fund-NAV_backed-historic-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.02,
+          0.02,
+          0.1,
+          0.1
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          98,
+          2,
+          90,
+          10
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic public-service housing_association holdout",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "housing_association-discretionary-support",
+        "assumption_reference": "Explicit synthetic rescue capacity and legal permission; operating grants are already in cash and are not this effect",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "reference": {
+        "cfads": 35,
+        "stress_cfads": 15,
+        "restricted_remaining": 10,
+        "base_gap": 5,
+        "stress_gap": 25
+      }
+    },
+    {
+      "case_id": "service-education_health",
+      "variant": "education_health",
+      "listed": false,
+      "legal_claim": "UNRESTRICTED_REVENUE_PLEDGE",
+      "cashflow_type": "ATTENDANCE_AND_GRANT",
+      "quantity": 80,
+      "stress_quantity": 60,
+      "unit_price": 0.5,
+      "stress_unit_price": 0.5,
+      "operating_cost": 50,
+      "capex": 15,
+      "general_grant": 30,
+      "restricted_grant": 25,
+      "restricted_purpose": "CAPITAL_PROJECT",
+      "opening_unrestricted_cash": 5,
+      "debt_service": 30,
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          97,
+          3,
+          89,
+          11
+        ],
+        "feature_order": [
+          "debt_service_to_unrestricted_cfads"
+        ],
+        "training": {
+          "data_fingerprint": "fund-subscription_line-historic-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.03,
+          0.03,
+          0.11,
+          0.11
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          97,
+          3,
+          89,
+          11
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic public-service education_health holdout",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "education_health-discretionary-support",
+        "assumption_reference": "Explicit synthetic rescue capacity and legal permission; operating grants are already in cash and are not this effect",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": false,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "reference": {
+        "cfads": 20,
+        "stress_cfads": 10,
+        "restricted_remaining": 10,
+        "base_gap": 5,
+        "stress_gap": 15
+      }
+    },
+    {
+      "case_id": "service-utility_service",
+      "variant": "utility_service",
+      "listed": true,
+      "legal_claim": "UNRESTRICTED_REVENUE_PLEDGE",
+      "cashflow_type": "REGULATED_TARIFF",
+      "quantity": 100,
+      "stress_quantity": 100,
+      "unit_price": 0.8,
+      "stress_unit_price": 0.6,
+      "operating_cost": 50,
+      "capex": 20,
+      "general_grant": 0,
+      "restricted_grant": 10,
+      "restricted_purpose": "CAPITAL_PROJECT",
+      "opening_unrestricted_cash": 10,
+      "debt_service": 25,
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          96,
+          4,
+          88,
+          12
+        ],
+        "feature_order": [
+          "debt_service_to_unrestricted_cfads"
+        ],
+        "training": {
+          "data_fingerprint": "fund-levered_fund-historic-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.04,
+          0.04,
+          0.12,
+          0.12
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          96,
+          4,
+          88,
+          12
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic public-service utility_service holdout",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "utility_service-discretionary-support",
+        "assumption_reference": "Explicit synthetic rescue capacity and legal permission; operating grants are already in cash and are not this effect",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "reference": {
+        "cfads": 20,
+        "stress_cfads": 0,
+        "restricted_remaining": 0,
+        "base_gap": 0,
+        "stress_gap": 15
+      }
+    }
+  ]
+}

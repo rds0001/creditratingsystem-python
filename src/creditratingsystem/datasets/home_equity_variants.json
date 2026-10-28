@@ -1,0 +1,277 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "home_equity_line",
+  "version": "1",
+  "exposure": {
+    "contract": {
+      "facility_id": "home_equity",
+      "currency": "EUR",
+      "as_of": "2021-01-01",
+      "drawn_principal": 40000,
+      "credit_limit": 100000,
+      "accrued_interest": 0
+    },
+    "events": [
+      {
+        "event_id": "draw",
+        "event_date": "2022-01-01",
+        "known_at": "2021-01-01",
+        "sequence": 0,
+        "kind": "DRAW",
+        "amount": 20000
+      },
+      {
+        "event_id": "freeze_revolving_limit",
+        "event_date": "2022-01-01",
+        "known_at": "2021-01-01",
+        "sequence": 1,
+        "kind": "LIMIT_CHANGE",
+        "amount": 60000
+      },
+      {
+        "event_id": "interest",
+        "event_date": "2023-01-01",
+        "known_at": "2021-01-01",
+        "sequence": 0,
+        "kind": "INTEREST_PAYMENT",
+        "amount": 6000
+      },
+      {
+        "event_id": "principal",
+        "event_date": "2023-01-01",
+        "known_at": "2021-01-01",
+        "sequence": 1,
+        "kind": "PRINCIPAL_REPAYMENT",
+        "amount": 10000
+      },
+      {
+        "event_id": "amortized_limit",
+        "event_date": "2023-01-01",
+        "known_at": "2021-01-01",
+        "sequence": 2,
+        "kind": "LIMIT_CHANGE",
+        "amount": 50000
+      }
+    ],
+    "annual_interest_rates": [
+      0.06,
+      0.06
+    ],
+    "period_end_dates": [
+      "2022-01-01",
+      "2023-01-01"
+    ],
+    "day_count": "ACT/365F",
+    "default_timing": "AFTER_PERIOD_END_EVENTS",
+    "allow_overlimit": false,
+    "currency": "EUR"
+  },
+  "collateral": {
+    "first_lien": {
+      "claims": [
+        {
+          "claim_id": "home_equity",
+          "amount": 50000,
+          "currency": "EUR"
+        },
+        {
+          "claim_id": "other",
+          "amount": 40000,
+          "currency": "EUR"
+        }
+      ],
+      "collateral": [
+        {
+          "collateral_id": "home",
+          "value": 100000,
+          "currency": "EUR",
+          "valuation_date": "2023-01-01",
+          "freshness": "CURRENT"
+        }
+      ],
+      "allocations": [
+        {
+          "claim_id": "home_equity",
+          "collateral_id": "home",
+          "amount": 50000,
+          "priority": 1
+        },
+        {
+          "claim_id": "other",
+          "collateral_id": "home",
+          "amount": 40000,
+          "priority": 2
+        }
+      ],
+      "currency": "EUR"
+    },
+    "second_lien": {
+      "claims": [
+        {
+          "claim_id": "home_equity",
+          "amount": 50000,
+          "currency": "EUR"
+        },
+        {
+          "claim_id": "other",
+          "amount": 40000,
+          "currency": "EUR"
+        }
+      ],
+      "collateral": [
+        {
+          "collateral_id": "home",
+          "value": 100000,
+          "currency": "EUR",
+          "valuation_date": "2023-01-01",
+          "freshness": "CURRENT"
+        }
+      ],
+      "allocations": [
+        {
+          "claim_id": "home_equity",
+          "collateral_id": "home",
+          "amount": 50000,
+          "priority": 2
+        },
+        {
+          "claim_id": "other",
+          "collateral_id": "home",
+          "amount": 40000,
+          "priority": 1
+        }
+      ],
+      "currency": "EUR"
+    }
+  },
+  "recovery": {
+    "first_lien": {
+      "default_events": [
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "subject_id": "household",
+          "default_date": "2023-01-01"
+        }
+      ],
+      "claims": [
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "subject_id": "household",
+          "claim_id": "home_equity",
+          "pool_id": "home",
+          "currency": "EUR",
+          "ead_at_default": 50000,
+          "legal_balance": 50000,
+          "priority": 1,
+          "deficit_cost_share": 0.5555555555555556
+        },
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "subject_id": "household",
+          "claim_id": "other",
+          "pool_id": "home",
+          "currency": "EUR",
+          "ead_at_default": 40000,
+          "legal_balance": 40000,
+          "priority": 2,
+          "deficit_cost_share": 0.4444444444444444
+        }
+      ],
+      "realization_paths": [
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "pool_id": "home",
+          "currency": "EUR",
+          "realization_id": "sale",
+          "collateral_id": "home",
+          "date": "2024-01-01",
+          "gross_value": 80000,
+          "realization_fraction": 1,
+          "cost": 0,
+          "discount_factor": 1,
+          "discount_anchor_date": "2023-01-01"
+        }
+      ],
+      "recovery_policy": {
+        "policy_id": "declared_priority",
+        "version": "1",
+        "currency": "EUR",
+        "allocation": "LEGAL_CAP",
+        "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+        "completion": "ULTIMATE_COMPLETE"
+      }
+    },
+    "second_lien": {
+      "default_events": [
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "subject_id": "household",
+          "default_date": "2023-01-01"
+        }
+      ],
+      "claims": [
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "subject_id": "household",
+          "claim_id": "home_equity",
+          "pool_id": "home",
+          "currency": "EUR",
+          "ead_at_default": 50000,
+          "legal_balance": 50000,
+          "priority": 2,
+          "deficit_cost_share": 0.5555555555555556
+        },
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "subject_id": "household",
+          "claim_id": "other",
+          "pool_id": "home",
+          "currency": "EUR",
+          "ead_at_default": 40000,
+          "legal_balance": 40000,
+          "priority": 1,
+          "deficit_cost_share": 0.4444444444444444
+        }
+      ],
+      "realization_paths": [
+        {
+          "scenario_id": "sale",
+          "default_event_id": "default",
+          "pool_id": "home",
+          "currency": "EUR",
+          "realization_id": "sale",
+          "collateral_id": "home",
+          "date": "2024-01-01",
+          "gross_value": 80000,
+          "realization_fraction": 1,
+          "cost": 0,
+          "discount_factor": 1,
+          "discount_anchor_date": "2023-01-01"
+        }
+      ],
+      "recovery_policy": {
+        "policy_id": "declared_priority",
+        "version": "1",
+        "currency": "EUR",
+        "allocation": "LEGAL_CAP",
+        "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+        "completion": "ULTIMATE_COMPLETE"
+      }
+    }
+  },
+  "forbidden_draw": {
+    "event_id": "unavailable_draw",
+    "event_date": "2023-01-01",
+    "known_at": "2021-01-01",
+    "sequence": 3,
+    "kind": "DRAW",
+    "amount": 1000
+  }
+}

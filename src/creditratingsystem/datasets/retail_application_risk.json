@@ -1,0 +1,764 @@
+{
+  "data_origin": "SYNTHETIC",
+  "forecast_scope": "30_DAY_FIRST_DEFAULT_LOSS_CONDITIONAL_ON_FUNDING_NOT_FULL_CONTRACT_LIFETIME",
+  "products": {
+    "RETAIL_UNSECURED_INSTALLMENT": {
+      "application_id": "RETAIL_UNSECURED_INSTALLMENT-DEFAULT_THEN_EXIT",
+      "customer_id": "person-RETAIL_UNSECURED_INSTALLMENT-DEFAULT_THEN_EXIT",
+      "account_id": "facility-RETAIL_UNSECURED_INSTALLMENT-DEFAULT_THEN_EXIT",
+      "household_id": "household-RETAIL_UNSECURED_INSTALLMENT-DEFAULT_THEN_EXIT",
+      "assumptions_known_at": "2024-12-28",
+      "proposed_funding_at": "2024-12-31",
+      "horizon_end": "2025-01-30",
+      "conditional_ead": 1000,
+      "ead_scope": "PRINCIPAL_BEFORE_FIRST_PAYMENT_UNDER_NO_INTERIM_PRINCIPAL_COLLECTION_SCENARIO",
+      "exposure_assumption": "Default is before the first period-end payment; any earlier contractual collection is zero in this explicit exposure scenario. Not an observed statement forecast.",
+      "prior_workouts": [
+        {
+          "episode_id": "RETAIL_UNSECURED_INSTALLMENT-prior-default-0",
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-prior-person-0",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 700.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        },
+        {
+          "episode_id": "RETAIL_UNSECURED_INSTALLMENT-prior-default-1",
+          "entity_id": "RETAIL_UNSECURED_INSTALLMENT-prior-person-1",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 500.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        }
+      ],
+      "expected_prior_mean_lgd": 0.4,
+      "loss_discount_factor": 1
+    },
+    "RETAIL_AUTO_LOAN": {
+      "application_id": "RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT",
+      "customer_id": "person-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT",
+      "account_id": "facility-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT",
+      "household_id": "household-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT",
+      "assumptions_known_at": "2024-12-28",
+      "proposed_funding_at": "2024-12-31",
+      "horizon_end": "2025-01-30",
+      "conditional_ead": 1000,
+      "ead_scope": "PRINCIPAL_BEFORE_FIRST_PAYMENT_UNDER_NO_INTERIM_PRINCIPAL_COLLECTION_SCENARIO",
+      "exposure_assumption": "Default is before the first period-end payment; any earlier contractual collection is zero in this explicit exposure scenario. Not an observed statement forecast.",
+      "prior_workouts": [
+        {
+          "episode_id": "RETAIL_AUTO_LOAN-prior-default-0",
+          "entity_id": "RETAIL_AUTO_LOAN-prior-person-0",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 800.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        },
+        {
+          "episode_id": "RETAIL_AUTO_LOAN-prior-default-1",
+          "entity_id": "RETAIL_AUTO_LOAN-prior-person-1",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 600.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        }
+      ],
+      "expected_prior_mean_lgd": 0.3,
+      "loss_discount_factor": 1,
+      "asset": {
+        "asset_parameters": {
+          "asset_id": "facility-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT-vehicle",
+          "currency": "EUR",
+          "valuation_date": "2023-12-30",
+          "initial_value": 1000,
+          "salvage_value": 0,
+          "initial_age_years": 0,
+          "economic_life_years": 10,
+          "depreciation_model": "straight_line",
+          "idiosyncratic_volatility": 0,
+          "probability_measure": "PHYSICAL",
+          "year_basis_days": 365
+        },
+        "market_paths": [
+          {
+            "scenario_id": "collateral-stress",
+            "date": "2024-12-29",
+            "market_index": 0.6666666666666666,
+            "innovation": 0
+          }
+        ]
+      },
+      "asset_scope": "SECURED_BORROWER_PRINCIPAL_SCENARIO",
+      "waterfall": {
+        "default_events": [
+          {
+            "scenario_id": "collateral-stress",
+            "default_event_id": "hypothetical",
+            "subject_id": "person-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT",
+            "default_date": "2024-12-29"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "collateral-stress",
+            "default_event_id": "hypothetical",
+            "subject_id": "person-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT",
+            "claim_id": "facility-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT-asset-exposure",
+            "pool_id": "facility-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT-vehicle",
+            "currency": "EUR",
+            "ead_at_default": 1000,
+            "legal_balance": 1000,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "collateral-stress",
+            "default_event_id": "hypothetical",
+            "pool_id": "facility-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT-vehicle",
+            "currency": "EUR",
+            "realization_id": "scenario-sale",
+            "collateral_id": "facility-RETAIL_AUTO_LOAN-DEFAULT_THEN_EXIT-vehicle",
+            "date": "2024-12-29",
+            "gross_value": 600,
+            "realization_fraction": 1,
+            "cost": 50,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-12-29"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "prior-asset-scenario",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    "RETAIL_AUTO_LEASE": {
+      "application_id": "RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT",
+      "customer_id": "person-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT",
+      "account_id": "facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT",
+      "household_id": "household-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT",
+      "assumptions_known_at": "2024-12-28",
+      "proposed_funding_at": "2024-12-31",
+      "horizon_end": "2025-01-30",
+      "conditional_ead": 90,
+      "ead_scope": "ONE_UNPAID_RENT_NO_RESIDUAL_LIABILITY",
+      "exposure_assumption": "Default is before the first period-end payment; any earlier contractual collection is zero in this explicit exposure scenario. Not an observed statement forecast.",
+      "prior_workouts": [
+        {
+          "episode_id": "RETAIL_AUTO_LEASE-prior-default-0",
+          "entity_id": "RETAIL_AUTO_LEASE-prior-person-0",
+          "ead": 90,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 36.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        },
+        {
+          "episode_id": "RETAIL_AUTO_LEASE-prior-default-1",
+          "entity_id": "RETAIL_AUTO_LEASE-prior-person-1",
+          "ead": 90,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 18.000000000000007,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        }
+      ],
+      "expected_prior_mean_lgd": 0.7,
+      "loss_discount_factor": 1,
+      "asset": {
+        "asset_parameters": {
+          "asset_id": "facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT-vehicle",
+          "currency": "EUR",
+          "valuation_date": "2023-12-30",
+          "initial_value": 1000,
+          "salvage_value": 0,
+          "initial_age_years": 0,
+          "economic_life_years": 10,
+          "depreciation_model": "straight_line",
+          "idiosyncratic_volatility": 0,
+          "probability_measure": "PHYSICAL",
+          "year_basis_days": 365
+        },
+        "market_paths": [
+          {
+            "scenario_id": "collateral-stress",
+            "date": "2024-12-29",
+            "market_index": 0.6666666666666666,
+            "innovation": 0
+          }
+        ]
+      },
+      "asset_scope": "LESSOR_INVESTMENT_SEPARATE_FROM_RENT_CLAIM",
+      "waterfall": {
+        "default_events": [
+          {
+            "scenario_id": "collateral-stress",
+            "default_event_id": "hypothetical",
+            "subject_id": "lessor-facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT",
+            "default_date": "2024-12-29"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "collateral-stress",
+            "default_event_id": "hypothetical",
+            "subject_id": "lessor-facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT",
+            "claim_id": "facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT-owned-asset-investment-not-borrower-debt",
+            "pool_id": "facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT-vehicle",
+            "currency": "EUR",
+            "ead_at_default": 1000,
+            "legal_balance": 1000,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "collateral-stress",
+            "default_event_id": "hypothetical",
+            "pool_id": "facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT-vehicle",
+            "currency": "EUR",
+            "realization_id": "scenario-sale",
+            "collateral_id": "facility-RETAIL_AUTO_LEASE-DEFAULT_THEN_EXIT-vehicle",
+            "date": "2024-12-29",
+            "gross_value": 600,
+            "realization_fraction": 1,
+            "cost": 50,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-12-29"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "prior-asset-scenario",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    "RETAIL_EDUCATION_LOAN": {
+      "application_id": "RETAIL_EDUCATION_LOAN-DEFAULT_THEN_EXIT",
+      "customer_id": "person-RETAIL_EDUCATION_LOAN-DEFAULT_THEN_EXIT",
+      "account_id": "facility-RETAIL_EDUCATION_LOAN-DEFAULT_THEN_EXIT",
+      "household_id": "household-RETAIL_EDUCATION_LOAN-DEFAULT_THEN_EXIT",
+      "assumptions_known_at": "2024-12-28",
+      "proposed_funding_at": "2024-12-31",
+      "horizon_end": "2025-01-30",
+      "conditional_ead": 1000,
+      "ead_scope": "PRINCIPAL_BEFORE_FIRST_PAYMENT_UNDER_NO_INTERIM_PRINCIPAL_COLLECTION_SCENARIO",
+      "exposure_assumption": "Default is before the first period-end payment; any earlier contractual collection is zero in this explicit exposure scenario. Not an observed statement forecast.",
+      "prior_workouts": [
+        {
+          "episode_id": "RETAIL_EDUCATION_LOAN-prior-default-0",
+          "entity_id": "RETAIL_EDUCATION_LOAN-prior-person-0",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 600.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        },
+        {
+          "episode_id": "RETAIL_EDUCATION_LOAN-prior-default-1",
+          "entity_id": "RETAIL_EDUCATION_LOAN-prior-person-1",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 400.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        }
+      ],
+      "expected_prior_mean_lgd": 0.5,
+      "loss_discount_factor": 1
+    },
+    "RETAIL_BNPL": {
+      "application_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT",
+      "customer_id": "person-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+      "account_id": "facility-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+      "household_id": "household-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+      "assumptions_known_at": "2024-12-28",
+      "proposed_funding_at": "2024-12-31",
+      "horizon_end": "2025-01-30",
+      "conditional_ead": 1000,
+      "ead_scope": "PRINCIPAL_BEFORE_FIRST_PAYMENT_UNDER_NO_INTERIM_PRINCIPAL_COLLECTION_SCENARIO",
+      "exposure_assumption": "Default is before the first period-end payment; any earlier contractual collection is zero in this explicit exposure scenario. Not an observed statement forecast.",
+      "prior_workouts": [
+        {
+          "episode_id": "RETAIL_BNPL-prior-default-0",
+          "entity_id": "RETAIL_BNPL-prior-person-0",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 650.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        },
+        {
+          "episode_id": "RETAIL_BNPL-prior-default-1",
+          "entity_id": "RETAIL_BNPL-prior-person-1",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 449.99999999999994,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        }
+      ],
+      "expected_prior_mean_lgd": 0.45,
+      "loss_discount_factor": 1,
+      "bnpl": {
+        "plans": [
+          {
+            "plan_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-0",
+            "release_seq": 1,
+            "customer_id": "person-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "provider_id": "synthetic-provider",
+            "purchased_at": "2024-12-29",
+            "known_at": "2024-12-29",
+            "currency": "EUR",
+            "closed_at": null,
+            "refinances_plan_id": null,
+            "schedule_complete": true
+          },
+          {
+            "plan_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-1",
+            "release_seq": 1,
+            "customer_id": "person-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "provider_id": "synthetic-provider",
+            "purchased_at": "2024-12-29",
+            "known_at": "2024-12-29",
+            "currency": "EUR",
+            "closed_at": null,
+            "refinances_plan_id": null,
+            "schedule_complete": true
+          }
+        ],
+        "installments": [
+          {
+            "installment_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-0-0",
+            "plan_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-0",
+            "release_seq": 1,
+            "known_at": "2024-12-29",
+            "due_at": "2025-01-10",
+            "amount": 200.0,
+            "currency": "EUR"
+          },
+          {
+            "installment_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-0-1",
+            "plan_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-0",
+            "release_seq": 1,
+            "known_at": "2024-12-29",
+            "due_at": "2025-02-10",
+            "amount": 200.0,
+            "currency": "EUR"
+          },
+          {
+            "installment_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-1-0",
+            "plan_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-1",
+            "release_seq": 1,
+            "known_at": "2024-12-29",
+            "due_at": "2025-01-10",
+            "amount": 300.0,
+            "currency": "EUR"
+          },
+          {
+            "installment_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-1-1",
+            "plan_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-plan-1",
+            "release_seq": 1,
+            "known_at": "2024-12-29",
+            "due_at": "2025-02-10",
+            "amount": 300.0,
+            "currency": "EUR"
+          }
+        ],
+        "events": [],
+        "provider_coverage": {
+          "status": "COMPLETE",
+          "sources": [
+            "synthetic-provider"
+          ],
+          "known_at": "2024-12-29"
+        },
+        "customer_id": "person-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+        "as_of": "2024-12-29",
+        "information_cutoff": "2024-12-29",
+        "lookback_days": 30,
+        "near_term_days": 30,
+        "currency": "EUR"
+      },
+      "household_graph": {
+        "entities": [
+          {
+            "entity_id": "person-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "entity_type": "CUSTOMER",
+            "known_at": "2024-12-29"
+          },
+          {
+            "entity_id": "household-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "entity_type": "HOUSEHOLD",
+            "known_at": "2024-12-29"
+          },
+          {
+            "entity_id": "facility-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "entity_type": "FACILITY",
+            "known_at": "2024-12-29"
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-MEMBER_OF",
+            "release_seq": 1,
+            "source_id": "person-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "target_id": "household-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "role": "MEMBER_OF",
+            "effective_from": "2024-12-29",
+            "effective_until": null,
+            "known_at": "2024-12-29",
+            "liability_fraction": null,
+            "budget_share": null,
+            "evidence_reference": "Synthetic signed single applicant proposed contract; conditional on funding"
+          },
+          {
+            "relationship_id": "RETAIL_BNPL-DEFAULT_THEN_EXIT-BORROWER_ON",
+            "release_seq": 1,
+            "source_id": "person-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "target_id": "facility-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+            "role": "BORROWER_ON",
+            "effective_from": "2024-12-29",
+            "effective_until": null,
+            "known_at": "2024-12-29",
+            "liability_fraction": 1,
+            "budget_share": 1,
+            "evidence_reference": "Synthetic signed single applicant proposed contract; conditional on funding"
+          }
+        ],
+        "as_of": "2024-12-29",
+        "information_cutoff": "2024-12-29"
+      },
+      "obligations": [
+        {
+          "facility_id": "facility-RETAIL_BNPL-DEFAULT_THEN_EXIT",
+          "release_seq": 1,
+          "known_at": "2024-12-29",
+          "source_id": "synthetic-provider",
+          "observed_at": "2024-12-29",
+          "currency": "EUR",
+          "period": "month",
+          "status": "ACTIVE",
+          "debt_stock": 1000,
+          "scheduled_debt_service": 500
+        }
+      ],
+      "hazard_panel": [
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-2",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-3",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-4",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-5",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-6",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-7",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-8",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "RETAIL_BNPL-prior-hazard-9",
+          "start": 0,
+          "stop": 30,
+          "event": 0,
+          "period": 0,
+          "interval_end_type": "scheduled",
+          "covariate_time": 0
+        }
+      ],
+      "hazard_training": {
+        "known_at": "2023-02-02",
+        "cohort_origin": "2023-01-01",
+        "outcome_end": "2023-01-31",
+        "data_fingerprint": "RETAIL_BNPL-independent-ten-prior-accounts",
+        "split_id": "prior-hazard",
+        "data_origin": "SYNTHETIC"
+      }
+    },
+    "RETAIL_MICRO_LOAN": {
+      "application_id": "RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT",
+      "customer_id": "person-RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT",
+      "account_id": "facility-RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT",
+      "household_id": "household-RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT",
+      "assumptions_known_at": "2024-12-28",
+      "proposed_funding_at": "2024-12-31",
+      "horizon_end": "2025-01-30",
+      "conditional_ead": 1000,
+      "ead_scope": "PRINCIPAL_BEFORE_FIRST_PAYMENT_UNDER_NO_INTERIM_PRINCIPAL_COLLECTION_SCENARIO",
+      "exposure_assumption": "Default is before the first period-end payment; any earlier contractual collection is zero in this explicit exposure scenario. Not an observed statement forecast.",
+      "prior_workouts": [
+        {
+          "episode_id": "RETAIL_MICRO_LOAN-prior-default-0",
+          "entity_id": "RETAIL_MICRO_LOAN-prior-person-0",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 500.0,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        },
+        {
+          "episode_id": "RETAIL_MICRO_LOAN-prior-default-1",
+          "entity_id": "RETAIL_MICRO_LOAN-prior-person-1",
+          "ead": 1000,
+          "default_date": "2022-01-01",
+          "recovery_date": "2022-02-01",
+          "known_at": "2022-02-02",
+          "recovery": 300.00000000000006,
+          "discount_factor": 1,
+          "closed_at": "2022-02-01"
+        }
+      ],
+      "expected_prior_mean_lgd": 0.6,
+      "loss_discount_factor": 1,
+      "expert": {
+        "elicitation": {
+          "method": "moments",
+          "mean": 0.2,
+          "concentration": 10
+        },
+        "elicitation_contract": {
+          "population_id": "RETAIL_MICRO_LOAN-expert-reference",
+          "reference": "Separate synthetic prior judgement, not application model calibration",
+          "known_at": "2021-01-01",
+          "expert_ids": [
+            "synthetic-expert"
+          ],
+          "evidence_ids": [
+            "prior-judgement"
+          ],
+          "target": {
+            "event": "default",
+            "horizon": 30,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          }
+        }
+      },
+      "expert_update": {
+        "defaults": 2,
+        "exposures": 10,
+        "observation_contract": {
+          "target": {
+            "event": "default",
+            "horizon": 30,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "population_id": "RETAIL_MICRO_LOAN-expert-reference",
+          "conditional_iid": true,
+          "outcome_complete": true,
+          "evidence_ids": [
+            "independent-2022-complete-ten"
+          ],
+          "known_at": "2023-01-01"
+        },
+        "predictive_exposures": 1
+      },
+      "limit_profile": {
+        "profile_id": "RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT-scenario",
+        "version": "1",
+        "known_at": "2024-12-29",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "initially_performing"
+        },
+        "maximum_amount": 1500,
+        "maximum_ead": 1500,
+        "maximum_expected_loss": 120,
+        "maximum_concentration": 0.2,
+        "concentration_denominator": 10000,
+        "existing_group_exposure": 0,
+        "tolerance": 1e-10
+      },
+      "limit_offers": [
+        {
+          "offer_id": "500",
+          "version": "1",
+          "known_at": "2024-12-29",
+          "currency": "EUR",
+          "subject_id": "person-RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT",
+          "amount": 500,
+          "tenor_days": 30,
+          "assumption_reference": "Synthetic alternative 30-day offers, not live ten-month pricing",
+          "target": {
+            "event": "default",
+            "horizon": 30,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "pd": 0.2,
+          "lgd": 0.6,
+          "ead": 500,
+          "risk_conditioning": "CONDITIONAL_ON_THIS_OFFER",
+          "risk_reference": "Explicit constant risk across these three amounts only, expert population transport assumption",
+          "affordability_status": "AFFORDABLE",
+          "affordability_maximum_amount": 1000,
+          "eligibility_status": "ELIGIBLE"
+        },
+        {
+          "offer_id": "1000",
+          "version": "1",
+          "known_at": "2024-12-29",
+          "currency": "EUR",
+          "subject_id": "person-RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT",
+          "amount": 1000,
+          "tenor_days": 30,
+          "assumption_reference": "Synthetic alternative 30-day offers, not live ten-month pricing",
+          "target": {
+            "event": "default",
+            "horizon": 30,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "pd": 0.2,
+          "lgd": 0.6,
+          "ead": 1000,
+          "risk_conditioning": "CONDITIONAL_ON_THIS_OFFER",
+          "risk_reference": "Explicit constant risk across these three amounts only, expert population transport assumption",
+          "affordability_status": "AFFORDABLE",
+          "affordability_maximum_amount": 1000,
+          "eligibility_status": "ELIGIBLE"
+        },
+        {
+          "offer_id": "1500",
+          "version": "1",
+          "known_at": "2024-12-29",
+          "currency": "EUR",
+          "subject_id": "person-RETAIL_MICRO_LOAN-DEFAULT_THEN_EXIT",
+          "amount": 1500,
+          "tenor_days": 30,
+          "assumption_reference": "Synthetic alternative 30-day offers, not live ten-month pricing",
+          "target": {
+            "event": "default",
+            "horizon": 30,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "pd": 0.2,
+          "lgd": 0.6,
+          "ead": 1500,
+          "risk_conditioning": "CONDITIONAL_ON_THIS_OFFER",
+          "risk_reference": "Explicit constant risk across these three amounts only, expert population transport assumption",
+          "affordability_status": "AFFORDABLE",
+          "affordability_maximum_amount": 1000,
+          "eligibility_status": "ELIGIBLE"
+        }
+      ]
+    }
+  }
+}

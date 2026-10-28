@@ -1,0 +1,42 @@
+[
+  {
+    "record_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+    "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+    "as_of": "2024-12-29",
+    "known_at": "2024-12-29",
+    "balance": 1000
+  },
+  {
+    "record_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+    "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+    "as_of": "2024-12-29",
+    "known_at": "2024-12-29",
+    "balance": 1000
+  },
+  {
+    "record_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+    "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+    "as_of": "2024-12-29",
+    "known_at": "2024-12-29",
+    "balance": 1000
+  },
+  {
+    "record_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+    "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+    "as_of": "2024-12-29",
+    "known_at": "2024-12-29",
+    "balance": 1000
+  },
+  {
+    "record_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+    "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+    "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+    "as_of": "2025-01-29",
+    "known_at": "2025-01-29",
+    "balance": 1000
+  }
+]

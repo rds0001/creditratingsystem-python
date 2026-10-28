@@ -1,0 +1,6 @@
+record_id,entity_id,product_id,as_of,known_at,balance
+commercial_real_estate-income_producing-source,commercial_real_estate-income_producing,COMMERCIAL_REAL_ESTATE,2023-01-01,2023-01-01,100
+project_finance-operating-source,project_finance-operating,PROJECT_FINANCE,2023-01-01,2023-01-01,100
+aircraft_finance-single_aircraft-source,aircraft_finance-single_aircraft,AIRCRAFT_FINANCE,2023-01-01,2023-01-01,70
+ship_finance-time_charter-source,ship_finance-time_charter,SHIP_FINANCE,2023-01-01,2023-01-01,65
+equipment_leasing-single_lease-source,equipment_leasing-single_lease,EQUIPMENT_LEASING,2023-01-01,2023-01-01,40

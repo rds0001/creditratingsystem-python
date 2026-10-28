@@ -1,0 +1,564 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1.0",
+  "product": "STRUCTURED_LIFECYCLE",
+  "training": {
+    "data_fingerprint": "synthetic-prior-2024-structured-transitions-v1",
+    "split_id": "historical-train",
+    "known_at": "2023-12-31",
+    "data_origin": "SYNTHETIC"
+  },
+  "target": {
+    "event": "default",
+    "horizon": 150,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "performing"
+  },
+  "variants": {
+    "SECURITIZATION_TRANCHE": {
+      "subject_id": "SECURITIZATION_TRANCHE-position",
+      "subject_type": "issue",
+      "assessment_id": "SECURITIZATION_TRANCHE-governance",
+      "governance_assessment_hash": "248793d9fdbc1864331279d15b8470fcdea5e8171315e38b944f0d76344a4d38",
+      "history": [
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-historic-a",
+          "start": 0,
+          "stop": 14,
+          "from_state": "performing",
+          "to_state": "delinquent"
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-historic-a",
+          "start": 14,
+          "stop": 15,
+          "from_state": "delinquent",
+          "to_state": "restructured"
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-historic-a",
+          "start": 15,
+          "stop": 31,
+          "from_state": "restructured",
+          "to_state": "default"
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-historic-a",
+          "start": 31,
+          "stop": 121,
+          "from_state": "default",
+          "to_state": "settled"
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-historic-b",
+          "start": 0,
+          "stop": 150,
+          "from_state": "performing",
+          "to_state": null
+        }
+      ],
+      "states": [
+        "performing",
+        "delinquent",
+        "restructured",
+        "default",
+        "settled"
+      ],
+      "allowed_transitions": [
+        [
+          "performing",
+          "delinquent"
+        ],
+        [
+          "delinquent",
+          "restructured"
+        ],
+        [
+          "restructured",
+          "default"
+        ],
+        [
+          "default",
+          "settled"
+        ]
+      ],
+      "history_calendar": {
+        "origin": "2022-01-01",
+        "complete_through": "2022-05-31",
+        "known_at": "2023-12-31"
+      },
+      "competing_panel": [
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-competing-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-competing-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-competing-2",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-competing-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "event_types": [
+        "default",
+        "exit",
+        null,
+        null
+      ],
+      "ratings": [
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-main",
+          "entity_id": "SECURITIZATION_TRANCHE-position",
+          "as_of": "2024-01-16"
+        },
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-sale",
+          "entity_id": "SECURITIZATION_TRANCHE-position-sale",
+          "as_of": "2024-01-16"
+        }
+      ],
+      "default_events": [
+        {
+          "event_id": "SECURITIZATION_TRANCHE-default",
+          "entity_id": "SECURITIZATION_TRANCHE-position",
+          "default_at": "2024-02-01",
+          "known_at": "2024-02-02"
+        }
+      ],
+      "exits": [
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-position-sale",
+          "exit_at": "2024-01-20",
+          "known_at": "2024-01-21"
+        }
+      ]
+    },
+    "COVERED_BOND": {
+      "subject_id": "COVERED_BOND-position",
+      "subject_type": "issue",
+      "assessment_id": "COVERED_BOND-governance",
+      "governance_assessment_hash": "81f00005504ada02349e217333cd3463c2cdb58840f3b5fd9e9e2020b0fbe461",
+      "history": [
+        {
+          "entity_id": "COVERED_BOND-historic-a",
+          "start": 0,
+          "stop": 14,
+          "from_state": "performing",
+          "to_state": "delinquent"
+        },
+        {
+          "entity_id": "COVERED_BOND-historic-a",
+          "start": 14,
+          "stop": 15,
+          "from_state": "delinquent",
+          "to_state": "restructured"
+        },
+        {
+          "entity_id": "COVERED_BOND-historic-a",
+          "start": 15,
+          "stop": 31,
+          "from_state": "restructured",
+          "to_state": "default"
+        },
+        {
+          "entity_id": "COVERED_BOND-historic-a",
+          "start": 31,
+          "stop": 121,
+          "from_state": "default",
+          "to_state": "settled"
+        },
+        {
+          "entity_id": "COVERED_BOND-historic-b",
+          "start": 0,
+          "stop": 150,
+          "from_state": "performing",
+          "to_state": null
+        }
+      ],
+      "states": [
+        "performing",
+        "delinquent",
+        "restructured",
+        "default",
+        "settled"
+      ],
+      "allowed_transitions": [
+        [
+          "performing",
+          "delinquent"
+        ],
+        [
+          "delinquent",
+          "restructured"
+        ],
+        [
+          "restructured",
+          "default"
+        ],
+        [
+          "default",
+          "settled"
+        ]
+      ],
+      "history_calendar": {
+        "origin": "2022-01-01",
+        "complete_through": "2022-05-31",
+        "known_at": "2023-12-31"
+      },
+      "competing_panel": [
+        {
+          "entity_id": "COVERED_BOND-competing-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "COVERED_BOND-competing-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "COVERED_BOND-competing-2",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "COVERED_BOND-competing-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "event_types": [
+        "default",
+        "exit",
+        null,
+        null
+      ],
+      "ratings": [
+        {
+          "observation_id": "COVERED_BOND-main",
+          "entity_id": "COVERED_BOND-position",
+          "as_of": "2024-01-16"
+        },
+        {
+          "observation_id": "COVERED_BOND-sale",
+          "entity_id": "COVERED_BOND-position-sale",
+          "as_of": "2024-01-16"
+        }
+      ],
+      "default_events": [
+        {
+          "event_id": "COVERED_BOND-default",
+          "entity_id": "COVERED_BOND-position",
+          "default_at": "2024-02-01",
+          "known_at": "2024-02-02"
+        }
+      ],
+      "exits": [
+        {
+          "entity_id": "COVERED_BOND-position-sale",
+          "exit_at": "2024-01-20",
+          "known_at": "2024-01-21"
+        }
+      ]
+    },
+    "TRADE_RECEIVABLES": {
+      "subject_id": "TRADE_RECEIVABLES-position",
+      "subject_type": "portfolio",
+      "assessment_id": "TRADE_RECEIVABLES-governance",
+      "governance_assessment_hash": "3bd87fb3acd5b87f2dfbb1339faa14a163f7108b03e6dfede2d7af33ce9aa7c4",
+      "history": [
+        {
+          "entity_id": "TRADE_RECEIVABLES-historic-a",
+          "start": 0,
+          "stop": 14,
+          "from_state": "performing",
+          "to_state": "delinquent"
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-historic-a",
+          "start": 14,
+          "stop": 15,
+          "from_state": "delinquent",
+          "to_state": "restructured"
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-historic-a",
+          "start": 15,
+          "stop": 31,
+          "from_state": "restructured",
+          "to_state": "default"
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-historic-a",
+          "start": 31,
+          "stop": 121,
+          "from_state": "default",
+          "to_state": "settled"
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-historic-b",
+          "start": 0,
+          "stop": 150,
+          "from_state": "performing",
+          "to_state": null
+        }
+      ],
+      "states": [
+        "performing",
+        "delinquent",
+        "restructured",
+        "default",
+        "settled"
+      ],
+      "allowed_transitions": [
+        [
+          "performing",
+          "delinquent"
+        ],
+        [
+          "delinquent",
+          "restructured"
+        ],
+        [
+          "restructured",
+          "default"
+        ],
+        [
+          "default",
+          "settled"
+        ]
+      ],
+      "history_calendar": {
+        "origin": "2022-01-01",
+        "complete_through": "2022-05-31",
+        "known_at": "2023-12-31"
+      },
+      "competing_panel": [
+        {
+          "entity_id": "TRADE_RECEIVABLES-competing-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-competing-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-competing-2",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-competing-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "event_types": [
+        "default",
+        "exit",
+        null,
+        null
+      ],
+      "ratings": [
+        {
+          "observation_id": "TRADE_RECEIVABLES-main",
+          "entity_id": "TRADE_RECEIVABLES-position",
+          "as_of": "2024-01-16"
+        },
+        {
+          "observation_id": "TRADE_RECEIVABLES-sale",
+          "entity_id": "TRADE_RECEIVABLES-position-sale",
+          "as_of": "2024-01-16"
+        }
+      ],
+      "default_events": [
+        {
+          "event_id": "TRADE_RECEIVABLES-default",
+          "entity_id": "TRADE_RECEIVABLES-position",
+          "default_at": "2024-02-01",
+          "known_at": "2024-02-02"
+        }
+      ],
+      "exits": [
+        {
+          "entity_id": "TRADE_RECEIVABLES-position-sale",
+          "exit_at": "2024-01-20",
+          "known_at": "2024-01-21"
+        }
+      ]
+    },
+    "COUNTERPARTY_EXPOSURE": {
+      "subject_id": "COUNTERPARTY_EXPOSURE-position",
+      "subject_type": "obligor",
+      "assessment_id": "COUNTERPARTY_EXPOSURE-governance",
+      "governance_assessment_hash": "90d13b963e8582349d2c3004717a8181e132590a63cae9b89f261bba8e6d86dc",
+      "history": [
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-historic-a",
+          "start": 0,
+          "stop": 14,
+          "from_state": "performing",
+          "to_state": "delinquent"
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-historic-a",
+          "start": 14,
+          "stop": 15,
+          "from_state": "delinquent",
+          "to_state": "restructured"
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-historic-a",
+          "start": 15,
+          "stop": 31,
+          "from_state": "restructured",
+          "to_state": "default"
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-historic-a",
+          "start": 31,
+          "stop": 121,
+          "from_state": "default",
+          "to_state": "settled"
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-historic-b",
+          "start": 0,
+          "stop": 150,
+          "from_state": "performing",
+          "to_state": null
+        }
+      ],
+      "states": [
+        "performing",
+        "delinquent",
+        "restructured",
+        "default",
+        "settled"
+      ],
+      "allowed_transitions": [
+        [
+          "performing",
+          "delinquent"
+        ],
+        [
+          "delinquent",
+          "restructured"
+        ],
+        [
+          "restructured",
+          "default"
+        ],
+        [
+          "default",
+          "settled"
+        ]
+      ],
+      "history_calendar": {
+        "origin": "2022-01-01",
+        "complete_through": "2022-05-31",
+        "known_at": "2023-12-31"
+      },
+      "competing_panel": [
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-competing-0",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-competing-1",
+          "start": 0,
+          "stop": 30,
+          "event": 1,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-competing-2",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-competing-3",
+          "start": 0,
+          "stop": 60,
+          "event": 0,
+          "covariate_time": 0
+        }
+      ],
+      "event_types": [
+        "default",
+        "exit",
+        null,
+        null
+      ],
+      "ratings": [
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-main",
+          "entity_id": "COUNTERPARTY_EXPOSURE-position",
+          "as_of": "2024-01-16"
+        },
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-sale",
+          "entity_id": "COUNTERPARTY_EXPOSURE-position-sale",
+          "as_of": "2024-01-16"
+        }
+      ],
+      "default_events": [
+        {
+          "event_id": "COUNTERPARTY_EXPOSURE-default",
+          "entity_id": "COUNTERPARTY_EXPOSURE-position",
+          "default_at": "2024-02-01",
+          "known_at": "2024-02-02"
+        }
+      ],
+      "exits": [
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-position-sale",
+          "exit_at": "2024-01-20",
+          "known_at": "2024-01-21"
+        }
+      ]
+    }
+  }
+}

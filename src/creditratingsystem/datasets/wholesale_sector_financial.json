@@ -1,0 +1,2627 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1.0",
+  "target": {
+    "event": "default",
+    "horizon": 1,
+    "time_unit": "years",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "as_of": "2024-03-01",
+  "known_at": "2024-03-01",
+  "precision_contract": {
+    "pd_decimal_places": 6,
+    "raw_fit_oracle_absolute_tolerance": 1e-07,
+    "reference": "Explicit six-decimal PD reporting precision before supported/override artifacts; native fitted coefficients are not declared hash-equivalent"
+  },
+  "cases": [
+    {
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "variant": "bank",
+      "case_id": "financial_institution_exposure-bank",
+      "economic_definition": "Capital absorption under risk-weighted assets; no regulatory minimum inferred",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "risk_weighted_assets": 1
+          },
+          "denominator": {
+            "core_capital": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "financial_institution_exposure-bank",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "financial_institution_exposure-bank",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "risk_weighted_assets": 1200,
+              "core_capital": 100
+            },
+            "units": {
+              "risk_weighted_assets": "EUR",
+              "core_capital": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "financial_institution_exposure-bank",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "financial_institution_exposure-bank",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "risk_weighted_assets": 1440.0,
+              "core_capital": 100
+            },
+            "units": {
+              "risk_weighted_assets": "EUR",
+              "core_capital": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 8
+        },
+        {
+          "risk_ratio": 8
+        },
+        {
+          "risk_ratio": 20
+        },
+        {
+          "risk_ratio": 20
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          99,
+          1,
+          96,
+          4
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "financial_institution_exposure-bank-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.01,
+          0.01,
+          0.04,
+          0.04
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          99,
+          1,
+          96,
+          4
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature bank holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "financial_institution_exposure-bank-allocated-support",
+        "assumption_reference": "Capital absorption under risk-weighted assets; no regulatory minimum inferred; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "financial_institution_exposure-bank-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 12,
+        "late_ratio": 14.399999999999999,
+        "standardized": -0.3333333333333333,
+        "pd": 0.0159414225748387,
+        "rescue_success": 0.4
+      }
+    },
+    {
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "variant": "nonbank_lender",
+      "case_id": "financial_institution_exposure-nonbank_lender",
+      "economic_definition": "Wholesale-funded lender leverage; no deposit insurance assumed",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "funding_debt": 1
+          },
+          "denominator": {
+            "tangible_equity": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "financial_institution_exposure-nonbank_lender",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "financial_institution_exposure-nonbank_lender",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "funding_debt": 400,
+              "tangible_equity": 80
+            },
+            "units": {
+              "funding_debt": "EUR",
+              "tangible_equity": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "financial_institution_exposure-nonbank_lender",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "financial_institution_exposure-nonbank_lender",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "funding_debt": 480.0,
+              "tangible_equity": 80
+            },
+            "units": {
+              "funding_debt": "EUR",
+              "tangible_equity": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 2
+        },
+        {
+          "risk_ratio": 2
+        },
+        {
+          "risk_ratio": 8
+        },
+        {
+          "risk_ratio": 8
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          98,
+          2,
+          95,
+          5
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "financial_institution_exposure-nonbank_lender-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.02,
+          0.02,
+          0.05,
+          0.05
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          98,
+          2,
+          95,
+          5
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature nonbank_lender holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "financial_institution_exposure-nonbank_lender-allocated-support",
+        "assumption_reference": "Wholesale-funded lender leverage; no deposit insurance assumed; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "financial_institution_exposure-nonbank_lender-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 5,
+        "late_ratio": 6.0,
+        "standardized": 0.0,
+        "pd": 0.0317336479621341,
+        "rescue_success": 0.4
+      }
+    },
+    {
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "variant": "financial_holding",
+      "case_id": "financial_institution_exposure-financial_holding",
+      "economic_definition": "Double leverage and holding-company cash availability",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "investments_in_subsidiaries": 1
+          },
+          "denominator": {
+            "holding_equity": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "financial_institution_exposure-financial_holding",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "financial_institution_exposure-financial_holding",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "investments_in_subsidiaries": 210.0,
+              "holding_equity": 150
+            },
+            "units": {
+              "investments_in_subsidiaries": "EUR",
+              "holding_equity": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "financial_institution_exposure-financial_holding",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "financial_institution_exposure-financial_holding",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "investments_in_subsidiaries": 252.0,
+              "holding_equity": 150
+            },
+            "units": {
+              "investments_in_subsidiaries": "EUR",
+              "holding_equity": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 0.8
+        },
+        {
+          "risk_ratio": 0.8
+        },
+        {
+          "risk_ratio": 1.6
+        },
+        {
+          "risk_ratio": 1.6
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          97,
+          3,
+          94,
+          6
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "financial_institution_exposure-financial_holding-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.03,
+          0.03,
+          0.06,
+          0.06
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          97,
+          3,
+          94,
+          6
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature financial_holding holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "financial_institution_exposure-financial_holding-allocated-support",
+        "assumption_reference": "Double leverage and holding-company cash availability; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 10,
+        "reserved_elsewhere": 2,
+        "allocated_capacity": 8,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 8,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "financial_institution_exposure-financial_holding-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "C",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 1.4,
+        "late_ratio": 1.68,
+        "standardized": 0.49999999999999933,
+        "pd": 0.050561700798823606,
+        "rescue_success": 0
+      }
+    },
+    {
+      "product": "INSURER_EXPOSURE",
+      "variant": "life",
+      "case_id": "insurer_exposure-life",
+      "economic_definition": "Life reserve coverage under a declared common valuation basis",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "technical_reserves": 1
+          },
+          "denominator": {
+            "eligible_assets": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "insurer_exposure-life",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "insurer_exposure-life",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "technical_reserves": 850.0,
+              "eligible_assets": 1000
+            },
+            "units": {
+              "technical_reserves": "EUR",
+              "eligible_assets": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "insurer_exposure-life",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "insurer_exposure-life",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "technical_reserves": 1020.0,
+              "eligible_assets": 1000
+            },
+            "units": {
+              "technical_reserves": "EUR",
+              "eligible_assets": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 0.6
+        },
+        {
+          "risk_ratio": 0.6
+        },
+        {
+          "risk_ratio": 1
+        },
+        {
+          "risk_ratio": 1
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          96,
+          4,
+          93,
+          7
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "insurer_exposure-life-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.04,
+          0.04,
+          0.07,
+          0.07
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          96,
+          4,
+          93,
+          7
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature life holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "insurer_exposure-life-allocated-support",
+        "assumption_reference": "Life reserve coverage under a declared common valuation basis; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "insurer_exposure-life-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 0.85,
+        "late_ratio": 1.02,
+        "standardized": 0.24999999999999967,
+        "pd": 0.05686920315270011,
+        "rescue_success": 0.4
+      }
+    },
+    {
+      "product": "INSURER_EXPOSURE",
+      "variant": "nonlife",
+      "case_id": "insurer_exposure-nonlife",
+      "economic_definition": "Underwriting volume relative to capital; claims volatility separately evidenced",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "net_written_premium": 1
+          },
+          "denominator": {
+            "own_funds": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "insurer_exposure-nonlife",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "insurer_exposure-nonlife",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "net_written_premium": 400,
+              "own_funds": 200
+            },
+            "units": {
+              "net_written_premium": "EUR",
+              "own_funds": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "insurer_exposure-nonlife",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "insurer_exposure-nonlife",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "net_written_premium": 480.0,
+              "own_funds": 200
+            },
+            "units": {
+              "net_written_premium": "EUR",
+              "own_funds": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 1
+        },
+        {
+          "risk_ratio": 1
+        },
+        {
+          "risk_ratio": 4
+        },
+        {
+          "risk_ratio": 4
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          95,
+          5,
+          92,
+          8
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "insurer_exposure-nonlife-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.05,
+          0.05,
+          0.08,
+          0.08
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          95,
+          5,
+          92,
+          8
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature nonlife holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "insurer_exposure-nonlife-allocated-support",
+        "assumption_reference": "Underwriting volume relative to capital; claims volatility separately evidenced; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "insurer_exposure-nonlife-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 2,
+        "late_ratio": 2.4,
+        "standardized": -0.3333333333333333,
+        "pd": 0.058575645326340096,
+        "rescue_success": 0.4
+      }
+    },
+    {
+      "product": "INSURER_EXPOSURE",
+      "variant": "reinsurer",
+      "case_id": "insurer_exposure-reinsurer",
+      "economic_definition": "Contractual catastrophe exposure relative to capital; no regulatory risk aggregation implied",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "catastrophe_limit": 1
+          },
+          "denominator": {
+            "own_funds": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "insurer_exposure-reinsurer",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "insurer_exposure-reinsurer",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "catastrophe_limit": 1000,
+              "own_funds": 250
+            },
+            "units": {
+              "catastrophe_limit": "EUR",
+              "own_funds": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "insurer_exposure-reinsurer",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "insurer_exposure-reinsurer",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "catastrophe_limit": 1200.0,
+              "own_funds": 250
+            },
+            "units": {
+              "catastrophe_limit": "EUR",
+              "own_funds": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 1
+        },
+        {
+          "risk_ratio": 1
+        },
+        {
+          "risk_ratio": 6
+        },
+        {
+          "risk_ratio": 6
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          94,
+          6,
+          91,
+          9
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "insurer_exposure-reinsurer-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.06,
+          0.06,
+          0.09,
+          0.09
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          94,
+          6,
+          91,
+          9
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature reinsurer holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "insurer_exposure-reinsurer-allocated-support",
+        "assumption_reference": "Contractual catastrophe exposure relative to capital; no regulatory risk aggregation implied; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": false,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "insurer_exposure-reinsurer-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 4,
+        "late_ratio": 4.8,
+        "standardized": 0.2,
+        "pd": 0.07664742899350378,
+        "rescue_success": 0
+      }
+    },
+    {
+      "product": "PUBLIC_SECTOR_DEBT",
+      "variant": "region",
+      "case_id": "public_sector_debt-region",
+      "economic_definition": "Regional direct debt burden without unverified central government guarantee",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "direct_debt": 1
+          },
+          "denominator": {
+            "recurring_revenue": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "public_sector_debt-region",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "public_sector_debt-region",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "direct_debt": 450.0,
+              "recurring_revenue": 500
+            },
+            "units": {
+              "direct_debt": "EUR",
+              "recurring_revenue": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "public_sector_debt-region",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "public_sector_debt-region",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "direct_debt": 540.0,
+              "recurring_revenue": 500
+            },
+            "units": {
+              "direct_debt": "EUR",
+              "recurring_revenue": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 0.3
+        },
+        {
+          "risk_ratio": 0.3
+        },
+        {
+          "risk_ratio": 1.5
+        },
+        {
+          "risk_ratio": 1.5
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          93,
+          7,
+          90,
+          10
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "public_sector_debt-region-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.07,
+          0.07,
+          0.1,
+          0.1
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          93,
+          7,
+          90,
+          10
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature region holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "public_sector_debt-region-allocated-support",
+        "assumption_reference": "Regional direct debt burden without unverified central government guarantee; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "public_sector_debt-region-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 0.9,
+        "late_ratio": 1.08,
+        "standardized": 0.0,
+        "pd": 0.08378807823257647,
+        "rescue_success": 0.4
+      }
+    },
+    {
+      "product": "PUBLIC_SECTOR_DEBT",
+      "variant": "municipality",
+      "case_id": "public_sector_debt-municipality",
+      "economic_definition": "Municipal debt relative to recurrent cash surplus",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "net_debt": 1
+          },
+          "denominator": {
+            "operating_cash_surplus": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "public_sector_debt-municipality",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "public_sector_debt-municipality",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "net_debt": 360,
+              "operating_cash_surplus": 60
+            },
+            "units": {
+              "net_debt": "EUR",
+              "operating_cash_surplus": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "public_sector_debt-municipality",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "public_sector_debt-municipality",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "net_debt": 432.0,
+              "operating_cash_surplus": 60
+            },
+            "units": {
+              "net_debt": "EUR",
+              "operating_cash_surplus": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 2
+        },
+        {
+          "risk_ratio": 2
+        },
+        {
+          "risk_ratio": 10
+        },
+        {
+          "risk_ratio": 10
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          92,
+          8,
+          89,
+          11
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "public_sector_debt-municipality-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.08,
+          0.08,
+          0.11,
+          0.11
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          92,
+          8,
+          89,
+          11
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature municipality holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "public_sector_debt-municipality-allocated-support",
+        "assumption_reference": "Municipal debt relative to recurrent cash surplus; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "public_sector_debt-municipality-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 6,
+        "late_ratio": 7.199999999999999,
+        "standardized": 0.0,
+        "pd": 0.09393192987303292,
+        "rescue_success": 0.4
+      }
+    },
+    {
+      "product": "PUBLIC_SECTOR_DEBT",
+      "variant": "public_agency",
+      "case_id": "public_sector_debt-public_agency",
+      "economic_definition": "Budget dependence with separately constrained sponsor liquidity",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "required_subsidy": 1
+          },
+          "denominator": {
+            "operating_revenue": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "public_sector_debt-public_agency",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "public_sector_debt-public_agency",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "required_subsidy": 210.0,
+              "operating_revenue": 300
+            },
+            "units": {
+              "required_subsidy": "EUR",
+              "operating_revenue": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "public_sector_debt-public_agency",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "public_sector_debt-public_agency",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "required_subsidy": 252.0,
+              "operating_revenue": 300
+            },
+            "units": {
+              "required_subsidy": "EUR",
+              "operating_revenue": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 0.1
+        },
+        {
+          "risk_ratio": 0.1
+        },
+        {
+          "risk_ratio": 0.9
+        },
+        {
+          "risk_ratio": 0.9
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          91,
+          9,
+          88,
+          12
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "public_sector_debt-public_agency-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.09,
+          0.09,
+          0.12,
+          0.12
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          91,
+          9,
+          88,
+          12
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature public_agency holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "public_sector_debt-public_agency-allocated-support",
+        "assumption_reference": "Budget dependence with separately constrained sponsor liquidity; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 10,
+        "reserved_elsewhere": 2,
+        "allocated_capacity": 8,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 8,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "public_sector_debt-public_agency-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 0.7,
+        "late_ratio": 0.84,
+        "standardized": 0.4999999999999999,
+        "pd": 0.1117755769592577,
+        "rescue_success": 0
+      }
+    },
+    {
+      "product": "SUPRANATIONAL_DEBT",
+      "variant": "multilateral_lender",
+      "case_id": "supranational_debt-multilateral_lender",
+      "economic_definition": "Loan exposure relative to paid-in capital; callable capital not treated as paid-in",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "loan_exposure": 1
+          },
+          "denominator": {
+            "paid_in_capital": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "supranational_debt-multilateral_lender",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "supranational_debt-multilateral_lender",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "loan_exposure": 2000,
+              "paid_in_capital": 400
+            },
+            "units": {
+              "loan_exposure": "EUR",
+              "paid_in_capital": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "supranational_debt-multilateral_lender",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "supranational_debt-multilateral_lender",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "loan_exposure": 2400.0,
+              "paid_in_capital": 400
+            },
+            "units": {
+              "loan_exposure": "EUR",
+              "paid_in_capital": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 2
+        },
+        {
+          "risk_ratio": 2
+        },
+        {
+          "risk_ratio": 10
+        },
+        {
+          "risk_ratio": 10
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          90,
+          10,
+          87,
+          13
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "supranational_debt-multilateral_lender-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.1,
+          0.1,
+          0.13,
+          0.13
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          90,
+          10,
+          87,
+          13
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature multilateral_lender holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "supranational_debt-multilateral_lender-allocated-support",
+        "assumption_reference": "Loan exposure relative to paid-in capital; callable capital not treated as paid-in; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "supranational_debt-multilateral_lender-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 5,
+        "late_ratio": 6.0,
+        "standardized": -0.25,
+        "pd": 0.11045274031644743,
+        "rescue_success": 0.4
+      }
+    },
+    {
+      "product": "SUPRANATIONAL_DEBT",
+      "variant": "supranational_body",
+      "case_id": "supranational_debt-supranational_body",
+      "economic_definition": "Debt service relative to legally committed revenue; no automatic member guarantee",
+      "ratio_spec": [
+        {
+          "name": "risk_ratio",
+          "numerator": {
+            "debt_service": 1
+          },
+          "denominator": {
+            "committed_revenue": 1
+          },
+          "denominator_policy": "positive",
+          "output_unit": "dimensionless"
+        }
+      ],
+      "statement_versions": [
+        {
+          "entity_id": "supranational_debt-supranational_body",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-02-01",
+          "release_id": "initial",
+          "statement": {
+            "entity_id": "supranational_debt-supranational_body",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "debt_service": 80.0,
+              "committed_revenue": 200
+            },
+            "units": {
+              "debt_service": "EUR",
+              "committed_revenue": "EUR"
+            }
+          }
+        },
+        {
+          "entity_id": "supranational_debt-supranational_body",
+          "observed_at": "2023-12-31",
+          "available_at": "2024-04-01",
+          "release_id": "revision",
+          "statement": {
+            "entity_id": "supranational_debt-supranational_body",
+            "currency": "EUR",
+            "as_of": "2023-12-31",
+            "period_start": "2023-01-01",
+            "period_end": "2023-12-31",
+            "values": {
+              "debt_service": 96.0,
+              "committed_revenue": 200
+            },
+            "units": {
+              "debt_service": "EUR",
+              "committed_revenue": "EUR"
+            }
+          }
+        }
+      ],
+      "preprocessor_training": [
+        {
+          "risk_ratio": 0.1
+        },
+        {
+          "risk_ratio": 0.1
+        },
+        {
+          "risk_ratio": 0.8
+        },
+        {
+          "risk_ratio": 0.8
+        }
+      ],
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          89,
+          11,
+          86,
+          14
+        ],
+        "feature_order": [
+          "risk_ratio"
+        ],
+        "training": {
+          "data_fingerprint": "supranational_debt-supranational_body-historical-weighted-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.11,
+          0.11,
+          0.14,
+          0.14
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          89,
+          11,
+          86,
+          14
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature supranational_body holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "support": {
+        "effect_id": "supranational_debt-supranational_body-allocated-support",
+        "assumption_reference": "Debt service relative to legally committed revenue; no automatic member guarantee; explicitly allocated single sponsor rescue only, no legal guarantee",
+        "currency": "EUR",
+        "total_capacity": 50,
+        "reserved_elsewhere": 20,
+        "allocated_capacity": 30,
+        "support_required": 25,
+        "states": {
+          "parent_alive": {
+            "available_capacity": 30,
+            "willingness_given_state": 0.5,
+            "success_given_willing_and_funded": 0.8,
+            "support_permitted": true,
+            "evidence_reference": "assumed solvent sponsor rescue"
+          },
+          "joint_default": {
+            "available_capacity": 0,
+            "willingness_given_state": 0,
+            "success_given_willing_and_funded": 0,
+            "support_permitted": false,
+            "evidence_reference": "no funds under joint distress"
+          }
+        }
+      },
+      "rating_scale": {
+        "schema_version": "1.0",
+        "scale_id": "declared-sector-scale",
+        "version": "1",
+        "boundary_convention": "left_closed",
+        "grades": [
+          {
+            "grade": "A",
+            "lower": 0,
+            "upper": 0.03,
+            "representative_pd": 0.015,
+            "is_default": false
+          },
+          {
+            "grade": "B",
+            "lower": 0.03,
+            "upper": 0.08,
+            "representative_pd": 0.05,
+            "is_default": false
+          },
+          {
+            "grade": "C",
+            "lower": 0.08,
+            "upper": 1,
+            "representative_pd": 0.15,
+            "is_default": false
+          }
+        ]
+      },
+      "constraints": [
+        {
+          "rule_id": "supranational_debt-supranational_body-bound",
+          "kind": "grade_bounds",
+          "best_allowed_grade": "A",
+          "worst_allowed_grade": "C",
+          "evidence_reference": "Declared resolution/structural-subordination floor for holding; broad nonbinding band otherwise"
+        }
+      ],
+      "reference": {
+        "ratio": 0.4,
+        "late_ratio": 0.48,
+        "standardized": -0.14285714285714282,
+        "pd": 0.12210018204296177,
+        "rescue_success": 0.4
+      }
+    }
+  ]
+}

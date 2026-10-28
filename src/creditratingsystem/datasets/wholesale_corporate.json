@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.0",
+  "version": "1",
+  "data_origin": "SYNTHETIC",
+  "product": "CORPORATE_LOAN_BOND",
+  "target": {
+    "event": "default",
+    "horizon": 1,
+    "time_unit": "years",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "as_of": "2024-01-01",
+  "known_at": "2024-01-01",
+  "statements": [
+    {
+      "entity_id": "SME",
+      "currency": "EUR",
+      "as_of": "2023-12-31",
+      "period_start": "2023-01-01",
+      "period_end": "2023-12-31",
+      "values": {
+        "debt": 70,
+        "cash": 10,
+        "ebitda": 20,
+        "assets": 150
+      },
+      "units": {
+        "debt": "EUR",
+        "cash": "EUR",
+        "ebitda": "EUR",
+        "assets": "EUR"
+      }
+    },
+    {
+      "entity_id": "LARGE",
+      "currency": "EUR",
+      "as_of": "2023-12-31",
+      "period_start": "2023-01-01",
+      "period_end": "2023-12-31",
+      "values": {
+        "debt": 180,
+        "cash": 30,
+        "ebitda": 50,
+        "assets": 500
+      },
+      "units": {
+        "debt": "EUR",
+        "cash": "EUR",
+        "ebitda": "EUR",
+        "assets": "EUR"
+      }
+    }
+  ],
+  "ratio_spec": [
+    {
+      "name": "net_debt_ebitda",
+      "numerator": {
+        "debt": 1,
+        "cash": -1
+      },
+      "denominator": {
+        "ebitda": 1
+      },
+      "denominator_policy": "positive",
+      "output_unit": "dimensionless"
+    }
+  ],
+  "score_training": {
+    "X": [
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        4
+      ],
+      [
+        4
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      9,
+      1,
+      7,
+      3
+    ],
+    "feature_order": [
+      "net_debt_ebitda"
+    ],
+    "training": {
+      "data_fingerprint": "synthetic-corporate-score-counts-v1",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "fit_spec": {
+      "feature_kinds": [
+        "expert"
+      ],
+      "neutral_profile": [
+        2
+      ]
+    }
+  },
+  "calibration": {
+    "values": [
+      0.1,
+      0.1,
+      0.3,
+      0.3
+    ],
+    "outcomes": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      9,
+      1,
+      7,
+      3
+    ],
+    "metadata": {
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "calibration": {
+        "start": "2021-01-01",
+        "end": "2022-01-01",
+        "known_at": "2022-01-02",
+        "split_id": "calibration_2021",
+        "prediction_origin": "HOLDOUT"
+      },
+      "base_model_version": "1",
+      "population_definition": "Independent synthetic performing nonfinancial firms",
+      "outcome_policy": "Fully mature observed obligor default over one year",
+      "weight_type": "frequency",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "distance_calibration": {
+    "distances": [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "outcomes": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      7,
+      3,
+      8,
+      2,
+      9,
+      1
+    ],
+    "metadata": {
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "calibration": {
+        "start": "2021-01-01",
+        "end": "2022-01-01",
+        "known_at": "2022-01-02",
+        "split_id": "calibration_2021",
+        "prediction_origin": "HOLDOUT"
+      },
+      "base_model_version": "1",
+      "population_definition": "Independent synthetic performing nonfinancial firms",
+      "outcome_policy": "Fully mature observed obligor default over one year",
+      "weight_type": "frequency",
+      "data_origin": "SYNTHETIC"
+    },
+    "out_of_bounds": "clip"
+  },
+  "market_inputs": {
+    "equity_value": 23.223991292486758,
+    "equity_volatility": 0.7871052000240558,
+    "debt_face": 80,
+    "risk_free_rate": 0.03,
+    "maturity": 1,
+    "asset_bounds": [
+      1,
+      1000
+    ],
+    "volatility_bounds": [
+      0.001,
+      2
+    ],
+    "currency": "EUR"
+  },
+  "physical_drift": 0.1,
+  "routing_rules": [
+    {
+      "profile_version": "1",
+      "priority": 1,
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "known_at": "2022-12-01",
+      "rule_id": "sme",
+      "profile_id": "fundamental",
+      "conditions": [
+        {
+          "field": "size",
+          "operator": "eq",
+          "value": "SME"
+        }
+      ]
+    },
+    {
+      "profile_version": "1",
+      "priority": 1,
+      "effective_from": "2023-01-01",
+      "effective_to": null,
+      "known_at": "2022-12-01",
+      "rule_id": "large",
+      "profile_id": "market_hybrid",
+      "conditions": [
+        {
+          "field": "size",
+          "operator": "eq",
+          "value": "large_corporate"
+        }
+      ]
+    }
+  ],
+  "applicability_contracts": {
+    "SME": {
+      "contract_id": "SME",
+      "version": "1",
+      "required_features": [
+        "size",
+        "financial_statements"
+      ],
+      "allowed_values": {
+        "size": [
+          "SME"
+        ],
+        "financial_statements": [
+          true
+        ]
+      },
+      "support_bounds": {},
+      "maximum_age_days": {
+        "financial_statements": 400
+      }
+    },
+    "large_corporate": {
+      "contract_id": "large_corporate",
+      "version": "1",
+      "required_features": [
+        "size",
+        "financial_statements",
+        "audited",
+        "listed"
+      ],
+      "allowed_values": {
+        "size": [
+          "large_corporate"
+        ],
+        "financial_statements": [
+          true
+        ],
+        "audited": [
+          true
+        ],
+        "listed": [
+          true
+        ]
+      },
+      "support_bounds": {},
+      "maximum_age_days": {
+        "financial_statements": 400
+      }
+    }
+  },
+  "recovery": {
+    "default_events": [
+      {
+        "scenario_id": "stress",
+        "default_event_id": "default",
+        "subject_id": "LARGE",
+        "default_date": "2024-06-01"
+      }
+    ],
+    "claims": [
+      {
+        "scenario_id": "stress",
+        "default_event_id": "default",
+        "subject_id": "LARGE",
+        "claim_id": "senior",
+        "pool_id": "estate",
+        "currency": "EUR",
+        "ead_at_default": 80,
+        "legal_balance": 80,
+        "priority": 1,
+        "deficit_cost_share": 0.6666666666666666
+      },
+      {
+        "scenario_id": "stress",
+        "default_event_id": "default",
+        "subject_id": "LARGE",
+        "claim_id": "subordinated",
+        "pool_id": "estate",
+        "currency": "EUR",
+        "ead_at_default": 40,
+        "legal_balance": 40,
+        "priority": 2,
+        "deficit_cost_share": 0.3333333333333333
+      }
+    ],
+    "realization_paths": [
+      {
+        "scenario_id": "stress",
+        "default_event_id": "default",
+        "pool_id": "estate",
+        "currency": "EUR",
+        "realization_id": "enterprise",
+        "collateral_id": "business-assets",
+        "date": "2024-06-01",
+        "gross_value": 100,
+        "realization_fraction": 1,
+        "cost": 0,
+        "discount_factor": 1,
+        "discount_anchor_date": "2024-06-01"
+      }
+    ],
+    "recovery_policy": {
+      "policy_id": "legal-priority",
+      "version": "1",
+      "currency": "EUR",
+      "allocation": "LEGAL_CAP",
+      "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+      "completion": "ULTIMATE_COMPLETE"
+    }
+  },
+  "secured_recovery": {
+    "default_events": [
+      {
+        "scenario_id": "stress",
+        "default_event_id": "default",
+        "subject_id": "LARGE",
+        "default_date": "2024-06-01"
+      }
+    ],
+    "claims": [
+      {
+        "scenario_id": "stress",
+        "default_event_id": "default",
+        "subject_id": "LARGE",
+        "claim_id": "secured",
+        "pool_id": "estate",
+        "currency": "EUR",
+        "ead_at_default": 80,
+        "legal_balance": 80,
+        "priority": 1,
+        "deficit_cost_share": 1
+      }
+    ],
+    "realization_paths": [
+      {
+        "scenario_id": "stress",
+        "default_event_id": "default",
+        "pool_id": "estate",
+        "currency": "EUR",
+        "realization_id": "enterprise",
+        "collateral_id": "pledged-asset",
+        "date": "2024-06-01",
+        "gross_value": 70,
+        "realization_fraction": 1,
+        "cost": 0,
+        "discount_factor": 1,
+        "discount_anchor_date": "2024-06-01"
+      }
+    ],
+    "recovery_policy": {
+      "policy_id": "legal-priority",
+      "version": "1",
+      "currency": "EUR",
+      "allocation": "LEGAL_CAP",
+      "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+      "completion": "ULTIMATE_COMPLETE"
+    }
+  },
+  "support": {
+    "effect_id": "sponsor-support",
+    "assumption_reference": "Synthetic discretionary cash rescue, no legal guarantee",
+    "currency": "EUR",
+    "total_capacity": 50,
+    "reserved_elsewhere": 20,
+    "allocated_capacity": 30,
+    "support_required": 25,
+    "states": {
+      "parent_alive": {
+        "available_capacity": 30,
+        "willingness_given_state": 0.5,
+        "success_given_willing_and_funded": 0.8,
+        "support_permitted": true,
+        "evidence_reference": "assumed solvent sponsor rescue"
+      },
+      "joint_default": {
+        "available_capacity": 0,
+        "willingness_given_state": 0,
+        "success_given_willing_and_funded": 0,
+        "support_permitted": false,
+        "evidence_reference": "no funds under joint distress"
+      }
+    }
+  },
+  "rating_scale": {
+    "schema_version": "1.0",
+    "scale_id": "synthetic-corporate",
+    "version": "1",
+    "boundary_convention": "left_closed",
+    "grades": [
+      {
+        "grade": "A",
+        "lower": 0,
+        "upper": 0.2,
+        "representative_pd": 0.1,
+        "is_default": false
+      },
+      {
+        "grade": "B",
+        "lower": 0.2,
+        "upper": 1,
+        "representative_pd": 0.4,
+        "is_default": false
+      }
+    ]
+  },
+  "truth": {
+    "asset_value": 100,
+    "asset_volatility": 0.2,
+    "leverage_by_segment": {
+      "SME": 3,
+      "large_corporate": 3
+    },
+    "standalone_score_at_leverage3": 0.17912878474779204
+  },
+  "limitations": [
+    "Training and calibration counts are separate synthetic cohorts, not bank estimates.",
+    "Units are illustrative EUR amounts; business scale and accounting eligibility remain separate.",
+    "Market inversion prices equity under Q; physical drift and observed-default mapping are separate supplied contracts.",
+    "Seniority and collateral change issue loss, not the obligor standalone default probability."
+  ]
+}

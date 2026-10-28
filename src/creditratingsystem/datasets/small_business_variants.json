@@ -1,0 +1,742 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "RETAIL_SMALL_BUSINESS_FINANCE",
+  "household_graph": {
+    "entities": [
+      {
+        "entity_id": "owner",
+        "entity_type": "CUSTOMER",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "house",
+        "entity_type": "HOUSEHOLD",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "private",
+        "entity_type": "FACILITY",
+        "known_at": "2025-01-01"
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "member",
+        "release_seq": 1,
+        "source_id": "owner",
+        "target_id": "house",
+        "role": "MEMBER_OF",
+        "effective_from": "2025-01-01",
+        "effective_until": null,
+        "known_at": "2025-01-01",
+        "liability_fraction": null,
+        "budget_share": null,
+        "evidence_reference": "signed-household-record"
+      },
+      {
+        "relationship_id": "debt",
+        "release_seq": 1,
+        "source_id": "owner",
+        "target_id": "private",
+        "role": "BORROWER_ON",
+        "effective_from": "2025-01-01",
+        "effective_until": null,
+        "known_at": "2025-01-01",
+        "liability_fraction": 1,
+        "budget_share": 1,
+        "evidence_reference": "signed-household-record"
+      }
+    ],
+    "as_of": "2025-01-31",
+    "information_cutoff": "2025-01-31"
+  },
+  "household_obligations": {
+    "obligations": [
+      {
+        "facility_id": "private",
+        "release_seq": 1,
+        "known_at": "2025-01-31",
+        "observed_at": "2025-01-31",
+        "source_id": "bank",
+        "debt_stock": 100,
+        "scheduled_debt_service": 10,
+        "currency": "EUR",
+        "period": "month",
+        "status": "ACTIVE"
+      }
+    ],
+    "coverage": {
+      "status": "COMPLETE",
+      "sources": [
+        "bank"
+      ],
+      "known_at": "2025-01-31"
+    },
+    "currency": "EUR",
+    "period": "month",
+    "guarantee_budget_policy": "exclude"
+  },
+  "cases": {
+    "sole_trader": {
+      "features": {
+        "business_cashflows": [
+          {
+            "transaction_id": "s1",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 120,
+            "category": "SALES",
+            "currency": "EUR",
+            "counterparty_id": "buyer1"
+          },
+          {
+            "transaction_id": "s2",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 80,
+            "category": "SALES",
+            "currency": "EUR",
+            "counterparty_id": "buyer2"
+          },
+          {
+            "transaction_id": "cost",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -60,
+            "category": "OPERATING_COST",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "tax",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -10,
+            "category": "TAX",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "capex",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -20,
+            "category": "CAPEX",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "debt",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -30,
+            "category": "DEBT_SERVICE",
+            "currency": "EUR",
+            "facility_id": "bizloan"
+          },
+          {
+            "transaction_id": "draw",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -40,
+            "category": "OWNER_DRAW",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "finance",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 100,
+            "category": "FINANCING",
+            "currency": "EUR"
+          }
+        ],
+        "owner_drawings": [
+          {
+            "drawing_id": "draw",
+            "release_seq": 1,
+            "known_at": "2025-01-15",
+            "business_transaction_id": "draw",
+            "household_transaction_id": "privatecredit",
+            "owner_customer_id": "owner",
+            "business_posted_at": "2025-01-15",
+            "household_posted_at": "2025-01-15",
+            "business_amount": -40,
+            "household_amount": 40,
+            "currency": "EUR"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-01-31",
+          "observed_from": "2025-01-01",
+          "complete_through": "2025-01-31"
+        },
+        "business_id": "biz",
+        "owner_customer_ids": [
+          "owner"
+        ],
+        "business_debt_facility_ids": [
+          "bizloan"
+        ],
+        "household_debt_service_window": {
+          "from": "2025-01-01",
+          "through": "2025-01-31",
+          "period": "month"
+        },
+        "as_of": "2025-01-31",
+        "information_cutoff": "2025-01-31",
+        "lookback_days": 31,
+        "currency": "EUR",
+        "liability_links": [
+          {
+            "liability_id": "legal",
+            "release_seq": 1,
+            "known_at": "2025-01-01",
+            "business_id": "biz",
+            "customer_id": "owner",
+            "liability_type": "UNLIMITED_LIABILITY",
+            "effective_from": "2025-01-01",
+            "effective_until": null,
+            "liability_fraction": 1,
+            "maximum_amount": null,
+            "evidence_reference": "documented-legal-identity"
+          }
+        ]
+      },
+      "legal_graph": {
+        "entities": [
+          {
+            "entity_id": "owner"
+          },
+          {
+            "entity_id": "biz"
+          }
+        ],
+        "edges": [
+          {
+            "edge_id": "ownership",
+            "source_id": "owner",
+            "target_id": "biz",
+            "edge_type": "OWNERSHIP",
+            "ownership_fraction": 1,
+            "valid_from": "2025-01-01",
+            "valid_until": null,
+            "known_at": "2025-01-01",
+            "evidence_reference": "register"
+          },
+          {
+            "edge_id": "identity-owner",
+            "source_id": "owner",
+            "target_id": "biz",
+            "edge_type": "LEGAL_IDENTITY",
+            "valid_from": "2025-01-01",
+            "valid_until": null,
+            "known_at": "2025-01-01",
+            "evidence_reference": "same-legal-person-two-accounting-records"
+          },
+          {
+            "edge_id": "identity-biz",
+            "source_id": "biz",
+            "target_id": "owner",
+            "edge_type": "LEGAL_IDENTITY",
+            "valid_from": "2025-01-01",
+            "valid_until": null,
+            "known_at": "2025-01-01",
+            "evidence_reference": "same-legal-person-two-accounting-records"
+          }
+        ],
+        "relationship_policy": {
+          "policy_id": "business-legal-records",
+          "version": "1",
+          "edge_types": [
+            "OWNERSHIP",
+            "LEGAL_IDENTITY"
+          ]
+        },
+        "as_of": "2025-01-31",
+        "known_at": "2025-01-31"
+      }
+    },
+    "micro_company": {
+      "features": {
+        "business_cashflows": [
+          {
+            "transaction_id": "s1",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 120,
+            "category": "SALES",
+            "currency": "EUR",
+            "counterparty_id": "buyer1"
+          },
+          {
+            "transaction_id": "s2",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 80,
+            "category": "SALES",
+            "currency": "EUR",
+            "counterparty_id": "buyer2"
+          },
+          {
+            "transaction_id": "cost",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -60,
+            "category": "OPERATING_COST",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "tax",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -10,
+            "category": "TAX",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "capex",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -20,
+            "category": "CAPEX",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "debt",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -30,
+            "category": "DEBT_SERVICE",
+            "currency": "EUR",
+            "facility_id": "bizloan"
+          },
+          {
+            "transaction_id": "draw",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -40,
+            "category": "OWNER_DRAW",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "finance",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 100,
+            "category": "FINANCING",
+            "currency": "EUR"
+          }
+        ],
+        "owner_drawings": [
+          {
+            "drawing_id": "draw",
+            "release_seq": 1,
+            "known_at": "2025-01-15",
+            "business_transaction_id": "draw",
+            "household_transaction_id": "privatecredit",
+            "owner_customer_id": "owner",
+            "business_posted_at": "2025-01-15",
+            "household_posted_at": "2025-01-15",
+            "business_amount": -40,
+            "household_amount": 40,
+            "currency": "EUR"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-01-31",
+          "observed_from": "2025-01-01",
+          "complete_through": "2025-01-31"
+        },
+        "business_id": "biz",
+        "owner_customer_ids": [
+          "owner"
+        ],
+        "business_debt_facility_ids": [
+          "bizloan"
+        ],
+        "household_debt_service_window": {
+          "from": "2025-01-01",
+          "through": "2025-01-31",
+          "period": "month"
+        },
+        "as_of": "2025-01-31",
+        "information_cutoff": "2025-01-31",
+        "lookback_days": 31,
+        "currency": "EUR",
+        "liability_links": [
+          {
+            "liability_id": "legal",
+            "release_seq": 1,
+            "known_at": "2025-01-01",
+            "business_id": "biz",
+            "customer_id": "owner",
+            "liability_type": "LIMITED_OWNERSHIP",
+            "effective_from": "2025-01-01",
+            "effective_until": null,
+            "liability_fraction": 0,
+            "maximum_amount": 0,
+            "evidence_reference": "limited-company-register"
+          }
+        ]
+      },
+      "legal_graph": {
+        "entities": [
+          {
+            "entity_id": "owner"
+          },
+          {
+            "entity_id": "biz"
+          }
+        ],
+        "edges": [
+          {
+            "edge_id": "ownership",
+            "source_id": "owner",
+            "target_id": "biz",
+            "edge_type": "OWNERSHIP",
+            "ownership_fraction": 1,
+            "valid_from": "2025-01-01",
+            "valid_until": null,
+            "known_at": "2025-01-01",
+            "evidence_reference": "register"
+          }
+        ],
+        "relationship_policy": {
+          "policy_id": "business-legal-records",
+          "version": "1",
+          "edge_types": [
+            "OWNERSHIP",
+            "LEGAL_IDENTITY"
+          ]
+        },
+        "as_of": "2025-01-31",
+        "known_at": "2025-01-31"
+      }
+    },
+    "revolving_working_capital": {
+      "features": {
+        "business_cashflows": [
+          {
+            "transaction_id": "s1",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 120,
+            "category": "SALES",
+            "currency": "EUR",
+            "counterparty_id": "buyer1"
+          },
+          {
+            "transaction_id": "s2",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 80,
+            "category": "SALES",
+            "currency": "EUR",
+            "counterparty_id": "buyer2"
+          },
+          {
+            "transaction_id": "cost",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -60,
+            "category": "OPERATING_COST",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "tax",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -10,
+            "category": "TAX",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "capex",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -20,
+            "category": "CAPEX",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "debt",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -30,
+            "category": "DEBT_SERVICE",
+            "currency": "EUR",
+            "facility_id": "bizloan"
+          },
+          {
+            "transaction_id": "draw",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": -40,
+            "category": "OWNER_DRAW",
+            "currency": "EUR"
+          },
+          {
+            "transaction_id": "finance",
+            "release_seq": 1,
+            "business_id": "biz",
+            "posted_at": "2025-01-15",
+            "known_at": "2025-01-15",
+            "amount": 100,
+            "category": "FINANCING",
+            "currency": "EUR"
+          }
+        ],
+        "owner_drawings": [
+          {
+            "drawing_id": "draw",
+            "release_seq": 1,
+            "known_at": "2025-01-15",
+            "business_transaction_id": "draw",
+            "household_transaction_id": "privatecredit",
+            "owner_customer_id": "owner",
+            "business_posted_at": "2025-01-15",
+            "household_posted_at": "2025-01-15",
+            "business_amount": -40,
+            "household_amount": 40,
+            "currency": "EUR"
+          }
+        ],
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-01-31",
+          "observed_from": "2025-01-01",
+          "complete_through": "2025-01-31"
+        },
+        "business_id": "biz",
+        "owner_customer_ids": [
+          "owner"
+        ],
+        "business_debt_facility_ids": [
+          "bizloan"
+        ],
+        "household_debt_service_window": {
+          "from": "2025-01-01",
+          "through": "2025-01-31",
+          "period": "month"
+        },
+        "as_of": "2025-01-31",
+        "information_cutoff": "2025-01-31",
+        "lookback_days": 31,
+        "currency": "EUR",
+        "liability_links": [
+          {
+            "liability_id": "legal",
+            "release_seq": 1,
+            "known_at": "2025-01-01",
+            "business_id": "biz",
+            "customer_id": "owner",
+            "liability_type": "LIMITED_OWNERSHIP",
+            "effective_from": "2025-01-01",
+            "effective_until": null,
+            "liability_fraction": 0,
+            "maximum_amount": 0,
+            "evidence_reference": "limited-company-register"
+          }
+        ]
+      },
+      "legal_graph": {
+        "entities": [
+          {
+            "entity_id": "owner"
+          },
+          {
+            "entity_id": "biz"
+          }
+        ],
+        "edges": [
+          {
+            "edge_id": "ownership",
+            "source_id": "owner",
+            "target_id": "biz",
+            "edge_type": "OWNERSHIP",
+            "ownership_fraction": 1,
+            "valid_from": "2025-01-01",
+            "valid_until": null,
+            "known_at": "2025-01-01",
+            "evidence_reference": "register"
+          }
+        ],
+        "relationship_policy": {
+          "policy_id": "business-legal-records",
+          "version": "1",
+          "edge_types": [
+            "OWNERSHIP",
+            "LEGAL_IDENTITY"
+          ]
+        },
+        "as_of": "2025-01-31",
+        "known_at": "2025-01-31"
+      }
+    }
+  },
+  "default_policy": {
+    "policy_id": "legal-default-unit",
+    "version": "1",
+    "edge_types": [
+      "LEGAL_IDENTITY"
+    ],
+    "direction_policy": "mutual_only",
+    "transitive": true
+  },
+  "facility_mappings": [
+    {
+      "facility_id": "bizloan",
+      "entity_id": "biz"
+    },
+    {
+      "facility_id": "private",
+      "entity_id": "owner"
+    }
+  ],
+  "working_capital": {
+    "contract": {
+      "facility_id": "working-line",
+      "currency": "EUR",
+      "as_of": "2025-02-01",
+      "drawn_principal": 20,
+      "credit_limit": 100,
+      "accrued_interest": 0
+    },
+    "events": [
+      {
+        "event_id": "draw",
+        "event_date": "2025-02-10",
+        "known_at": "2025-02-01",
+        "sequence": 1,
+        "kind": "DRAW",
+        "amount": 30
+      },
+      {
+        "event_id": "repay",
+        "event_date": "2025-02-20",
+        "known_at": "2025-02-01",
+        "sequence": 1,
+        "kind": "PRINCIPAL_REPAYMENT",
+        "amount": 10
+      },
+      {
+        "event_id": "limit",
+        "event_date": "2025-02-25",
+        "known_at": "2025-02-01",
+        "sequence": 1,
+        "kind": "LIMIT_CHANGE",
+        "amount": 120
+      }
+    ],
+    "annual_interest_rates": [
+      0
+    ],
+    "period_end_dates": [
+      "2025-02-28"
+    ],
+    "day_count": "ACT/365F",
+    "default_timing": "AFTER_PERIOD_END_EVENTS",
+    "allow_overlimit": false,
+    "currency": "EUR"
+  },
+  "guarantee": {
+    "guarantees": [
+      {
+        "guarantee_id": "owner-cap",
+        "guarantor_id": "owner",
+        "currency": "EUR",
+        "cap": 150,
+        "cap_used": 0,
+        "coverage_fraction": 1,
+        "covered_claim_ids": [
+          "term",
+          "line"
+        ],
+        "valid_from": "2025-01-01",
+        "valid_until": "2026-01-01",
+        "known_at": "2025-01-01",
+        "legally_effective": true,
+        "evidence_reference": "separate-signed-owner-guarantee"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "term",
+        "entity_id": "biz",
+        "amount": 100,
+        "currency": "EUR",
+        "due_at": "2025-12-01",
+        "known_at": "2025-01-01"
+      },
+      {
+        "claim_id": "line",
+        "entity_id": "biz",
+        "amount": 100,
+        "currency": "EUR",
+        "due_at": "2025-12-01",
+        "known_at": "2025-01-01"
+      }
+    ],
+    "allocation_policy": {
+      "policy_id": "owner-priority",
+      "version": "1",
+      "guarantee_priority": [
+        "owner-cap"
+      ],
+      "claim_priority": [
+        "term",
+        "line"
+      ],
+      "cap_convention": "non_reinstating_total"
+    },
+    "as_of": "2025-01-31",
+    "known_at": "2025-01-31",
+    "currency": "EUR"
+  }
+}

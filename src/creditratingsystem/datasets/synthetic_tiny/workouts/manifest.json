@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "world_type": "facility_workouts",
+  "generator_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "specification": {
+    "tier": "tiny",
+    "dgp_family": "misspecified",
+    "selection_mechanism": "MNAR",
+    "start_date": "2000-01-01",
+    "observation_cutoff": "2026-01-01"
+  },
+  "innovation_manifest_hash": "65563ec95592289a24303f2200255211f00d6611fb5a2efcb6464a57cc064859",
+  "chunk_rows": 1000,
+  "memory_budget_mb": 256,
+  "estimated_working_mb": 36.128,
+  "layers": [
+    "observable_inputs",
+    "latent_truth",
+    "frozen_predictions",
+    "decision_history",
+    "observed_outcomes"
+  ],
+  "tables": {
+    "observable_inputs/facilities": {
+      "file": "observable_inputs/facilities.jsonl.gz",
+      "rows": 128,
+      "columns": [
+        "facility_id",
+        "obligor_id",
+        "product",
+        "currency",
+        "origination_at",
+        "known_at",
+        "maturity_at",
+        "original_limit",
+        "original_balance",
+        "interest_rate",
+        "seniority",
+        "collateral_id"
+      ],
+      "sha256": "78fe9b5b3db17379ce6b6ce3a30169d325bb3ecc7d382468a3d3c347b9f1bd56"
+    },
+    "observable_inputs/collateral": {
+      "file": "observable_inputs/collateral.jsonl.gz",
+      "rows": 128,
+      "columns": [
+        "collateral_id",
+        "facility_id",
+        "valuation_at",
+        "known_at",
+        "value",
+        "haircut",
+        "lien_rank",
+        "currency"
+      ],
+      "sha256": "c39d11bdde293fd1cad882efd99d12b95fcd5d8426496b19c46f1a5b636732d4"
+    },
+    "observable_inputs/facility_exposures": {
+      "file": "observable_inputs/facility_exposures.jsonl.gz",
+      "rows": 4608,
+      "columns": [
+        "facility_id",
+        "observed_at",
+        "known_at",
+        "drawn_balance",
+        "credit_limit",
+        "undrawn"
+      ],
+      "sha256": "a06c0c7629eef59f87d1b4016aefc006bc00a9cbbf5ae05d5dd93d1e556b9e2c"
+    },
+    "latent_truth/analytical_workout_fixtures": {
+      "file": "latent_truth/analytical_workout_fixtures.jsonl.gz",
+      "rows": 4,
+      "columns": [
+        "case_id",
+        "ead",
+        "recovery_at_default",
+        "cost_at_default",
+        "expected_raw_lgd",
+        "constructed"
+      ],
+      "sha256": "d2fb73b28362bdc5e94712f12b09144a05c70453c1b90f14310e7ccccd9a9e04"
+    },
+    "latent_truth/constructed_open_workouts": {
+      "file": "latent_truth/constructed_open_workouts.jsonl.gz",
+      "rows": 1,
+      "columns": [
+        "case_id",
+        "default_at",
+        "evaluation_cutoff",
+        "ead",
+        "observed_recovery",
+        "observed_cost",
+        "observed_loss_fraction",
+        "ultimate_lgd",
+        "status",
+        "constructed",
+        "excluded_from_stochastic_counts"
+      ],
+      "sha256": "df06d08054808d281943828fd1ce2471d78246b044ecab064f3a65ced4e5e64e"
+    }
+  },
+  "binary_resources": {},
+  "limitations": [
+    "Synthetic engineering evidence does not establish real portfolio performance."
+  ],
+  "actual_rows": 4869,
+  "runtime_seconds": 0.4496453850006219,
+  "dependencies": {
+    "obligor_manifest_hash": "775a45383d283cb4810a29e735d473d7cc769e588c347bddc4c357562f9c5845"
+  },
+  "dgp": {
+    "workout_lags_days": [
+      90,
+      360,
+      900
+    ],
+    "discount_day_basis": 365,
+    "raw_lgd_is_not_clipped": true,
+    "observed_recoveries_respect_cutoff": true
+  }
+}

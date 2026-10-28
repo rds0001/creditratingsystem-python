@@ -1,0 +1,3013 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1",
+  "journey_id": "J_SME_CORPORATE_OWNER_SLICE",
+  "target": {
+    "event": "default",
+    "horizon": 30,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "POTENTIAL_OWN_CONTRACT",
+    "performance_origin": "first_draw_at"
+  },
+  "evaluation_cutoff": "2025-02-10",
+  "products": {
+    "RETAIL_SMALL_BUSINESS_FINANCE": {
+      "driver_definition": "Documented sole-trader operating liquidity band after current business debt, before proposed borrowing",
+      "training": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-0",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-0",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-0",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-1",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-1",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-1",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-2",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-2",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-2",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-3",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-3",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-3",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-4",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-4",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-4",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-5",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-5",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-5",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-6",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-6",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-6",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018--1-7",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-7",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018--1-7",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": -1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-0",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-0",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-0",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-1",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-1",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-1",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-2",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-2",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-2",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-3",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-3",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-3",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-4",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-4",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-4",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": "2018-01-20",
+          "outcome": 1,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-5",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-5",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-5",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-6",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-6",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-6",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2018-1-7",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-7",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2018-1-7",
+          "application_at": "2018-01-01",
+          "feature_observed_at": "2017-12-30",
+          "feature_known_at": "2017-12-31",
+          "driver": 1,
+          "first_draw_at": "2018-01-03",
+          "outcome_end": "2018-02-02",
+          "outcome_known_at": "2018-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "TRAINING"
+        }
+      ],
+      "calibration": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-0",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-0",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-0",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-1",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-1",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-1",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-2",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-2",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-2",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-3",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-3",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-3",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-4",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-4",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-4",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-5",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-5",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-5",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-6",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-6",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-6",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020--1-7",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-7",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020--1-7",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": -1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-0",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-0",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-0",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-1",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-1",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-1",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-2",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-2",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-2",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-3",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-3",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-3",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-4",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-4",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-4",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": "2020-01-20",
+          "outcome": 1,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-5",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-5",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-5",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-6",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-6",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-6",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-2020-1-7",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-7",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-2020-1-7",
+          "application_at": "2020-01-01",
+          "feature_observed_at": "2019-12-30",
+          "feature_known_at": "2019-12-31",
+          "driver": 1,
+          "first_draw_at": "2020-01-03",
+          "outcome_end": "2020-02-02",
+          "outcome_known_at": "2020-02-03",
+          "default_at": null,
+          "outcome": 0,
+          "role": "CALIBRATION"
+        }
+      ],
+      "applications": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+          "population_id": "RETAIL_SMALL_BUSINESS_FINANCE-through-door",
+          "application_at": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "requested_terms": {
+            "amount": 1000,
+            "currency": "EUR",
+            "term_months": 10
+          }
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+          "population_id": "RETAIL_SMALL_BUSINESS_FINANCE-through-door",
+          "application_at": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "requested_terms": {
+            "amount": 1000,
+            "currency": "EUR",
+            "term_months": 10
+          }
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+          "population_id": "RETAIL_SMALL_BUSINESS_FINANCE-through-door",
+          "application_at": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "requested_terms": {
+            "amount": 1000,
+            "currency": "EUR",
+            "term_months": 10
+          }
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+          "population_id": "RETAIL_SMALL_BUSINESS_FINANCE-through-door",
+          "application_at": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "requested_terms": {
+            "amount": 1000,
+            "currency": "EUR",
+            "term_months": 10
+          }
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+          "population_id": "RETAIL_SMALL_BUSINESS_FINANCE-through-door",
+          "application_at": "2025-01-29",
+          "information_cutoff": "2025-01-29",
+          "requested_terms": {
+            "amount": 1000,
+            "currency": "EUR",
+            "term_months": 10
+          }
+        }
+      ],
+      "decisions": [
+        {
+          "decision_id": "decision-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "status": "approved",
+          "decided_at": "2024-12-30",
+          "known_at": "2024-12-30",
+          "accepted_at": "2024-12-30",
+          "accepted_known_at": "2024-12-30"
+        },
+        {
+          "decision_id": "decision-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "status": "approved",
+          "decided_at": "2024-12-30",
+          "known_at": "2024-12-30",
+          "accepted_at": "2024-12-30",
+          "accepted_known_at": "2024-12-30"
+        },
+        {
+          "decision_id": "decision-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "status": "rejected",
+          "decided_at": "2024-12-30",
+          "known_at": "2024-12-30"
+        },
+        {
+          "decision_id": "decision-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "status": "approved",
+          "decided_at": "2024-12-30",
+          "known_at": "2024-12-30"
+        },
+        {
+          "decision_id": "decision-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "status": "approved",
+          "decided_at": "2025-01-30",
+          "known_at": "2025-01-30",
+          "accepted_at": "2025-01-30",
+          "accepted_known_at": "2025-01-30"
+        }
+      ],
+      "bookings": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "booked_at": "2024-12-31",
+          "known_at": "2024-12-31",
+          "first_draw_at": "2024-12-31",
+          "first_draw_known_at": "2024-12-31",
+          "followup_end": "2025-01-30",
+          "outcome_available_at": "2025-01-31"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "booked_at": "2024-12-31",
+          "known_at": "2024-12-31",
+          "first_draw_at": "2024-12-31",
+          "first_draw_known_at": "2024-12-31",
+          "followup_end": "2025-01-30",
+          "outcome_available_at": "2025-01-31"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "booked_at": "2025-01-31",
+          "known_at": "2025-01-31",
+          "first_draw_at": "2025-01-31",
+          "first_draw_known_at": "2025-01-31",
+          "followup_end": "2025-02-10",
+          "outcome_available_at": "2025-02-10"
+        }
+      ],
+      "defaults": [
+        {
+          "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "default_at": "2025-01-20",
+          "known_at": "2025-01-21"
+        }
+      ],
+      "exits": [
+        {
+          "event_id": "close-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "exit_at": "2025-01-25",
+          "known_at": "2025-01-26",
+          "exit_type": "closed"
+        }
+      ],
+      "features": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "feature": "driver",
+          "value": -1,
+          "observed_at": "2024-12-28",
+          "known_at": "2024-12-28",
+          "source_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "feature": "driver",
+          "value": 1,
+          "observed_at": "2024-12-28",
+          "known_at": "2024-12-28",
+          "source_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "feature": "driver",
+          "value": -1,
+          "observed_at": "2024-12-28",
+          "known_at": "2024-12-28",
+          "source_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "feature": "driver",
+          "value": -1,
+          "observed_at": "2024-12-28",
+          "known_at": "2024-12-28",
+          "source_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "feature": "driver",
+          "value": -1,
+          "observed_at": "2025-01-28",
+          "known_at": "2025-01-28",
+          "source_id": "release-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+        }
+      ],
+      "households": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "household_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "stage": "SURVIVOR",
+          "monthly_income": 1200,
+          "monthly_expense": 400,
+          "co_borrower_income": 0,
+          "source_date": "2024-12-28",
+          "income_component_type": "OTHER_NET_INCOME"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "household_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "stage": "DEFAULT_THEN_EXIT",
+          "monthly_income": 1200,
+          "monthly_expense": 400,
+          "co_borrower_income": 0,
+          "source_date": "2024-12-28",
+          "income_component_type": "OTHER_NET_INCOME"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "household_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "stage": "DECLINED",
+          "monthly_income": 60,
+          "monthly_expense": 400,
+          "co_borrower_income": 0,
+          "source_date": "2024-12-28",
+          "income_component_type": "OTHER_NET_INCOME"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "household_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "stage": "NO_TAKEUP",
+          "monthly_income": 1200,
+          "monthly_expense": 400,
+          "co_borrower_income": 0,
+          "source_date": "2024-12-28",
+          "income_component_type": "OTHER_NET_INCOME"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "household_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "stage": "IMMATURE",
+          "monthly_income": 1200,
+          "monthly_expense": 400,
+          "co_borrower_income": 0,
+          "source_date": "2025-01-28",
+          "income_component_type": "OTHER_NET_INCOME"
+        }
+      ],
+      "expected_cell_pd": [
+        0.375,
+        0.625
+      ],
+      "terms": {
+        "kind": "LEVEL_PRINCIPAL",
+        "principal": 1000,
+        "periods": 10,
+        "annual_rate": 0
+      },
+      "bureau_inputs": [
+        {
+          "snapshots": [
+            {
+              "snapshot_id": "bureau-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+              "release_seq": 1,
+              "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+              "provider_id": "local",
+              "observed_at": "2024-12-28",
+              "reported_at": "2024-12-28",
+              "known_at": "2024-12-28",
+              "coverage_status": "NO_HIT",
+              "currency": "EUR"
+            }
+          ],
+          "tradelines": [],
+          "inquiries": [],
+          "provider_mapping": {
+            "mapping_id": "local-identity",
+            "version": "1",
+            "known_at": "2024-01-01",
+            "snapshots": {},
+            "tradelines": {},
+            "inquiries": {}
+          },
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "provider_id": "local",
+          "as_of": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "lookback_days": 30,
+          "max_age_days": 31,
+          "currency": "EUR"
+        },
+        {
+          "snapshots": [
+            {
+              "snapshot_id": "bureau-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+              "release_seq": 1,
+              "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+              "provider_id": "local",
+              "observed_at": "2024-12-28",
+              "reported_at": "2024-12-28",
+              "known_at": "2024-12-28",
+              "coverage_status": "COMPLETE",
+              "currency": "EUR"
+            }
+          ],
+          "tradelines": [],
+          "inquiries": [],
+          "provider_mapping": {
+            "mapping_id": "local-identity",
+            "version": "1",
+            "known_at": "2024-01-01",
+            "snapshots": {},
+            "tradelines": {},
+            "inquiries": {}
+          },
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "provider_id": "local",
+          "as_of": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "lookback_days": 30,
+          "max_age_days": 31,
+          "currency": "EUR"
+        },
+        {
+          "snapshots": [
+            {
+              "snapshot_id": "bureau-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+              "release_seq": 1,
+              "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+              "provider_id": "local",
+              "observed_at": "2024-12-28",
+              "reported_at": "2024-12-28",
+              "known_at": "2024-12-28",
+              "coverage_status": "COMPLETE",
+              "currency": "EUR"
+            }
+          ],
+          "tradelines": [],
+          "inquiries": [],
+          "provider_mapping": {
+            "mapping_id": "local-identity",
+            "version": "1",
+            "known_at": "2024-01-01",
+            "snapshots": {},
+            "tradelines": {},
+            "inquiries": {}
+          },
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "provider_id": "local",
+          "as_of": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "lookback_days": 30,
+          "max_age_days": 31,
+          "currency": "EUR"
+        },
+        {
+          "snapshots": [
+            {
+              "snapshot_id": "bureau-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+              "release_seq": 1,
+              "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+              "provider_id": "local",
+              "observed_at": "2024-09-29",
+              "reported_at": "2024-12-28",
+              "known_at": "2024-12-28",
+              "coverage_status": "COMPLETE",
+              "currency": "EUR"
+            }
+          ],
+          "tradelines": [],
+          "inquiries": [],
+          "provider_mapping": {
+            "mapping_id": "local-identity",
+            "version": "1",
+            "known_at": "2024-01-01",
+            "snapshots": {},
+            "tradelines": {},
+            "inquiries": {}
+          },
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "provider_id": "local",
+          "as_of": "2024-12-29",
+          "information_cutoff": "2024-12-29",
+          "lookback_days": 30,
+          "max_age_days": 31,
+          "currency": "EUR"
+        },
+        {
+          "snapshots": [
+            {
+              "snapshot_id": "bureau-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+              "release_seq": 1,
+              "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+              "provider_id": "local",
+              "observed_at": "2025-01-28",
+              "reported_at": "2025-01-28",
+              "known_at": "2025-01-28",
+              "coverage_status": "COMPLETE",
+              "currency": "EUR"
+            }
+          ],
+          "tradelines": [],
+          "inquiries": [],
+          "provider_mapping": {
+            "mapping_id": "local-identity",
+            "version": "1",
+            "known_at": "2024-01-01",
+            "snapshots": {},
+            "tradelines": {},
+            "inquiries": {}
+          },
+          "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "provider_id": "local",
+          "as_of": "2025-01-29",
+          "information_cutoff": "2025-01-29",
+          "lookback_days": 30,
+          "max_age_days": 31,
+          "currency": "EUR"
+        }
+      ],
+      "joint_application": {
+        "entities": [
+          {
+            "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "entity_type": "CUSTOMER",
+            "known_at": "2024-12-28"
+          },
+          {
+            "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-coapplicant",
+            "entity_type": "CUSTOMER",
+            "known_at": "2024-12-28"
+          },
+          {
+            "entity_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "entity_type": "HOUSEHOLD",
+            "known_at": "2024-12-28"
+          },
+          {
+            "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "entity_type": "APPLICATION",
+            "known_at": "2024-12-28"
+          }
+        ],
+        "relationships": [
+          {
+            "relationship_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-MEMBER_OF",
+            "release_seq": 1,
+            "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "target_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "role": "MEMBER_OF",
+            "effective_from": "2024-12-28",
+            "effective_until": null,
+            "known_at": "2024-12-28",
+            "liability_fraction": null,
+            "budget_share": null,
+            "evidence_reference": "signed synthetic joint application and separate household membership"
+          },
+          {
+            "relationship_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-COAPPLICANT_ON",
+            "release_seq": 1,
+            "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "target_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "role": "COAPPLICANT_ON",
+            "effective_from": "2024-12-28",
+            "effective_until": null,
+            "known_at": "2024-12-28",
+            "liability_fraction": null,
+            "budget_share": null,
+            "evidence_reference": "signed synthetic joint application and separate household membership"
+          },
+          {
+            "relationship_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-coapplicant-MEMBER_OF",
+            "release_seq": 1,
+            "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-coapplicant",
+            "target_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "role": "MEMBER_OF",
+            "effective_from": "2024-12-28",
+            "effective_until": null,
+            "known_at": "2024-12-28",
+            "liability_fraction": null,
+            "budget_share": null,
+            "evidence_reference": "signed synthetic joint application and separate household membership"
+          },
+          {
+            "relationship_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-coapplicant-COAPPLICANT_ON",
+            "release_seq": 1,
+            "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-coapplicant",
+            "target_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "role": "COAPPLICANT_ON",
+            "effective_from": "2024-12-28",
+            "effective_until": null,
+            "known_at": "2024-12-28",
+            "liability_fraction": null,
+            "budget_share": null,
+            "evidence_reference": "signed synthetic joint application and separate household membership"
+          }
+        ],
+        "as_of": "2024-12-29",
+        "information_cutoff": "2024-12-29"
+      },
+      "realized_economics": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "complete": true,
+          "known_at": "2025-01-31",
+          "principal_funded": 1000,
+          "principal_cash": 1000,
+          "interest_cash": 20,
+          "collection_cost": 0,
+          "currency": "EUR",
+          "reference": "complete synthetic principal-and-interest ledger, settled January30"
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "facility_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "complete": true,
+          "known_at": "2025-01-31",
+          "principal_funded": 1000,
+          "principal_cash": 600,
+          "interest_cash": 20,
+          "collection_cost": 0,
+          "currency": "EUR",
+          "reference": "complete synthetic principal-and-interest ledger, settled January30"
+        }
+      ],
+      "behavioral_training": {
+        "accounts": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-0",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-0",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-1",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-1",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-2",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-2",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-3",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-3",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-4",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-4",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-5",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-5",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-6",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-6",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-7",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-7",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-8",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-8",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-9",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-9",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-10",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-10",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-11",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-11",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-12",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-12",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-13",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-13",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-14",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-14",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-15",
+            "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-15",
+            "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+            "opened_at": "2017-12-01",
+            "known_at": "2017-12-01",
+            "currency": "EUR"
+          }
+        ],
+        "statements": [
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-0",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-0",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-1",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-1",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-2",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-2",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-3",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-3",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-4",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-4",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-5",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-5",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-6",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-6",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-7",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-7",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-8",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-8",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-9",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-9",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-10",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-10",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-11",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-11",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-12",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-12",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-13",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-13",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-14",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-14",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          },
+          {
+            "statement_id": "statement-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-15",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-15",
+            "observed_at": "2017-12-31",
+            "known_at": "2017-12-31",
+            "balance": 1000,
+            "credit_limit": 1000,
+            "dpd": 0,
+            "past_due_amount": 0,
+            "currency": "EUR"
+          }
+        ],
+        "events": [
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-0",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-0",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          },
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-1",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-1",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          },
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-2",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-2",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          },
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-8",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-8",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          },
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-9",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-9",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          },
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-10",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-10",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          },
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-11",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-11",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          },
+          {
+            "event_id": "default-RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-12",
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-12",
+            "event_type": "DEFAULT",
+            "occurred_at": "2018-01-20",
+            "known_at": "2018-01-21"
+          }
+        ],
+        "coverage": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-0",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-1",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-2",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-3",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-4",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-5",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-6",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-7",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-8",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-9",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-10",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-11",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-12",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-13",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-14",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-behavioral-prior-15",
+            "observed_through": "2018-01-31",
+            "known_at": "2018-02-01"
+          }
+        ]
+      },
+      "owner_business_inputs": [
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+          "features": {
+            "business_cashflows": [
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-s1",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 1200.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer1"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-s2",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 800.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer2"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-cost",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -600.0,
+                "category": "OPERATING_COST",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-tax",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -100.0,
+                "category": "TAX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-capex",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -200.0,
+                "category": "CAPEX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-debt",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -300.0,
+                "category": "DEBT_SERVICE",
+                "currency": "EUR",
+                "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-draw",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -400.0,
+                "category": "OWNER_DRAW",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-finance",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 1000.0,
+                "category": "FINANCING",
+                "currency": "EUR"
+              }
+            ],
+            "owner_drawings": [
+              {
+                "drawing_id": "drawing-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "release_seq": 1,
+                "known_at": "2024-12-15",
+                "business_transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-draw",
+                "household_transaction_id": "household-credit-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "owner_customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "business_posted_at": "2024-12-15",
+                "household_posted_at": "2024-12-15",
+                "business_amount": -400.0,
+                "household_amount": 400.0,
+                "currency": "EUR"
+              }
+            ],
+            "coverage": {
+              "status": "COMPLETE",
+              "known_at": "2024-12-28",
+              "observed_from": "2024-12-01",
+              "complete_through": "2024-12-28"
+            },
+            "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+            "owner_customer_ids": [
+              "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR"
+            ],
+            "business_debt_facility_ids": [
+              "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR"
+            ],
+            "household_debt_service_window": {
+              "from": "2024-12-01",
+              "through": "2024-12-28",
+              "period": "month"
+            },
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28",
+            "lookback_days": 28,
+            "currency": "EUR",
+            "liability_links": [
+              {
+                "liability_id": "identity-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "release_seq": 1,
+                "known_at": "2024-12-01",
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "liability_type": "UNLIMITED_LIABILITY",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "liability_fraction": 1,
+                "maximum_amount": null,
+                "evidence_reference": "documented-legal-identity"
+              }
+            ]
+          },
+          "household_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "entity_type": "CUSTOMER",
+                "known_at": "2024-12-01"
+              },
+              {
+                "entity_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "entity_type": "HOUSEHOLD",
+                "known_at": "2024-12-01"
+              }
+            ],
+            "relationships": [
+              {
+                "relationship_id": "member-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "release_seq": 1,
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "target_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "role": "MEMBER_OF",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "known_at": "2024-12-01",
+                "liability_fraction": null,
+                "budget_share": null,
+                "evidence_reference": "documented owner household"
+              }
+            ],
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28"
+          },
+          "household_obligations": {
+            "obligations": [],
+            "coverage": {
+              "status": "COMPLETE",
+              "sources": [
+                "bank"
+              ],
+              "known_at": "2024-12-28"
+            },
+            "currency": "EUR",
+            "period": "month",
+            "guarantee_budget_policy": "exclude"
+          },
+          "legal_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR"
+              },
+              {
+                "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-ownership",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "edge_type": "OWNERSHIP",
+                "ownership_fraction": 1,
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "register"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-identity-owner",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR-identity-biz",
+                "source_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "target_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              }
+            ],
+            "relationship_policy": {
+              "policy_id": "business-legal-records",
+              "version": "1",
+              "edge_types": [
+                "OWNERSHIP",
+                "LEGAL_IDENTITY"
+              ]
+            },
+            "as_of": "2024-12-28",
+            "known_at": "2024-12-28"
+          },
+          "default_policy": {
+            "policy_id": "legal-default-unit",
+            "version": "1",
+            "edge_types": [
+              "LEGAL_IDENTITY"
+            ],
+            "direction_policy": "mutual_only",
+            "transitive": true
+          },
+          "facility_mappings": [
+            {
+              "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+              "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR"
+            }
+          ],
+          "expected_owner_draw": 400.0,
+          "expected_after_business_debt": 800.0,
+          "other_household_income": 800.0
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+          "features": {
+            "business_cashflows": [
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-s1",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 1200.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer1"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-s2",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 800.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer2"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-cost",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -600.0,
+                "category": "OPERATING_COST",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-tax",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -100.0,
+                "category": "TAX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-capex",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -200.0,
+                "category": "CAPEX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-debt",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -300.0,
+                "category": "DEBT_SERVICE",
+                "currency": "EUR",
+                "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-draw",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -400.0,
+                "category": "OWNER_DRAW",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-finance",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 1000.0,
+                "category": "FINANCING",
+                "currency": "EUR"
+              }
+            ],
+            "owner_drawings": [
+              {
+                "drawing_id": "drawing-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "release_seq": 1,
+                "known_at": "2024-12-15",
+                "business_transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-draw",
+                "household_transaction_id": "household-credit-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "owner_customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "business_posted_at": "2024-12-15",
+                "household_posted_at": "2024-12-15",
+                "business_amount": -400.0,
+                "household_amount": 400.0,
+                "currency": "EUR"
+              }
+            ],
+            "coverage": {
+              "status": "COMPLETE",
+              "known_at": "2024-12-28",
+              "observed_from": "2024-12-01",
+              "complete_through": "2024-12-28"
+            },
+            "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+            "owner_customer_ids": [
+              "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT"
+            ],
+            "business_debt_facility_ids": [
+              "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT"
+            ],
+            "household_debt_service_window": {
+              "from": "2024-12-01",
+              "through": "2024-12-28",
+              "period": "month"
+            },
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28",
+            "lookback_days": 28,
+            "currency": "EUR",
+            "liability_links": [
+              {
+                "liability_id": "identity-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "release_seq": 1,
+                "known_at": "2024-12-01",
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "liability_type": "UNLIMITED_LIABILITY",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "liability_fraction": 1,
+                "maximum_amount": null,
+                "evidence_reference": "documented-legal-identity"
+              }
+            ]
+          },
+          "household_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "entity_type": "CUSTOMER",
+                "known_at": "2024-12-01"
+              },
+              {
+                "entity_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "entity_type": "HOUSEHOLD",
+                "known_at": "2024-12-01"
+              }
+            ],
+            "relationships": [
+              {
+                "relationship_id": "member-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "release_seq": 1,
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "target_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "role": "MEMBER_OF",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "known_at": "2024-12-01",
+                "liability_fraction": null,
+                "budget_share": null,
+                "evidence_reference": "documented owner household"
+              }
+            ],
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28"
+          },
+          "household_obligations": {
+            "obligations": [],
+            "coverage": {
+              "status": "COMPLETE",
+              "sources": [
+                "bank"
+              ],
+              "known_at": "2024-12-28"
+            },
+            "currency": "EUR",
+            "period": "month",
+            "guarantee_budget_policy": "exclude"
+          },
+          "legal_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT"
+              },
+              {
+                "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-ownership",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "edge_type": "OWNERSHIP",
+                "ownership_fraction": 1,
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "register"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-identity-owner",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-identity-biz",
+                "source_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "target_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              }
+            ],
+            "relationship_policy": {
+              "policy_id": "business-legal-records",
+              "version": "1",
+              "edge_types": [
+                "OWNERSHIP",
+                "LEGAL_IDENTITY"
+              ]
+            },
+            "as_of": "2024-12-28",
+            "known_at": "2024-12-28"
+          },
+          "default_policy": {
+            "policy_id": "legal-default-unit",
+            "version": "1",
+            "edge_types": [
+              "LEGAL_IDENTITY"
+            ],
+            "direction_policy": "mutual_only",
+            "transitive": true
+          },
+          "facility_mappings": [
+            {
+              "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+              "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT"
+            }
+          ],
+          "expected_owner_draw": 400.0,
+          "expected_after_business_debt": 800.0,
+          "other_household_income": 800.0
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+          "features": {
+            "business_cashflows": [
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-s1",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 60.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer1"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-s2",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 40.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer2"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-cost",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -30.0,
+                "category": "OPERATING_COST",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-tax",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -5.0,
+                "category": "TAX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-capex",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -10.0,
+                "category": "CAPEX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-debt",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -15.0,
+                "category": "DEBT_SERVICE",
+                "currency": "EUR",
+                "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-draw",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -20.0,
+                "category": "OWNER_DRAW",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-finance",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 50.0,
+                "category": "FINANCING",
+                "currency": "EUR"
+              }
+            ],
+            "owner_drawings": [
+              {
+                "drawing_id": "drawing-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "release_seq": 1,
+                "known_at": "2024-12-15",
+                "business_transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-draw",
+                "household_transaction_id": "household-credit-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "owner_customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "business_posted_at": "2024-12-15",
+                "household_posted_at": "2024-12-15",
+                "business_amount": -20.0,
+                "household_amount": 20.0,
+                "currency": "EUR"
+              }
+            ],
+            "coverage": {
+              "status": "COMPLETE",
+              "known_at": "2024-12-28",
+              "observed_from": "2024-12-01",
+              "complete_through": "2024-12-28"
+            },
+            "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+            "owner_customer_ids": [
+              "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED"
+            ],
+            "business_debt_facility_ids": [
+              "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED"
+            ],
+            "household_debt_service_window": {
+              "from": "2024-12-01",
+              "through": "2024-12-28",
+              "period": "month"
+            },
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28",
+            "lookback_days": 28,
+            "currency": "EUR",
+            "liability_links": [
+              {
+                "liability_id": "identity-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "release_seq": 1,
+                "known_at": "2024-12-01",
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "liability_type": "UNLIMITED_LIABILITY",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "liability_fraction": 1,
+                "maximum_amount": null,
+                "evidence_reference": "documented-legal-identity"
+              }
+            ]
+          },
+          "household_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "entity_type": "CUSTOMER",
+                "known_at": "2024-12-01"
+              },
+              {
+                "entity_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "entity_type": "HOUSEHOLD",
+                "known_at": "2024-12-01"
+              }
+            ],
+            "relationships": [
+              {
+                "relationship_id": "member-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "release_seq": 1,
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "target_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "role": "MEMBER_OF",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "known_at": "2024-12-01",
+                "liability_fraction": null,
+                "budget_share": null,
+                "evidence_reference": "documented owner household"
+              }
+            ],
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28"
+          },
+          "household_obligations": {
+            "obligations": [],
+            "coverage": {
+              "status": "COMPLETE",
+              "sources": [
+                "bank"
+              ],
+              "known_at": "2024-12-28"
+            },
+            "currency": "EUR",
+            "period": "month",
+            "guarantee_budget_policy": "exclude"
+          },
+          "legal_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED"
+              },
+              {
+                "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-ownership",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "edge_type": "OWNERSHIP",
+                "ownership_fraction": 1,
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "register"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-identity-owner",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED-identity-biz",
+                "source_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "target_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              }
+            ],
+            "relationship_policy": {
+              "policy_id": "business-legal-records",
+              "version": "1",
+              "edge_types": [
+                "OWNERSHIP",
+                "LEGAL_IDENTITY"
+              ]
+            },
+            "as_of": "2024-12-28",
+            "known_at": "2024-12-28"
+          },
+          "default_policy": {
+            "policy_id": "legal-default-unit",
+            "version": "1",
+            "edge_types": [
+              "LEGAL_IDENTITY"
+            ],
+            "direction_policy": "mutual_only",
+            "transitive": true
+          },
+          "facility_mappings": [
+            {
+              "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+              "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-DECLINED"
+            }
+          ],
+          "expected_owner_draw": 20.0,
+          "expected_after_business_debt": 40.0,
+          "other_household_income": 40.0
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+          "features": {
+            "business_cashflows": [
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-s1",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 1200.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer1"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-s2",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 800.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer2"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-cost",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -600.0,
+                "category": "OPERATING_COST",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-tax",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -100.0,
+                "category": "TAX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-capex",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -200.0,
+                "category": "CAPEX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-debt",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -300.0,
+                "category": "DEBT_SERVICE",
+                "currency": "EUR",
+                "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-draw",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": -400.0,
+                "category": "OWNER_DRAW",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-finance",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "posted_at": "2024-12-15",
+                "known_at": "2024-12-15",
+                "amount": 1000.0,
+                "category": "FINANCING",
+                "currency": "EUR"
+              }
+            ],
+            "owner_drawings": [
+              {
+                "drawing_id": "drawing-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "release_seq": 1,
+                "known_at": "2024-12-15",
+                "business_transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-draw",
+                "household_transaction_id": "household-credit-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "owner_customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "business_posted_at": "2024-12-15",
+                "household_posted_at": "2024-12-15",
+                "business_amount": -400.0,
+                "household_amount": 400.0,
+                "currency": "EUR"
+              }
+            ],
+            "coverage": {
+              "status": "COMPLETE",
+              "known_at": "2024-12-28",
+              "observed_from": "2024-12-01",
+              "complete_through": "2024-12-28"
+            },
+            "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+            "owner_customer_ids": [
+              "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP"
+            ],
+            "business_debt_facility_ids": [
+              "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP"
+            ],
+            "household_debt_service_window": {
+              "from": "2024-12-01",
+              "through": "2024-12-28",
+              "period": "month"
+            },
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28",
+            "lookback_days": 28,
+            "currency": "EUR",
+            "liability_links": [
+              {
+                "liability_id": "identity-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "release_seq": 1,
+                "known_at": "2024-12-01",
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "liability_type": "UNLIMITED_LIABILITY",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "liability_fraction": 1,
+                "maximum_amount": null,
+                "evidence_reference": "documented-legal-identity"
+              }
+            ]
+          },
+          "household_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "entity_type": "CUSTOMER",
+                "known_at": "2024-12-01"
+              },
+              {
+                "entity_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "entity_type": "HOUSEHOLD",
+                "known_at": "2024-12-01"
+              }
+            ],
+            "relationships": [
+              {
+                "relationship_id": "member-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "release_seq": 1,
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "target_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "role": "MEMBER_OF",
+                "effective_from": "2024-12-01",
+                "effective_until": null,
+                "known_at": "2024-12-01",
+                "liability_fraction": null,
+                "budget_share": null,
+                "evidence_reference": "documented owner household"
+              }
+            ],
+            "as_of": "2024-12-28",
+            "information_cutoff": "2024-12-28"
+          },
+          "household_obligations": {
+            "obligations": [],
+            "coverage": {
+              "status": "COMPLETE",
+              "sources": [
+                "bank"
+              ],
+              "known_at": "2024-12-28"
+            },
+            "currency": "EUR",
+            "period": "month",
+            "guarantee_budget_policy": "exclude"
+          },
+          "legal_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP"
+              },
+              {
+                "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-ownership",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "edge_type": "OWNERSHIP",
+                "ownership_fraction": 1,
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "register"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-identity-owner",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP-identity-biz",
+                "source_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "target_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2024-12-01",
+                "valid_until": null,
+                "known_at": "2024-12-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              }
+            ],
+            "relationship_policy": {
+              "policy_id": "business-legal-records",
+              "version": "1",
+              "edge_types": [
+                "OWNERSHIP",
+                "LEGAL_IDENTITY"
+              ]
+            },
+            "as_of": "2024-12-28",
+            "known_at": "2024-12-28"
+          },
+          "default_policy": {
+            "policy_id": "legal-default-unit",
+            "version": "1",
+            "edge_types": [
+              "LEGAL_IDENTITY"
+            ],
+            "direction_policy": "mutual_only",
+            "transitive": true
+          },
+          "facility_mappings": [
+            {
+              "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+              "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP"
+            }
+          ],
+          "expected_owner_draw": 400.0,
+          "expected_after_business_debt": 800.0,
+          "other_household_income": 800.0
+        },
+        {
+          "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+          "features": {
+            "business_cashflows": [
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-s1",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": 1200.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer1"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-s2",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": 800.0,
+                "category": "SALES",
+                "currency": "EUR",
+                "counterparty_id": "buyer2"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-cost",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": -600.0,
+                "category": "OPERATING_COST",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-tax",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": -100.0,
+                "category": "TAX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-capex",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": -200.0,
+                "category": "CAPEX",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-debt",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": -300.0,
+                "category": "DEBT_SERVICE",
+                "currency": "EUR",
+                "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-draw",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": -400.0,
+                "category": "OWNER_DRAW",
+                "currency": "EUR"
+              },
+              {
+                "transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-finance",
+                "release_seq": 1,
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "posted_at": "2025-01-15",
+                "known_at": "2025-01-15",
+                "amount": 1000.0,
+                "category": "FINANCING",
+                "currency": "EUR"
+              }
+            ],
+            "owner_drawings": [
+              {
+                "drawing_id": "drawing-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "release_seq": 1,
+                "known_at": "2025-01-15",
+                "business_transaction_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-draw",
+                "household_transaction_id": "household-credit-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "owner_customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "business_posted_at": "2025-01-15",
+                "household_posted_at": "2025-01-15",
+                "business_amount": -400.0,
+                "household_amount": 400.0,
+                "currency": "EUR"
+              }
+            ],
+            "coverage": {
+              "status": "COMPLETE",
+              "known_at": "2025-01-28",
+              "observed_from": "2025-01-01",
+              "complete_through": "2025-01-28"
+            },
+            "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+            "owner_customer_ids": [
+              "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+            ],
+            "business_debt_facility_ids": [
+              "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+            ],
+            "household_debt_service_window": {
+              "from": "2025-01-01",
+              "through": "2025-01-28",
+              "period": "month"
+            },
+            "as_of": "2025-01-28",
+            "information_cutoff": "2025-01-28",
+            "lookback_days": 28,
+            "currency": "EUR",
+            "liability_links": [
+              {
+                "liability_id": "identity-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "release_seq": 1,
+                "known_at": "2025-01-01",
+                "business_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "liability_type": "UNLIMITED_LIABILITY",
+                "effective_from": "2025-01-01",
+                "effective_until": null,
+                "liability_fraction": 1,
+                "maximum_amount": null,
+                "evidence_reference": "documented-legal-identity"
+              }
+            ]
+          },
+          "household_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "entity_type": "CUSTOMER",
+                "known_at": "2025-01-01"
+              },
+              {
+                "entity_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "entity_type": "HOUSEHOLD",
+                "known_at": "2025-01-01"
+              }
+            ],
+            "relationships": [
+              {
+                "relationship_id": "member-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "release_seq": 1,
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "target_id": "household-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "role": "MEMBER_OF",
+                "effective_from": "2025-01-01",
+                "effective_until": null,
+                "known_at": "2025-01-01",
+                "liability_fraction": null,
+                "budget_share": null,
+                "evidence_reference": "documented owner household"
+              }
+            ],
+            "as_of": "2025-01-28",
+            "information_cutoff": "2025-01-28"
+          },
+          "household_obligations": {
+            "obligations": [],
+            "coverage": {
+              "status": "COMPLETE",
+              "sources": [
+                "bank"
+              ],
+              "known_at": "2025-01-28"
+            },
+            "currency": "EUR",
+            "period": "month",
+            "guarantee_budget_policy": "exclude"
+          },
+          "legal_graph": {
+            "entities": [
+              {
+                "entity_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+              },
+              {
+                "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-ownership",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "edge_type": "OWNERSHIP",
+                "ownership_fraction": 1,
+                "valid_from": "2025-01-01",
+                "valid_until": null,
+                "known_at": "2025-01-01",
+                "evidence_reference": "register"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-identity-owner",
+                "source_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "target_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2025-01-01",
+                "valid_until": null,
+                "known_at": "2025-01-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              },
+              {
+                "edge_id": "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE-identity-biz",
+                "source_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "target_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+                "edge_type": "LEGAL_IDENTITY",
+                "valid_from": "2025-01-01",
+                "valid_until": null,
+                "known_at": "2025-01-01",
+                "evidence_reference": "same-legal-person-two-accounting-records"
+              }
+            ],
+            "relationship_policy": {
+              "policy_id": "business-legal-records",
+              "version": "1",
+              "edge_types": [
+                "OWNERSHIP",
+                "LEGAL_IDENTITY"
+              ]
+            },
+            "as_of": "2025-01-28",
+            "known_at": "2025-01-28"
+          },
+          "default_policy": {
+            "policy_id": "legal-default-unit",
+            "version": "1",
+            "edge_types": [
+              "LEGAL_IDENTITY"
+            ],
+            "direction_policy": "mutual_only",
+            "transitive": true
+          },
+          "facility_mappings": [
+            {
+              "facility_id": "existing-business-loan-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE",
+              "entity_id": "business-RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+            }
+          ],
+          "expected_owner_draw": 400.0,
+          "expected_after_business_debt": 800.0,
+          "other_household_income": 800.0
+        }
+      ],
+      "lifecycle": {
+        "account_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+        "application_id": "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+        "customer_id": "person-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+        "claim_currency": "EUR",
+        "opening_principal": 1000,
+        "proposal_date": "2025-01-15",
+        "proposal_known_at": "2025-01-15",
+        "proposal_status": "OFFERED_NOT_ACCEPTED",
+        "cash_scope": "PRINCIPAL_CLAIM_ONLY; separate20interest_income stays in policy profitability ledger, excluded from principal loss",
+        "arrangement": {
+          "contract": {
+            "currency": "EUR",
+            "principal": 1000,
+            "principal_arrears": 100,
+            "accrued_interest": 0,
+            "fees": 0,
+            "as_of": "2025-01-15"
+          },
+          "baseline": {
+            "plan_id": "contractual",
+            "payments": [
+              100,
+              100,
+              100
+            ],
+            "period_interest_rates": [
+              0,
+              0,
+              0
+            ],
+            "new_fees": [
+              0,
+              0,
+              0
+            ],
+            "servicing_costs": [
+              0,
+              0,
+              0
+            ],
+            "receipt_fractions": [
+              1,
+              1,
+              1
+            ],
+            "capitalize_unpaid_interest": false
+          },
+          "candidate": {
+            "plan_id": "proposed",
+            "payments": [
+              0,
+              150,
+              150
+            ],
+            "period_interest_rates": [
+              0,
+              0,
+              0
+            ],
+            "new_fees": [
+              0,
+              0,
+              0
+            ],
+            "servicing_costs": [
+              0,
+              0,
+              0
+            ],
+            "receipt_fractions": [
+              1,
+              1,
+              1
+            ],
+            "capitalize_unpaid_interest": false
+          },
+          "affordability_paths": [
+            {
+              "path_id": "dated-business-household-cash",
+              "currency": "EUR",
+              "available_cash": [
+                800,
+                800,
+                800
+              ]
+            }
+          ],
+          "discount_factors": [
+            1,
+            1,
+            1
+          ],
+          "period_end_dates": [
+            "2025-01-31",
+            "2025-02-28",
+            "2025-03-31"
+          ],
+          "currency": "EUR"
+        },
+        "cashflows": [
+          {
+            "episode_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-default",
+            "cashflow_id": "facility-RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT-settlement-principal",
+            "cashflow_date": "2025-01-24",
+            "known_at": "2025-01-25",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 600
+          }
+        ],
+        "discount_curve": {
+          "anchor_date": "2025-01-20",
+          "known_at": "2025-01-20",
+          "discount_basis": "CONTRACTUAL_ZERO_RATE_PRINCIPAL_CLAIM",
+          "points": [
+            {
+              "cashflow_date": "2025-01-24",
+              "discount_factor": 1
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2025-01-20",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2025-01-24",
+              "rate": 1
+            }
+          ]
+        },
+        "resolution": {
+          "resolution_date": "2025-01-25",
+          "known_at": "2025-01-26",
+          "principal_received": 600,
+          "principal_written_off": 400,
+          "claim_remaining": 0,
+          "reference": "Documented full-and-final settlement; closure alone is not evidence of extinguishment"
+        },
+        "prior_lgd": {
+          "target": {
+            "event": "lgd",
+            "horizon": 30,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "values": [
+            0.2,
+            0.4,
+            0.6
+          ],
+          "training": {
+            "data_fingerprint": "owner-independent2018closed-principal-workouts",
+            "known_at": "2019-01-01",
+            "split_id": "owner-prior-lgd-2018",
+            "workout_population": "closed_defaulted_episodes",
+            "data_origin": "SYNTHETIC"
+          },
+          "default_dates": [
+            "2018-01-01",
+            "2018-01-01",
+            "2018-01-01"
+          ],
+          "resolution_dates": [
+            "2018-02-01",
+            "2018-02-01",
+            "2018-02-01"
+          ]
+        }
+      }
+    }
+  },
+  "source_controls": {
+    "record_ids": [
+      "RETAIL_SMALL_BUSINESS_FINANCE-SURVIVOR",
+      "RETAIL_SMALL_BUSINESS_FINANCE-DEFAULT_THEN_EXIT",
+      "RETAIL_SMALL_BUSINESS_FINANCE-DECLINED",
+      "RETAIL_SMALL_BUSINESS_FINANCE-NO_TAKEUP",
+      "RETAIL_SMALL_BUSINESS_FINANCE-IMMATURE"
+    ],
+    "total_requested_amount": 5000,
+    "total_count": 5
+  },
+  "left_schema": {
+    "version": "1.0",
+    "columns": {
+      "record_id": {
+        "type": "string"
+      },
+      "entity_id": {
+        "type": "string"
+      },
+      "product_id": {
+        "type": "string"
+      },
+      "as_of": {
+        "type": "date"
+      },
+      "known_at": {
+        "type": "date"
+      },
+      "balance": {
+        "type": "number",
+        "unit": "EUR"
+      }
+    },
+    "primary_key": "record_id"
+  },
+  "right_schema": {
+    "version": "1.0",
+    "columns": {
+      "entity_id": {
+        "type": "string"
+      },
+      "release_id": {
+        "type": "string"
+      },
+      "observed_at": {
+        "type": "date"
+      },
+      "available_at": {
+        "type": "date"
+      },
+      "income": {
+        "type": "number",
+        "unit": "EUR"
+      },
+      "driver": {
+        "type": "number",
+        "unit": "dimensionless"
+      }
+    },
+    "primary_key": "release_id"
+  }
+}

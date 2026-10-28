@@ -1,0 +1,1462 @@
+{
+  "data_origin": "SYNTHETIC",
+  "scope": "Seven calibrated standalone model histories; capital/support/transfer overlays remain distinct component evidence",
+  "cases": [
+    {
+      "case_id": "sector-history-bank",
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "variant": "bank",
+      "model_resource": "sector-history-bank_model.json",
+      "source_component": "wholesale_sector_financial",
+      "source_case_id": "financial_institution_exposure-bank",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "risk_ratio"
+      ],
+      "features": [
+        [
+          -0.3333333333333333
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -2.0516921495072893e-13,
+          "slope": 0.9999999999999354,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 1.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature bank holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "9aa9bdd3f684a752ac37e432490e338a371ed6d574833554fc38735b1aa3b714",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 5,
+          "gradient_max": 4.605690828718423e-16,
+          "solver_converged": true,
+          "negative_log_likelihood": 22.394568208902026,
+          "standard_errors": [
+            2.7962145736365334,
+            0.7954268959550521
+          ],
+          "covariance": [
+            [
+              7.81881594181734,
+              2.1945389264704334
+            ],
+            [
+              2.1945389264704334,
+              0.6327039468086894
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 200.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "1faa3a96079bb0caf297b44abc23954b77ab895f7a78a1f9a899d21b1a7b1b56"
+      },
+      "reference_pd": 0.01594142257483962,
+      "facts": {
+        "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+        "variant": "bank",
+        "borrower_class": "FINANCIAL_INSTITUTION",
+        "legal_claim": "SENIOR_CONTRACTUAL_CLAIM",
+        "economic_driver": "funding_liquidity"
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 150,
+        "debt_service_due": 100,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separate synthetic contract servicing ledger; not a generated scenario outcome",
+        "scheduled_due": 10,
+        "received": 0,
+        "due_at": "2024-03-15",
+        "delinquency_at": "2024-04-15",
+        "proposal_at": "2024-04-20",
+        "default_at": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "settlement_at": "2024-09-01",
+        "closure_at": "2024-09-03",
+        "ead": 150,
+        "gross_recovery": 120,
+        "direct_cost": 5,
+        "exit_reason": "Contract settlement and residual legal write-off; no cure inferred"
+      },
+      "later_training": {
+        "data_fingerprint": "sector-history-bank-later-independent-cohort",
+        "split_id": "train_2023",
+        "known_at": "2025-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "sector-history-bank-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-03-01",
+        "effective_from": "2024-03-01",
+        "effective_until": "2025-03-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "sector-history-life",
+      "product": "INSURER_EXPOSURE",
+      "variant": "life",
+      "model_resource": "sector-history-life_model.json",
+      "source_component": "wholesale_sector_financial",
+      "source_case_id": "insurer_exposure-life",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "risk_ratio"
+      ],
+      "features": [
+        [
+          0.24999999999999967
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -3.2152058793144533e-13,
+          "slope": 0.999999999999875,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 1.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature life holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "13cb80d169cfb05743b6a92a642a0aaf91a6ffd6c4bb085c734428984ad0d5f4",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 4,
+          "gradient_max": 1.547373340571312e-15,
+          "solver_converged": true,
+          "negative_log_likelihood": 42.15830946558644,
+          "standard_errors": [
+            3.0690223338687788,
+            1.0880749915514958
+          ],
+          "covariance": [
+            [
+              9.418898085785365,
+              3.322155019229404
+            ],
+            [
+              3.322155019229404,
+              1.1839071872397875
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 200.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "70bd9ded7cfbb1a36f37e2e378f8ff85e9d6f733b5a422a8f2bdc542edd0acb8"
+      },
+      "reference_pd": 0.056869203152701976,
+      "facts": {
+        "product": "INSURER_EXPOSURE",
+        "variant": "life",
+        "borrower_class": "INSURER",
+        "legal_claim": "SENIOR_CONTRACTUAL_CLAIM",
+        "economic_driver": "surrenders_and_guarantees"
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 100,
+        "debt_service_due": 110,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separate synthetic contract servicing ledger; not a generated scenario outcome",
+        "scheduled_due": 11,
+        "received": 0,
+        "due_at": "2024-03-15",
+        "delinquency_at": "2024-04-15",
+        "proposal_at": "2024-04-20",
+        "default_at": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "settlement_at": "2024-09-01",
+        "closure_at": "2024-09-03",
+        "ead": 160,
+        "gross_recovery": 90,
+        "direct_cost": 12,
+        "exit_reason": "Contract settlement and residual legal write-off; no cure inferred"
+      },
+      "later_training": {
+        "data_fingerprint": "sector-history-life-later-independent-cohort",
+        "split_id": "train_2023",
+        "known_at": "2025-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "sector-history-life-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-03-01",
+        "effective_from": "2024-03-01",
+        "effective_until": "2025-03-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "sector-history-NAV_backed",
+      "product": "FUND_FINANCE",
+      "variant": "NAV_backed",
+      "model_resource": "sector-history-NAV_backed_model.json",
+      "source_component": "wholesale_fund_finance",
+      "source_case_id": "fund-NAV_backed",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "borrowing_base_utilization"
+      ],
+      "features": [
+        [
+          -0.33333333333333326
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -8.534506434898503e-12,
+          "slope": 0.999999999996116,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 1.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic NAV_backed fund/default holdout, not underlying asset loss labels",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "dda8764c052cd1b7c628d72e530778e8b09c7ad5fc6459526162bee46e78f671",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 5,
+          "gradient_max": 6.452130496548136e-14,
+          "solver_converged": true,
+          "negative_log_likelihood": 42.31220866711802,
+          "standard_errors": [
+            1.2015800455804018,
+            0.46514663263753164
+          ],
+          "covariance": [
+            [
+              1.4437946059370002,
+              0.5409624801041213
+            ],
+            [
+              0.5409624801041213,
+              0.2163613898540348
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 200.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "8c2f19c287c83bb3ba7aec11a9f59fc462c04696ea92fef1e011775c69bf3adb"
+      },
+      "reference_pd": 0.03465796004024968,
+      "facts": {
+        "product": "FUND_FINANCE",
+        "variant": "NAV_backed",
+        "borrower_class": "FUND",
+        "legal_claim": "SENIOR_CONTRACTUAL_CLAIM",
+        "economic_driver": "eligible_NAV"
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 50,
+        "debt_service_due": 45,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separate synthetic contract servicing ledger; not a generated scenario outcome",
+        "scheduled_due": 12,
+        "received": 0,
+        "due_at": "2024-03-15",
+        "delinquency_at": "2024-04-15",
+        "proposal_at": "2024-04-20",
+        "default_at": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "settlement_at": "2024-09-01",
+        "closure_at": "2024-09-03",
+        "ead": 170,
+        "gross_recovery": 35,
+        "direct_cost": 3,
+        "exit_reason": "Contract settlement and residual legal write-off; no cure inferred"
+      },
+      "later_training": {
+        "data_fingerprint": "sector-history-NAV_backed-later-independent-cohort",
+        "split_id": "train_2023",
+        "known_at": "2025-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "sector-history-NAV_backed-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-03-01",
+        "effective_from": "2024-03-01",
+        "effective_until": "2025-03-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "sector-history-foreign_currency",
+      "product": "SOVEREIGN_DEBT",
+      "variant": "foreign_currency",
+      "model_resource": "sector-history-foreign_currency_model.json",
+      "source_component": "wholesale_sovereign",
+      "source_case_id": "sovereign-foreign_currency",
+      "target": {
+        "event": "pre_transfer_sovereign_payment_default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "sovereign_capacity_stress"
+      ],
+      "features": [
+        [
+          6.0
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -2.8257396422759484e-12,
+          "slope": 0.9999999999982916,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "pre_transfer_sovereign_payment_default",
+          "horizon": 1.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "pre_transfer_sovereign_payment_default",
+            "horizon": 1.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Separate synthetic sovereign cohort with pre-transfer payment default target",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "f7f18f01e5de3f572ccc31b6bf70d27a050747611fd7f5b02e8a19e91d205327",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 4,
+          "gradient_max": 5.009881398621019e-14,
+          "solver_converged": true,
+          "negative_log_likelihood": 71.84392511699302,
+          "standard_errors": [
+            1.1530387194722838,
+            0.5848051269667048
+          ],
+          "covariance": [
+            [
+              1.329498288602284,
+              0.6619987232249599
+            ],
+            [
+              0.6619987232249598,
+              0.34199703652654373
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 200.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "3084dac40581db1242d8ad2d60294aee0119e1ade66fb8a6645f9edffe00711e"
+      },
+      "reference_pd": 0.08000000000011705,
+      "facts": {
+        "product": "SOVEREIGN_DEBT",
+        "variant": "foreign_currency",
+        "borrower_class": "SOVEREIGN",
+        "legal_claim": "SENIOR_CONTRACTUAL_CLAIM",
+        "economic_driver": "external_liquidity"
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 120,
+        "debt_service_due": 130,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separate synthetic contract servicing ledger; not a generated scenario outcome",
+        "scheduled_due": 13,
+        "received": 0,
+        "due_at": "2024-03-15",
+        "delinquency_at": "2024-04-15",
+        "proposal_at": "2024-04-20",
+        "default_at": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "settlement_at": "2024-09-01",
+        "closure_at": "2024-09-03",
+        "ead": 180,
+        "gross_recovery": 70,
+        "direct_cost": 8,
+        "exit_reason": "Contract settlement and residual legal write-off; no cure inferred"
+      },
+      "later_training": {
+        "data_fingerprint": "sector-history-foreign_currency-later-independent-cohort",
+        "split_id": "train_2023",
+        "known_at": "2025-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "sector-history-foreign_currency-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-03-01",
+        "effective_from": "2024-03-01",
+        "effective_until": "2025-03-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "pre_transfer_sovereign_payment_default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "sector-history-region",
+      "product": "PUBLIC_SECTOR_DEBT",
+      "variant": "region",
+      "model_resource": "sector-history-region_model.json",
+      "source_component": "wholesale_sector_financial",
+      "source_case_id": "public_sector_debt-region",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "risk_ratio"
+      ],
+      "features": [
+        [
+          0.0
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -2.6690018639641266e-08,
+          "slope": 0.9999999868038015,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 1.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature region holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "1a497b2249472a75746b7881b4ed44c91a5d7196831ef277d49d5e583761c8ea",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 3,
+          "gradient_max": 3.460414663147837e-10,
+          "solver_converged": true,
+          "negative_log_likelihood": 57.87219203131397,
+          "standard_errors": [
+            3.1289633472426903,
+            1.3210704368077901
+          ],
+          "covariance": [
+            [
+              9.790411628388181,
+              4.119947691816645
+            ],
+            [
+              4.119947691816645,
+              1.7452270990075256
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 200.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "ef59372166807e4abeab3727976c17cf2990bea290e0660abc5519e4644f98b2"
+      },
+      "reference_pd": 0.08378807860679709,
+      "facts": {
+        "product": "PUBLIC_SECTOR_DEBT",
+        "variant": "region",
+        "borrower_class": "SUBSOVEREIGN",
+        "legal_claim": "SENIOR_CONTRACTUAL_CLAIM",
+        "economic_driver": "own_revenue_and_transfers"
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 75,
+        "debt_service_due": 60,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separate synthetic contract servicing ledger; not a generated scenario outcome",
+        "scheduled_due": 14,
+        "received": 0,
+        "due_at": "2024-03-15",
+        "delinquency_at": "2024-04-15",
+        "proposal_at": "2024-04-20",
+        "default_at": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "settlement_at": "2024-09-01",
+        "closure_at": "2024-09-03",
+        "ead": 190,
+        "gross_recovery": 65,
+        "direct_cost": 2,
+        "exit_reason": "Contract settlement and residual legal write-off; no cure inferred"
+      },
+      "later_training": {
+        "data_fingerprint": "sector-history-region-later-independent-cohort",
+        "split_id": "train_2023",
+        "known_at": "2025-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "sector-history-region-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-03-01",
+        "effective_from": "2024-03-01",
+        "effective_until": "2025-03-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "sector-history-multilateral_lender",
+      "product": "SUPRANATIONAL_DEBT",
+      "variant": "multilateral_lender",
+      "model_resource": "sector-history-multilateral_lender_model.json",
+      "source_component": "wholesale_sector_financial",
+      "source_case_id": "supranational_debt-multilateral_lender",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "risk_ratio"
+      ],
+      "features": [
+        [
+          -0.25
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -1.5978240952563283e-09,
+          "slope": 0.9999999990670605,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 1.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic mature multilateral_lender holdout cohort",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "7cacf73be2def37a6ae654ab9c45f6d0180d255bf3641d68d0da987cb1ed10c5",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 3,
+          "gradient_max": 3.027573330927069e-11,
+          "solver_converged": true,
+          "negative_log_likelihood": 71.14696796800519,
+          "standard_errors": [
+            3.072079355467675,
+            1.50772057009038
+          ],
+          "covariance": [
+            [
+              9.437671566290685,
+              4.619739168200793
+            ],
+            [
+              4.619739168200793,
+              2.2732213174736606
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 200.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "ceb8830e42c1dcaf3c9440bb490a065668ccb725139d3af1f763bdc42dd6f580"
+      },
+      "reference_pd": 0.11045274035067928,
+      "facts": {
+        "product": "SUPRANATIONAL_DEBT",
+        "variant": "multilateral_lender",
+        "borrower_class": "SUPRANATIONAL",
+        "legal_claim": "SENIOR_CONTRACTUAL_CLAIM",
+        "economic_driver": "member_call_rights"
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 100,
+        "debt_service_due": 70,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separate synthetic contract servicing ledger; not a generated scenario outcome",
+        "scheduled_due": 15,
+        "received": 0,
+        "due_at": "2024-03-15",
+        "delinquency_at": "2024-04-15",
+        "proposal_at": "2024-04-20",
+        "default_at": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "settlement_at": "2024-09-01",
+        "closure_at": "2024-09-03",
+        "ead": 200,
+        "gross_recovery": 95,
+        "direct_cost": 1,
+        "exit_reason": "Contract settlement and residual legal write-off; no cure inferred"
+      },
+      "later_training": {
+        "data_fingerprint": "sector-history-multilateral_lender-later-independent-cohort",
+        "split_id": "train_2023",
+        "known_at": "2025-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "sector-history-multilateral_lender-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-03-01",
+        "effective_from": "2024-03-01",
+        "effective_until": "2025-03-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "sector-history-housing_association",
+      "product": "PUBLIC_SERVICE_FINANCE",
+      "variant": "housing_association",
+      "model_resource": "sector-history-housing_association_model.json",
+      "source_component": "wholesale_public_service",
+      "source_case_id": "service-housing_association",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "feature_order": [
+        "debt_service_to_unrestricted_cfads"
+      ],
+      "features": [
+        [
+          0.5714285714285716
+        ]
+      ],
+      "calibrator": {
+        "schema_version": "1.0",
+        "artifact_type": "CalibrationArtifact",
+        "calibration_type": "logistic",
+        "method_id": "calibration.calibrate_logistic",
+        "parameter_version": "1.0",
+        "input_kind": "probability",
+        "parameters": {
+          "intercept": -8.534506434898503e-12,
+          "slope": 0.999999999996116,
+          "boundary_policy": "reject"
+        },
+        "target": {
+          "event": "default",
+          "horizon": 1.0,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1.0,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic public-service housing_association holdout",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "calibration_input_fingerprint": "dda8764c052cd1b7c628d72e530778e8b09c7ad5fc6459526162bee46e78f671",
+        "diagnostics": {
+          "converged": true,
+          "iterations": 5,
+          "gradient_max": 6.452130496548136e-14,
+          "solver_converged": true,
+          "negative_log_likelihood": 42.31220866711802,
+          "standard_errors": [
+            1.2015800455804018,
+            0.46514663263753164
+          ],
+          "covariance": [
+            [
+              1.4437946059370002,
+              0.5409624801041213
+            ],
+            [
+              0.5409624801041213,
+              0.2163613898540348
+            ]
+          ],
+          "uncertainty": "IID_FREQUENCY_FISHER",
+          "slope_nonpositive": false,
+          "n_observations": 4,
+          "weight_sum": 200.0,
+          "zero_weight_count": 0,
+          "boundary_policy": "reject"
+        },
+        "artifact_hash": "c4e1e0a5b4c07bda2537bfe3fef59ac8d00889653f031b57f60bf494d7406ce1"
+      },
+      "reference_pd": 0.07173408420761407,
+      "facts": {
+        "product": "PUBLIC_SERVICE_FINANCE",
+        "variant": "housing_association",
+        "borrower_class": "PUBLIC_SERVICE",
+        "legal_claim": "SENIOR_CONTRACTUAL_CLAIM",
+        "economic_driver": "rental_service"
+      },
+      "gate": {
+        "available_unrestricted_cashflow": 40,
+        "debt_service_due": 45,
+        "legal_eligibility": true,
+        "operations": "CLEAR"
+      },
+      "observed": {
+        "source": "Separate synthetic contract servicing ledger; not a generated scenario outcome",
+        "scheduled_due": 16,
+        "received": 0,
+        "due_at": "2024-03-15",
+        "delinquency_at": "2024-04-15",
+        "proposal_at": "2024-04-20",
+        "default_at": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "settlement_at": "2024-09-01",
+        "closure_at": "2024-09-03",
+        "ead": 210,
+        "gross_recovery": 30,
+        "direct_cost": 2,
+        "exit_reason": "Contract settlement and residual legal write-off; no cure inferred"
+      },
+      "later_training": {
+        "data_fingerprint": "sector-history-housing_association-later-independent-cohort",
+        "split_id": "train_2023",
+        "known_at": "2025-01-01",
+        "data_origin": "SYNTHETIC"
+      },
+      "decision_policy": {
+        "schema_version": "1.1",
+        "policy_id": "sector-history-housing_association-policy",
+        "version": "1",
+        "approval_reference": "Synthetic local sector credit review",
+        "known_at": "2024-03-01",
+        "effective_from": "2024-03-01",
+        "effective_until": "2025-03-01",
+        "default_action": "REFER",
+        "missing_action": "BLOCKED",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "fields": {
+          "risk.pd": {
+            "type": "number"
+          },
+          "affordability.status": {
+            "type": "category",
+            "values": [
+              "AFFORDABLE",
+              "NOT_AFFORDABLE"
+            ]
+          },
+          "eligibility.status": {
+            "type": "category",
+            "values": [
+              "ELIGIBLE",
+              "INELIGIBLE"
+            ]
+          },
+          "operations.status": {
+            "type": "category",
+            "values": [
+              "CLEAR",
+              "HOLD"
+            ]
+          }
+        },
+        "approval_contract": {
+          "domain": "WHOLESALE_CREDIT",
+          "affordability": {
+            "mode": "REQUIRED"
+          },
+          "required_gates": [
+            {
+              "field": "affordability.status",
+              "value": "AFFORDABLE"
+            },
+            {
+              "field": "eligibility.status",
+              "value": "ELIGIBLE"
+            },
+            {
+              "field": "operations.status",
+              "value": "CLEAR"
+            }
+          ]
+        },
+        "rules": [
+          {
+            "rule_id": "bounded-risk",
+            "priority": 1,
+            "action": "APPROVE",
+            "reason_code": "RISK_AND_ECONOMIC_GATES",
+            "when": [
+              {
+                "field": "risk.pd",
+                "op": "le",
+                "value": 0.2
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

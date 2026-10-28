@@ -1,0 +1,2123 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_REFERENCE",
+  "version": "1.0",
+  "product": "COUNTERPARTY_EXPOSURE",
+  "variants": {
+    "netting_set": {
+      "netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "n",
+            "trade_ids": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      },
+      "margin_input": {
+        "margin_policies": [
+          {
+            "netting_set_id": "n",
+            "known_at": "2024-01-01",
+            "collateral_currency": "EUR",
+            "initial_units": 0,
+            "threshold_received": 1000000.0,
+            "threshold_posted": 1000000.0,
+            "minimum_transfer_amount": 0,
+            "ownership": "TITLE_TRANSFER",
+            "received_enforceable": true,
+            "posted_returnability": "UNSECURED_CLAIM",
+            "posted_claim_netting_enforceable": true,
+            "reuse": "ALLOWED"
+          }
+        ],
+        "call_calendar": [
+          {
+            "call_id": "h0",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h1",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h2",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l0",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l1",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l2",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          }
+        ],
+        "collateral_market_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          }
+        ]
+      },
+      "default_events": [
+        {
+          "path_id": "h",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        },
+        {
+          "path_id": "l",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        }
+      ],
+      "intermediate_cashflows": [
+        {
+          "cashflow_id": "unpaid-h",
+          "path_id": "h",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 0,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        },
+        {
+          "cashflow_id": "unpaid-l",
+          "path_id": "l",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 0,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        }
+      ],
+      "route_input": {
+        "snapshot": {
+          "subject_id": "cp",
+          "subject_type": "obligor",
+          "as_of": "2024-01-01",
+          "known_at": "2024-01-01",
+          "attributes": {
+            "product": {
+              "value": "netting_set",
+              "observed_at": "2024-01-01",
+              "known_at": "2024-01-01"
+            }
+          }
+        },
+        "rules": [
+          {
+            "profile_version": "1",
+            "priority": 1,
+            "effective_from": "2024-01-01",
+            "effective_to": null,
+            "known_at": "2024-01-01",
+            "rule_id": "netting_set",
+            "profile_id": "ccr-netting_set",
+            "conditions": [
+              {
+                "field": "product",
+                "operator": "eq",
+                "value": "netting_set"
+              }
+            ]
+          }
+        ],
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01"
+      },
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "ccr-reference",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "training": {
+          "data_fingerprint": "reference",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "validation_design": {
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-holdout-netting_set",
+        "population_id": "counterparties",
+        "split_id": "holdout",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-01-04",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "counterparty_exposure"
+        }
+      },
+      "forecast": {
+        "prediction_id": "netting_set",
+        "entity_id": "cp",
+        "cluster_id": "cp",
+        "segment": "netting_set",
+        "as_of": "2024-01-01",
+        "forecast_known_at": "2024-01-01",
+        "horizon_end": "2024-01-03",
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "counterparty_id": "cp",
+        "netting_set_id": "n",
+        "legal_version": "1",
+        "exposure_target": "UNCOLLATERALIZED"
+      },
+      "observation": {
+        "prediction_id": "netting_set",
+        "observation_status": "OBSERVED",
+        "observed_at": "2024-01-03",
+        "known_at": "2024-01-03",
+        "observed_path_id": "h",
+        "legal_version": "1",
+        "reported_exposure": 90
+      },
+      "separate_netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "a",
+            "trade_ids": [
+              "a"
+            ]
+          },
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "b",
+            "trade_ids": [
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      }
+    },
+    "collateralized": {
+      "netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "n",
+            "trade_ids": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      },
+      "margin_input": {
+        "margin_policies": [
+          {
+            "netting_set_id": "n",
+            "known_at": "2024-01-01",
+            "collateral_currency": "EUR",
+            "initial_units": 0,
+            "threshold_received": 0,
+            "threshold_posted": 0,
+            "minimum_transfer_amount": 0,
+            "ownership": "TITLE_TRANSFER",
+            "received_enforceable": true,
+            "posted_returnability": "UNSECURED_CLAIM",
+            "posted_claim_netting_enforceable": true,
+            "reuse": "ALLOWED"
+          }
+        ],
+        "call_calendar": [
+          {
+            "call_id": "h0",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h1",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h2",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l0",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l1",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l2",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          }
+        ],
+        "collateral_market_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 0.5,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 0.5,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          }
+        ]
+      },
+      "default_events": [
+        {
+          "path_id": "h",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        },
+        {
+          "path_id": "l",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        }
+      ],
+      "intermediate_cashflows": [
+        {
+          "cashflow_id": "unpaid-h",
+          "path_id": "h",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 10,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        },
+        {
+          "cashflow_id": "unpaid-l",
+          "path_id": "l",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 10,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        }
+      ],
+      "route_input": {
+        "snapshot": {
+          "subject_id": "cp",
+          "subject_type": "obligor",
+          "as_of": "2024-01-01",
+          "known_at": "2024-01-01",
+          "attributes": {
+            "product": {
+              "value": "collateralized",
+              "observed_at": "2024-01-01",
+              "known_at": "2024-01-01"
+            }
+          }
+        },
+        "rules": [
+          {
+            "profile_version": "1",
+            "priority": 1,
+            "effective_from": "2024-01-01",
+            "effective_to": null,
+            "known_at": "2024-01-01",
+            "rule_id": "collateralized",
+            "profile_id": "ccr-collateralized",
+            "conditions": [
+              {
+                "field": "product",
+                "operator": "eq",
+                "value": "collateralized"
+              }
+            ]
+          }
+        ],
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01"
+      },
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "ccr-reference",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "training": {
+          "data_fingerprint": "reference",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "validation_design": {
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-holdout-collateralized",
+        "population_id": "counterparties",
+        "split_id": "holdout",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-01-04",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "counterparty_exposure"
+        }
+      },
+      "forecast": {
+        "prediction_id": "collateralized",
+        "entity_id": "cp",
+        "cluster_id": "cp",
+        "segment": "collateralized",
+        "as_of": "2024-01-01",
+        "forecast_known_at": "2024-01-01",
+        "horizon_end": "2024-01-03",
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "counterparty_id": "cp",
+        "netting_set_id": "n",
+        "legal_version": "1",
+        "exposure_target": "COLLATERALIZED"
+      },
+      "observation": {
+        "prediction_id": "collateralized",
+        "observation_status": "OBSERVED",
+        "observed_at": "2024-01-03",
+        "known_at": "2024-01-03",
+        "observed_path_id": "h",
+        "legal_version": "1",
+        "reported_exposure": 0
+      },
+      "separate_netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "a",
+            "trade_ids": [
+              "a"
+            ]
+          },
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "b",
+            "trade_ids": [
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      }
+    },
+    "uncollateralized": {
+      "netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "n",
+            "trade_ids": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      },
+      "margin_input": {
+        "margin_policies": [
+          {
+            "netting_set_id": "n",
+            "known_at": "2024-01-01",
+            "collateral_currency": "EUR",
+            "initial_units": 0,
+            "threshold_received": 1000000.0,
+            "threshold_posted": 1000000.0,
+            "minimum_transfer_amount": 0,
+            "ownership": "TITLE_TRANSFER",
+            "received_enforceable": true,
+            "posted_returnability": "UNSECURED_CLAIM",
+            "posted_claim_netting_enforceable": true,
+            "reuse": "ALLOWED"
+          }
+        ],
+        "call_calendar": [
+          {
+            "call_id": "h0",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h1",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h2",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l0",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l1",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l2",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          }
+        ],
+        "collateral_market_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          }
+        ]
+      },
+      "default_events": [
+        {
+          "path_id": "h",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        },
+        {
+          "path_id": "l",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        }
+      ],
+      "intermediate_cashflows": [
+        {
+          "cashflow_id": "unpaid-h",
+          "path_id": "h",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 0,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        },
+        {
+          "cashflow_id": "unpaid-l",
+          "path_id": "l",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 0,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        }
+      ],
+      "route_input": {
+        "snapshot": {
+          "subject_id": "cp",
+          "subject_type": "obligor",
+          "as_of": "2024-01-01",
+          "known_at": "2024-01-01",
+          "attributes": {
+            "product": {
+              "value": "uncollateralized",
+              "observed_at": "2024-01-01",
+              "known_at": "2024-01-01"
+            }
+          }
+        },
+        "rules": [
+          {
+            "profile_version": "1",
+            "priority": 1,
+            "effective_from": "2024-01-01",
+            "effective_to": null,
+            "known_at": "2024-01-01",
+            "rule_id": "uncollateralized",
+            "profile_id": "ccr-uncollateralized",
+            "conditions": [
+              {
+                "field": "product",
+                "operator": "eq",
+                "value": "uncollateralized"
+              }
+            ]
+          }
+        ],
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01"
+      },
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "ccr-reference",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "training": {
+          "data_fingerprint": "reference",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "validation_design": {
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-holdout-uncollateralized",
+        "population_id": "counterparties",
+        "split_id": "holdout",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-01-04",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "counterparty_exposure"
+        }
+      },
+      "forecast": {
+        "prediction_id": "uncollateralized",
+        "entity_id": "cp",
+        "cluster_id": "cp",
+        "segment": "uncollateralized",
+        "as_of": "2024-01-01",
+        "forecast_known_at": "2024-01-01",
+        "horizon_end": "2024-01-03",
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "counterparty_id": "cp",
+        "netting_set_id": "n",
+        "legal_version": "1",
+        "exposure_target": "UNCOLLATERALIZED"
+      },
+      "observation": {
+        "prediction_id": "uncollateralized",
+        "observation_status": "OBSERVED",
+        "observed_at": "2024-01-03",
+        "known_at": "2024-01-03",
+        "observed_path_id": "h",
+        "legal_version": "1",
+        "reported_exposure": 90
+      },
+      "separate_netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "a",
+            "trade_ids": [
+              "a"
+            ]
+          },
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "b",
+            "trade_ids": [
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      }
+    },
+    "wrong_way": {
+      "netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 70
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "n",
+            "trade_ids": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      },
+      "margin_input": {
+        "margin_policies": [
+          {
+            "netting_set_id": "n",
+            "known_at": "2024-01-01",
+            "collateral_currency": "EUR",
+            "initial_units": 0,
+            "threshold_received": 1000000.0,
+            "threshold_posted": 1000000.0,
+            "minimum_transfer_amount": 0,
+            "ownership": "TITLE_TRANSFER",
+            "received_enforceable": true,
+            "posted_returnability": "UNSECURED_CLAIM",
+            "posted_claim_netting_enforceable": true,
+            "reuse": "ALLOWED"
+          }
+        ],
+        "call_calendar": [
+          {
+            "call_id": "h0",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h1",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "h2",
+            "path_id": "h",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l0",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-01",
+            "call_date": "2024-01-01",
+            "settlement_date": "2024-01-01",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l1",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-02",
+            "call_date": "2024-01-02",
+            "settlement_date": "2024-01-02",
+            "dispute_delay_days": 0
+          },
+          {
+            "call_id": "l2",
+            "path_id": "l",
+            "netting_set_id": "n",
+            "valuation_date": "2024-01-03",
+            "call_date": "2024-01-03",
+            "settlement_date": "2024-01-03",
+            "dispute_delay_days": 0
+          }
+        ],
+        "collateral_market_paths": [
+          {
+            "path_id": "h",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "h",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-01",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-02",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          },
+          {
+            "path_id": "l",
+            "date": "2024-01-03",
+            "netting_set_id": "n",
+            "unit_price": 1,
+            "fx_rate": 1,
+            "currency": "EUR",
+            "received_haircut": 0,
+            "posted_haircut": 0
+          }
+        ]
+      },
+      "default_events": [
+        {
+          "path_id": "h",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        },
+        {
+          "path_id": "l",
+          "netting_set_id": "n",
+          "margin_observation_date": "2024-01-01",
+          "default_date": "2024-01-02",
+          "closeout_date": "2024-01-03"
+        }
+      ],
+      "intermediate_cashflows": [
+        {
+          "cashflow_id": "unpaid-h",
+          "path_id": "h",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 0,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        },
+        {
+          "cashflow_id": "unpaid-l",
+          "path_id": "l",
+          "netting_set_id": "n",
+          "date": "2024-01-03",
+          "amount": 0,
+          "currency": "EUR",
+          "included_in_closeout_value": false
+        }
+      ],
+      "route_input": {
+        "snapshot": {
+          "subject_id": "cp",
+          "subject_type": "obligor",
+          "as_of": "2024-01-01",
+          "known_at": "2024-01-01",
+          "attributes": {
+            "product": {
+              "value": "wrong_way",
+              "observed_at": "2024-01-01",
+              "known_at": "2024-01-01"
+            }
+          }
+        },
+        "rules": [
+          {
+            "profile_version": "1",
+            "priority": 1,
+            "effective_from": "2024-01-01",
+            "effective_to": null,
+            "known_at": "2024-01-01",
+            "rule_id": "wrong_way",
+            "profile_id": "ccr-wrong_way",
+            "conditions": [
+              {
+                "field": "product",
+                "operator": "eq",
+                "value": "wrong_way"
+              }
+            ]
+          }
+        ],
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01"
+      },
+      "model": {
+        "schema_version": "1.0",
+        "model_id": "ccr-reference",
+        "model_version": "v1",
+        "method_id": "classification.fit_binary_glm",
+        "feature_order": [
+          "x"
+        ],
+        "parameters": {
+          "link": "logit",
+          "fit_intercept": true,
+          "coefficients": [
+            0,
+            1
+          ],
+          "offset_required": false
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "PIT"
+        },
+        "training": {
+          "data_fingerprint": "reference",
+          "split_id": "train",
+          "known_at": "2023-12-01"
+        },
+        "diagnostics": {},
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "USER_SUPPLIED"
+        }
+      },
+      "validation_design": {
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-holdout-wrong_way",
+        "population_id": "counterparties",
+        "split_id": "holdout",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-01-04",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 2,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "counterparty_exposure"
+        }
+      },
+      "forecast": {
+        "prediction_id": "wrong_way",
+        "entity_id": "cp",
+        "cluster_id": "cp",
+        "segment": "wrong_way",
+        "as_of": "2024-01-01",
+        "forecast_known_at": "2024-01-01",
+        "horizon_end": "2024-01-03",
+        "model_id": "ccr",
+        "model_version": "1",
+        "parameter_version": "1",
+        "counterparty_id": "cp",
+        "netting_set_id": "n",
+        "legal_version": "1",
+        "exposure_target": "UNCOLLATERALIZED"
+      },
+      "observation": {
+        "prediction_id": "wrong_way",
+        "observation_status": "OBSERVED",
+        "observed_at": "2024-01-03",
+        "known_at": "2024-01-03",
+        "observed_path_id": "h",
+        "legal_version": "1",
+        "reported_exposure": 90
+      },
+      "separate_netting_input": {
+        "trade_value_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 100
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 120
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "a",
+            "currency": "EUR",
+            "value": 150
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "trade_id": "b",
+            "currency": "EUR",
+            "value": -60
+          }
+        ],
+        "netting_agreements": [
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "a",
+            "trade_ids": [
+              "a"
+            ]
+          },
+          {
+            "counterparty_id": "cp",
+            "legally_enforceable": true,
+            "evidence_reference": "user-evidence",
+            "known_at": "2024-01-01",
+            "effective_from": "2024-01-01",
+            "effective_until": null,
+            "netting_set_id": "b",
+            "trade_ids": [
+              "b"
+            ]
+          }
+        ],
+        "fx_paths": [
+          {
+            "path_id": "p",
+            "date": "2024-01-01",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-02",
+            "currency": "EUR",
+            "rate": 1
+          },
+          {
+            "path_id": "p",
+            "date": "2024-01-03",
+            "currency": "EUR",
+            "rate": 1
+          }
+        ],
+        "as_of": "2024-01-01",
+        "reporting_currency": "EUR",
+        "valuation_convention": "EX_DIVIDEND_BEFORE_MARGIN"
+      }
+    }
+  }
+}

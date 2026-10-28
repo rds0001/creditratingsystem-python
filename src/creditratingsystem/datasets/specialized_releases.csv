@@ -1,0 +1,6 @@
+entity_id,release_id,observed_at,available_at,x
+commercial_real_estate-income_producing,commercial_real_estate-income_producing-initial,2023-01-01,2023-01-01,100
+project_finance-operating,project_finance-operating-initial,2023-01-01,2023-01-01,100
+aircraft_finance-single_aircraft,aircraft_finance-single_aircraft-initial,2023-01-01,2023-01-01,30
+ship_finance-time_charter,ship_finance-time_charter-initial,2023-01-01,2023-01-01,40
+equipment_leasing-single_lease,equipment_leasing-single_lease-initial,2023-01-01,2023-01-01,20

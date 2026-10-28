@@ -1,0 +1,62 @@
+"""Phase diagnostics on facility_A; forecasts use prior cohorts and explicit assumptions."""
+from copy import deepcopy
+from datetime import date,timedelta
+from importlib.resources import files
+from pathlib import Path
+import json,runpy,math
+import numpy as np
+import creditratingsystem as cr
+
+def run(data=None,verify_reference=True,return_artifacts=False):
+ load=lambda n:json.loads(files('creditratingsystem.datasets').joinpath(n+'.json').read_text())
+ if data is None:data=load('mortgage_phase_review')
+ life=load('mortgage_lifecycle');house=load('mortgage_household_review');raw=runpy.run_path(str(Path(__file__).with_name('mortgage_household_review.py')))['run'](return_artifacts=True)
+ if data['facility_id']!='facility_A':raise ValueError('Supplement must bind the original actual mortgage facility')
+ assessment=raw['governance']['assessment'];fresh=cr.check_assessment_freshness(assessment,dict(maximum_age_days=365,maximum_information_age_days=365,trigger_types=['payment_delay']),[dict(event_id='facility_A-Aug31-due',subject_id='customer_A',type='payment_delay',occurred_at='2024-08-31',known_at='2024-08-31')],'2024-08-31','2024-08-31').value
+ pool=house['pool'];drift=cr.detect_credit_feature_drift([dict(score=r['score'])for r in pool['fit']['observations']],[dict(score=r['score'])for r in pool['assignment_inputs']['observations']],feature_order=['score'],method='psi',permutations=None,multiple_testing='not_applicable',dependence_assumption='descriptive',frozen_bins={'score':dict(kind='numeric',cutpoints=[50],support=[0,100])}).value
+ forecast=raw['pool_inputs']['predictions'][0];pd=forecast['pd'];residual=1-pd
+ calibration=cr.detect_pd_calibration_drift([dict(time='2025-02-04',value=residual,mature=True)],method='ewma',parameters=dict(smoothing=.5),null_paths=[[float(u<pd)-pd]for u in data['null_uniforms']],null_spec=dict(model_id=forecast['model_id'],model_version='1',calibration_id='declared-one-step-Bernoulli-null',residual_scale='observed_minus_expected_rate',dependence='prespecified_dependent',probability_measure='PHYSICAL',calibrated_before='2024-02-03'),alpha=.05).value
+ # Actual endpoint migration is descriptive; no unseen intermediate cure is inferred.
+ panel=deepcopy(raw['retail']['account_panel']);panel[1]['state']='DELINQUENT'
+ roll=cr.estimate_retail_roll_rates(panel,states=['ACTIVE','DELINQUENT','DEFAULT'],from_date='2024-08-31',to_date='2024-09-30',group_by=[],weighting='count',missing_successor='error').value
+ tr=data['cure_training'];last=date.fromisoformat(tr['calendar_origin'])+timedelta(days=max(r['stop']for r in tr['rows']))
+ if last>date.fromisoformat(tr['observation_end'])or tr['observation_end']>tr['training']['known_at']or tr['training']['known_at']>='2024-09-01':raise ValueError('Cure training must be observed and known before actual default')
+ fitted=cr.estimate_multistate_transitions(tr['rows'],states=['D','C'],allowed_transitions=[['D','C'],['C','D']],initial_state='D',target=tr['target'],training=tr['training'],model_id='shared-prior-cure',model_version='1');model=deepcopy(fitted.model);model['collections_contract']=dict(cure_states=['C'],default_states=['D'],supported_actions=['baseline'],supported_initial_states=['D','C'],action_interpretation='observational_conditioning')
+ cure=cr.predict_cure_and_redefault(current_episode=dict(episode_id=data['open_episode']['episode_id'],state='D',model_time=0,known_at='2024-09-02',ever_default=True),model=model,action_conditions=dict(action_id='baseline',assumption_reference=data['assumption_reference']),horizon_grid=[0,30,60],state_recoveries=[[0,0],[0,.8*life['default_ead']],[0,0]],target=tr['target'],currency='EUR').value
+ cc=life['collections'];episodes=cr.build_collections_episodes(cc['states'],cc['actions'],evaluation_cutoff='2025-03-01',coverage=cc['coverage'],episode_rule=cc['episode_rule']).value
+ targets=cr.build_cure_targets(episodes,horizon_days=365,redefault_horizon_days=90,evaluation_cutoff='2025-03-01').value
+ comp=data['competing'];last=date.fromisoformat(comp['calendar_origin'])+timedelta(days=max(r['stop']for r in comp['rows']))
+ if last>date.fromisoformat(comp['observation_end'])or comp['observation_end']>comp['training']['known_at']or comp['training']['known_at']>='2024-02-03':raise ValueError('Exit training must precede funding')
+ cause=cr.fit_cause_specific_hazards(comp['rows'],np.empty((4,0)),comp['event_types'],feature_order=[],causes=['default','exit'],ties='breslow',target=comp['target'],training=comp['training'],model_id='shared-prior-first-exit',model_version='1')
+ curves=cr.predict_event_curves(cause,[dict(path_id='facility_A',start=0,stop=60,covariates=[],stratum='all',covariate_time=0)],[0,30,60],feature_order=[],target=comp['target']).value
+ eid=data['open_episode']['episode_id'];default=dict(episode_id=eid,entity_id='facility_A',default_at='2024-09-01',known_at='2024-09-02',ead=95000,currency='EUR');flows=[dict(cashflow_id=f['cashflow_id'],episode_id=eid,cashflow_at=f['cashflow_date'],known_at=f['known_at'],amount=f['amount'],kind='recovery',currency='EUR')for f in life['realized_recovery']['cashflows']]
+ known=cr.build_recovery_episodes([default],flows,cures=[],evaluation_cutoff='2024-10-01').value
+ final=cr.build_recovery_episodes([default],flows,cures=[],evaluation_cutoff='2025-09-30').value
+ openargs=dict(episodes=[data['open_episode']],cashflows=[],fitted_recovery_model=data['residual_model'],X=[[]],valuation_contracts=[data['valuation']],future_cost_cashflows=[],feature_order=[],expected_target=data['recovery_target'],stage_spec=data['stage_spec'],as_of='2024-10-01',currency='EUR',extrapolation='parametric');opened=cr.estimate_open_workout_lgd(**openargs).value
+ bad=deepcopy(openargs);bad['valuation_contracts'][0].update(tail_discount_factor=None,tail_assumption_reference=None);unidentified=cr.estimate_open_workout_lgd(**bad).value
+ # Monetary action scenarios do not use the later sale amount or discount factor.
+ amount=cure['expected_recovery'];base=.2*95000
+ treatment_args=dict(treatment_candidates=[dict(treatment_id='plan_A',version='1',known_at='2024-09-05',subject_id='facility_A',currency='EUR',action='TEMPORARY_REDUCTION',prediction_reference='transferred-cure-model-monetary-scenario',support_status='SUPPORTED',affordability_status='AFFORDABLE',eligibility_status='ELIGIBLE',uptake_probability=.25,offer_cost=10,accepted_upfront_cost=100,rejected_present_value=base,cashflows=[dict(cashflow_id='assumed-terminal',date='2024-11-30',expected_recovery=amount,expected_cost=0,discount_factor=1)])],treatment_profile=dict(profile_id='mortgage-offer-scenario',version='1',known_at='2024-09-05',currency='EUR',subject_id='facility_A',baseline_id='no-change',baseline_present_value=base,identification='CONDITIONAL_SCENARIO_NOT_CAUSAL',allowed_actions=['TEMPORARY_REDUCTION']),as_of='2024-10-01')
+ treatment=cr.evaluate_treatment_candidates(**treatment_args).value
+ action=dict(action_id='plan_A',currency='EUR',uptake_probability=.25,offer_cost=10,support_status='SUPPORTED',assumption_reference=data['assumption_reference'],accepted_scenarios=[dict(scenario_id='conditional-mean',probability=1,cashflows=[dict(cashflow_id='accepted-recovery',kind='RECOVERY',period_end='2024-11-30',amount=amount),dict(cashflow_id='accepted-cost',kind='COST',period_end='2024-11-30',amount=100)])],declined_scenarios=[dict(scenario_id='baseline',probability=1,cashflows=[dict(cashflow_id='declined-recovery',kind='RECOVERY',period_end='2024-11-30',amount=base)])]);value=cr.expected_collections_value([action],[1],ead=95000,currency='EUR',period_end_dates=['2024-11-30']).value
+ eventloss=cr.event_conditioned_loss([dict(state_id='survive',events={'default':False},probability=1-pd,conditional_loss=0),dict(state_id='default',events={'default':True},probability=pd,conditional_loss=raw['closed_workout']['economic_loss'])],event_names=['default'],currency='EUR',probability_measure='PHYSICAL').value
+ transitions=[dict(from_state='DRAFT',to_state='FINAL',event_type='approve',required_gates=['original_approved']),dict(from_state='FINAL',to_state='SUPERSEDED',event_type='settle',required_gates=['settlement_closed'])]
+ approved=cr.transition_assessment_state(assessment,dict(event_id='actual-approval',type='approve',occurred_at='2024-02-01',known_at='2024-02-01',reason='Original actual application decision',gates=dict(original_approved=raw['retail']['decision_artifacts'][0]['action']=='APPROVE')),transitions).value
+ settled=cr.transition_assessment_state(approved,dict(event_id='actual-closure',type='settle',occurred_at='2025-09-15',known_at='2025-09-30',reason='Actual settled mortgage claim',gates=dict(settlement_closed=True)),transitions).value
+ position=dict(position_id='facility_A',claim_id='facility_A-claim',facility_id='facility_A',facility_ead=100000,sector='residential_mortgage',region='synthetic-region',exposure_basis='GROSS',collateral_treatment='ALREADY_IN_CONDITIONAL_LGD',entity_id='customer_A',household_id='household_A',currency='EUR',ead=100000);graph=cr.build_entity_graph([dict(entity_id='customer_A')],[],dict(policy_id='no-inferred-cross-default',version='1',edge_types=['CROSS_DEFAULT']),as_of='2024-02-03',known_at='2024-02-03')
+ portfolio=cr.prepare_credit_portfolio([position],graph,dict(policy_id='legal-groups',version='1',edge_types=['CROSS_DEFAULT'],direction_policy='mutual_only',transitive=True),dict(portfolio_id='mortgage-facility_A',version='1',currency='EUR',as_of='2024-02-03',known_at='2024-02-03',horizon=365,time_unit='days',probability_measure='PHYSICAL',conditioning='initially_performing',event='first_default')).value
+ concentration=cr.credit_concentration_measures([position],weight_field='ead',group_fields=['household_id'],weight_unit='EUR').value
+ cohort=pool['cohort'][0];observation=dict(observation_id='facility_A',facility_id='facility_A',as_of=cohort['index_date'],performance_start=cohort['index_date'],outcome_end=cohort['label_window_end'],eligible=True,prior_default=False,target=1,outcome_known_at=cohort['label_known_at'],default_definition=pool['fit']['target']['default_definition'],cohort='2024-02');pred=dict(observation_id='facility_A',pd=pd,forecast_at=cohort['index_date'],known_at=cohort['index_date'],default_definition=observation['default_definition'],horizon_days=365,unit='facility',probability_measure='PHYSICAL',model_id=forecast['model_id'],model_version='1')
+ count=cr.default_count_backtest([observation],[pred],['cohort'],unit='facility',horizon_days=365,default_definition=observation['default_definition'],redefault_policy='exclude_previous_default',evaluation_cutoff='2025-09-30').value
+ pi=raw['pool_inputs'];estimated=cr.estimate_pool_risk_parameters(pi['pool_assignments'],pi['cohort_outcomes'],pi['workouts'],pi['estimation_profile'],evaluation_cutoff='2025-09-30',calibration_id='observed-mortgage-diagnostic',calibration_version='1').value
+ out=dict(data_origin='SYNTHETIC',facility_id='facility_A',freshness=fresh,feature_drift=drift,calibration_drift=calibration,roll_rates=roll,cure_prediction=cure,observed_cure_targets=targets,competing_exit_curves=curves,known_recovery_episodes=known,final_recovery_episodes=final,open_recovery_scenario=opened,unidentified_tail=unidentified,open_recovery_identification='CONDITIONAL_SCENARIO_ONLY: interim principal/cash reconciliation unavailable; not identified actual open LGD',treatment=treatment,collections_value=value,event_conditioned_realized_loss=eventloss,assessment_final_state=settled['state'],portfolio=portfolio,concentration=concentration,default_count=count,observed_pool_parameters=estimated,assumption_reference=data['assumption_reference'])
+ if verify_reference:
+  assert fresh['status']=='STALE'and settled['state']=='SUPERSEDED'
+  assert cure['sustained_cure_probability']==[0,.5,.5]and cure['cure_then_redefault_probability']==[0,0,.5]and amount==38000
+  assert targets[0]['cure_label']is None and value[0]['expected_net_recovery']==23715
+  assert math.isclose(curves['curves'][0]['cumulative_incidence']['default'][1],.5*(1-math.exp(-.5)),abs_tol=1e-12)
+  assert eventloss['expected_loss']==8000 and count['overall']['observed_defaults']==1
+  assert unidentified['episodes'][0]['expected_final_lgd']is None
+ if return_artifacts:out['raw_artifacts']=dict(main=raw,cure_model=model,cause_model=cause.model,open_inputs=openargs,treatment_inputs=treatment_args,collections_input=action)
+ return out
+if __name__=='__main__':print(json.dumps(run(),allow_nan=False))

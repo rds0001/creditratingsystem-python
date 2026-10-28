@@ -1,0 +1,13 @@
+record_id,entity_id,product_id,as_of,known_at,balance
+card-zero,card-zero,RETAIL_CREDIT_CARD,2024-02-15,2024-02-15,0
+card-main,card-main,RETAIL_CREDIT_CARD,2024-02-15,2024-02-15,500
+card-exit,card-exit,RETAIL_CREDIT_CARD,2024-02-15,2024-02-15,300
+charge-zero,charge-zero,RETAIL_CHARGE_CARD,2024-02-15,2024-02-15,0
+charge-main,charge-main,RETAIL_CHARGE_CARD,2024-02-15,2024-02-15,600
+charge-exit,charge-exit,RETAIL_CHARGE_CARD,2024-02-15,2024-02-15,300
+overdraft-zero,overdraft-zero,RETAIL_OVERDRAFT,2024-02-15,2024-02-15,0
+overdraft-main,overdraft-main,RETAIL_OVERDRAFT,2024-02-15,2024-02-15,400
+overdraft-exit,overdraft-exit,RETAIL_OVERDRAFT,2024-02-15,2024-02-15,300
+heloc-zero,heloc-zero,RETAIL_HOME_EQUITY_LINE,2024-02-15,2024-02-15,0
+heloc-main,heloc-main,RETAIL_HOME_EQUITY_LINE,2024-02-15,2024-02-15,50000
+heloc-exit,heloc-exit,RETAIL_HOME_EQUITY_LINE,2024-02-15,2024-02-15,30000

@@ -1,0 +1,17 @@
+# Sovereign credit, transfer and restructuring components
+
+Run `examples/wholesale_sovereign.py`, or source the native R example and call `run_wholesale_sovereign()`. Both functions accept `data`, `verify_reference` (true by default) and `return_fitted_models` (false). The optional raw result contains actual fitted GLM/calibrator artifacts and unrounded predictions. All numerical and legal assumptions in `wholesale_sovereign.json` are declared synthetic contracts, not legal determinations or country estimates. This component covers three variants; their full account and portfolio lifecycles remain separate work.
+
+Each variant uses its own fiscal change, reserve cover and institutional index. The explicitly prescribed capacity feature is minus annual fiscal change plus 12/reserve months plus twice one minus the institutional index. Its coefficients are reference feature definitions, not estimated causal effects. The exact-calendar lag and dated join exclude the April revision from the March assessment. Actual local frequency-weighted binomial GLMs fit grouped historical observations; a separate holdout cohort fits calibration. At the assessment feature, grouped default frequencies independently imply PDs 0.04, 0.08 and 0.12. Each raw fit/prediction is checked within 1e-7 before six-decimal reported PD is used. Independent fit hashes need not match. Public frozen-model loading and prediction reproduce each language's own artifacts in both languages below 1e-12.
+
+| Variant | Transfer event to default | Joint credit/transfer default | Combined PD | Expected monetary loss |
+| --- | --- | --- | --- | --- |
+| Local currency | 0.10 × 0.50 × (1−0.20) = 0.04 | 0.01 | 0.07 | 1.90 LOC |
+| Foreign currency | 0.20 × 0.60 × (1−0.25) = 0.09 | 0.03 | 0.14 | 5.20 USD |
+| Restructuring | 0.30 × 0.80 × (1−0) = 0.24 | 0.10 | 0.26 | 11.80 USD |
+
+A domestic same-currency coupon remains exposed to an explicitly declared payment freeze. Foreign-currency coupons follow a named cross-border route. The transfer event probability, conditional failure and mitigation probabilities are separate inputs. Credit and transfer default use an explicitly supplied intersection, never an implicit independence assumption. Four exclusive event states determine loss: neither, credit-only, transfer-only and joint. The joint loss is specified directly; adding stand-alone losses would double count. Reapplying transfer risk to an adjusted state is rejected.
+
+The March restructuring-variant assessment precedes a June distressed exchange. The later observed exchange is a distinct event from payment delay (zero days here) and economic loss. Two exchanged payments of 40 at one and two years, discounted at 10%, have PV 8400/121 and loss 3700/121 against the original 100 claim. This is a conditional exchange valuation, not the model's PD or a claim that all exchanges have identical default status. The synthetic target policy explicitly treats this distressed exchange as default; it does not treat every technical delay identically.
+
+Routing jointly checks product, sovereign borrower class, instrument rights, cashflow type, currency and variant. Missing rights produce no route. Incompatible currency or restructuring contracts are rejected even when reference verification is disabled. The output keeps pre-transfer PD, event probability, transfer-default PD, combined PD, delay and monetary loss separate.

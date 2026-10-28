@@ -1,0 +1,1485 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1.0",
+  "product": "STRUCTURED_MONITORING",
+  "variants": {
+    "SECURITIZATION_TRANCHE": {
+      "entities": [
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-0"
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-1"
+        },
+        {
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-2"
+        }
+      ],
+      "positions": [
+        {
+          "position_id": "SECURITIZATION_TRANCHE-p0",
+          "claim_id": "SECURITIZATION_TRANCHE-c0",
+          "facility_id": "SECURITIZATION_TRANCHE-f0",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-0",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "SECURITIZATION_TRANCHE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "SECURITIZATION_TRANCHE-p1",
+          "claim_id": "SECURITIZATION_TRANCHE-c1",
+          "facility_id": "SECURITIZATION_TRANCHE-f1",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-0",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "SECURITIZATION_TRANCHE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "SECURITIZATION_TRANCHE-p2",
+          "claim_id": "SECURITIZATION_TRANCHE-c2",
+          "facility_id": "SECURITIZATION_TRANCHE-f2",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-1",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "SECURITIZATION_TRANCHE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "SECURITIZATION_TRANCHE-p3",
+          "claim_id": "SECURITIZATION_TRANCHE-c3",
+          "facility_id": "SECURITIZATION_TRANCHE-f3",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-2",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "SECURITIZATION_TRANCHE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        }
+      ],
+      "observation_panel": [
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o0",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-0",
+          "facility_id": "SECURITIZATION_TRANCHE-f0",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "SECURITIZATION_TRANCHE"
+        },
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o1",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-0",
+          "facility_id": "SECURITIZATION_TRANCHE-f1",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "SECURITIZATION_TRANCHE"
+        },
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o2",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-1",
+          "facility_id": "SECURITIZATION_TRANCHE-f2",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 0,
+          "outcome_known_at": "2024-02-16",
+          "segment": "SECURITIZATION_TRANCHE"
+        },
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o3",
+          "entity_id": "SECURITIZATION_TRANCHE-obligor-2",
+          "facility_id": "SECURITIZATION_TRANCHE-f3",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "SECURITIZATION_TRANCHE"
+        }
+      ],
+      "frozen_forecasts": [
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o0",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "SECURITIZATION_TRANCHE-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o1",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "SECURITIZATION_TRANCHE-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o2",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "SECURITIZATION_TRANCHE-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "SECURITIZATION_TRANCHE-o3",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "SECURITIZATION_TRANCHE-obligor-reference",
+          "model_version": "1"
+        }
+      ],
+      "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "SECURITIZATION_TRANCHE-fc0",
+            "case_id": "SECURITIZATION_TRANCHE-case0",
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-0",
+            "cluster_id": "SECURITIZATION_TRANCHE-obligor-0",
+            "cohort": "2024-01",
+            "segment": "SECURITIZATION_TRANCHE",
+            "model_id": "SECURITIZATION_TRANCHE-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "SECURITIZATION_TRANCHE-fc1",
+            "case_id": "SECURITIZATION_TRANCHE-case1",
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-1",
+            "cluster_id": "SECURITIZATION_TRANCHE-obligor-1",
+            "cohort": "2024-01",
+            "segment": "SECURITIZATION_TRANCHE",
+            "model_id": "SECURITIZATION_TRANCHE-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "SECURITIZATION_TRANCHE-fc2",
+            "case_id": "SECURITIZATION_TRANCHE-case2",
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-2",
+            "cluster_id": "SECURITIZATION_TRANCHE-obligor-2",
+            "cohort": "2024-01",
+            "segment": "SECURITIZATION_TRANCHE",
+            "model_id": "SECURITIZATION_TRANCHE-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "SECURITIZATION_TRANCHE-d0",
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-0",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "SECURITIZATION_TRANCHE-d2",
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-2",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-0",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-1",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "SECURITIZATION_TRANCHE-obligor-2",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "unit": "obligor",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-05-02"
+      },
+      "loss_design": {
+        "model_id": "SECURITIZATION_TRANCHE-loss-reference",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-product-claims-v1",
+        "population_id": "SECURITIZATION_TRANCHE-defaulted-claims",
+        "split_id": "heldout-2024",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-05-02",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "default"
+        },
+        "currency": "EUR"
+      },
+      "loss_records": [
+        {
+          "prediction_id": "SECURITIZATION_TRANCHE-main",
+          "entity_id": "SECURITIZATION_TRANCHE-position",
+          "cluster_id": "SECURITIZATION_TRANCHE-main-cluster",
+          "segment": "SECURITIZATION_TRANCHE",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "SECURITIZATION_TRANCHE-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": "2024-05-01",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.5,
+          "realized_lgd": 0.6875,
+          "ead_at_default": 80.0,
+          "predicted_ead": 80.0,
+          "realized_ead": 80.0,
+          "drawn_at_reference": 80.0,
+          "limit_at_reference": 80.0,
+          "realized_ead_date": "2024-02-01",
+          "currency": "EUR"
+        },
+        {
+          "prediction_id": "SECURITIZATION_TRANCHE-still-open",
+          "entity_id": "SECURITIZATION_TRANCHE-open",
+          "cluster_id": "SECURITIZATION_TRANCHE-open-cluster",
+          "segment": "SECURITIZATION_TRANCHE",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "SECURITIZATION_TRANCHE-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": null,
+          "workout_status": "OPEN",
+          "predicted_lgd": 0.5,
+          "realized_lgd": null,
+          "ead_at_default": 80.0,
+          "predicted_ead": 80.0,
+          "realized_ead": 80.0,
+          "drawn_at_reference": 80.0,
+          "limit_at_reference": 80.0,
+          "realized_ead_date": "2024-02-01",
+          "currency": "EUR"
+        }
+      ],
+      "expected_lgd_bias": -0.1875,
+      "ead_applicability": "APPLICABLE",
+      "ead_inapplicability_reason": null
+    },
+    "COVERED_BOND": {
+      "entities": [
+        {
+          "entity_id": "COVERED_BOND-obligor-0"
+        },
+        {
+          "entity_id": "COVERED_BOND-obligor-1"
+        },
+        {
+          "entity_id": "COVERED_BOND-obligor-2"
+        }
+      ],
+      "positions": [
+        {
+          "position_id": "COVERED_BOND-p0",
+          "claim_id": "COVERED_BOND-c0",
+          "facility_id": "COVERED_BOND-f0",
+          "entity_id": "COVERED_BOND-obligor-0",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "COVERED_BOND",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "COVERED_BOND-p1",
+          "claim_id": "COVERED_BOND-c1",
+          "facility_id": "COVERED_BOND-f1",
+          "entity_id": "COVERED_BOND-obligor-0",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "COVERED_BOND",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "COVERED_BOND-p2",
+          "claim_id": "COVERED_BOND-c2",
+          "facility_id": "COVERED_BOND-f2",
+          "entity_id": "COVERED_BOND-obligor-1",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "COVERED_BOND",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "COVERED_BOND-p3",
+          "claim_id": "COVERED_BOND-c3",
+          "facility_id": "COVERED_BOND-f3",
+          "entity_id": "COVERED_BOND-obligor-2",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "COVERED_BOND",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        }
+      ],
+      "observation_panel": [
+        {
+          "observation_id": "COVERED_BOND-o0",
+          "entity_id": "COVERED_BOND-obligor-0",
+          "facility_id": "COVERED_BOND-f0",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COVERED_BOND"
+        },
+        {
+          "observation_id": "COVERED_BOND-o1",
+          "entity_id": "COVERED_BOND-obligor-0",
+          "facility_id": "COVERED_BOND-f1",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COVERED_BOND"
+        },
+        {
+          "observation_id": "COVERED_BOND-o2",
+          "entity_id": "COVERED_BOND-obligor-1",
+          "facility_id": "COVERED_BOND-f2",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 0,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COVERED_BOND"
+        },
+        {
+          "observation_id": "COVERED_BOND-o3",
+          "entity_id": "COVERED_BOND-obligor-2",
+          "facility_id": "COVERED_BOND-f3",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COVERED_BOND"
+        }
+      ],
+      "frozen_forecasts": [
+        {
+          "observation_id": "COVERED_BOND-o0",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COVERED_BOND-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "COVERED_BOND-o1",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COVERED_BOND-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "COVERED_BOND-o2",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COVERED_BOND-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "COVERED_BOND-o3",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COVERED_BOND-obligor-reference",
+          "model_version": "1"
+        }
+      ],
+      "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "COVERED_BOND-fc0",
+            "case_id": "COVERED_BOND-case0",
+            "entity_id": "COVERED_BOND-obligor-0",
+            "cluster_id": "COVERED_BOND-obligor-0",
+            "cohort": "2024-01",
+            "segment": "COVERED_BOND",
+            "model_id": "COVERED_BOND-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COVERED_BOND-fc1",
+            "case_id": "COVERED_BOND-case1",
+            "entity_id": "COVERED_BOND-obligor-1",
+            "cluster_id": "COVERED_BOND-obligor-1",
+            "cohort": "2024-01",
+            "segment": "COVERED_BOND",
+            "model_id": "COVERED_BOND-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COVERED_BOND-fc2",
+            "case_id": "COVERED_BOND-case2",
+            "entity_id": "COVERED_BOND-obligor-2",
+            "cluster_id": "COVERED_BOND-obligor-2",
+            "cohort": "2024-01",
+            "segment": "COVERED_BOND",
+            "model_id": "COVERED_BOND-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "COVERED_BOND-d0",
+            "entity_id": "COVERED_BOND-obligor-0",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "COVERED_BOND-d2",
+            "entity_id": "COVERED_BOND-obligor-2",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "COVERED_BOND-obligor-0",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "COVERED_BOND-obligor-1",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "COVERED_BOND-obligor-2",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "unit": "obligor",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-05-02"
+      },
+      "loss_design": {
+        "model_id": "COVERED_BOND-loss-reference",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-product-claims-v1",
+        "population_id": "COVERED_BOND-defaulted-claims",
+        "split_id": "heldout-2024",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-05-02",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "default"
+        },
+        "currency": "EUR"
+      },
+      "loss_records": [
+        {
+          "prediction_id": "COVERED_BOND-main",
+          "entity_id": "COVERED_BOND-position",
+          "cluster_id": "COVERED_BOND-main-cluster",
+          "segment": "COVERED_BOND",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "COVERED_BOND-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": "2024-05-01",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.5,
+          "realized_lgd": 0.325,
+          "ead_at_default": 100.0,
+          "predicted_ead": 100.0,
+          "realized_ead": 100.0,
+          "drawn_at_reference": 100.0,
+          "limit_at_reference": 100.0,
+          "realized_ead_date": "2024-02-01",
+          "currency": "EUR"
+        },
+        {
+          "prediction_id": "COVERED_BOND-still-open",
+          "entity_id": "COVERED_BOND-open",
+          "cluster_id": "COVERED_BOND-open-cluster",
+          "segment": "COVERED_BOND",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "COVERED_BOND-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": null,
+          "workout_status": "OPEN",
+          "predicted_lgd": 0.5,
+          "realized_lgd": null,
+          "ead_at_default": 100.0,
+          "predicted_ead": 100.0,
+          "realized_ead": 100.0,
+          "drawn_at_reference": 100.0,
+          "limit_at_reference": 100.0,
+          "realized_ead_date": "2024-02-01",
+          "currency": "EUR"
+        }
+      ],
+      "expected_lgd_bias": 0.175,
+      "ead_applicability": "APPLICABLE",
+      "ead_inapplicability_reason": null
+    },
+    "TRADE_RECEIVABLES": {
+      "entities": [
+        {
+          "entity_id": "TRADE_RECEIVABLES-obligor-0"
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-obligor-1"
+        },
+        {
+          "entity_id": "TRADE_RECEIVABLES-obligor-2"
+        }
+      ],
+      "positions": [
+        {
+          "position_id": "TRADE_RECEIVABLES-p0",
+          "claim_id": "TRADE_RECEIVABLES-c0",
+          "facility_id": "TRADE_RECEIVABLES-f0",
+          "entity_id": "TRADE_RECEIVABLES-obligor-0",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "TRADE_RECEIVABLES",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "TRADE_RECEIVABLES-p1",
+          "claim_id": "TRADE_RECEIVABLES-c1",
+          "facility_id": "TRADE_RECEIVABLES-f1",
+          "entity_id": "TRADE_RECEIVABLES-obligor-0",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "TRADE_RECEIVABLES",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "TRADE_RECEIVABLES-p2",
+          "claim_id": "TRADE_RECEIVABLES-c2",
+          "facility_id": "TRADE_RECEIVABLES-f2",
+          "entity_id": "TRADE_RECEIVABLES-obligor-1",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "TRADE_RECEIVABLES",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "TRADE_RECEIVABLES-p3",
+          "claim_id": "TRADE_RECEIVABLES-c3",
+          "facility_id": "TRADE_RECEIVABLES-f3",
+          "entity_id": "TRADE_RECEIVABLES-obligor-2",
+          "currency": "EUR",
+          "ead": 100.0,
+          "facility_ead": 100.0,
+          "sector": "TRADE_RECEIVABLES",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        }
+      ],
+      "observation_panel": [
+        {
+          "observation_id": "TRADE_RECEIVABLES-o0",
+          "entity_id": "TRADE_RECEIVABLES-obligor-0",
+          "facility_id": "TRADE_RECEIVABLES-f0",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "TRADE_RECEIVABLES"
+        },
+        {
+          "observation_id": "TRADE_RECEIVABLES-o1",
+          "entity_id": "TRADE_RECEIVABLES-obligor-0",
+          "facility_id": "TRADE_RECEIVABLES-f1",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "TRADE_RECEIVABLES"
+        },
+        {
+          "observation_id": "TRADE_RECEIVABLES-o2",
+          "entity_id": "TRADE_RECEIVABLES-obligor-1",
+          "facility_id": "TRADE_RECEIVABLES-f2",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 0,
+          "outcome_known_at": "2024-02-16",
+          "segment": "TRADE_RECEIVABLES"
+        },
+        {
+          "observation_id": "TRADE_RECEIVABLES-o3",
+          "entity_id": "TRADE_RECEIVABLES-obligor-2",
+          "facility_id": "TRADE_RECEIVABLES-f3",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "TRADE_RECEIVABLES"
+        }
+      ],
+      "frozen_forecasts": [
+        {
+          "observation_id": "TRADE_RECEIVABLES-o0",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "TRADE_RECEIVABLES-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "TRADE_RECEIVABLES-o1",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "TRADE_RECEIVABLES-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "TRADE_RECEIVABLES-o2",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "TRADE_RECEIVABLES-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "TRADE_RECEIVABLES-o3",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "TRADE_RECEIVABLES-obligor-reference",
+          "model_version": "1"
+        }
+      ],
+      "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "TRADE_RECEIVABLES-fc0",
+            "case_id": "TRADE_RECEIVABLES-case0",
+            "entity_id": "TRADE_RECEIVABLES-obligor-0",
+            "cluster_id": "TRADE_RECEIVABLES-obligor-0",
+            "cohort": "2024-01",
+            "segment": "TRADE_RECEIVABLES",
+            "model_id": "TRADE_RECEIVABLES-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "TRADE_RECEIVABLES-fc1",
+            "case_id": "TRADE_RECEIVABLES-case1",
+            "entity_id": "TRADE_RECEIVABLES-obligor-1",
+            "cluster_id": "TRADE_RECEIVABLES-obligor-1",
+            "cohort": "2024-01",
+            "segment": "TRADE_RECEIVABLES",
+            "model_id": "TRADE_RECEIVABLES-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "TRADE_RECEIVABLES-fc2",
+            "case_id": "TRADE_RECEIVABLES-case2",
+            "entity_id": "TRADE_RECEIVABLES-obligor-2",
+            "cluster_id": "TRADE_RECEIVABLES-obligor-2",
+            "cohort": "2024-01",
+            "segment": "TRADE_RECEIVABLES",
+            "model_id": "TRADE_RECEIVABLES-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "TRADE_RECEIVABLES-d0",
+            "entity_id": "TRADE_RECEIVABLES-obligor-0",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "TRADE_RECEIVABLES-d2",
+            "entity_id": "TRADE_RECEIVABLES-obligor-2",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "TRADE_RECEIVABLES-obligor-0",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "TRADE_RECEIVABLES-obligor-1",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "TRADE_RECEIVABLES-obligor-2",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "unit": "obligor",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-05-02"
+      },
+      "loss_design": {
+        "model_id": "TRADE_RECEIVABLES-loss-reference",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-product-claims-v1",
+        "population_id": "TRADE_RECEIVABLES-defaulted-claims",
+        "split_id": "heldout-2024",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-05-02",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "default"
+        },
+        "currency": "EUR"
+      },
+      "loss_records": [
+        {
+          "prediction_id": "TRADE_RECEIVABLES-main",
+          "entity_id": "TRADE_RECEIVABLES-position",
+          "cluster_id": "TRADE_RECEIVABLES-main-cluster",
+          "segment": "TRADE_RECEIVABLES",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "TRADE_RECEIVABLES-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": "2024-05-01",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.5,
+          "realized_lgd": 0.3,
+          "ead_at_default": 100.0,
+          "predicted_ead": 100.0,
+          "realized_ead": 100.0,
+          "drawn_at_reference": 100.0,
+          "limit_at_reference": 100.0,
+          "realized_ead_date": "2024-02-01",
+          "currency": "EUR"
+        },
+        {
+          "prediction_id": "TRADE_RECEIVABLES-still-open",
+          "entity_id": "TRADE_RECEIVABLES-open",
+          "cluster_id": "TRADE_RECEIVABLES-open-cluster",
+          "segment": "TRADE_RECEIVABLES",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "TRADE_RECEIVABLES-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": null,
+          "workout_status": "OPEN",
+          "predicted_lgd": 0.5,
+          "realized_lgd": null,
+          "ead_at_default": 100.0,
+          "predicted_ead": 100.0,
+          "realized_ead": 100.0,
+          "drawn_at_reference": 100.0,
+          "limit_at_reference": 100.0,
+          "realized_ead_date": "2024-02-01",
+          "currency": "EUR"
+        }
+      ],
+      "expected_lgd_bias": 0.2,
+      "ead_applicability": "APPLICABLE",
+      "ead_inapplicability_reason": null
+    },
+    "COUNTERPARTY_EXPOSURE": {
+      "entities": [
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0"
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-1"
+        },
+        {
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-2"
+        }
+      ],
+      "positions": [
+        {
+          "position_id": "COUNTERPARTY_EXPOSURE-p0",
+          "claim_id": "COUNTERPARTY_EXPOSURE-c0",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f0",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "COUNTERPARTY_EXPOSURE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "COUNTERPARTY_EXPOSURE-p1",
+          "claim_id": "COUNTERPARTY_EXPOSURE-c1",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f1",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "COUNTERPARTY_EXPOSURE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "COUNTERPARTY_EXPOSURE-p2",
+          "claim_id": "COUNTERPARTY_EXPOSURE-c2",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f2",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-1",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "COUNTERPARTY_EXPOSURE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "COUNTERPARTY_EXPOSURE-p3",
+          "claim_id": "COUNTERPARTY_EXPOSURE-c3",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f3",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-2",
+          "currency": "EUR",
+          "ead": 80.0,
+          "facility_ead": 80.0,
+          "sector": "COUNTERPARTY_EXPOSURE",
+          "region": "SYNTHETIC",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        }
+      ],
+      "observation_panel": [
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o0",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f0",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COUNTERPARTY_EXPOSURE"
+        },
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o1",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f1",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COUNTERPARTY_EXPOSURE"
+        },
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o2",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-1",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f2",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 0,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COUNTERPARTY_EXPOSURE"
+        },
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o3",
+          "entity_id": "COUNTERPARTY_EXPOSURE-obligor-2",
+          "facility_id": "COUNTERPARTY_EXPOSURE-f3",
+          "as_of": "2024-01-16",
+          "performance_start": "2024-01-16",
+          "outcome_end": "2024-02-15",
+          "eligible": true,
+          "prior_default": false,
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "target": 1,
+          "outcome_known_at": "2024-02-16",
+          "segment": "COUNTERPARTY_EXPOSURE"
+        }
+      ],
+      "frozen_forecasts": [
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o0",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COUNTERPARTY_EXPOSURE-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o1",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COUNTERPARTY_EXPOSURE-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o2",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COUNTERPARTY_EXPOSURE-obligor-reference",
+          "model_version": "1"
+        },
+        {
+          "observation_id": "COUNTERPARTY_EXPOSURE-o3",
+          "pd": 0.5,
+          "forecast_at": "2024-01-16",
+          "known_at": "2024-01-16",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "horizon_days": 30,
+          "unit": "obligor",
+          "probability_measure": "PHYSICAL",
+          "model_id": "COUNTERPARTY_EXPOSURE-obligor-reference",
+          "model_version": "1"
+        }
+      ],
+      "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+      "cohort_input": {
+        "predictions": [
+          {
+            "forecast_id": "COUNTERPARTY_EXPOSURE-fc0",
+            "case_id": "COUNTERPARTY_EXPOSURE-case0",
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+            "cluster_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+            "cohort": "2024-01",
+            "segment": "COUNTERPARTY_EXPOSURE",
+            "model_id": "COUNTERPARTY_EXPOSURE-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COUNTERPARTY_EXPOSURE-fc1",
+            "case_id": "COUNTERPARTY_EXPOSURE-case1",
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-1",
+            "cluster_id": "COUNTERPARTY_EXPOSURE-obligor-1",
+            "cohort": "2024-01",
+            "segment": "COUNTERPARTY_EXPOSURE",
+            "model_id": "COUNTERPARTY_EXPOSURE-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          },
+          {
+            "forecast_id": "COUNTERPARTY_EXPOSURE-fc2",
+            "case_id": "COUNTERPARTY_EXPOSURE-case2",
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-2",
+            "cluster_id": "COUNTERPARTY_EXPOSURE-obligor-2",
+            "cohort": "2024-01",
+            "segment": "COUNTERPARTY_EXPOSURE",
+            "model_id": "COUNTERPARTY_EXPOSURE-obligor-reference",
+            "model_version": "1",
+            "forecast_at": "2024-01-16",
+            "known_at": "2024-01-16",
+            "pd": 0.5,
+            "target": {
+              "event": "default",
+              "probability_measure": "PHYSICAL",
+              "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+              "unit": "obligor",
+              "horizon_days": 30,
+              "default_grade": "D"
+            },
+            "origin_grade": "A",
+            "decision": "approve",
+            "override": false,
+            "prediction_origin": "OUT_OF_TIME"
+          }
+        ],
+        "outcome_events": [
+          {
+            "event_id": "COUNTERPARTY_EXPOSURE-d0",
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          },
+          {
+            "event_id": "COUNTERPARTY_EXPOSURE-d2",
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-2",
+            "event_at": "2024-02-01",
+            "known_at": "2024-02-02",
+            "event": "default",
+            "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE"
+          }
+        ],
+        "coverage": [
+          {
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-0",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-1",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          },
+          {
+            "entity_id": "COUNTERPARTY_EXPOSURE-obligor-2",
+            "complete_through": "2024-02-15",
+            "known_at": "2024-02-16"
+          }
+        ],
+        "target_contract": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "DECLARED_OBLIGOR_PAYMENT_FAILURE",
+          "unit": "obligor",
+          "horizon_days": 30,
+          "default_grade": "D"
+        },
+        "evaluation_cutoff": "2024-05-02"
+      },
+      "loss_design": {
+        "model_id": "COUNTERPARTY_EXPOSURE-loss-reference",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "synthetic-product-claims-v1",
+        "population_id": "COUNTERPARTY_EXPOSURE-defaulted-claims",
+        "split_id": "heldout-2024",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-05-02",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "default"
+        },
+        "currency": "EUR"
+      },
+      "loss_records": [
+        {
+          "prediction_id": "COUNTERPARTY_EXPOSURE-main",
+          "entity_id": "COUNTERPARTY_EXPOSURE-position",
+          "cluster_id": "COUNTERPARTY_EXPOSURE-main-cluster",
+          "segment": "COUNTERPARTY_EXPOSURE",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "COUNTERPARTY_EXPOSURE-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": "2024-05-01",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.5,
+          "realized_lgd": 0.6,
+          "ead_at_default": 80.0,
+          "currency": "EUR"
+        },
+        {
+          "prediction_id": "COUNTERPARTY_EXPOSURE-still-open",
+          "entity_id": "COUNTERPARTY_EXPOSURE-open",
+          "cluster_id": "COUNTERPARTY_EXPOSURE-open-cluster",
+          "segment": "COUNTERPARTY_EXPOSURE",
+          "as_of": "2024-01-16",
+          "forecast_known_at": "2024-01-16",
+          "horizon_end": "2024-02-15",
+          "model_id": "COUNTERPARTY_EXPOSURE-loss-reference",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-02-01",
+          "outcome_known_at": "2024-05-01",
+          "workout_closed_at": null,
+          "workout_status": "OPEN",
+          "predicted_lgd": 0.5,
+          "realized_lgd": null,
+          "ead_at_default": 80.0,
+          "currency": "EUR"
+        }
+      ],
+      "expected_lgd_bias": -0.09999999999999998,
+      "ead_applicability": "NOT_APPLICABLE",
+      "ead_inapplicability_reason": "Signed netting and MPOR closeout exposure is not a loan drawdown balance dated at borrower default. counterparty_credit_products independently validates realized frozen collateral closeout 80 and ordinary market exposure 0."
+    }
+  }
+}

@@ -1,0 +1,4571 @@
+{
+  "residual_model": {
+    "schema_version": "1.0",
+    "model_id": "terminal-settlement-reference",
+    "model_version": "1",
+    "method_id": "lgd.fit_recovery_hurdle",
+    "feature_order": [],
+    "parameters": {
+      "fit_intercept": true,
+      "default_condition": "given_default",
+      "currency": "EUR",
+      "stage_spec": {
+        "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+        "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+        "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+        "positive_distribution": "lognormal",
+        "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+        "payout_horizon": "ULTIMATE",
+        "timing_distribution": "weibull",
+        "cure_residual_value_ratio": 1.0,
+        "landmark_definition": "Account enters residual terminal settlement stage"
+      },
+      "feature_min": [],
+      "feature_max": [],
+      "positive_feature_min": [],
+      "positive_feature_max": [],
+      "cure_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.cure",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            -0.6931471805599454
+          ],
+          "covariance": [
+            [
+              0.75
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -3.8190850097688775,
+          "frequency_total": 6.0,
+          "n_active_rows": 6,
+          "rank": 1,
+          "maximum_mean_score": 5.551115123125783e-17,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "699fbbd846e1ed6f6d0a172062f3b59c97a7213aa055b84e4cc530f7e2bdca73"
+      },
+      "positive_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.positive",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            0.0
+          ],
+          "covariance": [
+            [
+              1.0
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -2.772588722239781,
+          "frequency_total": 4.0,
+          "n_active_rows": 4,
+          "rank": 1,
+          "maximum_mean_score": 0.0,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "0342c26178e323e17254a256e28eaee94db0f86475773c4c880acd4d5040066e"
+      },
+      "amount_regression": {
+        "coefficients": [
+          -0.8369882167858352
+        ],
+        "covariance": [
+          [
+            0.1508686201015727
+          ]
+        ],
+        "covariance_type": "HC0_FREQUENCY_IID",
+        "residual_variance": 0.3017372402031454,
+        "rank": 1,
+        "frequency_total": 2.0
+      },
+      "timing_model": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.timing",
+        "model_version": "1",
+        "method_id": "survival.fit_aft_model",
+        "feature_order": [],
+        "parameters": {
+          "kind": "aft",
+          "distribution": "weibull",
+          "coefficients": [
+            3.9603830543916008
+          ],
+          "log_time_scale": 0.938538994120538,
+          "covariance_beta_log_scale": [
+            [
+              0.1468199895351604,
+              -0.0009212609147641112
+            ],
+            [
+              -0.0009212609147641111,
+              0.10924901927636418
+            ]
+          ],
+          "support_start": 0.0,
+          "support_end": 90.0
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "workout_resolution",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "diagnostics": {
+          "backend": "lifelines.WeibullAFTFitter",
+          "parameterization": "log(T)=intercept+X beta+scale*epsilon",
+          "log_likelihood": -29.747035581774195,
+          "row_log_likelihood": [
+            -4.176468546921858,
+            -4.242293388148155,
+            -4.317908600485287,
+            -4.399325490703751,
+            -4.48468997959468,
+            -4.57297194434928,
+            -1.7766888157855916,
+            -1.7766888157855916
+          ],
+          "converged": true,
+          "warnings": [],
+          "censoring": "independent_right_censoring",
+          "extrapolation": "parametric_tail_requires_explicit_prediction_policy"
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        }
+      }
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "residual_terminal_loss_fraction",
+      "horizon_role": "TIMING_REPORTING_REFERENCE",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "given_default",
+      "currency": "EUR"
+    },
+    "training": {
+      "data_fingerprint": "prior-2024-terminal-settlement-reference",
+      "split_id": "train",
+      "known_at": "2023-12-31",
+      "data_origin": "SYNTHETIC",
+      "workout_population": "open_and_closed_defaulted_landmarks"
+    },
+    "diagnostics": {
+      "observed_count": 6,
+      "censored_count": 2,
+      "cure_count": 2,
+      "positive_noncure_count": 2,
+      "zero_noncure_count": 2,
+      "identification": "Outcome and payout independent of resolution time and independent right censoring, conditional on landmark covariates"
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "training_input_fingerprint": "ab26a68269574829567434b3bd4538bef5e8364c0e512ec4c5451bb2fd5e53d9"
+  },
+  "stage_spec": {
+    "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+    "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+    "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+    "positive_distribution": "lognormal",
+    "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+    "payout_horizon": "ULTIMATE",
+    "timing_distribution": "weibull",
+    "cure_residual_value_ratio": 1.0,
+    "landmark_definition": "Account enters residual terminal settlement stage"
+  },
+  "target": {
+    "event": "residual_terminal_loss_fraction",
+    "horizon_role": "TIMING_REPORTING_REFERENCE",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "given_default",
+    "currency": "EUR"
+  },
+  "training_reference": {
+    "episodes": [
+      {
+        "episode_id": "0",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-11",
+        "resolution_known_at": "2023-01-11",
+        "cured": 1,
+        "cure_value": 80.0
+      },
+      {
+        "episode_id": "1",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-16",
+        "resolution_known_at": "2023-01-16",
+        "cured": 1,
+        "cure_value": 80.0
+      },
+      {
+        "episode_id": "2",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-21",
+        "resolution_known_at": "2023-01-21",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "3",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-26",
+        "resolution_known_at": "2023-01-26",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "4",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-31",
+        "resolution_known_at": "2023-01-31",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "5",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-02-05",
+        "resolution_known_at": "2023-02-05",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "6",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": null,
+        "resolution_known_at": null,
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "7",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": null,
+        "resolution_known_at": null,
+        "cured": 0,
+        "cure_value": 0.0
+      }
+    ],
+    "cashflows": [
+      {
+        "episode_id": "4",
+        "cashflow_id": "4",
+        "cashflow_date": "2023-01-31",
+        "known_at": "2023-01-31",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 20
+      },
+      {
+        "episode_id": "5",
+        "cashflow_id": "5",
+        "cashflow_date": "2023-02-05",
+        "known_at": "2023-02-05",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 60
+      }
+    ],
+    "feature_order": [],
+    "X": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  "data_origin": "SYNTHETIC_ANALYTICAL_REFERENCE",
+  "version": "1.0",
+  "product": "RETAIL_WORKOUT_AND_PRIOR_KNOWN_CURE",
+  "cases": {
+    "RETAIL_RESIDENTIAL_MORTGAGE": {
+      "subject_id": "RETAIL_RESIDENTIAL_MORTGAGE-obligor",
+      "ead": 200000,
+      "past": 10000,
+      "terminal": 160000,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+          "cashflow_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 10000
+        },
+        {
+          "episode_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+          "cashflow_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 8000
+        },
+        {
+          "episode_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+          "cashflow_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 160000
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 200000,
+        "residual_exposure_at_reference": 190000,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 8000,
+      "mechanism": "Property realization after joint-borrower claim consolidation; junior lien remains a distinct claim",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+          "cashflow_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 8000
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "state_event_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "state_event_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "state_event_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 160000
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 8000
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 80000.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 800.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Property realization after joint-borrower claim consolidation; junior lien remains a distinct claim"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 190000,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Property realization after joint-borrower claim consolidation; junior lien remains a distinct claim",
+        "recovery_on_cure": 160000
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+            "subject_id": "RETAIL_RESIDENTIAL_MORTGAGE-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+            "subject_id": "RETAIL_RESIDENTIAL_MORTGAGE-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 190000,
+            "legal_balance": 190000,
+            "priority": 1,
+            "deficit_cost_share": 0.9047619047619048
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+            "subject_id": "RETAIL_RESIDENTIAL_MORTGAGE-obligor",
+            "claim_id": "junior-third-party",
+            "pool_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 20000,
+            "legal_balance": 20000,
+            "priority": 2,
+            "deficit_cost_share": 0.09523809523809523
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout",
+            "pool_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-realization",
+            "collateral_id": "RETAIL_RESIDENTIAL_MORTGAGE-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 160000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_HOME_EQUITY_LINE": {
+      "subject_id": "RETAIL_HOME_EQUITY_LINE-obligor",
+      "ead": 60000,
+      "past": 2000,
+      "terminal": 30000,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_HOME_EQUITY_LINE-workout",
+          "cashflow_id": "RETAIL_HOME_EQUITY_LINE-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 2000
+        },
+        {
+          "episode_id": "RETAIL_HOME_EQUITY_LINE-workout",
+          "cashflow_id": "RETAIL_HOME_EQUITY_LINE-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 4000
+        },
+        {
+          "episode_id": "RETAIL_HOME_EQUITY_LINE-workout",
+          "cashflow_id": "RETAIL_HOME_EQUITY_LINE-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 30000
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_HOME_EQUITY_LINE-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 60000,
+        "residual_exposure_at_reference": 58000,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_HOME_EQUITY_LINE-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 4000,
+      "mechanism": "Second-lien proceeds after separately identified senior mortgage; undrawn line is not default EAD",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_HOME_EQUITY_LINE-workout",
+          "cashflow_id": "RETAIL_HOME_EQUITY_LINE-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 4000
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "state_event_id": "RETAIL_HOME_EQUITY_LINE-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "state_event_id": "RETAIL_HOME_EQUITY_LINE-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "state_event_id": "RETAIL_HOME_EQUITY_LINE-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 30000
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 4000
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 15000.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 400.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Second-lien proceeds after separately identified senior mortgage; undrawn line is not default EAD"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 58000,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Second-lien proceeds after separately identified senior mortgage; undrawn line is not default EAD",
+        "recovery_on_cure": 30000
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_HOME_EQUITY_LINE-workout",
+            "subject_id": "RETAIL_HOME_EQUITY_LINE-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_HOME_EQUITY_LINE-workout",
+            "subject_id": "RETAIL_HOME_EQUITY_LINE-obligor",
+            "claim_id": "prior-mortgage",
+            "pool_id": "RETAIL_HOME_EQUITY_LINE-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 40000,
+            "legal_balance": 40000,
+            "priority": 1,
+            "deficit_cost_share": 0.40816326530612246
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_HOME_EQUITY_LINE-workout",
+            "subject_id": "RETAIL_HOME_EQUITY_LINE-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_HOME_EQUITY_LINE-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 58000,
+            "legal_balance": 58000,
+            "priority": 2,
+            "deficit_cost_share": 0.5918367346938775
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_HOME_EQUITY_LINE-workout",
+            "pool_id": "RETAIL_HOME_EQUITY_LINE-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_HOME_EQUITY_LINE-workout-realization",
+            "collateral_id": "RETAIL_HOME_EQUITY_LINE-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 70000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_UNSECURED_INSTALLMENT": {
+      "subject_id": "RETAIL_UNSECURED_INSTALLMENT-obligor",
+      "ead": 12000,
+      "past": 1000,
+      "terminal": 2500,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+          "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 1000
+        },
+        {
+          "episode_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+          "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 600
+        },
+        {
+          "episode_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+          "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 2500
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 12000,
+        "residual_exposure_at_reference": 11000,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 600,
+      "mechanism": "Unsecured settlement; no property collateral inferred",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+          "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 600
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "state_event_id": "RETAIL_UNSECURED_INSTALLMENT-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "state_event_id": "RETAIL_UNSECURED_INSTALLMENT-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "state_event_id": "RETAIL_UNSECURED_INSTALLMENT-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 2500
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 600
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 1250.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 60.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Unsecured settlement; no property collateral inferred"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 11000,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Unsecured settlement; no property collateral inferred",
+        "recovery_on_cure": 2500
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+            "subject_id": "RETAIL_UNSECURED_INSTALLMENT-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+            "subject_id": "RETAIL_UNSECURED_INSTALLMENT-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_UNSECURED_INSTALLMENT-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 11000,
+            "legal_balance": 11000,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+            "subject_id": "RETAIL_UNSECURED_INSTALLMENT-obligor",
+            "claim_id": "unrelated-creditor",
+            "pool_id": "RETAIL_UNSECURED_INSTALLMENT-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 11000,
+            "legal_balance": 11000,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_UNSECURED_INSTALLMENT-workout",
+            "pool_id": "RETAIL_UNSECURED_INSTALLMENT-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_UNSECURED_INSTALLMENT-workout-realization",
+            "collateral_id": "RETAIL_UNSECURED_INSTALLMENT-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 5000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_EDUCATION_LOAN": {
+      "subject_id": "RETAIL_EDUCATION_LOAN-obligor",
+      "ead": 25000,
+      "past": 500,
+      "terminal": 5000,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_EDUCATION_LOAN-workout",
+          "cashflow_id": "RETAIL_EDUCATION_LOAN-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 500
+        },
+        {
+          "episode_id": "RETAIL_EDUCATION_LOAN-workout",
+          "cashflow_id": "RETAIL_EDUCATION_LOAN-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 300
+        },
+        {
+          "episode_id": "RETAIL_EDUCATION_LOAN-workout",
+          "cashflow_id": "RETAIL_EDUCATION_LOAN-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 5000
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_EDUCATION_LOAN-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 25000,
+        "residual_exposure_at_reference": 24500,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_EDUCATION_LOAN-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 300,
+      "mechanism": "Contractual deferral precedes default; employment-linked settlement is actual cash",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_EDUCATION_LOAN-workout",
+          "cashflow_id": "RETAIL_EDUCATION_LOAN-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 300
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "state_event_id": "RETAIL_EDUCATION_LOAN-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "state_event_id": "RETAIL_EDUCATION_LOAN-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "state_event_id": "RETAIL_EDUCATION_LOAN-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 5000
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 300
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 2500.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 30.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Contractual deferral precedes default; employment-linked settlement is actual cash"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 24500,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Contractual deferral precedes default; employment-linked settlement is actual cash",
+        "recovery_on_cure": 5000
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_EDUCATION_LOAN-workout",
+            "subject_id": "RETAIL_EDUCATION_LOAN-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_EDUCATION_LOAN-workout",
+            "subject_id": "RETAIL_EDUCATION_LOAN-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_EDUCATION_LOAN-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 24500,
+            "legal_balance": 24500,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_EDUCATION_LOAN-workout",
+            "subject_id": "RETAIL_EDUCATION_LOAN-obligor",
+            "claim_id": "unrelated-creditor",
+            "pool_id": "RETAIL_EDUCATION_LOAN-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 24500,
+            "legal_balance": 24500,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_EDUCATION_LOAN-workout",
+            "pool_id": "RETAIL_EDUCATION_LOAN-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_EDUCATION_LOAN-workout-realization",
+            "collateral_id": "RETAIL_EDUCATION_LOAN-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 10000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_AUTO_LOAN": {
+      "subject_id": "RETAIL_AUTO_LOAN-obligor",
+      "ead": 18000,
+      "past": 1000,
+      "terminal": 12000,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_AUTO_LOAN-workout",
+          "cashflow_id": "RETAIL_AUTO_LOAN-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 1000
+        },
+        {
+          "episode_id": "RETAIL_AUTO_LOAN-workout",
+          "cashflow_id": "RETAIL_AUTO_LOAN-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 1500
+        },
+        {
+          "episode_id": "RETAIL_AUTO_LOAN-workout",
+          "cashflow_id": "RETAIL_AUTO_LOAN-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 12000
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_AUTO_LOAN-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 18000,
+        "residual_exposure_at_reference": 17000,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_AUTO_LOAN-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 1500,
+      "mechanism": "Repossessed vehicle proceeds less separate recovery costs; balloon remains in claim",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_AUTO_LOAN-workout",
+          "cashflow_id": "RETAIL_AUTO_LOAN-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 1500
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "state_event_id": "RETAIL_AUTO_LOAN-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "state_event_id": "RETAIL_AUTO_LOAN-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "state_event_id": "RETAIL_AUTO_LOAN-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 12000
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 1500
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 6000.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 150.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Repossessed vehicle proceeds less separate recovery costs; balloon remains in claim"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 17000,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Repossessed vehicle proceeds less separate recovery costs; balloon remains in claim",
+        "recovery_on_cure": 12000
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_AUTO_LOAN-workout",
+            "subject_id": "RETAIL_AUTO_LOAN-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_AUTO_LOAN-workout",
+            "subject_id": "RETAIL_AUTO_LOAN-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_AUTO_LOAN-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 17000,
+            "legal_balance": 17000,
+            "priority": 1,
+            "deficit_cost_share": 1.0
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_AUTO_LOAN-workout",
+            "pool_id": "RETAIL_AUTO_LOAN-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_AUTO_LOAN-workout-realization",
+            "collateral_id": "RETAIL_AUTO_LOAN-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 12000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_AUTO_LEASE": {
+      "subject_id": "RETAIL_AUTO_LEASE-obligor",
+      "ead": 14000,
+      "past": 500,
+      "terminal": 9000,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_AUTO_LEASE-workout",
+          "cashflow_id": "RETAIL_AUTO_LEASE-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 500
+        },
+        {
+          "episode_id": "RETAIL_AUTO_LEASE-workout",
+          "cashflow_id": "RETAIL_AUTO_LEASE-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 1200
+        },
+        {
+          "episode_id": "RETAIL_AUTO_LEASE-workout",
+          "cashflow_id": "RETAIL_AUTO_LEASE-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 9000
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_AUTO_LEASE-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 14000,
+        "residual_exposure_at_reference": 13500,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_AUTO_LEASE-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 1200,
+      "mechanism": "Terminated lease claim and vehicle residual proceeds; asset sale not counted as instalment payment",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_AUTO_LEASE-workout",
+          "cashflow_id": "RETAIL_AUTO_LEASE-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 1200
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "state_event_id": "RETAIL_AUTO_LEASE-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "state_event_id": "RETAIL_AUTO_LEASE-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "state_event_id": "RETAIL_AUTO_LEASE-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 9000
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 1200
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 4500.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 120.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Terminated lease claim and vehicle residual proceeds; asset sale not counted as instalment payment"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 13500,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Terminated lease claim and vehicle residual proceeds; asset sale not counted as instalment payment",
+        "recovery_on_cure": 9000
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_AUTO_LEASE-workout",
+            "subject_id": "RETAIL_AUTO_LEASE-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_AUTO_LEASE-workout",
+            "subject_id": "RETAIL_AUTO_LEASE-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_AUTO_LEASE-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 13500,
+            "legal_balance": 13500,
+            "priority": 1,
+            "deficit_cost_share": 1.0
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_AUTO_LEASE-workout",
+            "pool_id": "RETAIL_AUTO_LEASE-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_AUTO_LEASE-workout-realization",
+            "collateral_id": "RETAIL_AUTO_LEASE-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 9000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_CREDIT_CARD": {
+      "subject_id": "RETAIL_CREDIT_CARD-obligor",
+      "ead": 6000,
+      "past": 300,
+      "terminal": 900,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_CREDIT_CARD-workout",
+          "cashflow_id": "RETAIL_CREDIT_CARD-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 300
+        },
+        {
+          "episode_id": "RETAIL_CREDIT_CARD-workout",
+          "cashflow_id": "RETAIL_CREDIT_CARD-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 250
+        },
+        {
+          "episode_id": "RETAIL_CREDIT_CARD-workout",
+          "cashflow_id": "RETAIL_CREDIT_CARD-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 900
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_CREDIT_CARD-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 6000,
+        "residual_exposure_at_reference": 5700,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_CREDIT_CARD-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 250,
+      "mechanism": "Revolving drawn balance at default, recoveries after line closure",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_CREDIT_CARD-workout",
+          "cashflow_id": "RETAIL_CREDIT_CARD-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 250
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "state_event_id": "RETAIL_CREDIT_CARD-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "state_event_id": "RETAIL_CREDIT_CARD-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "state_event_id": "RETAIL_CREDIT_CARD-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 900
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 250
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 450.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 25.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Revolving drawn balance at default, recoveries after line closure"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 5700,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Revolving drawn balance at default, recoveries after line closure",
+        "recovery_on_cure": 900
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CREDIT_CARD-workout",
+            "subject_id": "RETAIL_CREDIT_CARD-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CREDIT_CARD-workout",
+            "subject_id": "RETAIL_CREDIT_CARD-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_CREDIT_CARD-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 5700,
+            "legal_balance": 5700,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CREDIT_CARD-workout",
+            "subject_id": "RETAIL_CREDIT_CARD-obligor",
+            "claim_id": "unrelated-creditor",
+            "pool_id": "RETAIL_CREDIT_CARD-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 5700,
+            "legal_balance": 5700,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CREDIT_CARD-workout",
+            "pool_id": "RETAIL_CREDIT_CARD-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_CREDIT_CARD-workout-realization",
+            "collateral_id": "RETAIL_CREDIT_CARD-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 1800,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_CHARGE_CARD": {
+      "subject_id": "RETAIL_CHARGE_CARD-obligor",
+      "ead": 4000,
+      "past": 200,
+      "terminal": 600,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_CHARGE_CARD-workout",
+          "cashflow_id": "RETAIL_CHARGE_CARD-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 200
+        },
+        {
+          "episode_id": "RETAIL_CHARGE_CARD-workout",
+          "cashflow_id": "RETAIL_CHARGE_CARD-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 150
+        },
+        {
+          "episode_id": "RETAIL_CHARGE_CARD-workout",
+          "cashflow_id": "RETAIL_CHARGE_CARD-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 600
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_CHARGE_CARD-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 4000,
+        "residual_exposure_at_reference": 3800,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_CHARGE_CARD-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 150,
+      "mechanism": "Full-payment card claim; no invented undrawn revolving commitment",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_CHARGE_CARD-workout",
+          "cashflow_id": "RETAIL_CHARGE_CARD-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 150
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "state_event_id": "RETAIL_CHARGE_CARD-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "state_event_id": "RETAIL_CHARGE_CARD-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "state_event_id": "RETAIL_CHARGE_CARD-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 600
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 150
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 300.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 15.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Full-payment card claim; no invented undrawn revolving commitment"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 3800,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Full-payment card claim; no invented undrawn revolving commitment",
+        "recovery_on_cure": 600
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CHARGE_CARD-workout",
+            "subject_id": "RETAIL_CHARGE_CARD-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CHARGE_CARD-workout",
+            "subject_id": "RETAIL_CHARGE_CARD-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_CHARGE_CARD-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 3800,
+            "legal_balance": 3800,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CHARGE_CARD-workout",
+            "subject_id": "RETAIL_CHARGE_CARD-obligor",
+            "claim_id": "unrelated-creditor",
+            "pool_id": "RETAIL_CHARGE_CARD-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 3800,
+            "legal_balance": 3800,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_CHARGE_CARD-workout",
+            "pool_id": "RETAIL_CHARGE_CARD-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_CHARGE_CARD-workout-realization",
+            "collateral_id": "RETAIL_CHARGE_CARD-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 1200,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_OVERDRAFT": {
+      "subject_id": "RETAIL_OVERDRAFT-obligor",
+      "ead": 3000,
+      "past": 400,
+      "terminal": 500,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_OVERDRAFT-workout",
+          "cashflow_id": "RETAIL_OVERDRAFT-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 400
+        },
+        {
+          "episode_id": "RETAIL_OVERDRAFT-workout",
+          "cashflow_id": "RETAIL_OVERDRAFT-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 100
+        },
+        {
+          "episode_id": "RETAIL_OVERDRAFT-workout",
+          "cashflow_id": "RETAIL_OVERDRAFT-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 500
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_OVERDRAFT-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 3000,
+        "residual_exposure_at_reference": 2600,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_OVERDRAFT-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 100,
+      "mechanism": "Drawn overdraft including documented excess; salary receipts applied once",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_OVERDRAFT-workout",
+          "cashflow_id": "RETAIL_OVERDRAFT-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 100
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "state_event_id": "RETAIL_OVERDRAFT-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "state_event_id": "RETAIL_OVERDRAFT-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "state_event_id": "RETAIL_OVERDRAFT-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 500
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 100
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 250.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 10.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Drawn overdraft including documented excess; salary receipts applied once"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 2600,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Drawn overdraft including documented excess; salary receipts applied once",
+        "recovery_on_cure": 500
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_OVERDRAFT-workout",
+            "subject_id": "RETAIL_OVERDRAFT-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_OVERDRAFT-workout",
+            "subject_id": "RETAIL_OVERDRAFT-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_OVERDRAFT-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 2600,
+            "legal_balance": 2600,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_OVERDRAFT-workout",
+            "subject_id": "RETAIL_OVERDRAFT-obligor",
+            "claim_id": "unrelated-creditor",
+            "pool_id": "RETAIL_OVERDRAFT-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 2600,
+            "legal_balance": 2600,
+            "priority": 1,
+            "deficit_cost_share": 0.5
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_OVERDRAFT-workout",
+            "pool_id": "RETAIL_OVERDRAFT-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_OVERDRAFT-workout-realization",
+            "collateral_id": "RETAIL_OVERDRAFT-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 1000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_BNPL": {
+      "subject_id": "RETAIL_BNPL-obligor",
+      "ead": 800,
+      "past": 100,
+      "terminal": 150,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_BNPL-workout",
+          "cashflow_id": "RETAIL_BNPL-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 100
+        },
+        {
+          "episode_id": "RETAIL_BNPL-workout",
+          "cashflow_id": "RETAIL_BNPL-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 40
+        },
+        {
+          "episode_id": "RETAIL_BNPL-workout",
+          "cashflow_id": "RETAIL_BNPL-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 150
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_BNPL-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 800,
+        "residual_exposure_at_reference": 700,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_BNPL-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 40,
+      "mechanism": "Separate purchase receivables consolidated into one obligor claim without duplicate receipts",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_BNPL-workout",
+          "cashflow_id": "RETAIL_BNPL-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 40
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "state_event_id": "RETAIL_BNPL-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "state_event_id": "RETAIL_BNPL-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "state_event_id": "RETAIL_BNPL-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 150
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 40
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 75.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 4.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Separate purchase receivables consolidated into one obligor claim without duplicate receipts"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 700,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Separate purchase receivables consolidated into one obligor claim without duplicate receipts",
+        "recovery_on_cure": 150
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_BNPL-workout",
+            "subject_id": "RETAIL_BNPL-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_BNPL-workout",
+            "subject_id": "RETAIL_BNPL-obligor",
+            "claim_id": "purchase-one",
+            "pool_id": "RETAIL_BNPL-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 420.0,
+            "legal_balance": 420.0,
+            "priority": 1,
+            "deficit_cost_share": 0.6
+          },
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_BNPL-workout",
+            "subject_id": "RETAIL_BNPL-obligor",
+            "claim_id": "purchase-two",
+            "pool_id": "RETAIL_BNPL-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 280.0,
+            "legal_balance": 280.0,
+            "priority": 1,
+            "deficit_cost_share": 0.4
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_BNPL-workout",
+            "pool_id": "RETAIL_BNPL-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_BNPL-workout-realization",
+            "collateral_id": "RETAIL_BNPL-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 150,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "purchase-one",
+        "purchase-two"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_MICRO_LOAN": {
+      "subject_id": "RETAIL_MICRO_LOAN-obligor",
+      "ead": 1500,
+      "past": 100,
+      "terminal": 350,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_MICRO_LOAN-workout",
+          "cashflow_id": "RETAIL_MICRO_LOAN-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 100
+        },
+        {
+          "episode_id": "RETAIL_MICRO_LOAN-workout",
+          "cashflow_id": "RETAIL_MICRO_LOAN-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 60
+        },
+        {
+          "episode_id": "RETAIL_MICRO_LOAN-workout",
+          "cashflow_id": "RETAIL_MICRO_LOAN-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 350
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_MICRO_LOAN-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 1500,
+        "residual_exposure_at_reference": 1400,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_MICRO_LOAN-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 60,
+      "mechanism": "Actual individual repayments; social group support is not an automatic guarantee payment",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_MICRO_LOAN-workout",
+          "cashflow_id": "RETAIL_MICRO_LOAN-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 60
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "state_event_id": "RETAIL_MICRO_LOAN-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "state_event_id": "RETAIL_MICRO_LOAN-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "state_event_id": "RETAIL_MICRO_LOAN-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 350
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 60
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 175.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 6.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Actual individual repayments; social group support is not an automatic guarantee payment"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 1400,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Actual individual repayments; social group support is not an automatic guarantee payment",
+        "recovery_on_cure": 350
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_MICRO_LOAN-workout",
+            "subject_id": "RETAIL_MICRO_LOAN-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_MICRO_LOAN-workout",
+            "subject_id": "RETAIL_MICRO_LOAN-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_MICRO_LOAN-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 1400,
+            "legal_balance": 1400,
+            "priority": 1,
+            "deficit_cost_share": 1.0
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_MICRO_LOAN-workout",
+            "pool_id": "RETAIL_MICRO_LOAN-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_MICRO_LOAN-workout-realization",
+            "collateral_id": "RETAIL_MICRO_LOAN-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 350,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    },
+    "RETAIL_SMALL_BUSINESS_FINANCE": {
+      "subject_id": "RETAIL_SMALL_BUSINESS_FINANCE-obligor",
+      "ead": 30000,
+      "past": 2000,
+      "terminal": 12000,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+          "cashflow_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-prior",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 2000
+        },
+        {
+          "episode_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+          "cashflow_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-realization-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-04-01",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 1000
+        },
+        {
+          "episode_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+          "cashflow_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 12000
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 30000,
+        "residual_exposure_at_reference": 28000,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 0.99
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 0.95
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 0.95
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 0.95,
+        "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "cost": 1000,
+      "mechanism": "Firm operating claim separated from owner household; business asset realization distinct from personal income",
+      "future_costs": [
+        {
+          "episode_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+          "cashflow_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-forecast-cost",
+          "cashflow_date": "2024-04-01",
+          "known_at": "2024-03-15",
+          "currency": "EUR",
+          "kind": "DIRECT_COST",
+          "amount": 1000
+        }
+      ],
+      "collections_input": {
+        "states": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "state_event_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-0",
+            "state": "DEFAULT",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "state_event_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-10",
+            "known_at": "2024-02-10"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "state_event_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-2",
+            "state": "DEFAULT",
+            "occurred_at": "2024-03-20",
+            "known_at": "2024-03-20"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-01",
+            "known_at": "2024-05-01"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-retail",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-01"
+      },
+      "collections_value": {
+        "actions": [
+          {
+            "action_id": "baseline",
+            "currency": "EUR",
+            "uptake_probability": 0.25,
+            "accepted_scenarios": [
+              {
+                "scenario_id": "accepted",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "accepted-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 12000
+                  },
+                  {
+                    "cashflow_id": "accepted-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 1000
+                  }
+                ]
+              }
+            ],
+            "declined_scenarios": [
+              {
+                "scenario_id": "declined",
+                "probability": 1,
+                "cashflows": [
+                  {
+                    "cashflow_id": "declined-receipt",
+                    "kind": "RECOVERY",
+                    "period_end": "2024-05-01",
+                    "amount": 6000.0
+                  },
+                  {
+                    "cashflow_id": "declined-cost",
+                    "kind": "COST",
+                    "period_end": "2024-05-01",
+                    "amount": 0
+                  }
+                ]
+              }
+            ],
+            "offer_cost": 100.0,
+            "support_status": "SYNTHETIC_ASSUMPTION",
+            "assumption_reference": "Firm operating claim separated from owner household; business asset realization distinct from personal income"
+          }
+        ],
+        "discount_factors": [
+          0.95
+        ],
+        "ead": 28000,
+        "currency": "EUR",
+        "period_end_dates": [
+          "2024-05-01"
+        ]
+      },
+      "cure_recovery_assumptions": {
+        "action_id": "baseline",
+        "assumption_reference": "Synthetic monetary occupancy cash schedule; no causal treatment effect: Firm operating claim separated from owner household; business asset realization distinct from personal income",
+        "recovery_on_cure": 12000
+      },
+      "claim_allocation": {
+        "default_events": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+            "subject_id": "RETAIL_SMALL_BUSINESS_FINANCE-obligor",
+            "default_date": "2024-02-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+            "subject_id": "RETAIL_SMALL_BUSINESS_FINANCE-obligor",
+            "claim_id": "owned",
+            "pool_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-estate",
+            "currency": "EUR",
+            "ead_at_default": 28000,
+            "legal_balance": 28000,
+            "priority": 1,
+            "deficit_cost_share": 1.0
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "observed",
+            "default_event_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout",
+            "pool_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-estate",
+            "currency": "EUR",
+            "realization_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-realization",
+            "collateral_id": "RETAIL_SMALL_BUSINESS_FINANCE-workout-asset-or-estate",
+            "date": "2024-05-01",
+            "gross_value": 12000,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 0.95,
+            "discount_anchor_date": "2024-02-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "actual-claim-allocation",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      },
+      "owned_claim_ids": [
+        "owned"
+      ],
+      "claim_cost_scope": "Direct creditor workout cost in separate observed ledger; no additional estate realization cost in allocation ledger"
+    }
+  },
+  "cure_training": {
+    "calendar_origin": "2023-01-01",
+    "observation_end": "2023-04-01",
+    "training": {
+      "data_fingerprint": "independent-retail-defaulted-cohort-2023",
+      "split_id": "prior-train",
+      "known_at": "2023-04-02"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 90,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "defaulted_episode"
+    },
+    "rows": [
+      {
+        "entity_id": "prior-A",
+        "start": 0,
+        "stop": 30,
+        "from_state": "D",
+        "to_state": "C"
+      },
+      {
+        "entity_id": "prior-A",
+        "start": 30,
+        "stop": 60,
+        "from_state": "C",
+        "to_state": "D"
+      },
+      {
+        "entity_id": "prior-A",
+        "start": 60,
+        "stop": 90,
+        "from_state": "D",
+        "to_state": null
+      },
+      {
+        "entity_id": "prior-B",
+        "start": 0,
+        "stop": 90,
+        "from_state": "D",
+        "to_state": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,2447 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1.0",
+  "scope": "Independent historical asset-specific residual settlement fits with censored workouts; flat discount diagnostic of ultimate recovery only",
+  "journeys": [
+    {
+      "product": "COMMERCIAL_REAL_ESTATE",
+      "case_id": "commercial_real_estate-income_producing",
+      "fit": {
+        "episodes": [
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-0",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-16",
+            "resolution_known_at": "2018-01-16",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-1",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-19",
+            "resolution_known_at": "2018-01-19",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-2",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-22",
+            "resolution_known_at": "2018-01-22",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-3",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-25",
+            "resolution_known_at": "2018-01-25",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-4",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-28",
+            "resolution_known_at": "2018-01-28",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-5",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-31",
+            "resolution_known_at": "2018-01-31",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-6",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-03",
+            "resolution_known_at": "2018-02-03",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-7",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-06",
+            "resolution_known_at": "2018-02-06",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-8",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-09",
+            "resolution_known_at": "2018-02-09",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-9",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-12",
+            "resolution_known_at": "2018-02-12",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-10",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-15",
+            "resolution_known_at": "2018-02-15",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-11",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-18",
+            "resolution_known_at": "2018-02-18",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-12",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-13",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-14",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-15",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-8",
+            "cashflow_id": "commercial_real_estate-income_producing-training-workout-8-sale",
+            "cashflow_date": "2018-02-09",
+            "known_at": "2018-02-09",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 35.55927459272246
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-9",
+            "cashflow_id": "commercial_real_estate-income_producing-training-workout-9-sale",
+            "cashflow_date": "2018-02-12",
+            "known_at": "2018-02-12",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 43.43219606572606
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-10",
+            "cashflow_id": "commercial_real_estate-income_producing-training-workout-10-sale",
+            "cashflow_date": "2018-02-15",
+            "known_at": "2018-02-15",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 53.04820406763109
+          },
+          {
+            "episode_id": "commercial_real_estate-income_producing-training-workout-11",
+            "cashflow_id": "commercial_real_estate-income_producing-training-workout-11-sale",
+            "cashflow_date": "2018-02-18",
+            "known_at": "2018-02-18",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 64.79322276364815
+          }
+        ],
+        "X_train": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "feature_order": [],
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "commercial_real_estate-income_producing residual terminal asset settlement stage"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "commercial_real_estate-income_producing-observed-residual-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "model_id": "commercial_real_estate-income_producing-residual-workout",
+        "model_version": "1",
+        "currency": "EUR"
+      },
+      "inference": {
+        "episodes": [
+          {
+            "episode_id": "commercial_real_estate-income_producing-open",
+            "default_date": "2024-05-01",
+            "default_known_at": "2024-05-02",
+            "reference_date": "2024-06-01",
+            "reference_known_at": "2024-06-01",
+            "features_observed_at": "2024-06-01",
+            "features_known_at": "2024-06-01",
+            "currency": "EUR",
+            "ead_at_default": 110.00000000000001,
+            "residual_exposure_at_reference": 99.00000000000001,
+            "observation_end": "2024-06-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "commercial_real_estate-income_producing-open",
+            "cashflow_id": "interim-recovery",
+            "cashflow_date": "2024-05-15",
+            "known_at": "2024-05-16",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 11.000000000000002
+          }
+        ],
+        "X": [
+          []
+        ],
+        "valuation_contracts": [
+          {
+            "episode_id": "commercial_real_estate-income_producing-open",
+            "discount_curve": {
+              "anchor_date": "2024-05-01",
+              "known_at": "2024-06-01",
+              "discount_basis": "Declared zero discount curve and flat tail",
+              "points": [
+                {
+                  "cashflow_date": "2024-05-15",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-07-01",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-12-01",
+                  "discount_factor": 1
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2024-06-01",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2024-05-15",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-07-01",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-12-01",
+                  "rate": 1
+                }
+              ]
+            },
+            "future_resolution_dates": [
+              "2024-07-01",
+              "2024-12-01"
+            ],
+            "resolution_time_convention": "RIGHT_ENDPOINT",
+            "tail_discount_factor": 1,
+            "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+            "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+          }
+        ],
+        "future_cost_cashflows": [],
+        "feature_order": [],
+        "expected_target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "commercial_real_estate-income_producing residual terminal asset settlement stage"
+        },
+        "as_of": "2024-06-01",
+        "currency": "EUR",
+        "extrapolation": "parametric"
+      },
+      "reference": {
+        "positive_ratio_scale": 0.6,
+        "positive_log_variance": 0.05,
+        "cure_probability": 0.3333333333333333,
+        "positive_given_no_cure_probability": 0.5,
+        "expected_final_lgd": 0.4154432783056028
+      }
+    },
+    {
+      "product": "PROJECT_FINANCE",
+      "case_id": "project_finance-operating",
+      "fit": {
+        "episodes": [
+          {
+            "episode_id": "project_finance-operating-training-workout-0",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-31",
+            "resolution_known_at": "2018-01-31",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-1",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-06",
+            "resolution_known_at": "2018-02-06",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-2",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-12",
+            "resolution_known_at": "2018-02-12",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-3",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-18",
+            "resolution_known_at": "2018-02-18",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-4",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-24",
+            "resolution_known_at": "2018-02-24",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-5",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-02",
+            "resolution_known_at": "2018-03-02",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-6",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-08",
+            "resolution_known_at": "2018-03-08",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-7",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-14",
+            "resolution_known_at": "2018-03-14",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-8",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-20",
+            "resolution_known_at": "2018-03-20",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-9",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-26",
+            "resolution_known_at": "2018-03-26",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-10",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-01",
+            "resolution_known_at": "2018-04-01",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-11",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-07",
+            "resolution_known_at": "2018-04-07",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-12",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-13",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-14",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-15",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "project_finance-operating-training-workout-8",
+            "cashflow_id": "project_finance-operating-training-workout-8-sale",
+            "cashflow_date": "2018-03-20",
+            "known_at": "2018-03-20",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 41.4858203581762
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-9",
+            "cashflow_id": "project_finance-operating-training-workout-9-sale",
+            "cashflow_date": "2018-03-26",
+            "known_at": "2018-03-26",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 50.670895410013735
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-10",
+            "cashflow_id": "project_finance-operating-training-workout-10-sale",
+            "cashflow_date": "2018-04-01",
+            "known_at": "2018-04-01",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 61.88957141223627
+          },
+          {
+            "episode_id": "project_finance-operating-training-workout-11",
+            "cashflow_id": "project_finance-operating-training-workout-11-sale",
+            "cashflow_date": "2018-04-07",
+            "known_at": "2018-04-07",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 75.59209322425617
+          }
+        ],
+        "X_train": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "feature_order": [],
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "project_finance-operating residual terminal asset settlement stage"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "project_finance-operating-observed-residual-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "model_id": "project_finance-operating-residual-workout",
+        "model_version": "1",
+        "currency": "EUR"
+      },
+      "inference": {
+        "episodes": [
+          {
+            "episode_id": "project_finance-operating-open",
+            "default_date": "2024-05-01",
+            "default_known_at": "2024-05-02",
+            "reference_date": "2024-06-01",
+            "reference_known_at": "2024-06-01",
+            "features_observed_at": "2024-06-01",
+            "features_known_at": "2024-06-01",
+            "currency": "EUR",
+            "ead_at_default": 110.00000000000001,
+            "residual_exposure_at_reference": 99.00000000000001,
+            "observation_end": "2024-06-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "project_finance-operating-open",
+            "cashflow_id": "interim-recovery",
+            "cashflow_date": "2024-05-15",
+            "known_at": "2024-05-16",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 11.000000000000002
+          }
+        ],
+        "X": [
+          []
+        ],
+        "valuation_contracts": [
+          {
+            "episode_id": "project_finance-operating-open",
+            "discount_curve": {
+              "anchor_date": "2024-05-01",
+              "known_at": "2024-06-01",
+              "discount_basis": "Declared zero discount curve and flat tail",
+              "points": [
+                {
+                  "cashflow_date": "2024-05-15",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-07-01",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-12-01",
+                  "discount_factor": 1
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2024-06-01",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2024-05-15",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-07-01",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-12-01",
+                  "rate": 1
+                }
+              ]
+            },
+            "future_resolution_dates": [
+              "2024-07-01",
+              "2024-12-01"
+            ],
+            "resolution_time_convention": "RIGHT_ENDPOINT",
+            "tail_discount_factor": 1,
+            "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+            "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+          }
+        ],
+        "future_cost_cashflows": [],
+        "feature_order": [],
+        "expected_target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "project_finance-operating residual terminal asset settlement stage"
+        },
+        "as_of": "2024-06-01",
+        "currency": "EUR",
+        "extrapolation": "parametric"
+      },
+      "reference": {
+        "positive_ratio_scale": 0.7,
+        "positive_log_variance": 0.05,
+        "cure_probability": 0.3333333333333333,
+        "positive_given_no_cure_probability": 0.5,
+        "expected_final_lgd": 0.38468382468986995
+      }
+    },
+    {
+      "product": "AIRCRAFT_FINANCE",
+      "case_id": "aircraft_finance-single_aircraft",
+      "fit": {
+        "episodes": [
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-0",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-15",
+            "resolution_known_at": "2018-02-15",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-1",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-24",
+            "resolution_known_at": "2018-02-24",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-2",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-04",
+            "resolution_known_at": "2018-03-04",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-3",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-14",
+            "resolution_known_at": "2018-03-14",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-4",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-23",
+            "resolution_known_at": "2018-03-23",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-5",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-01",
+            "resolution_known_at": "2018-04-01",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-6",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-10",
+            "resolution_known_at": "2018-04-10",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-7",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-19",
+            "resolution_known_at": "2018-04-19",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-8",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-28",
+            "resolution_known_at": "2018-04-28",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-9",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-05-06",
+            "resolution_known_at": "2018-05-06",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-10",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-05-16",
+            "resolution_known_at": "2018-05-16",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-11",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-05-25",
+            "resolution_known_at": "2018-05-25",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-12",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-13",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-14",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-15",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-8",
+            "cashflow_id": "aircraft_finance-single_aircraft-training-workout-8-sale",
+            "cashflow_date": "2018-04-28",
+            "known_at": "2018-04-28",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 32.59600170999558
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-9",
+            "cashflow_id": "aircraft_finance-single_aircraft-training-workout-9-sale",
+            "cashflow_date": "2018-05-06",
+            "known_at": "2018-05-06",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 39.81284639358222
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-10",
+            "cashflow_id": "aircraft_finance-single_aircraft-training-workout-10-sale",
+            "cashflow_date": "2018-05-16",
+            "known_at": "2018-05-16",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 48.6275203953285
+          },
+          {
+            "episode_id": "aircraft_finance-single_aircraft-training-workout-11",
+            "cashflow_id": "aircraft_finance-single_aircraft-training-workout-11-sale",
+            "cashflow_date": "2018-05-25",
+            "known_at": "2018-05-25",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 59.39378753334414
+          }
+        ],
+        "X_train": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "feature_order": [],
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "aircraft_finance-single_aircraft residual terminal asset settlement stage"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "aircraft_finance-single_aircraft-observed-residual-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "model_id": "aircraft_finance-single_aircraft-residual-workout",
+        "model_version": "1",
+        "currency": "EUR"
+      },
+      "inference": {
+        "episodes": [
+          {
+            "episode_id": "aircraft_finance-single_aircraft-open",
+            "default_date": "2024-05-01",
+            "default_known_at": "2024-05-02",
+            "reference_date": "2024-06-01",
+            "reference_known_at": "2024-06-01",
+            "features_observed_at": "2024-06-01",
+            "features_known_at": "2024-06-01",
+            "currency": "EUR",
+            "ead_at_default": 77.0,
+            "residual_exposure_at_reference": 69.3,
+            "observation_end": "2024-06-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "aircraft_finance-single_aircraft-open",
+            "cashflow_id": "interim-recovery",
+            "cashflow_date": "2024-05-15",
+            "known_at": "2024-05-16",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 7.7
+          }
+        ],
+        "X": [
+          []
+        ],
+        "valuation_contracts": [
+          {
+            "episode_id": "aircraft_finance-single_aircraft-open",
+            "discount_curve": {
+              "anchor_date": "2024-05-01",
+              "known_at": "2024-06-01",
+              "discount_basis": "Declared zero discount curve and flat tail",
+              "points": [
+                {
+                  "cashflow_date": "2024-05-15",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-07-01",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-12-01",
+                  "discount_factor": 1
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2024-06-01",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2024-05-15",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-07-01",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-12-01",
+                  "rate": 1
+                }
+              ]
+            },
+            "future_resolution_dates": [
+              "2024-07-01",
+              "2024-12-01"
+            ],
+            "resolution_time_convention": "RIGHT_ENDPOINT",
+            "tail_discount_factor": 1,
+            "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+            "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+          }
+        ],
+        "future_cost_cashflows": [],
+        "feature_order": [],
+        "expected_target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "aircraft_finance-single_aircraft residual terminal asset settlement stage"
+        },
+        "as_of": "2024-06-01",
+        "currency": "EUR",
+        "extrapolation": "parametric"
+      },
+      "reference": {
+        "positive_ratio_scale": 0.55,
+        "positive_log_variance": 0.05,
+        "cure_probability": 0.3333333333333333,
+        "positive_given_no_cure_probability": 0.5,
+        "expected_final_lgd": 0.43082300511346927
+      }
+    },
+    {
+      "product": "SHIP_FINANCE",
+      "case_id": "ship_finance-time_charter",
+      "fit": {
+        "episodes": [
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-0",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-02",
+            "resolution_known_at": "2018-03-02",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-1",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-14",
+            "resolution_known_at": "2018-03-14",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-2",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-26",
+            "resolution_known_at": "2018-03-26",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-3",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-07",
+            "resolution_known_at": "2018-04-07",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-4",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-04-19",
+            "resolution_known_at": "2018-04-19",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-5",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-05-01",
+            "resolution_known_at": "2018-05-01",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-6",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-05-13",
+            "resolution_known_at": "2018-05-13",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-7",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-05-25",
+            "resolution_known_at": "2018-05-25",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-8",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-06-06",
+            "resolution_known_at": "2018-06-06",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-9",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-06-18",
+            "resolution_known_at": "2018-06-18",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-10",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-06-30",
+            "resolution_known_at": "2018-06-30",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-11",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-07-12",
+            "resolution_known_at": "2018-07-12",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-12",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-13",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-14",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-15",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-8",
+            "cashflow_id": "ship_finance-time_charter-training-workout-8-sale",
+            "cashflow_date": "2018-06-06",
+            "known_at": "2018-06-06",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 29.632728827268714
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-9",
+            "cashflow_id": "ship_finance-time_charter-training-workout-9-sale",
+            "cashflow_date": "2018-06-18",
+            "known_at": "2018-06-18",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 36.19349672143838
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-10",
+            "cashflow_id": "ship_finance-time_charter-training-workout-10-sale",
+            "cashflow_date": "2018-06-30",
+            "known_at": "2018-06-30",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 44.20683672302591
+          },
+          {
+            "episode_id": "ship_finance-time_charter-training-workout-11",
+            "cashflow_id": "ship_finance-time_charter-training-workout-11-sale",
+            "cashflow_date": "2018-07-12",
+            "known_at": "2018-07-12",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 53.99435230304013
+          }
+        ],
+        "X_train": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "feature_order": [],
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "ship_finance-time_charter residual terminal asset settlement stage"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "ship_finance-time_charter-observed-residual-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "model_id": "ship_finance-time_charter-residual-workout",
+        "model_version": "1",
+        "currency": "EUR"
+      },
+      "inference": {
+        "episodes": [
+          {
+            "episode_id": "ship_finance-time_charter-open",
+            "default_date": "2024-05-01",
+            "default_known_at": "2024-05-02",
+            "reference_date": "2024-06-01",
+            "reference_known_at": "2024-06-01",
+            "features_observed_at": "2024-06-01",
+            "features_known_at": "2024-06-01",
+            "currency": "EUR",
+            "ead_at_default": 71.5,
+            "residual_exposure_at_reference": 64.35000000000001,
+            "observation_end": "2024-06-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "ship_finance-time_charter-open",
+            "cashflow_id": "interim-recovery",
+            "cashflow_date": "2024-05-15",
+            "known_at": "2024-05-16",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 7.15
+          }
+        ],
+        "X": [
+          []
+        ],
+        "valuation_contracts": [
+          {
+            "episode_id": "ship_finance-time_charter-open",
+            "discount_curve": {
+              "anchor_date": "2024-05-01",
+              "known_at": "2024-06-01",
+              "discount_basis": "Declared zero discount curve and flat tail",
+              "points": [
+                {
+                  "cashflow_date": "2024-05-15",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-07-01",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-12-01",
+                  "discount_factor": 1
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2024-06-01",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2024-05-15",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-07-01",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-12-01",
+                  "rate": 1
+                }
+              ]
+            },
+            "future_resolution_dates": [
+              "2024-07-01",
+              "2024-12-01"
+            ],
+            "resolution_time_convention": "RIGHT_ENDPOINT",
+            "tail_discount_factor": 1,
+            "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+            "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+          }
+        ],
+        "future_cost_cashflows": [],
+        "feature_order": [],
+        "expected_target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "ship_finance-time_charter residual terminal asset settlement stage"
+        },
+        "as_of": "2024-06-01",
+        "currency": "EUR",
+        "extrapolation": "parametric"
+      },
+      "reference": {
+        "positive_ratio_scale": 0.5,
+        "positive_log_variance": 0.05,
+        "cure_probability": 0.3333333333333333,
+        "positive_given_no_cure_probability": 0.5,
+        "expected_final_lgd": 0.44620273192133564
+      }
+    },
+    {
+      "product": "EQUIPMENT_LEASING",
+      "case_id": "equipment_leasing-single_lease",
+      "fit": {
+        "episodes": [
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-0",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-23",
+            "resolution_known_at": "2018-01-23",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-1",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-01-28",
+            "resolution_known_at": "2018-01-28",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-2",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-01",
+            "resolution_known_at": "2018-02-01",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-3",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-06",
+            "resolution_known_at": "2018-02-06",
+            "cured": 1,
+            "cure_value": 80
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-4",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-10",
+            "resolution_known_at": "2018-02-10",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-5",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-15",
+            "resolution_known_at": "2018-02-15",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-6",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-19",
+            "resolution_known_at": "2018-02-19",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-7",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-24",
+            "resolution_known_at": "2018-02-24",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-8",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-02-28",
+            "resolution_known_at": "2018-02-28",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-9",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-04",
+            "resolution_known_at": "2018-03-04",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-10",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-09",
+            "resolution_known_at": "2018-03-09",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-11",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": "2018-03-14",
+            "resolution_known_at": "2018-03-14",
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-12",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-13",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-14",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-15",
+            "default_date": "2017-12-01",
+            "default_known_at": "2017-12-01",
+            "reference_date": "2018-01-01",
+            "reference_known_at": "2018-01-01",
+            "features_observed_at": "2018-01-01",
+            "features_known_at": "2018-01-01",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "residual_exposure_at_reference": 80,
+            "observation_end": "2018-12-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-8",
+            "cashflow_id": "equipment_leasing-single_lease-training-workout-8-sale",
+            "cashflow_date": "2018-02-28",
+            "known_at": "2018-02-28",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 23.706183061814972
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-9",
+            "cashflow_id": "equipment_leasing-single_lease-training-workout-9-sale",
+            "cashflow_date": "2018-03-04",
+            "known_at": "2018-03-04",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 28.954797377150705
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-10",
+            "cashflow_id": "equipment_leasing-single_lease-training-workout-10-sale",
+            "cashflow_date": "2018-03-09",
+            "known_at": "2018-03-09",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 35.36546937842073
+          },
+          {
+            "episode_id": "equipment_leasing-single_lease-training-workout-11",
+            "cashflow_id": "equipment_leasing-single_lease-training-workout-11-sale",
+            "cashflow_date": "2018-03-14",
+            "known_at": "2018-03-14",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 43.1954818424321
+          }
+        ],
+        "X_train": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "feature_order": [],
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "equipment_leasing-single_lease residual terminal asset settlement stage"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "equipment_leasing-single_lease-observed-residual-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "model_id": "equipment_leasing-single_lease-residual-workout",
+        "model_version": "1",
+        "currency": "EUR"
+      },
+      "inference": {
+        "episodes": [
+          {
+            "episode_id": "equipment_leasing-single_lease-open",
+            "default_date": "2024-05-01",
+            "default_known_at": "2024-05-02",
+            "reference_date": "2024-06-01",
+            "reference_known_at": "2024-06-01",
+            "features_observed_at": "2024-06-01",
+            "features_known_at": "2024-06-01",
+            "currency": "EUR",
+            "ead_at_default": 44.0,
+            "residual_exposure_at_reference": 39.6,
+            "observation_end": "2024-06-01",
+            "resolution_date": null,
+            "resolution_known_at": null,
+            "cured": 0,
+            "cure_value": 0
+          }
+        ],
+        "cashflows": [
+          {
+            "episode_id": "equipment_leasing-single_lease-open",
+            "cashflow_id": "interim-recovery",
+            "cashflow_date": "2024-05-15",
+            "known_at": "2024-05-16",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 4.4
+          }
+        ],
+        "X": [
+          []
+        ],
+        "valuation_contracts": [
+          {
+            "episode_id": "equipment_leasing-single_lease-open",
+            "discount_curve": {
+              "anchor_date": "2024-05-01",
+              "known_at": "2024-06-01",
+              "discount_basis": "Declared zero discount curve and flat tail",
+              "points": [
+                {
+                  "cashflow_date": "2024-05-15",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-07-01",
+                  "discount_factor": 1
+                },
+                {
+                  "cashflow_date": "2024-12-01",
+                  "discount_factor": 1
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2024-06-01",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2024-05-15",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-07-01",
+                  "rate": 1
+                },
+                {
+                  "currency": "EUR",
+                  "date": "2024-12-01",
+                  "rate": 1
+                }
+              ]
+            },
+            "future_resolution_dates": [
+              "2024-07-01",
+              "2024-12-01"
+            ],
+            "resolution_time_convention": "RIGHT_ENDPOINT",
+            "tail_discount_factor": 1,
+            "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+            "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+          }
+        ],
+        "future_cost_cashflows": [],
+        "feature_order": [],
+        "expected_target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "stage_spec": {
+          "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+          "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+          "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+          "positive_distribution": "lognormal",
+          "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+          "payout_horizon": "ULTIMATE",
+          "timing_distribution": "weibull",
+          "cure_residual_value_ratio": 1.0,
+          "landmark_definition": "equipment_leasing-single_lease residual terminal asset settlement stage"
+        },
+        "as_of": "2024-06-01",
+        "currency": "EUR",
+        "extrapolation": "parametric"
+      },
+      "reference": {
+        "positive_ratio_scale": 0.4,
+        "positive_log_variance": 0.05,
+        "cure_probability": 0.3333333333333333,
+        "positive_given_no_cure_probability": 0.5,
+        "expected_final_lgd": 0.4769621855370686
+      }
+    }
+  ]
+}

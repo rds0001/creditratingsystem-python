@@ -1,0 +1,21 @@
+# Public-service finance: purpose restrictions and applicable credit signals
+
+Run `examples/wholesale_public_service.py`, or source the native R example and call `run_wholesale_public_service()`. Both functions accept `data`, `verify_reference` (true by default), and `return_fitted_models` (false). The last option retains the actual fitted scorecards, calibrators, predictions, structural inversion and empirical distance calibration before reporting quantization. All amounts, support conditions, market inputs and legal-purpose restrictions are synthetic and openly specified in `wholesale_public_service.json`. This is economic component evidence, not a completed monitored lifecycle.
+
+| Variant | Baseline service cash generation | Restricted project grant / capex | Baseline / stress debt gap |
+| --- | --- | --- | --- |
+| Housing association | 90 occupied units × 1 rent, less 55 operating cost | 20 / 10 | 5 / 25 |
+| Education/health | 80 service units × 0.5 plus 30 general grant, less 50 cost | 25 / 15 | 5 / 15 |
+| Utility | 100 units × 0.8 tariff, less 50 cost and 10 unfunded capex | 10 / 20 | 0 / 15 |
+
+Amounts are EUR in a common synthetic scale; quantities and receipts cover a quarter. The financial ratio uses a historical December–March quarter with the same baseline service budget. The subsequent March–June projection maintains that baseline or applies the named stress. Housing occupancy falls to 70; education/health service demand falls to 60; the utility tariff falls to 0.6. These drivers do not substitute a generic corporate margin for service economics.
+
+Restricted grants fund only eligible project capex, once. Remaining restricted balances of 10, 10 and zero are excluded from unrestricted opening cash and general debt service. The cashflow model receives only the unfunded capex portion; the separate restricted source/use ledger records the rest. CFADS and the dated cash waterfall therefore reconcile without counting the grant twice. General operating grants are already included in the service cashflows and do not create a second support benefit.
+
+The credit feature is debt service divided by unrestricted CFADS. A declared fixed transformation `2*(ratio-1)` feeds genuine frequency-weighted scorecard fits; grouped endpoint probabilities independently determine each interpolation. Separate holdout cohorts fit logistic calibration. Raw probabilities are checked within 1e-7 before six-decimal PD reporting. This is an explicit reference output convention; raw model hashes from independent fits need not agree.
+
+Housing and education/health have no invented market information and use fundamental-only branches. The listed utility also inverts synthetic equity value/volatility to asset value 100 and volatility 0.2. Physical drift 0.1 and debt 80 imply distance `(log(100/80)+0.08)/0.2`; the physical terminal PD is its lower normal tail. Independent observed default counts fit a decreasing isotonic distance map with a left-constant step on [1,2), giving empirical PD 0.2. That empirical PD differs from structural physical PD; risk-neutral PD is never silently substituted. A declared 70/30 estimator pool combines calibrated fundamental and empirical distance signals. Market outputs use eight decimal places for reporting only, after raw analytical checks. Full raw outputs remain available.
+
+Discretionary rescue has explicitly separate capacity, willingness, success and legal permission. Education/health support is prohibited in this reference contract and changes no PD. The other branches apply a 40% conditional rescue success only in eligible parent-survival states, with an explicit joint default probability. These assumptions are neither unconditional guarantees nor empirically estimated effects. Routing requires product, borrower class, variant, legal claim, cashflow type and market applicability; missing rights produce no route. Incompatible cashflow or restricted-purpose contracts fail even with reference verification disabled.
+
+Public frozen loaders reproduce both native and Python scorecards/calibrators through both languages below 1e-12. The utility's sealed empirical mapping also replays independently. The default tests execute all three real fits and independent cash, market and legal-permission checks.

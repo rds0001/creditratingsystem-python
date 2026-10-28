@@ -1,0 +1,130 @@
+{
+  "data_origin": "SYNTHETIC",
+  "lineage_config": {
+    "origin": "SYNTHETIC",
+    "left_schema": {
+      "version": "1.0",
+      "columns": {
+        "record_id": {
+          "type": "string"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "date"
+        },
+        "known_at": {
+          "type": "date"
+        },
+        "balance": {
+          "type": "number",
+          "unit": "EUR"
+        }
+      },
+      "primary_key": "record_id"
+    },
+    "right_schema": {
+      "version": "1.0",
+      "columns": {
+        "entity_id": {
+          "type": "string"
+        },
+        "release_id": {
+          "type": "string"
+        },
+        "observed_at": {
+          "type": "date"
+        },
+        "available_at": {
+          "type": "date"
+        },
+        "x": {
+          "type": "number",
+          "unit": "score"
+        }
+      },
+      "primary_key": "release_id"
+    },
+    "controls": {
+      "product_ids": [
+        "CO-001",
+        "revolver-working_capital_line",
+        "leveraged-covenant_lite"
+      ],
+      "record_ids": [
+        "CO-001-source",
+        "revolver-working_capital_line-source",
+        "leveraged-covenant_lite-source"
+      ],
+      "total_weight": 3,
+      "total_balance": 200.0
+    },
+    "cutoffs": [
+      {
+        "name": "origination",
+        "known_at": "2024-01-01",
+        "revision": "initial"
+      }
+    ],
+    "vintage": "2024-01"
+  },
+  "cases": [
+    {
+      "case_id": "CO-001",
+      "product": "CORPORATE_LOAN_BOND",
+      "model_resource": "wholesale_corporate_journey_model.json",
+      "claim_ids": [
+        "claim-1"
+      ],
+      "source_balance": 80,
+      "source_feature": 2,
+      "observed_resource": "wholesale_corporate_lifecycle.json",
+      "target": {
+        "event": "default",
+        "horizon": 365,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      }
+    },
+    {
+      "case_id": "revolver-working_capital_line",
+      "product": "CORPORATE_REVOLVING_COMMITMENT",
+      "model_resource": "wholesale_revolver_history_model.json",
+      "claim_ids": [
+        "revolver-working_capital_line"
+      ],
+      "source_balance": 0,
+      "source_feature": 2,
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      }
+    },
+    {
+      "case_id": "leveraged-covenant_lite",
+      "product": "LEVERAGED_LOAN",
+      "model_resource": "wholesale_leveraged_history_model.json",
+      "claim_ids": [
+        "leveraged-covenant_lite"
+      ],
+      "source_balance": 120,
+      "source_feature": 6.0,
+      "target": {
+        "event": "default",
+        "horizon": 2,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      }
+    }
+  ],
+  "scope": "Three separate actual historical populations: corporate365days, active zero-drawn revolver30days and leveraged731days; no pooling or pseudo-labels"
+}

@@ -1,0 +1,198 @@
+{
+  "origin": "SYNTHETIC",
+  "left_schema": {
+    "version": "1.0",
+    "columns": {
+      "record_id": {
+        "type": "string"
+      },
+      "entity_id": {
+        "type": "string"
+      },
+      "product_id": {
+        "type": "string"
+      },
+      "as_of": {
+        "type": "date"
+      },
+      "known_at": {
+        "type": "date"
+      },
+      "balance": {
+        "type": "number",
+        "unit": "EUR"
+      }
+    },
+    "primary_key": "record_id"
+  },
+  "right_schema": {
+    "version": "1.0",
+    "columns": {
+      "entity_id": {
+        "type": "string"
+      },
+      "release_id": {
+        "type": "string"
+      },
+      "observed_at": {
+        "type": "date"
+      },
+      "available_at": {
+        "type": "date"
+      },
+      "income": {
+        "type": "number",
+        "unit": "EUR"
+      }
+    },
+    "primary_key": "release_id"
+  },
+  "controls": {
+    "record_ids": [
+      "RETAIL_RESIDENTIAL_MORTGAGE-account",
+      "RETAIL_HOME_EQUITY_LINE-account",
+      "RETAIL_UNSECURED_INSTALLMENT-account",
+      "RETAIL_EDUCATION_LOAN-account",
+      "RETAIL_AUTO_LOAN-account",
+      "RETAIL_AUTO_LEASE-account",
+      "RETAIL_CREDIT_CARD-account",
+      "RETAIL_CHARGE_CARD-account",
+      "RETAIL_OVERDRAFT-account",
+      "RETAIL_BNPL-account",
+      "RETAIL_MICRO_LOAN-account",
+      "RETAIL_SMALL_BUSINESS_FINANCE-account",
+      "CORPORATE_LOAN_BOND-account",
+      "CORPORATE_REVOLVING_COMMITMENT-account",
+      "LEVERAGED_LOAN-account",
+      "FINANCIAL_INSTITUTION_EXPOSURE-account",
+      "INSURER_EXPOSURE-account",
+      "FUND_FINANCE-account",
+      "SOVEREIGN_DEBT-account",
+      "PUBLIC_SECTOR_DEBT-account",
+      "SUPRANATIONAL_DEBT-account",
+      "PUBLIC_SERVICE_FINANCE-account",
+      "COMMERCIAL_REAL_ESTATE-account",
+      "PROJECT_FINANCE-account",
+      "AIRCRAFT_FINANCE-account",
+      "SHIP_FINANCE-account",
+      "EQUIPMENT_LEASING-account",
+      "TRADE_RECEIVABLES-account",
+      "SECURITIZATION_TRANCHE-account",
+      "COVERED_BOND-account",
+      "COUNTERPARTY_EXPOSURE-account"
+    ],
+    "total_weight": 31,
+    "total_balance": 49600,
+    "product_ids": [
+      "RETAIL_RESIDENTIAL_MORTGAGE",
+      "RETAIL_HOME_EQUITY_LINE",
+      "RETAIL_UNSECURED_INSTALLMENT",
+      "RETAIL_EDUCATION_LOAN",
+      "RETAIL_AUTO_LOAN",
+      "RETAIL_AUTO_LEASE",
+      "RETAIL_CREDIT_CARD",
+      "RETAIL_CHARGE_CARD",
+      "RETAIL_OVERDRAFT",
+      "RETAIL_BNPL",
+      "RETAIL_MICRO_LOAN",
+      "RETAIL_SMALL_BUSINESS_FINANCE",
+      "CORPORATE_LOAN_BOND",
+      "CORPORATE_REVOLVING_COMMITMENT",
+      "LEVERAGED_LOAN",
+      "FINANCIAL_INSTITUTION_EXPOSURE",
+      "INSURER_EXPOSURE",
+      "FUND_FINANCE",
+      "SOVEREIGN_DEBT",
+      "PUBLIC_SECTOR_DEBT",
+      "SUPRANATIONAL_DEBT",
+      "PUBLIC_SERVICE_FINANCE",
+      "COMMERCIAL_REAL_ESTATE",
+      "PROJECT_FINANCE",
+      "AIRCRAFT_FINANCE",
+      "SHIP_FINANCE",
+      "EQUIPMENT_LEASING",
+      "TRADE_RECEIVABLES",
+      "SECURITIZATION_TRANCHE",
+      "COVERED_BOND",
+      "COUNTERPARTY_EXPOSURE"
+    ]
+  },
+  "cutoffs": [
+    {
+      "name": "original",
+      "known_at": "2025-01-15",
+      "revision": "original",
+      "expected_income": [
+        1010,
+        1020,
+        1030,
+        1040,
+        1050,
+        1060,
+        1070,
+        1080,
+        1090,
+        1100,
+        1110,
+        1120,
+        1130,
+        1140,
+        1150,
+        1160,
+        1170,
+        1180,
+        1190,
+        1200,
+        1210,
+        1220,
+        1230,
+        1240,
+        1250,
+        1260,
+        1270,
+        1280,
+        1290,
+        1300,
+        1310
+      ]
+    },
+    {
+      "name": "corrected",
+      "known_at": "2025-02-15",
+      "revision": "correction",
+      "expected_income": [
+        1110,
+        1120,
+        1130,
+        1140,
+        1150,
+        1160,
+        1170,
+        1180,
+        1190,
+        1200,
+        1210,
+        1220,
+        1230,
+        1240,
+        1250,
+        1260,
+        1270,
+        1280,
+        1290,
+        1300,
+        1310,
+        1320,
+        1330,
+        1340,
+        1350,
+        1360,
+        1370,
+        1380,
+        1390,
+        1400,
+        1410
+      ]
+    }
+  ]
+}

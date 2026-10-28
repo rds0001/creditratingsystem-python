@@ -1,0 +1,320 @@
+{
+  "schema_version": "1.0",
+  "world_type": "retail_reference_world",
+  "generator_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "specification": {
+    "tier": "tiny",
+    "dgp_family": "misspecified",
+    "selection_mechanism": "MNAR",
+    "start_date": "2000-01-01",
+    "observation_cutoff": "2026-01-01"
+  },
+  "innovation_manifest_hash": "65563ec95592289a24303f2200255211f00d6611fb5a2efcb6464a57cc064859",
+  "chunk_rows": 1000,
+  "memory_budget_mb": 256,
+  "estimated_working_mb": 36.128,
+  "layers": [
+    "observable_inputs",
+    "latent_truth",
+    "frozen_predictions",
+    "decision_history",
+    "observed_outcomes"
+  ],
+  "tables": {
+    "observable_inputs/households": {
+      "file": "observable_inputs/households.jsonl.gz",
+      "rows": 160,
+      "columns": [
+        "household_id",
+        "created_at",
+        "known_at",
+        "dependants",
+        "currency"
+      ],
+      "sha256": "fcae41a43bada4e78e36b789afe95dcba2fc0079ca84c891b243ae478517a3ad"
+    },
+    "observable_inputs/persons": {
+      "file": "observable_inputs/persons.jsonl.gz",
+      "rows": 240,
+      "columns": [
+        "person_id",
+        "household_id",
+        "birth_year",
+        "employment",
+        "known_at"
+      ],
+      "sha256": "3f681e47017832991b2b9a14c6ab1fb01cfacb304f2687a837d88859bb1bf756"
+    },
+    "observable_inputs/household_memberships": {
+      "file": "observable_inputs/household_memberships.jsonl.gz",
+      "rows": 240,
+      "columns": [
+        "membership_id",
+        "person_id",
+        "household_id",
+        "valid_from",
+        "valid_to",
+        "known_at"
+      ],
+      "sha256": "f5d2bfa787b39b67b1a414ac12a4d60e8dc31ada3db033c073b0af11ca94267d"
+    },
+    "observable_inputs/applications": {
+      "file": "observable_inputs/applications.jsonl.gz",
+      "rows": 320,
+      "columns": [
+        "application_id",
+        "person_id",
+        "household_id",
+        "product",
+        "application_at",
+        "known_at",
+        "requested_amount",
+        "term_months",
+        "currency",
+        "net_monthly_income",
+        "monthly_expenses",
+        "existing_debt_service",
+        "proposed_installment",
+        "income_basis",
+        "income_missing",
+        "entity_split",
+        "time_split",
+        "split"
+      ],
+      "sha256": "e0624c81428869632cb30599768f6c22b806b3bbe6593167a0932e9bf74e4103"
+    },
+    "observable_inputs/application_parties": {
+      "file": "observable_inputs/application_parties.jsonl.gz",
+      "rows": 440,
+      "columns": [
+        "application_id",
+        "person_id",
+        "role",
+        "household_id",
+        "known_at",
+        "joint_and_several"
+      ],
+      "sha256": "d2df32910d62d1274f01449784fe029936665532a7b60681e28e009d928be819"
+    },
+    "observable_inputs/bureau_pulls": {
+      "file": "observable_inputs/bureau_pulls.jsonl.gz",
+      "rows": 320,
+      "columns": [
+        "pull_id",
+        "application_id",
+        "observed_at",
+        "known_at",
+        "no_hit",
+        "thin_file",
+        "stale",
+        "risk_score"
+      ],
+      "sha256": "bf8b0bd1cd4a183ed8c5d10a508897666519b99569663251ed554fb74b43dc81"
+    },
+    "observable_inputs/bureau_revisions": {
+      "file": "observable_inputs/bureau_revisions.jsonl.gz",
+      "rows": 17,
+      "columns": [
+        "revision_id",
+        "pull_id",
+        "observed_at",
+        "known_at",
+        "revised_risk_score",
+        "supersedes",
+        "eligible_at_application"
+      ],
+      "sha256": "6da5a5f110de9e5ffef1aa047e94865ddb182c01b739c9724903002b7484ff6c"
+    },
+    "observable_inputs/transactions": {
+      "file": "observable_inputs/transactions.jsonl.gz",
+      "rows": 5760,
+      "columns": [
+        "transaction_id",
+        "application_id",
+        "household_id",
+        "account_id",
+        "event_at",
+        "known_at",
+        "category",
+        "amount",
+        "currency",
+        "linked_transaction_id"
+      ],
+      "sha256": "eafb0338160a4a6854cacb3dc5aa259fb4417487df80cc1966eb188bfb8b308d"
+    },
+    "frozen_predictions/application_predictions": {
+      "file": "frozen_predictions/application_predictions.jsonl.gz",
+      "rows": 320,
+      "columns": [
+        "application_id",
+        "as_of",
+        "model_version",
+        "pd",
+        "horizon_months",
+        "feature_source"
+      ],
+      "sha256": "41a48209e047eae4f4510b429275400125c1890fd4bea917879473f5fc32f0ab"
+    },
+    "decision_history/decisions": {
+      "file": "decision_history/decisions.jsonl.gz",
+      "rows": 960,
+      "columns": [
+        "decision_id",
+        "application_id",
+        "stage",
+        "decided_at",
+        "policy_version",
+        "result",
+        "account_id",
+        "capacity_exhausted"
+      ],
+      "sha256": "8348315c1de76962c3de3526c401eb5a1f90d74650df079a70d294a7210b9d9a"
+    },
+    "latent_truth/application_parameters": {
+      "file": "latent_truth/application_parameters.jsonl.gz",
+      "rows": 320,
+      "columns": [
+        "application_id",
+        "true_pd",
+        "latent_frailty",
+        "acceptance_probability",
+        "potential_default_mob",
+        "potential_loan_outcome",
+        "observed_income_missing",
+        "missing_mechanism"
+      ],
+      "sha256": "b4967c73b03497935271897554678e429459eb85b2f90eb44c4c6d61e29df0b8"
+    },
+    "observed_outcomes/application_labels": {
+      "file": "observed_outcomes/application_labels.jsonl.gz",
+      "rows": 320,
+      "columns": [
+        "application_id",
+        "account_id",
+        "funded",
+        "window_end",
+        "evaluation_cutoff",
+        "own_loan_default",
+        "censored"
+      ],
+      "sha256": "efa83c7ba4d1268d2dbde8eb82d4b55f0c9d827f6a1f0aed0a774d4c34cc6e03"
+    },
+    "observable_inputs/bureau_tradelines": {
+      "file": "observable_inputs/bureau_tradelines.jsonl.gz",
+      "rows": 876,
+      "columns": [
+        "tradeline_id",
+        "pull_id",
+        "observed_at",
+        "known_at",
+        "balance",
+        "monthly_payment",
+        "status"
+      ],
+      "sha256": "b9f8380c838643e8d7f4897bd7130b341158a4223d1db46f762b5675949b44a1"
+    },
+    "observable_inputs/accounts": {
+      "file": "observable_inputs/accounts.jsonl.gz",
+      "rows": 144,
+      "columns": [
+        "account_id",
+        "application_id",
+        "customer_id",
+        "household_id",
+        "product_id",
+        "opened_at",
+        "known_at",
+        "currency",
+        "original_amount",
+        "credit_limit",
+        "contract_months",
+        "annual_rate",
+        "rate_type",
+        "reset_month",
+        "balloon_amount",
+        "collateral_value",
+        "first_lien_amount"
+      ],
+      "sha256": "8dfe8fd075a83e2b8cadd0b60af74b1c0ddf1ad80681d1a2da08363d44545130"
+    },
+    "observable_inputs/account_months": {
+      "file": "observable_inputs/account_months.jsonl.gz",
+      "rows": 2830,
+      "columns": [
+        "account_id",
+        "observed_at",
+        "known_at",
+        "months_on_book",
+        "opening_balance",
+        "balance",
+        "credit_limit",
+        "principal_draw",
+        "payment",
+        "interest",
+        "recovery_amount",
+        "annual_rate",
+        "scheduled_payment",
+        "days_past_due",
+        "past_due_amount",
+        "state",
+        "active_zero_balance",
+        "currency"
+      ],
+      "sha256": "fe2e6e46b0dc61edc700929d36fa1e3bf0a21545e3f9f176e068377b18244b94"
+    },
+    "observed_outcomes/account_events": {
+      "file": "observed_outcomes/account_events.jsonl.gz",
+      "rows": 126,
+      "columns": [
+        "event_id",
+        "account_id",
+        "event_at",
+        "known_at",
+        "event_type",
+        "amount"
+      ],
+      "sha256": "0403205ab571fe9356433ddea73038f0be7e8775feaccdea48b476905aa4b38b"
+    },
+    "observed_outcomes/collections": {
+      "file": "observed_outcomes/collections.jsonl.gz",
+      "rows": 415,
+      "columns": [
+        "episode_id",
+        "account_id",
+        "event_at",
+        "known_at",
+        "months_since_default",
+        "action",
+        "recovery_amount",
+        "cost_amount",
+        "currency",
+        "open"
+      ],
+      "sha256": "ec24091f35500389299bc9221ce4e55f42b53a1ce7ed523bbe6866b4ab637e03"
+    }
+  },
+  "binary_resources": {},
+  "limitations": [
+    "Synthetic engineering evidence does not establish real portfolio performance."
+  ],
+  "actual_rows": 13808,
+  "runtime_seconds": 1.1438332990001072,
+  "dependencies": {
+    "macro_manifest_hash": "5d674e2db3d9ef3006376d2631090344b0ea7074abd0a8dafde612f72a93fe82"
+  },
+  "actual_funded_accounts": 144,
+  "dgp": {
+    "selection_mechanism": "MNAR",
+    "missingness": [
+      "MCAR",
+      "MAR",
+      "MNAR"
+    ],
+    "funded_account_capacity": 160,
+    "capacity_rule": "first funded candidates in application-ID order",
+    "potential_outcomes_are_latent": true,
+    "split_unit": "household",
+    "no_implicit_fitting": true
+  }
+}

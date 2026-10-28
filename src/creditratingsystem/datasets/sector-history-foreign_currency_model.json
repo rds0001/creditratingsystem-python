@@ -1,0 +1,83 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "sovereign-foreign_currency",
+    "model_version": "1",
+    "method_id": "classification.fit_binary_glm",
+    "feature_order": [
+      "sovereign_capacity_stress"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -7.147060787961547,
+        0.784118958765431
+      ],
+      "covariance": [
+        [
+          9.336180124221597,
+          -1.397515527950019
+        ],
+        [
+          -1.397515527950019,
+          0.21027432712211086
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "pre_transfer_sovereign_payment_default",
+      "horizon": 1,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "data_fingerprint": "sovereign-foreign_currency-historical-cohort",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 5,
+      "log_likelihood": -71.84392511699303,
+      "deviance": 143.68785023398607,
+      "aic": 147.68785023398607,
+      "bic": 154.28448496708214,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 200.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 86.98850422812889,
+      "scaled_gradient": 4.0039777886473304e-13,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        -1.8260948309034575e-12,
+        -1.0999201549566351e-11
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    }
+  },
+  "sha256": "728cef681d7d4a3829f667914f7d349ad26d2bde5cde0c9a6c4dd35428ebdd45"
+}

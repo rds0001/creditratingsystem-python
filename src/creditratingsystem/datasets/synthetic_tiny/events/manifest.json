@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0",
+  "world_type": "system_event_reference_world",
+  "generator_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "specification": {
+    "tier": "tiny",
+    "dgp_family": "misspecified",
+    "selection_mechanism": "MNAR",
+    "start_date": "2000-01-01",
+    "observation_cutoff": "2026-01-01"
+  },
+  "innovation_manifest_hash": "65563ec95592289a24303f2200255211f00d6611fb5a2efcb6464a57cc064859",
+  "chunk_rows": 1000,
+  "memory_budget_mb": 256,
+  "estimated_working_mb": 36.128,
+  "layers": [
+    "observable_inputs",
+    "latent_truth",
+    "frozen_predictions",
+    "decision_history",
+    "observed_outcomes"
+  ],
+  "tables": {
+    "observable_inputs/model_versions": {
+      "file": "observable_inputs/model_versions.jsonl.gz",
+      "rows": 2,
+      "columns": [
+        "model_version",
+        "model_role",
+        "algorithm",
+        "parameter_origin",
+        "intercept",
+        "known_at",
+        "effective_from"
+      ],
+      "sha256": "350c39bcf6221ad7528d2aa9d1c2a50a5a1390791c08d346ce4bff3150a02e8d"
+    },
+    "observable_inputs/policy_versions": {
+      "file": "observable_inputs/policy_versions.jsonl.gz",
+      "rows": 2,
+      "columns": [
+        "policy_version",
+        "known_at",
+        "effective_from",
+        "minimum_score",
+        "policy_scope"
+      ],
+      "sha256": "69e9a5445e4a9d1af1d298a6379a7bbd2aab72cc62d81a8a2d589b4242af9788"
+    },
+    "observable_inputs/calibration_versions": {
+      "file": "observable_inputs/calibration_versions.jsonl.gz",
+      "rows": 1,
+      "columns": [
+        "calibration_version",
+        "known_at",
+        "effective_from",
+        "transform",
+        "intercept",
+        "slope",
+        "estimated"
+      ],
+      "sha256": "63fca119d77f9f0acb757ba2f8e5999bef39ffca080ca0ee03b5399b6a2572ee"
+    },
+    "observable_inputs/source_model_versions": {
+      "file": "observable_inputs/source_model_versions.jsonl.gz",
+      "rows": 2,
+      "columns": [
+        "model_version",
+        "source_world_type",
+        "model_role",
+        "known_at",
+        "estimated"
+      ],
+      "sha256": "e71ddb3c9b926685b872f1f89592a2ee6c1390332b3a7b9e0faa9ba295d4970c"
+    },
+    "observable_inputs/subjects": {
+      "file": "observable_inputs/subjects.jsonl.gz",
+      "rows": 338,
+      "columns": [
+        "subject_id",
+        "subject_type",
+        "source_world_type",
+        "source_snapshot_hash",
+        "known_at"
+      ],
+      "sha256": "8159d2cba4c45ae14f425f609dbbdea720898a4c77320ba68fde5b92321f9ecf"
+    },
+    "observable_inputs/source_obligors": {
+      "file": "observable_inputs/source_obligors.jsonl.gz",
+      "rows": 64,
+      "columns": [
+        "obligor_id",
+        "group_id",
+        "country_id",
+        "sector",
+        "currency",
+        "established_at",
+        "known_at",
+        "snapshot_hash"
+      ],
+      "sha256": "4335fb31788fd1dceb1bedfb6814cfd3dfbaf72306623381c59cf75d1deb88bc"
+    },
+    "observed_outcomes/system_events": {
+      "file": "observed_outcomes/system_events.jsonl.gz",
+      "rows": 2366,
+      "columns": [
+        "delivery_id",
+        "event_id",
+        "subject_id",
+        "event_type",
+        "effective_at",
+        "known_at",
+        "model_version",
+        "policy_version",
+        "calibration_version",
+        "value",
+        "valid",
+        "source_snapshot_hash",
+        "supersedes_event_id"
+      ],
+      "sha256": "98eed1ef1c1507f198090440b19efd280be95a33e1236e3ddf01854f3b02079a"
+    },
+    "latent_truth/independent_checkpoints": {
+      "file": "latent_truth/independent_checkpoints.jsonl.gz",
+      "rows": 1352,
+      "columns": [
+        "checkpoint_id",
+        "subject_id",
+        "as_of",
+        "known_at",
+        "expected_score",
+        "expected_support_capacity",
+        "expected_model_version",
+        "expected_policy_version",
+        "expected_calibration_version",
+        "expected_duplicate_effect",
+        "expected_failed_batch_effect",
+        "oracle"
+      ],
+      "sha256": "fa685512d07d7e848930ad58ca57bc8ba99b7d0c22bdc4603df12aa4636b7a37"
+    },
+    "observable_inputs/source_accounts": {
+      "file": "observable_inputs/source_accounts.jsonl.gz",
+      "rows": 144,
+      "columns": [
+        "account_id",
+        "application_id",
+        "customer_id",
+        "household_id",
+        "product_id",
+        "opened_at",
+        "known_at",
+        "currency",
+        "original_amount",
+        "credit_limit",
+        "contract_months",
+        "annual_rate",
+        "rate_type",
+        "reset_month",
+        "balloon_amount",
+        "collateral_value",
+        "first_lien_amount",
+        "snapshot_hash"
+      ],
+      "sha256": "08879f85d405ec1d47e3fc66fc512774baaa7fd39d6142ce950dc55c2a0b130b"
+    },
+    "observable_inputs/source_facilities": {
+      "file": "observable_inputs/source_facilities.jsonl.gz",
+      "rows": 128,
+      "columns": [
+        "facility_id",
+        "obligor_id",
+        "product",
+        "currency",
+        "origination_at",
+        "known_at",
+        "maturity_at",
+        "original_limit",
+        "original_balance",
+        "interest_rate",
+        "seniority",
+        "collateral_id",
+        "snapshot_hash"
+      ],
+      "sha256": "04222c429c8ebb345b3b999e54532b93f529b8c8e532233ad0ae221778e7cfd7"
+    },
+    "observable_inputs/source_pools": {
+      "file": "observable_inputs/source_pools.jsonl.gz",
+      "rows": 2,
+      "columns": [
+        "pool_id",
+        "currency",
+        "created_at",
+        "known_at",
+        "initial_principal",
+        "notional_basis",
+        "revolving",
+        "clean_up_call_fraction",
+        "snapshot_hash"
+      ],
+      "sha256": "7f2165a9c9669ae036c08f0a4033f23db1a918221f2f58a3c1aeb7c3e7c4bcfb"
+    }
+  },
+  "binary_resources": {},
+  "limitations": [
+    "Synthetic engineering evidence does not establish real portfolio performance."
+  ],
+  "actual_rows": 4401,
+  "runtime_seconds": 1.0792671899998822,
+  "actual_subjects": 338,
+  "dependencies": {
+    "source_manifest_hashes": [
+      "775a45383d283cb4810a29e735d473d7cc769e588c347bddc4c357562f9c5845",
+      "01f65c80da9eb5976d3ba746645c576c1425409bb4e28b834000e70c96176976",
+      "cf90eb08ed19d3b268f9a200728d9475706a925c9a5d25a995005cc131845e86",
+      "fb39d326da3544936fae6ae550762502c7fce2d04a614490e6cbb265cf51e98d"
+    ]
+  },
+  "dgp": {
+    "duplicate_semantics": "event_id idempotent; delivery_id distinct",
+    "failure_semantics": "invalid batch has no state effect",
+    "checkpoint_oracle": "authored independently of event replay"
+  }
+}

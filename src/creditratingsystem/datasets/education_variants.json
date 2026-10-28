@@ -1,0 +1,386 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "education_loan",
+  "grace": {
+    "contract": {
+      "currency": "EUR",
+      "principal": 12000,
+      "principal_arrears": 0,
+      "accrued_interest": 0,
+      "fees": 0,
+      "as_of": "2024-01-01"
+    },
+    "baseline": {
+      "plan_id": "grace",
+      "payments": [
+        0,
+        0
+      ],
+      "period_interest_rates": [
+        0,
+        0
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": false
+    },
+    "candidate": {
+      "plan_id": "grace",
+      "payments": [
+        0,
+        0
+      ],
+      "period_interest_rates": [
+        0,
+        0
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": false
+    },
+    "affordability_paths": [
+      {
+        "path_id": "student",
+        "currency": "EUR",
+        "available_cash": [
+          1500,
+          3000
+        ]
+      }
+    ],
+    "discount_factors": [
+      1,
+      1
+    ],
+    "period_end_dates": [
+      "2024-01-31",
+      "2024-02-29"
+    ],
+    "currency": "EUR"
+  },
+  "deferred": {
+    "contract": {
+      "currency": "EUR",
+      "principal": 12000,
+      "principal_arrears": 0,
+      "accrued_interest": 0,
+      "fees": 0,
+      "as_of": "2024-01-01"
+    },
+    "baseline": {
+      "plan_id": "grace",
+      "payments": [
+        0,
+        0
+      ],
+      "period_interest_rates": [
+        0,
+        0
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": false
+    },
+    "candidate": {
+      "plan_id": "deferred_capitalizing",
+      "payments": [
+        0,
+        0
+      ],
+      "period_interest_rates": [
+        0.01,
+        0.01
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": true
+    },
+    "affordability_paths": [
+      {
+        "path_id": "student",
+        "currency": "EUR",
+        "available_cash": [
+          1500,
+          3000
+        ]
+      }
+    ],
+    "discount_factors": [
+      1,
+      1
+    ],
+    "period_end_dates": [
+      "2024-01-31",
+      "2024-02-29"
+    ],
+    "currency": "EUR"
+  },
+  "contingent": {
+    "contract": {
+      "currency": "EUR",
+      "principal": 12000,
+      "principal_arrears": 0,
+      "accrued_interest": 0,
+      "fees": 0,
+      "as_of": "2024-01-01"
+    },
+    "baseline": {
+      "plan_id": "grace",
+      "payments": [
+        0,
+        0
+      ],
+      "period_interest_rates": [
+        0,
+        0
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": false
+    },
+    "candidate": {
+      "plan_id": "income_contingent",
+      "payments": [
+        0,
+        0
+      ],
+      "period_interest_rates": [
+        0,
+        0
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": false
+    },
+    "affordability_paths": [
+      {
+        "path_id": "student",
+        "currency": "EUR",
+        "available_cash": [
+          1500,
+          3000
+        ]
+      }
+    ],
+    "discount_factors": [
+      1,
+      1
+    ],
+    "period_end_dates": [
+      "2024-01-31",
+      "2024-02-29"
+    ],
+    "currency": "EUR"
+  },
+  "income_rule": {
+    "rule_id": "synthetic_excess_income",
+    "version": "1",
+    "monthly_threshold": 2000,
+    "excess_rate": 0.1,
+    "income": [
+      1500,
+      3000
+    ]
+  },
+  "no_due": {
+    "obligations": [
+      {
+        "obligation_id": "grace_period_due",
+        "account_id": "student_loan",
+        "due_at": "2024-01-31",
+        "known_at": "2024-01-01",
+        "amount": 0,
+        "currency": "EUR"
+      }
+    ],
+    "payments": [],
+    "as_of": "2024-02-29",
+    "known_at": "2024-02-29",
+    "currency": "EUR"
+  },
+  "guarantee_allocation": {
+    "guarantees": [
+      {
+        "guarantee_id": "cosigner",
+        "guarantor_id": "parent",
+        "currency": "EUR",
+        "cap": 3000,
+        "cap_used": 0,
+        "coverage_fraction": 1,
+        "covered_claim_ids": [
+          "student_loan"
+        ],
+        "valid_from": "2024-01-01",
+        "valid_until": "2025-01-01",
+        "known_at": "2024-01-01",
+        "legally_effective": true,
+        "evidence_reference": "explicit synthetic guarantee"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "student_loan",
+        "entity_id": "student",
+        "amount": 12000,
+        "currency": "EUR",
+        "due_at": "2024-12-31",
+        "known_at": "2024-01-01"
+      }
+    ],
+    "allocation_policy": {
+      "policy_id": "student_protection",
+      "version": "1",
+      "guarantee_priority": [
+        "cosigner"
+      ],
+      "claim_priority": [
+        "student_loan"
+      ],
+      "cap_convention": "non_reinstating_total"
+    },
+    "as_of": "2024-01-01",
+    "known_at": "2024-01-01",
+    "currency": "EUR"
+  },
+  "guarantee_loss": {
+    "borrower_risk": {
+      "entity_id": "student",
+      "pd": 0.1,
+      "stage": "PRE_TRANSFER",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "performing",
+        "exposure_id": "student_loan"
+      },
+      "applied_effects": []
+    },
+    "guarantor_risk": {
+      "entity_id": "parent",
+      "pd": 0.2,
+      "stage": "PRE_TRANSFER",
+      "target": {
+        "event": "default",
+        "horizon": 1,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "performing"
+      },
+      "applied_effects": []
+    },
+    "claim_id": "student_loan",
+    "loss_contract": {
+      "effect_id": "cosigner",
+      "currency": "EUR",
+      "assumption_reference": "explicit joint states",
+      "stage": "PRE_GUARANTEE",
+      "valuation_date": "2024-12-31",
+      "states": {
+        "borrower_only": {
+          "loss_before_guarantee": 12000,
+          "payout_fraction": 1,
+          "evidence_reference": "performing guarantor"
+        },
+        "joint_default": {
+          "loss_before_guarantee": 12000,
+          "payout_fraction": 0,
+          "evidence_reference": "no guarantor payout"
+        }
+      }
+    },
+    "joint_default_probability": 0.02
+  },
+  "joint_application": {
+    "application_id": "student",
+    "parties": [
+      {
+        "party_id": "student",
+        "role": "borrower",
+        "liability_share": 1
+      },
+      {
+        "party_id": "parent",
+        "role": "guarantor",
+        "liability_share": 0.25
+      }
+    ],
+    "income_items": [
+      {
+        "economic_id": "student_income",
+        "party_id": "student",
+        "amount_monthly": 1500,
+        "currency": "EUR"
+      },
+      {
+        "economic_id": "parent_income",
+        "party_id": "parent",
+        "amount_monthly": 4000,
+        "currency": "EUR"
+      }
+    ],
+    "obligation_items": [],
+    "currency": "EUR"
+  }
+}

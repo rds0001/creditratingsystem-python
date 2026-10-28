@@ -1,0 +1,530 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "products": [
+    "RETAIL_CREDIT_CARD",
+    "RETAIL_CHARGE_CARD"
+  ],
+  "revolving": {
+    "transactor": {
+      "balance_history": [
+        {
+          "snapshot_id": "2025-01-05",
+          "release_seq": 1,
+          "account_id": "card",
+          "observed_at": "2025-01-05",
+          "known_at": "2025-01-05",
+          "balance": 0,
+          "credit_limit": 2000,
+          "activity_status": "ACTIVE",
+          "currency": "EUR"
+        }
+      ],
+      "statements": [
+        {
+          "statement_id": "statement",
+          "release_seq": 1,
+          "account_id": "card",
+          "issued_at": "2025-01-01",
+          "due_at": "2025-01-03",
+          "observed_at": "2025-01-05",
+          "known_at": "2025-01-05",
+          "statement_balance": 1000,
+          "minimum_due": 50,
+          "paid_by_due": 1000,
+          "currency": "EUR"
+        }
+      ],
+      "coverage": {
+        "status": "COMPLETE",
+        "known_at": "2025-01-05",
+        "observed_from": "2025-01-01",
+        "complete_through": "2025-01-05"
+      },
+      "account_id": "card",
+      "as_of": "2025-01-05",
+      "information_cutoff": "2025-01-05",
+      "lookback_days": 4,
+      "currency": "EUR"
+    },
+    "revolver": {
+      "balance_history": [
+        {
+          "snapshot_id": "2025-01-05",
+          "release_seq": 1,
+          "account_id": "card",
+          "observed_at": "2025-01-05",
+          "known_at": "2025-01-05",
+          "balance": 950,
+          "credit_limit": 2000,
+          "activity_status": "ACTIVE",
+          "currency": "EUR"
+        }
+      ],
+      "statements": [
+        {
+          "statement_id": "statement",
+          "release_seq": 1,
+          "account_id": "card",
+          "issued_at": "2025-01-01",
+          "due_at": "2025-01-03",
+          "observed_at": "2025-01-05",
+          "known_at": "2025-01-05",
+          "statement_balance": 1000,
+          "minimum_due": 50,
+          "paid_by_due": 50,
+          "currency": "EUR"
+        }
+      ],
+      "coverage": {
+        "status": "COMPLETE",
+        "known_at": "2025-01-05",
+        "observed_from": "2025-01-01",
+        "complete_through": "2025-01-05"
+      },
+      "account_id": "card",
+      "as_of": "2025-01-05",
+      "information_cutoff": "2025-01-05",
+      "lookback_days": 4,
+      "currency": "EUR"
+    },
+    "new_account": {
+      "balance_history": [
+        {
+          "snapshot_id": "2025-01-05",
+          "release_seq": 1,
+          "account_id": "card",
+          "observed_at": "2025-01-05",
+          "known_at": "2025-01-05",
+          "balance": 0,
+          "credit_limit": 2000,
+          "activity_status": "ACTIVE",
+          "currency": "EUR"
+        }
+      ],
+      "statements": [],
+      "coverage": {
+        "status": "UNKNOWN",
+        "known_at": "2025-01-05",
+        "observed_from": "2025-01-01",
+        "complete_through": "2025-01-05"
+      },
+      "account_id": "card",
+      "as_of": "2025-01-05",
+      "information_cutoff": "2025-01-05",
+      "lookback_days": 4,
+      "currency": "EUR"
+    },
+    "limit_change": {
+      "balance_history": [
+        {
+          "snapshot_id": "2025-01-02",
+          "release_seq": 1,
+          "account_id": "card",
+          "observed_at": "2025-01-02",
+          "known_at": "2025-01-02",
+          "balance": 1000,
+          "credit_limit": 2000,
+          "activity_status": "ACTIVE",
+          "currency": "EUR"
+        },
+        {
+          "snapshot_id": "2025-01-03",
+          "release_seq": 1,
+          "account_id": "card",
+          "observed_at": "2025-01-03",
+          "known_at": "2025-01-03",
+          "balance": 1000,
+          "credit_limit": 1000,
+          "activity_status": "ACTIVE",
+          "currency": "EUR"
+        },
+        {
+          "snapshot_id": "2025-01-04",
+          "release_seq": 1,
+          "account_id": "card",
+          "observed_at": "2025-01-04",
+          "known_at": "2025-01-04",
+          "balance": 1000,
+          "credit_limit": 800,
+          "activity_status": "ACTIVE",
+          "currency": "EUR"
+        },
+        {
+          "snapshot_id": "2025-01-05",
+          "release_seq": 1,
+          "account_id": "card",
+          "observed_at": "2025-01-05",
+          "known_at": "2025-01-05",
+          "balance": 1000,
+          "credit_limit": 800,
+          "activity_status": "ACTIVE",
+          "currency": "EUR"
+        }
+      ],
+      "statements": [],
+      "coverage": {
+        "status": "COMPLETE",
+        "known_at": "2025-01-05",
+        "observed_from": "2025-01-01",
+        "complete_through": "2025-01-05"
+      },
+      "account_id": "card",
+      "as_of": "2025-01-05",
+      "information_cutoff": "2025-01-05",
+      "lookback_days": 4,
+      "currency": "EUR"
+    }
+  },
+  "payments": {
+    "transactor": {
+      "obligations": [
+        {
+          "obligation_id": "bill",
+          "account_id": "card",
+          "due_at": "2025-01-03",
+          "known_at": "2025-01-01",
+          "amount": 50,
+          "currency": "EUR"
+        }
+      ],
+      "payments": [
+        {
+          "payment_id": "payment",
+          "account_id": "card",
+          "paid_at": "2025-01-03",
+          "known_at": "2025-01-03",
+          "amount": 1000,
+          "currency": "EUR",
+          "kind": "payment"
+        }
+      ],
+      "as_of": "2025-01-05",
+      "known_at": "2025-01-05",
+      "currency": "EUR"
+    },
+    "revolver": {
+      "obligations": [
+        {
+          "obligation_id": "bill",
+          "account_id": "card",
+          "due_at": "2025-01-03",
+          "known_at": "2025-01-01",
+          "amount": 50,
+          "currency": "EUR"
+        }
+      ],
+      "payments": [
+        {
+          "payment_id": "payment",
+          "account_id": "card",
+          "paid_at": "2025-01-03",
+          "known_at": "2025-01-03",
+          "amount": 50,
+          "currency": "EUR",
+          "kind": "payment"
+        }
+      ],
+      "as_of": "2025-01-05",
+      "known_at": "2025-01-05",
+      "currency": "EUR"
+    },
+    "monthly_full_payment": {
+      "obligations": [
+        {
+          "obligation_id": "bill",
+          "account_id": "card",
+          "due_at": "2025-01-03",
+          "known_at": "2025-01-01",
+          "amount": 1000,
+          "currency": "EUR"
+        }
+      ],
+      "payments": [
+        {
+          "payment_id": "payment",
+          "account_id": "card",
+          "paid_at": "2025-01-03",
+          "known_at": "2025-01-03",
+          "amount": 50,
+          "currency": "EUR",
+          "kind": "payment"
+        }
+      ],
+      "as_of": "2025-01-05",
+      "known_at": "2025-01-05",
+      "currency": "EUR"
+    },
+    "deferred_charge": {
+      "obligations": [
+        {
+          "obligation_id": "bill",
+          "account_id": "card",
+          "due_at": "2025-02-03",
+          "known_at": "2025-01-01",
+          "amount": 1000,
+          "currency": "EUR"
+        }
+      ],
+      "payments": [],
+      "as_of": "2025-01-05",
+      "known_at": "2025-01-05",
+      "currency": "EUR"
+    }
+  },
+  "new_history": {
+    "obligations": [],
+    "payments": [],
+    "coverage": {
+      "status": "UNKNOWN",
+      "known_at": "2025-01-05",
+      "observed_from": "2025-01-01",
+      "complete_through": "2025-01-05"
+    },
+    "account_id": "card",
+    "as_of": "2025-01-05",
+    "information_cutoff": "2025-01-05",
+    "lookback_days": 4,
+    "allocation_policy": "fifo",
+    "currency": "EUR",
+    "grace_days": 0
+  },
+  "exposure": {
+    "transactor": {
+      "contract": {
+        "facility_id": "card",
+        "currency": "EUR",
+        "as_of": "2025-01-01",
+        "drawn_principal": 1000,
+        "credit_limit": 2000,
+        "accrued_interest": 0
+      },
+      "events": [
+        {
+          "event_id": "PRINCIPAL_REPAYMENT",
+          "event_date": "2025-01-03",
+          "known_at": "2025-01-01",
+          "sequence": 1,
+          "kind": "PRINCIPAL_REPAYMENT",
+          "amount": 1000
+        }
+      ],
+      "annual_interest_rates": [
+        0
+      ],
+      "period_end_dates": [
+        "2025-01-05"
+      ],
+      "day_count": "ACT/365F",
+      "default_timing": "AFTER_PERIOD_END_EVENTS",
+      "allow_overlimit": false,
+      "currency": "EUR"
+    },
+    "revolver": {
+      "contract": {
+        "facility_id": "card",
+        "currency": "EUR",
+        "as_of": "2025-01-01",
+        "drawn_principal": 1000,
+        "credit_limit": 2000,
+        "accrued_interest": 0
+      },
+      "events": [
+        {
+          "event_id": "PRINCIPAL_REPAYMENT",
+          "event_date": "2025-01-03",
+          "known_at": "2025-01-01",
+          "sequence": 1,
+          "kind": "PRINCIPAL_REPAYMENT",
+          "amount": 50
+        }
+      ],
+      "annual_interest_rates": [
+        0
+      ],
+      "period_end_dates": [
+        "2025-01-05"
+      ],
+      "day_count": "ACT/365F",
+      "default_timing": "AFTER_PERIOD_END_EVENTS",
+      "allow_overlimit": false,
+      "currency": "EUR"
+    },
+    "new_account": {
+      "contract": {
+        "facility_id": "card",
+        "currency": "EUR",
+        "as_of": "2025-01-05",
+        "drawn_principal": 0,
+        "credit_limit": 2000,
+        "accrued_interest": 0
+      },
+      "events": [
+        {
+          "event_id": "DRAW",
+          "event_date": "2025-01-06",
+          "known_at": "2025-01-05",
+          "sequence": 1,
+          "kind": "DRAW",
+          "amount": 200
+        }
+      ],
+      "annual_interest_rates": [
+        0
+      ],
+      "period_end_dates": [
+        "2025-01-07"
+      ],
+      "day_count": "ACT/365F",
+      "default_timing": "AFTER_PERIOD_END_EVENTS",
+      "allow_overlimit": false,
+      "currency": "EUR"
+    },
+    "monthly_full_payment": {
+      "contract": {
+        "facility_id": "card",
+        "currency": "EUR",
+        "as_of": "2025-01-01",
+        "drawn_principal": 1000,
+        "credit_limit": 2000,
+        "accrued_interest": 0
+      },
+      "events": [
+        {
+          "event_id": "PRINCIPAL_REPAYMENT",
+          "event_date": "2025-01-03",
+          "known_at": "2025-01-01",
+          "sequence": 1,
+          "kind": "PRINCIPAL_REPAYMENT",
+          "amount": 50
+        }
+      ],
+      "annual_interest_rates": [
+        0
+      ],
+      "period_end_dates": [
+        "2025-01-05"
+      ],
+      "day_count": "ACT/365F",
+      "default_timing": "AFTER_PERIOD_END_EVENTS",
+      "allow_overlimit": false,
+      "currency": "EUR"
+    },
+    "deferred_charge": {
+      "contract": {
+        "facility_id": "card",
+        "currency": "EUR",
+        "as_of": "2025-01-01",
+        "drawn_principal": 1000,
+        "credit_limit": 2000,
+        "accrued_interest": 0
+      },
+      "events": [],
+      "annual_interest_rates": [
+        0
+      ],
+      "period_end_dates": [
+        "2025-01-05"
+      ],
+      "day_count": "ACT/365F",
+      "default_timing": "AFTER_PERIOD_END_EVENTS",
+      "allow_overlimit": false,
+      "currency": "EUR"
+    }
+  },
+  "authorizations": {
+    "pending": {
+      "authorizations": [
+        {
+          "authorization_id": "authorization",
+          "account_id": "authorization-card",
+          "approved_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "sequence": 0,
+          "currency": "EUR",
+          "amount": 200,
+          "expires_at": "2025-01-10"
+        }
+      ],
+      "events": [],
+      "policy": {
+        "policy_id": "charge-reservations",
+        "version": "1",
+        "known_at": "2024-12-01",
+        "expiry_boundary": "EXCLUSIVE",
+        "late_settlement_allowed": false,
+        "authorization_conversion_factor": 1,
+        "minor_unit": 0.01
+      },
+      "as_of": "2025-01-05",
+      "known_at": "2025-01-05",
+      "currency": "EUR"
+    },
+    "settled": {
+      "authorizations": [
+        {
+          "authorization_id": "authorization",
+          "account_id": "authorization-card",
+          "approved_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "sequence": 0,
+          "currency": "EUR",
+          "amount": 200,
+          "expires_at": "2025-01-10"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "purchase",
+          "authorization_id": "authorization",
+          "account_id": "authorization-card",
+          "occurred_at": "2025-01-02",
+          "known_at": "2025-01-02",
+          "sequence": 1,
+          "currency": "EUR",
+          "amount": 200,
+          "kind": "SETTLEMENT",
+          "authorization_complete": true
+        }
+      ],
+      "policy": {
+        "policy_id": "charge-reservations",
+        "version": "1",
+        "known_at": "2024-12-01",
+        "expiry_boundary": "EXCLUSIVE",
+        "late_settlement_allowed": false,
+        "authorization_conversion_factor": 1,
+        "minor_unit": 0.01
+      },
+      "as_of": "2025-01-05",
+      "known_at": "2025-01-05",
+      "currency": "EUR"
+    },
+    "expired": {
+      "authorizations": [
+        {
+          "authorization_id": "authorization",
+          "account_id": "authorization-card",
+          "approved_at": "2025-01-01",
+          "known_at": "2025-01-01",
+          "sequence": 0,
+          "currency": "EUR",
+          "amount": 200,
+          "expires_at": "2025-01-10"
+        }
+      ],
+      "events": [],
+      "policy": {
+        "policy_id": "charge-reservations",
+        "version": "1",
+        "known_at": "2024-12-01",
+        "expiry_boundary": "EXCLUSIVE",
+        "late_settlement_allowed": false,
+        "authorization_conversion_factor": 1,
+        "minor_unit": 0.01
+      },
+      "as_of": "2025-01-10",
+      "known_at": "2025-01-10",
+      "currency": "EUR"
+    }
+  }
+}

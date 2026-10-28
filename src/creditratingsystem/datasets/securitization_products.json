@@ -1,0 +1,2906 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_REFERENCE",
+  "version": "1.0",
+  "product": "SECURITIZATION_TRANCHE",
+  "description": "Replaceable dated asset and tranche contracts; small monetary units expose exact mechanics.",
+  "variants": {
+    "ABS": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "ABS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "AUTO_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 1,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "credit_stress_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 1,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 1,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "structure_profile": {
+        "structure_id": "senior-junior",
+        "version": "1",
+        "currency": "EUR",
+        "payment_dates": [
+          "2023-07-01",
+          "2024-01-01"
+        ],
+        "tranches": [
+          {
+            "tranche_id": "senior",
+            "seniority": 1,
+            "notional": 80,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          },
+          {
+            "tranche_id": "junior",
+            "seniority": 2,
+            "notional": 20,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          }
+        ],
+        "fees": {
+          "2023-07-01": 0,
+          "2024-01-01": 0
+        },
+        "initial_reserve": 0,
+        "reserve_target": 0,
+        "liquidity_limit": 0,
+        "principal_mode": "SEQUENTIAL",
+        "principal_for_interest": "TRIGGER_ONLY",
+        "excess_interest_to_principal": true,
+        "trigger_seniority": 1,
+        "oc_threshold": 1,
+        "ic_threshold": 1,
+        "terminal_policy": "REQUIRE_COMPLETE"
+      },
+      "invalid_pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "ABS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "INVOICE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected_error": "STRUCTURED_ROUTE"
+    },
+    "RMBS": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "RESIDENTIAL_MORTGAGE",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "RMBS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "RESIDENTIAL_MORTGAGE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 1,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "credit_stress_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 1,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 1,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "structure_profile": {
+        "structure_id": "senior-junior",
+        "version": "1",
+        "currency": "EUR",
+        "payment_dates": [
+          "2023-07-01",
+          "2024-01-01"
+        ],
+        "tranches": [
+          {
+            "tranche_id": "senior",
+            "seniority": 1,
+            "notional": 80,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          },
+          {
+            "tranche_id": "junior",
+            "seniority": 2,
+            "notional": 20,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          }
+        ],
+        "fees": {
+          "2023-07-01": 0,
+          "2024-01-01": 0
+        },
+        "initial_reserve": 0,
+        "reserve_target": 0,
+        "liquidity_limit": 0,
+        "principal_mode": "SEQUENTIAL",
+        "principal_for_interest": "TRIGGER_ONLY",
+        "excess_interest_to_principal": true,
+        "trigger_seniority": 1,
+        "oc_threshold": 1,
+        "ic_threshold": 1,
+        "terminal_policy": "REQUIRE_COMPLETE"
+      },
+      "invalid_pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "RESIDENTIAL_MORTGAGE",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "RMBS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "INVOICE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected_error": "STRUCTURED_ROUTE"
+    },
+    "CMBS": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "COMMERCIAL_MORTGAGE",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 20,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 80,
+                "interest_due": 4
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "CMBS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "COMMERCIAL_MORTGAGE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "credit_stress_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 1,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "structure_profile": {
+        "structure_id": "senior-junior",
+        "version": "1",
+        "currency": "EUR",
+        "payment_dates": [
+          "2023-07-01",
+          "2024-01-01"
+        ],
+        "tranches": [
+          {
+            "tranche_id": "senior",
+            "seniority": 1,
+            "notional": 80,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          },
+          {
+            "tranche_id": "junior",
+            "seniority": 2,
+            "notional": 20,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          }
+        ],
+        "fees": {
+          "2023-07-01": 0,
+          "2024-01-01": 0
+        },
+        "initial_reserve": 0,
+        "reserve_target": 0,
+        "liquidity_limit": 0,
+        "principal_mode": "SEQUENTIAL",
+        "principal_for_interest": "TRIGGER_ONLY",
+        "excess_interest_to_principal": true,
+        "trigger_seniority": 1,
+        "oc_threshold": 1,
+        "ic_threshold": 1,
+        "terminal_policy": "REQUIRE_COMPLETE"
+      },
+      "invalid_pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "COMMERCIAL_MORTGAGE",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 20,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 79,
+                "interest_due": 4
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "CMBS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "COMMERCIAL_MORTGAGE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected_error": "STRUCTURED_SCHEDULE"
+    },
+    "CLO": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "CORPORATE_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 100,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          },
+          {
+            "asset_id": "b",
+            "asset_class": "CORPORATE_LOAN",
+            "invoice_id": null,
+            "obligor_id": "h",
+            "default_group_id": "h",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 50,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 50,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          },
+          {
+            "assignment_id": "next",
+            "pool_id": "pool",
+            "asset_id": "b",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-07-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 50,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "CLO",
+          "pool_mode": "REVOLVING",
+          "allowed_asset_classes": [
+            "CORPORATE_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": "2024-01-01"
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "credit_stress_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 1,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "structure_profile": {
+        "structure_id": "senior-junior",
+        "version": "1",
+        "currency": "EUR",
+        "payment_dates": [
+          "2023-07-01",
+          "2024-01-01"
+        ],
+        "tranches": [
+          {
+            "tranche_id": "senior",
+            "seniority": 1,
+            "notional": 80,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          },
+          {
+            "tranche_id": "junior",
+            "seniority": 2,
+            "notional": 20,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          }
+        ],
+        "fees": {
+          "2023-07-01": 0,
+          "2024-01-01": 0
+        },
+        "initial_reserve": 0,
+        "reserve_target": 0,
+        "liquidity_limit": 0,
+        "principal_mode": "SEQUENTIAL",
+        "principal_for_interest": "TRIGGER_ONLY",
+        "excess_interest_to_principal": true,
+        "trigger_seniority": 1,
+        "oc_threshold": 1,
+        "ic_threshold": 1,
+        "terminal_policy": "REQUIRE_COMPLETE"
+      },
+      "invalid_pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "CORPORATE_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 100,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          },
+          {
+            "asset_id": "b",
+            "asset_class": "CORPORATE_LOAN",
+            "invoice_id": null,
+            "obligor_id": "h",
+            "default_group_id": "h",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 50,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 50,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          },
+          {
+            "assignment_id": "next",
+            "pool_id": "pool",
+            "asset_id": "b",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-07-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 50,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "CLO",
+          "pool_mode": "REVOLVING",
+          "allowed_asset_classes": [
+            "CORPORATE_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": "2023-01-01"
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected_error": "STRUCTURED_ROUTE"
+    },
+    "revolving_pool": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 100,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          },
+          {
+            "asset_id": "b",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "h",
+            "default_group_id": "h",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 50,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 50,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          },
+          {
+            "assignment_id": "next",
+            "pool_id": "pool",
+            "asset_id": "b",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-07-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 50,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "ABS",
+          "pool_mode": "REVOLVING",
+          "allowed_asset_classes": [
+            "AUTO_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": "2024-01-01"
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "credit_stress_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 1,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "h",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-h"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "b",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-b",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-h",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-b",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "structure_profile": {
+        "structure_id": "senior-junior",
+        "version": "1",
+        "currency": "EUR",
+        "payment_dates": [
+          "2023-07-01",
+          "2024-01-01"
+        ],
+        "tranches": [
+          {
+            "tranche_id": "senior",
+            "seniority": 1,
+            "notional": 80,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          },
+          {
+            "tranche_id": "junior",
+            "seniority": 2,
+            "notional": 20,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          }
+        ],
+        "fees": {
+          "2023-07-01": 0,
+          "2024-01-01": 0
+        },
+        "initial_reserve": 0,
+        "reserve_target": 0,
+        "liquidity_limit": 0,
+        "principal_mode": "SEQUENTIAL",
+        "principal_for_interest": "TRIGGER_ONLY",
+        "excess_interest_to_principal": true,
+        "trigger_seniority": 1,
+        "oc_threshold": 1,
+        "ic_threshold": 1,
+        "terminal_policy": "REQUIRE_COMPLETE"
+      },
+      "invalid_pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 100,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          },
+          {
+            "asset_id": "b",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "h",
+            "default_group_id": "h",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 50,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 50,
+                "interest_due": 5
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          },
+          {
+            "assignment_id": "next",
+            "pool_id": "pool",
+            "asset_id": "b",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-07-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 50,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "ABS",
+          "pool_mode": "REVOLVING",
+          "allowed_asset_classes": [
+            "AUTO_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": "2023-01-01"
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected_error": "STRUCTURED_ROUTE"
+    },
+    "static_pool": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "ABS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "AUTO_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "credit_stress_input": {
+        "scenario_contract": {
+          "contract_id": "c",
+          "version": "1",
+          "scenario_ids": [
+            "s"
+          ],
+          "weights": [
+            1
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 1,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "structure_profile": {
+        "structure_id": "senior-junior",
+        "version": "1",
+        "currency": "EUR",
+        "payment_dates": [
+          "2023-07-01",
+          "2024-01-01"
+        ],
+        "tranches": [
+          {
+            "tranche_id": "senior",
+            "seniority": 1,
+            "notional": 80,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          },
+          {
+            "tranche_id": "junior",
+            "seniority": 2,
+            "notional": 20,
+            "legal_maturity": "2024-01-01",
+            "coupon_fractions": {
+              "2023-07-01": 0.05,
+              "2024-01-01": 0.05
+            }
+          }
+        ],
+        "fees": {
+          "2023-07-01": 0,
+          "2024-01-01": 0
+        },
+        "initial_reserve": 0,
+        "reserve_target": 0,
+        "liquidity_limit": 0,
+        "principal_mode": "SEQUENTIAL",
+        "principal_for_interest": "TRIGGER_ONLY",
+        "excess_interest_to_principal": true,
+        "trigger_seniority": 1,
+        "oc_threshold": 1,
+        "ic_threshold": 1,
+        "terminal_policy": "REQUIRE_COMPLETE"
+      },
+      "invalid_pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          },
+          {
+            "assignment_id": "overlap",
+            "pool_id": "other",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "ABS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "AUTO_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected_error": "STRUCTURED_ASSIGNMENT"
+    }
+  },
+  "account_stress_template": {
+    "baseline_cashflows": [
+      {
+        "scenario_id": "s",
+        "cashflow_id": "cash",
+        "date": "2023-03-01",
+        "amount": 100
+      }
+    ],
+    "exposure_contracts": [
+      {
+        "exposure_id": "account",
+        "counterparty_id": "bank",
+        "netting_set_id": "net",
+        "role": "ACCOUNT_BANK",
+        "basis": "CASH_HELD",
+        "cashflow_ids": [
+          "cash"
+        ]
+      }
+    ],
+    "netting_sets": [
+      {
+        "netting_set_id": "net",
+        "counterparty_id": "bank",
+        "enforceable": true,
+        "collateral_contract_id": "collateral",
+        "collateral_convention": "RECEIVED_TRANSFERABLE",
+        "default_timing": "AFTER_COLLATERAL_SNAPSHOT_BEFORE_CASHFLOWS"
+      }
+    ],
+    "exposure_paths": [
+      {
+        "scenario_id": "s",
+        "exposure_id": "account",
+        "date": "2023-02-01",
+        "signed_replacement_mark": 0
+      },
+      {
+        "scenario_id": "s",
+        "exposure_id": "account",
+        "date": "2023-03-01",
+        "signed_replacement_mark": 0
+      },
+      {
+        "scenario_id": "s",
+        "exposure_id": "account",
+        "date": "2023-04-01",
+        "signed_replacement_mark": 0
+      }
+    ],
+    "collateral_paths": [
+      {
+        "scenario_id": "s",
+        "netting_set_id": "net",
+        "date": "2023-02-01",
+        "known_at": "2023-02-01",
+        "collateral_value": 20,
+        "haircut": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "netting_set_id": "net",
+        "date": "2023-03-01",
+        "known_at": "2023-03-01",
+        "collateral_value": 20,
+        "haircut": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "netting_set_id": "net",
+        "date": "2023-04-01",
+        "known_at": "2023-04-01",
+        "collateral_value": 20,
+        "haircut": 0.5
+      }
+    ],
+    "settlement_terms": [
+      {
+        "scenario_id": "s",
+        "counterparty_id": "bank",
+        "estate_recovery_fraction": 0.5,
+        "estate_capacity": 1000,
+        "estate_delay_days": 30,
+        "collateral_delay_days": 0,
+        "replacement_cost": 5,
+        "replacement_delay_days": 0
+      }
+    ],
+    "scenario_contract": {
+      "contract_id": "cp",
+      "version": "1",
+      "scenario_ids": [
+        "s"
+      ],
+      "weights": [
+        1
+      ],
+      "dates": [
+        "2023-02-01",
+        "2023-03-01",
+        "2023-04-01"
+      ],
+      "currency": "EUR",
+      "probability_measure": "PHYSICAL",
+      "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+      "conditioning": "PIT"
+    },
+    "party_mapping": [
+      {
+        "party_id": "bank",
+        "default_group_id": "bank"
+      }
+    ],
+    "party_default_paths": [
+      {
+        "scenario_id": "s",
+        "default_group_id": "bank",
+        "date": "2023-02-01",
+        "conditional_pd": 1,
+        "default_channel": "bank"
+      },
+      {
+        "scenario_id": "s",
+        "default_group_id": "bank",
+        "date": "2023-03-01",
+        "conditional_pd": 0,
+        "default_channel": "bank"
+      },
+      {
+        "scenario_id": "s",
+        "default_group_id": "bank",
+        "date": "2023-04-01",
+        "conditional_pd": 0,
+        "default_channel": "bank"
+      }
+    ],
+    "shared_innovations": [
+      {
+        "scenario_id": "s",
+        "date": "2023-02-01",
+        "channel_id": "bank",
+        "uniform": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "date": "2023-03-01",
+        "channel_id": "bank",
+        "uniform": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "date": "2023-04-01",
+        "channel_id": "bank",
+        "uniform": 0.5
+      }
+    ],
+    "as_of": "2023-01-01"
+  }
+}

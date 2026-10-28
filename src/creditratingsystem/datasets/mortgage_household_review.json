@@ -1,0 +1,920 @@
+{
+  "data_origin": "SYNTHETIC",
+  "household": {
+    "graph": {
+      "entities": [
+        {
+          "entity_id": "customer_A",
+          "entity_type": "CUSTOMER",
+          "known_at": "2024-01-01"
+        },
+        {
+          "entity_id": "co_borrower_A",
+          "entity_type": "CUSTOMER",
+          "known_at": "2024-01-01"
+        },
+        {
+          "entity_id": "household_A",
+          "entity_type": "HOUSEHOLD",
+          "known_at": "2024-01-01"
+        },
+        {
+          "entity_id": "facility_A",
+          "entity_type": "FACILITY",
+          "known_at": "2024-01-01"
+        }
+      ],
+      "relationships": [
+        {
+          "relationship_id": "ph",
+          "release_seq": 1,
+          "source_id": "customer_A",
+          "target_id": "household_A",
+          "role": "MEMBER_OF",
+          "effective_from": "2024-01-01",
+          "effective_until": null,
+          "known_at": "2024-01-01",
+          "liability_fraction": null,
+          "budget_share": null,
+          "evidence_reference": "synthetic signed joint contract"
+        },
+        {
+          "relationship_id": "qh",
+          "release_seq": 1,
+          "source_id": "co_borrower_A",
+          "target_id": "household_A",
+          "role": "MEMBER_OF",
+          "effective_from": "2024-01-01",
+          "effective_until": null,
+          "known_at": "2024-01-01",
+          "liability_fraction": null,
+          "budget_share": null,
+          "evidence_reference": "synthetic signed joint contract"
+        },
+        {
+          "relationship_id": "pm",
+          "release_seq": 1,
+          "source_id": "customer_A",
+          "target_id": "facility_A",
+          "role": "BORROWER_ON",
+          "effective_from": "2024-01-01",
+          "effective_until": null,
+          "known_at": "2024-01-01",
+          "liability_fraction": 1,
+          "budget_share": 0.5,
+          "evidence_reference": "synthetic signed joint contract"
+        },
+        {
+          "relationship_id": "qm",
+          "release_seq": 1,
+          "source_id": "co_borrower_A",
+          "target_id": "facility_A",
+          "role": "BORROWER_ON",
+          "effective_from": "2024-01-01",
+          "effective_until": null,
+          "known_at": "2024-01-01",
+          "liability_fraction": 1,
+          "budget_share": 0.5,
+          "evidence_reference": "synthetic signed joint contract"
+        }
+      ],
+      "as_of": "2024-02-03",
+      "information_cutoff": "2024-02-03"
+    },
+    "household": {
+      "obligations": [
+        {
+          "facility_id": "facility_A",
+          "release_seq": 1,
+          "known_at": "2024-02-03",
+          "observed_at": "2024-02-03",
+          "source_id": "bank",
+          "debt_stock": 100000,
+          "scheduled_debt_service": 900,
+          "currency": "EUR",
+          "period": "month",
+          "status": "ACTIVE"
+        }
+      ],
+      "coverage": {
+        "status": "COMPLETE",
+        "sources": [
+          "bank"
+        ],
+        "known_at": "2024-02-03"
+      },
+      "currency": "EUR",
+      "period": "month",
+      "guarantee_budget_policy": "exclude"
+    }
+  },
+  "affordability": {
+    "baseline": {
+      "as_of": "2024-02-01",
+      "currency": "EUR",
+      "liquid_buffer": 2000,
+      "cltv_scope": "not_applicable",
+      "incomes": [
+        {
+          "economic_id": "borrower_salary",
+          "monthly_amount": 3000,
+          "basis": "net",
+          "currency": "EUR"
+        },
+        {
+          "economic_id": "co_salary",
+          "monthly_amount": 2000,
+          "basis": "net",
+          "currency": "EUR"
+        }
+      ],
+      "expenses": [
+        {
+          "economic_id": "living",
+          "monthly_amount": 2300,
+          "currency": "EUR"
+        }
+      ],
+      "contracts": [
+        {
+          "economic_id": "facility_A",
+          "principal": 100000,
+          "remaining_months": 240,
+          "annual_rate": 0.09004260771535322,
+          "repayment": "annuity",
+          "balloon_amount": 0,
+          "rate_type": "fixed",
+          "reset_dates": [],
+          "rate_floor": 0,
+          "rate_cap": 1,
+          "currency": "EUR"
+        },
+        {
+          "economic_id": "existing_unsecured",
+          "principal": 10000,
+          "remaining_months": 12,
+          "annual_rate": 0.12,
+          "repayment": "interest_only",
+          "balloon_amount": 10000,
+          "rate_type": "fixed",
+          "reset_dates": [],
+          "rate_floor": 0,
+          "rate_cap": 1,
+          "currency": "EUR"
+        }
+      ],
+      "collateral": [],
+      "thresholds": {
+        "minimum_residual": 0,
+        "maximum_dsti": 0.4,
+        "maximum_cltv": 0.9
+      }
+    },
+    "scenario": {
+      "schema_version": "1.0",
+      "scenario_id": "declared-income-rate-stress",
+      "periods": [
+        {
+          "date": "2024-03-01",
+          "income_factors": {
+            "borrower_salary": 0.8,
+            "co_salary": 0.8
+          },
+          "expense_factors": {
+            "living": 1.1
+          },
+          "collateral_factors": {},
+          "rate_shifts": {
+            "facility_A": 0.02,
+            "existing_unsecured": 0.02
+          },
+          "fx_to_reporting": {
+            "EUR": 1
+          }
+        }
+      ]
+    },
+    "economic_evidence": [
+      {
+        "evidence_id": "borrower_salary",
+        "economic_id": "borrower_salary",
+        "kind": "incomes",
+        "reference": "signed-household-contract-and-payroll",
+        "known_at": "2024-02-01",
+        "observed_at": "2024-02-01",
+        "verified": true,
+        "terms": {
+          "monthly_amount": 3000,
+          "basis": "net",
+          "currency": "EUR"
+        },
+        "source_basis": "net",
+        "normalization_reference": "verified-net-payroll"
+      },
+      {
+        "evidence_id": "co_salary",
+        "economic_id": "co_salary",
+        "kind": "incomes",
+        "reference": "signed-household-contract-and-payroll",
+        "known_at": "2024-02-01",
+        "observed_at": "2024-02-01",
+        "verified": true,
+        "terms": {
+          "monthly_amount": 2000,
+          "basis": "net",
+          "currency": "EUR"
+        },
+        "source_basis": "net",
+        "normalization_reference": "verified-net-payroll"
+      },
+      {
+        "evidence_id": "living",
+        "economic_id": "living",
+        "kind": "expenses",
+        "reference": "signed-household-contract-and-payroll",
+        "known_at": "2024-02-01",
+        "observed_at": "2024-02-01",
+        "verified": true,
+        "terms": {
+          "monthly_amount": 2300,
+          "currency": "EUR"
+        }
+      },
+      {
+        "evidence_id": "facility_A",
+        "economic_id": "facility_A",
+        "kind": "contracts",
+        "reference": "signed-household-contract-and-payroll",
+        "known_at": "2024-02-01",
+        "observed_at": "2024-02-01",
+        "verified": true,
+        "terms": {
+          "principal": 100000,
+          "remaining_months": 240,
+          "annual_rate": 0.09004260771535322,
+          "repayment": "annuity",
+          "balloon_amount": 0,
+          "rate_type": "fixed",
+          "reset_dates": [],
+          "rate_floor": 0,
+          "rate_cap": 1,
+          "currency": "EUR"
+        }
+      },
+      {
+        "evidence_id": "existing_unsecured",
+        "economic_id": "existing_unsecured",
+        "kind": "contracts",
+        "reference": "signed-household-contract-and-payroll",
+        "known_at": "2024-02-01",
+        "observed_at": "2024-02-01",
+        "verified": true,
+        "terms": {
+          "principal": 10000,
+          "remaining_months": 12,
+          "annual_rate": 0.12,
+          "repayment": "interest_only",
+          "balloon_amount": 10000,
+          "rate_type": "fixed",
+          "reset_dates": [],
+          "rate_floor": 0,
+          "rate_cap": 1,
+          "currency": "EUR"
+        }
+      }
+    ],
+    "allocations": [
+      {
+        "allocation_id": "borrower_salary",
+        "economic_id": "borrower_salary",
+        "household_id": "household_A",
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "share": 1,
+        "mode": "PROPORTIONAL"
+      },
+      {
+        "allocation_id": "co_salary",
+        "economic_id": "co_salary",
+        "household_id": "household_A",
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "share": 1,
+        "mode": "PROPORTIONAL"
+      },
+      {
+        "allocation_id": "living",
+        "economic_id": "living",
+        "household_id": "household_A",
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "share": 1,
+        "mode": "PROPORTIONAL"
+      },
+      {
+        "allocation_id": "facility_A",
+        "economic_id": "facility_A",
+        "household_id": "household_A",
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "share": 1,
+        "mode": "FULL_RECOURSE"
+      },
+      {
+        "allocation_id": "existing_unsecured",
+        "economic_id": "existing_unsecured",
+        "household_id": "household_A",
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "share": 1,
+        "mode": "FULL_RECOURSE"
+      }
+    ]
+  },
+  "pool": {
+    "fit": {
+      "observations": [
+        {
+          "observation_id": "training0",
+          "default_unit_id": "training0",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": false,
+          "default_date": null,
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "NOT_DEFAULTED",
+          "lgd": null,
+          "ead": null,
+          "score": 20,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        },
+        {
+          "observation_id": "training1",
+          "default_unit_id": "training1",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": false,
+          "default_date": null,
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "NOT_DEFAULTED",
+          "lgd": null,
+          "ead": null,
+          "score": 20,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        },
+        {
+          "observation_id": "training2",
+          "default_unit_id": "training2",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": false,
+          "default_date": null,
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "NOT_DEFAULTED",
+          "lgd": null,
+          "ead": null,
+          "score": 20,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        },
+        {
+          "observation_id": "training3",
+          "default_unit_id": "training3",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": true,
+          "default_date": "2022-06-01",
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "OPEN",
+          "lgd": null,
+          "ead": null,
+          "score": 20,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        },
+        {
+          "observation_id": "training4",
+          "default_unit_id": "training4",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": false,
+          "default_date": null,
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "NOT_DEFAULTED",
+          "lgd": null,
+          "ead": null,
+          "score": 80,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        },
+        {
+          "observation_id": "training5",
+          "default_unit_id": "training5",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": false,
+          "default_date": null,
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "NOT_DEFAULTED",
+          "lgd": null,
+          "ead": null,
+          "score": 80,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        },
+        {
+          "observation_id": "training6",
+          "default_unit_id": "training6",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": true,
+          "default_date": "2022-06-01",
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "OPEN",
+          "lgd": null,
+          "ead": null,
+          "score": 80,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        },
+        {
+          "observation_id": "training7",
+          "default_unit_id": "training7",
+          "role": "TRAIN",
+          "index_date": "2022-01-01",
+          "feature_observed_at": "2022-01-01",
+          "feature_known_at": "2022-01-01",
+          "label_window_end": "2023-01-01",
+          "label_known_at": "2023-01-02",
+          "defaulted": true,
+          "default_date": "2022-06-01",
+          "lgd_known_at": null,
+          "ead_known_at": null,
+          "lgd_status": "OPEN",
+          "lgd": null,
+          "ead": null,
+          "score": 80,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        }
+      ],
+      "pooling_spec": {
+        "spec_id": "synthetic_mortgage_pools",
+        "version": "1",
+        "known_at": "2021-01-01",
+        "stratum_fields": [
+          "product",
+          "borrower_type",
+          "facility_type",
+          "delinquency_state"
+        ],
+        "score_field": "score",
+        "segments": [
+          {
+            "segment_id": "mortgage_current",
+            "values": {
+              "product": "residential_mortgage",
+              "borrower_type": "person",
+              "facility_type": "installment",
+              "delinquency_state": "CURRENT"
+            },
+            "cutpoints": [
+              50
+            ],
+            "score_min": 0,
+            "score_max": 100,
+            "monotonicity": {
+              "pd": "increasing",
+              "lgd": "none",
+              "ead": "none"
+            }
+          }
+        ],
+        "minimum_cases": 2,
+        "minimum_defaults": 0,
+        "minimum_lgd_count": 0,
+        "minimum_ead_count": 0,
+        "maximum_bin_mean_spread": {
+          "pd": null,
+          "lgd": null,
+          "ead": null
+        }
+      },
+      "target": {
+        "event": "default",
+        "horizon": 365,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "not_defaulted_at_index",
+        "default_unit": "facility",
+        "default_definition": "explicit synthetic mortgage default policy",
+        "currency": "EUR"
+      },
+      "training": {
+        "role": "TRAIN",
+        "known_at": "2023-01-02",
+        "split_id": "synthetic-mortgage-pool-training",
+        "data_fingerprint": "eight independent labelled reference cases",
+        "data_origin": "SYNTHETIC"
+      },
+      "model_id": "mortgage_pools",
+      "model_version": "1"
+    },
+    "assignment_inputs": {
+      "observations": [
+        {
+          "observation_id": "facility_A",
+          "index_date": "2024-02-03",
+          "feature_observed_at": "2024-02-01",
+          "feature_known_at": "2024-02-01",
+          "score": 20,
+          "product": "residential_mortgage",
+          "borrower_type": "person",
+          "facility_type": "installment",
+          "delinquency_state": "CURRENT"
+        }
+      ],
+      "as_of": "2024-02-03",
+      "information_cutoff": "2024-02-03",
+      "expected_target": {
+        "event": "default",
+        "horizon": 365,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "not_defaulted_at_index",
+        "default_unit": "facility",
+        "default_definition": "explicit synthetic mortgage default policy",
+        "currency": "EUR"
+      },
+      "uncovered_policy": "unassigned"
+    },
+    "lgd_fit": {
+      "X_train": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "lgd_targets": [
+        0.1,
+        0.2,
+        0.4,
+        0.5
+      ],
+      "feature_order": [],
+      "link": "logit",
+      "covariance": "HC0",
+      "target": {
+        "event": "economic_loss",
+        "horizon": 5,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "given_default"
+      },
+      "training": {
+        "data_fingerprint": "synthetic-mortgage-closed-workouts",
+        "split_id": "mortgage-lgd-train",
+        "known_at": "2023-12-31",
+        "data_origin": "SYNTHETIC",
+        "workout_population": "closed_defaulted_episodes"
+      },
+      "model_id": "synthetic-mortgage-lgd",
+      "model_version": "1"
+    },
+    "design": {
+      "model_id": "mortgage-heldout-risk",
+      "model_version": "1",
+      "parameter_version": "1",
+      "data_fingerprint": "same-funded-mortgage-and-closed-workout",
+      "population_id": "funded-mortgage",
+      "split_id": "2024-holdout",
+      "prediction_origin": "HOLDOUT",
+      "evaluation_cutoff": "2025-09-30",
+      "currency": "EUR",
+      "target": {
+        "event": "default",
+        "horizon": 365,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "not_defaulted_at_index"
+      }
+    },
+    "cohort": [
+      {
+        "observation_id": "facility_A",
+        "default_unit_id": "facility_A",
+        "index_date": "2024-02-03",
+        "label_window_end": "2025-02-02",
+        "label_known_at": "2025-02-04",
+        "outcome_status": "MATURE",
+        "reference_exposure": 100000,
+        "reference_known_at": "2024-02-03",
+        "defaulted": true,
+        "default_date": "2024-09-01",
+        "complete_through": "2025-02-02"
+      }
+    ],
+    "workouts": [
+      {
+        "episode_id": "mortgage_A_default",
+        "observation_id": "facility_A",
+        "default_date": "2024-09-01",
+        "default_known_at": "2024-09-02",
+        "ead_at_default": 95000,
+        "episode_status": "CLOSED",
+        "valuation_known_at": "2025-09-30",
+        "reference_date": "2024-02-03",
+        "reference_known_at": "2024-02-03",
+        "reference_drawn": 100000,
+        "reference_limit": 100000,
+        "recovery_cashflows": [
+          {
+            "cashflow_id": "mortgage_sale_allocation",
+            "cashflow_date": "2025-08-31",
+            "known_at": "2025-09-01",
+            "currency": "EUR",
+            "kind": "RECOVERY",
+            "amount": 70000
+          }
+        ],
+        "discount_curve": {
+          "anchor_date": "2024-09-01",
+          "known_at": "2025-09-01",
+          "discount_basis": "externally_supplied_workout_factor",
+          "points": [
+            {
+              "cashflow_date": "2025-08-31",
+              "discount_factor": 0.9
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2025-09-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2025-08-31",
+              "rate": 1
+            }
+          ]
+        }
+      }
+    ],
+    "links": [
+      {
+        "observation_id": "facility_A",
+        "facility_id": "facility_A",
+        "obligor_id": "customer_A",
+        "household_id": "household_A",
+        "risk_group_id": "joint-mortgage-only",
+        "diagnostic_group": "mortgage",
+        "known_at": "2024-02-01"
+      }
+    ],
+    "estimation_profile": {
+      "profile_id": "separate-denominators",
+      "version": "1",
+      "known_at": "2024-02-01",
+      "pd_weighting": "reference_exposure",
+      "lgd_weighting": "ead",
+      "ead_weighting": "episode",
+      "ccf_weighting": "undrawn",
+      "confidence": 0.95,
+      "independence_assumption": "independent_default_units",
+      "minimum_pool_cases": 2
+    },
+    "forecast_ead": 100000,
+    "forecast_ead_basis": "Conservative frozen drawn amount at funding; no future observed balance is a forecast feature"
+  },
+  "property_control": {
+    "currency": "EUR",
+    "property_value": 150000,
+    "secured_claim": 100000,
+    "unsecured_existing_debt": 10000,
+    "known_at": "2024-02-01",
+    "scope": "Only the mortgage has a claim on the property; mixed-household cash stress does not treat unsecured debt as property-secured"
+  },
+  "oracles": {
+    "stressed_income": 4000,
+    "stressed_expenses": 2530,
+    "debt_service": 1000,
+    "residual": 470,
+    "discounted_recovery": 63000,
+    "loss": 32000,
+    "lgd": 0.3368421052631579,
+    "pool_brier": 0.5625,
+    "ead_bias": 5000
+  },
+  "joint_application": {
+    "application_id": "A",
+    "parties": [
+      {
+        "party_id": "customer_A",
+        "role": "borrower",
+        "liability_share": 1,
+        "household_id": "household_A"
+      },
+      {
+        "party_id": "co_borrower_A",
+        "role": "co_borrower",
+        "liability_share": 1,
+        "household_id": "household_A"
+      }
+    ],
+    "income_items": [
+      {
+        "economic_id": "salary_p",
+        "party_id": "customer_A",
+        "amount_monthly": 3000,
+        "currency": "EUR"
+      },
+      {
+        "economic_id": "salary_q",
+        "party_id": "co_borrower_A",
+        "amount_monthly": 2000,
+        "currency": "EUR"
+      }
+    ],
+    "obligation_items": [
+      {
+        "economic_id": "facility_A",
+        "party_id": "customer_A",
+        "amount_monthly": 900,
+        "currency": "EUR"
+      },
+      {
+        "economic_id": "facility_A",
+        "party_id": "co_borrower_A",
+        "amount_monthly": 900,
+        "currency": "EUR"
+      },
+      {
+        "economic_id": "existing_unsecured",
+        "party_id": "customer_A",
+        "amount_monthly": 100,
+        "currency": "EUR"
+      }
+    ],
+    "currency": "EUR"
+  },
+  "collateral": {
+    "claims": [
+      {
+        "claim_id": "facility_A",
+        "amount": 100000,
+        "currency": "EUR"
+      }
+    ],
+    "collateral": [
+      {
+        "collateral_id": "property_A",
+        "value": 150000,
+        "currency": "EUR",
+        "valuation_date": "2024-02-01",
+        "freshness": "CURRENT"
+      }
+    ],
+    "allocations": [
+      {
+        "claim_id": "facility_A",
+        "collateral_id": "property_A",
+        "amount": 100000,
+        "priority": 1
+      }
+    ],
+    "currency": "EUR"
+  },
+  "lineage_config": {
+    "origin": "SYNTHETIC",
+    "left_schema": {
+      "version": "1.0",
+      "columns": {
+        "record_id": {
+          "type": "string"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "date"
+        },
+        "known_at": {
+          "type": "date"
+        },
+        "balance": {
+          "type": "number",
+          "unit": "EUR"
+        }
+      },
+      "primary_key": "record_id"
+    },
+    "right_schema": {
+      "version": "1.0",
+      "columns": {
+        "entity_id": {
+          "type": "string"
+        },
+        "release_id": {
+          "type": "string"
+        },
+        "observed_at": {
+          "type": "date"
+        },
+        "available_at": {
+          "type": "date"
+        },
+        "x": {
+          "type": "number",
+          "unit": "score"
+        }
+      },
+      "primary_key": "release_id"
+    },
+    "controls": {
+      "record_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "total_weight": 6,
+      "total_balance": 600000,
+      "product_ids": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    },
+    "cutoffs": [
+      {
+        "name": "original",
+        "known_at": "2024-02-01",
+        "revision": "original"
+      }
+    ],
+    "vintage": "2024-02"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "products": {
+    "RETAIL_UNSECURED_INSTALLMENT": {
+      "observation_propensity": 0.4,
+      "log_odds_shifts": [
+        -1,
+        0,
+        1
+      ],
+      "reference": "Declared sensitivity scenarios; not estimated propensity or identified reject response",
+      "transport_identified": false
+    },
+    "RETAIL_EDUCATION_LOAN": {
+      "observation_propensity": 0.4,
+      "log_odds_shifts": [
+        -1,
+        0,
+        1
+      ],
+      "reference": "Declared sensitivity scenarios; not estimated propensity or identified reject response",
+      "transport_identified": false
+    },
+    "RETAIL_CREDIT_CARD": {
+      "observation_propensity": 0.4,
+      "log_odds_shifts": [
+        -1,
+        0,
+        1
+      ],
+      "reference": "Declared sensitivity scenarios; not estimated propensity or identified reject response",
+      "transport_identified": false,
+      "unbooked_applications": [
+        {
+          "application_id": "selection-card-declined",
+          "customer_id": "selection-card-person-declined",
+          "application_at": "2024-01-01",
+          "recent_arrears": 0,
+          "affordability": "NOT_AFFORDABLE",
+          "recorded_action": "DECLINE",
+          "source_reference": "Distinct synthetic through-door application and documentary affordability evidence; no facility originated",
+          "outcome": null,
+          "monthly_net_income": 50,
+          "monthly_expenses": 300,
+          "existing_debt_service": 0,
+          "proposed_minimum_payment": 30,
+          "evidence_observed_at": "2023-12-31",
+          "evidence_known_at": "2023-12-31",
+          "requested_limit": 1000
+        },
+        {
+          "application_id": "selection-card-not-taken-up",
+          "customer_id": "selection-card-person-not-taken-up",
+          "application_at": "2024-01-01",
+          "recent_arrears": 0,
+          "affordability": "AFFORDABLE",
+          "recorded_action": "APPROVE",
+          "source_reference": "Distinct synthetic through-door application and documentary affordability evidence; no facility originated",
+          "outcome": null,
+          "monthly_net_income": 3000,
+          "monthly_expenses": 300,
+          "existing_debt_service": 0,
+          "proposed_minimum_payment": 30,
+          "evidence_observed_at": "2023-12-31",
+          "evidence_known_at": "2023-12-31",
+          "requested_limit": 1000
+        }
+      ]
+    },
+    "RETAIL_SMALL_BUSINESS_FINANCE": {
+      "observation_propensity": 0.4,
+      "log_odds_shifts": [
+        -1,
+        0,
+        1
+      ],
+      "reference": "Declared sensitivity scenarios; not estimated propensity or identified reject response",
+      "transport_identified": false
+    }
+  }
+}

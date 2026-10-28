@@ -1,0 +1,114 @@
+{
+  "data_origin": "SYNTHETIC_REFERENCE",
+  "payments": [
+    {
+      "payment_id": "coupon",
+      "due_at": "2025-06-01",
+      "known_at": "2024-12-01",
+      "currency": "EUR",
+      "source_currency": "EUR",
+      "payer_jurisdiction": "A",
+      "payee_jurisdiction": "B",
+      "payment_jurisdictions": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "event_policy": {
+    "policy_id": "transaction-route",
+    "version": "1",
+    "events": [
+      {
+        "event_id": "freeze",
+        "event_type": "PAYMENT_FREEZE",
+        "jurisdictions": [
+          "A"
+        ],
+        "currencies": [
+          "EUR"
+        ],
+        "effective_from": "2025-01-01",
+        "effective_until": null,
+        "known_at": "2024-12-01",
+        "exemptions": [
+          {
+            "payment_id": "coupon",
+            "reason": "documented alternative payment route",
+            "evidence_reference": "synthetic-route-contract",
+            "known_at": "2025-03-01"
+          }
+        ]
+      }
+    ]
+  },
+  "as_of": "2025-01-01",
+  "known_at": "2025-01-01",
+  "horizon_end": "2025-12-31",
+  "target": {
+    "exposure_id": "cross-border-bond",
+    "horizon": 1,
+    "time_unit": "years",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "performing"
+  },
+  "mitigation": {
+    "effect_id": "prearranged-liquidity",
+    "success_probability_given_event_and_unmitigated_failure": 0.2,
+    "conditioning": "event_and_unmitigated_failure",
+    "assumption_reference": "declared-conditional-event-tree"
+  },
+  "conditional_losses": {
+    "neither": 0,
+    "default_only": 60,
+    "transfer_only": 20,
+    "joint": 70
+  },
+  "currency": "EUR",
+  "pre_transfer_pd": 0.1,
+  "event_probability": 0.2,
+  "event_to_default_probability": 0.5,
+  "scenarios": [
+    {
+      "case_id": "independent",
+      "joint_rule": "independent"
+    },
+    {
+      "case_id": "nested",
+      "joint_rule": "upper"
+    },
+    {
+      "case_id": "disjoint",
+      "joint_rule": "lower"
+    }
+  ],
+  "rating_scale": {
+    "schema_version": "1.0",
+    "scale_id": "synthetic-transfer-review",
+    "version": "1",
+    "boundary_convention": "left_closed",
+    "grades": [
+      {
+        "grade": "A",
+        "lower": 0,
+        "upper": 0.15,
+        "representative_pd": 0.05,
+        "is_default": false
+      },
+      {
+        "grade": "B",
+        "lower": 0.15,
+        "upper": 1,
+        "representative_pd": 0.3,
+        "is_default": false
+      },
+      {
+        "grade": "D",
+        "lower": 1,
+        "upper": 1,
+        "representative_pd": 1,
+        "is_default": true
+      }
+    ]
+  }
+}

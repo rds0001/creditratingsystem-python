@@ -1,0 +1,148 @@
+include pyproject.toml README.md LICENSE NOTICE
+recursive-include src/creditratingsystem *.py py.typed
+recursive-include tests *.py
+recursive-include docs *.md *.rst
+recursive-include examples *.py
+recursive-include src/creditratingsystem/datasets *.json
+include src/creditratingsystem/datasets/synthetic_innovations.py
+include src/creditratingsystem/datasets/synthetic_standard/innovations/country_transfer.u32le
+include src/creditratingsystem/datasets/synthetic_standard/innovations/facilities.u32le
+include src/creditratingsystem/datasets/synthetic_standard/innovations/macro_history.u32le
+include src/creditratingsystem/datasets/synthetic_standard/innovations/macro_paths.u32le
+include src/creditratingsystem/datasets/synthetic_standard/innovations/macro_revision.u32le
+include src/creditratingsystem/datasets/synthetic_standard/innovations/manifest.json
+include src/creditratingsystem/datasets/synthetic_standard/innovations/obligor_groups.u32le
+include src/creditratingsystem/datasets/synthetic_standard/innovations/obligor_static.u32le
+include src/creditratingsystem/datasets/synthetic_standard/innovations/obligor_year.u32le
+include src/creditratingsystem/datasets/synthetic_standard/macro/latent_truth/macro_factors.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/macro/latent_truth/scenario_cube.f64le
+include src/creditratingsystem/datasets/synthetic_standard/macro/manifest.json
+include src/creditratingsystem/datasets/synthetic_standard/macro/observable_inputs/macro_releases.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/frozen_predictions/obligor_predictions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/latent_truth/country_transfer.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/latent_truth/foreign_currency_risk.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/latent_truth/obligor_period.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/manifest.json
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/external_opinions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/financial_statements.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/obligors.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/operating_assets.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/operating_contracts.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/rating_overrides.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observable_inputs/support_edges.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observed_outcomes/default_events.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/obligors/observed_outcomes/obligor_labels.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/validation.json
+include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/analytical_workout_fixtures.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/constructed_open_workouts.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/future_recoveries.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/latent_truth/workout_parameters.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/manifest.json
+include src/creditratingsystem/datasets/synthetic_standard/workouts/observable_inputs/collateral.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/observable_inputs/facilities.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/observable_inputs/facility_exposures.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/observed_outcomes/recovery_cashflows.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_standard/workouts/observed_outcomes/workouts.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/latent_truth/independent_checkpoints.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/manifest.json
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/calibration_versions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/model_versions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/policy_versions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/source_accounts.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/source_facilities.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/source_model_versions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/source_obligors.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/source_pools.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observable_inputs/subjects.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/events/observed_outcomes/system_events.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/country_transfer.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/facilities.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/macro_history.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/macro_paths.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/macro_revision.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/manifest.json
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/obligor_groups.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/obligor_static.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/obligor_year.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/pool_servicing.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/retail_account.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/retail_apps.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/innovations/retail_households.u32le
+include src/creditratingsystem/datasets/synthetic_tiny/macro/latent_truth/macro_factors.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/macro/latent_truth/scenario_cube.f64le
+include src/creditratingsystem/datasets/synthetic_tiny/macro/manifest.json
+include src/creditratingsystem/datasets/synthetic_tiny/macro/observable_inputs/macro_releases.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/frozen_predictions/obligor_predictions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/latent_truth/country_transfer.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/latent_truth/foreign_currency_risk.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/latent_truth/obligor_period.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/manifest.json
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observable_inputs/external_opinions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observable_inputs/financial_statements.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observable_inputs/obligors.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observable_inputs/operating_assets.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observable_inputs/operating_contracts.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observable_inputs/rating_overrides.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observable_inputs/support_edges.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/obligors/observed_outcomes/obligor_labels.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/pools/latent_truth/contractual_asset_cashflows.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/pools/manifest.json
+include src/creditratingsystem/datasets/synthetic_tiny/pools/observable_inputs/pool_memberships.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/pools/observable_inputs/pools.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/pools/observable_inputs/tranches.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/pools/observed_outcomes/servicing_cashflows.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/decision_history/decisions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/frozen_predictions/application_predictions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/latent_truth/application_parameters.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/manifest.json
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/account_months.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/accounts.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/application_parties.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/applications.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/bureau_pulls.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/bureau_revisions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/bureau_tradelines.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/household_memberships.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/households.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/persons.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observable_inputs/transactions.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observed_outcomes/account_events.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observed_outcomes/application_labels.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/retail/observed_outcomes/collections.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/validation.json
+include src/creditratingsystem/datasets/synthetic_tiny/workouts/latent_truth/analytical_workout_fixtures.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/workouts/latent_truth/constructed_open_workouts.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/workouts/manifest.json
+include src/creditratingsystem/datasets/synthetic_tiny/workouts/observable_inputs/collateral.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/workouts/observable_inputs/facilities.jsonl.gz
+include src/creditratingsystem/datasets/synthetic_tiny/workouts/observable_inputs/facility_exposures.jsonl.gz
+
+include src/creditratingsystem/datasets/lineage_accounts.csv
+
+include src/creditratingsystem/datasets/lineage_releases.csv
+
+include src/creditratingsystem/datasets/structured_positions.csv
+
+include src/creditratingsystem/datasets/structured_releases.csv
+
+include src/creditratingsystem/datasets/journey_applications.csv
+
+include src/creditratingsystem/datasets/journey_releases.csv
+
+include src/creditratingsystem/datasets/mortgage_applications.csv
+include src/creditratingsystem/datasets/mortgage_releases.csv
+
+include src/creditratingsystem/datasets/revolving_accounts.csv
+include src/creditratingsystem/datasets/revolving_releases.csv
+
+include src/creditratingsystem/datasets/counterparty_positions.csv
+
+include src/creditratingsystem/datasets/counterparty_releases.csv
+
+include src/creditratingsystem/datasets/wholesale_sector_positions.csv
+
+include src/creditratingsystem/datasets/wholesale_sector_releases.csv
+include src/creditratingsystem/datasets/specialized_positions.csv
+include src/creditratingsystem/datasets/specialized_releases.csv
+include src/creditratingsystem/datasets/wholesale_sme_positions.csv
+include src/creditratingsystem/datasets/wholesale_sme_releases.csv

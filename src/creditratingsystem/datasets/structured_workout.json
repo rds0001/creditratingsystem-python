@@ -1,0 +1,1298 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_REFERENCE",
+  "version": "1.0",
+  "product": "STRUCTURED_AND_COUNTERPARTY_WORKOUT",
+  "residual_model": {
+    "schema_version": "1.0",
+    "model_id": "terminal-settlement-reference",
+    "model_version": "1",
+    "method_id": "lgd.fit_recovery_hurdle",
+    "feature_order": [],
+    "parameters": {
+      "fit_intercept": true,
+      "default_condition": "given_default",
+      "currency": "EUR",
+      "stage_spec": {
+        "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+        "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+        "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+        "positive_distribution": "lognormal",
+        "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+        "payout_horizon": "ULTIMATE",
+        "timing_distribution": "weibull",
+        "cure_residual_value_ratio": 1.0,
+        "landmark_definition": "Account enters residual terminal settlement stage"
+      },
+      "feature_min": [],
+      "feature_max": [],
+      "positive_feature_min": [],
+      "positive_feature_max": [],
+      "cure_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.cure",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            -0.6931471805599454
+          ],
+          "covariance": [
+            [
+              0.75
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -3.8190850097688775,
+          "frequency_total": 6.0,
+          "n_active_rows": 6,
+          "rank": 1,
+          "maximum_mean_score": 5.551115123125783e-17,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "699fbbd846e1ed6f6d0a172062f3b59c97a7213aa055b84e4cc530f7e2bdca73"
+      },
+      "positive_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.positive",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            0.0
+          ],
+          "covariance": [
+            [
+              1.0
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -2.772588722239781,
+          "frequency_total": 4.0,
+          "n_active_rows": 4,
+          "rank": 1,
+          "maximum_mean_score": 0.0,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "0342c26178e323e17254a256e28eaee94db0f86475773c4c880acd4d5040066e"
+      },
+      "amount_regression": {
+        "coefficients": [
+          -0.8369882167858352
+        ],
+        "covariance": [
+          [
+            0.1508686201015727
+          ]
+        ],
+        "covariance_type": "HC0_FREQUENCY_IID",
+        "residual_variance": 0.3017372402031454,
+        "rank": 1,
+        "frequency_total": 2.0
+      },
+      "timing_model": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.timing",
+        "model_version": "1",
+        "method_id": "survival.fit_aft_model",
+        "feature_order": [],
+        "parameters": {
+          "kind": "aft",
+          "distribution": "weibull",
+          "coefficients": [
+            3.9603830543916008
+          ],
+          "log_time_scale": 0.938538994120538,
+          "covariance_beta_log_scale": [
+            [
+              0.1468199895351604,
+              -0.0009212609147641112
+            ],
+            [
+              -0.0009212609147641111,
+              0.10924901927636418
+            ]
+          ],
+          "support_start": 0.0,
+          "support_end": 90.0
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "workout_resolution",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "diagnostics": {
+          "backend": "lifelines.WeibullAFTFitter",
+          "parameterization": "log(T)=intercept+X beta+scale*epsilon",
+          "log_likelihood": -29.747035581774195,
+          "row_log_likelihood": [
+            -4.176468546921858,
+            -4.242293388148155,
+            -4.317908600485287,
+            -4.399325490703751,
+            -4.48468997959468,
+            -4.57297194434928,
+            -1.7766888157855916,
+            -1.7766888157855916
+          ],
+          "converged": true,
+          "warnings": [],
+          "censoring": "independent_right_censoring",
+          "extrapolation": "parametric_tail_requires_explicit_prediction_policy"
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        }
+      }
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "residual_terminal_loss_fraction",
+      "horizon_role": "TIMING_REPORTING_REFERENCE",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "given_default",
+      "currency": "EUR"
+    },
+    "training": {
+      "data_fingerprint": "prior-2024-terminal-settlement-reference",
+      "split_id": "train",
+      "known_at": "2023-12-31",
+      "data_origin": "SYNTHETIC",
+      "workout_population": "open_and_closed_defaulted_landmarks"
+    },
+    "diagnostics": {
+      "observed_count": 6,
+      "censored_count": 2,
+      "cure_count": 2,
+      "positive_noncure_count": 2,
+      "zero_noncure_count": 2,
+      "identification": "Outcome and payout independent of resolution time and independent right censoring, conditional on landmark covariates"
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "training_input_fingerprint": "ab26a68269574829567434b3bd4538bef5e8364c0e512ec4c5451bb2fd5e53d9"
+  },
+  "stage_spec": {
+    "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+    "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+    "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+    "positive_distribution": "lognormal",
+    "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+    "payout_horizon": "ULTIMATE",
+    "timing_distribution": "weibull",
+    "cure_residual_value_ratio": 1.0,
+    "landmark_definition": "Account enters residual terminal settlement stage"
+  },
+  "target": {
+    "event": "residual_terminal_loss_fraction",
+    "horizon_role": "TIMING_REPORTING_REFERENCE",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "given_default",
+    "currency": "EUR"
+  },
+  "training_reference": {
+    "episodes": [
+      {
+        "episode_id": "0",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-11",
+        "resolution_known_at": "2023-01-11",
+        "cured": 1,
+        "cure_value": 80.0
+      },
+      {
+        "episode_id": "1",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-16",
+        "resolution_known_at": "2023-01-16",
+        "cured": 1,
+        "cure_value": 80.0
+      },
+      {
+        "episode_id": "2",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-21",
+        "resolution_known_at": "2023-01-21",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "3",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-26",
+        "resolution_known_at": "2023-01-26",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "4",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-01-31",
+        "resolution_known_at": "2023-01-31",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "5",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": "2023-02-05",
+        "resolution_known_at": "2023-02-05",
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "6",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": null,
+        "resolution_known_at": null,
+        "cured": 0,
+        "cure_value": 0.0
+      },
+      {
+        "episode_id": "7",
+        "default_date": "2022-12-01",
+        "default_known_at": "2022-12-01",
+        "reference_date": "2023-01-01",
+        "reference_known_at": "2023-01-01",
+        "features_observed_at": "2023-01-01",
+        "features_known_at": "2023-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100.0,
+        "residual_exposure_at_reference": 80.0,
+        "observation_end": "2023-04-01",
+        "resolution_date": null,
+        "resolution_known_at": null,
+        "cured": 0,
+        "cure_value": 0.0
+      }
+    ],
+    "cashflows": [
+      {
+        "episode_id": "4",
+        "cashflow_id": "4",
+        "cashflow_date": "2023-01-31",
+        "known_at": "2023-01-31",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 20
+      },
+      {
+        "episode_id": "5",
+        "cashflow_id": "5",
+        "cashflow_date": "2023-02-05",
+        "known_at": "2023-02-05",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 60
+      }
+    ],
+    "feature_order": [],
+    "X": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  "variants": {
+    "SECURITIZATION_TRANCHE": {
+      "subject_id": "SECURITIZATION_TRANCHE-position",
+      "ead": 80,
+      "past": 0,
+      "terminal": 25,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "SECURITIZATION_TRANCHE-workout",
+          "cashflow_id": "SECURITIZATION_TRANCHE-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 25
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 1
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "SECURITIZATION_TRANCHE-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 80,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "SECURITIZATION_TRANCHE-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 1
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 1,
+        "tail_assumption_reference": "Declared zero-rate ultimate terminal payout, not zero unresolved mass",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "exposure_input": {
+        "contract": {
+          "facility_id": "SECURITIZATION_TRANCHE-claim",
+          "currency": "EUR",
+          "as_of": "2024-01-16",
+          "drawn_principal": 80,
+          "credit_limit": 80,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "settlement",
+            "event_date": "2024-03-01",
+            "known_at": "2024-01-16",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 80
+          }
+        ],
+        "annual_interest_rates": [
+          0,
+          0
+        ],
+        "period_end_dates": [
+          "2024-02-01",
+          "2024-03-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "treatment_input": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "SECURITIZATION_TRANCHE-extension",
+            "version": "1",
+            "known_at": "2024-01-16",
+            "subject_id": "SECURITIZATION_TRANCHE-position",
+            "currency": "EUR",
+            "action": "CONTRACT_EXTENSION",
+            "prediction_reference": "externally_supplied_action_conditioned_cashflows",
+            "support_status": "SUPPORTED",
+            "affordability_status": "NOT_REQUIRED",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.5,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 25,
+            "cashflows": [
+              {
+                "cashflow_id": "proposed-terminal",
+                "date": "2024-05-01",
+                "expected_recovery": 35,
+                "expected_cost": 0,
+                "discount_factor": 1
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "SECURITIZATION_TRANCHE-treatment",
+          "version": "1",
+          "known_at": "2024-01-16",
+          "currency": "EUR",
+          "subject_id": "SECURITIZATION_TRANCHE-position",
+          "baseline_id": "no-change",
+          "baseline_present_value": 25,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "CONTRACT_EXTENSION"
+          ]
+        },
+        "as_of": "2024-01-16"
+      }
+    },
+    "COVERED_BOND": {
+      "subject_id": "COVERED_BOND-position",
+      "ead": 100,
+      "past": 35,
+      "terminal": 32.5,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "COVERED_BOND-workout",
+          "cashflow_id": "COVERED_BOND-workout-interim",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 35
+        },
+        {
+          "episode_id": "COVERED_BOND-workout",
+          "cashflow_id": "COVERED_BOND-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 32.5
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 1
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "COVERED_BOND-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 65,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "COVERED_BOND-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 1
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 1,
+        "tail_assumption_reference": "Declared zero-rate ultimate terminal payout, not zero unresolved mass",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "exposure_input": {
+        "contract": {
+          "facility_id": "COVERED_BOND-claim",
+          "currency": "EUR",
+          "as_of": "2024-01-16",
+          "drawn_principal": 100,
+          "credit_limit": 100,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "settlement",
+            "event_date": "2024-03-01",
+            "known_at": "2024-01-16",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 100
+          }
+        ],
+        "annual_interest_rates": [
+          0,
+          0
+        ],
+        "period_end_dates": [
+          "2024-02-01",
+          "2024-03-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "treatment_input": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "COVERED_BOND-extension",
+            "version": "1",
+            "known_at": "2024-01-16",
+            "subject_id": "COVERED_BOND-position",
+            "currency": "EUR",
+            "action": "CONTRACT_EXTENSION",
+            "prediction_reference": "externally_supplied_action_conditioned_cashflows",
+            "support_status": "SUPPORTED",
+            "affordability_status": "NOT_REQUIRED",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.5,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 32.5,
+            "cashflows": [
+              {
+                "cashflow_id": "proposed-terminal",
+                "date": "2024-05-01",
+                "expected_recovery": 42.5,
+                "expected_cost": 0,
+                "discount_factor": 1
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "COVERED_BOND-treatment",
+          "version": "1",
+          "known_at": "2024-01-16",
+          "currency": "EUR",
+          "subject_id": "COVERED_BOND-position",
+          "baseline_id": "no-change",
+          "baseline_present_value": 32.5,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "CONTRACT_EXTENSION"
+          ]
+        },
+        "as_of": "2024-01-16"
+      }
+    },
+    "TRADE_RECEIVABLES": {
+      "subject_id": "TRADE_RECEIVABLES-position",
+      "ead": 100,
+      "past": 40,
+      "terminal": 30,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "TRADE_RECEIVABLES-workout",
+          "cashflow_id": "TRADE_RECEIVABLES-workout-interim",
+          "cashflow_date": "2024-03-01",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 40
+        },
+        {
+          "episode_id": "TRADE_RECEIVABLES-workout",
+          "cashflow_id": "TRADE_RECEIVABLES-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 30
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 1
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "TRADE_RECEIVABLES-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 60,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "TRADE_RECEIVABLES-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 1
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 1,
+        "tail_assumption_reference": "Declared zero-rate ultimate terminal payout, not zero unresolved mass",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "exposure_input": {
+        "contract": {
+          "facility_id": "TRADE_RECEIVABLES-claim",
+          "currency": "EUR",
+          "as_of": "2024-01-16",
+          "drawn_principal": 100,
+          "credit_limit": 100,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "settlement",
+            "event_date": "2024-03-01",
+            "known_at": "2024-01-16",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 100
+          }
+        ],
+        "annual_interest_rates": [
+          0,
+          0
+        ],
+        "period_end_dates": [
+          "2024-02-01",
+          "2024-03-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "treatment_input": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "TRADE_RECEIVABLES-extension",
+            "version": "1",
+            "known_at": "2024-01-16",
+            "subject_id": "TRADE_RECEIVABLES-position",
+            "currency": "EUR",
+            "action": "CONTRACT_EXTENSION",
+            "prediction_reference": "externally_supplied_action_conditioned_cashflows",
+            "support_status": "SUPPORTED",
+            "affordability_status": "NOT_REQUIRED",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.5,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 30,
+            "cashflows": [
+              {
+                "cashflow_id": "proposed-terminal",
+                "date": "2024-05-01",
+                "expected_recovery": 40,
+                "expected_cost": 0,
+                "discount_factor": 1
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "TRADE_RECEIVABLES-treatment",
+          "version": "1",
+          "known_at": "2024-01-16",
+          "currency": "EUR",
+          "subject_id": "TRADE_RECEIVABLES-position",
+          "baseline_id": "no-change",
+          "baseline_present_value": 30,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "CONTRACT_EXTENSION"
+          ]
+        },
+        "as_of": "2024-01-16"
+      }
+    },
+    "COUNTERPARTY_EXPOSURE": {
+      "subject_id": "COUNTERPARTY_EXPOSURE-position",
+      "ead": 80,
+      "past": 0,
+      "terminal": 32,
+      "default_date": "2024-02-01",
+      "cashflows": [
+        {
+          "episode_id": "COUNTERPARTY_EXPOSURE-workout",
+          "cashflow_id": "COUNTERPARTY_EXPOSURE-workout-terminal",
+          "cashflow_date": "2024-05-01",
+          "known_at": "2024-05-01",
+          "currency": "EUR",
+          "kind": "RECOVERY",
+          "amount": 32
+        }
+      ],
+      "discount_curve": {
+        "anchor_date": "2024-02-01",
+        "known_at": "2024-02-01",
+        "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+        "points": [
+          {
+            "cashflow_date": "2024-03-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-04-01",
+            "discount_factor": 1
+          },
+          {
+            "cashflow_date": "2024-05-01",
+            "discount_factor": 1
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-01",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-01",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-01",
+            "rate": 1
+          }
+        ]
+      },
+      "episode": {
+        "episode_id": "COUNTERPARTY_EXPOSURE-workout",
+        "default_date": "2024-02-01",
+        "default_known_at": "2024-02-01",
+        "reference_date": "2024-03-01",
+        "reference_known_at": "2024-03-01",
+        "features_observed_at": "2024-03-01",
+        "features_known_at": "2024-03-01",
+        "currency": "EUR",
+        "ead_at_default": 80,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2024-03-15",
+        "resolution_date": "2024-05-01",
+        "resolution_known_at": "2024-05-01",
+        "cured": 0,
+        "cure_value": 0
+      },
+      "valuation": {
+        "episode_id": "COUNTERPARTY_EXPOSURE-workout",
+        "discount_curve": {
+          "anchor_date": "2024-02-01",
+          "known_at": "2024-02-01",
+          "discount_basis": "DECLARED_ZERO_RATE_ECONOMIC_REFERENCE",
+          "points": [
+            {
+              "cashflow_date": "2024-03-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-04-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-05-01",
+              "discount_factor": 1
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-02-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-03-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-04-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-05-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 1,
+        "tail_assumption_reference": "Declared zero-rate ultimate terminal payout, not zero unresolved mass",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      },
+      "exposure_input": {
+        "contract": {
+          "facility_id": "COUNTERPARTY_EXPOSURE-claim",
+          "currency": "EUR",
+          "as_of": "2024-01-16",
+          "drawn_principal": 80,
+          "credit_limit": 80,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "settlement",
+            "event_date": "2024-03-01",
+            "known_at": "2024-01-16",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 80
+          }
+        ],
+        "annual_interest_rates": [
+          0,
+          0
+        ],
+        "period_end_dates": [
+          "2024-02-01",
+          "2024-03-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "treatment_input": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "COUNTERPARTY_EXPOSURE-extension",
+            "version": "1",
+            "known_at": "2024-01-16",
+            "subject_id": "COUNTERPARTY_EXPOSURE-position",
+            "currency": "EUR",
+            "action": "CONTRACT_EXTENSION",
+            "prediction_reference": "externally_supplied_action_conditioned_cashflows",
+            "support_status": "SUPPORTED",
+            "affordability_status": "NOT_REQUIRED",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.5,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 32,
+            "cashflows": [
+              {
+                "cashflow_id": "proposed-terminal",
+                "date": "2024-05-01",
+                "expected_recovery": 42,
+                "expected_cost": 0,
+                "discount_factor": 1
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "COUNTERPARTY_EXPOSURE-treatment",
+          "version": "1",
+          "known_at": "2024-01-16",
+          "currency": "EUR",
+          "subject_id": "COUNTERPARTY_EXPOSURE-position",
+          "baseline_id": "no-change",
+          "baseline_present_value": 32,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "CONTRACT_EXTENSION"
+          ]
+        },
+        "as_of": "2024-01-16"
+      }
+    }
+  }
+}

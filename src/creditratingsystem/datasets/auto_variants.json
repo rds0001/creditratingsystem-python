@@ -1,0 +1,202 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "auto_loan",
+  "debt": {
+    "standard_amortizing": {
+      "loan_terms": {
+        "facility_id": "auto",
+        "currency": "EUR",
+        "principal": 20000,
+        "rate_type": "fixed",
+        "annual_rate": 0.05,
+        "rate_convention": "nominal_simple",
+        "day_count": "ACT/365F",
+        "amortization": "equal_principal",
+        "maturity_date": "2023-01-01"
+      },
+      "calendar": [
+        {
+          "start_date": "2021-01-01",
+          "end_date": "2022-01-01",
+          "payment_date": "2022-01-01"
+        },
+        {
+          "start_date": "2022-01-01",
+          "end_date": "2023-01-01",
+          "payment_date": "2023-01-01"
+        }
+      ]
+    },
+    "balloon": {
+      "loan_terms": {
+        "facility_id": "auto",
+        "currency": "EUR",
+        "principal": 20000,
+        "rate_type": "fixed",
+        "annual_rate": 0.05,
+        "rate_convention": "nominal_simple",
+        "day_count": "ACT/365F",
+        "amortization": "custom",
+        "maturity_date": "2023-01-01"
+      },
+      "calendar": [
+        {
+          "start_date": "2021-01-01",
+          "end_date": "2022-01-01",
+          "payment_date": "2022-01-01",
+          "principal_due": 5000
+        },
+        {
+          "start_date": "2022-01-01",
+          "end_date": "2023-01-01",
+          "payment_date": "2023-01-01",
+          "principal_due": 15000
+        }
+      ]
+    }
+  },
+  "asset": {
+    "asset_parameters": {
+      "asset_id": "car",
+      "currency": "EUR",
+      "valuation_date": "2021-01-01",
+      "initial_value": 20000,
+      "salvage_value": 0,
+      "initial_age_years": 0,
+      "economic_life_years": 10,
+      "depreciation_model": "straight_line",
+      "idiosyncratic_volatility": 0,
+      "probability_measure": "PHYSICAL",
+      "year_basis_days": 365
+    },
+    "market_paths": [
+      {
+        "scenario_id": "sale",
+        "date": "2023-01-01",
+        "market_index": 0.625,
+        "innovation": 0
+      }
+    ]
+  },
+  "recovery": {
+    "default_events": [
+      {
+        "scenario_id": "sale",
+        "default_event_id": "default",
+        "subject_id": "borrower",
+        "default_date": "2023-01-01"
+      }
+    ],
+    "claims": [],
+    "realization_paths": [
+      {
+        "scenario_id": "sale",
+        "default_event_id": "default",
+        "pool_id": "car",
+        "currency": "EUR",
+        "realization_id": "sale",
+        "collateral_id": "car",
+        "date": "2023-01-01",
+        "gross_value": 0,
+        "realization_fraction": 1,
+        "cost": 1000,
+        "discount_factor": 1,
+        "discount_anchor_date": "2023-01-01"
+      }
+    ],
+    "recovery_policy": {
+      "policy_id": "car_realization",
+      "version": "1",
+      "currency": "EUR",
+      "allocation": "LEGAL_CAP",
+      "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+      "completion": "ULTIMATE_COMPLETE"
+    }
+  },
+  "guarantee_allocation": {
+    "guarantees": [
+      {
+        "guarantee_id": "future_value",
+        "guarantor_id": "dealer",
+        "currency": "EUR",
+        "cap": 3000,
+        "cap_used": 0,
+        "coverage_fraction": 1,
+        "covered_claim_ids": [
+          "auto"
+        ],
+        "valid_from": "2021-01-01",
+        "valid_until": "2023-01-02",
+        "known_at": "2021-01-01",
+        "legally_effective": true,
+        "evidence_reference": "explicit net realization floor guarantee"
+      }
+    ],
+    "claims": [],
+    "allocation_policy": {
+      "policy_id": "gfv",
+      "version": "1",
+      "guarantee_priority": [
+        "future_value"
+      ],
+      "claim_priority": [
+        "auto"
+      ],
+      "cap_convention": "non_reinstating_total"
+    },
+    "as_of": "2021-01-01",
+    "known_at": "2021-01-01",
+    "currency": "EUR"
+  },
+  "guarantee_loss": {
+    "borrower_risk": {
+      "entity_id": "borrower",
+      "pd": 0.1,
+      "stage": "PRE_TRANSFER",
+      "target": {
+        "event": "default",
+        "horizon": 2,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "performing",
+        "exposure_id": "auto"
+      },
+      "applied_effects": []
+    },
+    "guarantor_risk": {
+      "entity_id": "dealer",
+      "pd": 0.2,
+      "stage": "PRE_TRANSFER",
+      "target": {
+        "event": "default",
+        "horizon": 2,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "performing"
+      },
+      "applied_effects": []
+    },
+    "claim_id": "auto",
+    "loss_contract": {
+      "effect_id": "gfv",
+      "currency": "EUR",
+      "assumption_reference": "joint dealer-borrower scenario probabilities",
+      "stage": "PRE_GUARANTEE",
+      "valuation_date": "2023-01-01",
+      "states": {
+        "borrower_only": {
+          "loss_before_guarantee": 0,
+          "payout_fraction": 1,
+          "evidence_reference": "dealer pays bounded net-floor gap"
+        },
+        "joint_default": {
+          "loss_before_guarantee": 0,
+          "payout_fraction": 0,
+          "evidence_reference": "dealer defaults"
+        }
+      }
+    },
+    "joint_default_probability": 0.02
+  },
+  "net_realization_floor": 12000
+}

@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "world_type": "obligor_panel",
+  "generator_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "specification": {
+    "tier": "tiny",
+    "dgp_family": "misspecified",
+    "selection_mechanism": "MNAR",
+    "start_date": "2000-01-01",
+    "observation_cutoff": "2026-01-01"
+  },
+  "innovation_manifest_hash": "65563ec95592289a24303f2200255211f00d6611fb5a2efcb6464a57cc064859",
+  "chunk_rows": 1000,
+  "memory_budget_mb": 256,
+  "estimated_working_mb": 36.128,
+  "layers": [
+    "observable_inputs",
+    "latent_truth",
+    "frozen_predictions",
+    "decision_history",
+    "observed_outcomes"
+  ],
+  "tables": {
+    "latent_truth/country_transfer": {
+      "file": "latent_truth/country_transfer.jsonl.gz",
+      "rows": 18,
+      "columns": [
+        "country_id",
+        "period",
+        "transfer_pd",
+        "transfer_event",
+        "currency_scope"
+      ],
+      "sha256": "59d439f66885df22edcbab18356e74573049ff48ce34415944a1b03fad579f19"
+    },
+    "observable_inputs/obligors": {
+      "file": "observable_inputs/obligors.jsonl.gz",
+      "rows": 64,
+      "columns": [
+        "obligor_id",
+        "group_id",
+        "country_id",
+        "sector",
+        "currency",
+        "established_at",
+        "known_at"
+      ],
+      "sha256": "20ec04ecdaa0b6c5767c5c9671d919efe2b35e3c21c6a0588de1aba0b999607c"
+    },
+    "observable_inputs/financial_statements": {
+      "file": "observable_inputs/financial_statements.jsonl.gz",
+      "rows": 192,
+      "columns": [
+        "snapshot_id",
+        "obligor_id",
+        "observed_at",
+        "known_at",
+        "assets",
+        "debt",
+        "equity",
+        "revenue",
+        "ebitda",
+        "depreciation",
+        "ebit",
+        "interest",
+        "tax",
+        "capex",
+        "cfads",
+        "debt_service",
+        "market_equity",
+        "equity_volatility",
+        "risk_free_rate",
+        "entity_split",
+        "time_split",
+        "split"
+      ],
+      "sha256": "1432f39a4d217e03fedd128a9a0ad7fc67430a5974a97cd0a0dd209cc4b22af6"
+    },
+    "observable_inputs/external_opinions": {
+      "file": "observable_inputs/external_opinions.jsonl.gz",
+      "rows": 192,
+      "columns": [
+        "opinion_id",
+        "obligor_id",
+        "observed_at",
+        "known_at",
+        "grade",
+        "provider",
+        "valid_until"
+      ],
+      "sha256": "e11fce6c7d19ba7b3cd9f92a91b95a121bdea7bd44ed2d8d323f4c4d0a9b85a4"
+    },
+    "frozen_predictions/obligor_predictions": {
+      "file": "frozen_predictions/obligor_predictions.jsonl.gz",
+      "rows": 192,
+      "columns": [
+        "snapshot_id",
+        "obligor_id",
+        "as_of",
+        "model_version",
+        "pd",
+        "horizon_months"
+      ],
+      "sha256": "ee8def7d3effe54b21ae02f943792b94fc1961580fa293b2b60ed68097194355"
+    },
+    "latent_truth/obligor_period": {
+      "file": "latent_truth/obligor_period.jsonl.gz",
+      "rows": 192,
+      "columns": [
+        "snapshot_id",
+        "obligor_id",
+        "period",
+        "as_of",
+        "true_pd",
+        "asset_value",
+        "asset_volatility",
+        "origination_leverage",
+        "group_factor",
+        "dgp_stratum",
+        "potential_default_at"
+      ],
+      "sha256": "49cca262da8bfdaa6432ccfda26738fecfa90088f9962df52800974338f64c52"
+    },
+    "latent_truth/foreign_currency_risk": {
+      "file": "latent_truth/foreign_currency_risk.jsonl.gz",
+      "rows": 192,
+      "columns": [
+        "snapshot_id",
+        "obligor_id",
+        "country_id",
+        "base_pd",
+        "transfer_pd",
+        "independent_union_pd",
+        "base_event",
+        "transfer_event",
+        "joint_default_event",
+        "scope"
+      ],
+      "sha256": "f91665cb96dddad3b969a6e6843a103833854836eb448961423a3f1bbfc52a37"
+    },
+    "observed_outcomes/obligor_labels": {
+      "file": "observed_outcomes/obligor_labels.jsonl.gz",
+      "rows": 192,
+      "columns": [
+        "snapshot_id",
+        "obligor_id",
+        "window_start",
+        "window_end",
+        "evaluation_cutoff",
+        "default_indicator",
+        "censored"
+      ],
+      "sha256": "590b58405f466a3d8bf2bc1dbecef1a35ae050189186aa2be936027d18cbc0fc"
+    },
+    "observable_inputs/operating_assets": {
+      "file": "observable_inputs/operating_assets.jsonl.gz",
+      "rows": 192,
+      "columns": [
+        "asset_id",
+        "obligor_id",
+        "asset_type",
+        "observed_at",
+        "known_at",
+        "market_value",
+        "capacity",
+        "occupied_units",
+        "utilization",
+        "contract_end",
+        "gross_rent_or_revenue",
+        "operating_cost",
+        "maintenance_reserve",
+        "cfads",
+        "debt_service",
+        "completion_fraction",
+        "lessee_id",
+        "lessor_id",
+        "spc_id"
+      ],
+      "sha256": "ea11b2a82c654b4b2b841c103e388774294c44a2ee39298e4fda5dd97bb61547"
+    },
+    "observable_inputs/operating_contracts": {
+      "file": "observable_inputs/operating_contracts.jsonl.gz",
+      "rows": 270,
+      "columns": [
+        "contract_id",
+        "asset_id",
+        "obligor_id",
+        "counterparty_id",
+        "contract_type",
+        "known_at",
+        "effective_from",
+        "effective_to",
+        "annual_contract_revenue",
+        "occupied_capacity",
+        "currency"
+      ],
+      "sha256": "ef8b4d2e2d96635a4a806463180bdbe30429d8d5cab6f26b870902fa0281bb8e"
+    },
+    "observable_inputs/rating_overrides": {
+      "file": "observable_inputs/rating_overrides.jsonl.gz",
+      "rows": 18,
+      "columns": [
+        "override_id",
+        "obligor_id",
+        "known_at",
+        "effective_from",
+        "effective_to",
+        "grade_before",
+        "grade_after",
+        "reason_code",
+        "approved_by"
+      ],
+      "sha256": "75ab605a47fbfbc9c0e26bb0fba8b791c60dac35e998562d9869c99e5ad1b836"
+    },
+    "observable_inputs/support_edges": {
+      "file": "observable_inputs/support_edges.jsonl.gz",
+      "rows": 48,
+      "columns": [
+        "edge_id",
+        "supporter_id",
+        "beneficiary_id",
+        "scope",
+        "capacity",
+        "effective_from",
+        "effective_to",
+        "known_at"
+      ],
+      "sha256": "7b0e50b062d99b8f121c143681507556d6d2ce82b97aeb8fa81006dc378a773a"
+    }
+  },
+  "binary_resources": {},
+  "limitations": [
+    "Synthetic engineering evidence does not establish real portfolio performance."
+  ],
+  "actual_rows": 1762,
+  "runtime_seconds": 0.16299176000029547,
+  "dependencies": {
+    "macro_manifest_hash": "5d674e2db3d9ef3006376d2631090344b0ea7074abd0a8dafde612f72a93fe82"
+  },
+  "dgp": {
+    "first_default_absorbing": true,
+    "financial_reporting_lag_days": 90,
+    "outcome_reporting_lag_days": 14,
+    "split_unit": "economic_group",
+    "split_rule": "group modulo10 and forward time60/20/20; cross-cells excluded",
+    "structural_equity": "European call on asset value, horizon1year"
+  }
+}

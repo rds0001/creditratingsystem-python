@@ -1,0 +1,908 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1.0",
+  "legal_convention": "Synthetic explicitly agreed priorities only, not inferred statutory rules",
+  "cases": [
+    {
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "variant": "bank",
+      "case_id": "financial_institution_exposure-bank",
+      "terms": {
+        "own_receipts": 30,
+        "transfer_receipts": 0,
+        "operating_due": 10,
+        "initial_cash": 40,
+        "financial_due": 85,
+        "asset_book": 1500,
+        "liabilities": 1400,
+        "asset_haircut": 0.02,
+        "reserve_strengthening": 20,
+        "restricted_capital": 0,
+        "recovery_gross": 90,
+        "prior_claim": 80,
+        "credit_claim": 30,
+        "cashflow_type": "deposit_and_wholesale_funding",
+        "claim_type": "senior_bank_debt",
+        "borrower_class": "BANK"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-bank",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-bank",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 80,
+            "legal_balance": 80,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-bank",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 30,
+            "legal_balance": 30,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "financial_institution_exposure-bank-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 90,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "variant": "nonbank_lender",
+      "case_id": "financial_institution_exposure-nonbank_lender",
+      "terms": {
+        "own_receipts": 12,
+        "transfer_receipts": 0,
+        "operating_due": 4,
+        "initial_cash": 20,
+        "financial_due": 42,
+        "asset_book": 400,
+        "liabilities": 320,
+        "asset_haircut": 0.05,
+        "reserve_strengthening": 15,
+        "restricted_capital": 0,
+        "recovery_gross": 40,
+        "prior_claim": 30,
+        "credit_claim": 20,
+        "cashflow_type": "wholesale_funding_no_deposits",
+        "claim_type": "secured_nonbank_debt",
+        "borrower_class": "NONBANK_FINANCE"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-nonbank_lender",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-nonbank_lender",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 30,
+            "legal_balance": 30,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-nonbank_lender",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 20,
+            "legal_balance": 20,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "financial_institution_exposure-nonbank_lender-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 40,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+      "variant": "financial_holding",
+      "case_id": "financial_institution_exposure-financial_holding",
+      "terms": {
+        "own_receipts": 6,
+        "transfer_receipts": 0,
+        "operating_due": 2,
+        "initial_cash": 1,
+        "financial_due": 8,
+        "asset_book": 210,
+        "liabilities": 60,
+        "asset_haircut": 0.1,
+        "reserve_strengthening": 0,
+        "restricted_capital": 200,
+        "recovery_gross": 8,
+        "prior_claim": 0,
+        "credit_claim": 30,
+        "cashflow_type": "permitted_subsidiary_dividends_only",
+        "claim_type": "structurally_subordinated_holding_debt",
+        "borrower_class": "FINANCIAL_HOLDING"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-financial_holding",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-financial_holding",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 0,
+            "legal_balance": 0,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "financial_institution_exposure-financial_holding",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 30,
+            "legal_balance": 30,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "financial_institution_exposure-financial_holding-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 8,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "INSURER_EXPOSURE",
+      "variant": "life",
+      "case_id": "insurer_exposure-life",
+      "terms": {
+        "own_receipts": 50,
+        "transfer_receipts": 0,
+        "operating_due": 75,
+        "initial_cash": 15,
+        "financial_due": 3,
+        "asset_book": 1000,
+        "liabilities": 850,
+        "asset_haircut": 0.1,
+        "reserve_strengthening": 40,
+        "restricted_capital": 0,
+        "recovery_gross": 80,
+        "prior_claim": 90,
+        "credit_claim": 20,
+        "cashflow_type": "premium_less_surrenders_guarantees_expenses",
+        "claim_type": "senior_financial_debt_after_policyholder_claims",
+        "borrower_class": "LIFE_INSURER",
+        "payment_breakdown": {
+          "surrenders": 60,
+          "guarantees": 10,
+          "expenses": 5
+        }
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-life",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-life",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 90,
+            "legal_balance": 90,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-life",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 20,
+            "legal_balance": 20,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "insurer_exposure-life-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 80,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "INSURER_EXPOSURE",
+      "variant": "nonlife",
+      "case_id": "insurer_exposure-nonlife",
+      "terms": {
+        "own_receipts": 100,
+        "transfer_receipts": 0,
+        "operating_due": 150,
+        "initial_cash": 40,
+        "financial_due": 5,
+        "asset_book": 700,
+        "liabilities": 500,
+        "asset_haircut": 0.05,
+        "reserve_strengthening": 60,
+        "restricted_capital": 0,
+        "recovery_gross": 60,
+        "prior_claim": 50,
+        "credit_claim": 20,
+        "cashflow_type": "premium_less_claim_development_expenses",
+        "claim_type": "senior_financial_debt_after_policyholder_claims",
+        "borrower_class": "NONLIFE_INSURER",
+        "payment_breakdown": {
+          "claim_payments": 130,
+          "expenses": 20
+        }
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-nonlife",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-nonlife",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 50,
+            "legal_balance": 50,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-nonlife",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 20,
+            "legal_balance": 20,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "insurer_exposure-nonlife-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 60,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "INSURER_EXPOSURE",
+      "variant": "reinsurer",
+      "case_id": "insurer_exposure-reinsurer",
+      "terms": {
+        "own_receipts": 40,
+        "transfer_receipts": 0,
+        "operating_due": 95,
+        "initial_cash": 25,
+        "financial_due": 10,
+        "asset_book": 900,
+        "liabilities": 650,
+        "asset_haircut": 0.08,
+        "reserve_strengthening": 80,
+        "restricted_capital": 0,
+        "recovery_gross": 70,
+        "prior_claim": 60,
+        "credit_claim": 20,
+        "cashflow_type": "premiums_claims_and_distinct_retrocession_receivables",
+        "claim_type": "financial_debt_after_senior_contract_claims",
+        "borrower_class": "REINSURER",
+        "payment_breakdown": {
+          "ceded_claim_payments": 90,
+          "expenses": 5
+        }
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-reinsurer",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-reinsurer",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 60,
+            "legal_balance": 60,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "insurer_exposure-reinsurer",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 20,
+            "legal_balance": 20,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "insurer_exposure-reinsurer-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 70,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "PUBLIC_SECTOR_DEBT",
+      "variant": "region",
+      "case_id": "public_sector_debt-region",
+      "terms": {
+        "own_receipts": 350,
+        "transfer_receipts": 150,
+        "operating_due": 400,
+        "initial_cash": 0,
+        "financial_due": 50,
+        "recovery_gross": 80,
+        "prior_claim": 0,
+        "credit_claim": 100,
+        "cashflow_type": "own_revenue_plus_intergovernmental_transfers",
+        "claim_type": "autonomous_regional_debt",
+        "borrower_class": "REGION"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-region",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-region",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 0,
+            "legal_balance": 0,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-region",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "legal_balance": 100,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "public_sector_debt-region-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 80,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "PUBLIC_SECTOR_DEBT",
+      "variant": "municipality",
+      "case_id": "public_sector_debt-municipality",
+      "terms": {
+        "own_receipts": 90,
+        "transfer_receipts": 10,
+        "operating_due": 40,
+        "initial_cash": 0,
+        "financial_due": 50,
+        "recovery_gross": 40,
+        "prior_claim": 0,
+        "credit_claim": 50,
+        "cashflow_type": "municipal_own_revenue_plus_transfers",
+        "claim_type": "autonomous_municipal_debt",
+        "borrower_class": "MUNICIPALITY"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-municipality",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-municipality",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 0,
+            "legal_balance": 0,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-municipality",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 50,
+            "legal_balance": 50,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "public_sector_debt-municipality-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 40,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "PUBLIC_SECTOR_DEBT",
+      "variant": "public_agency",
+      "case_id": "public_sector_debt-public_agency",
+      "terms": {
+        "own_receipts": 90,
+        "transfer_receipts": 210,
+        "operating_due": 240,
+        "initial_cash": 0,
+        "financial_due": 30,
+        "recovery_gross": 20,
+        "prior_claim": 0,
+        "credit_claim": 60,
+        "cashflow_type": "appropriated_budget_transfers_plus_own_receipts",
+        "claim_type": "agency_debt_without_automatic_sovereign_guarantee",
+        "borrower_class": "PUBLIC_AGENCY"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-public_agency",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-public_agency",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 0,
+            "legal_balance": 0,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "public_sector_debt-public_agency",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 60,
+            "legal_balance": 60,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "public_sector_debt-public_agency-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 20,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "SUPRANATIONAL_DEBT",
+      "variant": "multilateral_lender",
+      "case_id": "supranational_debt-multilateral_lender",
+      "terms": {
+        "own_receipts": 100,
+        "transfer_receipts": 0,
+        "operating_due": 30,
+        "initial_cash": 0,
+        "financial_due": 80,
+        "recovery_gross": 70,
+        "prior_claim": 0,
+        "credit_claim": 100,
+        "cashflow_type": "loan_receipts_separate_from_callable_capital",
+        "claim_type": "independent_multilateral_debt",
+        "borrower_class": "MULTILATERAL_LENDER"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "supranational_debt-multilateral_lender",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "supranational_debt-multilateral_lender",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 0,
+            "legal_balance": 0,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "supranational_debt-multilateral_lender",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 100,
+            "legal_balance": 100,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "supranational_debt-multilateral_lender-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 70,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    },
+    {
+      "product": "SUPRANATIONAL_DEBT",
+      "variant": "supranational_body",
+      "case_id": "supranational_debt-supranational_body",
+      "terms": {
+        "own_receipts": 60,
+        "transfer_receipts": 0,
+        "operating_due": 10,
+        "initial_cash": 0,
+        "financial_due": 80,
+        "recovery_gross": 30,
+        "prior_claim": 0,
+        "credit_claim": 50,
+        "cashflow_type": "committed_revenue_separate_from_conditional_member_calls",
+        "claim_type": "independent_supranational_debt",
+        "borrower_class": "SUPRANATIONAL_BODY"
+      },
+      "recovery": {
+        "default_events": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "supranational_debt-supranational_body",
+            "default_date": "2024-06-01"
+          }
+        ],
+        "claims": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "supranational_debt-supranational_body",
+            "claim_id": "prior_legal_claim",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 0,
+            "legal_balance": 0,
+            "priority": 0,
+            "deficit_cost_share": 0
+          },
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "subject_id": "supranational_debt-supranational_body",
+            "claim_id": "financial_credit",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "ead_at_default": 50,
+            "legal_balance": 50,
+            "priority": 1,
+            "deficit_cost_share": 1
+          }
+        ],
+        "realization_paths": [
+          {
+            "scenario_id": "stress",
+            "default_event_id": "default",
+            "pool_id": "estate",
+            "currency": "EUR",
+            "realization_id": "enterprise",
+            "collateral_id": "supranational_debt-supranational_body-unrestricted-estate",
+            "date": "2024-06-01",
+            "gross_value": 30,
+            "realization_fraction": 1,
+            "cost": 0,
+            "discount_factor": 1,
+            "discount_anchor_date": "2024-06-01"
+          }
+        ],
+        "recovery_policy": {
+          "policy_id": "legal-priority",
+          "version": "1",
+          "currency": "EUR",
+          "allocation": "LEGAL_CAP",
+          "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+          "completion": "ULTIMATE_COMPLETE"
+        }
+      }
+    }
+  ]
+}

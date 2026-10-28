@@ -1,0 +1,282 @@
+{
+  "version": "1.0",
+  "product": "LEVERAGED_LOAN",
+  "data_origin": "SYNTHETIC",
+  "as_of": "2024-01-01",
+  "known_at": "2024-01-01",
+  "target": {
+    "event": "default",
+    "horizon": 2,
+    "time_unit": "years",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "ratio_spec": [
+    {
+      "name": "net_debt_ebitda",
+      "numerator": {
+        "debt": 1,
+        "cash": -1
+      },
+      "denominator": {
+        "ebitda": 1
+      },
+      "denominator_policy": "positive",
+      "output_unit": "dimensionless"
+    }
+  ],
+  "support": {
+    "effect_id": "sponsor-support",
+    "assumption_reference": "Synthetic discretionary cash rescue, no legal guarantee",
+    "currency": "EUR",
+    "total_capacity": 150,
+    "reserved_elsewhere": 20,
+    "allocated_capacity": 130,
+    "support_required": 114,
+    "states": {
+      "parent_alive": {
+        "available_capacity": 130,
+        "willingness_given_state": 0.5,
+        "success_given_willing_and_funded": 0.8,
+        "support_permitted": true,
+        "evidence_reference": "assumed solvent sponsor rescue"
+      },
+      "joint_default": {
+        "available_capacity": 0,
+        "willingness_given_state": 0,
+        "success_given_willing_and_funded": 0,
+        "support_permitted": false,
+        "evidence_reference": "no funds under joint distress"
+      }
+    }
+  },
+  "score_training": {
+    "X": [
+      [
+        4
+      ],
+      [
+        4
+      ],
+      [
+        8
+      ],
+      [
+        8
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      8,
+      2,
+      6,
+      4
+    ],
+    "feature_order": [
+      "net_debt_ebitda"
+    ],
+    "training": {
+      "data_fingerprint": "synthetic-leveraged-two-year-counts-v1",
+      "split_id": "train_origination_2017",
+      "known_at": "2020-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "fit_spec": {
+      "feature_kinds": [
+        "expert"
+      ],
+      "neutral_profile": [
+        4
+      ]
+    }
+  },
+  "calibration": {
+    "values": [
+      0.2,
+      0.2,
+      0.4,
+      0.4
+    ],
+    "outcomes": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      8,
+      2,
+      6,
+      4
+    ],
+    "metadata": {
+      "target": {
+        "event": "default",
+        "horizon": 2,
+        "time_unit": "years",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "calibration": {
+        "start": "2020-01-01",
+        "end": "2022-01-01",
+        "known_at": "2022-01-02",
+        "split_id": "calibration_origination_2020",
+        "prediction_origin": "HOLDOUT"
+      },
+      "base_model_version": "1",
+      "population_definition": "Synthetic leveraged loan obligors",
+      "outcome_policy": "Fully mature two-year obligor default",
+      "weight_type": "frequency",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "variants": [
+    {
+      "id": "sponsor_backed",
+      "debt": 120,
+      "cash": 0,
+      "ebitda": 20,
+      "sponsor": true,
+      "maintenance_covenant": true,
+      "asset_value": 95,
+      "cfads": [
+        18,
+        18
+      ]
+    },
+    {
+      "id": "high_leverage",
+      "debt": 160,
+      "cash": 0,
+      "ebitda": 20,
+      "sponsor": false,
+      "maintenance_covenant": true,
+      "asset_value": 125,
+      "cfads": [
+        20,
+        20
+      ]
+    },
+    {
+      "id": "covenant_lite",
+      "debt": 120,
+      "cash": 0,
+      "ebitda": 20,
+      "sponsor": false,
+      "maintenance_covenant": false,
+      "asset_value": 95,
+      "cfads": [
+        18,
+        18
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "start_date": "2024-01-01",
+      "end_date": "2025-01-01",
+      "payment_date": "2025-01-01"
+    },
+    {
+      "start_date": "2025-01-01",
+      "end_date": "2026-01-01",
+      "payment_date": "2026-01-01"
+    }
+  ],
+  "debt_contract": {
+    "currency": "EUR",
+    "rate_type": "fixed",
+    "annual_rate": 0.1,
+    "rate_convention": "nominal_simple",
+    "day_count": "ACT/365F",
+    "amortization": "bullet",
+    "maturity_date": "2026-01-01"
+  },
+  "default_policy": {
+    "policy_id": "synthetic-leveraged",
+    "version": "1",
+    "basis": "BASEL_CRE36_REFERENCE",
+    "assessment_level": "obligor",
+    "dscr_threshold": 1,
+    "ltv_threshold": 1,
+    "dscr_comparison": "lt",
+    "ltv_comparison": "gt",
+    "past_due_days_threshold": 90,
+    "past_due_comparison": "gt",
+    "past_due_rule_reference": "declared reference clock",
+    "materiality_rule_reference": "synthetic materiality",
+    "utp_rule_reference": "declared insufficient liquidity and asset coverage",
+    "dual_test_as_utp": true,
+    "economic_joint_timing": "SAME_DATE",
+    "default_state": "ABSORBING_FIRST_DEFAULT"
+  },
+  "survival_training": {
+    "entry": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "exit": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "event": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "training": {
+      "data_fingerprint": "leveraged-independent-vintage-2019-v1",
+      "split_id": "survival_2019",
+      "known_at": "2022-01-01",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "economic_contract": {
+    "maintenance_max_net_debt_ebitda": 5,
+    "refinancing_committed": 0,
+    "sponsor_cash_counted_in_liquidity": 0,
+    "covenant_breach_is_automatic_default": false
+  },
+  "hidden_truth": {
+    "training_default_probabilities": [
+      0.2,
+      0.4
+    ],
+    "survival_at_one_year": 0.9,
+    "survival_at_two_years": 0.8,
+    "refinancing_shortfall_by_variant": {
+      "sponsor_backed": 114,
+      "high_leverage": 156,
+      "covenant_lite": 114
+    }
+  }
+}

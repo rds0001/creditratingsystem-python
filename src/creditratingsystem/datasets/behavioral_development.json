@@ -1,0 +1,2642 @@
+{
+  "product": "RETAIL_BEHAVIORAL_MONITORING",
+  "data_origin": "SYNTHETIC",
+  "version": "1",
+  "train": {
+    "accounts": [
+      {
+        "account_id": "train0",
+        "customer_id": "train0",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train1",
+        "customer_id": "train1",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train2",
+        "customer_id": "train2",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train3",
+        "customer_id": "train3",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train4",
+        "customer_id": "train4",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train5",
+        "customer_id": "train5",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train6",
+        "customer_id": "train6",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train7",
+        "customer_id": "train7",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train8",
+        "customer_id": "train8",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "train9",
+        "customer_id": "train9",
+        "product_id": "card",
+        "opened_at": "2020-01-01",
+        "known_at": "2020-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      }
+    ],
+    "statements": [
+      {
+        "account_id": "train0",
+        "statement_id": "train0-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 90.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train0",
+        "statement_id": "train0-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 90.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train0",
+        "statement_id": "train0-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 90.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train1",
+        "statement_id": "train1-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train1",
+        "statement_id": "train1-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train1",
+        "statement_id": "train1-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train2",
+        "statement_id": "train2-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 70.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train2",
+        "statement_id": "train2-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 70.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train2",
+        "statement_id": "train2-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 70.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train3",
+        "statement_id": "train3-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 60.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train3",
+        "statement_id": "train3-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 60.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train3",
+        "statement_id": "train3-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 60.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train4",
+        "statement_id": "train4-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train4",
+        "statement_id": "train4-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train4",
+        "statement_id": "train4-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train5",
+        "statement_id": "train5-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 50.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train5",
+        "statement_id": "train5-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 50.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train5",
+        "statement_id": "train5-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 50.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train6",
+        "statement_id": "train6-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 40.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train6",
+        "statement_id": "train6-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 40.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train6",
+        "statement_id": "train6-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 40.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train7",
+        "statement_id": "train7-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 30.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train7",
+        "statement_id": "train7-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 30.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train7",
+        "statement_id": "train7-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 30.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train8",
+        "statement_id": "train8-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 20.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train8",
+        "statement_id": "train8-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 20.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train8",
+        "statement_id": "train8-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 20.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train9",
+        "statement_id": "train9-2020-01-31",
+        "observed_at": "2020-01-31",
+        "known_at": "2020-01-31",
+        "balance": 10.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train9",
+        "statement_id": "train9-2020-02-29",
+        "observed_at": "2020-02-29",
+        "known_at": "2020-02-29",
+        "balance": 10.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train9",
+        "statement_id": "train9-2020-03-31",
+        "observed_at": "2020-03-31",
+        "known_at": "2020-03-31",
+        "balance": 10.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      }
+    ],
+    "events": [
+      {
+        "account_id": "train0",
+        "event_id": "train0-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2020-02-15",
+        "known_at": "2020-02-15"
+      },
+      {
+        "account_id": "train1",
+        "event_id": "train1-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2020-02-15",
+        "known_at": "2020-02-15"
+      },
+      {
+        "account_id": "train2",
+        "event_id": "train2-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2020-03-15",
+        "known_at": "2020-03-15"
+      },
+      {
+        "account_id": "train3",
+        "event_id": "train3-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2020-03-15",
+        "known_at": "2020-03-15"
+      }
+    ],
+    "coverage": [
+      {
+        "account_id": "train0",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train1",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train2",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train3",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train4",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train5",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train6",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train7",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train8",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      },
+      {
+        "account_id": "train9",
+        "observed_through": "2020-04-01",
+        "known_at": "2020-04-01"
+      }
+    ],
+    "obligations": [
+      {
+        "account_id": "train0",
+        "obligation_id": "train0-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train1",
+        "obligation_id": "train1-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train2",
+        "obligation_id": "train2-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train3",
+        "obligation_id": "train3-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train4",
+        "obligation_id": "train4-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train5",
+        "obligation_id": "train5-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train6",
+        "obligation_id": "train6-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train7",
+        "obligation_id": "train7-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train8",
+        "obligation_id": "train8-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train9",
+        "obligation_id": "train9-due",
+        "due_at": "2020-01-10",
+        "known_at": "2020-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      }
+    ],
+    "payments": [
+      {
+        "account_id": "train0",
+        "payment_id": "train0-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train1",
+        "payment_id": "train1-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train2",
+        "payment_id": "train2-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train3",
+        "payment_id": "train3-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train4",
+        "payment_id": "train4-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train5",
+        "payment_id": "train5-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train6",
+        "payment_id": "train6-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train7",
+        "payment_id": "train7-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train8",
+        "payment_id": "train8-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "train9",
+        "payment_id": "train9-pay",
+        "paid_at": "2020-01-10",
+        "known_at": "2020-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      }
+    ],
+    "observation_dates": [
+      "2020-01-31",
+      "2020-02-29",
+      "2020-03-31"
+    ]
+  },
+  "holdout": {
+    "accounts": [
+      {
+        "account_id": "hold0",
+        "customer_id": "hold0",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold1",
+        "customer_id": "hold1",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold2",
+        "customer_id": "hold2",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold3",
+        "customer_id": "hold3",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold4",
+        "customer_id": "hold4",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold5",
+        "customer_id": "hold5",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold6",
+        "customer_id": "hold6",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold7",
+        "customer_id": "hold7",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold8",
+        "customer_id": "hold8",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      },
+      {
+        "account_id": "hold9",
+        "customer_id": "hold9",
+        "product_id": "card",
+        "opened_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "currency": "EUR",
+        "original_balance": 100
+      }
+    ],
+    "statements": [
+      {
+        "account_id": "hold0",
+        "statement_id": "hold0-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 90.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold0",
+        "statement_id": "hold0-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 90.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold0",
+        "statement_id": "hold0-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 90.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold1",
+        "statement_id": "hold1-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold1",
+        "statement_id": "hold1-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold1",
+        "statement_id": "hold1-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold2",
+        "statement_id": "hold2-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 70.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold2",
+        "statement_id": "hold2-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 70.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold2",
+        "statement_id": "hold2-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 70.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold3",
+        "statement_id": "hold3-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 60.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold3",
+        "statement_id": "hold3-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 60.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold3",
+        "statement_id": "hold3-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 60.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold4",
+        "statement_id": "hold4-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold4",
+        "statement_id": "hold4-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold4",
+        "statement_id": "hold4-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 80.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold5",
+        "statement_id": "hold5-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 50.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold5",
+        "statement_id": "hold5-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 50.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold5",
+        "statement_id": "hold5-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 50.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold6",
+        "statement_id": "hold6-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 40.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold6",
+        "statement_id": "hold6-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 40.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold6",
+        "statement_id": "hold6-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 40.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold7",
+        "statement_id": "hold7-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 30.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold7",
+        "statement_id": "hold7-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 30.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold7",
+        "statement_id": "hold7-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 30.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold8",
+        "statement_id": "hold8-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 20.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold8",
+        "statement_id": "hold8-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 20.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold8",
+        "statement_id": "hold8-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 20.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold9",
+        "statement_id": "hold9-2024-01-31",
+        "observed_at": "2024-01-31",
+        "known_at": "2024-01-31",
+        "balance": 10.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold9",
+        "statement_id": "hold9-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 10.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold9",
+        "statement_id": "hold9-2024-03-31",
+        "observed_at": "2024-03-31",
+        "known_at": "2024-03-31",
+        "balance": 10.0,
+        "credit_limit": 100,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      }
+    ],
+    "events": [
+      {
+        "account_id": "hold0",
+        "event_id": "hold0-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-02-15",
+        "known_at": "2024-02-15"
+      },
+      {
+        "account_id": "hold1",
+        "event_id": "hold1-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-02-15",
+        "known_at": "2024-02-15"
+      },
+      {
+        "account_id": "hold2",
+        "event_id": "hold2-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-03-15",
+        "known_at": "2024-03-15"
+      },
+      {
+        "account_id": "hold3",
+        "event_id": "hold3-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-03-15",
+        "known_at": "2024-03-15"
+      },
+      {
+        "account_id": "hold4",
+        "event_id": "hold4-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-04-15",
+        "known_at": "2024-04-15"
+      },
+      {
+        "account_id": "hold5",
+        "event_id": "hold5-default",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-04-15",
+        "known_at": "2024-04-15"
+      }
+    ],
+    "coverage": [
+      {
+        "account_id": "hold0",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold1",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold2",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold3",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold4",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold5",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold6",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold7",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold8",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      },
+      {
+        "account_id": "hold9",
+        "observed_through": "2024-05-01",
+        "known_at": "2024-05-01"
+      }
+    ],
+    "obligations": [
+      {
+        "account_id": "hold0",
+        "obligation_id": "hold0-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold1",
+        "obligation_id": "hold1-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold2",
+        "obligation_id": "hold2-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold3",
+        "obligation_id": "hold3-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold4",
+        "obligation_id": "hold4-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold5",
+        "obligation_id": "hold5-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold6",
+        "obligation_id": "hold6-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold7",
+        "obligation_id": "hold7-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold8",
+        "obligation_id": "hold8-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold9",
+        "obligation_id": "hold9-due",
+        "due_at": "2024-01-10",
+        "known_at": "2024-01-01",
+        "amount": 10,
+        "currency": "EUR"
+      }
+    ],
+    "payments": [
+      {
+        "account_id": "hold0",
+        "payment_id": "hold0-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold1",
+        "payment_id": "hold1-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold2",
+        "payment_id": "hold2-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold3",
+        "payment_id": "hold3-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold4",
+        "payment_id": "hold4-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold5",
+        "payment_id": "hold5-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold6",
+        "payment_id": "hold6-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold7",
+        "payment_id": "hold7-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold8",
+        "payment_id": "hold8-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "hold9",
+        "payment_id": "hold9-pay",
+        "paid_at": "2024-01-10",
+        "known_at": "2024-01-10",
+        "kind": "payment",
+        "amount": 10,
+        "currency": "EUR"
+      }
+    ],
+    "observation_dates": [
+      "2024-01-31",
+      "2024-02-29",
+      "2024-03-31"
+    ]
+  },
+  "calibration": [
+    {
+      "observation_id": "A0",
+      "customer_id": "cal-A0",
+      "default_unit_id": "A0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A1",
+      "customer_id": "cal-A1",
+      "default_unit_id": "A1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A2",
+      "customer_id": "cal-A2",
+      "default_unit_id": "A2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A3",
+      "customer_id": "cal-A3",
+      "default_unit_id": "A3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A4",
+      "customer_id": "cal-A4",
+      "default_unit_id": "A4",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A5",
+      "customer_id": "cal-A5",
+      "default_unit_id": "A5",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A6",
+      "customer_id": "cal-A6",
+      "default_unit_id": "A6",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A7",
+      "customer_id": "cal-A7",
+      "default_unit_id": "A7",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A8",
+      "customer_id": "cal-A8",
+      "default_unit_id": "A8",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "A9",
+      "customer_id": "cal-A9",
+      "default_unit_id": "A9",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 10,
+      "grade": "A",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B0",
+      "customer_id": "cal-B0",
+      "default_unit_id": "B0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B1",
+      "customer_id": "cal-B1",
+      "default_unit_id": "B1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B2",
+      "customer_id": "cal-B2",
+      "default_unit_id": "B2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B3",
+      "customer_id": "cal-B3",
+      "default_unit_id": "B3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B4",
+      "customer_id": "cal-B4",
+      "default_unit_id": "B4",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B5",
+      "customer_id": "cal-B5",
+      "default_unit_id": "B5",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B6",
+      "customer_id": "cal-B6",
+      "default_unit_id": "B6",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B7",
+      "customer_id": "cal-B7",
+      "default_unit_id": "B7",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B8",
+      "customer_id": "cal-B8",
+      "default_unit_id": "B8",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "B9",
+      "customer_id": "cal-B9",
+      "default_unit_id": "B9",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 40,
+      "grade": "B",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C0",
+      "customer_id": "cal-C0",
+      "default_unit_id": "C0",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C1",
+      "customer_id": "cal-C1",
+      "default_unit_id": "C1",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": true,
+      "default_date": "2022-02-01",
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "OPEN",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C2",
+      "customer_id": "cal-C2",
+      "default_unit_id": "C2",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C3",
+      "customer_id": "cal-C3",
+      "default_unit_id": "C3",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C4",
+      "customer_id": "cal-C4",
+      "default_unit_id": "C4",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C5",
+      "customer_id": "cal-C5",
+      "default_unit_id": "C5",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C6",
+      "customer_id": "cal-C6",
+      "default_unit_id": "C6",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C7",
+      "customer_id": "cal-C7",
+      "default_unit_id": "C7",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C8",
+      "customer_id": "cal-C8",
+      "default_unit_id": "C8",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    },
+    {
+      "observation_id": "C9",
+      "customer_id": "cal-C9",
+      "default_unit_id": "C9",
+      "role": "TRAIN",
+      "index_date": "2022-01-01",
+      "feature_observed_at": "2022-01-01",
+      "feature_known_at": "2022-01-01",
+      "label_window_end": "2022-03-02",
+      "label_known_at": "2022-03-03",
+      "defaulted": false,
+      "default_date": null,
+      "lgd_known_at": null,
+      "ead_known_at": null,
+      "lgd_status": "NOT_DEFAULTED",
+      "lgd": null,
+      "ead": null,
+      "score": 80,
+      "grade": "C",
+      "product": "card",
+      "borrower_type": "person",
+      "facility_type": "revolving",
+      "delinquency_state": "current"
+    }
+  ],
+  "pooling_spec": {
+    "spec_id": "behavioral-prior-pools",
+    "version": "1",
+    "known_at": "2021-12-01",
+    "stratum_fields": [
+      "product",
+      "borrower_type",
+      "facility_type",
+      "delinquency_state"
+    ],
+    "score_field": "score",
+    "segments": [
+      {
+        "segment_id": "card-current",
+        "values": {
+          "product": "card",
+          "borrower_type": "person",
+          "facility_type": "revolving",
+          "delinquency_state": "current"
+        },
+        "cutpoints": [
+          25,
+          60
+        ],
+        "score_min": 0,
+        "score_max": 100,
+        "monotonicity": {
+          "pd": "increasing",
+          "lgd": "none",
+          "ead": "none"
+        }
+      }
+    ],
+    "minimum_cases": 2,
+    "minimum_defaults": 0,
+    "minimum_lgd_count": 0,
+    "minimum_ead_count": 0,
+    "maximum_bin_mean_spread": {
+      "pd": null,
+      "lgd": null,
+      "ead": null
+    }
+  },
+  "pool_target": {
+    "event": "default",
+    "horizon": 60,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "not_defaulted_at_index",
+    "default_unit": "facility",
+    "default_definition": "First account default before terminal exit",
+    "currency": "EUR"
+  },
+  "strata": {
+    "product": "card",
+    "borrower_type": "person",
+    "facility_type": "revolving",
+    "delinquency_state": "current"
+  },
+  "training": {
+    "data_fingerprint": "behavioral-prior-2020",
+    "split_id": "train-customers-2020",
+    "known_at": "2020-04-01",
+    "data_origin": "SYNTHETIC"
+  },
+  "pool_training": {
+    "role": "TRAIN",
+    "known_at": "2022-03-03",
+    "split_id": "pool-calibration-customers-2022",
+    "data_fingerprint": "independent-calibration30",
+    "data_origin": "SYNTHETIC"
+  },
+  "target": {
+    "event": "default",
+    "horizon": 60,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "performing"
+  },
+  "estimation_profile": {
+    "profile_id": "prior-pool-estimates",
+    "version": "1",
+    "known_at": "2021-12-01",
+    "pd_weighting": "default_unit",
+    "lgd_weighting": "ead",
+    "ead_weighting": "episode",
+    "ccf_weighting": "undrawn",
+    "confidence": 0.95,
+    "independence_assumption": "independent_default_units",
+    "minimum_pool_cases": 2
+  },
+  "state_profile": {
+    "schema_version": "1.0",
+    "profile_id": "synthetic-behavioral-states",
+    "immaterial_state": "CURRENT",
+    "materiality": {
+      "absolute": 1,
+      "relative": 0.01,
+      "logic": "and"
+    },
+    "buckets": [
+      {
+        "state": "CURRENT",
+        "lower": 0,
+        "upper": 30
+      },
+      {
+        "state": "ARREARS",
+        "lower": 30,
+        "upper": null
+      }
+    ],
+    "event_priority": [
+      {
+        "event": "utp",
+        "state": "DEFAULT",
+        "at_risk": false,
+        "absorbing": true
+      }
+    ],
+    "dpd_default_rule": {
+      "minimum_dpd": 90,
+      "state": "DEFAULT",
+      "material_required": true
+    }
+  },
+  "open_workout": {
+    "episode": {
+      "episode_id": "hold0-default",
+      "default_date": "2024-02-15",
+      "default_known_at": "2024-02-15",
+      "reference_date": "2024-03-15",
+      "reference_known_at": "2024-03-15",
+      "features_observed_at": "2024-03-15",
+      "features_known_at": "2024-03-15",
+      "currency": "EUR",
+      "ead_at_default": 100.0,
+      "residual_exposure_at_reference": 91.66666666666667,
+      "observation_end": "2024-03-29",
+      "resolution_date": "2024-05-15",
+      "resolution_known_at": "2024-05-15",
+      "cured": 0,
+      "cure_value": 0
+    },
+    "cashflows": [
+      {
+        "episode_id": "hold0-default",
+        "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-prior",
+        "cashflow_date": "2024-03-15",
+        "known_at": "2024-03-15",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 8.333333333333334
+      },
+      {
+        "episode_id": "hold0-default",
+        "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-realization-cost",
+        "cashflow_date": "2024-04-15",
+        "known_at": "2024-04-15",
+        "currency": "EUR",
+        "kind": "DIRECT_COST",
+        "amount": 5.0
+      },
+      {
+        "episode_id": "hold0-default",
+        "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-terminal",
+        "cashflow_date": "2024-05-15",
+        "known_at": "2024-05-15",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 20.833333333333332
+      }
+    ],
+    "valuation": {
+      "episode_id": "hold0-default",
+      "discount_curve": {
+        "anchor_date": "2024-02-15",
+        "known_at": "2024-02-15",
+        "discount_basis": "DECLARED_SYNTHETIC_ECONOMIC_DISCOUNT_FACTORS",
+        "points": [
+          {
+            "cashflow_date": "2024-03-15",
+            "discount_factor": 0.99
+          },
+          {
+            "cashflow_date": "2024-04-15",
+            "discount_factor": 0.95
+          },
+          {
+            "cashflow_date": "2024-05-15",
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      "fx_contract": {
+        "reporting_currency": "EUR",
+        "known_at": "2024-02-15",
+        "conversion_basis": "cashflow_date",
+        "rates": [
+          {
+            "currency": "EUR",
+            "date": "2024-03-15",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-04-15",
+            "rate": 1
+          },
+          {
+            "currency": "EUR",
+            "date": "2024-05-15",
+            "rate": 1
+          }
+        ]
+      },
+      "future_resolution_dates": [
+        "2024-04-15",
+        "2024-05-15"
+      ],
+      "resolution_time_convention": "RIGHT_ENDPOINT",
+      "tail_discount_factor": 0.95,
+      "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+      "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+    },
+    "future_costs": [
+      {
+        "episode_id": "hold0-default",
+        "cashflow_id": "RETAIL_UNSECURED_INSTALLMENT-workout-forecast-cost",
+        "cashflow_date": "2024-04-15",
+        "known_at": "2024-03-29",
+        "currency": "EUR",
+        "kind": "DIRECT_COST",
+        "amount": 5.0
+      }
+    ]
+  },
+  "residual_model": {
+    "schema_version": "1.0",
+    "model_id": "terminal-settlement-reference",
+    "model_version": "1",
+    "method_id": "lgd.fit_recovery_hurdle",
+    "feature_order": [],
+    "parameters": {
+      "fit_intercept": true,
+      "default_condition": "given_default",
+      "currency": "EUR",
+      "stage_spec": {
+        "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+        "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+        "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+        "positive_distribution": "lognormal",
+        "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+        "payout_horizon": "ULTIMATE",
+        "timing_distribution": "weibull",
+        "cure_residual_value_ratio": 1.0,
+        "landmark_definition": "Account enters residual terminal settlement stage"
+      },
+      "feature_min": [],
+      "feature_max": [],
+      "positive_feature_min": [],
+      "positive_feature_max": [],
+      "cure_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.cure",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            -0.6931471805599454
+          ],
+          "covariance": [
+            [
+              0.75
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -3.8190850097688775,
+          "frequency_total": 6.0,
+          "n_active_rows": 6,
+          "rank": 1,
+          "maximum_mean_score": 5.551115123125783e-17,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "699fbbd846e1ed6f6d0a172062f3b59c97a7213aa055b84e4cc530f7e2bdca73"
+      },
+      "positive_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.positive",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            0.0
+          ],
+          "covariance": [
+            [
+              1.0
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -2.772588722239781,
+          "frequency_total": 4.0,
+          "n_active_rows": 4,
+          "rank": 1,
+          "maximum_mean_score": 0.0,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "0342c26178e323e17254a256e28eaee94db0f86475773c4c880acd4d5040066e"
+      },
+      "amount_regression": {
+        "coefficients": [
+          -0.8369882167858352
+        ],
+        "covariance": [
+          [
+            0.1508686201015727
+          ]
+        ],
+        "covariance_type": "HC0_FREQUENCY_IID",
+        "residual_variance": 0.3017372402031454,
+        "rank": 1,
+        "frequency_total": 2.0
+      },
+      "timing_model": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.timing",
+        "model_version": "1",
+        "method_id": "survival.fit_aft_model",
+        "feature_order": [],
+        "parameters": {
+          "kind": "aft",
+          "distribution": "weibull",
+          "coefficients": [
+            3.9603830543916008
+          ],
+          "log_time_scale": 0.938538994120538,
+          "covariance_beta_log_scale": [
+            [
+              0.1468199895351604,
+              -0.0009212609147641112
+            ],
+            [
+              -0.0009212609147641111,
+              0.10924901927636418
+            ]
+          ],
+          "support_start": 0.0,
+          "support_end": 90.0
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "workout_resolution",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "diagnostics": {
+          "backend": "lifelines.WeibullAFTFitter",
+          "parameterization": "log(T)=intercept+X beta+scale*epsilon",
+          "log_likelihood": -29.747035581774195,
+          "row_log_likelihood": [
+            -4.176468546921858,
+            -4.242293388148155,
+            -4.317908600485287,
+            -4.399325490703751,
+            -4.48468997959468,
+            -4.57297194434928,
+            -1.7766888157855916,
+            -1.7766888157855916
+          ],
+          "converged": true,
+          "warnings": [],
+          "censoring": "independent_right_censoring",
+          "extrapolation": "parametric_tail_requires_explicit_prediction_policy"
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        }
+      }
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "residual_terminal_loss_fraction",
+      "horizon_role": "TIMING_REPORTING_REFERENCE",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "given_default",
+      "currency": "EUR"
+    },
+    "training": {
+      "data_fingerprint": "prior-2024-terminal-settlement-reference",
+      "split_id": "train",
+      "known_at": "2023-12-31",
+      "data_origin": "SYNTHETIC",
+      "workout_population": "open_and_closed_defaulted_landmarks"
+    },
+    "diagnostics": {
+      "observed_count": 6,
+      "censored_count": 2,
+      "cure_count": 2,
+      "positive_noncure_count": 2,
+      "zero_noncure_count": 2,
+      "identification": "Outcome and payout independent of resolution time and independent right censoring, conditional on landmark covariates"
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "training_input_fingerprint": "ab26a68269574829567434b3bd4538bef5e8364c0e512ec4c5451bb2fd5e53d9"
+  },
+  "recovery_target": {
+    "event": "residual_terminal_loss_fraction",
+    "horizon_role": "TIMING_REPORTING_REFERENCE",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "given_default",
+    "currency": "EUR"
+  },
+  "stage_spec": {
+    "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+    "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+    "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+    "positive_distribution": "lognormal",
+    "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+    "payout_horizon": "ULTIMATE",
+    "timing_distribution": "weibull",
+    "cure_residual_value_ratio": 1.0,
+    "landmark_definition": "Account enters residual terminal settlement stage"
+  }
+}

@@ -1,0 +1,1437 @@
+{
+  "data_origin": "SYNTHETIC",
+  "version": "1.0",
+  "provenance": "Openly specified independent historical cohort and conditional workout scenarios, not proprietary parameters",
+  "journeys": [
+    {
+      "product": "COMMERCIAL_REAL_ESTATE",
+      "case_id": "commercial_real_estate-income_producing",
+      "survival": {
+        "start_stop_panel": [
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-0",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-1",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-2",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-3",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-4",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-5",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-6",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-7",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-8",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-9",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-10",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-11",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-12",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-13",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-14",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-15",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-16",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-17",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-18",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "commercial_real_estate-income_producing-historic-19",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          }
+        ],
+        "X": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "event_types": [
+          "default",
+          "default",
+          "exit",
+          "exit",
+          "exit",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "feature_order": [],
+        "causes": [
+          "default",
+          "exit"
+        ],
+        "ties": "breslow",
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "initially_performing"
+        },
+        "training": {
+          "data_fingerprint": "commercial_real_estate-income_producing-independent-observed-2018-riskset",
+          "split_id": "historic_2018",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "model_id": "commercial_real_estate-income_producing-competing",
+        "model_version": "1"
+      },
+      "survival_reference": {
+        "risk_set": 20,
+        "defaults": 2,
+        "exits": 3
+      },
+      "treatment": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "CONTINUE_OPERATION",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "commercial_real_estate-income_producing",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.7,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 6,
+            "rejected_present_value": 37.5,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-08-28",
+                "expected_recovery": 90,
+                "expected_cost": 5,
+                "discount_factor": 0.976226252958924
+              }
+            ]
+          },
+          {
+            "treatment_id": "ORDERLY_SALE",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "commercial_real_estate-income_producing",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.9,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 37.5,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-05-30",
+                "expected_recovery": 75,
+                "expected_cost": 5,
+                "discount_factor": 0.988041625114511
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "commercial_real_estate-income_producing-workout-options",
+          "version": "1",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "subject_id": "commercial_real_estate-income_producing",
+          "baseline_id": "NO_OFFER",
+          "baseline_present_value": 37.5,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "ARRANGEMENT"
+          ]
+        },
+        "as_of": "2024-03-01"
+      }
+    },
+    {
+      "product": "PROJECT_FINANCE",
+      "case_id": "project_finance-operating",
+      "survival": {
+        "start_stop_panel": [
+          {
+            "entity_id": "project_finance-operating-historic-0",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-1",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-2",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-3",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-4",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-5",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-6",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-7",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-8",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-9",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-10",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-11",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-12",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-13",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-14",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-15",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-16",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-17",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-18",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "project_finance-operating-historic-19",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          }
+        ],
+        "X": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "event_types": [
+          "default",
+          "default",
+          "default",
+          "exit",
+          "exit",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "feature_order": [],
+        "causes": [
+          "default",
+          "exit"
+        ],
+        "ties": "breslow",
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "initially_performing"
+        },
+        "training": {
+          "data_fingerprint": "project_finance-operating-independent-observed-2018-riskset",
+          "split_id": "historic_2018",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "model_id": "project_finance-operating-competing",
+        "model_version": "1"
+      },
+      "survival_reference": {
+        "risk_set": 20,
+        "defaults": 3,
+        "exits": 2
+      },
+      "treatment": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "CONTINUE_OPERATION",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "project_finance-operating",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.65,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 10,
+            "rejected_present_value": 27.5,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-10-27",
+                "expected_recovery": 80,
+                "expected_cost": 8,
+                "discount_factor": 0.9684279388212623
+              }
+            ]
+          },
+          {
+            "treatment_id": "ORDERLY_SALE",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "project_finance-operating",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.9,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 27.5,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-06-29",
+                "expected_recovery": 55,
+                "expected_cost": 8,
+                "discount_factor": 0.9840873634089924
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "project_finance-operating-workout-options",
+          "version": "1",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "subject_id": "project_finance-operating",
+          "baseline_id": "NO_OFFER",
+          "baseline_present_value": 27.5,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "ARRANGEMENT"
+          ]
+        },
+        "as_of": "2024-03-01"
+      }
+    },
+    {
+      "product": "AIRCRAFT_FINANCE",
+      "case_id": "aircraft_finance-single_aircraft",
+      "survival": {
+        "start_stop_panel": [
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-0",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-1",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-2",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-3",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-4",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-5",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-6",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-7",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-8",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-9",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-10",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-11",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-12",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-13",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-14",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-15",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-16",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-17",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-18",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "aircraft_finance-single_aircraft-historic-19",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          }
+        ],
+        "X": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "event_types": [
+          "default",
+          "exit",
+          "exit",
+          "exit",
+          "exit",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "feature_order": [],
+        "causes": [
+          "default",
+          "exit"
+        ],
+        "ties": "breslow",
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "initially_performing"
+        },
+        "training": {
+          "data_fingerprint": "aircraft_finance-single_aircraft-independent-observed-2018-riskset",
+          "split_id": "historic_2018",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "model_id": "aircraft_finance-single_aircraft-competing",
+        "model_version": "1"
+      },
+      "survival_reference": {
+        "risk_set": 20,
+        "defaults": 1,
+        "exits": 4
+      },
+      "treatment": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "CONTINUE_OPERATION",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "aircraft_finance-single_aircraft",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.6,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 9,
+            "rejected_present_value": 24.0,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-09-27",
+                "expected_recovery": 60,
+                "expected_cost": 9,
+                "discount_factor": 0.9723192777972752
+              }
+            ]
+          },
+          {
+            "treatment_id": "ORDERLY_SALE",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "aircraft_finance-single_aircraft",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.9,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 24.0,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-05-30",
+                "expected_recovery": 48,
+                "expected_cost": 9,
+                "discount_factor": 0.988041625114511
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "aircraft_finance-single_aircraft-workout-options",
+          "version": "1",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "subject_id": "aircraft_finance-single_aircraft",
+          "baseline_id": "NO_OFFER",
+          "baseline_present_value": 24.0,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "ARRANGEMENT"
+          ]
+        },
+        "as_of": "2024-03-01"
+      }
+    },
+    {
+      "product": "SHIP_FINANCE",
+      "case_id": "ship_finance-time_charter",
+      "survival": {
+        "start_stop_panel": [
+          {
+            "entity_id": "ship_finance-time_charter-historic-0",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-1",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-2",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-3",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-4",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-5",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-6",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-7",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-8",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-9",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-10",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-11",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-12",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-13",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-14",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-15",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-16",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-17",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-18",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "ship_finance-time_charter-historic-19",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          }
+        ],
+        "X": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "event_types": [
+          "default",
+          "default",
+          "exit",
+          "exit",
+          "exit",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "feature_order": [],
+        "causes": [
+          "default",
+          "exit"
+        ],
+        "ties": "breslow",
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "initially_performing"
+        },
+        "training": {
+          "data_fingerprint": "ship_finance-time_charter-independent-observed-2018-riskset",
+          "split_id": "historic_2018",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "model_id": "ship_finance-time_charter-competing",
+        "model_version": "1"
+      },
+      "survival_reference": {
+        "risk_set": 20,
+        "defaults": 2,
+        "exits": 3
+      },
+      "treatment": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "CONTINUE_OPERATION",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "ship_finance-time_charter",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.75,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 8,
+            "rejected_present_value": 22.5,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-07-29",
+                "expected_recovery": 55,
+                "expected_cost": 8,
+                "discount_factor": 0.9801489271355591
+              }
+            ]
+          },
+          {
+            "treatment_id": "ORDERLY_SALE",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "ship_finance-time_charter",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.9,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 22.5,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-04-30",
+                "expected_recovery": 45,
+                "expected_cost": 8,
+                "discount_factor": 0.9920117758418961
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "ship_finance-time_charter-workout-options",
+          "version": "1",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "subject_id": "ship_finance-time_charter",
+          "baseline_id": "NO_OFFER",
+          "baseline_present_value": 22.5,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "ARRANGEMENT"
+          ]
+        },
+        "as_of": "2024-03-01"
+      }
+    },
+    {
+      "product": "EQUIPMENT_LEASING",
+      "case_id": "equipment_leasing-single_lease",
+      "survival": {
+        "start_stop_panel": [
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-0",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-1",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-2",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-3",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-4",
+            "start": 0,
+            "stop": 1,
+            "event": 1,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-5",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-6",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-7",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-8",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-9",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-10",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-11",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-12",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-13",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-14",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-15",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-16",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-17",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-18",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          },
+          {
+            "entity_id": "equipment_leasing-single_lease-historic-19",
+            "start": 0,
+            "stop": 2,
+            "event": 0,
+            "covariate_time": 0
+          }
+        ],
+        "X": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ],
+        "event_types": [
+          "default",
+          "default",
+          "default",
+          "default",
+          "exit",
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "feature_order": [],
+        "causes": [
+          "default",
+          "exit"
+        ],
+        "ties": "breslow",
+        "target": {
+          "event": "first_default",
+          "horizon": 2,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "initially_performing"
+        },
+        "training": {
+          "data_fingerprint": "equipment_leasing-single_lease-independent-observed-2018-riskset",
+          "split_id": "historic_2018",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "model_id": "equipment_leasing-single_lease-competing",
+        "model_version": "1"
+      },
+      "survival_reference": {
+        "risk_set": 20,
+        "defaults": 4,
+        "exits": 1
+      },
+      "treatment": {
+        "treatment_candidates": [
+          {
+            "treatment_id": "CONTINUE_OPERATION",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "equipment_leasing-single_lease",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.8,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 3,
+            "rejected_present_value": 10.0,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-06-29",
+                "expected_recovery": 28,
+                "expected_cost": 4,
+                "discount_factor": 0.9840873634089924
+              }
+            ]
+          },
+          {
+            "treatment_id": "ORDERLY_SALE",
+            "version": "1",
+            "known_at": "2024-03-01",
+            "subject_id": "equipment_leasing-single_lease",
+            "currency": "EUR",
+            "action": "ARRANGEMENT",
+            "prediction_reference": "Explicit synthetic conditional asset cash forecast; no causal identification or treatment-effect validation",
+            "support_status": "SUPPORTED",
+            "affordability_status": "AFFORDABLE",
+            "eligibility_status": "ELIGIBLE",
+            "uptake_probability": 0.9,
+            "offer_cost": 1,
+            "accepted_upfront_cost": 2,
+            "rejected_present_value": 10.0,
+            "cashflows": [
+              {
+                "cashflow_id": "settlement",
+                "date": "2024-04-15",
+                "expected_recovery": 20,
+                "expected_cost": 4,
+                "discount_factor": 0.9940028295304351
+              }
+            ]
+          }
+        ],
+        "treatment_profile": {
+          "profile_id": "equipment_leasing-single_lease-workout-options",
+          "version": "1",
+          "known_at": "2024-03-01",
+          "currency": "EUR",
+          "subject_id": "equipment_leasing-single_lease",
+          "baseline_id": "NO_OFFER",
+          "baseline_present_value": 10.0,
+          "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+          "allowed_actions": [
+            "ARRANGEMENT"
+          ]
+        },
+        "as_of": "2024-03-01"
+      }
+    }
+  ]
+}

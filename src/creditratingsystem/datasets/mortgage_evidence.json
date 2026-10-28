@@ -1,0 +1,376 @@
+{
+  "graph": {
+    "entities": [
+      {
+        "entity_id": "p",
+        "entity_type": "CUSTOMER",
+        "known_at": "2024-01-01"
+      },
+      {
+        "entity_id": "q",
+        "entity_type": "CUSTOMER",
+        "known_at": "2024-01-01"
+      },
+      {
+        "entity_id": "h",
+        "entity_type": "HOUSEHOLD",
+        "known_at": "2024-01-01"
+      },
+      {
+        "entity_id": "mortgage",
+        "entity_type": "FACILITY",
+        "known_at": "2024-01-01"
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "ph",
+        "release_seq": 1,
+        "source_id": "p",
+        "target_id": "h",
+        "role": "MEMBER_OF",
+        "effective_from": "2024-01-01",
+        "effective_until": null,
+        "known_at": "2024-01-01",
+        "liability_fraction": null,
+        "budget_share": null,
+        "evidence_reference": "synthetic signed joint contract"
+      },
+      {
+        "relationship_id": "qh",
+        "release_seq": 1,
+        "source_id": "q",
+        "target_id": "h",
+        "role": "MEMBER_OF",
+        "effective_from": "2024-01-01",
+        "effective_until": null,
+        "known_at": "2024-01-01",
+        "liability_fraction": null,
+        "budget_share": null,
+        "evidence_reference": "synthetic signed joint contract"
+      },
+      {
+        "relationship_id": "pm",
+        "release_seq": 1,
+        "source_id": "p",
+        "target_id": "mortgage",
+        "role": "BORROWER_ON",
+        "effective_from": "2024-01-01",
+        "effective_until": null,
+        "known_at": "2024-01-01",
+        "liability_fraction": 1,
+        "budget_share": 0.5,
+        "evidence_reference": "synthetic signed joint contract"
+      },
+      {
+        "relationship_id": "qm",
+        "release_seq": 1,
+        "source_id": "q",
+        "target_id": "mortgage",
+        "role": "BORROWER_ON",
+        "effective_from": "2024-01-01",
+        "effective_until": null,
+        "known_at": "2024-01-01",
+        "liability_fraction": 1,
+        "budget_share": 0.5,
+        "evidence_reference": "synthetic signed joint contract"
+      }
+    ],
+    "as_of": "2024-02-01",
+    "information_cutoff": "2024-02-01"
+  },
+  "household": {
+    "obligations": [
+      {
+        "facility_id": "mortgage",
+        "release_seq": 1,
+        "known_at": "2024-01-31",
+        "observed_at": "2024-01-31",
+        "source_id": "bank",
+        "debt_stock": 100000,
+        "scheduled_debt_service": 900,
+        "currency": "EUR",
+        "period": "month",
+        "status": "ACTIVE"
+      }
+    ],
+    "coverage": {
+      "status": "COMPLETE",
+      "sources": [
+        "bank"
+      ],
+      "known_at": "2024-01-31"
+    },
+    "currency": "EUR",
+    "period": "month",
+    "guarantee_budget_policy": "exclude"
+  },
+  "bureau": {
+    "snapshots": [
+      {
+        "snapshot_id": "bureau_p",
+        "release_seq": 1,
+        "customer_id": "p",
+        "provider_id": "synthetic_bureau",
+        "observed_at": "2024-01-31",
+        "reported_at": "2024-01-31",
+        "known_at": "2024-02-01",
+        "coverage_status": "COMPLETE",
+        "currency": "EUR"
+      }
+    ],
+    "tradelines": [
+      {
+        "snapshot_id": "bureau_p",
+        "snapshot_release_seq": 1,
+        "tradeline_id": "other_loan",
+        "opened_at": "2020-01-01",
+        "closed_at": null,
+        "status": "OPEN",
+        "balance": 5000,
+        "limit": 5000,
+        "max_dpd": 0
+      }
+    ],
+    "inquiries": [],
+    "provider_mapping": {
+      "mapping_id": "local",
+      "version": "1",
+      "known_at": "2023-01-01",
+      "snapshots": {},
+      "tradelines": {},
+      "inquiries": {}
+    },
+    "customer_id": "p",
+    "provider_id": "synthetic_bureau",
+    "as_of": "2024-02-01",
+    "information_cutoff": "2024-02-01",
+    "lookback_days": 30,
+    "max_age_days": 30,
+    "currency": "EUR"
+  },
+  "income": {
+    "declarations": [
+      {
+        "evidence_id": "declared",
+        "release_seq": 1,
+        "known_at": "2024-01-31",
+        "customer_id": "p",
+        "component_id": "salary",
+        "component_type": "SALARY",
+        "observed_from": "2024-01-01",
+        "observed_until": "2024-01-30",
+        "amount": 3300,
+        "basis": "NET",
+        "period": "month",
+        "currency": "EUR",
+        "evidence_reference": "synthetic income document"
+      }
+    ],
+    "documentary_evidence": [
+      {
+        "evidence_id": "document",
+        "release_seq": 1,
+        "known_at": "2024-01-31",
+        "customer_id": "p",
+        "component_id": "salary",
+        "component_type": "SALARY",
+        "observed_from": "2024-01-01",
+        "observed_until": "2024-01-30",
+        "amount": 3000,
+        "basis": "NET",
+        "period": "month",
+        "currency": "EUR",
+        "evidence_reference": "synthetic income document"
+      }
+    ],
+    "transaction_evidence": [
+      {
+        "evidence_id": "credit",
+        "release_seq": 1,
+        "known_at": "2024-01-31",
+        "customer_id": "p",
+        "component_id": "salary",
+        "component_type": "SALARY",
+        "observed_from": "2024-01-01",
+        "observed_until": "2024-01-30",
+        "amount": 3000,
+        "basis": "NET",
+        "period": "month",
+        "currency": "EUR",
+        "evidence_reference": "synthetic income document"
+      }
+    ],
+    "inclusion_policy": {
+      "policy_id": "income",
+      "version": "1",
+      "known_at": "2023-01-01",
+      "source_priority": [
+        "DOCUMENT",
+        "TRANSACTION",
+        "DECLARED"
+      ],
+      "included_component_types": [
+        "SALARY"
+      ],
+      "expected_component_ids": [
+        "salary"
+      ],
+      "coverage_status": "COMPLETE",
+      "maximum_age_days": 30,
+      "allow_stale": false,
+      "relative_discrepancy_threshold": 0.05
+    },
+    "customer_id": "p",
+    "as_of": "2024-02-01",
+    "information_cutoff": "2024-02-01",
+    "currency": "EUR",
+    "period": "month",
+    "basis": "NET"
+  },
+  "normalized_income": {
+    "components": [
+      {
+        "economic_id": "salary_p",
+        "amount": 3000,
+        "frequency": "monthly",
+        "basis": "net",
+        "currency": "EUR",
+        "kind": "recurring"
+      },
+      {
+        "economic_id": "salary_q",
+        "amount": 2000,
+        "frequency": "monthly",
+        "basis": "net",
+        "currency": "EUR",
+        "kind": "recurring"
+      }
+    ],
+    "target_period": "monthly",
+    "target_basis": "net",
+    "currency": "EUR",
+    "payments_per_year": {
+      "monthly": 12,
+      "annual": 1
+    },
+    "variable_income_factor": 0.5
+  },
+  "expenses": {
+    "expenses": [
+      {
+        "economic_id": "living",
+        "category": "living",
+        "amount": 2200,
+        "frequency": "monthly",
+        "currency": "EUR",
+        "kind": "essential"
+      },
+      {
+        "economic_id": "mortgage",
+        "category": "debt",
+        "amount": 900,
+        "frequency": "monthly",
+        "currency": "EUR",
+        "kind": "debt_service"
+      }
+    ],
+    "target_period": "monthly",
+    "currency": "EUR",
+    "payments_per_year": {
+      "monthly": 12,
+      "annual": 1
+    },
+    "household_profile": {
+      "profile_id": "two_adults",
+      "required_categories": [
+        "living"
+      ]
+    },
+    "benchmarks": [
+      {
+        "profile_id": "two_adults",
+        "category": "living",
+        "amount": 2300,
+        "frequency": "monthly",
+        "currency": "EUR",
+        "kind": "essential"
+      }
+    ]
+  },
+  "payment_history": {
+    "obligations": [
+      {
+        "obligation_id": "august_payment",
+        "account_id": "facility_A",
+        "due_at": "2024-08-01",
+        "known_at": "2024-02-03",
+        "amount": 900,
+        "currency": "EUR"
+      }
+    ],
+    "payments": [],
+    "coverage": {
+      "status": "COMPLETE",
+      "known_at": "2024-08-31",
+      "observed_from": "2024-08-01",
+      "complete_through": "2024-08-31"
+    },
+    "account_id": "facility_A",
+    "as_of": "2024-08-31",
+    "information_cutoff": "2024-08-31",
+    "lookback_days": 30,
+    "allocation_policy": "fifo",
+    "currency": "EUR",
+    "grace_days": 0
+  },
+  "delinquency_state": {
+    "dpd": 30,
+    "past_due_amount": 900,
+    "exposure": 95000,
+    "events": {
+      "utp": false
+    },
+    "state_profile": {
+      "schema_version": "1.0",
+      "profile_id": "synthetic_delinquency",
+      "immaterial_state": "CURRENT",
+      "materiality": {
+        "absolute": 100,
+        "relative": 0.001,
+        "logic": "and"
+      },
+      "buckets": [
+        {
+          "state": "CURRENT",
+          "lower": 0,
+          "upper": 1
+        },
+        {
+          "state": "EARLY",
+          "lower": 1,
+          "upper": 30
+        },
+        {
+          "state": "DELINQUENT",
+          "lower": 30,
+          "upper": 90
+        },
+        {
+          "state": "LATE",
+          "lower": 90,
+          "upper": null
+        }
+      ],
+      "event_priority": [
+        {
+          "event": "utp",
+          "state": "DEFAULT",
+          "at_risk": false,
+          "absorbing": true
+        }
+      ]
+    }
+  },
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE"
+}

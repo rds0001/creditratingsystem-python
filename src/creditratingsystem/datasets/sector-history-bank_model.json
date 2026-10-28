@@ -1,0 +1,93 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "financial_institution_exposure-bank-scorecard",
+    "model_version": "1",
+    "method_id": "scorecard.fit_scorecard",
+    "feature_order": [
+      "risk_ratio"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -3.8865868402412698,
+        0.7085330098933222
+      ],
+      "covariance": [
+        [
+          0.3176294191919197,
+          -0.18742108585858622
+        ],
+        [
+          -0.18742108585858622,
+          0.31762941919191984
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 1,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "data_fingerprint": "financial_institution_exposure-bank-historical-weighted-default-counts",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 8,
+      "log_likelihood": -22.39456820890203,
+      "deviance": 44.78913641780406,
+      "aic": 48.78913641780406,
+      "bic": 55.38577115090013,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 200.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 1.0000000000000002,
+      "scaled_gradient": 4.546520711845153e-15,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        9.992007221626409e-15,
+        5.10702591327572e-15
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "scorecard_spec": {
+      "neutral_profile": [
+        -1.0
+      ],
+      "feature_kinds": [
+        "expert"
+      ],
+      "design_status": "CALLER_FROZEN",
+      "design_fingerprint": "44181ffd92cffe3c2f5b762aafa895784652e353d432a6becfbe960e6a207b30"
+    }
+  },
+  "sha256": "2cd381673d433bee03b8af603eb6047c71245e04f705cd4a742387e7ad53e899"
+}

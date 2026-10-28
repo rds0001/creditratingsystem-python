@@ -1,0 +1,640 @@
+{
+  "data_origin": "SYNTHETIC",
+  "scope": "Separate30-day and731-day portfolios; two industries and independent borrowers per product, same conditional claim scale. No cross-horizon aggregation. Actual settlement ledger distinct from conditional prospective loss assumptions.",
+  "portfolios": [
+    {
+      "data_origin": "SYNTHETIC",
+      "positions": [
+        {
+          "position_id": "revolver-working_capital_line-manufacturing-position",
+          "claim_id": "revolver-working_capital_line-manufacturing-claim",
+          "facility_id": "revolver-working_capital_line-manufacturing-facility",
+          "entity_id": "revolver-working_capital_line-manufacturing",
+          "currency": "EUR",
+          "ead": 50,
+          "facility_ead": 50,
+          "sector": "MANUFACTURING",
+          "region": "SYNTHETIC_REFERENCE",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "revolver-working_capital_line-services-position",
+          "claim_id": "revolver-working_capital_line-services-claim",
+          "facility_id": "revolver-working_capital_line-services-facility",
+          "entity_id": "revolver-working_capital_line-services",
+          "currency": "EUR",
+          "ead": 25.0,
+          "facility_ead": 25.0,
+          "sector": "BUSINESS_SERVICES",
+          "region": "SYNTHETIC_REFERENCE",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        }
+      ],
+      "loss_records": [
+        {
+          "prediction_id": "revolver-working_capital_line-manufacturing-forecast",
+          "entity_id": "revolver-working_capital_line-manufacturing",
+          "cluster_id": "revolver-working_capital_line-manufacturing",
+          "segment": "CORPORATE_REVOLVING_COMMITMENT",
+          "as_of": "2024-01-01",
+          "forecast_known_at": "2024-01-01",
+          "horizon_end": "2024-01-31",
+          "model_id": "revolver-working_capital_line-conditional-loss",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-01-31",
+          "outcome_known_at": "2024-06-04",
+          "workout_closed_at": "2024-06-03",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.4,
+          "realized_lgd": 0.3604287120686137,
+          "ead_at_default": 60,
+          "predicted_ead": 50,
+          "realized_ead": 60,
+          "drawn_at_reference": 0,
+          "limit_at_reference": 100,
+          "realized_ead_date": "2024-01-31",
+          "currency": "EUR"
+        },
+        {
+          "prediction_id": "revolver-working_capital_line-services-forecast",
+          "entity_id": "revolver-working_capital_line-services",
+          "cluster_id": "revolver-working_capital_line-services",
+          "segment": "CORPORATE_REVOLVING_COMMITMENT",
+          "as_of": "2024-01-01",
+          "forecast_known_at": "2024-01-01",
+          "horizon_end": "2024-01-31",
+          "model_id": "revolver-working_capital_line-conditional-loss",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2024-01-31",
+          "outcome_known_at": "2024-06-04",
+          "workout_closed_at": "2024-06-03",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.4,
+          "realized_lgd": 0.3604287120686137,
+          "ead_at_default": 30.0,
+          "predicted_ead": 25.0,
+          "realized_ead": 30.0,
+          "drawn_at_reference": 0,
+          "limit_at_reference": 50.0,
+          "realized_ead_date": "2024-01-31",
+          "currency": "EUR"
+        }
+      ],
+      "design": {
+        "model_id": "revolver-working_capital_line-conditional-loss",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "revolver-working_capital_line-two-observed-claims",
+        "population_id": "revolver-working_capital_line-defaulted-claims",
+        "split_id": "out_of_time_2024",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-06-04",
+        "target": {
+          "event": "default",
+          "horizon": 30,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "default"
+        },
+        "currency": "EUR"
+      },
+      "exposures": [
+        {
+          "product": "CORPORATE_REVOLVING_COMMITMENT",
+          "arguments": {
+            "contract": {
+              "facility_id": "revolver-working_capital_line-manufacturing-facility",
+              "currency": "EUR",
+              "as_of": "2024-01-01",
+              "drawn_principal": 0,
+              "credit_limit": 100,
+              "accrued_interest": 0
+            },
+            "events": [
+              {
+                "event_id": "revolver-working_capital_line-manufacturing-conditional-default-date-cash",
+                "event_date": "2024-01-31",
+                "known_at": "2024-01-01",
+                "sequence": 0,
+                "kind": "DRAW",
+                "amount": 50
+              }
+            ],
+            "annual_interest_rates": [
+              0
+            ],
+            "period_end_dates": [
+              "2024-01-31"
+            ],
+            "day_count": "ACT/365F",
+            "default_timing": "BEFORE_PERIOD_END_EVENTS",
+            "allow_overlimit": false,
+            "currency": "EUR"
+          },
+          "reference_ead_before": 0,
+          "reference_ead_after": 50
+        },
+        {
+          "product": "CORPORATE_REVOLVING_COMMITMENT",
+          "arguments": {
+            "contract": {
+              "facility_id": "revolver-working_capital_line-services-facility",
+              "currency": "EUR",
+              "as_of": "2024-01-01",
+              "drawn_principal": 0,
+              "credit_limit": 50.0,
+              "accrued_interest": 0
+            },
+            "events": [
+              {
+                "event_id": "revolver-working_capital_line-services-conditional-default-date-cash",
+                "event_date": "2024-01-31",
+                "known_at": "2024-01-01",
+                "sequence": 0,
+                "kind": "DRAW",
+                "amount": 25.0
+              }
+            ],
+            "annual_interest_rates": [
+              0
+            ],
+            "period_end_dates": [
+              "2024-01-31"
+            ],
+            "day_count": "ACT/365F",
+            "default_timing": "BEFORE_PERIOD_END_EVENTS",
+            "allow_overlimit": false,
+            "currency": "EUR"
+          },
+          "reference_ead_before": 0,
+          "reference_ead_after": 25.0
+        }
+      ],
+      "forecast_sources": [
+        {
+          "case_id": "revolver-working_capital_line-manufacturing",
+          "forecast_pd": 0.10000000303991291,
+          "model_hash": "e3ce5a11b36f3e5d3eb21b70dc57724ca21db72ae12f545b9484eddab2293fbf",
+          "conditional_loss_scenario": {
+            "default_date": "2024-01-31",
+            "recovery_date": "2024-05-31",
+            "net_recovery": 30.489173557290734,
+            "discount_rate": 0.05,
+            "forecast_known_at": "2024-01-01",
+            "reference": "Prospective conditional claim assumption, not later actual settlement"
+          },
+          "observed_ead": 60,
+          "currency": "EUR",
+          "reporting_currency": "EUR",
+          "fx_rate": 1,
+          "ead_contract": "Frozen empirical CCF.5 and LGD.4, learned in original component; current draw0 retained",
+          "observed_balance_bridge": "Actual draw60 versus conditional expectation50"
+        },
+        {
+          "case_id": "revolver-working_capital_line-services",
+          "forecast_pd": 0.10000000303991291,
+          "model_hash": "e3ce5a11b36f3e5d3eb21b70dc57724ca21db72ae12f545b9484eddab2293fbf",
+          "conditional_loss_scenario": {
+            "default_date": "2024-01-31",
+            "recovery_date": "2024-05-31",
+            "net_recovery": 15.244586778645367,
+            "discount_rate": 0.05,
+            "forecast_known_at": "2024-01-01",
+            "reference": "Prospective conditional claim assumption, not later actual settlement"
+          },
+          "observed_ead": 30.0,
+          "currency": "EUR",
+          "reporting_currency": "EUR",
+          "fx_rate": 1,
+          "ead_contract": "Frozen empirical CCF.5 and LGD.4, learned in original component; current draw0 retained",
+          "observed_balance_bridge": "Actual draw60 versus conditional expectation50"
+        }
+      ],
+      "graph_policy": {
+        "policy_id": "wholesale-connections",
+        "version": "1",
+        "edge_types": [
+          "CROSS_DEFAULT"
+        ]
+      },
+      "default_link_policy": {
+        "policy_id": "wholesale-default",
+        "version": "1",
+        "edge_types": [
+          "CROSS_DEFAULT"
+        ],
+        "direction_policy": "mutual_only",
+        "transitive": true
+      },
+      "portfolio_contract": {
+        "portfolio_id": "revolver-working_capital_line-claims",
+        "version": "1",
+        "currency": "EUR",
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "initially_performing",
+        "event": "first_default"
+      },
+      "workout_policy": {
+        "method": "closed_only",
+        "reference": "Separate observed settlements; estimated open workouts never substituted for realized LGD"
+      },
+      "weighting_policy": {
+        "method": "equal",
+        "reference": "Each observed defaulted facility counted once"
+      },
+      "event_losses": [
+        {
+          "case_id": "revolver-working_capital_line-manufacturing",
+          "arguments": {
+            "states": [
+              {
+                "state_id": "performing",
+                "events": {
+                  "default": false
+                },
+                "probability": 0.8999999969600871,
+                "conditional_loss": 0
+              },
+              {
+                "state_id": "default",
+                "events": {
+                  "default": true
+                },
+                "probability": 0.10000000303991291,
+                "conditional_loss": 20.0
+              }
+            ],
+            "event_names": [
+              "default"
+            ],
+            "currency": "EUR",
+            "probability_measure": "PHYSICAL"
+          },
+          "reference_expected_loss": 2.000000060798258
+        },
+        {
+          "case_id": "revolver-working_capital_line-services",
+          "arguments": {
+            "states": [
+              {
+                "state_id": "performing",
+                "events": {
+                  "default": false
+                },
+                "probability": 0.8999999969600871,
+                "conditional_loss": 0
+              },
+              {
+                "state_id": "default",
+                "events": {
+                  "default": true
+                },
+                "probability": 0.10000000303991291,
+                "conditional_loss": 10.0
+              }
+            ],
+            "event_names": [
+              "default"
+            ],
+            "currency": "EUR",
+            "probability_measure": "PHYSICAL"
+          },
+          "reference_expected_loss": 1.000000030399129
+        }
+      ]
+    },
+    {
+      "data_origin": "SYNTHETIC",
+      "positions": [
+        {
+          "position_id": "leveraged-covenant_lite-manufacturing-position",
+          "claim_id": "leveraged-covenant_lite-manufacturing-claim",
+          "facility_id": "leveraged-covenant_lite-manufacturing-facility",
+          "entity_id": "leveraged-covenant_lite-manufacturing",
+          "currency": "EUR",
+          "ead": 120,
+          "facility_ead": 120,
+          "sector": "MANUFACTURING",
+          "region": "SYNTHETIC_REFERENCE",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        },
+        {
+          "position_id": "leveraged-covenant_lite-services-position",
+          "claim_id": "leveraged-covenant_lite-services-claim",
+          "facility_id": "leveraged-covenant_lite-services-facility",
+          "entity_id": "leveraged-covenant_lite-services",
+          "currency": "EUR",
+          "ead": 60.0,
+          "facility_ead": 60.0,
+          "sector": "BUSINESS_SERVICES",
+          "region": "SYNTHETIC_REFERENCE",
+          "exposure_basis": "GROSS",
+          "collateral_treatment": "NONE"
+        }
+      ],
+      "loss_records": [
+        {
+          "prediction_id": "leveraged-covenant_lite-manufacturing-forecast",
+          "entity_id": "leveraged-covenant_lite-manufacturing",
+          "cluster_id": "leveraged-covenant_lite-manufacturing",
+          "segment": "LEVERAGED_LOAN",
+          "as_of": "2024-01-01",
+          "forecast_known_at": "2024-01-01",
+          "horizon_end": "2026-01-01",
+          "model_id": "leveraged-covenant_lite-conditional-loss",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2026-01-01",
+          "outcome_known_at": "2026-07-04",
+          "workout_closed_at": "2026-07-03",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.315020513772412,
+          "realized_lgd": 0.25508480872749806,
+          "ead_at_default": 114,
+          "predicted_ead": 114,
+          "realized_ead": 114,
+          "drawn_at_reference": 120,
+          "limit_at_reference": 120,
+          "realized_ead_date": "2026-01-01",
+          "currency": "EUR"
+        },
+        {
+          "prediction_id": "leveraged-covenant_lite-services-forecast",
+          "entity_id": "leveraged-covenant_lite-services",
+          "cluster_id": "leveraged-covenant_lite-services",
+          "segment": "LEVERAGED_LOAN",
+          "as_of": "2024-01-01",
+          "forecast_known_at": "2024-01-01",
+          "horizon_end": "2026-01-01",
+          "model_id": "leveraged-covenant_lite-conditional-loss",
+          "model_version": "1",
+          "parameter_version": "1",
+          "default_date": "2026-01-01",
+          "outcome_known_at": "2026-07-04",
+          "workout_closed_at": "2026-07-03",
+          "workout_status": "CLOSED",
+          "predicted_lgd": 0.315020513772412,
+          "realized_lgd": 0.25508480872749806,
+          "ead_at_default": 57.0,
+          "predicted_ead": 57.0,
+          "realized_ead": 57.0,
+          "drawn_at_reference": 60.0,
+          "limit_at_reference": 60.0,
+          "realized_ead_date": "2026-01-01",
+          "currency": "EUR"
+        }
+      ],
+      "design": {
+        "model_id": "leveraged-covenant_lite-conditional-loss",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "leveraged-covenant_lite-two-observed-claims",
+        "population_id": "leveraged-covenant_lite-defaulted-claims",
+        "split_id": "out_of_time_2024",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2026-07-04",
+        "target": {
+          "event": "default",
+          "horizon": 731,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "default"
+        },
+        "currency": "EUR"
+      },
+      "exposures": [
+        {
+          "product": "LEVERAGED_LOAN",
+          "arguments": {
+            "contract": {
+              "facility_id": "leveraged-covenant_lite-manufacturing-facility",
+              "currency": "EUR",
+              "as_of": "2025-01-01",
+              "drawn_principal": 120,
+              "credit_limit": 120,
+              "accrued_interest": 0
+            },
+            "events": [
+              {
+                "event_id": "leveraged-covenant_lite-manufacturing-interest-paid",
+                "event_date": "2026-01-01",
+                "known_at": "2024-01-01",
+                "sequence": 0,
+                "kind": "INTEREST_PAYMENT",
+                "amount": 12
+              },
+              {
+                "event_id": "leveraged-covenant_lite-manufacturing-principal-paid",
+                "event_date": "2026-01-01",
+                "known_at": "2024-01-01",
+                "sequence": 1,
+                "kind": "PRINCIPAL_REPAYMENT",
+                "amount": 6
+              }
+            ],
+            "annual_interest_rates": [
+              0.1
+            ],
+            "period_end_dates": [
+              "2026-01-01"
+            ],
+            "day_count": "ACT/365F",
+            "default_timing": "BEFORE_PERIOD_END_EVENTS",
+            "allow_overlimit": false,
+            "currency": "EUR"
+          },
+          "reference_ead_before": 132,
+          "reference_ead_after": 114
+        },
+        {
+          "product": "LEVERAGED_LOAN",
+          "arguments": {
+            "contract": {
+              "facility_id": "leveraged-covenant_lite-services-facility",
+              "currency": "EUR",
+              "as_of": "2025-01-01",
+              "drawn_principal": 60.0,
+              "credit_limit": 60.0,
+              "accrued_interest": 0
+            },
+            "events": [
+              {
+                "event_id": "leveraged-covenant_lite-services-interest-paid",
+                "event_date": "2026-01-01",
+                "known_at": "2024-01-01",
+                "sequence": 0,
+                "kind": "INTEREST_PAYMENT",
+                "amount": 6.0
+              },
+              {
+                "event_id": "leveraged-covenant_lite-services-principal-paid",
+                "event_date": "2026-01-01",
+                "known_at": "2024-01-01",
+                "sequence": 1,
+                "kind": "PRINCIPAL_REPAYMENT",
+                "amount": 3.0
+              }
+            ],
+            "annual_interest_rates": [
+              0.1
+            ],
+            "period_end_dates": [
+              "2026-01-01"
+            ],
+            "day_count": "ACT/365F",
+            "default_timing": "BEFORE_PERIOD_END_EVENTS",
+            "allow_overlimit": false,
+            "currency": "EUR"
+          },
+          "reference_ead_before": 66.0,
+          "reference_ead_after": 57.0
+        }
+      ],
+      "forecast_sources": [
+        {
+          "case_id": "leveraged-covenant_lite-manufacturing",
+          "forecast_pd": 0.2898979485566614,
+          "model_hash": "59f9fdfdb712eff9246569c7734a954c6abb55b9a58c4ef07f878d07c702680d",
+          "conditional_loss_scenario": {
+            "default_date": "2026-01-01",
+            "recovery_date": "2026-07-01",
+            "net_recovery": 80,
+            "discount_rate": 0.05,
+            "forecast_known_at": "2024-01-01",
+            "reference": "Prospective conditional claim assumption, not later actual settlement"
+          },
+          "observed_ead": 114,
+          "currency": "EUR",
+          "reporting_currency": "EUR",
+          "fx_rate": 1,
+          "ead_contract": "Principal120+unpaid final-year interest12-available payment18=114, scaled. First-year interest is serviced from operating cash. Conditional final-year opening principal120 at2025-01-01 is projected from origination, then accrues12 over365days at the actual contractual10percent rate; no unpaid first-year interest invented.",
+          "observed_balance_bridge": "Unfunded balloon with final operating cash18 applied before default"
+        },
+        {
+          "case_id": "leveraged-covenant_lite-services",
+          "forecast_pd": 0.2898979485566614,
+          "model_hash": "59f9fdfdb712eff9246569c7734a954c6abb55b9a58c4ef07f878d07c702680d",
+          "conditional_loss_scenario": {
+            "default_date": "2026-01-01",
+            "recovery_date": "2026-07-01",
+            "net_recovery": 40.0,
+            "discount_rate": 0.05,
+            "forecast_known_at": "2024-01-01",
+            "reference": "Prospective conditional claim assumption, not later actual settlement"
+          },
+          "observed_ead": 57.0,
+          "currency": "EUR",
+          "reporting_currency": "EUR",
+          "fx_rate": 1,
+          "ead_contract": "Principal120+unpaid final-year interest12-available payment18=114, scaled. First-year interest is serviced from operating cash. Conditional final-year opening principal120 at2025-01-01 is projected from origination, then accrues12 over365days at the actual contractual10percent rate; no unpaid first-year interest invented.",
+          "observed_balance_bridge": "Unfunded balloon with final operating cash18 applied before default"
+        }
+      ],
+      "graph_policy": {
+        "policy_id": "wholesale-connections",
+        "version": "1",
+        "edge_types": [
+          "CROSS_DEFAULT"
+        ]
+      },
+      "default_link_policy": {
+        "policy_id": "wholesale-default",
+        "version": "1",
+        "edge_types": [
+          "CROSS_DEFAULT"
+        ],
+        "direction_policy": "mutual_only",
+        "transitive": true
+      },
+      "portfolio_contract": {
+        "portfolio_id": "leveraged-covenant_lite-claims",
+        "version": "1",
+        "currency": "EUR",
+        "as_of": "2024-01-01",
+        "known_at": "2024-01-01",
+        "horizon": 731,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "initially_performing",
+        "event": "first_default"
+      },
+      "workout_policy": {
+        "method": "closed_only",
+        "reference": "Separate observed settlements; estimated open workouts never substituted for realized LGD"
+      },
+      "weighting_policy": {
+        "method": "equal",
+        "reference": "Each observed defaulted facility counted once"
+      },
+      "event_losses": [
+        {
+          "case_id": "leveraged-covenant_lite-manufacturing",
+          "arguments": {
+            "states": [
+              {
+                "state_id": "performing",
+                "events": {
+                  "default": false
+                },
+                "probability": 0.7101020514433386,
+                "conditional_loss": 0
+              },
+              {
+                "state_id": "default",
+                "events": {
+                  "default": true
+                },
+                "probability": 0.2898979485566614,
+                "conditional_loss": 35.91233857005497
+              }
+            ],
+            "event_names": [
+              "default"
+            ],
+            "currency": "EUR",
+            "probability_measure": "PHYSICAL"
+          },
+          "reference_expected_loss": 10.410913279331202
+        },
+        {
+          "case_id": "leveraged-covenant_lite-services",
+          "arguments": {
+            "states": [
+              {
+                "state_id": "performing",
+                "events": {
+                  "default": false
+                },
+                "probability": 0.7101020514433386,
+                "conditional_loss": 0
+              },
+              {
+                "state_id": "default",
+                "events": {
+                  "default": true
+                },
+                "probability": 0.2898979485566614,
+                "conditional_loss": 17.956169285027485
+              }
+            ],
+            "event_names": [
+              "default"
+            ],
+            "currency": "EUR",
+            "probability_measure": "PHYSICAL"
+          },
+          "reference_expected_loss": 5.205456639665601
+        }
+      ]
+    }
+  ]
+}

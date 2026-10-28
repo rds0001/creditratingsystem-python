@@ -1,0 +1,2986 @@
+{
+  "version": "1",
+  "product": "CORPORATE_LOAN_BOND",
+  "data_origin": "SYNTHETIC",
+  "subject_id": "CO-001",
+  "target": {
+    "event": "default",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "development": {
+    "X": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      9,
+      1,
+      9,
+      1
+    ],
+    "feature_order": [
+      "net_debt_ebitda"
+    ],
+    "training": {
+      "data_fingerprint": "wholesale-observed-development-2020",
+      "split_id": "train_2020",
+      "known_at": "2022-01-01",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "monitoring": {
+    "predictions": [
+      {
+        "forecast_id": "forecast-1",
+        "case_id": "case-1",
+        "entity_id": "CO-001",
+        "cluster_id": "CO-001",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-2",
+        "case_id": "case-2",
+        "entity_id": "CO-002",
+        "cluster_id": "CO-002",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-3",
+        "case_id": "case-3",
+        "entity_id": "CO-003",
+        "cluster_id": "CO-003",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-4",
+        "case_id": "case-4",
+        "entity_id": "CO-004",
+        "cluster_id": "CO-004",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-5",
+        "case_id": "case-5",
+        "entity_id": "CO-005",
+        "cluster_id": "CO-005",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-6",
+        "case_id": "case-6",
+        "entity_id": "CO-006",
+        "cluster_id": "CO-006",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-7",
+        "case_id": "case-7",
+        "entity_id": "CO-007",
+        "cluster_id": "CO-007",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-8",
+        "case_id": "case-8",
+        "entity_id": "CO-008",
+        "cluster_id": "CO-008",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-9",
+        "case_id": "case-9",
+        "entity_id": "CO-009",
+        "cluster_id": "CO-009",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-10",
+        "case_id": "case-10",
+        "entity_id": "CO-010",
+        "cluster_id": "CO-010",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-11",
+        "case_id": "case-11",
+        "entity_id": "CO-011",
+        "cluster_id": "CO-011",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-12",
+        "case_id": "case-12",
+        "entity_id": "CO-012",
+        "cluster_id": "CO-012",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-13",
+        "case_id": "case-13",
+        "entity_id": "CO-013",
+        "cluster_id": "CO-013",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-14",
+        "case_id": "case-14",
+        "entity_id": "CO-014",
+        "cluster_id": "CO-014",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-15",
+        "case_id": "case-15",
+        "entity_id": "CO-015",
+        "cluster_id": "CO-015",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-16",
+        "case_id": "case-16",
+        "entity_id": "CO-016",
+        "cluster_id": "CO-016",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-17",
+        "case_id": "case-17",
+        "entity_id": "CO-017",
+        "cluster_id": "CO-017",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-18",
+        "case_id": "case-18",
+        "entity_id": "CO-018",
+        "cluster_id": "CO-018",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-19",
+        "case_id": "case-19",
+        "entity_id": "CO-019",
+        "cluster_id": "CO-019",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      },
+      {
+        "forecast_id": "forecast-20",
+        "case_id": "case-20",
+        "entity_id": "CO-020",
+        "cluster_id": "CO-020",
+        "cohort": "2024",
+        "segment": "corporate",
+        "model_id": "corporate-lifecycle",
+        "model_version": "1",
+        "forecast_at": "2024-01-01",
+        "known_at": "2024-01-01",
+        "pd": 0.1,
+        "target": {
+          "event": "default",
+          "probability_measure": "PHYSICAL",
+          "default_definition": "first_default",
+          "unit": "obligor",
+          "horizon_days": 365,
+          "default_grade": "D"
+        },
+        "origin_grade": "B",
+        "decision": "approve",
+        "override": false,
+        "prediction_origin": "OUT_OF_TIME"
+      }
+    ],
+    "outcome_events": [
+      {
+        "event_id": "default-1",
+        "entity_id": "CO-001",
+        "event_at": "2024-05-01",
+        "known_at": "2024-05-02",
+        "event": "default",
+        "default_definition": "first_default"
+      },
+      {
+        "event_id": "default-2",
+        "entity_id": "CO-002",
+        "event_at": "2024-05-01",
+        "known_at": "2024-05-02",
+        "event": "default",
+        "default_definition": "first_default"
+      }
+    ],
+    "coverage": [
+      {
+        "entity_id": "CO-001",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-002",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-003",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-004",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-005",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-006",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-007",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-008",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-009",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-010",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-011",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-012",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-013",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-014",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-015",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-016",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-017",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-018",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-019",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      },
+      {
+        "entity_id": "CO-020",
+        "complete_through": "2024-12-31",
+        "known_at": "2025-01-01"
+      }
+    ],
+    "target_contract": {
+      "event": "default",
+      "probability_measure": "PHYSICAL",
+      "default_definition": "first_default",
+      "unit": "obligor",
+      "horizon_days": 365,
+      "default_grade": "D"
+    },
+    "evaluation_cutoff": "2025-01-02"
+  },
+  "observation_windows": {
+    "ratings": [
+      {
+        "observation_id": "forecast-1",
+        "entity_id": "CO-001",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-2",
+        "entity_id": "CO-002",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-3",
+        "entity_id": "CO-003",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-4",
+        "entity_id": "CO-004",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-5",
+        "entity_id": "CO-005",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-6",
+        "entity_id": "CO-006",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-7",
+        "entity_id": "CO-007",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-8",
+        "entity_id": "CO-008",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-9",
+        "entity_id": "CO-009",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-10",
+        "entity_id": "CO-010",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-11",
+        "entity_id": "CO-011",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-12",
+        "entity_id": "CO-012",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-13",
+        "entity_id": "CO-013",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-14",
+        "entity_id": "CO-014",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-15",
+        "entity_id": "CO-015",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-16",
+        "entity_id": "CO-016",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-17",
+        "entity_id": "CO-017",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-18",
+        "entity_id": "CO-018",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-19",
+        "entity_id": "CO-019",
+        "as_of": "2024-01-01"
+      },
+      {
+        "observation_id": "forecast-20",
+        "entity_id": "CO-020",
+        "as_of": "2024-01-01"
+      }
+    ],
+    "default_events": [
+      {
+        "event_id": "default-1",
+        "entity_id": "CO-001",
+        "default_at": "2024-05-01",
+        "known_at": "2024-05-02"
+      },
+      {
+        "event_id": "default-2",
+        "entity_id": "CO-002",
+        "default_at": "2024-05-01",
+        "known_at": "2024-05-02"
+      }
+    ],
+    "exits": [],
+    "horizon_days": 365,
+    "evaluation_cutoff": "2025-01-02"
+  },
+  "feature_drift": {
+    "reference": [
+      {
+        "net_debt_ebitda": 2
+      },
+      {
+        "net_debt_ebitda": 3
+      }
+    ],
+    "current": [
+      {
+        "net_debt_ebitda": 5
+      },
+      {
+        "net_debt_ebitda": 6
+      }
+    ],
+    "feature_order": [
+      "net_debt_ebitda"
+    ],
+    "method": "wasserstein",
+    "permutations": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        1,
+        3,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        3
+      ],
+      [
+        0,
+        2,
+        3,
+        1
+      ],
+      [
+        0,
+        3,
+        1,
+        2
+      ],
+      [
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        2,
+        3
+      ],
+      [
+        1,
+        0,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        0,
+        3
+      ],
+      [
+        1,
+        2,
+        3,
+        0
+      ],
+      [
+        1,
+        3,
+        0,
+        2
+      ],
+      [
+        1,
+        3,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1,
+        3
+      ],
+      [
+        2,
+        0,
+        3,
+        1
+      ],
+      [
+        2,
+        1,
+        0,
+        3
+      ],
+      [
+        2,
+        1,
+        3,
+        0
+      ],
+      [
+        2,
+        3,
+        0,
+        1
+      ],
+      [
+        2,
+        3,
+        1,
+        0
+      ],
+      [
+        3,
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        0,
+        2,
+        1
+      ],
+      [
+        3,
+        1,
+        0,
+        2
+      ],
+      [
+        3,
+        1,
+        2,
+        0
+      ],
+      [
+        3,
+        2,
+        0,
+        1
+      ],
+      [
+        3,
+        2,
+        1,
+        0
+      ]
+    ],
+    "multiple_testing": "none",
+    "dependence_assumption": "exchangeable_rows"
+  },
+  "pd_drift": {
+    "residuals": [
+      {
+        "time": "2024-02-01",
+        "value": 0.1,
+        "mature": true
+      },
+      {
+        "time": "2024-03-01",
+        "value": 0.2,
+        "mature": true
+      },
+      {
+        "time": "2024-04-01",
+        "value": 0.3,
+        "mature": true
+      }
+    ],
+    "method": "ewma",
+    "parameters": {
+      "smoothing": 0.5
+    },
+    "null_paths": [
+      [
+        -0.09,
+        -0.09,
+        -0.09
+      ],
+      [
+        -0.08,
+        -0.08,
+        -0.08
+      ],
+      [
+        -0.07,
+        -0.07,
+        -0.07
+      ],
+      [
+        -0.06,
+        -0.06,
+        -0.06
+      ],
+      [
+        -0.05,
+        -0.05,
+        -0.05
+      ],
+      [
+        -0.04,
+        -0.04,
+        -0.04
+      ],
+      [
+        -0.03,
+        -0.03,
+        -0.03
+      ],
+      [
+        -0.02,
+        -0.02,
+        -0.02
+      ],
+      [
+        -0.01,
+        -0.01,
+        -0.01
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.01,
+        0.01,
+        0.01
+      ],
+      [
+        0.02,
+        0.02,
+        0.02
+      ],
+      [
+        0.03,
+        0.03,
+        0.03
+      ],
+      [
+        0.04,
+        0.04,
+        0.04
+      ],
+      [
+        0.05,
+        0.05,
+        0.05
+      ],
+      [
+        0.06,
+        0.06,
+        0.06
+      ],
+      [
+        0.07,
+        0.07,
+        0.07
+      ],
+      [
+        0.08,
+        0.08,
+        0.08
+      ],
+      [
+        0.09,
+        0.09,
+        0.09
+      ]
+    ],
+    "null_spec": {
+      "model_id": "corporate-lifecycle",
+      "model_version": "1",
+      "calibration_id": "reference-monitor",
+      "residual_scale": "observed_minus_expected_rate",
+      "dependence": "prespecified_dependent",
+      "probability_measure": "PHYSICAL",
+      "calibrated_before": "2024-01-01",
+      "validation_paths_independent": false
+    },
+    "alpha": 0.1
+  },
+  "multistate_history": [
+    {
+      "entity_id": "historic-1",
+      "start": 0,
+      "stop": 1,
+      "from_state": "performing",
+      "to_state": "default"
+    },
+    {
+      "entity_id": "historic-1",
+      "start": 1,
+      "stop": 2,
+      "from_state": "default",
+      "to_state": "cured"
+    },
+    {
+      "entity_id": "historic-1",
+      "start": 2,
+      "stop": 3,
+      "from_state": "cured",
+      "to_state": "default"
+    },
+    {
+      "entity_id": "historic-2",
+      "start": 0,
+      "stop": 3,
+      "from_state": "performing",
+      "to_state": null
+    },
+    {
+      "entity_id": "historic-3",
+      "start": 0,
+      "stop": 3,
+      "from_state": "performing",
+      "to_state": null
+    },
+    {
+      "entity_id": "historic-4",
+      "start": 0,
+      "stop": 3,
+      "from_state": "performing",
+      "to_state": null
+    }
+  ],
+  "survival_metadata": {
+    "target": {
+      "event": "first_default",
+      "horizon": 3,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "initially_performing"
+    },
+    "training": {
+      "data_fingerprint": "corporate-observed-events-2017",
+      "split_id": "historic_2017",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "cause_panel": [
+    {
+      "entity_id": "historic-0",
+      "start": 0,
+      "stop": 1,
+      "event": 1,
+      "covariate_time": 0
+    },
+    {
+      "entity_id": "historic-1",
+      "start": 0,
+      "stop": 1,
+      "event": 1,
+      "covariate_time": 0
+    },
+    {
+      "entity_id": "historic-2",
+      "start": 0,
+      "stop": 1,
+      "event": 1,
+      "covariate_time": 0
+    },
+    {
+      "entity_id": "historic-3",
+      "start": 0,
+      "stop": 2,
+      "event": 0,
+      "covariate_time": 0
+    },
+    {
+      "entity_id": "historic-4",
+      "start": 0,
+      "stop": 2,
+      "event": 0,
+      "covariate_time": 0
+    },
+    {
+      "entity_id": "historic-5",
+      "start": 0,
+      "stop": 2,
+      "event": 0,
+      "covariate_time": 0
+    },
+    {
+      "entity_id": "historic-6",
+      "start": 0,
+      "stop": 2,
+      "event": 0,
+      "covariate_time": 0
+    },
+    {
+      "entity_id": "historic-7",
+      "start": 0,
+      "stop": 2,
+      "event": 0,
+      "covariate_time": 0
+    }
+  ],
+  "cause_events": [
+    "default",
+    "exit",
+    "exit",
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "treatment": {
+    "treatment_candidates": [
+      {
+        "treatment_id": "extend",
+        "version": "1",
+        "known_at": "2024-04-01",
+        "subject_id": "CO-001",
+        "currency": "EUR",
+        "action": "ARRANGEMENT",
+        "prediction_reference": "Declared conditional cash forecast; no causal identification",
+        "support_status": "SUPPORTED",
+        "affordability_status": "AFFORDABLE",
+        "eligibility_status": "ELIGIBLE",
+        "uptake_probability": 0.75,
+        "offer_cost": 1,
+        "accepted_upfront_cost": 2,
+        "rejected_present_value": 40,
+        "cashflows": [
+          {
+            "cashflow_id": "settlement",
+            "date": "2024-12-31",
+            "expected_recovery": 80,
+            "expected_cost": 4,
+            "discount_factor": 0.95
+          }
+        ]
+      },
+      {
+        "treatment_id": "haircut",
+        "version": "1",
+        "known_at": "2024-04-01",
+        "subject_id": "CO-001",
+        "currency": "EUR",
+        "action": "ARRANGEMENT",
+        "prediction_reference": "Declared conditional cash forecast; no causal identification",
+        "support_status": "SUPPORTED",
+        "affordability_status": "AFFORDABLE",
+        "eligibility_status": "ELIGIBLE",
+        "uptake_probability": 0.75,
+        "offer_cost": 1,
+        "accepted_upfront_cost": 2,
+        "rejected_present_value": 40,
+        "cashflows": [
+          {
+            "cashflow_id": "settlement",
+            "date": "2024-12-31",
+            "expected_recovery": 70,
+            "expected_cost": 4,
+            "discount_factor": 0.95
+          }
+        ]
+      }
+    ],
+    "treatment_profile": {
+      "profile_id": "corporate-restructuring",
+      "version": "1",
+      "known_at": "2024-04-01",
+      "currency": "EUR",
+      "subject_id": "CO-001",
+      "baseline_id": "no-action",
+      "baseline_present_value": 45,
+      "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+      "allowed_actions": [
+        "ARRANGEMENT"
+      ]
+    },
+    "as_of": "2024-04-01"
+  },
+  "exposure": {
+    "contract": {
+      "facility_id": "CORP-F1",
+      "currency": "EUR",
+      "as_of": "2024-04-01",
+      "drawn_principal": 80,
+      "credit_limit": 80,
+      "accrued_interest": 0
+    },
+    "events": [
+      {
+        "event_id": "scheduled-repayment",
+        "event_date": "2024-05-01",
+        "known_at": "2024-04-01",
+        "sequence": 0,
+        "kind": "PRINCIPAL_REPAYMENT",
+        "amount": 20
+      }
+    ],
+    "annual_interest_rates": [
+      0
+    ],
+    "period_end_dates": [
+      "2024-05-01"
+    ],
+    "day_count": "ACT/365F",
+    "default_timing": "BEFORE_PERIOD_END_EVENTS",
+    "allow_overlimit": false,
+    "currency": "EUR"
+  },
+  "recovery_episodes": {
+    "default_events": [
+      {
+        "episode_id": "CORP-D1",
+        "entity_id": "CO-001",
+        "default_at": "2024-05-01",
+        "known_at": "2024-05-02",
+        "ead": 80,
+        "currency": "EUR"
+      }
+    ],
+    "recovery_cashflows": [
+      {
+        "cashflow_id": "settlement",
+        "episode_id": "CORP-D1",
+        "cashflow_at": "2024-08-01",
+        "known_at": "2024-08-02",
+        "amount": 60,
+        "kind": "recovery",
+        "currency": "EUR"
+      },
+      {
+        "cashflow_id": "cost",
+        "episode_id": "CORP-D1",
+        "cashflow_at": "2024-08-01",
+        "known_at": "2024-08-02",
+        "amount": 4,
+        "kind": "cost",
+        "currency": "EUR"
+      }
+    ],
+    "cures": [
+      {
+        "episode_id": "CORP-D1",
+        "cure_at": "2024-08-01",
+        "known_at": "2024-08-02",
+        "closed_at": "2024-09-01",
+        "closed_known_at": "2024-09-02"
+      }
+    ],
+    "reopening_days": 90,
+    "evaluation_cutoff": "2024-09-03"
+  },
+  "recovery_value": {
+    "cashflows": [
+      {
+        "cashflow_id": "settlement",
+        "cashflow_date": "2024-08-01",
+        "known_at": "2024-08-02",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 60
+      },
+      {
+        "cashflow_id": "cost",
+        "cashflow_date": "2024-08-01",
+        "known_at": "2024-08-02",
+        "currency": "EUR",
+        "kind": "DIRECT_COST",
+        "amount": 4
+      }
+    ],
+    "discount_curve": {
+      "anchor_date": "2024-05-01",
+      "known_at": "2024-05-01",
+      "discount_basis": "Declared zero discount reference",
+      "points": [
+        {
+          "cashflow_date": "2024-08-01",
+          "discount_factor": 1
+        }
+      ]
+    },
+    "fx_contract": {
+      "reporting_currency": "EUR",
+      "known_at": "2024-05-01",
+      "conversion_basis": "cashflow_date",
+      "rates": [
+        {
+          "currency": "EUR",
+          "date": "2024-08-01",
+          "rate": 1
+        }
+      ]
+    },
+    "default_date": "2024-05-01",
+    "evaluation_cutoff": "2024-09-03",
+    "reporting_currency": "EUR"
+  },
+  "event_loss": {
+    "states": [
+      {
+        "state_id": "none",
+        "events": {
+          "default": false,
+          "restructuring": false
+        },
+        "probability": 0.8,
+        "conditional_loss": 0
+      },
+      {
+        "state_id": "restructured",
+        "events": {
+          "default": false,
+          "restructuring": true
+        },
+        "probability": 0.1,
+        "conditional_loss": 8
+      },
+      {
+        "state_id": "default",
+        "events": {
+          "default": true,
+          "restructuring": false
+        },
+        "probability": 0.05,
+        "conditional_loss": 24
+      },
+      {
+        "state_id": "both",
+        "events": {
+          "default": true,
+          "restructuring": true
+        },
+        "probability": 0.05,
+        "conditional_loss": 28
+      }
+    ],
+    "event_names": [
+      "default",
+      "restructuring"
+    ],
+    "currency": "EUR",
+    "probability_measure": "PHYSICAL"
+  },
+  "workout_fit": {
+    "episodes": [
+      {
+        "episode_id": "h-0",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": "2018-01-11",
+        "resolution_known_at": "2018-01-11",
+        "cured": 1,
+        "cure_value": 80
+      },
+      {
+        "episode_id": "h-1",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": "2018-01-16",
+        "resolution_known_at": "2018-01-16",
+        "cured": 1,
+        "cure_value": 80
+      },
+      {
+        "episode_id": "h-2",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": "2018-01-21",
+        "resolution_known_at": "2018-01-21",
+        "cured": 0,
+        "cure_value": 0
+      },
+      {
+        "episode_id": "h-3",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": "2018-01-26",
+        "resolution_known_at": "2018-01-26",
+        "cured": 0,
+        "cure_value": 0
+      },
+      {
+        "episode_id": "h-4",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": "2018-01-31",
+        "resolution_known_at": "2018-01-31",
+        "cured": 0,
+        "cure_value": 0
+      },
+      {
+        "episode_id": "h-5",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": "2018-02-05",
+        "resolution_known_at": "2018-02-05",
+        "cured": 0,
+        "cure_value": 0
+      },
+      {
+        "episode_id": "h-6",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": null,
+        "resolution_known_at": null,
+        "cured": 0,
+        "cure_value": 0
+      },
+      {
+        "episode_id": "h-7",
+        "default_date": "2017-12-01",
+        "default_known_at": "2017-12-01",
+        "reference_date": "2018-01-01",
+        "reference_known_at": "2018-01-01",
+        "features_observed_at": "2018-01-01",
+        "features_known_at": "2018-01-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2018-04-01",
+        "resolution_date": null,
+        "resolution_known_at": null,
+        "cured": 0,
+        "cure_value": 0
+      }
+    ],
+    "cashflows": [
+      {
+        "episode_id": "h-4",
+        "cashflow_id": "h-recovery-4",
+        "cashflow_date": "2018-01-31",
+        "known_at": "2018-01-31",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 48.52245277701067
+      },
+      {
+        "episode_id": "h-5",
+        "cashflow_id": "h-recovery-5",
+        "cashflow_date": "2018-02-05",
+        "known_at": "2018-02-05",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 131.89770165601027
+      }
+    ],
+    "X_train": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ],
+    "feature_order": [],
+    "stage_spec": {
+      "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+      "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+      "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+      "positive_distribution": "lognormal",
+      "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+      "payout_horizon": "ULTIMATE",
+      "timing_distribution": "weibull",
+      "cure_residual_value_ratio": 1.0,
+      "landmark_definition": "Residual terminal corporate settlement stage"
+    },
+    "target": {
+      "event": "residual_terminal_loss_fraction",
+      "horizon_role": "TIMING_REPORTING_REFERENCE",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "given_default",
+      "currency": "EUR"
+    },
+    "training": {
+      "data_fingerprint": "observed-historical-terminal-settlements-2018",
+      "split_id": "train_2018",
+      "known_at": "2019-01-01",
+      "data_origin": "SYNTHETIC",
+      "workout_population": "open_and_closed_defaulted_landmarks"
+    },
+    "model_id": "corporate-workout",
+    "model_version": "1",
+    "currency": "EUR"
+  },
+  "open_workout": {
+    "episodes": [
+      {
+        "episode_id": "CORP-D2",
+        "default_date": "2024-05-01",
+        "default_known_at": "2024-05-02",
+        "reference_date": "2024-06-01",
+        "reference_known_at": "2024-06-01",
+        "features_observed_at": "2024-06-01",
+        "features_known_at": "2024-06-01",
+        "currency": "EUR",
+        "ead_at_default": 100,
+        "residual_exposure_at_reference": 80,
+        "observation_end": "2024-06-01",
+        "resolution_date": null,
+        "resolution_known_at": null,
+        "cured": 0,
+        "cure_value": 0
+      }
+    ],
+    "cashflows": [
+      {
+        "episode_id": "CORP-D2",
+        "cashflow_id": "interim-recovery",
+        "cashflow_date": "2024-05-15",
+        "known_at": "2024-05-16",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 10
+      }
+    ],
+    "X": [
+      []
+    ],
+    "valuation_contracts": [
+      {
+        "episode_id": "CORP-D2",
+        "discount_curve": {
+          "anchor_date": "2024-05-01",
+          "known_at": "2024-06-01",
+          "discount_basis": "Declared zero discount curve and flat tail",
+          "points": [
+            {
+              "cashflow_date": "2024-05-15",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-07-01",
+              "discount_factor": 1
+            },
+            {
+              "cashflow_date": "2024-12-01",
+              "discount_factor": 1
+            }
+          ]
+        },
+        "fx_contract": {
+          "reporting_currency": "EUR",
+          "known_at": "2024-06-01",
+          "conversion_basis": "cashflow_date",
+          "rates": [
+            {
+              "currency": "EUR",
+              "date": "2024-05-15",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-07-01",
+              "rate": 1
+            },
+            {
+              "currency": "EUR",
+              "date": "2024-12-01",
+              "rate": 1
+            }
+          ]
+        },
+        "future_resolution_dates": [
+          "2024-07-01",
+          "2024-12-01"
+        ],
+        "resolution_time_convention": "RIGHT_ENDPOINT",
+        "tail_discount_factor": 1,
+        "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+        "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+      }
+    ],
+    "future_cost_cashflows": [],
+    "feature_order": [],
+    "expected_target": {
+      "event": "residual_terminal_loss_fraction",
+      "horizon_role": "TIMING_REPORTING_REFERENCE",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "given_default",
+      "currency": "EUR"
+    },
+    "stage_spec": {
+      "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+      "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+      "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+      "positive_distribution": "lognormal",
+      "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+      "payout_horizon": "ULTIMATE",
+      "timing_distribution": "weibull",
+      "cure_residual_value_ratio": 1.0,
+      "landmark_definition": "Residual terminal corporate settlement stage"
+    },
+    "as_of": "2024-06-01",
+    "currency": "EUR",
+    "extrapolation": "parametric"
+  },
+  "hidden_truth": {
+    "observed_cohort_defaults": 2,
+    "observed_cohort_count": 20,
+    "observed_brier": 0.09,
+    "closed_lgd": 0.3,
+    "open_expected_final_lgd": 0.3311604125155131,
+    "event_expected_loss": 3.4,
+    "feature_wasserstein": 3
+  },
+  "decision_policy": {
+    "schema_version": "1.0",
+    "policy_id": "corporate-origination",
+    "version": "1",
+    "approval_reference": "Synthetic local demonstration only",
+    "known_at": "2023-12-01",
+    "effective_from": "2024-01-01",
+    "effective_until": "2025-01-01",
+    "default_action": "REFER",
+    "missing_action": "BLOCKED",
+    "target": {
+      "event": "default",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "fields": {
+      "risk.pd": {
+        "type": "number"
+      }
+    },
+    "rules": [
+      {
+        "rule_id": "low-risk",
+        "priority": 1,
+        "action": "APPROVE",
+        "reason_code": "RISK_AND_GATES",
+        "when": [
+          {
+            "field": "risk.pd",
+            "op": "le",
+            "value": 0.11
+          }
+        ]
+      }
+    ]
+  },
+  "positions": [
+    {
+      "position_id": "position-1",
+      "claim_id": "claim-1",
+      "facility_id": "CORP-F1",
+      "entity_id": "CO-001",
+      "currency": "EUR",
+      "ead": 80,
+      "facility_ead": 80,
+      "sector": "manufacturing",
+      "region": "EU",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "position-2",
+      "claim_id": "claim-2",
+      "facility_id": "CORP-F2",
+      "entity_id": "CO-002",
+      "currency": "EUR",
+      "ead": 100,
+      "facility_ead": 100,
+      "sector": "services",
+      "region": "EU",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    }
+  ],
+  "graph_policy": {
+    "policy_id": "wholesale-connections",
+    "version": "1",
+    "edge_types": [
+      "CROSS_DEFAULT"
+    ]
+  },
+  "default_link_policy": {
+    "policy_id": "wholesale-default",
+    "version": "1",
+    "edge_types": [
+      "CROSS_DEFAULT"
+    ],
+    "direction_policy": "mutual_only",
+    "transitive": true
+  },
+  "portfolio_contract": {
+    "portfolio_id": "corporate-example",
+    "version": "1",
+    "currency": "EUR",
+    "as_of": "2024-01-01",
+    "known_at": "2024-01-01",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "initially_performing",
+    "event": "first_default"
+  },
+  "loss_backtest_design": {
+    "model_id": "corporate-loss",
+    "model_version": "1",
+    "parameter_version": "1",
+    "data_fingerprint": "synthetic-corporate-observed-workouts-2024",
+    "population_id": "defaulted-corporates",
+    "split_id": "out_of_time_2024",
+    "prediction_origin": "HOLDOUT",
+    "evaluation_cutoff": "2025-01-02",
+    "target": {
+      "event": "default",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "default"
+    },
+    "currency": "EUR"
+  },
+  "loss_records": [
+    {
+      "prediction_id": "loss-1",
+      "entity_id": "CO-001",
+      "cluster_id": "CO-001",
+      "segment": "corporate",
+      "as_of": "2024-01-01",
+      "forecast_known_at": "2024-01-01",
+      "horizon_end": "2024-12-31",
+      "model_id": "corporate-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-03",
+      "workout_closed_at": "2024-09-01",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.25,
+      "realized_lgd": 0.3,
+      "ead_at_default": 80,
+      "predicted_ead": 80,
+      "realized_ead": 80,
+      "drawn_at_reference": 80,
+      "limit_at_reference": 80,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "loss-2",
+      "entity_id": "CO-002",
+      "cluster_id": "CO-002",
+      "segment": "corporate",
+      "as_of": "2024-01-01",
+      "forecast_known_at": "2024-01-01",
+      "horizon_end": "2024-12-31",
+      "model_id": "corporate-loss",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-05-01",
+      "outcome_known_at": "2024-09-03",
+      "workout_closed_at": "2024-09-01",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.5,
+      "realized_lgd": 0.4,
+      "ead_at_default": 100,
+      "predicted_ead": 90,
+      "realized_ead": 100,
+      "drawn_at_reference": 100,
+      "limit_at_reference": 100,
+      "realized_ead_date": "2024-05-01",
+      "currency": "EUR"
+    }
+  ],
+  "drift_observed_cohorts": [
+    {
+      "predictions": [
+        {
+          "forecast_id": "prior-2-0",
+          "case_id": "prior-2-0",
+          "entity_id": "prior-2-0",
+          "cluster_id": "prior-2-0",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-1",
+          "case_id": "prior-2-1",
+          "entity_id": "prior-2-1",
+          "cluster_id": "prior-2-1",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-2",
+          "case_id": "prior-2-2",
+          "entity_id": "prior-2-2",
+          "cluster_id": "prior-2-2",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-3",
+          "case_id": "prior-2-3",
+          "entity_id": "prior-2-3",
+          "cluster_id": "prior-2-3",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-4",
+          "case_id": "prior-2-4",
+          "entity_id": "prior-2-4",
+          "cluster_id": "prior-2-4",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-5",
+          "case_id": "prior-2-5",
+          "entity_id": "prior-2-5",
+          "cluster_id": "prior-2-5",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-6",
+          "case_id": "prior-2-6",
+          "entity_id": "prior-2-6",
+          "cluster_id": "prior-2-6",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-7",
+          "case_id": "prior-2-7",
+          "entity_id": "prior-2-7",
+          "cluster_id": "prior-2-7",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-8",
+          "case_id": "prior-2-8",
+          "entity_id": "prior-2-8",
+          "cluster_id": "prior-2-8",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-2-9",
+          "case_id": "prior-2-9",
+          "entity_id": "prior-2-9",
+          "cluster_id": "prior-2-9",
+          "cohort": "2023-02",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-02-01",
+          "known_at": "2023-02-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        }
+      ],
+      "outcome_events": [
+        {
+          "event_id": "prior-2-0-default",
+          "entity_id": "prior-2-0",
+          "event_at": "2023-07-01",
+          "known_at": "2023-07-02",
+          "event": "default",
+          "default_definition": "first_default"
+        },
+        {
+          "event_id": "prior-2-1-default",
+          "entity_id": "prior-2-1",
+          "event_at": "2023-07-01",
+          "known_at": "2023-07-02",
+          "event": "default",
+          "default_definition": "first_default"
+        }
+      ],
+      "coverage": [
+        {
+          "entity_id": "prior-2-0",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-1",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-2",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-3",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-4",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-5",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-6",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-7",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-8",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        },
+        {
+          "entity_id": "prior-2-9",
+          "complete_through": "2024-02-01",
+          "known_at": "2024-02-01"
+        }
+      ],
+      "target_contract": {
+        "event": "default",
+        "probability_measure": "PHYSICAL",
+        "default_definition": "first_default",
+        "unit": "obligor",
+        "horizon_days": 365,
+        "default_grade": "D"
+      },
+      "evaluation_cutoff": "2024-02-01"
+    },
+    {
+      "predictions": [
+        {
+          "forecast_id": "prior-3-0",
+          "case_id": "prior-3-0",
+          "entity_id": "prior-3-0",
+          "cluster_id": "prior-3-0",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-1",
+          "case_id": "prior-3-1",
+          "entity_id": "prior-3-1",
+          "cluster_id": "prior-3-1",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-2",
+          "case_id": "prior-3-2",
+          "entity_id": "prior-3-2",
+          "cluster_id": "prior-3-2",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-3",
+          "case_id": "prior-3-3",
+          "entity_id": "prior-3-3",
+          "cluster_id": "prior-3-3",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-4",
+          "case_id": "prior-3-4",
+          "entity_id": "prior-3-4",
+          "cluster_id": "prior-3-4",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-5",
+          "case_id": "prior-3-5",
+          "entity_id": "prior-3-5",
+          "cluster_id": "prior-3-5",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-6",
+          "case_id": "prior-3-6",
+          "entity_id": "prior-3-6",
+          "cluster_id": "prior-3-6",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-7",
+          "case_id": "prior-3-7",
+          "entity_id": "prior-3-7",
+          "cluster_id": "prior-3-7",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-8",
+          "case_id": "prior-3-8",
+          "entity_id": "prior-3-8",
+          "cluster_id": "prior-3-8",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-3-9",
+          "case_id": "prior-3-9",
+          "entity_id": "prior-3-9",
+          "cluster_id": "prior-3-9",
+          "cohort": "2023-03",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-03-01",
+          "known_at": "2023-03-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        }
+      ],
+      "outcome_events": [
+        {
+          "event_id": "prior-3-0-default",
+          "entity_id": "prior-3-0",
+          "event_at": "2023-07-29",
+          "known_at": "2023-07-30",
+          "event": "default",
+          "default_definition": "first_default"
+        },
+        {
+          "event_id": "prior-3-1-default",
+          "entity_id": "prior-3-1",
+          "event_at": "2023-07-29",
+          "known_at": "2023-07-30",
+          "event": "default",
+          "default_definition": "first_default"
+        },
+        {
+          "event_id": "prior-3-2-default",
+          "entity_id": "prior-3-2",
+          "event_at": "2023-07-29",
+          "known_at": "2023-07-30",
+          "event": "default",
+          "default_definition": "first_default"
+        }
+      ],
+      "coverage": [
+        {
+          "entity_id": "prior-3-0",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-1",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-2",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-3",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-4",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-5",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-6",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-7",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-8",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        },
+        {
+          "entity_id": "prior-3-9",
+          "complete_through": "2024-02-29",
+          "known_at": "2024-03-01"
+        }
+      ],
+      "target_contract": {
+        "event": "default",
+        "probability_measure": "PHYSICAL",
+        "default_definition": "first_default",
+        "unit": "obligor",
+        "horizon_days": 365,
+        "default_grade": "D"
+      },
+      "evaluation_cutoff": "2024-03-01"
+    },
+    {
+      "predictions": [
+        {
+          "forecast_id": "prior-4-0",
+          "case_id": "prior-4-0",
+          "entity_id": "prior-4-0",
+          "cluster_id": "prior-4-0",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-1",
+          "case_id": "prior-4-1",
+          "entity_id": "prior-4-1",
+          "cluster_id": "prior-4-1",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-2",
+          "case_id": "prior-4-2",
+          "entity_id": "prior-4-2",
+          "cluster_id": "prior-4-2",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-3",
+          "case_id": "prior-4-3",
+          "entity_id": "prior-4-3",
+          "cluster_id": "prior-4-3",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-4",
+          "case_id": "prior-4-4",
+          "entity_id": "prior-4-4",
+          "cluster_id": "prior-4-4",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-5",
+          "case_id": "prior-4-5",
+          "entity_id": "prior-4-5",
+          "cluster_id": "prior-4-5",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-6",
+          "case_id": "prior-4-6",
+          "entity_id": "prior-4-6",
+          "cluster_id": "prior-4-6",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-7",
+          "case_id": "prior-4-7",
+          "entity_id": "prior-4-7",
+          "cluster_id": "prior-4-7",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-8",
+          "case_id": "prior-4-8",
+          "entity_id": "prior-4-8",
+          "cluster_id": "prior-4-8",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        },
+        {
+          "forecast_id": "prior-4-9",
+          "case_id": "prior-4-9",
+          "entity_id": "prior-4-9",
+          "cluster_id": "prior-4-9",
+          "cohort": "2023-04",
+          "segment": "corporate",
+          "model_id": "corporate-lifecycle",
+          "model_version": "1",
+          "forecast_at": "2023-04-01",
+          "known_at": "2023-04-01",
+          "pd": 0.1,
+          "target": {
+            "event": "default",
+            "probability_measure": "PHYSICAL",
+            "default_definition": "first_default",
+            "unit": "obligor",
+            "horizon_days": 365,
+            "default_grade": "D"
+          },
+          "origin_grade": "B",
+          "decision": "approve",
+          "override": false,
+          "prediction_origin": "OUT_OF_TIME"
+        }
+      ],
+      "outcome_events": [
+        {
+          "event_id": "prior-4-0-default",
+          "entity_id": "prior-4-0",
+          "event_at": "2023-08-29",
+          "known_at": "2023-08-30",
+          "event": "default",
+          "default_definition": "first_default"
+        },
+        {
+          "event_id": "prior-4-1-default",
+          "entity_id": "prior-4-1",
+          "event_at": "2023-08-29",
+          "known_at": "2023-08-30",
+          "event": "default",
+          "default_definition": "first_default"
+        },
+        {
+          "event_id": "prior-4-2-default",
+          "entity_id": "prior-4-2",
+          "event_at": "2023-08-29",
+          "known_at": "2023-08-30",
+          "event": "default",
+          "default_definition": "first_default"
+        },
+        {
+          "event_id": "prior-4-3-default",
+          "entity_id": "prior-4-3",
+          "event_at": "2023-08-29",
+          "known_at": "2023-08-30",
+          "event": "default",
+          "default_definition": "first_default"
+        }
+      ],
+      "coverage": [
+        {
+          "entity_id": "prior-4-0",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-1",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-2",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-3",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-4",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-5",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-6",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-7",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-8",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        },
+        {
+          "entity_id": "prior-4-9",
+          "complete_through": "2024-03-31",
+          "known_at": "2024-04-01"
+        }
+      ],
+      "target_contract": {
+        "event": "default",
+        "probability_measure": "PHYSICAL",
+        "default_definition": "first_default",
+        "unit": "obligor",
+        "horizon_days": 365,
+        "default_grade": "D"
+      },
+      "evaluation_cutoff": "2024-04-01"
+    }
+  ],
+  "credit_gate_inputs": {
+    "currency": "EUR",
+    "available_cashflow": 25,
+    "debt_service_due": 10,
+    "legal_eligibility": true,
+    "operations_status": "CLEAR",
+    "evidence_reference": "Synthetic reviewed corporate budget and legal eligibility at2024-01-01"
+  }
+}

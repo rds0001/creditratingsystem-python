@@ -1,0 +1,490 @@
+{
+  "data_origin": "SYNTHETIC",
+  "positions": [
+    {
+      "position_id": "commercial_real_estate-income_producing-position",
+      "claim_id": "commercial_real_estate-income_producing-claim",
+      "facility_id": "commercial_real_estate-income_producing-facility",
+      "entity_id": "commercial_real_estate-income_producing",
+      "currency": "EUR",
+      "ead": 100.0,
+      "facility_ead": 100.0,
+      "sector": "COMMERCIAL_REAL_ESTATE",
+      "region": "EU",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "project_finance-operating-position",
+      "claim_id": "project_finance-operating-claim",
+      "facility_id": "project_finance-operating-facility",
+      "entity_id": "project_finance-operating",
+      "currency": "EUR",
+      "ead": 100.0,
+      "facility_ead": 100.0,
+      "sector": "PROJECT_FINANCE",
+      "region": "EU",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "aircraft_finance-single_aircraft-position",
+      "claim_id": "aircraft_finance-single_aircraft-claim",
+      "facility_id": "aircraft_finance-single_aircraft-facility",
+      "entity_id": "aircraft_finance-single_aircraft",
+      "currency": "EUR",
+      "ead": 70.0,
+      "facility_ead": 70.0,
+      "sector": "AIRCRAFT_FINANCE",
+      "region": "EU",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "ship_finance-time_charter-position",
+      "claim_id": "ship_finance-time_charter-claim",
+      "facility_id": "ship_finance-time_charter-facility",
+      "entity_id": "ship_finance-time_charter",
+      "currency": "EUR",
+      "ead": 65.0,
+      "facility_ead": 65.0,
+      "sector": "SHIP_FINANCE",
+      "region": "EU",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    },
+    {
+      "position_id": "equipment_leasing-single_lease-position",
+      "claim_id": "equipment_leasing-single_lease-claim",
+      "facility_id": "equipment_leasing-single_lease-facility",
+      "entity_id": "equipment_leasing-single_lease",
+      "currency": "EUR",
+      "ead": 40.0,
+      "facility_ead": 40.0,
+      "sector": "EQUIPMENT_LEASING",
+      "region": "EU",
+      "exposure_basis": "GROSS",
+      "collateral_treatment": "NONE"
+    }
+  ],
+  "loss_records": [
+    {
+      "prediction_id": "commercial_real_estate-income_producing-loss-forecast",
+      "entity_id": "commercial_real_estate-income_producing",
+      "cluster_id": "commercial_real_estate-income_producing",
+      "segment": "COMMERCIAL_REAL_ESTATE",
+      "as_of": "2023-01-01",
+      "forecast_known_at": "2023-01-01",
+      "horizon_end": "2025-01-01",
+      "model_id": "specialized-simulation",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-04-02",
+      "outcome_known_at": "2024-07-17",
+      "workout_closed_at": "2024-07-16",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.12894067542527016,
+      "realized_lgd": 0.37124623856349304,
+      "ead_at_default": 110.00000000000001,
+      "predicted_ead": 120.02739726027397,
+      "realized_ead": 110.00000000000001,
+      "drawn_at_reference": 100.0,
+      "limit_at_reference": 100.0,
+      "realized_ead_date": "2024-04-02",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "project_finance-operating-loss-forecast",
+      "entity_id": "project_finance-operating",
+      "cluster_id": "project_finance-operating",
+      "segment": "PROJECT_FINANCE",
+      "as_of": "2023-01-01",
+      "forecast_known_at": "2023-01-01",
+      "horizon_end": "2025-01-01",
+      "model_id": "specialized-simulation",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-04-03",
+      "outcome_known_at": "2024-07-18",
+      "workout_closed_at": "2024-07-17",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.0972892425090149,
+      "realized_lgd": 0.5778367601783454,
+      "ead_at_default": 110.00000000000001,
+      "predicted_ead": 109.99999999999999,
+      "realized_ead": 110.00000000000001,
+      "drawn_at_reference": 100.0,
+      "limit_at_reference": 100.0,
+      "realized_ead_date": "2024-04-03",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "aircraft_finance-single_aircraft-loss-forecast",
+      "entity_id": "aircraft_finance-single_aircraft",
+      "cluster_id": "aircraft_finance-single_aircraft",
+      "segment": "AIRCRAFT_FINANCE",
+      "as_of": "2023-01-01",
+      "forecast_known_at": "2023-01-01",
+      "horizon_end": "2025-01-01",
+      "model_id": "specialized-simulation",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-04-04",
+      "outcome_known_at": "2024-08-18",
+      "workout_closed_at": "2024-08-17",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.1564965456494352,
+      "realized_lgd": 0.5015661406110299,
+      "ead_at_default": 77.0,
+      "predicted_ead": 77.0,
+      "realized_ead": 77.0,
+      "drawn_at_reference": 70.0,
+      "limit_at_reference": 70.0,
+      "realized_ead_date": "2024-04-04",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "ship_finance-time_charter-loss-forecast",
+      "entity_id": "ship_finance-time_charter",
+      "cluster_id": "ship_finance-time_charter",
+      "segment": "SHIP_FINANCE",
+      "as_of": "2023-01-01",
+      "forecast_known_at": "2023-01-01",
+      "horizon_end": "2025-01-01",
+      "model_id": "specialized-simulation",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-04-05",
+      "outcome_known_at": "2024-08-19",
+      "workout_closed_at": "2024-08-18",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.12831422355380612,
+      "realized_lgd": 0.4907519937603816,
+      "ead_at_default": 71.5,
+      "predicted_ead": 71.5,
+      "realized_ead": 71.5,
+      "drawn_at_reference": 65.0,
+      "limit_at_reference": 65.0,
+      "realized_ead_date": "2024-04-05",
+      "currency": "EUR"
+    },
+    {
+      "prediction_id": "equipment_leasing-single_lease-loss-forecast",
+      "entity_id": "equipment_leasing-single_lease",
+      "cluster_id": "equipment_leasing-single_lease",
+      "segment": "EQUIPMENT_LEASING",
+      "as_of": "2023-01-01",
+      "forecast_known_at": "2023-01-01",
+      "horizon_end": "2025-01-01",
+      "model_id": "specialized-simulation",
+      "model_version": "1",
+      "parameter_version": "1",
+      "default_date": "2024-04-06",
+      "outcome_known_at": "2024-06-21",
+      "workout_closed_at": "2024-06-20",
+      "workout_status": "CLOSED",
+      "predicted_lgd": 0.37936024868579354,
+      "realized_lgd": 0.6392684451484014,
+      "ead_at_default": 44.0,
+      "predicted_ead": 48.01095890410958,
+      "realized_ead": 44.0,
+      "drawn_at_reference": 40.0,
+      "limit_at_reference": 40.0,
+      "realized_ead_date": "2024-04-06",
+      "currency": "EUR"
+    }
+  ],
+  "design": {
+    "model_id": "specialized-simulation",
+    "model_version": "1",
+    "parameter_version": "1",
+    "data_fingerprint": "independent-specialized-servicing-2024",
+    "population_id": "five-defaulted-specialized-claims",
+    "split_id": "out_of_time_2023",
+    "prediction_origin": "HOLDOUT",
+    "evaluation_cutoff": "2025-01-02",
+    "target": {
+      "event": "default",
+      "horizon": 731,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "default"
+    },
+    "currency": "EUR"
+  },
+  "exposures": [
+    {
+      "product": "COMMERCIAL_REAL_ESTATE",
+      "arguments": {
+        "contract": {
+          "facility_id": "commercial_real_estate-income_producing-facility",
+          "currency": "EUR",
+          "as_of": "2023-01-01",
+          "drawn_principal": 100.0,
+          "credit_limit": 100.0,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-01-01",
+            "known_at": "2023-01-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 20.0
+          }
+        ],
+        "annual_interest_rates": [
+          0.1
+        ],
+        "period_end_dates": [
+          "2024-01-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 110.00000000000001,
+      "reference_ead_after": 90.0
+    },
+    {
+      "product": "PROJECT_FINANCE",
+      "arguments": {
+        "contract": {
+          "facility_id": "project_finance-operating-facility",
+          "currency": "EUR",
+          "as_of": "2023-01-01",
+          "drawn_principal": 100.0,
+          "credit_limit": 100.0,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-01-01",
+            "known_at": "2023-01-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 20.0
+          }
+        ],
+        "annual_interest_rates": [
+          0.1
+        ],
+        "period_end_dates": [
+          "2024-01-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 110.00000000000001,
+      "reference_ead_after": 90.0
+    },
+    {
+      "product": "AIRCRAFT_FINANCE",
+      "arguments": {
+        "contract": {
+          "facility_id": "aircraft_finance-single_aircraft-facility",
+          "currency": "EUR",
+          "as_of": "2023-01-01",
+          "drawn_principal": 70.0,
+          "credit_limit": 70.0,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-01-01",
+            "known_at": "2023-01-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 14.0
+          }
+        ],
+        "annual_interest_rates": [
+          0.1
+        ],
+        "period_end_dates": [
+          "2024-01-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 77.0,
+      "reference_ead_after": 63.0
+    },
+    {
+      "product": "SHIP_FINANCE",
+      "arguments": {
+        "contract": {
+          "facility_id": "ship_finance-time_charter-facility",
+          "currency": "EUR",
+          "as_of": "2023-01-01",
+          "drawn_principal": 65.0,
+          "credit_limit": 65.0,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-01-01",
+            "known_at": "2023-01-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 13.0
+          }
+        ],
+        "annual_interest_rates": [
+          0.1
+        ],
+        "period_end_dates": [
+          "2024-01-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 71.5,
+      "reference_ead_after": 58.5
+    },
+    {
+      "product": "EQUIPMENT_LEASING",
+      "arguments": {
+        "contract": {
+          "facility_id": "equipment_leasing-single_lease-facility",
+          "currency": "EUR",
+          "as_of": "2023-01-01",
+          "drawn_principal": 40.0,
+          "credit_limit": 40.0,
+          "accrued_interest": 0
+        },
+        "events": [
+          {
+            "event_id": "scheduled-repayment",
+            "event_date": "2024-01-01",
+            "known_at": "2023-01-01",
+            "sequence": 0,
+            "kind": "PRINCIPAL_REPAYMENT",
+            "amount": 8.0
+          }
+        ],
+        "annual_interest_rates": [
+          0.1
+        ],
+        "period_end_dates": [
+          "2024-01-01"
+        ],
+        "day_count": "ACT/365F",
+        "default_timing": "BEFORE_PERIOD_END_EVENTS",
+        "allow_overlimit": false,
+        "currency": "EUR"
+      },
+      "reference_ead_before": 44.0,
+      "reference_ead_after": 36.0
+    }
+  ],
+  "forecast_sources": [
+    {
+      "case_id": "commercial_real_estate-income_producing",
+      "reference_pd": 0.10000000000000002,
+      "reference_conditional_ead": 120.02739726027397,
+      "reference_ead_weighted_lgd": 0.12894067542527016,
+      "scenario_cube_hash": "525d84f041b7ce3e43071d8717f2be386b8704e00a2a679891b19b627d0e2375",
+      "sampling_contract": {
+        "law": "FORECAST_CONDITIONAL",
+        "conditioning_scope": "PIT",
+        "quadrature": "Three-point Gaussian innovation tensor crossed with declared common counterparty Bernoulli state; fixed weights, no IID confidence interval."
+      }
+    },
+    {
+      "case_id": "project_finance-operating",
+      "reference_pd": 0.10000000000000002,
+      "reference_conditional_ead": 109.99999999999999,
+      "reference_ead_weighted_lgd": 0.0972892425090149,
+      "scenario_cube_hash": "525d84f041b7ce3e43071d8717f2be386b8704e00a2a679891b19b627d0e2375",
+      "sampling_contract": {
+        "law": "FORECAST_CONDITIONAL",
+        "conditioning_scope": "PIT",
+        "quadrature": "Three-point Gaussian innovation tensor crossed with declared common counterparty Bernoulli state; fixed weights, no IID confidence interval."
+      }
+    },
+    {
+      "case_id": "aircraft_finance-single_aircraft",
+      "reference_pd": 0.10000000000000002,
+      "reference_conditional_ead": 77.0,
+      "reference_ead_weighted_lgd": 0.1564965456494352,
+      "scenario_cube_hash": "525d84f041b7ce3e43071d8717f2be386b8704e00a2a679891b19b627d0e2375",
+      "sampling_contract": {
+        "law": "FORECAST_CONDITIONAL",
+        "conditioning_scope": "PIT",
+        "quadrature": "Three-point Gaussian innovation tensor crossed with declared common counterparty Bernoulli state; fixed weights, no IID confidence interval."
+      }
+    },
+    {
+      "case_id": "ship_finance-time_charter",
+      "reference_pd": 0.10000000000000002,
+      "reference_conditional_ead": 71.5,
+      "reference_ead_weighted_lgd": 0.12831422355380612,
+      "scenario_cube_hash": "525d84f041b7ce3e43071d8717f2be386b8704e00a2a679891b19b627d0e2375",
+      "sampling_contract": {
+        "law": "FORECAST_CONDITIONAL",
+        "conditioning_scope": "PIT",
+        "quadrature": "Three-point Gaussian innovation tensor crossed with declared common counterparty Bernoulli state; fixed weights, no IID confidence interval."
+      }
+    },
+    {
+      "case_id": "equipment_leasing-single_lease",
+      "reference_pd": 0.10000000000000002,
+      "reference_conditional_ead": 48.01095890410958,
+      "reference_ead_weighted_lgd": 0.37936024868579354,
+      "scenario_cube_hash": "525d84f041b7ce3e43071d8717f2be386b8704e00a2a679891b19b627d0e2375",
+      "sampling_contract": {
+        "law": "FORECAST_CONDITIONAL",
+        "conditioning_scope": "PIT",
+        "quadrature": "Three-point Gaussian innovation tensor crossed with declared common counterparty Bernoulli state; fixed weights, no IID confidence interval."
+      }
+    }
+  ],
+  "graph_policy": {
+    "policy_id": "wholesale-connections",
+    "version": "1",
+    "edge_types": [
+      "CROSS_DEFAULT"
+    ]
+  },
+  "default_link_policy": {
+    "policy_id": "wholesale-default",
+    "version": "1",
+    "edge_types": [
+      "CROSS_DEFAULT"
+    ],
+    "direction_policy": "mutual_only",
+    "transitive": true
+  },
+  "portfolio_contract": {
+    "portfolio_id": "five-specialized-assets",
+    "version": "1",
+    "currency": "EUR",
+    "as_of": "2023-01-01",
+    "known_at": "2023-01-01",
+    "horizon": 731,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "initially_performing",
+    "event": "first_default"
+  },
+  "workout_policy": {
+    "method": "closed_only",
+    "reference": "Separate observed settlements; estimated open workouts never substituted for realized LGD"
+  },
+  "weighting_policy": {
+    "method": "equal",
+    "reference": "Each observed defaulted facility counted once"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "world_type": "macro_reference_world",
+  "generator_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "specification": {
+    "tier": "tiny",
+    "dgp_family": "misspecified",
+    "selection_mechanism": "MNAR",
+    "start_date": "2000-01-01",
+    "observation_cutoff": "2026-01-01"
+  },
+  "innovation_manifest_hash": "65563ec95592289a24303f2200255211f00d6611fb5a2efcb6464a57cc064859",
+  "chunk_rows": 1000,
+  "memory_budget_mb": 256,
+  "estimated_working_mb": 36.128,
+  "layers": [
+    "observable_inputs",
+    "latent_truth",
+    "frozen_predictions",
+    "decision_history",
+    "observed_outcomes"
+  ],
+  "tables": {
+    "latent_truth/macro_factors": {
+      "file": "latent_truth/macro_factors.jsonl.gz",
+      "rows": 36,
+      "columns": [
+        "period",
+        "date",
+        "regime",
+        "activity",
+        "employment",
+        "rate",
+        "property",
+        "transport",
+        "credit",
+        "fx",
+        "energy"
+      ],
+      "sha256": "70533f5d4cd58da682a6c951a94dbf7d4ede2441ae6551766626f6b23651df03"
+    },
+    "observable_inputs/macro_releases": {
+      "file": "observable_inputs/macro_releases.jsonl.gz",
+      "rows": 576,
+      "columns": [
+        "release_id",
+        "series",
+        "observed_at",
+        "known_at",
+        "revision",
+        "value",
+        "unit"
+      ],
+      "sha256": "8c14f736ea40a8df291ac8037bade1e2fe8e146345158158241e82e37620f6c1"
+    }
+  },
+  "binary_resources": {
+    "scenario_cube": {
+      "file": "latent_truth/scenario_cube.f64le",
+      "dtype": "float64-little-endian",
+      "shape": [
+        512,
+        24,
+        8
+      ],
+      "order": "path,month,factor",
+      "factors": [
+        "activity",
+        "employment",
+        "rate",
+        "property",
+        "transport",
+        "credit",
+        "fx",
+        "energy"
+      ],
+      "origin": "2002-12-31",
+      "sha256": "1be794156c5cb8bdd3691dd9380bd734eadfed5682d6198379b3e0f17b286df9"
+    }
+  },
+  "limitations": [
+    "Synthetic engineering evidence does not establish real portfolio performance."
+  ],
+  "actual_rows": 612,
+  "runtime_seconds": 0.34672881399819744,
+  "dgp": {
+    "rho": [
+      0.85,
+      0.8,
+      0.75,
+      0.7,
+      0.9,
+      0.65,
+      0.6,
+      0.5
+    ],
+    "common_innovation_loading": 0.25,
+    "factor_stationary_variance_baseline": 1,
+    "release_lags_days": [
+      30,
+      90
+    ],
+    "forecast_history_separation": "scenario dates strictly after final macro history date"
+  }
+}

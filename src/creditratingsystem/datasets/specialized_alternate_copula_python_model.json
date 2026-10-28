@@ -1,0 +1,100 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "specialized-alternate-copula",
+    "model_version": "1",
+    "method_id": "dependence.fit_copula",
+    "feature_order": [
+      "market",
+      "capacity"
+    ],
+    "parameters": {
+      "family": "gaussian",
+      "dimension": 2,
+      "correlation": [
+        [
+          1.0,
+          0.9438833303083675
+        ],
+        [
+          0.9438833303083675,
+          1.0
+        ]
+      ]
+    },
+    "preprocessing": {
+      "input_kind": "observations",
+      "tie_policy": "error",
+      "rank_denominator": 9
+    },
+    "target": {
+      "event": "macro_state",
+      "horizon": 2,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "known_at": "2023-01-01",
+      "split_id": "independent-cross-market-training",
+      "data_fingerprint": "eight-explicit-rank-pairs",
+      "data_origin": "SYNTHETIC"
+    },
+    "diagnostics": {
+      "estimator": "INVERSION_OF_KENDALL_TAU",
+      "n_rows": 8,
+      "tie_counts": [
+        0,
+        0
+      ],
+      "tie_policy": "error",
+      "tied_continuous_approximation": false,
+      "input_kind": "observations",
+      "kendall_tau": [
+        [
+          1.0,
+          0.7857142857142856
+        ],
+        [
+          0.7857142857142856,
+          1.0
+        ]
+      ],
+      "uncertainty": "NOT_ESTIMATED",
+      "correlation_validation": {
+        "repair_policy": "none",
+        "input_eigenvalues": [
+          0.05611666969163254,
+          1.9438833303083674
+        ],
+        "relative_asymmetry": 0.0,
+        "frobenius_change": 0.0,
+        "maximum_absolute_change": 0.0,
+        "numerical_rank": 2,
+        "tolerance": 1e-10,
+        "strictly_positive_definite": true
+      },
+      "pairwise_composite_log_likelihood": 8.47060168760848,
+      "tail_dependence": [
+        {
+          "variables": [
+            "market",
+            "capacity"
+          ],
+          "lower": 0.0,
+          "upper": 0.0
+        }
+      ],
+      "likelihood_note": "Pairwise composite likelihood is a descriptive fit diagnostic, not a joint MLE or an IID standard-error estimator."
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "input_fingerprint": "ccad1433468f9c6f744853e82b1cf8207619cf21a2dd381523827f6ed82d824c"
+  },
+  "sha256": "3623699d2e306d877df10da9461f186c8af1d6209adafacf3a710fe6457bb4f2"
+}

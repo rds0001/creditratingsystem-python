@@ -1,0 +1,397 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "version": "1",
+  "product": "residential_mortgage",
+  "debt_cases": {
+    "fixed_rate": {
+      "loan_terms": {
+        "facility_id": "mortgage",
+        "currency": "EUR",
+        "principal": 100000,
+        "rate_type": "fixed",
+        "annual_rate": 0.03,
+        "rate_convention": "nominal_simple",
+        "day_count": "ACT/365F",
+        "amortization": "equal_principal",
+        "maturity_date": "2023-01-01"
+      },
+      "calendar": [
+        {
+          "start_date": "2021-01-01",
+          "end_date": "2022-01-01",
+          "payment_date": "2022-01-01"
+        },
+        {
+          "start_date": "2022-01-01",
+          "end_date": "2023-01-01",
+          "payment_date": "2023-01-01"
+        }
+      ]
+    },
+    "floating_rate": {
+      "loan_terms": {
+        "facility_id": "mortgage",
+        "currency": "EUR",
+        "principal": 100000,
+        "rate_type": "floating",
+        "annual_rate": 0.03,
+        "rate_convention": "nominal_simple",
+        "day_count": "ACT/365F",
+        "amortization": "equal_principal",
+        "maturity_date": "2023-01-01",
+        "spread": 0.01
+      },
+      "calendar": [
+        {
+          "start_date": "2021-01-01",
+          "end_date": "2022-01-01",
+          "payment_date": "2022-01-01",
+          "fixing_date": "2021-01-01"
+        },
+        {
+          "start_date": "2022-01-01",
+          "end_date": "2023-01-01",
+          "payment_date": "2023-01-01",
+          "fixing_date": "2022-01-01"
+        }
+      ],
+      "base_rate_fixings": [
+        {
+          "fixing_date": "2021-01-01",
+          "base_rate": 0.02
+        },
+        {
+          "fixing_date": "2022-01-01",
+          "base_rate": 0.02
+        }
+      ]
+    },
+    "interest_only": {
+      "loan_terms": {
+        "facility_id": "mortgage",
+        "currency": "EUR",
+        "principal": 100000,
+        "rate_type": "fixed",
+        "annual_rate": 0.03,
+        "rate_convention": "nominal_simple",
+        "day_count": "ACT/365F",
+        "amortization": "bullet",
+        "maturity_date": "2023-01-01"
+      },
+      "calendar": [
+        {
+          "start_date": "2021-01-01",
+          "end_date": "2022-01-01",
+          "payment_date": "2022-01-01"
+        },
+        {
+          "start_date": "2022-01-01",
+          "end_date": "2023-01-01",
+          "payment_date": "2023-01-01"
+        }
+      ]
+    },
+    "partially_amortizing_balloon": {
+      "loan_terms": {
+        "facility_id": "mortgage",
+        "currency": "EUR",
+        "principal": 100000,
+        "rate_type": "fixed",
+        "annual_rate": 0.03,
+        "rate_convention": "nominal_simple",
+        "day_count": "ACT/365F",
+        "amortization": "custom",
+        "maturity_date": "2023-01-01"
+      },
+      "calendar": [
+        {
+          "start_date": "2021-01-01",
+          "end_date": "2022-01-01",
+          "payment_date": "2022-01-01",
+          "principal_due": 20000
+        },
+        {
+          "start_date": "2022-01-01",
+          "end_date": "2023-01-01",
+          "payment_date": "2023-01-01",
+          "principal_due": 80000
+        }
+      ]
+    }
+  },
+  "operating_cases": {
+    "owner_occupied_base": {
+      "driver_paths": [
+        {
+          "scenario_id": "base",
+          "period_start": "2021-01-01",
+          "period_end": "2021-02-01",
+          "currency": "EUR",
+          "base_quantity": 0,
+          "base_unit_price": 1000,
+          "base_unit_variable_cost": 0,
+          "base_fixed_cost": 0,
+          "volume_multiplier": 1,
+          "price_multiplier": 1,
+          "variable_cost_multiplier": 1,
+          "fixed_cost_multiplier": 1,
+          "working_capital_revenue_ratio": 0,
+          "cash_taxes": 0,
+          "capex": 0,
+          "asset_disposals": 0,
+          "other_operating_cash": 0
+        }
+      ],
+      "operating_contract": {
+        "contract_id": "owner_occupied",
+        "version": "1",
+        "currency": "EUR",
+        "period_unit": "month",
+        "quantity_unit": "occupied_property_month",
+        "initial_working_capital": 0,
+        "include_asset_disposals_in_cfads": false
+      }
+    },
+    "owner_occupied_vacancy": {
+      "driver_paths": [
+        {
+          "scenario_id": "vacancy",
+          "period_start": "2021-01-01",
+          "period_end": "2021-02-01",
+          "currency": "EUR",
+          "base_quantity": 0,
+          "base_unit_price": 1000,
+          "base_unit_variable_cost": 0,
+          "base_fixed_cost": 0,
+          "volume_multiplier": 0.8,
+          "price_multiplier": 1,
+          "variable_cost_multiplier": 1,
+          "fixed_cost_multiplier": 1,
+          "working_capital_revenue_ratio": 0,
+          "cash_taxes": 0,
+          "capex": 0,
+          "asset_disposals": 0,
+          "other_operating_cash": 0
+        }
+      ],
+      "operating_contract": {
+        "contract_id": "owner_occupied",
+        "version": "1",
+        "currency": "EUR",
+        "period_unit": "month",
+        "quantity_unit": "occupied_property_month",
+        "initial_working_capital": 0,
+        "include_asset_disposals_in_cfads": false
+      }
+    },
+    "buy_to_let_base": {
+      "driver_paths": [
+        {
+          "scenario_id": "base",
+          "period_start": "2021-01-01",
+          "period_end": "2021-02-01",
+          "currency": "EUR",
+          "base_quantity": 1,
+          "base_unit_price": 1000,
+          "base_unit_variable_cost": 0,
+          "base_fixed_cost": 200,
+          "volume_multiplier": 1,
+          "price_multiplier": 1,
+          "variable_cost_multiplier": 1,
+          "fixed_cost_multiplier": 1,
+          "working_capital_revenue_ratio": 0,
+          "cash_taxes": 0,
+          "capex": 0,
+          "asset_disposals": 0,
+          "other_operating_cash": 0
+        }
+      ],
+      "operating_contract": {
+        "contract_id": "buy_to_let",
+        "version": "1",
+        "currency": "EUR",
+        "period_unit": "month",
+        "quantity_unit": "occupied_property_month",
+        "initial_working_capital": 0,
+        "include_asset_disposals_in_cfads": false
+      }
+    },
+    "buy_to_let_vacancy": {
+      "driver_paths": [
+        {
+          "scenario_id": "vacancy",
+          "period_start": "2021-01-01",
+          "period_end": "2021-02-01",
+          "currency": "EUR",
+          "base_quantity": 1,
+          "base_unit_price": 1000,
+          "base_unit_variable_cost": 0,
+          "base_fixed_cost": 200,
+          "volume_multiplier": 0.8,
+          "price_multiplier": 1,
+          "variable_cost_multiplier": 1,
+          "fixed_cost_multiplier": 1,
+          "working_capital_revenue_ratio": 0,
+          "cash_taxes": 0,
+          "capex": 0,
+          "asset_disposals": 0,
+          "other_operating_cash": 0
+        }
+      ],
+      "operating_contract": {
+        "contract_id": "buy_to_let",
+        "version": "1",
+        "currency": "EUR",
+        "period_unit": "month",
+        "quantity_unit": "occupied_property_month",
+        "initial_working_capital": 0,
+        "include_asset_disposals_in_cfads": false
+      }
+    }
+  },
+  "joint_application": {
+    "application_id": "joint_mortgage",
+    "parties": [
+      {
+        "party_id": "p",
+        "role": "borrower",
+        "liability_share": 1,
+        "household_id": "household"
+      },
+      {
+        "party_id": "q",
+        "role": "co_borrower",
+        "liability_share": 1,
+        "household_id": "household"
+      }
+    ],
+    "income_items": [
+      {
+        "economic_id": "salary_p",
+        "party_id": "p",
+        "amount_monthly": 3000,
+        "currency": "EUR"
+      },
+      {
+        "economic_id": "salary_q",
+        "party_id": "q",
+        "amount_monthly": 2000,
+        "currency": "EUR"
+      }
+    ],
+    "obligation_items": [
+      {
+        "economic_id": "shared_mortgage",
+        "party_id": "p",
+        "amount_monthly": 900,
+        "currency": "EUR"
+      },
+      {
+        "economic_id": "shared_mortgage",
+        "party_id": "q",
+        "amount_monthly": 900,
+        "currency": "EUR"
+      }
+    ],
+    "currency": "EUR"
+  },
+  "collateral": {
+    "claims": [
+      {
+        "claim_id": "prior_lien",
+        "amount": 20000,
+        "currency": "EUR"
+      },
+      {
+        "claim_id": "mortgage",
+        "amount": 100000,
+        "currency": "EUR"
+      }
+    ],
+    "collateral": [
+      {
+        "collateral_id": "property",
+        "value": 150000,
+        "currency": "EUR",
+        "valuation_date": "2021-01-01",
+        "freshness": "CURRENT"
+      }
+    ],
+    "allocations": [
+      {
+        "claim_id": "prior_lien",
+        "collateral_id": "property",
+        "amount": 20000,
+        "priority": 1
+      },
+      {
+        "claim_id": "mortgage",
+        "collateral_id": "property",
+        "amount": 100000,
+        "priority": 2
+      }
+    ],
+    "currency": "EUR"
+  },
+  "recovery": {
+    "default_events": [
+      {
+        "scenario_id": "default",
+        "default_event_id": "first_default",
+        "subject_id": "borrower",
+        "default_date": "2024-01-01"
+      }
+    ],
+    "claims": [
+      {
+        "scenario_id": "default",
+        "default_event_id": "first_default",
+        "subject_id": "borrower",
+        "claim_id": "prior_lien",
+        "pool_id": "property_pool",
+        "currency": "EUR",
+        "ead_at_default": 20000,
+        "legal_balance": 20000,
+        "priority": 1,
+        "deficit_cost_share": 0.16666666666666666
+      },
+      {
+        "scenario_id": "default",
+        "default_event_id": "first_default",
+        "subject_id": "borrower",
+        "claim_id": "mortgage",
+        "pool_id": "property_pool",
+        "currency": "EUR",
+        "ead_at_default": 100000,
+        "legal_balance": 100000,
+        "priority": 2,
+        "deficit_cost_share": 0.8333333333333334
+      }
+    ],
+    "realization_paths": [
+      {
+        "scenario_id": "default",
+        "default_event_id": "first_default",
+        "pool_id": "property_pool",
+        "currency": "EUR",
+        "realization_id": "sale",
+        "collateral_id": "property",
+        "date": "2025-01-01",
+        "gross_value": 100000,
+        "realization_fraction": 1,
+        "cost": 10000,
+        "discount_factor": 0.9,
+        "discount_anchor_date": "2024-01-01"
+      }
+    ],
+    "recovery_policy": {
+      "policy_id": "mortgage_recovery",
+      "version": "1",
+      "currency": "EUR",
+      "allocation": "LEGAL_CAP",
+      "cost_rule": "PROCEEDS_FIRST_EXPLICIT_DEFICIT_SHARES",
+      "completion": "ULTIMATE_COMPLETE"
+    }
+  },
+  "rate_reset_shock": 0.02
+}

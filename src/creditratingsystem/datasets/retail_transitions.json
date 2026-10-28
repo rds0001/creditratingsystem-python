@@ -1,0 +1,3061 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "description": "Dated retail arrears, temporary repayment proposals and observed competing exit. Monetary amounts EUR. Zero prospective interest is an explicit analytical assumption, not a product pricing convention.",
+  "cases": {
+    "RETAIL_RESIDENTIAL_MORTGAGE": {
+      "product_id": "RETAIL_RESIDENTIAL_MORTGAGE",
+      "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+      "financial_convention": "monthly mortgage instalment; capital remains after temporary relief",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 900,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 300,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 900,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 300,
+            "currency": "EUR",
+            "kind": "payment"
+          },
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 600,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 100000,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 100000,
+          "principal_arrears": 600,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            900,
+            900,
+            900
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            450,
+            900,
+            1350
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              1000,
+              1000,
+              1000
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_RESIDENTIAL_MORTGAGE-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 600,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 2520.0,
+        "proposed_remaining_claim": 97300,
+        "baseline_npv": 2565.0,
+        "candidate_affordable": false
+      }
+    },
+    "RETAIL_HOME_EQUITY_LINE": {
+      "product_id": "RETAIL_HOME_EQUITY_LINE",
+      "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+      "financial_convention": "interest-only line; undrawn commitment is not past-due principal",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 100,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 100,
+            "currency": "EUR",
+            "kind": "payment"
+          },
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 100,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 40100,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 40000,
+          "principal_arrears": 100,
+          "accrued_interest": 100,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            200,
+            200,
+            200
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            100,
+            200,
+            300
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              250,
+              250,
+              250
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_HOME_EQUITY_LINE-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_HOME_EQUITY_LINE-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_HOME_EQUITY_LINE-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_HOME_EQUITY_LINE-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 100,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 560.0,
+        "proposed_remaining_claim": 39500,
+        "baseline_npv": 570.0,
+        "candidate_affordable": false
+      }
+    },
+    "RETAIL_UNSECURED_INSTALLMENT": {
+      "product_id": "RETAIL_UNSECURED_INSTALLMENT",
+      "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+      "financial_convention": "fixed instalment; reduced first payment is recovered in period three",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 350,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 150,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 350,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 150,
+            "currency": "EUR",
+            "kind": "payment"
+          },
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 200,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 9800,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 9800,
+          "principal_arrears": 200,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            350,
+            350,
+            350
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            150,
+            350,
+            550
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              400,
+              400,
+              400
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_UNSECURED_INSTALLMENT-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_UNSECURED_INSTALLMENT-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_UNSECURED_INSTALLMENT-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_UNSECURED_INSTALLMENT-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 200,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 977.5,
+        "proposed_remaining_claim": 8750,
+        "baseline_npv": 997.5,
+        "candidate_affordable": false
+      }
+    },
+    "RETAIL_EDUCATION_LOAN": {
+      "product_id": "RETAIL_EDUCATION_LOAN",
+      "account_id": "RETAIL_EDUCATION_LOAN-account",
+      "financial_convention": "first contractual payment after documented grace, not during grace",
+      "step_days": 90,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "obligation_id": "due",
+            "due_at": "2024-03-02",
+            "known_at": "2024-01-01",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2024-04-01",
+        "known_at": "2024-04-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "obligation_id": "due",
+            "due_at": "2024-03-02",
+            "known_at": "2024-01-01",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-04-15",
+            "known_at": "2024-04-15",
+            "amount": 200,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-04-15",
+        "known_at": "2024-04-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 12000,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 12000,
+          "principal_arrears": 200,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-04-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            200,
+            200,
+            200
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            0,
+            200,
+            400
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              250,
+              250,
+              250
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-06-30",
+          "2024-09-28",
+          "2024-12-27"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          },
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-04-15",
+            "known_at": "2024-04-15"
+          },
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-05-31",
+            "known_at": "2024-05-31"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_EDUCATION_LOAN-account",
+            "observed_from": "2024-04-01",
+            "observed_through": "2024-07-10",
+            "known_at": "2024-07-10"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-07-10"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_EDUCATION_LOAN-account",
+            "as_of": "2024-04-01",
+            "followup_end": "2024-07-10"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_EDUCATION_LOAN-account-default",
+            "as_of": "2024-04-01",
+            "followup_end": "2024-07-10"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_EDUCATION_LOAN-account-mature",
+            "as_of": "2024-04-01",
+            "followup_end": "2024-07-10"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_EDUCATION_LOAN-account-default",
+            "default_at": "2024-04-21",
+            "known_at": "2024-04-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_EDUCATION_LOAN-account",
+            "exit_at": "2024-05-31",
+            "known_at": "2024-05-31"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-07-10"
+      },
+      "expected": {
+        "past_due": 200,
+        "dpd": 30,
+        "cure_date": "2024-04-25",
+        "closed_at": "2024-05-31",
+        "proposed_npv": 550.0,
+        "proposed_remaining_claim": 11400,
+        "baseline_npv": 570.0,
+        "candidate_affordable": false
+      }
+    },
+    "RETAIL_AUTO_LOAN": {
+      "product_id": "RETAIL_AUTO_LOAN",
+      "account_id": "RETAIL_AUTO_LOAN-account",
+      "financial_convention": "unpaid balloon; prospective extension preserves principal and accrued interest",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 15750,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 5000,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 15750,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 5000,
+            "currency": "EUR",
+            "kind": "payment"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 10750,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 10750,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 10000,
+          "principal_arrears": 10000,
+          "accrued_interest": 750,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            10750,
+            0,
+            0
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            750,
+            5000,
+            5000
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              5500,
+              5500,
+              5500
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_AUTO_LOAN-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_AUTO_LOAN-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_AUTO_LOAN-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_AUTO_LOAN-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_AUTO_LOAN-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_AUTO_LOAN-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 10750,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 10000.0,
+        "proposed_remaining_claim": 0,
+        "baseline_npv": 10750.0,
+        "candidate_affordable": true
+      }
+    },
+    "RETAIL_AUTO_LEASE": {
+      "product_id": "RETAIL_AUTO_LEASE",
+      "account_id": "RETAIL_AUTO_LEASE-account",
+      "financial_convention": "finance-lease monetary claim; returned asset residual value is separate",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 1000,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 1000,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 1000,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 11400,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 11200,
+          "principal_arrears": 1000,
+          "accrued_interest": 200,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            1000,
+            1000,
+            1000
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            500,
+            1000,
+            1500
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              1200,
+              1200,
+              1200
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_AUTO_LEASE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_AUTO_LEASE-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_AUTO_LEASE-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_AUTO_LEASE-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_AUTO_LEASE-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_AUTO_LEASE-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 1000,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 2800.0,
+        "proposed_remaining_claim": 8400,
+        "baseline_npv": 2850.0,
+        "candidate_affordable": false
+      }
+    },
+    "RETAIL_CREDIT_CARD": {
+      "product_id": "RETAIL_CREDIT_CARD",
+      "account_id": "RETAIL_CREDIT_CARD-account",
+      "financial_convention": "minimum due is 50, not full statement balance; revolving principal remains",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 50,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 25,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 50,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 25,
+            "currency": "EUR",
+            "kind": "payment"
+          },
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 25,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 975,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 975,
+          "principal_arrears": 25,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            50,
+            50,
+            50
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            25,
+            50,
+            75
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              60,
+              60,
+              60
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_CREDIT_CARD-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_CREDIT_CARD-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_CREDIT_CARD-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_CREDIT_CARD-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_CREDIT_CARD-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_CREDIT_CARD-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 25,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 140.0,
+        "proposed_remaining_claim": 825,
+        "baseline_npv": 142.5,
+        "candidate_affordable": false
+      }
+    },
+    "RETAIL_CHARGE_CARD": {
+      "product_id": "RETAIL_CHARGE_CARD",
+      "account_id": "RETAIL_CHARGE_CARD-account",
+      "financial_convention": "full statement due; instalment conversion is a proposal only",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 1000,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 50,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 1000,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "payment_id": "partial",
+            "paid_at": "2024-01-02",
+            "known_at": "2024-01-02",
+            "amount": 50,
+            "currency": "EUR",
+            "kind": "payment"
+          },
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 950,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 950,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 950,
+          "principal_arrears": 950,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            950,
+            0,
+            0
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            150,
+            400,
+            400
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              450,
+              450,
+              450
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_CHARGE_CARD-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_CHARGE_CARD-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_CHARGE_CARD-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_CHARGE_CARD-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_CHARGE_CARD-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_CHARGE_CARD-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 950,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 890.0,
+        "proposed_remaining_claim": 0,
+        "baseline_npv": 950.0,
+        "candidate_affordable": true
+      }
+    },
+    "RETAIL_OVERDRAFT": {
+      "product_id": "RETAIL_OVERDRAFT",
+      "account_id": "RETAIL_OVERDRAFT-account",
+      "financial_convention": "explicit demand for excess over authorized 1000; authorized balance is not demanded",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 200,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 1200,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 1200,
+          "principal_arrears": 200,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            200,
+            0,
+            0
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            0,
+            100,
+            100
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              150,
+              150,
+              150
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_OVERDRAFT-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_OVERDRAFT-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_OVERDRAFT-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_OVERDRAFT-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_OVERDRAFT-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_OVERDRAFT-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 200,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 185.0,
+        "proposed_remaining_claim": 1000,
+        "baseline_npv": 200.0,
+        "candidate_affordable": true
+      }
+    },
+    "RETAIL_BNPL": {
+      "product_id": "RETAIL_BNPL",
+      "account_id": "RETAIL_BNPL-account",
+      "financial_convention": "four-payment plan; missed first instalment plus second due, no annualized good label",
+      "step_days": 7,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 25,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 25,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 25,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 100,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 100,
+          "principal_arrears": 25,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            50,
+            25,
+            25
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            25,
+            25,
+            50
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              60,
+              60,
+              60
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-02-08",
+          "2024-02-15",
+          "2024-02-22"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_BNPL-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_BNPL-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_BNPL-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_BNPL-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_BNPL-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_BNPL-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 25,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 93.75,
+        "proposed_remaining_claim": 0,
+        "baseline_npv": 96.25,
+        "candidate_affordable": true
+      }
+    },
+    "RETAIL_MICRO_LOAN": {
+      "product_id": "RETAIL_MICRO_LOAN",
+      "account_id": "RETAIL_MICRO_LOAN-account",
+      "financial_convention": "weekly collection with seasonal capacity; later catch-up can remain unaffordable",
+      "step_days": 7,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 100,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 100,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 100,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 400,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 400,
+          "principal_arrears": 100,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            100,
+            100,
+            200
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            0,
+            100,
+            300
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              150,
+              150,
+              150
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-02-08",
+          "2024-02-15",
+          "2024-02-22"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_MICRO_LOAN-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_MICRO_LOAN-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_MICRO_LOAN-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_MICRO_LOAN-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_MICRO_LOAN-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_MICRO_LOAN-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 100,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 365.0,
+        "proposed_remaining_claim": 0,
+        "baseline_npv": 375.0,
+        "candidate_affordable": false
+      }
+    },
+    "RETAIL_SMALL_BUSINESS_FINANCE": {
+      "product_id": "RETAIL_SMALL_BUSINESS_FINANCE",
+      "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+      "financial_convention": "working-capital principal; owner transfer is not additional operating income",
+      "step_days": 30,
+      "delinquency": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 10,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2024-02-01",
+        "known_at": "2024-02-01",
+        "currency": "EUR"
+      },
+      "cured": {
+        "obligations": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "obligation_id": "due",
+            "due_at": "2024-01-02",
+            "known_at": "2024-01-01",
+            "amount": 10,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "payment_id": "arrears-cleared",
+            "paid_at": "2024-02-15",
+            "known_at": "2024-02-15",
+            "amount": 10,
+            "currency": "EUR",
+            "kind": "payment"
+          }
+        ],
+        "as_of": "2024-02-15",
+        "known_at": "2024-02-15",
+        "currency": "EUR"
+      },
+      "opening_claim": 40,
+      "arrangement": {
+        "contract": {
+          "currency": "EUR",
+          "principal": 40,
+          "principal_arrears": 10,
+          "accrued_interest": 0,
+          "fees": 0,
+          "as_of": "2024-02-01"
+        },
+        "baseline": {
+          "plan_id": "contractual",
+          "payments": [
+            10,
+            10,
+            20
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "candidate": {
+          "plan_id": "proposed",
+          "payments": [
+            0,
+            10,
+            30
+          ],
+          "period_interest_rates": [
+            0,
+            0,
+            0
+          ],
+          "new_fees": [
+            0,
+            0,
+            0
+          ],
+          "servicing_costs": [
+            0,
+            0,
+            0
+          ],
+          "receipt_fractions": [
+            1,
+            1,
+            1
+          ],
+          "capitalize_unpaid_interest": false
+        },
+        "affordability_paths": [
+          {
+            "path_id": "verified_available_cash",
+            "currency": "EUR",
+            "available_cash": [
+              15,
+              15,
+              15
+            ]
+          }
+        ],
+        "discount_factors": [
+          1,
+          0.95,
+          0.9
+        ],
+        "period_end_dates": [
+          "2024-03-02",
+          "2024-04-01",
+          "2024-05-01"
+        ],
+        "currency": "EUR"
+      },
+      "collections": {
+        "states": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "state_event_id": "state-0",
+            "state": "ARREARS",
+            "occurred_at": "2024-02-01",
+            "known_at": "2024-02-01"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "state_event_id": "state-1",
+            "state": "CLEAN",
+            "occurred_at": "2024-02-15",
+            "known_at": "2024-02-15"
+          },
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "state_event_id": "state-2",
+            "state": "CLOSED",
+            "occurred_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "actions": [],
+        "coverage": [
+          {
+            "account_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "observed_from": "2024-02-01",
+            "observed_through": "2024-05-11",
+            "known_at": "2024-05-11"
+          }
+        ],
+        "episode_rule": {
+          "rule_id": "synthetic-sustained-cure",
+          "version": "1",
+          "problem_states": [
+            "ARREARS",
+            "DEFAULT"
+          ],
+          "clean_states": [
+            "CLEAN"
+          ],
+          "terminal_states": [
+            "CLOSED"
+          ],
+          "default_states": [
+            "DEFAULT"
+          ],
+          "probation_days": 10,
+          "separation_days": 15
+        },
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "windows": {
+        "ratings": [
+          {
+            "observation_id": "pre-exit",
+            "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "default-control",
+            "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-account-default",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          },
+          {
+            "observation_id": "mature-control",
+            "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-account-mature",
+            "as_of": "2024-02-01",
+            "followup_end": "2024-05-11"
+          }
+        ],
+        "default_events": [
+          {
+            "event_id": "observed-default",
+            "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-account-default",
+            "default_at": "2024-02-21",
+            "known_at": "2024-02-22"
+          }
+        ],
+        "exits": [
+          {
+            "entity_id": "RETAIL_SMALL_BUSINESS_FINANCE-account",
+            "exit_at": "2024-04-01",
+            "known_at": "2024-04-01"
+          }
+        ],
+        "horizon_days": 90,
+        "evaluation_cutoff": "2024-05-11"
+      },
+      "expected": {
+        "past_due": 10,
+        "dpd": 30,
+        "cure_date": "2024-02-25",
+        "closed_at": "2024-04-01",
+        "proposed_npv": 36.5,
+        "proposed_remaining_claim": 0,
+        "baseline_npv": 37.5,
+        "candidate_affordable": false
+      }
+    }
+  },
+  "state_profile": {
+    "schema_version": "1.0",
+    "profile_id": "synthetic-delinquency-only",
+    "immaterial_state": "CLEAN",
+    "materiality": {
+      "logic": "and",
+      "absolute": 1,
+      "relative": 0
+    },
+    "buckets": [
+      {
+        "state": "CURRENT_DUE",
+        "lower": 0,
+        "upper": 1
+      },
+      {
+        "state": "ARREARS",
+        "lower": 1,
+        "upper": null
+      }
+    ],
+    "event_priority": [
+      {
+        "event": "closed",
+        "state": "CLOSED",
+        "at_risk": false,
+        "absorbing": true
+      },
+      {
+        "event": "confirmed_default",
+        "state": "DEFAULT",
+        "at_risk": false,
+        "absorbing": true
+      }
+    ]
+  }
+}

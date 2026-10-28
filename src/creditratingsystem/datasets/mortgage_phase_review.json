@@ -1,0 +1,475 @@
+{
+  "data_origin": "SYNTHETIC",
+  "facility_id": "facility_A",
+  "cure_training": {
+    "calendar_origin": "2023-01-01",
+    "observation_end": "2023-04-01",
+    "training": {
+      "data_fingerprint": "independent-retail-defaulted-cohort-2023",
+      "split_id": "prior-train",
+      "known_at": "2023-04-02"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 90,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "defaulted_episode"
+    },
+    "rows": [
+      {
+        "entity_id": "prior-A",
+        "start": 0,
+        "stop": 30,
+        "from_state": "D",
+        "to_state": "C"
+      },
+      {
+        "entity_id": "prior-A",
+        "start": 30,
+        "stop": 60,
+        "from_state": "C",
+        "to_state": "D"
+      },
+      {
+        "entity_id": "prior-A",
+        "start": 60,
+        "stop": 90,
+        "from_state": "D",
+        "to_state": null
+      },
+      {
+        "entity_id": "prior-B",
+        "start": 0,
+        "stop": 90,
+        "from_state": "D",
+        "to_state": null
+      }
+    ]
+  },
+  "residual_model": {
+    "schema_version": "1.0",
+    "model_id": "terminal-settlement-reference",
+    "model_version": "1",
+    "method_id": "lgd.fit_recovery_hurdle",
+    "feature_order": [],
+    "parameters": {
+      "fit_intercept": true,
+      "default_condition": "given_default",
+      "currency": "EUR",
+      "stage_spec": {
+        "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+        "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+        "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+        "positive_distribution": "lognormal",
+        "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+        "payout_horizon": "ULTIMATE",
+        "timing_distribution": "weibull",
+        "cure_residual_value_ratio": 1.0,
+        "landmark_definition": "Account enters residual terminal settlement stage"
+      },
+      "feature_min": [],
+      "feature_max": [],
+      "positive_feature_min": [],
+      "positive_feature_max": [],
+      "cure_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.cure",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            -0.6931471805599454
+          ],
+          "covariance": [
+            [
+              0.75
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -3.8190850097688775,
+          "frequency_total": 6.0,
+          "n_active_rows": 6,
+          "rank": 1,
+          "maximum_mean_score": 5.551115123125783e-17,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "699fbbd846e1ed6f6d0a172062f3b59c97a7213aa055b84e4cc530f7e2bdca73"
+      },
+      "positive_gate": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.positive",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            0.0
+          ],
+          "covariance": [
+            [
+              1.0
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0,
+          "quasi_log_likelihood": -2.772588722239781,
+          "frequency_total": 4.0,
+          "n_active_rows": 4,
+          "rank": 1,
+          "maximum_mean_score": 0.0,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "0342c26178e323e17254a256e28eaee94db0f86475773c4c880acd4d5040066e"
+      },
+      "amount_regression": {
+        "coefficients": [
+          -0.8369882167858352
+        ],
+        "covariance": [
+          [
+            0.1508686201015727
+          ]
+        ],
+        "covariance_type": "HC0_FREQUENCY_IID",
+        "residual_variance": 0.3017372402031454,
+        "rank": 1,
+        "frequency_total": 2.0
+      },
+      "timing_model": {
+        "schema_version": "1.0",
+        "model_id": "terminal-settlement-reference.timing",
+        "model_version": "1",
+        "method_id": "survival.fit_aft_model",
+        "feature_order": [],
+        "parameters": {
+          "kind": "aft",
+          "distribution": "weibull",
+          "coefficients": [
+            3.9603830543916008
+          ],
+          "log_time_scale": 0.938538994120538,
+          "covariance_beta_log_scale": [
+            [
+              0.1468199895351604,
+              -0.0009212609147641112
+            ],
+            [
+              -0.0009212609147641111,
+              0.10924901927636418
+            ]
+          ],
+          "support_start": 0.0,
+          "support_end": 90.0
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "workout_resolution",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "prior-2024-terminal-settlement-reference",
+          "split_id": "train",
+          "known_at": "2023-12-31",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "diagnostics": {
+          "backend": "lifelines.WeibullAFTFitter",
+          "parameterization": "log(T)=intercept+X beta+scale*epsilon",
+          "log_likelihood": -29.747035581774195,
+          "row_log_likelihood": [
+            -4.176468546921858,
+            -4.242293388148155,
+            -4.317908600485287,
+            -4.399325490703751,
+            -4.48468997959468,
+            -4.57297194434928,
+            -1.7766888157855916,
+            -1.7766888157855916
+          ],
+          "converged": true,
+          "warnings": [],
+          "censoring": "independent_right_censoring",
+          "extrapolation": "parametric_tail_requires_explicit_prediction_policy"
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        }
+      }
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "residual_terminal_loss_fraction",
+      "horizon_role": "TIMING_REPORTING_REFERENCE",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "given_default",
+      "currency": "EUR"
+    },
+    "training": {
+      "data_fingerprint": "prior-2024-terminal-settlement-reference",
+      "split_id": "train",
+      "known_at": "2023-12-31",
+      "data_origin": "SYNTHETIC",
+      "workout_population": "open_and_closed_defaulted_landmarks"
+    },
+    "diagnostics": {
+      "observed_count": 6,
+      "censored_count": 2,
+      "cure_count": 2,
+      "positive_noncure_count": 2,
+      "zero_noncure_count": 2,
+      "identification": "Outcome and payout independent of resolution time and independent right censoring, conditional on landmark covariates"
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "training_input_fingerprint": "ab26a68269574829567434b3bd4538bef5e8364c0e512ec4c5451bb2fd5e53d9"
+  },
+  "recovery_target": {
+    "event": "residual_terminal_loss_fraction",
+    "horizon_role": "TIMING_REPORTING_REFERENCE",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "given_default",
+    "currency": "EUR"
+  },
+  "stage_spec": {
+    "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+    "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+    "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+    "positive_distribution": "lognormal",
+    "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+    "payout_horizon": "ULTIMATE",
+    "timing_distribution": "weibull",
+    "cure_residual_value_ratio": 1.0,
+    "landmark_definition": "Account enters residual terminal settlement stage"
+  },
+  "open_episode": {
+    "episode_id": "facility_A-default-20240901",
+    "default_date": "2024-09-01",
+    "default_known_at": "2024-09-02",
+    "reference_date": "2024-10-01",
+    "reference_known_at": "2024-10-01",
+    "features_observed_at": "2024-10-01",
+    "features_known_at": "2024-10-01",
+    "currency": "EUR",
+    "ead_at_default": 95000,
+    "residual_exposure_at_reference": 95000,
+    "observation_end": "2024-10-01",
+    "resolution_date": null,
+    "resolution_known_at": null,
+    "cured": 0,
+    "cure_value": 0
+  },
+  "valuation": {
+    "episode_id": "facility_A-default-20240901",
+    "discount_curve": {
+      "anchor_date": "2024-09-01",
+      "known_at": "2024-10-01",
+      "discount_basis": "EXPLICIT_PRIOR_SCENARIO_NOT_OBSERVED_SALE_FACTOR",
+      "points": [
+        {
+          "cashflow_date": "2024-11-01",
+          "discount_factor": 0.95
+        },
+        {
+          "cashflow_date": "2024-12-01",
+          "discount_factor": 0.95
+        }
+      ]
+    },
+    "fx_contract": {
+      "reporting_currency": "EUR",
+      "known_at": "2024-10-01",
+      "conversion_basis": "cashflow_date",
+      "rates": [
+        {
+          "currency": "EUR",
+          "date": "2024-11-01",
+          "rate": 1
+        },
+        {
+          "currency": "EUR",
+          "date": "2024-12-01",
+          "rate": 1
+        }
+      ]
+    },
+    "future_resolution_dates": [
+      "2024-11-01",
+      "2024-12-01"
+    ],
+    "resolution_time_convention": "RIGHT_ENDPOINT",
+    "tail_discount_factor": 0.95,
+    "tail_assumption_reference": "Explicit flat .95 discount on remaining terminal cash, including unresolved tail",
+    "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+  },
+  "competing": {
+    "rows": [
+      {
+        "entity_id": "shared-prior-exit-0",
+        "start": 0,
+        "stop": 30,
+        "event": 1,
+        "covariate_time": 0
+      },
+      {
+        "entity_id": "shared-prior-exit-1",
+        "start": 0,
+        "stop": 30,
+        "event": 1,
+        "covariate_time": 0
+      },
+      {
+        "entity_id": "shared-prior-exit-2",
+        "start": 0,
+        "stop": 60,
+        "event": 0,
+        "covariate_time": 0
+      },
+      {
+        "entity_id": "shared-prior-exit-3",
+        "start": 0,
+        "stop": 60,
+        "event": 0,
+        "covariate_time": 0
+      }
+    ],
+    "event_types": [
+      "default",
+      "exit",
+      null,
+      null
+    ],
+    "target": {
+      "event": "default",
+      "horizon": 60,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "performing"
+    },
+    "training": {
+      "data_fingerprint": "four-independent-synthetic-prior-2022-exit-histories",
+      "split_id": "prior-training",
+      "known_at": "2023-01-01"
+    },
+    "calendar_origin": "2022-01-01",
+    "observation_end": "2022-03-02"
+  },
+  "null_uniforms": [
+    0.01,
+    0.08,
+    0.15,
+    0.22,
+    0.29,
+    0.36,
+    0.43,
+    0.5,
+    0.57,
+    0.64,
+    0.71,
+    0.78,
+    0.85,
+    0.92,
+    0.99,
+    0.06,
+    0.33,
+    0.6,
+    0.87,
+    0.44
+  ],
+  "assumption_reference": "Explicit transferred synthetic cure and residual-settlement models, not empirical mortgage calibration; actual later sale is never a predictive input"
+}

@@ -1,0 +1,103 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "auto_lease",
+  "cases": {
+    "operating_lease": {
+      "credit_claim": 0,
+      "residual_carrying_value": 12000,
+      "gross_sale": 8000,
+      "realization_cost": 500,
+      "rent_paid": 1000,
+      "rent_due": 1000,
+      "termination_base": 0,
+      "condition_charge": 0,
+      "customer_bears_condition": false,
+      "cancelled_future_payments": [],
+      "claim_receivable": 0,
+      "asset_proceeds_applied_to_claim": false
+    },
+    "finance_lease": {
+      "credit_claim": 12000,
+      "residual_carrying_value": 0,
+      "gross_sale": 8000,
+      "realization_cost": 500,
+      "rent_paid": 0,
+      "rent_due": 12000,
+      "termination_base": 0,
+      "condition_charge": 0,
+      "customer_bears_condition": false,
+      "cancelled_future_payments": [],
+      "claim_receivable": 12000,
+      "asset_proceeds_applied_to_claim": true
+    },
+    "early_termination": {
+      "credit_claim": 2000,
+      "residual_carrying_value": 10000,
+      "gross_sale": 1500,
+      "realization_cost": 500,
+      "rent_paid": 0,
+      "rent_due": 2000,
+      "termination_base": 1800,
+      "condition_charge": 200,
+      "customer_bears_condition": true,
+      "cancelled_future_payments": [
+        1000,
+        1000,
+        1000
+      ],
+      "claim_receivable": 2000,
+      "asset_proceeds_applied_to_claim": true
+    },
+    "early_termination_no_condition": {
+      "credit_claim": 1800,
+      "residual_carrying_value": 10000,
+      "gross_sale": 1500,
+      "realization_cost": 500,
+      "rent_paid": 0,
+      "rent_due": 1800,
+      "termination_base": 1800,
+      "condition_charge": 200,
+      "customer_bears_condition": false,
+      "cancelled_future_payments": [
+        1000,
+        1000,
+        1000
+      ],
+      "claim_receivable": 1800,
+      "asset_proceeds_applied_to_claim": true
+    }
+  },
+  "default_policy": {
+    "policy_id": "lease_reference_default",
+    "version": "1",
+    "basis": "BASEL_CRE36_REFERENCE",
+    "assessment_level": "obligor",
+    "dscr_threshold": 1,
+    "ltv_threshold": 1,
+    "dscr_comparison": "lt",
+    "ltv_comparison": "gt",
+    "past_due_days_threshold": 90,
+    "past_due_comparison": "gt",
+    "past_due_rule_reference": "CRE36.68(2)",
+    "materiality_rule_reference": "explicit illustrative materiality profile",
+    "utp_rule_reference": "explicit illustrative financial assessment",
+    "dual_test_as_utp": true,
+    "economic_joint_timing": "SAME_DATE",
+    "default_state": "ABSORBING_FIRST_DEFAULT"
+  },
+  "waterfall_policy": {
+    "policy_id": "lease_claim",
+    "version": "1",
+    "initial_reserve": 0,
+    "reserve_priority": 2,
+    "excess_reserve_policy": "retain",
+    "arrears_policy": "carry_without_interest",
+    "claims": [
+      {
+        "claim_id": "credit_claim",
+        "priority": 1,
+        "reserve_eligible": false
+      }
+    ]
+  }
+}

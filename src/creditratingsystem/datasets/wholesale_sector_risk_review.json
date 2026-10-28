@@ -1,0 +1,5359 @@
+{
+  "data_origin": "SYNTHETIC",
+  "review": {
+    "journeys": [
+      {
+        "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+        "case_id": "sector-history-bank",
+        "survival": {
+          "start_stop_panel": [
+            {
+              "entity_id": "sector-history-bank-historic-0",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-1",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-2",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-3",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-4",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-5",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-6",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-7",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-8",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-9",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-10",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-11",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-12",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-13",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-14",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-15",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-16",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-17",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-18",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-bank-historic-19",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            }
+          ],
+          "X": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "event_types": [
+            "default",
+            "exit",
+            "exit",
+            "exit",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "feature_order": [],
+          "causes": [
+            "default",
+            "exit"
+          ],
+          "ties": "breslow",
+          "target": {
+            "event": "first_default",
+            "horizon": 2,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-bank-independent-observed-2018-riskset",
+            "split_id": "historic_2018",
+            "known_at": "2021-01-01",
+            "data_origin": "SYNTHETIC"
+          },
+          "model_id": "sector-history-bank-competing",
+          "model_version": "1"
+        },
+        "survival_reference": {
+          "risk_set": 20,
+          "defaults": 1,
+          "exits": 3
+        },
+        "treatment": {
+          "treatment_candidates": [
+            {
+              "treatment_id": "IMMEDIATE_CLAIM_SETTLEMENT",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-bank",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 2,
+              "rejected_present_value": 55.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-06-19",
+                  "expected_recovery": 82.5,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9920117758418961
+                }
+              ]
+            },
+            {
+              "treatment_id": "MANAGED_FUNDING_RUNOFF",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-bank",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.7,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 5,
+              "rejected_present_value": 55.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-10-17",
+                  "expected_recovery": 110,
+                  "expected_cost": 3,
+                  "discount_factor": 0.976226252958924
+                }
+              ]
+            }
+          ],
+          "treatment_profile": {
+            "profile_id": "sector-history-bank-options",
+            "version": "1",
+            "known_at": "2024-04-20",
+            "currency": "EUR",
+            "subject_id": "sector-history-bank",
+            "baseline_id": "NO_OFFER",
+            "baseline_present_value": 55.0,
+            "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+            "allowed_actions": [
+              "ARRANGEMENT"
+            ]
+          },
+          "as_of": "2024-04-20"
+        }
+      },
+      {
+        "product": "INSURER_EXPOSURE",
+        "case_id": "sector-history-life",
+        "survival": {
+          "start_stop_panel": [
+            {
+              "entity_id": "sector-history-life-historic-0",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-1",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-2",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-3",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-4",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-5",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-6",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-7",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-8",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-9",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-10",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-11",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-12",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-13",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-14",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-15",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-16",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-17",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-18",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-life-historic-19",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            }
+          ],
+          "X": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "event_types": [
+            "default",
+            "default",
+            "exit",
+            "exit",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "feature_order": [],
+          "causes": [
+            "default",
+            "exit"
+          ],
+          "ties": "breslow",
+          "target": {
+            "event": "first_default",
+            "horizon": 2,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-life-independent-observed-2018-riskset",
+            "split_id": "historic_2018",
+            "known_at": "2021-01-01",
+            "data_origin": "SYNTHETIC"
+          },
+          "model_id": "sector-history-life-competing",
+          "model_version": "1"
+        },
+        "survival_reference": {
+          "risk_set": 20,
+          "defaults": 2,
+          "exits": 2
+        },
+        "treatment": {
+          "treatment_candidates": [
+            {
+              "treatment_id": "IMMEDIATE_CLAIM_SETTLEMENT",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-life",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 2,
+              "rejected_present_value": 42.5,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-06-19",
+                  "expected_recovery": 63.75,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9920117758418961
+                }
+              ]
+            },
+            {
+              "treatment_id": "PORTFOLIO_TRANSFER",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-life",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.6,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 6,
+              "rejected_present_value": 42.5,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-12-16",
+                  "expected_recovery": 85,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9684279388212623
+                }
+              ]
+            }
+          ],
+          "treatment_profile": {
+            "profile_id": "sector-history-life-options",
+            "version": "1",
+            "known_at": "2024-04-20",
+            "currency": "EUR",
+            "subject_id": "sector-history-life",
+            "baseline_id": "NO_OFFER",
+            "baseline_present_value": 42.5,
+            "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+            "allowed_actions": [
+              "ARRANGEMENT"
+            ]
+          },
+          "as_of": "2024-04-20"
+        }
+      },
+      {
+        "product": "FUND_FINANCE",
+        "case_id": "sector-history-NAV_backed",
+        "survival": {
+          "start_stop_panel": [
+            {
+              "entity_id": "sector-history-NAV_backed-historic-0",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-1",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-2",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-3",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-4",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-5",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-6",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-7",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-8",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-9",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-10",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-11",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-12",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-13",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-14",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-15",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-16",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-17",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-18",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-NAV_backed-historic-19",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            }
+          ],
+          "X": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "event_types": [
+            "default",
+            "default",
+            "default",
+            "exit",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "feature_order": [],
+          "causes": [
+            "default",
+            "exit"
+          ],
+          "ties": "breslow",
+          "target": {
+            "event": "first_default",
+            "horizon": 2,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-NAV_backed-independent-observed-2018-riskset",
+            "split_id": "historic_2018",
+            "known_at": "2021-01-01",
+            "data_origin": "SYNTHETIC"
+          },
+          "model_id": "sector-history-NAV_backed-competing",
+          "model_version": "1"
+        },
+        "survival_reference": {
+          "risk_set": 20,
+          "defaults": 3,
+          "exits": 1
+        },
+        "treatment": {
+          "treatment_candidates": [
+            {
+              "treatment_id": "IMMEDIATE_CLAIM_SETTLEMENT",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-NAV_backed",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 2,
+              "rejected_present_value": 22.5,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-06-19",
+                  "expected_recovery": 33.75,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9920117758418961
+                }
+              ]
+            },
+            {
+              "treatment_id": "ORDERLY_FUND_ASSET_SALE",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-NAV_backed",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.8,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 7,
+              "rejected_present_value": 22.5,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-07-19",
+                  "expected_recovery": 45,
+                  "expected_cost": 3,
+                  "discount_factor": 0.988041625114511
+                }
+              ]
+            }
+          ],
+          "treatment_profile": {
+            "profile_id": "sector-history-NAV_backed-options",
+            "version": "1",
+            "known_at": "2024-04-20",
+            "currency": "EUR",
+            "subject_id": "sector-history-NAV_backed",
+            "baseline_id": "NO_OFFER",
+            "baseline_present_value": 22.5,
+            "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+            "allowed_actions": [
+              "ARRANGEMENT"
+            ]
+          },
+          "as_of": "2024-04-20"
+        }
+      },
+      {
+        "product": "SOVEREIGN_DEBT",
+        "case_id": "sector-history-foreign_currency",
+        "survival": {
+          "start_stop_panel": [
+            {
+              "entity_id": "sector-history-foreign_currency-historic-0",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-1",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-2",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-3",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-4",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-5",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-6",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-7",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-8",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-9",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-10",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-11",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-12",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-13",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-14",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-15",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-16",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-17",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-18",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-foreign_currency-historic-19",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            }
+          ],
+          "X": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "event_types": [
+            "default",
+            "default",
+            "exit",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "feature_order": [],
+          "causes": [
+            "default",
+            "exit"
+          ],
+          "ties": "breslow",
+          "target": {
+            "event": "first_default",
+            "horizon": 2,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-foreign_currency-independent-observed-2018-riskset",
+            "split_id": "historic_2018",
+            "known_at": "2021-01-01",
+            "data_origin": "SYNTHETIC"
+          },
+          "model_id": "sector-history-foreign_currency-competing",
+          "model_version": "1"
+        },
+        "survival_reference": {
+          "risk_set": 20,
+          "defaults": 2,
+          "exits": 1
+        },
+        "treatment": {
+          "treatment_candidates": [
+            {
+              "treatment_id": "DEBT_EXCHANGE",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-foreign_currency",
+              "currency": "USD",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.5,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 8,
+              "rejected_present_value": 37.5,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2025-04-20",
+                  "expected_recovery": 75,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9523809523809523
+                }
+              ]
+            },
+            {
+              "treatment_id": "IMMEDIATE_CLAIM_SETTLEMENT",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-foreign_currency",
+              "currency": "USD",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 2,
+              "rejected_present_value": 37.5,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-06-19",
+                  "expected_recovery": 56.25,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9920117758418961
+                }
+              ]
+            }
+          ],
+          "treatment_profile": {
+            "profile_id": "sector-history-foreign_currency-options",
+            "version": "1",
+            "known_at": "2024-04-20",
+            "currency": "USD",
+            "subject_id": "sector-history-foreign_currency",
+            "baseline_id": "NO_OFFER",
+            "baseline_present_value": 37.5,
+            "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+            "allowed_actions": [
+              "ARRANGEMENT"
+            ]
+          },
+          "as_of": "2024-04-20"
+        }
+      },
+      {
+        "product": "PUBLIC_SECTOR_DEBT",
+        "case_id": "sector-history-region",
+        "survival": {
+          "start_stop_panel": [
+            {
+              "entity_id": "sector-history-region-historic-0",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-1",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-2",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-3",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-4",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-5",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-6",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-7",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-8",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-9",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-10",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-11",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-12",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-13",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-14",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-15",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-16",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-17",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-18",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-region-historic-19",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            }
+          ],
+          "X": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "event_types": [
+            "default",
+            "exit",
+            "exit",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "feature_order": [],
+          "causes": [
+            "default",
+            "exit"
+          ],
+          "ties": "breslow",
+          "target": {
+            "event": "first_default",
+            "horizon": 2,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-region-independent-observed-2018-riskset",
+            "split_id": "historic_2018",
+            "known_at": "2021-01-01",
+            "data_origin": "SYNTHETIC"
+          },
+          "model_id": "sector-history-region-competing",
+          "model_version": "1"
+        },
+        "survival_reference": {
+          "risk_set": 20,
+          "defaults": 1,
+          "exits": 2
+        },
+        "treatment": {
+          "treatment_candidates": [
+            {
+              "treatment_id": "BUDGET_REPAYMENT_PLAN",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-region",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.75,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 9,
+              "rejected_present_value": 30.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2025-01-15",
+                  "expected_recovery": 60,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9645521734529849
+                }
+              ]
+            },
+            {
+              "treatment_id": "IMMEDIATE_CLAIM_SETTLEMENT",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-region",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 2,
+              "rejected_present_value": 30.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-06-19",
+                  "expected_recovery": 45.0,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9920117758418961
+                }
+              ]
+            }
+          ],
+          "treatment_profile": {
+            "profile_id": "sector-history-region-options",
+            "version": "1",
+            "known_at": "2024-04-20",
+            "currency": "EUR",
+            "subject_id": "sector-history-region",
+            "baseline_id": "NO_OFFER",
+            "baseline_present_value": 30.0,
+            "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+            "allowed_actions": [
+              "ARRANGEMENT"
+            ]
+          },
+          "as_of": "2024-04-20"
+        }
+      },
+      {
+        "product": "SUPRANATIONAL_DEBT",
+        "case_id": "sector-history-multilateral_lender",
+        "survival": {
+          "start_stop_panel": [
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-0",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-1",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-2",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-3",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-4",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-5",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-6",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-7",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-8",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-9",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-10",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-11",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-12",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-13",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-14",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-15",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-16",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-17",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-18",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-multilateral_lender-historic-19",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            }
+          ],
+          "X": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "event_types": [
+            "default",
+            "exit",
+            "exit",
+            "exit",
+            "exit",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "feature_order": [],
+          "causes": [
+            "default",
+            "exit"
+          ],
+          "ties": "breslow",
+          "target": {
+            "event": "first_default",
+            "horizon": 2,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-multilateral_lender-independent-observed-2018-riskset",
+            "split_id": "historic_2018",
+            "known_at": "2021-01-01",
+            "data_origin": "SYNTHETIC"
+          },
+          "model_id": "sector-history-multilateral_lender-competing",
+          "model_version": "1"
+        },
+        "survival_reference": {
+          "risk_set": 20,
+          "defaults": 1,
+          "exits": 4
+        },
+        "treatment": {
+          "treatment_candidates": [
+            {
+              "treatment_id": "IMMEDIATE_CLAIM_SETTLEMENT",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-multilateral_lender",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 2,
+              "rejected_present_value": 45.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-06-19",
+                  "expected_recovery": 67.5,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9920117758418961
+                }
+              ]
+            },
+            {
+              "treatment_id": "MEMBER_CALL_COLLECTION",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-multilateral_lender",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 10,
+              "rejected_present_value": 45.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-08-18",
+                  "expected_recovery": 90,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9840873634089924
+                }
+              ]
+            }
+          ],
+          "treatment_profile": {
+            "profile_id": "sector-history-multilateral_lender-options",
+            "version": "1",
+            "known_at": "2024-04-20",
+            "currency": "EUR",
+            "subject_id": "sector-history-multilateral_lender",
+            "baseline_id": "NO_OFFER",
+            "baseline_present_value": 45.0,
+            "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+            "allowed_actions": [
+              "ARRANGEMENT"
+            ]
+          },
+          "as_of": "2024-04-20"
+        }
+      },
+      {
+        "product": "PUBLIC_SERVICE_FINANCE",
+        "case_id": "sector-history-housing_association",
+        "survival": {
+          "start_stop_panel": [
+            {
+              "entity_id": "sector-history-housing_association-historic-0",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-1",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-2",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-3",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-4",
+              "start": 0,
+              "stop": 1,
+              "event": 1,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-5",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-6",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-7",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-8",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-9",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-10",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-11",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-12",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-13",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-14",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-15",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-16",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-17",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-18",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            },
+            {
+              "entity_id": "sector-history-housing_association-historic-19",
+              "start": 0,
+              "stop": 2,
+              "event": 0,
+              "covariate_time": 0
+            }
+          ],
+          "X": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "event_types": [
+            "default",
+            "default",
+            "exit",
+            "exit",
+            "exit",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "feature_order": [],
+          "causes": [
+            "default",
+            "exit"
+          ],
+          "ties": "breslow",
+          "target": {
+            "event": "first_default",
+            "horizon": 2,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "initially_performing"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-housing_association-independent-observed-2018-riskset",
+            "split_id": "historic_2018",
+            "known_at": "2021-01-01",
+            "data_origin": "SYNTHETIC"
+          },
+          "model_id": "sector-history-housing_association-competing",
+          "model_version": "1"
+        },
+        "survival_reference": {
+          "risk_set": 20,
+          "defaults": 2,
+          "exits": 3
+        },
+        "treatment": {
+          "treatment_candidates": [
+            {
+              "treatment_id": "IMMEDIATE_CLAIM_SETTLEMENT",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-housing_association",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.9,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 2,
+              "rejected_present_value": 14.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-06-19",
+                  "expected_recovery": 21.0,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9920117758418961
+                }
+              ]
+            },
+            {
+              "treatment_id": "SERVICE_CONTINUITY_PLAN",
+              "version": "1",
+              "known_at": "2024-04-20",
+              "subject_id": "sector-history-housing_association",
+              "currency": "EUR",
+              "action": "ARRANGEMENT",
+              "prediction_reference": "Independently declared prospective sector claim projection; excludes later observed settlement and is not an identified causal effect",
+              "support_status": "SUPPORTED",
+              "affordability_status": "AFFORDABLE",
+              "eligibility_status": "ELIGIBLE",
+              "uptake_probability": 0.65,
+              "offer_cost": 1,
+              "accepted_upfront_cost": 11,
+              "rejected_present_value": 14.0,
+              "cashflows": [
+                {
+                  "cashflow_id": "settlement",
+                  "date": "2024-11-16",
+                  "expected_recovery": 28,
+                  "expected_cost": 3,
+                  "discount_factor": 0.9723192777972752
+                }
+              ]
+            }
+          ],
+          "treatment_profile": {
+            "profile_id": "sector-history-housing_association-options",
+            "version": "1",
+            "known_at": "2024-04-20",
+            "currency": "EUR",
+            "subject_id": "sector-history-housing_association",
+            "baseline_id": "NO_OFFER",
+            "baseline_present_value": 14.0,
+            "identification": "CONDITIONAL_SCENARIO_NOT_CAUSAL",
+            "allowed_actions": [
+              "ARRANGEMENT"
+            ]
+          },
+          "as_of": "2024-04-20"
+        }
+      }
+    ]
+  },
+  "open_workout": {
+    "journeys": [
+      {
+        "product": "FINANCIAL_INSTITUTION_EXPOSURE",
+        "case_id": "sector-history-bank",
+        "fit": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-bank-workout-training-0",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-01-31",
+              "resolution_known_at": "2018-01-31",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-1",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-06",
+              "resolution_known_at": "2018-02-06",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-2",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-12",
+              "resolution_known_at": "2018-02-12",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-3",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-18",
+              "resolution_known_at": "2018-02-18",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-4",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-24",
+              "resolution_known_at": "2018-02-24",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-5",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-02",
+              "resolution_known_at": "2018-03-02",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-6",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-08",
+              "resolution_known_at": "2018-03-08",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-7",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-14",
+              "resolution_known_at": "2018-03-14",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-8",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-20",
+              "resolution_known_at": "2018-03-20",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-9",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-26",
+              "resolution_known_at": "2018-03-26",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-10",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-01",
+              "resolution_known_at": "2018-04-01",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-11",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-07",
+              "resolution_known_at": "2018-04-07",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-12",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-13",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-14",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-15",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [
+            {
+              "episode_id": "sector-history-bank-workout-training-8",
+              "cashflow_id": "sector-history-bank-workout-training-8-claim",
+              "cashflow_date": "2018-03-20",
+              "known_at": "2018-03-20",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 38.52254747544933
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-9",
+              "cashflow_id": "sector-history-bank-workout-training-9-claim",
+              "cashflow_date": "2018-03-26",
+              "known_at": "2018-03-26",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 47.051545737869894
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-10",
+              "cashflow_id": "sector-history-bank-workout-training-10-claim",
+              "cashflow_date": "2018-04-01",
+              "known_at": "2018-04-01",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 57.46888773993368
+            },
+            {
+              "episode_id": "sector-history-bank-workout-training-11",
+              "cashflow_id": "sector-history-bank-workout-training-11-claim",
+              "cashflow_date": "2018-04-07",
+              "known_at": "2018-04-07",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 70.19265799395217
+            }
+          ],
+          "X_train": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "feature_order": [],
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-bank residual terminal claim settlement"
+          },
+          "target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-bank-independent-historical-workouts",
+            "split_id": "train_2018",
+            "known_at": "2019-01-01",
+            "data_origin": "SYNTHETIC",
+            "workout_population": "open_and_closed_defaulted_landmarks"
+          },
+          "model_id": "sector-history-bank-residual-workout",
+          "model_version": "1",
+          "currency": "EUR"
+        },
+        "inference": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-bank-open",
+              "default_date": "2024-05-01",
+              "default_known_at": "2024-05-02",
+              "reference_date": "2024-06-01",
+              "reference_known_at": "2024-06-01",
+              "features_observed_at": "2024-06-01",
+              "features_known_at": "2024-06-01",
+              "currency": "EUR",
+              "ead_at_default": 150,
+              "residual_exposure_at_reference": 150,
+              "observation_end": "2024-06-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [],
+          "X": [
+            []
+          ],
+          "valuation_contracts": [
+            {
+              "episode_id": "sector-history-bank-open",
+              "discount_curve": {
+                "anchor_date": "2024-05-01",
+                "known_at": "2024-06-01",
+                "discount_basis": "Declared zero discount curve and flat tail",
+                "points": [
+                  {
+                    "cashflow_date": "2024-05-15",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-07-01",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-12-01",
+                    "discount_factor": 1
+                  }
+                ]
+              },
+              "fx_contract": {
+                "reporting_currency": "EUR",
+                "known_at": "2024-06-01",
+                "conversion_basis": "cashflow_date",
+                "rates": [
+                  {
+                    "currency": "EUR",
+                    "date": "2024-05-15",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-07-01",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-12-01",
+                    "rate": 1
+                  }
+                ]
+              },
+              "future_resolution_dates": [
+                "2024-07-01",
+                "2024-12-01"
+              ],
+              "resolution_time_convention": "RIGHT_ENDPOINT",
+              "tail_discount_factor": 1,
+              "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+              "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+            }
+          ],
+          "future_cost_cashflows": [],
+          "feature_order": [],
+          "expected_target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-bank residual terminal claim settlement"
+          },
+          "as_of": "2024-06-01",
+          "currency": "EUR",
+          "extrapolation": "parametric"
+        },
+        "reference": {
+          "positive_ratio_scale": 0.65,
+          "positive_log_variance": 0.05,
+          "cure_probability": 0.3333333333333333,
+          "positive_given_no_cure_probability": 0.5,
+          "expected_final_lgd": 0.4445150572197071
+        }
+      },
+      {
+        "product": "INSURER_EXPOSURE",
+        "case_id": "sector-history-life",
+        "fit": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-life-workout-training-0",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-15",
+              "resolution_known_at": "2018-02-15",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-1",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-24",
+              "resolution_known_at": "2018-02-24",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-2",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-04",
+              "resolution_known_at": "2018-03-04",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-3",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-14",
+              "resolution_known_at": "2018-03-14",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-4",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-23",
+              "resolution_known_at": "2018-03-23",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-5",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-01",
+              "resolution_known_at": "2018-04-01",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-6",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-10",
+              "resolution_known_at": "2018-04-10",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-7",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-19",
+              "resolution_known_at": "2018-04-19",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-8",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-28",
+              "resolution_known_at": "2018-04-28",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-9",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-06",
+              "resolution_known_at": "2018-05-06",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-10",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-16",
+              "resolution_known_at": "2018-05-16",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-11",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-25",
+              "resolution_known_at": "2018-05-25",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-12",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-13",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-14",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-15",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [
+            {
+              "episode_id": "sector-history-life-workout-training-8",
+              "cashflow_id": "sector-history-life-workout-training-8-claim",
+              "cashflow_date": "2018-04-28",
+              "known_at": "2018-04-28",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 29.632728827268714
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-9",
+              "cashflow_id": "sector-history-life-workout-training-9-claim",
+              "cashflow_date": "2018-05-06",
+              "known_at": "2018-05-06",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 36.19349672143838
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-10",
+              "cashflow_id": "sector-history-life-workout-training-10-claim",
+              "cashflow_date": "2018-05-16",
+              "known_at": "2018-05-16",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 44.20683672302591
+            },
+            {
+              "episode_id": "sector-history-life-workout-training-11",
+              "cashflow_id": "sector-history-life-workout-training-11-claim",
+              "cashflow_date": "2018-05-25",
+              "known_at": "2018-05-25",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 53.99435230304013
+            }
+          ],
+          "X_train": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "feature_order": [],
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-life residual terminal claim settlement"
+          },
+          "target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-life-independent-historical-workouts",
+            "split_id": "train_2018",
+            "known_at": "2019-01-01",
+            "data_origin": "SYNTHETIC",
+            "workout_population": "open_and_closed_defaulted_landmarks"
+          },
+          "model_id": "sector-history-life-residual-workout",
+          "model_version": "1",
+          "currency": "EUR"
+        },
+        "inference": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-life-open",
+              "default_date": "2024-05-01",
+              "default_known_at": "2024-05-02",
+              "reference_date": "2024-06-01",
+              "reference_known_at": "2024-06-01",
+              "features_observed_at": "2024-06-01",
+              "features_known_at": "2024-06-01",
+              "currency": "EUR",
+              "ead_at_default": 160,
+              "residual_exposure_at_reference": 160,
+              "observation_end": "2024-06-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [],
+          "X": [
+            []
+          ],
+          "valuation_contracts": [
+            {
+              "episode_id": "sector-history-life-open",
+              "discount_curve": {
+                "anchor_date": "2024-05-01",
+                "known_at": "2024-06-01",
+                "discount_basis": "Declared zero discount curve and flat tail",
+                "points": [
+                  {
+                    "cashflow_date": "2024-05-15",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-07-01",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-12-01",
+                    "discount_factor": 1
+                  }
+                ]
+              },
+              "fx_contract": {
+                "reporting_currency": "EUR",
+                "known_at": "2024-06-01",
+                "conversion_basis": "cashflow_date",
+                "rates": [
+                  {
+                    "currency": "EUR",
+                    "date": "2024-05-15",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-07-01",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-12-01",
+                    "rate": 1
+                  }
+                ]
+              },
+              "future_resolution_dates": [
+                "2024-07-01",
+                "2024-12-01"
+              ],
+              "resolution_time_convention": "RIGHT_ENDPOINT",
+              "tail_discount_factor": 1,
+              "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+              "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+            }
+          ],
+          "future_cost_cashflows": [],
+          "feature_order": [],
+          "expected_target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-life residual terminal claim settlement"
+          },
+          "as_of": "2024-06-01",
+          "currency": "EUR",
+          "extrapolation": "parametric"
+        },
+        "reference": {
+          "positive_ratio_scale": 0.5,
+          "positive_log_variance": 0.05,
+          "cure_probability": 0.3333333333333333,
+          "positive_given_no_cure_probability": 0.5,
+          "expected_final_lgd": 0.4957808132459286
+        }
+      },
+      {
+        "product": "FUND_FINANCE",
+        "case_id": "sector-history-NAV_backed",
+        "fit": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-0",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-01-23",
+              "resolution_known_at": "2018-01-23",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-1",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-01-28",
+              "resolution_known_at": "2018-01-28",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-2",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-01",
+              "resolution_known_at": "2018-02-01",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-3",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-06",
+              "resolution_known_at": "2018-02-06",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-4",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-10",
+              "resolution_known_at": "2018-02-10",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-5",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-15",
+              "resolution_known_at": "2018-02-15",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-6",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-19",
+              "resolution_known_at": "2018-02-19",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-7",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-24",
+              "resolution_known_at": "2018-02-24",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-8",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-28",
+              "resolution_known_at": "2018-02-28",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-9",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-04",
+              "resolution_known_at": "2018-03-04",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-10",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-09",
+              "resolution_known_at": "2018-03-09",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-11",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-14",
+              "resolution_known_at": "2018-03-14",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-12",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-13",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-14",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-15",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-8",
+              "cashflow_id": "sector-history-NAV_backed-workout-training-8-claim",
+              "cashflow_date": "2018-02-28",
+              "known_at": "2018-02-28",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 23.706183061814972
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-9",
+              "cashflow_id": "sector-history-NAV_backed-workout-training-9-claim",
+              "cashflow_date": "2018-03-04",
+              "known_at": "2018-03-04",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 28.954797377150705
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-10",
+              "cashflow_id": "sector-history-NAV_backed-workout-training-10-claim",
+              "cashflow_date": "2018-03-09",
+              "known_at": "2018-03-09",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 35.36546937842073
+            },
+            {
+              "episode_id": "sector-history-NAV_backed-workout-training-11",
+              "cashflow_id": "sector-history-NAV_backed-workout-training-11-claim",
+              "cashflow_date": "2018-03-14",
+              "known_at": "2018-03-14",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 43.1954818424321
+            }
+          ],
+          "X_train": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "feature_order": [],
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-NAV_backed residual terminal claim settlement"
+          },
+          "target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-NAV_backed-independent-historical-workouts",
+            "split_id": "train_2018",
+            "known_at": "2019-01-01",
+            "data_origin": "SYNTHETIC",
+            "workout_population": "open_and_closed_defaulted_landmarks"
+          },
+          "model_id": "sector-history-NAV_backed-residual-workout",
+          "model_version": "1",
+          "currency": "EUR"
+        },
+        "inference": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-NAV_backed-open",
+              "default_date": "2024-05-01",
+              "default_known_at": "2024-05-02",
+              "reference_date": "2024-06-01",
+              "reference_known_at": "2024-06-01",
+              "features_observed_at": "2024-06-01",
+              "features_known_at": "2024-06-01",
+              "currency": "EUR",
+              "ead_at_default": 170,
+              "residual_exposure_at_reference": 170,
+              "observation_end": "2024-06-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [],
+          "X": [
+            []
+          ],
+          "valuation_contracts": [
+            {
+              "episode_id": "sector-history-NAV_backed-open",
+              "discount_curve": {
+                "anchor_date": "2024-05-01",
+                "known_at": "2024-06-01",
+                "discount_basis": "Declared zero discount curve and flat tail",
+                "points": [
+                  {
+                    "cashflow_date": "2024-05-15",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-07-01",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-12-01",
+                    "discount_factor": 1
+                  }
+                ]
+              },
+              "fx_contract": {
+                "reporting_currency": "EUR",
+                "known_at": "2024-06-01",
+                "conversion_basis": "cashflow_date",
+                "rates": [
+                  {
+                    "currency": "EUR",
+                    "date": "2024-05-15",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-07-01",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-12-01",
+                    "rate": 1
+                  }
+                ]
+              },
+              "future_resolution_dates": [
+                "2024-07-01",
+                "2024-12-01"
+              ],
+              "resolution_time_convention": "RIGHT_ENDPOINT",
+              "tail_discount_factor": 1,
+              "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+              "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+            }
+          ],
+          "future_cost_cashflows": [],
+          "feature_order": [],
+          "expected_target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-NAV_backed residual terminal claim settlement"
+          },
+          "as_of": "2024-06-01",
+          "currency": "EUR",
+          "extrapolation": "parametric"
+        },
+        "reference": {
+          "positive_ratio_scale": 0.4,
+          "positive_log_variance": 0.05,
+          "cure_probability": 0.3333333333333333,
+          "positive_given_no_cure_probability": 0.5,
+          "expected_final_lgd": 0.5299579839300761
+        }
+      },
+      {
+        "product": "SOVEREIGN_DEBT",
+        "case_id": "sector-history-foreign_currency",
+        "fit": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-0",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-01",
+              "resolution_known_at": "2018-04-01",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-1",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-19",
+              "resolution_known_at": "2018-04-19",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-2",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-06",
+              "resolution_known_at": "2018-05-06",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-3",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-25",
+              "resolution_known_at": "2018-05-25",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-4",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-06-12",
+              "resolution_known_at": "2018-06-12",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-5",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-06-30",
+              "resolution_known_at": "2018-06-30",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-6",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-07-18",
+              "resolution_known_at": "2018-07-18",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-7",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-08-05",
+              "resolution_known_at": "2018-08-05",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-8",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-08-23",
+              "resolution_known_at": "2018-08-23",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-9",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-09-09",
+              "resolution_known_at": "2018-09-09",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-10",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-09-28",
+              "resolution_known_at": "2018-09-28",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-11",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-10-16",
+              "resolution_known_at": "2018-10-16",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-12",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-13",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-14",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-15",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "USD",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-8",
+              "cashflow_id": "sector-history-foreign_currency-workout-training-8-claim",
+              "cashflow_date": "2018-08-23",
+              "known_at": "2018-08-23",
+              "currency": "USD",
+              "kind": "RECOVERY",
+              "amount": 20.7429101790881
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-9",
+              "cashflow_id": "sector-history-foreign_currency-workout-training-9-claim",
+              "cashflow_date": "2018-09-09",
+              "known_at": "2018-09-09",
+              "currency": "USD",
+              "kind": "RECOVERY",
+              "amount": 25.335447705006867
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-10",
+              "cashflow_id": "sector-history-foreign_currency-workout-training-10-claim",
+              "cashflow_date": "2018-09-28",
+              "known_at": "2018-09-28",
+              "currency": "USD",
+              "kind": "RECOVERY",
+              "amount": 30.944785706118136
+            },
+            {
+              "episode_id": "sector-history-foreign_currency-workout-training-11",
+              "cashflow_id": "sector-history-foreign_currency-workout-training-11-claim",
+              "cashflow_date": "2018-10-16",
+              "known_at": "2018-10-16",
+              "currency": "USD",
+              "kind": "RECOVERY",
+              "amount": 37.79604661212809
+            }
+          ],
+          "X_train": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "feature_order": [],
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-foreign_currency residual terminal claim settlement"
+          },
+          "target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "USD"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-foreign_currency-independent-historical-workouts",
+            "split_id": "train_2018",
+            "known_at": "2019-01-01",
+            "data_origin": "SYNTHETIC",
+            "workout_population": "open_and_closed_defaulted_landmarks"
+          },
+          "model_id": "sector-history-foreign_currency-residual-workout",
+          "model_version": "1",
+          "currency": "USD"
+        },
+        "inference": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-foreign_currency-open",
+              "default_date": "2024-05-01",
+              "default_known_at": "2024-05-02",
+              "reference_date": "2024-06-01",
+              "reference_known_at": "2024-06-01",
+              "features_observed_at": "2024-06-01",
+              "features_known_at": "2024-06-01",
+              "currency": "USD",
+              "ead_at_default": 180,
+              "residual_exposure_at_reference": 180,
+              "observation_end": "2024-06-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [],
+          "X": [
+            []
+          ],
+          "valuation_contracts": [
+            {
+              "episode_id": "sector-history-foreign_currency-open",
+              "discount_curve": {
+                "anchor_date": "2024-05-01",
+                "known_at": "2024-06-01",
+                "discount_basis": "Declared zero discount curve and flat tail",
+                "points": [
+                  {
+                    "cashflow_date": "2024-05-15",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-07-01",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-12-01",
+                    "discount_factor": 1
+                  }
+                ]
+              },
+              "fx_contract": {
+                "reporting_currency": "USD",
+                "known_at": "2024-06-01",
+                "conversion_basis": "cashflow_date",
+                "rates": [
+                  {
+                    "currency": "USD",
+                    "date": "2024-05-15",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "USD",
+                    "date": "2024-07-01",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "USD",
+                    "date": "2024-12-01",
+                    "rate": 1
+                  }
+                ]
+              },
+              "future_resolution_dates": [
+                "2024-07-01",
+                "2024-12-01"
+              ],
+              "resolution_time_convention": "RIGHT_ENDPOINT",
+              "tail_discount_factor": 1,
+              "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+              "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+            }
+          ],
+          "future_cost_cashflows": [],
+          "feature_order": [],
+          "expected_target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "USD"
+          },
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-foreign_currency residual terminal claim settlement"
+          },
+          "as_of": "2024-06-01",
+          "currency": "USD",
+          "extrapolation": "parametric"
+        },
+        "reference": {
+          "positive_ratio_scale": 0.35,
+          "positive_log_variance": 0.05,
+          "cure_probability": 0.3333333333333333,
+          "positive_given_no_cure_probability": 0.5,
+          "expected_final_lgd": 0.54704656927215
+        }
+      },
+      {
+        "product": "PUBLIC_SECTOR_DEBT",
+        "case_id": "sector-history-region",
+        "fit": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-region-workout-training-0",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-02",
+              "resolution_known_at": "2018-03-02",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-1",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-14",
+              "resolution_known_at": "2018-03-14",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-2",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-26",
+              "resolution_known_at": "2018-03-26",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-3",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-07",
+              "resolution_known_at": "2018-04-07",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-4",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-19",
+              "resolution_known_at": "2018-04-19",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-5",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-01",
+              "resolution_known_at": "2018-05-01",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-6",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-13",
+              "resolution_known_at": "2018-05-13",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-7",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-25",
+              "resolution_known_at": "2018-05-25",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-8",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-06-06",
+              "resolution_known_at": "2018-06-06",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-9",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-06-18",
+              "resolution_known_at": "2018-06-18",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-10",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-06-30",
+              "resolution_known_at": "2018-06-30",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-11",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-07-12",
+              "resolution_known_at": "2018-07-12",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-12",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-13",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-14",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-15",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [
+            {
+              "episode_id": "sector-history-region-workout-training-8",
+              "cashflow_id": "sector-history-region-workout-training-8-claim",
+              "cashflow_date": "2018-06-06",
+              "known_at": "2018-06-06",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 35.55927459272246
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-9",
+              "cashflow_id": "sector-history-region-workout-training-9-claim",
+              "cashflow_date": "2018-06-18",
+              "known_at": "2018-06-18",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 43.43219606572606
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-10",
+              "cashflow_id": "sector-history-region-workout-training-10-claim",
+              "cashflow_date": "2018-06-30",
+              "known_at": "2018-06-30",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 53.04820406763109
+            },
+            {
+              "episode_id": "sector-history-region-workout-training-11",
+              "cashflow_id": "sector-history-region-workout-training-11-claim",
+              "cashflow_date": "2018-07-12",
+              "known_at": "2018-07-12",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 64.79322276364815
+            }
+          ],
+          "X_train": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "feature_order": [],
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-region residual terminal claim settlement"
+          },
+          "target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-region-independent-historical-workouts",
+            "split_id": "train_2018",
+            "known_at": "2019-01-01",
+            "data_origin": "SYNTHETIC",
+            "workout_population": "open_and_closed_defaulted_landmarks"
+          },
+          "model_id": "sector-history-region-residual-workout",
+          "model_version": "1",
+          "currency": "EUR"
+        },
+        "inference": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-region-open",
+              "default_date": "2024-05-01",
+              "default_known_at": "2024-05-02",
+              "reference_date": "2024-06-01",
+              "reference_known_at": "2024-06-01",
+              "features_observed_at": "2024-06-01",
+              "features_known_at": "2024-06-01",
+              "currency": "EUR",
+              "ead_at_default": 190,
+              "residual_exposure_at_reference": 190,
+              "observation_end": "2024-06-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [],
+          "X": [
+            []
+          ],
+          "valuation_contracts": [
+            {
+              "episode_id": "sector-history-region-open",
+              "discount_curve": {
+                "anchor_date": "2024-05-01",
+                "known_at": "2024-06-01",
+                "discount_basis": "Declared zero discount curve and flat tail",
+                "points": [
+                  {
+                    "cashflow_date": "2024-05-15",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-07-01",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-12-01",
+                    "discount_factor": 1
+                  }
+                ]
+              },
+              "fx_contract": {
+                "reporting_currency": "EUR",
+                "known_at": "2024-06-01",
+                "conversion_basis": "cashflow_date",
+                "rates": [
+                  {
+                    "currency": "EUR",
+                    "date": "2024-05-15",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-07-01",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-12-01",
+                    "rate": 1
+                  }
+                ]
+              },
+              "future_resolution_dates": [
+                "2024-07-01",
+                "2024-12-01"
+              ],
+              "resolution_time_convention": "RIGHT_ENDPOINT",
+              "tail_discount_factor": 1,
+              "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+              "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+            }
+          ],
+          "future_cost_cashflows": [],
+          "feature_order": [],
+          "expected_target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-region residual terminal claim settlement"
+          },
+          "as_of": "2024-06-01",
+          "currency": "EUR",
+          "extrapolation": "parametric"
+        },
+        "reference": {
+          "positive_ratio_scale": 0.6,
+          "positive_log_variance": 0.05,
+          "cure_probability": 0.3333333333333333,
+          "positive_given_no_cure_probability": 0.5,
+          "expected_final_lgd": 0.4616036425617809
+        }
+      },
+      {
+        "product": "SUPRANATIONAL_DEBT",
+        "case_id": "sector-history-multilateral_lender",
+        "fit": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-0",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-01-31",
+              "resolution_known_at": "2018-01-31",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-1",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-06",
+              "resolution_known_at": "2018-02-06",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-2",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-12",
+              "resolution_known_at": "2018-02-12",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-3",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-18",
+              "resolution_known_at": "2018-02-18",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-4",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-24",
+              "resolution_known_at": "2018-02-24",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-5",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-02",
+              "resolution_known_at": "2018-03-02",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-6",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-08",
+              "resolution_known_at": "2018-03-08",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-7",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-14",
+              "resolution_known_at": "2018-03-14",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-8",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-20",
+              "resolution_known_at": "2018-03-20",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-9",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-26",
+              "resolution_known_at": "2018-03-26",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-10",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-01",
+              "resolution_known_at": "2018-04-01",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-11",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-07",
+              "resolution_known_at": "2018-04-07",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-12",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-13",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-14",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-15",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-8",
+              "cashflow_id": "sector-history-multilateral_lender-workout-training-8-claim",
+              "cashflow_date": "2018-03-20",
+              "known_at": "2018-03-20",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 47.412366123629944
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-9",
+              "cashflow_id": "sector-history-multilateral_lender-workout-training-9-claim",
+              "cashflow_date": "2018-03-26",
+              "known_at": "2018-03-26",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 57.90959475430141
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-10",
+              "cashflow_id": "sector-history-multilateral_lender-workout-training-10-claim",
+              "cashflow_date": "2018-04-01",
+              "known_at": "2018-04-01",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 70.73093875684145
+            },
+            {
+              "episode_id": "sector-history-multilateral_lender-workout-training-11",
+              "cashflow_id": "sector-history-multilateral_lender-workout-training-11-claim",
+              "cashflow_date": "2018-04-07",
+              "known_at": "2018-04-07",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 86.3909636848642
+            }
+          ],
+          "X_train": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "feature_order": [],
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-multilateral_lender residual terminal claim settlement"
+          },
+          "target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-multilateral_lender-independent-historical-workouts",
+            "split_id": "train_2018",
+            "known_at": "2019-01-01",
+            "data_origin": "SYNTHETIC",
+            "workout_population": "open_and_closed_defaulted_landmarks"
+          },
+          "model_id": "sector-history-multilateral_lender-residual-workout",
+          "model_version": "1",
+          "currency": "EUR"
+        },
+        "inference": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-multilateral_lender-open",
+              "default_date": "2024-05-01",
+              "default_known_at": "2024-05-02",
+              "reference_date": "2024-06-01",
+              "reference_known_at": "2024-06-01",
+              "features_observed_at": "2024-06-01",
+              "features_known_at": "2024-06-01",
+              "currency": "EUR",
+              "ead_at_default": 200,
+              "residual_exposure_at_reference": 200,
+              "observation_end": "2024-06-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [],
+          "X": [
+            []
+          ],
+          "valuation_contracts": [
+            {
+              "episode_id": "sector-history-multilateral_lender-open",
+              "discount_curve": {
+                "anchor_date": "2024-05-01",
+                "known_at": "2024-06-01",
+                "discount_basis": "Declared zero discount curve and flat tail",
+                "points": [
+                  {
+                    "cashflow_date": "2024-05-15",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-07-01",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-12-01",
+                    "discount_factor": 1
+                  }
+                ]
+              },
+              "fx_contract": {
+                "reporting_currency": "EUR",
+                "known_at": "2024-06-01",
+                "conversion_basis": "cashflow_date",
+                "rates": [
+                  {
+                    "currency": "EUR",
+                    "date": "2024-05-15",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-07-01",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-12-01",
+                    "rate": 1
+                  }
+                ]
+              },
+              "future_resolution_dates": [
+                "2024-07-01",
+                "2024-12-01"
+              ],
+              "resolution_time_convention": "RIGHT_ENDPOINT",
+              "tail_discount_factor": 1,
+              "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+              "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+            }
+          ],
+          "future_cost_cashflows": [],
+          "feature_order": [],
+          "expected_target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-multilateral_lender residual terminal claim settlement"
+          },
+          "as_of": "2024-06-01",
+          "currency": "EUR",
+          "extrapolation": "parametric"
+        },
+        "reference": {
+          "positive_ratio_scale": 0.8,
+          "positive_log_variance": 0.05,
+          "cure_probability": 0.3333333333333333,
+          "positive_given_no_cure_probability": 0.5,
+          "expected_final_lgd": 0.39324930119348567
+        }
+      },
+      {
+        "product": "PUBLIC_SERVICE_FINANCE",
+        "case_id": "sector-history-housing_association",
+        "fit": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-housing_association-workout-training-0",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-02-20",
+              "resolution_known_at": "2018-02-20",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-1",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-02",
+              "resolution_known_at": "2018-03-02",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-2",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-12",
+              "resolution_known_at": "2018-03-12",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-3",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-03-22",
+              "resolution_known_at": "2018-03-22",
+              "cured": 1,
+              "cure_value": 80
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-4",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-01",
+              "resolution_known_at": "2018-04-01",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-5",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-11",
+              "resolution_known_at": "2018-04-11",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-6",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-04-21",
+              "resolution_known_at": "2018-04-21",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-7",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-01",
+              "resolution_known_at": "2018-05-01",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-8",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-11",
+              "resolution_known_at": "2018-05-11",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-9",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-21",
+              "resolution_known_at": "2018-05-21",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-10",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-05-31",
+              "resolution_known_at": "2018-05-31",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-11",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": "2018-06-10",
+              "resolution_known_at": "2018-06-10",
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-12",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-13",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-14",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-15",
+              "default_date": "2017-12-01",
+              "default_known_at": "2017-12-01",
+              "reference_date": "2018-01-01",
+              "reference_known_at": "2018-01-01",
+              "features_observed_at": "2018-01-01",
+              "features_known_at": "2018-01-01",
+              "currency": "EUR",
+              "ead_at_default": 100,
+              "residual_exposure_at_reference": 80,
+              "observation_end": "2018-12-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [
+            {
+              "episode_id": "sector-history-housing_association-workout-training-8",
+              "cashflow_id": "sector-history-housing_association-workout-training-8-claim",
+              "cashflow_date": "2018-05-11",
+              "known_at": "2018-05-11",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 32.59600170999558
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-9",
+              "cashflow_id": "sector-history-housing_association-workout-training-9-claim",
+              "cashflow_date": "2018-05-21",
+              "known_at": "2018-05-21",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 39.81284639358222
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-10",
+              "cashflow_id": "sector-history-housing_association-workout-training-10-claim",
+              "cashflow_date": "2018-05-31",
+              "known_at": "2018-05-31",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 48.6275203953285
+            },
+            {
+              "episode_id": "sector-history-housing_association-workout-training-11",
+              "cashflow_id": "sector-history-housing_association-workout-training-11-claim",
+              "cashflow_date": "2018-06-10",
+              "known_at": "2018-06-10",
+              "currency": "EUR",
+              "kind": "RECOVERY",
+              "amount": 59.39378753334414
+            }
+          ],
+          "X_train": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ],
+          "feature_order": [],
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-housing_association residual terminal claim settlement"
+          },
+          "target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "training": {
+            "data_fingerprint": "sector-history-housing_association-independent-historical-workouts",
+            "split_id": "train_2018",
+            "known_at": "2019-01-01",
+            "data_origin": "SYNTHETIC",
+            "workout_population": "open_and_closed_defaulted_landmarks"
+          },
+          "model_id": "sector-history-housing_association-residual-workout",
+          "model_version": "1",
+          "currency": "EUR"
+        },
+        "inference": {
+          "episodes": [
+            {
+              "episode_id": "sector-history-housing_association-open",
+              "default_date": "2024-05-01",
+              "default_known_at": "2024-05-02",
+              "reference_date": "2024-06-01",
+              "reference_known_at": "2024-06-01",
+              "features_observed_at": "2024-06-01",
+              "features_known_at": "2024-06-01",
+              "currency": "EUR",
+              "ead_at_default": 210,
+              "residual_exposure_at_reference": 210,
+              "observation_end": "2024-06-01",
+              "resolution_date": null,
+              "resolution_known_at": null,
+              "cured": 0,
+              "cure_value": 0
+            }
+          ],
+          "cashflows": [],
+          "X": [
+            []
+          ],
+          "valuation_contracts": [
+            {
+              "episode_id": "sector-history-housing_association-open",
+              "discount_curve": {
+                "anchor_date": "2024-05-01",
+                "known_at": "2024-06-01",
+                "discount_basis": "Declared zero discount curve and flat tail",
+                "points": [
+                  {
+                    "cashflow_date": "2024-05-15",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-07-01",
+                    "discount_factor": 1
+                  },
+                  {
+                    "cashflow_date": "2024-12-01",
+                    "discount_factor": 1
+                  }
+                ]
+              },
+              "fx_contract": {
+                "reporting_currency": "EUR",
+                "known_at": "2024-06-01",
+                "conversion_basis": "cashflow_date",
+                "rates": [
+                  {
+                    "currency": "EUR",
+                    "date": "2024-05-15",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-07-01",
+                    "rate": 1
+                  },
+                  {
+                    "currency": "EUR",
+                    "date": "2024-12-01",
+                    "rate": 1
+                  }
+                ]
+              },
+              "future_resolution_dates": [
+                "2024-07-01",
+                "2024-12-01"
+              ],
+              "resolution_time_convention": "RIGHT_ENDPOINT",
+              "tail_discount_factor": 1,
+              "tail_assumption_reference": "Explicit undiscounted ultimate tail; no truncation loss",
+              "unmodeled_future_costs_assumption": "NONE_BEYOND_SUPPLIED"
+            }
+          ],
+          "future_cost_cashflows": [],
+          "feature_order": [],
+          "expected_target": {
+            "event": "residual_terminal_loss_fraction",
+            "horizon_role": "TIMING_REPORTING_REFERENCE",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "given_default",
+            "currency": "EUR"
+          },
+          "stage_spec": {
+            "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+            "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+            "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+            "positive_distribution": "lognormal",
+            "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+            "payout_horizon": "ULTIMATE",
+            "timing_distribution": "weibull",
+            "cure_residual_value_ratio": 1.0,
+            "landmark_definition": "sector-history-housing_association residual terminal claim settlement"
+          },
+          "as_of": "2024-06-01",
+          "currency": "EUR",
+          "extrapolation": "parametric"
+        },
+        "reference": {
+          "positive_ratio_scale": 0.55,
+          "positive_log_variance": 0.05,
+          "cure_probability": 0.3333333333333333,
+          "positive_given_no_cure_probability": 0.5,
+          "expected_final_lgd": 0.4786922279038547
+        }
+      }
+    ]
+  }
+}

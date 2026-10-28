@@ -1,0 +1,2 @@
+record_id,entity_id,product_id,as_of,known_at,balance
+COUNTERPARTY_EXPOSURE-position-source,COUNTERPARTY_EXPOSURE-position,COUNTERPARTY_EXPOSURE,2024-01-01,2024-01-01,80

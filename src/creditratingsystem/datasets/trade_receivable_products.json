@@ -1,0 +1,2498 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_REFERENCE",
+  "version": "1.0",
+  "product": "TRADE_RECEIVABLES",
+  "variants": {
+    "recourse": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a0",
+            "asset_class": "INVOICE",
+            "invoice_id": "i0",
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-02-01",
+                "principal_due": 100,
+                "interest_due": 0
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "SELLER",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m0",
+            "pool_id": "pool",
+            "asset_id": "a0",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "invoice",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "TRADE_RECEIVABLES",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "INVOICE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE",
+            "SELLER"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "simulation_input": {
+        "scenario_contract": {
+          "contract_id": "invoice-scenarios",
+          "version": "1",
+          "scenario_ids": [
+            "s",
+            "t",
+            "u",
+            "v"
+          ],
+          "weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "dates": [
+            "2023-02-01",
+            "2023-03-01",
+            "2023-04-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT"
+        },
+        "party_mapping": [
+          {
+            "party_id": "g",
+            "default_group_id": "g"
+          },
+          {
+            "party_id": "seller",
+            "default_group_id": "seller"
+          },
+          {
+            "party_id": "service",
+            "default_group_id": "service"
+          }
+        ],
+        "party_default_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          }
+        ],
+        "invoice_scenarios": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "t",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "u",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0.2,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "v",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          }
+        ],
+        "seller_terms": [
+          {
+            "scenario_id": "s",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "t",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "u",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "v",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          }
+        ],
+        "servicer_terms": [
+          {
+            "scenario_id": "s",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "t",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "u",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "v",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "borrowing_input": {
+        "invoices": [
+          {
+            "invoice_id": "i0",
+            "debtor_id": "g",
+            "debtor_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "issue_date": "2022-12-01",
+            "due_date": "2023-02-01",
+            "balance_date": "2023-01-01",
+            "known_at": "2023-01-01",
+            "outstanding": 100,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "SELLER"
+          }
+        ],
+        "borrowing_profile": {
+          "profile_id": "b",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "maximum_overdue_days": 30,
+          "exclude_disputed": true,
+          "allowed_recourse": [
+            "NONE",
+            "SELLER"
+          ],
+          "advance_rates": {
+            "NONE": 0.8,
+            "SELLER": 0.9
+          },
+          "default_group_cap": 0.5,
+          "group_caps": {},
+          "additional_reserve": 5,
+          "reserve_scope": "ADDITIONAL_NOT_IN_INVOICE_DILUTION",
+          "coverage_status": "COMPLETE"
+        },
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected": {
+        "losses": [
+          30,
+          40,
+          20,
+          0
+        ],
+        "borrowing_base": 40
+      }
+    },
+    "nonrecourse": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a0",
+            "asset_class": "INVOICE",
+            "invoice_id": "i0",
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-02-01",
+                "principal_due": 100,
+                "interest_due": 0
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m0",
+            "pool_id": "pool",
+            "asset_id": "a0",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "invoice",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "TRADE_RECEIVABLES",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "INVOICE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE",
+            "SELLER"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "simulation_input": {
+        "scenario_contract": {
+          "contract_id": "invoice-scenarios",
+          "version": "1",
+          "scenario_ids": [
+            "s",
+            "t",
+            "u",
+            "v"
+          ],
+          "weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "dates": [
+            "2023-02-01",
+            "2023-03-01",
+            "2023-04-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT"
+        },
+        "party_mapping": [
+          {
+            "party_id": "g",
+            "default_group_id": "g"
+          },
+          {
+            "party_id": "seller",
+            "default_group_id": "seller"
+          },
+          {
+            "party_id": "service",
+            "default_group_id": "service"
+          }
+        ],
+        "party_default_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          }
+        ],
+        "invoice_scenarios": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "t",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "u",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0.2,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "v",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          }
+        ],
+        "seller_terms": [
+          {
+            "scenario_id": "s",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "t",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "u",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "v",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 30,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          }
+        ],
+        "servicer_terms": [
+          {
+            "scenario_id": "s",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "t",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "u",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "v",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "borrowing_input": {
+        "invoices": [
+          {
+            "invoice_id": "i0",
+            "debtor_id": "g",
+            "debtor_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "issue_date": "2022-12-01",
+            "due_date": "2023-02-01",
+            "balance_date": "2023-01-01",
+            "known_at": "2023-01-01",
+            "outstanding": 100,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE"
+          }
+        ],
+        "borrowing_profile": {
+          "profile_id": "b",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "maximum_overdue_days": 30,
+          "exclude_disputed": true,
+          "allowed_recourse": [
+            "NONE",
+            "SELLER"
+          ],
+          "advance_rates": {
+            "NONE": 0.8,
+            "SELLER": 0.9
+          },
+          "default_group_cap": 0.5,
+          "group_caps": {},
+          "additional_reserve": 5,
+          "reserve_scope": "ADDITIONAL_NOT_IN_INVOICE_DILUTION",
+          "coverage_status": "COMPLETE"
+        },
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected": {
+        "losses": [
+          60,
+          60,
+          20,
+          0
+        ],
+        "borrowing_base": 35
+      }
+    },
+    "invoice_pool": {
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a0",
+            "asset_class": "INVOICE",
+            "invoice_id": "i0",
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-02-01",
+                "principal_due": 100,
+                "interest_due": 0
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "SELLER",
+            "collateral_allocations": []
+          },
+          {
+            "asset_id": "a1",
+            "asset_class": "INVOICE",
+            "invoice_id": "i1",
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-02-01",
+                "principal_due": 100,
+                "interest_due": 0
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "SELLER",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m0",
+            "pool_id": "pool",
+            "asset_id": "a0",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          },
+          {
+            "assignment_id": "m1",
+            "pool_id": "pool",
+            "asset_id": "a1",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "invoice",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "TRADE_RECEIVABLES",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "INVOICE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE",
+            "SELLER"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "simulation_input": {
+        "scenario_contract": {
+          "contract_id": "invoice-scenarios",
+          "version": "1",
+          "scenario_ids": [
+            "s",
+            "t",
+            "u",
+            "v"
+          ],
+          "weights": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "dates": [
+            "2023-02-01",
+            "2023-03-01",
+            "2023-04-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "PIT"
+        },
+        "party_mapping": [
+          {
+            "party_id": "g",
+            "default_group_id": "g"
+          },
+          {
+            "party_id": "seller",
+            "default_group_id": "seller"
+          },
+          {
+            "party_id": "service",
+            "default_group_id": "service"
+          }
+        ],
+        "party_default_paths": [
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "s",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 1,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "t",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "u",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "g",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "g"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "seller",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "seller"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-03-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          },
+          {
+            "scenario_id": "v",
+            "default_group_id": "service",
+            "date": "2023-04-01",
+            "conditional_pd": 0,
+            "default_channel": "service"
+          }
+        ],
+        "invoice_scenarios": [
+          {
+            "scenario_id": "s",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "s",
+            "asset_id": "a1",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "t",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "t",
+            "asset_id": "a1",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "u",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0.2,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "u",
+            "asset_id": "a1",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0.2,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "v",
+            "asset_id": "a0",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          },
+          {
+            "scenario_id": "v",
+            "asset_id": "a1",
+            "payment_date": "2023-02-01",
+            "dilution_date": "2023-01-01",
+            "dilution_fraction": 0,
+            "debtor_recovery_fraction": 0.4,
+            "debtor_recovery_date": "2023-03-01",
+            "debtor_recovery_cost": 0
+          }
+        ],
+        "seller_terms": [
+          {
+            "scenario_id": "s",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 50,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "t",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 50,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "u",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 50,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          },
+          {
+            "scenario_id": "v",
+            "seller_id": "seller",
+            "settlement_date": "2023-04-01",
+            "performing_capacity": 50,
+            "default_estate_capacity": 20,
+            "default_recovery_fraction": 0.5,
+            "recourse_scope": "CREDIT_ONLY"
+          }
+        ],
+        "servicer_terms": [
+          {
+            "scenario_id": "s",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "t",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "u",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          },
+          {
+            "scenario_id": "v",
+            "servicer_id": "service",
+            "remittance_date": "2023-04-01",
+            "default_commingling_recovery_fraction": 0.5,
+            "default_commingling_capacity": 30,
+            "replacement_cost": 5
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "s",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "t",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "u",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "g",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "seller",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-02-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-03-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "v",
+            "date": "2023-04-01",
+            "channel_id": "service",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "borrowing_input": {
+        "invoices": [
+          {
+            "invoice_id": "i0",
+            "debtor_id": "g",
+            "debtor_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "issue_date": "2022-12-01",
+            "due_date": "2023-02-01",
+            "balance_date": "2023-01-01",
+            "known_at": "2023-01-01",
+            "outstanding": 100,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "SELLER"
+          },
+          {
+            "invoice_id": "i1",
+            "debtor_id": "g",
+            "debtor_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "issue_date": "2022-12-01",
+            "due_date": "2023-02-01",
+            "balance_date": "2023-01-01",
+            "known_at": "2023-01-01",
+            "outstanding": 100,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "SELLER"
+          }
+        ],
+        "borrowing_profile": {
+          "profile_id": "b",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "maximum_overdue_days": 30,
+          "exclude_disputed": true,
+          "allowed_recourse": [
+            "NONE",
+            "SELLER"
+          ],
+          "advance_rates": {
+            "NONE": 0.8,
+            "SELLER": 0.9
+          },
+          "default_group_cap": 0.5,
+          "group_caps": {},
+          "additional_reserve": 5,
+          "reserve_scope": "ADDITIONAL_NOT_IN_INVOICE_DILUTION",
+          "coverage_status": "COMPLETE"
+        },
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "expected": {
+        "losses": [
+          70,
+          100,
+          40,
+          0
+        ],
+        "borrowing_base": 85
+      }
+    }
+  },
+  "account_stress_template": {
+    "baseline_cashflows": [
+      {
+        "scenario_id": "s",
+        "cashflow_id": "cash",
+        "date": "2023-03-01",
+        "amount": 100
+      }
+    ],
+    "exposure_contracts": [
+      {
+        "exposure_id": "account",
+        "counterparty_id": "bank",
+        "netting_set_id": "net",
+        "role": "ACCOUNT_BANK",
+        "basis": "CASH_HELD",
+        "cashflow_ids": [
+          "cash"
+        ]
+      }
+    ],
+    "netting_sets": [
+      {
+        "netting_set_id": "net",
+        "counterparty_id": "bank",
+        "enforceable": true,
+        "collateral_contract_id": "collateral",
+        "collateral_convention": "RECEIVED_TRANSFERABLE",
+        "default_timing": "AFTER_COLLATERAL_SNAPSHOT_BEFORE_CASHFLOWS"
+      }
+    ],
+    "exposure_paths": [
+      {
+        "scenario_id": "s",
+        "exposure_id": "account",
+        "date": "2023-02-01",
+        "signed_replacement_mark": 0
+      },
+      {
+        "scenario_id": "s",
+        "exposure_id": "account",
+        "date": "2023-03-01",
+        "signed_replacement_mark": 0
+      },
+      {
+        "scenario_id": "s",
+        "exposure_id": "account",
+        "date": "2023-04-01",
+        "signed_replacement_mark": 0
+      }
+    ],
+    "collateral_paths": [
+      {
+        "scenario_id": "s",
+        "netting_set_id": "net",
+        "date": "2023-02-01",
+        "known_at": "2023-02-01",
+        "collateral_value": 20,
+        "haircut": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "netting_set_id": "net",
+        "date": "2023-03-01",
+        "known_at": "2023-03-01",
+        "collateral_value": 20,
+        "haircut": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "netting_set_id": "net",
+        "date": "2023-04-01",
+        "known_at": "2023-04-01",
+        "collateral_value": 20,
+        "haircut": 0.5
+      }
+    ],
+    "settlement_terms": [
+      {
+        "scenario_id": "s",
+        "counterparty_id": "bank",
+        "estate_recovery_fraction": 0.5,
+        "estate_capacity": 1000,
+        "estate_delay_days": 30,
+        "collateral_delay_days": 0,
+        "replacement_cost": 5,
+        "replacement_delay_days": 0
+      }
+    ],
+    "scenario_contract": {
+      "contract_id": "cp",
+      "version": "1",
+      "scenario_ids": [
+        "s"
+      ],
+      "weights": [
+        1
+      ],
+      "dates": [
+        "2023-02-01",
+        "2023-03-01",
+        "2023-04-01"
+      ],
+      "currency": "EUR",
+      "probability_measure": "PHYSICAL",
+      "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+      "conditioning": "PIT"
+    },
+    "party_mapping": [
+      {
+        "party_id": "bank",
+        "default_group_id": "bank"
+      }
+    ],
+    "party_default_paths": [
+      {
+        "scenario_id": "s",
+        "default_group_id": "bank",
+        "date": "2023-02-01",
+        "conditional_pd": 1,
+        "default_channel": "bank"
+      },
+      {
+        "scenario_id": "s",
+        "default_group_id": "bank",
+        "date": "2023-03-01",
+        "conditional_pd": 0,
+        "default_channel": "bank"
+      },
+      {
+        "scenario_id": "s",
+        "default_group_id": "bank",
+        "date": "2023-04-01",
+        "conditional_pd": 0,
+        "default_channel": "bank"
+      }
+    ],
+    "shared_innovations": [
+      {
+        "scenario_id": "s",
+        "date": "2023-02-01",
+        "channel_id": "bank",
+        "uniform": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "date": "2023-03-01",
+        "channel_id": "bank",
+        "uniform": 0.5
+      },
+      {
+        "scenario_id": "s",
+        "date": "2023-04-01",
+        "channel_id": "bank",
+        "uniform": 0.5
+      }
+    ],
+    "as_of": "2023-01-01"
+  }
+}

@@ -1,0 +1,826 @@
+{
+  "schema_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "target": {
+    "event": "first_default",
+    "horizon": 365,
+    "time_unit": "days",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT_given_funding",
+    "performance_origin": "first_draw_at"
+  },
+  "description": "Synthetic mortgage lifecycle with separate training/calibration cohorts, funded application, later account observations, local restructuring proposal and closed collateral workout.",
+  "generator": {
+    "kind": "fixed_analytic_counts",
+    "training_group_rates": [
+      0.02,
+      0.1
+    ],
+    "calibration_group_rates": [
+      0.03,
+      0.12
+    ],
+    "selection": "Approved cases may be funded or not taken up; rejected cases have no observed hypothetical loan outcome."
+  },
+  "training": {
+    "X": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      490,
+      10,
+      450,
+      50
+    ],
+    "metadata": {
+      "data_fingerprint": "synthetic-training-counts-2019",
+      "split_id": "train-2019",
+      "known_at": "2020-12-31",
+      "data_origin": "SYNTHETIC"
+    }
+  },
+  "calibration": {
+    "X": [
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "y": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "weights": [
+      194,
+      6,
+      176,
+      24
+    ],
+    "metadata": {
+      "target": {
+        "event": "first_default",
+        "horizon": 365,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT_given_funding",
+        "performance_origin": "first_draw_at"
+      },
+      "base_model_version": "1",
+      "population_definition": "synthetic_new_customer",
+      "outcome_policy": "complete funded 365-day first-default outcomes",
+      "weight_type": "frequency",
+      "data_origin": "SYNTHETIC",
+      "calibration": {
+        "start": "2021-01-01",
+        "end": "2021-12-31",
+        "known_at": "2023-01-01",
+        "split_id": "calibration-2021",
+        "prediction_origin": "HOLDOUT"
+      }
+    }
+  },
+  "applications": [
+    {
+      "application_id": "A",
+      "customer_id": "customer_A",
+      "product_id": "residential_mortgage",
+      "population_id": "synthetic_new_customer",
+      "application_at": "2024-02-01",
+      "information_cutoff": "2024-02-01",
+      "requested_terms": {
+        "amount": 100000,
+        "currency": "EUR",
+        "term_months": 240
+      }
+    },
+    {
+      "application_id": "B",
+      "customer_id": "customer_B",
+      "product_id": "residential_mortgage",
+      "population_id": "synthetic_new_customer",
+      "application_at": "2024-02-01",
+      "information_cutoff": "2024-02-01",
+      "requested_terms": {
+        "amount": 100000,
+        "currency": "EUR",
+        "term_months": 240
+      }
+    },
+    {
+      "application_id": "C",
+      "customer_id": "customer_C",
+      "product_id": "residential_mortgage",
+      "population_id": "synthetic_new_customer",
+      "application_at": "2024-02-01",
+      "information_cutoff": "2024-02-01",
+      "requested_terms": {
+        "amount": 100000,
+        "currency": "EUR",
+        "term_months": 240
+      }
+    },
+    {
+      "application_id": "D",
+      "customer_id": "customer_D",
+      "product_id": "residential_mortgage",
+      "population_id": "synthetic_new_customer",
+      "application_at": "2024-02-01",
+      "information_cutoff": "2024-02-01",
+      "requested_terms": {
+        "amount": 100000,
+        "currency": "EUR",
+        "term_months": 240
+      }
+    },
+    {
+      "application_id": "E",
+      "customer_id": "customer_E",
+      "product_id": "residential_mortgage",
+      "population_id": "synthetic_new_customer",
+      "application_at": "2024-02-01",
+      "information_cutoff": "2024-02-01",
+      "requested_terms": {
+        "amount": 100000,
+        "currency": "EUR",
+        "term_months": 240
+      }
+    },
+    {
+      "application_id": "F",
+      "customer_id": "customer_F",
+      "product_id": "residential_mortgage",
+      "population_id": "synthetic_new_customer",
+      "application_at": "2024-02-01",
+      "information_cutoff": "2024-02-01",
+      "requested_terms": {
+        "amount": 100000,
+        "currency": "EUR",
+        "term_months": 240
+      }
+    }
+  ],
+  "features": [
+    {
+      "application_id": "A",
+      "feature": "recent_arrears",
+      "value": 0,
+      "observed_at": "2024-01-31",
+      "known_at": "2024-02-01",
+      "source_id": "synthetic_bureau"
+    },
+    {
+      "application_id": "B",
+      "feature": "recent_arrears",
+      "value": 1,
+      "observed_at": "2024-01-31",
+      "known_at": "2024-02-01",
+      "source_id": "synthetic_bureau"
+    },
+    {
+      "application_id": "C",
+      "feature": "recent_arrears",
+      "value": 0,
+      "observed_at": "2024-01-31",
+      "known_at": "2024-02-01",
+      "source_id": "synthetic_bureau"
+    },
+    {
+      "application_id": "D",
+      "feature": "recent_arrears",
+      "value": 0,
+      "observed_at": "2024-01-31",
+      "known_at": "2024-02-01",
+      "source_id": "synthetic_bureau"
+    },
+    {
+      "application_id": "E",
+      "feature": "recent_arrears",
+      "value": 0,
+      "observed_at": "2024-01-31",
+      "known_at": "2024-02-01",
+      "source_id": "synthetic_bureau"
+    },
+    {
+      "application_id": "F",
+      "feature": "recent_arrears",
+      "value": 0,
+      "observed_at": "2024-01-31",
+      "known_at": "2024-02-01",
+      "source_id": "synthetic_bureau"
+    }
+  ],
+  "economics": [
+    {
+      "application_id": "A",
+      "net_income": 5000,
+      "recurring_expenses": 2300,
+      "existing_debt_service": 100,
+      "new_debt_service": 900,
+      "eligibility": "ELIGIBLE",
+      "operations": "CLEAR"
+    },
+    {
+      "application_id": "B",
+      "net_income": 5000,
+      "recurring_expenses": 2300,
+      "existing_debt_service": 100,
+      "new_debt_service": 900,
+      "eligibility": "ELIGIBLE",
+      "operations": "CLEAR"
+    },
+    {
+      "application_id": "C",
+      "net_income": 2500,
+      "recurring_expenses": 2300,
+      "existing_debt_service": 100,
+      "new_debt_service": 900,
+      "eligibility": "ELIGIBLE",
+      "operations": "CLEAR"
+    },
+    {
+      "application_id": "D",
+      "net_income": 5000,
+      "recurring_expenses": 2300,
+      "existing_debt_service": 100,
+      "new_debt_service": 900,
+      "eligibility": "INELIGIBLE",
+      "operations": "CLEAR"
+    },
+    {
+      "application_id": "E",
+      "net_income": 5000,
+      "recurring_expenses": 2300,
+      "existing_debt_service": 100,
+      "new_debt_service": 900,
+      "eligibility": "ELIGIBLE",
+      "operations": "PENDING"
+    },
+    {
+      "application_id": "F",
+      "net_income": 5000,
+      "recurring_expenses": 2300,
+      "existing_debt_service": 100,
+      "new_debt_service": 900,
+      "eligibility": "ELIGIBLE",
+      "operations": "CLEAR"
+    }
+  ],
+  "policy": {
+    "schema_version": "1.0",
+    "policy_id": "synthetic-retail",
+    "version": "1",
+    "approval_reference": "synthetic-example-policy",
+    "known_at": "2023-12-31",
+    "effective_from": "2024-01-01",
+    "effective_until": "2025-01-01",
+    "target": {
+      "event": "first_default",
+      "horizon": 365,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT_given_funding",
+      "performance_origin": "first_draw_at"
+    },
+    "default_action": "REFER",
+    "missing_action": "BLOCKED",
+    "fields": {
+      "risk.pd": {
+        "type": "number"
+      },
+      "affordability.status": {
+        "type": "category",
+        "values": [
+          "AFFORDABLE",
+          "NOT_AFFORDABLE",
+          "INSUFFICIENT_EVIDENCE"
+        ]
+      },
+      "eligibility.status": {
+        "type": "category",
+        "values": [
+          "ELIGIBLE",
+          "INELIGIBLE"
+        ]
+      }
+    },
+    "rules": [
+      {
+        "rule_id": "eligibility",
+        "priority": 0,
+        "action": "DECLINE",
+        "reason_code": "ELIGIBILITY",
+        "when": [
+          {
+            "field": "eligibility.status",
+            "op": "eq",
+            "value": "INELIGIBLE"
+          }
+        ]
+      },
+      {
+        "rule_id": "affordability",
+        "priority": 1,
+        "action": "DECLINE",
+        "reason_code": "AFFORDABILITY",
+        "when": [
+          {
+            "field": "affordability.status",
+            "op": "eq",
+            "value": "NOT_AFFORDABLE"
+          }
+        ]
+      },
+      {
+        "rule_id": "risk_high",
+        "priority": 2,
+        "action": "DECLINE",
+        "reason_code": "RISK_HIGH",
+        "when": [
+          {
+            "field": "risk.pd",
+            "op": "gt",
+            "value": 0.1
+          }
+        ]
+      },
+      {
+        "rule_id": "risk_low",
+        "priority": 3,
+        "action": "APPROVE",
+        "reason_code": "RISK_LOW",
+        "when": [
+          {
+            "field": "risk.pd",
+            "op": "le",
+            "value": 0.05
+          }
+        ]
+      }
+    ]
+  },
+  "affordability_profile": {
+    "schema_version": "1.0",
+    "policy_id": "synthetic-capacity",
+    "version": "1",
+    "required_evidence": [
+      "income_verified"
+    ],
+    "rules": [
+      {
+        "rule_id": "buffer",
+        "metric": "residual",
+        "operator": ">=",
+        "threshold": 300
+      },
+      {
+        "rule_id": "service",
+        "metric": "dsti",
+        "operator": "<=",
+        "threshold": 0.4
+      }
+    ]
+  },
+  "route_snapshot": {
+    "subject_id": "customer_A",
+    "subject_type": "customer",
+    "as_of": "2024-02-01",
+    "known_at": "2024-02-01",
+    "attributes": {
+      "product_id": {
+        "value": "residential_mortgage",
+        "observed_at": "2024-02-01",
+        "known_at": "2024-02-01"
+      }
+    }
+  },
+  "routing_rules": [
+    {
+      "rule_id": "fixed_retail",
+      "profile_id": "residential-mortgage",
+      "profile_version": "1",
+      "priority": 0,
+      "effective_from": "2024-01-01",
+      "effective_to": null,
+      "known_at": "2023-12-31",
+      "conditions": [
+        {
+          "field": "product_id",
+          "operator": "eq",
+          "value": "residential_mortgage"
+        }
+      ]
+    }
+  ],
+  "booked": [
+    {
+      "application_id": "A",
+      "facility_id": "facility_A",
+      "booked_at": "2024-02-02",
+      "known_at": "2024-02-02",
+      "first_draw_at": "2024-02-03",
+      "first_draw_known_at": "2024-02-03",
+      "outcome_available_at": "2025-02-04"
+    }
+  ],
+  "defaults": [
+    {
+      "event_id": "default_A",
+      "facility_id": "facility_A",
+      "default_at": "2024-09-01",
+      "known_at": "2024-09-02"
+    }
+  ],
+  "expected_actions": [
+    "APPROVE",
+    "DECLINE",
+    "DECLINE",
+    "DECLINE",
+    "REFER",
+    "APPROVE"
+  ],
+  "expected_targets": [
+    1,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "behavioral": {
+    "target": {
+      "event": "first_default",
+      "horizon": 12,
+      "time_unit": "months",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT_active_account"
+    },
+    "training": {
+      "X": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          30
+        ],
+        [
+          30
+        ]
+      ],
+      "y": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "weights": [
+        495,
+        5,
+        90,
+        10
+      ],
+      "metadata": {
+        "data_fingerprint": "synthetic-behavioral-counts-2019",
+        "split_id": "behavioral-train-2019",
+        "known_at": "2021-01-01",
+        "data_origin": "SYNTHETIC"
+      }
+    },
+    "accounts": [
+      {
+        "account_id": "facility_A",
+        "customer_id": "customer_A",
+        "product_id": "residential_mortgage",
+        "opened_at": "2024-02-03",
+        "known_at": "2024-02-03",
+        "currency": "EUR",
+        "original_balance": 100000
+      }
+    ],
+    "statements": [
+      {
+        "account_id": "facility_A",
+        "statement_id": "stmt-2024-02-29",
+        "observed_at": "2024-02-29",
+        "known_at": "2024-02-29",
+        "balance": 99000,
+        "credit_limit": 100000,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "facility_A",
+        "statement_id": "stmt-2024-08-31",
+        "observed_at": "2024-08-31",
+        "known_at": "2024-08-31",
+        "balance": 95000,
+        "credit_limit": 100000,
+        "dpd": 30,
+        "past_due_amount": 900,
+        "currency": "EUR"
+      },
+      {
+        "account_id": "facility_A",
+        "statement_id": "stmt-2024-09-30",
+        "observed_at": "2024-09-30",
+        "known_at": "2024-09-30",
+        "balance": 94500,
+        "credit_limit": 100000,
+        "dpd": 60,
+        "past_due_amount": 1800,
+        "currency": "EUR"
+      }
+    ],
+    "events": [
+      {
+        "account_id": "facility_A",
+        "event_id": "default_A",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-09-01",
+        "known_at": "2024-09-02"
+      }
+    ],
+    "observation_dates": [
+      "2024-02-29",
+      "2024-08-31",
+      "2024-09-30"
+    ],
+    "coverage": [
+      {
+        "account_id": "facility_A",
+        "observed_through": "2025-03-01",
+        "known_at": "2025-03-01"
+      }
+    ]
+  },
+  "collections": {
+    "states": [
+      {
+        "account_id": "facility_A",
+        "state_event_id": "collection-0",
+        "state": "ARREARS",
+        "occurred_at": "2024-08-31",
+        "known_at": "2024-08-31"
+      },
+      {
+        "account_id": "facility_A",
+        "state_event_id": "collection-1",
+        "state": "DEFAULT",
+        "occurred_at": "2024-09-01",
+        "known_at": "2024-09-01"
+      },
+      {
+        "account_id": "facility_A",
+        "state_event_id": "collection-2",
+        "state": "CLEAN",
+        "occurred_at": "2025-01-01",
+        "known_at": "2025-01-01"
+      }
+    ],
+    "actions": [
+      {
+        "action_id": "offer_A",
+        "treatment_id": "plan_A",
+        "account_id": "facility_A",
+        "action_type": "repayment_plan",
+        "stage": "OFFERED",
+        "occurred_at": "2024-09-05",
+        "known_at": "2024-09-05"
+      }
+    ],
+    "coverage": [
+      {
+        "account_id": "facility_A",
+        "observed_from": "2024-08-31",
+        "observed_through": "2025-03-01",
+        "known_at": "2025-03-01"
+      }
+    ],
+    "episode_rule": {
+      "rule_id": "synthetic-operational-cure",
+      "version": "1",
+      "problem_states": [
+        "ARREARS",
+        "DEFAULT"
+      ],
+      "clean_states": [
+        "CLEAN"
+      ],
+      "terminal_states": [
+        "CLOSED"
+      ],
+      "default_states": [
+        "DEFAULT"
+      ],
+      "probation_days": 90,
+      "separation_days": 90
+    }
+  },
+  "delinquency": {
+    "obligations": [
+      {
+        "account_id": "facility_A",
+        "obligation_id": "august_payment",
+        "due_at": "2024-08-01",
+        "known_at": "2024-02-03",
+        "amount": 900,
+        "currency": "EUR"
+      }
+    ],
+    "payments": [],
+    "as_of": "2024-08-31",
+    "known_at": "2024-08-31",
+    "currency": "EUR"
+  },
+  "arrangement": {
+    "contract": {
+      "currency": "EUR",
+      "principal": 94500,
+      "principal_arrears": 1200,
+      "accrued_interest": 600,
+      "fees": 100,
+      "as_of": "2024-09-30"
+    },
+    "baseline": {
+      "plan_id": "original",
+      "payments": [
+        3000,
+        3000
+      ],
+      "period_interest_rates": [
+        0.002,
+        0.002
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": false
+    },
+    "candidate": {
+      "plan_id": "temporary_reduction",
+      "payments": [
+        1000,
+        1000
+      ],
+      "period_interest_rates": [
+        0.002,
+        0.002
+      ],
+      "new_fees": [
+        0,
+        0
+      ],
+      "servicing_costs": [
+        0,
+        0
+      ],
+      "receipt_fractions": [
+        1,
+        1
+      ],
+      "capitalize_unpaid_interest": false
+    },
+    "affordability_paths": [
+      {
+        "path_id": "verified_household",
+        "currency": "EUR",
+        "available_cash": [
+          1200,
+          1200
+        ]
+      }
+    ],
+    "discount_factors": [
+      1,
+      1
+    ],
+    "period_end_dates": [
+      "2024-10-31",
+      "2024-11-30"
+    ],
+    "currency": "EUR"
+  },
+  "realized_recovery": {
+    "cashflows": [
+      {
+        "cashflow_id": "mortgage_sale_allocation",
+        "cashflow_date": "2025-08-31",
+        "known_at": "2025-09-01",
+        "currency": "EUR",
+        "kind": "RECOVERY",
+        "amount": 70000
+      }
+    ],
+    "discount_curve": {
+      "anchor_date": "2024-09-01",
+      "known_at": "2025-09-01",
+      "discount_basis": "externally_supplied_workout_factor",
+      "points": [
+        {
+          "cashflow_date": "2025-08-31",
+          "discount_factor": 0.9
+        }
+      ]
+    },
+    "fx_contract": {
+      "reporting_currency": "EUR",
+      "known_at": "2025-09-01",
+      "conversion_basis": "cashflow_date",
+      "rates": [
+        {
+          "currency": "EUR",
+          "date": "2025-08-31",
+          "rate": 1
+        }
+      ]
+    },
+    "default_date": "2024-09-01",
+    "evaluation_cutoff": "2025-09-30",
+    "reporting_currency": "EUR"
+  },
+  "default_ead": 95000,
+  "closed_account": {
+    "accounts": [
+      {
+        "account_id": "facility_A",
+        "customer_id": "customer_A",
+        "product_id": "residential_mortgage",
+        "opened_at": "2024-02-03",
+        "known_at": "2024-02-03",
+        "currency": "EUR",
+        "original_balance": 100000
+      }
+    ],
+    "statements": [
+      {
+        "account_id": "facility_A",
+        "statement_id": "exit",
+        "observed_at": "2025-09-30",
+        "known_at": "2025-09-30",
+        "balance": 0,
+        "credit_limit": 0,
+        "dpd": 0,
+        "past_due_amount": 0,
+        "currency": "EUR"
+      }
+    ],
+    "account_events": [
+      {
+        "account_id": "facility_A",
+        "event_id": "default_A",
+        "event_type": "DEFAULT",
+        "occurred_at": "2024-09-01",
+        "known_at": "2024-09-02"
+      },
+      {
+        "account_id": "facility_A",
+        "event_id": "closed_after_workout",
+        "event_type": "CLOSED",
+        "occurred_at": "2025-09-15",
+        "known_at": "2025-09-15"
+      }
+    ],
+    "observation_dates": [
+      "2025-09-30"
+    ]
+  }
+}

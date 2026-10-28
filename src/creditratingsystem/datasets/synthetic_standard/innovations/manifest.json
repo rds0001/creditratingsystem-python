@@ -1,0 +1,71 @@
+{
+  "format": "creditratingsystem-u32le-v1",
+  "authoring_method": "NumPy PCG64, independent stream SeedSequence [20261013, stream index]; no outcome reselection",
+  "uniform_mapping": "(uint32 + 0.5) / 2**32",
+  "streams": {
+    "macro_history": {
+      "file": "macro_history.u32le",
+      "shape": [
+        240,
+        10
+      ],
+      "sha256": "32a9dbc5b1b1eeb2f80c11eb9fd5e4a6a5c32a11b7414e1a23ed271ae4420c25"
+    },
+    "macro_revision": {
+      "file": "macro_revision.u32le",
+      "shape": [
+        240,
+        8
+      ],
+      "sha256": "bb6eb3c593ade10d4bc51ca2bdae8bb0681ece721a3010607fd0e809ace76684"
+    },
+    "macro_paths": {
+      "file": "macro_paths.u32le",
+      "shape": [
+        983040,
+        10
+      ],
+      "sha256": "e54582c5f4e1499e80ff05357a5972a6c5aa9b877c00f394fc8da63e52e321e8"
+    },
+    "obligor_static": {
+      "file": "obligor_static.u32le",
+      "shape": [
+        3000,
+        16
+      ],
+      "sha256": "6ac1dad2c94f6d138728411e270918aae73f817135b95b6f98b8c744e5e45c66"
+    },
+    "obligor_year": {
+      "file": "obligor_year.u32le",
+      "shape": [
+        30000,
+        16
+      ],
+      "sha256": "d348f13688a0747aa9b99059db7cd5fd2bb972ac12355dfa17b28c8e91c75f7f"
+    },
+    "obligor_groups": {
+      "file": "obligor_groups.u32le",
+      "shape": [
+        7500,
+        2
+      ],
+      "sha256": "60ecb08ff940d3542466e3e1b91a793a504827fdef53addb43f3d2b2f51992dd"
+    },
+    "facilities": {
+      "file": "facilities.u32le",
+      "shape": [
+        3000,
+        16
+      ],
+      "sha256": "935ab915b472ea1875e362ae410e5562ee901310a86580d45885875620ded6c9"
+    },
+    "country_transfer": {
+      "file": "country_transfer.u32le",
+      "shape": [
+        60,
+        2
+      ],
+      "sha256": "a0bb419c84c477732001faa8792fe60581349c806b38e3bac97bcc2b498c5186"
+    }
+  }
+}

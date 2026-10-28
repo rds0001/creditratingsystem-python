@@ -1,0 +1,1855 @@
+{
+  "data_origin": "SYNTHETIC_REFERENCE",
+  "cases": {
+    "SECURITIZATION_TRANCHE": {
+      "upstream_contract": {
+        "resource": "securitization_products.json",
+        "variant": "ABS"
+      },
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "AUTO_LOAN",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "p",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "ABS",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "AUTO_LOAN"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "prior-pool-law",
+          "version": "1",
+          "scenario_ids": [
+            "default",
+            "survive"
+          ],
+          "weights": [
+            0.2,
+            0.8
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "not_defaulted_at_index",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "default",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0.2,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "default",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "survive",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0.2,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "survive",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "default",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "default",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "survive",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "survive",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "default",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.1
+          },
+          {
+            "scenario_id": "default",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "default",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.1
+          },
+          {
+            "scenario_id": "default",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.9
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.9
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "servicing": [
+        {
+          "event_id": "observed-default",
+          "asset_id": "a",
+          "date": "2023-07-01",
+          "known_at": "2023-07-01",
+          "sequence": 1,
+          "currency": "EUR",
+          "event_type": "DEFAULT",
+          "opening_principal": 100,
+          "closing_principal": 0,
+          "scheduled_principal": 0,
+          "prepayment_principal": 0,
+          "default_ead": 100,
+          "dilution": 0,
+          "interest": 0,
+          "recovery_gross": 0,
+          "workout_cost": 0,
+          "servicing_cost": 0,
+          "default_event_id": null
+        },
+        {
+          "event_id": "observed-recovery",
+          "asset_id": "a",
+          "date": "2023-07-31",
+          "known_at": "2023-07-31",
+          "sequence": 1,
+          "currency": "EUR",
+          "event_type": "RECOVERY",
+          "opening_principal": 0,
+          "closing_principal": 0,
+          "scheduled_principal": 0,
+          "prepayment_principal": 0,
+          "default_ead": 0,
+          "dilution": 0,
+          "interest": 0,
+          "recovery_gross": 30,
+          "workout_cost": 5,
+          "servicing_cost": 0,
+          "default_event_id": "observed-default"
+        }
+      ],
+      "allocations": [
+        {
+          "allocation_id": "allocation-observed-default",
+          "event_id": "observed-default",
+          "pool_id": "pool",
+          "share": 1,
+          "known_at": "2023-07-01",
+          "amounts": {
+            "scheduled_principal": 0,
+            "prepayment_principal": 0,
+            "default_ead": 100,
+            "dilution": 0,
+            "interest": 0,
+            "recovery_gross": 0,
+            "workout_cost": 0,
+            "servicing_cost": 0
+          }
+        },
+        {
+          "allocation_id": "allocation-observed-recovery",
+          "event_id": "observed-recovery",
+          "pool_id": "pool",
+          "share": 1,
+          "known_at": "2023-07-31",
+          "amounts": {
+            "scheduled_principal": 0,
+            "prepayment_principal": 0,
+            "default_ead": 0,
+            "dilution": 0,
+            "interest": 0,
+            "recovery_gross": 30,
+            "workout_cost": 5,
+            "servicing_cost": 0
+          }
+        }
+      ],
+      "pool_accounts": [
+        {
+          "date": "2023-07-01",
+          "known_at": "2023-07-01",
+          "currency": "EUR",
+          "opening_cash": 0,
+          "closing_cash": 0,
+          "purchase_cash": 0,
+          "sale_cash": 0,
+          "external_injection": 0,
+          "external_distribution": 0,
+          "fees_paid": 0,
+          "tranche_interest_paid": 0,
+          "tranche_principal_paid": 0,
+          "equity_paid": 0
+        },
+        {
+          "date": "2023-07-31",
+          "known_at": "2023-07-31",
+          "currency": "EUR",
+          "opening_cash": 0,
+          "closing_cash": 25,
+          "purchase_cash": 0,
+          "sale_cash": 0,
+          "external_injection": 0,
+          "external_distribution": 0,
+          "fees_paid": 0,
+          "tranche_interest_paid": 0,
+          "tranche_principal_paid": 0,
+          "equity_paid": 0
+        }
+      ],
+      "coverage": [
+        {
+          "asset_id": "a",
+          "complete": true,
+          "complete_through": "2024-01-01",
+          "known_at": "2024-01-02",
+          "currency": "EUR",
+          "target": {
+            "event": "default",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "not_defaulted_at_index"
+          }
+        }
+      ],
+      "design": {
+        "model_id": "SECURITIZATION_TRANCHE-collateral-risk",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "independent-dated-servicing-ledger",
+        "population_id": "SECURITIZATION_TRANCHE",
+        "split_id": "2023-holdout",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-01-02",
+        "forecast_known_at": "2023-01-01",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "not_defaulted_at_index"
+        },
+        "default_definition": "FIRST_DEFAULT_BEFORE_TERMINAL_CONTRACT_EXIT"
+      },
+      "cash_contract": {
+        "as_of": "2023-01-01",
+        "known_at": "2023-01-01",
+        "currency": "EUR",
+        "opening_cash": 0
+      },
+      "retail_collateral": {
+        "training_rows": [
+          {
+            "observation_id": "train-0",
+            "default_unit_id": "train-facility-0",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": true,
+            "default_date": "2020-07-01",
+            "lgd_known_at": "2021-01-01",
+            "ead_known_at": "2020-07-01",
+            "lgd_status": "CLOSED",
+            "lgd": 0.65,
+            "ead": 100,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-1",
+            "default_unit_id": "train-facility-1",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": true,
+            "default_date": "2020-07-01",
+            "lgd_known_at": "2021-01-01",
+            "ead_known_at": "2020-07-01",
+            "lgd_status": "CLOSED",
+            "lgd": 0.65,
+            "ead": 100,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-2",
+            "default_unit_id": "train-facility-2",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-3",
+            "default_unit_id": "train-facility-3",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-4",
+            "default_unit_id": "train-facility-4",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-5",
+            "default_unit_id": "train-facility-5",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-6",
+            "default_unit_id": "train-facility-6",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-7",
+            "default_unit_id": "train-facility-7",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-8",
+            "default_unit_id": "train-facility-8",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-9",
+            "default_unit_id": "train-facility-9",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "AUTO_LOAN",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          }
+        ],
+        "pooling_spec": {
+          "spec_id": "SECURITIZATION_TRANCHE-collateral-pool",
+          "version": "1",
+          "known_at": "2019-12-31",
+          "stratum_fields": [
+            "product",
+            "borrower_type",
+            "facility_type",
+            "delinquency_state"
+          ],
+          "score_field": "score",
+          "segments": [
+            {
+              "segment_id": "performing",
+              "values": {
+                "product": "AUTO_LOAN",
+                "borrower_type": "person",
+                "facility_type": "amortizing",
+                "delinquency_state": "current"
+              },
+              "cutpoints": [],
+              "score_min": 0,
+              "score_max": 100,
+              "monotonicity": {
+                "pd": "none",
+                "lgd": "none",
+                "ead": "none"
+              }
+            }
+          ],
+          "minimum_cases": 2,
+          "minimum_defaults": 0,
+          "minimum_lgd_count": 0,
+          "minimum_ead_count": 0,
+          "maximum_bin_mean_spread": {
+            "pd": null,
+            "lgd": null,
+            "ead": null
+          }
+        },
+        "target": {
+          "event": "default",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "not_defaulted_at_index",
+          "default_unit": "facility",
+          "currency": "EUR",
+          "default_definition": "FIRST_DEFAULT_BEFORE_TERMINAL_CONTRACT_EXIT"
+        },
+        "training": {
+          "role": "TRAIN",
+          "known_at": "2021-01-02",
+          "split_id": "prior-2020",
+          "data_fingerprint": "separate-prior-collateral-cohort",
+          "data_origin": "SYNTHETIC"
+        },
+        "observation": {
+          "observation_id": "a",
+          "index_date": "2023-01-01",
+          "feature_observed_at": "2023-01-01",
+          "feature_known_at": "2023-01-01",
+          "score": 50,
+          "product": "AUTO_LOAN",
+          "borrower_type": "person",
+          "facility_type": "amortizing",
+          "delinquency_state": "current"
+        },
+        "outcomes": [
+          {
+            "observation_id": "a",
+            "default_unit_id": "a",
+            "index_date": "2023-01-01",
+            "label_window_end": "2024-01-01",
+            "label_known_at": "2024-01-02",
+            "outcome_status": "MATURE",
+            "reference_exposure": 100,
+            "reference_known_at": "2023-01-01",
+            "defaulted": true,
+            "default_date": "2023-07-01",
+            "complete_through": "2024-01-01"
+          }
+        ],
+        "workouts": [
+          {
+            "episode_id": "a-default",
+            "observation_id": "a",
+            "default_date": "2023-07-01",
+            "default_known_at": "2023-07-01",
+            "ead_at_default": 100,
+            "episode_status": "CLOSED",
+            "valuation_known_at": "2024-01-02",
+            "reference_date": "2023-01-01",
+            "reference_known_at": "2023-01-01",
+            "reference_drawn": 100,
+            "reference_limit": 100,
+            "recovery_cashflows": [
+              {
+                "cashflow_id": "actual-RECOVERY",
+                "cashflow_date": "2023-07-31",
+                "known_at": "2023-07-31",
+                "currency": "EUR",
+                "kind": "RECOVERY",
+                "amount": 30
+              },
+              {
+                "cashflow_id": "actual-DIRECT_COST",
+                "cashflow_date": "2023-07-31",
+                "known_at": "2023-07-31",
+                "currency": "EUR",
+                "kind": "DIRECT_COST",
+                "amount": 5
+              }
+            ],
+            "discount_curve": {
+              "anchor_date": "2023-07-01",
+              "known_at": "2023-07-01",
+              "discount_basis": "explicit unit factors",
+              "points": [
+                {
+                  "cashflow_date": "2023-07-31",
+                  "discount_factor": 1
+                }
+              ]
+            },
+            "fx_contract": {
+              "reporting_currency": "EUR",
+              "known_at": "2023-07-31",
+              "conversion_basis": "cashflow_date",
+              "rates": [
+                {
+                  "currency": "EUR",
+                  "date": "2023-07-31",
+                  "rate": 1
+                }
+              ]
+            }
+          }
+        ],
+        "links": [
+          {
+            "observation_id": "a",
+            "facility_id": "a",
+            "obligor_id": "g",
+            "household_id": "household-a",
+            "risk_group_id": "g",
+            "diagnostic_group": "independent-collateral",
+            "known_at": "2023-01-01"
+          }
+        ],
+        "estimation_profile": {
+          "profile_id": "diagnostic-only",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "pd_weighting": "reference_exposure",
+          "lgd_weighting": "ead",
+          "ead_weighting": "episode",
+          "ccf_weighting": "undrawn",
+          "confidence": 0.95,
+          "independence_assumption": "independent_default_units",
+          "minimum_pool_cases": 2
+        }
+      }
+    },
+    "COVERED_BOND": {
+      "upstream_contract": {
+        "resource": "covered_bond_products.json",
+        "variant": "mortgage_cover_pool"
+      },
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a",
+            "asset_class": "RESIDENTIAL_MORTGAGE",
+            "invoice_id": null,
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-07-01",
+                "principal_due": 40,
+                "interest_due": 5
+              },
+              {
+                "date": "2024-01-01",
+                "principal_due": 60,
+                "interest_due": 3
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m",
+            "pool_id": "pool",
+            "asset_id": "a",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "cover",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "MORTGAGE_COVER",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "RESIDENTIAL_MORTGAGE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "prior-pool-law",
+          "version": "1",
+          "scenario_ids": [
+            "default",
+            "survive"
+          ],
+          "weights": [
+            0.2,
+            0.8
+          ],
+          "dates": [
+            "2023-07-01",
+            "2024-01-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "not_defaulted_at_index",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "default",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0.2,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "default",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "survive",
+            "default_group_id": "g",
+            "date": "2023-07-01",
+            "conditional_pd": 0.2,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "survive",
+            "default_group_id": "g",
+            "date": "2024-01-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "default",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "default",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "survive",
+            "asset_id": "a",
+            "date": "2023-07-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "survive",
+            "asset_id": "a",
+            "date": "2024-01-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 30,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "default",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.1
+          },
+          {
+            "scenario_id": "default",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "default",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.1
+          },
+          {
+            "scenario_id": "default",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-07-01",
+            "channel_id": "default-g",
+            "uniform": 0.9
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-07-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2024-01-01",
+            "channel_id": "default-g",
+            "uniform": 0.9
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2024-01-01",
+            "channel_id": "prepay-a",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "servicing": [
+        {
+          "event_id": "observed-prepay",
+          "asset_id": "a",
+          "date": "2023-07-01",
+          "known_at": "2023-07-01",
+          "sequence": 1,
+          "currency": "EUR",
+          "event_type": "PREPAYMENT",
+          "opening_principal": 100,
+          "closing_principal": 0,
+          "scheduled_principal": 0,
+          "prepayment_principal": 100,
+          "default_ead": 0,
+          "dilution": 0,
+          "interest": 5,
+          "recovery_gross": 0,
+          "workout_cost": 0,
+          "servicing_cost": 0,
+          "default_event_id": null
+        }
+      ],
+      "allocations": [
+        {
+          "allocation_id": "allocation-observed-prepay",
+          "event_id": "observed-prepay",
+          "pool_id": "pool",
+          "share": 1,
+          "known_at": "2023-07-01",
+          "amounts": {
+            "scheduled_principal": 0,
+            "prepayment_principal": 100,
+            "default_ead": 0,
+            "dilution": 0,
+            "interest": 5,
+            "recovery_gross": 0,
+            "workout_cost": 0,
+            "servicing_cost": 0
+          }
+        }
+      ],
+      "pool_accounts": [
+        {
+          "date": "2023-07-01",
+          "known_at": "2023-07-01",
+          "currency": "EUR",
+          "opening_cash": 0,
+          "closing_cash": 105,
+          "purchase_cash": 0,
+          "sale_cash": 0,
+          "external_injection": 0,
+          "external_distribution": 0,
+          "fees_paid": 0,
+          "tranche_interest_paid": 0,
+          "tranche_principal_paid": 0,
+          "equity_paid": 0
+        }
+      ],
+      "coverage": [
+        {
+          "asset_id": "a",
+          "complete": true,
+          "complete_through": "2024-01-01",
+          "known_at": "2024-01-02",
+          "currency": "EUR",
+          "target": {
+            "event": "default",
+            "horizon": 365,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "not_defaulted_at_index"
+          }
+        }
+      ],
+      "design": {
+        "model_id": "COVERED_BOND-collateral-risk",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "independent-dated-servicing-ledger",
+        "population_id": "COVERED_BOND",
+        "split_id": "2023-holdout",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-01-02",
+        "forecast_known_at": "2023-01-01",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "not_defaulted_at_index"
+        },
+        "default_definition": "FIRST_DEFAULT_BEFORE_TERMINAL_CONTRACT_EXIT"
+      },
+      "cash_contract": {
+        "as_of": "2023-01-01",
+        "known_at": "2023-01-01",
+        "currency": "EUR",
+        "opening_cash": 0
+      },
+      "retail_collateral": {
+        "training_rows": [
+          {
+            "observation_id": "train-0",
+            "default_unit_id": "train-facility-0",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": true,
+            "default_date": "2020-07-01",
+            "lgd_known_at": "2021-01-01",
+            "ead_known_at": "2020-07-01",
+            "lgd_status": "CLOSED",
+            "lgd": 0.65,
+            "ead": 100,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-1",
+            "default_unit_id": "train-facility-1",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": true,
+            "default_date": "2020-07-01",
+            "lgd_known_at": "2021-01-01",
+            "ead_known_at": "2020-07-01",
+            "lgd_status": "CLOSED",
+            "lgd": 0.65,
+            "ead": 100,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-2",
+            "default_unit_id": "train-facility-2",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-3",
+            "default_unit_id": "train-facility-3",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-4",
+            "default_unit_id": "train-facility-4",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-5",
+            "default_unit_id": "train-facility-5",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-6",
+            "default_unit_id": "train-facility-6",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-7",
+            "default_unit_id": "train-facility-7",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-8",
+            "default_unit_id": "train-facility-8",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          },
+          {
+            "observation_id": "train-9",
+            "default_unit_id": "train-facility-9",
+            "role": "TRAIN",
+            "index_date": "2020-01-01",
+            "feature_observed_at": "2020-01-01",
+            "feature_known_at": "2020-01-01",
+            "label_window_end": "2020-12-31",
+            "label_known_at": "2021-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "lgd_known_at": null,
+            "ead_known_at": null,
+            "lgd_status": "NOT_DEFAULTED",
+            "lgd": null,
+            "ead": null,
+            "score": 50,
+            "product": "RESIDENTIAL_MORTGAGE",
+            "borrower_type": "person",
+            "facility_type": "amortizing",
+            "delinquency_state": "current"
+          }
+        ],
+        "pooling_spec": {
+          "spec_id": "COVERED_BOND-collateral-pool",
+          "version": "1",
+          "known_at": "2019-12-31",
+          "stratum_fields": [
+            "product",
+            "borrower_type",
+            "facility_type",
+            "delinquency_state"
+          ],
+          "score_field": "score",
+          "segments": [
+            {
+              "segment_id": "performing",
+              "values": {
+                "product": "RESIDENTIAL_MORTGAGE",
+                "borrower_type": "person",
+                "facility_type": "amortizing",
+                "delinquency_state": "current"
+              },
+              "cutpoints": [],
+              "score_min": 0,
+              "score_max": 100,
+              "monotonicity": {
+                "pd": "none",
+                "lgd": "none",
+                "ead": "none"
+              }
+            }
+          ],
+          "minimum_cases": 2,
+          "minimum_defaults": 0,
+          "minimum_lgd_count": 0,
+          "minimum_ead_count": 0,
+          "maximum_bin_mean_spread": {
+            "pd": null,
+            "lgd": null,
+            "ead": null
+          }
+        },
+        "target": {
+          "event": "default",
+          "horizon": 365,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "not_defaulted_at_index",
+          "default_unit": "facility",
+          "currency": "EUR",
+          "default_definition": "FIRST_DEFAULT_BEFORE_TERMINAL_CONTRACT_EXIT"
+        },
+        "training": {
+          "role": "TRAIN",
+          "known_at": "2021-01-02",
+          "split_id": "prior-2020",
+          "data_fingerprint": "separate-prior-collateral-cohort",
+          "data_origin": "SYNTHETIC"
+        },
+        "observation": {
+          "observation_id": "a",
+          "index_date": "2023-01-01",
+          "feature_observed_at": "2023-01-01",
+          "feature_known_at": "2023-01-01",
+          "score": 50,
+          "product": "RESIDENTIAL_MORTGAGE",
+          "borrower_type": "person",
+          "facility_type": "amortizing",
+          "delinquency_state": "current"
+        },
+        "outcomes": [
+          {
+            "observation_id": "a",
+            "default_unit_id": "a",
+            "index_date": "2023-01-01",
+            "label_window_end": "2024-01-01",
+            "label_known_at": "2024-01-02",
+            "outcome_status": "MATURE",
+            "reference_exposure": 100,
+            "reference_known_at": "2023-01-01",
+            "defaulted": false,
+            "default_date": null,
+            "complete_through": "2024-01-01"
+          }
+        ],
+        "workouts": [],
+        "links": [
+          {
+            "observation_id": "a",
+            "facility_id": "a",
+            "obligor_id": "g",
+            "household_id": "household-a",
+            "risk_group_id": "g",
+            "diagnostic_group": "independent-collateral",
+            "known_at": "2023-01-01"
+          }
+        ],
+        "estimation_profile": {
+          "profile_id": "diagnostic-only",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "pd_weighting": "reference_exposure",
+          "lgd_weighting": "ead",
+          "ead_weighting": "episode",
+          "ccf_weighting": "undrawn",
+          "confidence": 0.95,
+          "independence_assumption": "independent_default_units",
+          "minimum_pool_cases": 2
+        }
+      }
+    },
+    "TRADE_RECEIVABLES": {
+      "upstream_contract": {
+        "resource": "trade_receivable_products.json",
+        "variant": "nonrecourse"
+      },
+      "pool_input": {
+        "asset_contracts": [
+          {
+            "asset_id": "a0",
+            "asset_class": "INVOICE",
+            "invoice_id": "i0",
+            "obligor_id": "g",
+            "default_group_id": "g",
+            "seller_id": "seller",
+            "servicer_id": "service",
+            "currency": "EUR",
+            "observed_at": "2023-01-01",
+            "known_at": "2023-01-01",
+            "origination_date": "2022-01-01",
+            "balance_date": "2023-01-01",
+            "principal_balance": 100,
+            "schedule": [
+              {
+                "date": "2023-02-01",
+                "principal_due": 100,
+                "interest_due": 0
+              }
+            ],
+            "overdue_days": 0,
+            "disputed": false,
+            "dilution_reserve": 0,
+            "recourse": "NONE",
+            "collateral_allocations": []
+          }
+        ],
+        "pool_assignments": [
+          {
+            "assignment_id": "m0",
+            "pool_id": "pool",
+            "asset_id": "a0",
+            "known_at": "2023-01-01",
+            "effective_from": "2023-01-01",
+            "effective_until": null,
+            "share": 1,
+            "purchase_price": 100,
+            "purchase_priority": 1
+          }
+        ],
+        "eligibility_profile": {
+          "profile_id": "invoice",
+          "version": "1",
+          "known_at": "2023-01-01",
+          "currency": "EUR",
+          "product_kind": "TRADE_RECEIVABLES",
+          "pool_mode": "STATIC",
+          "allowed_asset_classes": [
+            "INVOICE"
+          ],
+          "maximum_dpd": 30,
+          "exclude_disputed": true,
+          "eligible_recourse": [
+            "NONE",
+            "SELLER"
+          ],
+          "revolving_until": null
+        },
+        "pool_id": "pool",
+        "as_of": "2023-01-01",
+        "information_cutoff": "2023-01-01"
+      },
+      "path_input": {
+        "scenario_contract": {
+          "contract_id": "prior-pool-law",
+          "version": "1",
+          "scenario_ids": [
+            "default",
+            "survive"
+          ],
+          "weights": [
+            0.2,
+            0.8
+          ],
+          "dates": [
+            "2023-01-15",
+            "2023-02-01"
+          ],
+          "currency": "EUR",
+          "probability_measure": "PHYSICAL",
+          "sampling_design": "FIXED_WEIGHTED_SCENARIOS",
+          "conditioning": "not_defaulted_at_index",
+          "default_timing": "BEFORE_DUE",
+          "prepayment_timing": "AFTER_COUPON",
+          "dilution_treatment": "PROPORTIONAL_REMAINING_SCHEDULE",
+          "reinvestment_funding": "PRINCIPAL_CASH_ONLY",
+          "initial_reinvestment_cash": 0
+        },
+        "obligor_paths": [
+          {
+            "scenario_id": "default",
+            "default_group_id": "g",
+            "date": "2023-01-15",
+            "conditional_pd": 0.2,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "default",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "survive",
+            "default_group_id": "g",
+            "date": "2023-01-15",
+            "conditional_pd": 0.2,
+            "default_channel": "default-g"
+          },
+          {
+            "scenario_id": "survive",
+            "default_group_id": "g",
+            "date": "2023-02-01",
+            "conditional_pd": 0,
+            "default_channel": "default-g"
+          }
+        ],
+        "asset_paths": [
+          {
+            "scenario_id": "default",
+            "asset_id": "a0",
+            "date": "2023-01-15",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a0",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 10,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "default",
+            "asset_id": "a0",
+            "date": "2023-02-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a0",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 10,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "survive",
+            "asset_id": "a0",
+            "date": "2023-01-15",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a0",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 10,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          },
+          {
+            "scenario_id": "survive",
+            "asset_id": "a0",
+            "date": "2023-02-01",
+            "conditional_prepayment_probability": 0,
+            "prepayment_channel": "prepay-a0",
+            "dilution_fraction": 0,
+            "recovery_fraction": 0.4,
+            "recovery_delay_days": 10,
+            "recovery_cost": 5,
+            "servicing_cost": 0,
+            "interest_multiplier": 1,
+            "overdue_days": 0,
+            "disputed": false
+          }
+        ],
+        "shared_innovations": [
+          {
+            "scenario_id": "default",
+            "date": "2023-01-15",
+            "channel_id": "default-g",
+            "uniform": 0.1
+          },
+          {
+            "scenario_id": "default",
+            "date": "2023-01-15",
+            "channel_id": "prepay-a0",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "default",
+            "date": "2023-02-01",
+            "channel_id": "default-g",
+            "uniform": 0.1
+          },
+          {
+            "scenario_id": "default",
+            "date": "2023-02-01",
+            "channel_id": "prepay-a0",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-01-15",
+            "channel_id": "default-g",
+            "uniform": 0.9
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-01-15",
+            "channel_id": "prepay-a0",
+            "uniform": 0.5
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-02-01",
+            "channel_id": "default-g",
+            "uniform": 0.9
+          },
+          {
+            "scenario_id": "survive",
+            "date": "2023-02-01",
+            "channel_id": "prepay-a0",
+            "uniform": 0.5
+          }
+        ]
+      },
+      "servicing": [
+        {
+          "event_id": "observed-dilution",
+          "asset_id": "a0",
+          "date": "2023-01-15",
+          "known_at": "2023-01-15",
+          "sequence": 1,
+          "currency": "EUR",
+          "event_type": "DILUTION",
+          "opening_principal": 100,
+          "closing_principal": 90,
+          "scheduled_principal": 0,
+          "prepayment_principal": 0,
+          "default_ead": 0,
+          "dilution": 10,
+          "interest": 0,
+          "recovery_gross": 0,
+          "workout_cost": 0,
+          "servicing_cost": 0,
+          "default_event_id": null
+        },
+        {
+          "event_id": "observed-payment",
+          "asset_id": "a0",
+          "date": "2023-02-01",
+          "known_at": "2023-02-01",
+          "sequence": 1,
+          "currency": "EUR",
+          "event_type": "PAYMENT",
+          "opening_principal": 90,
+          "closing_principal": 0,
+          "scheduled_principal": 90,
+          "prepayment_principal": 0,
+          "default_ead": 0,
+          "dilution": 0,
+          "interest": 0,
+          "recovery_gross": 0,
+          "workout_cost": 0,
+          "servicing_cost": 0,
+          "default_event_id": null
+        }
+      ],
+      "allocations": [
+        {
+          "allocation_id": "allocation-observed-dilution",
+          "event_id": "observed-dilution",
+          "pool_id": "pool",
+          "share": 1,
+          "known_at": "2023-01-15",
+          "amounts": {
+            "scheduled_principal": 0,
+            "prepayment_principal": 0,
+            "default_ead": 0,
+            "dilution": 10,
+            "interest": 0,
+            "recovery_gross": 0,
+            "workout_cost": 0,
+            "servicing_cost": 0
+          }
+        },
+        {
+          "allocation_id": "allocation-observed-payment",
+          "event_id": "observed-payment",
+          "pool_id": "pool",
+          "share": 1,
+          "known_at": "2023-02-01",
+          "amounts": {
+            "scheduled_principal": 90,
+            "prepayment_principal": 0,
+            "default_ead": 0,
+            "dilution": 0,
+            "interest": 0,
+            "recovery_gross": 0,
+            "workout_cost": 0,
+            "servicing_cost": 0
+          }
+        }
+      ],
+      "pool_accounts": [
+        {
+          "date": "2023-01-15",
+          "known_at": "2023-01-15",
+          "currency": "EUR",
+          "opening_cash": 0,
+          "closing_cash": 0,
+          "purchase_cash": 0,
+          "sale_cash": 0,
+          "external_injection": 0,
+          "external_distribution": 0,
+          "fees_paid": 0,
+          "tranche_interest_paid": 0,
+          "tranche_principal_paid": 0,
+          "equity_paid": 0
+        },
+        {
+          "date": "2023-02-01",
+          "known_at": "2023-02-01",
+          "currency": "EUR",
+          "opening_cash": 0,
+          "closing_cash": 90,
+          "purchase_cash": 0,
+          "sale_cash": 0,
+          "external_injection": 0,
+          "external_distribution": 0,
+          "fees_paid": 0,
+          "tranche_interest_paid": 0,
+          "tranche_principal_paid": 0,
+          "equity_paid": 0
+        }
+      ],
+      "coverage": [
+        {
+          "asset_id": "a0",
+          "complete": true,
+          "complete_through": "2023-02-01",
+          "known_at": "2024-01-02",
+          "currency": "EUR",
+          "target": {
+            "event": "default",
+            "horizon": 31,
+            "time_unit": "days",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "not_defaulted_at_index"
+          }
+        }
+      ],
+      "design": {
+        "model_id": "TRADE_RECEIVABLES-collateral-risk",
+        "model_version": "1",
+        "parameter_version": "1",
+        "data_fingerprint": "independent-dated-servicing-ledger",
+        "population_id": "TRADE_RECEIVABLES",
+        "split_id": "2023-holdout",
+        "prediction_origin": "HOLDOUT",
+        "evaluation_cutoff": "2024-01-02",
+        "forecast_known_at": "2023-01-01",
+        "currency": "EUR",
+        "target": {
+          "event": "default",
+          "horizon": 31,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "not_defaulted_at_index"
+        },
+        "default_definition": "FIRST_DEFAULT_BEFORE_TERMINAL_CONTRACT_EXIT"
+      },
+      "cash_contract": {
+        "as_of": "2023-01-01",
+        "known_at": "2023-01-01",
+        "currency": "EUR",
+        "opening_cash": 0
+      },
+      "retail_collateral": null
+    }
+  }
+}

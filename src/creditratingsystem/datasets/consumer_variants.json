@@ -1,0 +1,383 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "unsecured_installment",
+  "snapshots": {
+    "applications": [
+      {
+        "application_id": "new",
+        "customer_id": "customer_new",
+        "product_id": "unsecured_installment",
+        "population_id": "synthetic_new",
+        "application_at": "2024-02-01",
+        "information_cutoff": "2024-02-01",
+        "requested_terms": {
+          "amount": 10000,
+          "currency": "EUR",
+          "term_months": 36
+        }
+      },
+      {
+        "application_id": "existing",
+        "customer_id": "customer_existing",
+        "product_id": "unsecured_installment",
+        "population_id": "synthetic_existing",
+        "application_at": "2024-02-01",
+        "information_cutoff": "2024-02-01",
+        "requested_terms": {
+          "amount": 10000,
+          "currency": "EUR",
+          "term_months": 36
+        }
+      },
+      {
+        "application_id": "consolidation",
+        "customer_id": "customer_consolidation",
+        "product_id": "unsecured_installment",
+        "population_id": "synthetic_consolidation",
+        "application_at": "2024-02-01",
+        "information_cutoff": "2024-02-01",
+        "requested_terms": {
+          "amount": 10000,
+          "currency": "EUR",
+          "term_months": 36
+        }
+      }
+    ],
+    "feature_records": [
+      {
+        "application_id": "existing",
+        "feature": "internal_arrears",
+        "value": 0,
+        "observed_at": "2024-01-31",
+        "known_at": "2024-02-01",
+        "source_id": "actual_bank_history"
+      },
+      {
+        "application_id": "new",
+        "feature": "internal_arrears",
+        "value": 0,
+        "observed_at": "2024-02-02",
+        "known_at": "2024-02-02",
+        "source_id": "future_record"
+      }
+    ],
+    "required_features": [
+      "internal_arrears"
+    ]
+  },
+  "consolidation": {
+    "entities": [
+      {
+        "entity_id": "borrower",
+        "entity_type": "CUSTOMER",
+        "known_at": "2024-01-01"
+      },
+      {
+        "entity_id": "household",
+        "entity_type": "HOUSEHOLD",
+        "known_at": "2024-01-01"
+      },
+      {
+        "entity_id": "old1",
+        "entity_type": "FACILITY",
+        "known_at": "2024-01-01"
+      },
+      {
+        "entity_id": "old2",
+        "entity_type": "FACILITY",
+        "known_at": "2024-01-01"
+      },
+      {
+        "entity_id": "new",
+        "entity_type": "FACILITY",
+        "known_at": "2024-01-01"
+      }
+    ],
+    "relationships": [
+      {
+        "relationship_id": "member",
+        "release_seq": 1,
+        "source_id": "borrower",
+        "target_id": "household",
+        "role": "MEMBER_OF",
+        "effective_from": "2024-01-01",
+        "effective_until": null,
+        "known_at": "2024-01-01",
+        "liability_fraction": null,
+        "budget_share": null,
+        "evidence_reference": "synthetic signed facility"
+      },
+      {
+        "relationship_id": "borrow_old1",
+        "release_seq": 1,
+        "source_id": "borrower",
+        "target_id": "old1",
+        "role": "BORROWER_ON",
+        "effective_from": "2024-01-01",
+        "effective_until": null,
+        "known_at": "2024-01-01",
+        "liability_fraction": 1,
+        "budget_share": 1,
+        "evidence_reference": "synthetic signed facility"
+      },
+      {
+        "relationship_id": "borrow_old2",
+        "release_seq": 1,
+        "source_id": "borrower",
+        "target_id": "old2",
+        "role": "BORROWER_ON",
+        "effective_from": "2024-01-01",
+        "effective_until": null,
+        "known_at": "2024-01-01",
+        "liability_fraction": 1,
+        "budget_share": 1,
+        "evidence_reference": "synthetic signed facility"
+      },
+      {
+        "relationship_id": "borrow_new",
+        "release_seq": 1,
+        "source_id": "borrower",
+        "target_id": "new",
+        "role": "BORROWER_ON",
+        "effective_from": "2024-02-02",
+        "effective_until": null,
+        "known_at": "2024-02-02",
+        "liability_fraction": 1,
+        "budget_share": 1,
+        "evidence_reference": "synthetic signed facility"
+      }
+    ],
+    "obligations": [
+      {
+        "facility_id": "old1",
+        "release_seq": 1,
+        "known_at": "2024-01-31",
+        "observed_at": "2024-01-31",
+        "source_id": "bank",
+        "debt_stock": 6000,
+        "scheduled_debt_service": 300,
+        "currency": "EUR",
+        "period": "month",
+        "status": "ACTIVE"
+      },
+      {
+        "facility_id": "old1",
+        "release_seq": 2,
+        "known_at": "2024-02-03",
+        "observed_at": "2024-02-02",
+        "source_id": "bank",
+        "debt_stock": 0,
+        "scheduled_debt_service": 0,
+        "currency": "EUR",
+        "period": "month",
+        "status": "CLOSED"
+      },
+      {
+        "facility_id": "old2",
+        "release_seq": 1,
+        "known_at": "2024-01-31",
+        "observed_at": "2024-01-31",
+        "source_id": "bank",
+        "debt_stock": 4000,
+        "scheduled_debt_service": 200,
+        "currency": "EUR",
+        "period": "month",
+        "status": "ACTIVE"
+      },
+      {
+        "facility_id": "old2",
+        "release_seq": 2,
+        "known_at": "2024-02-03",
+        "observed_at": "2024-02-02",
+        "source_id": "bank",
+        "debt_stock": 0,
+        "scheduled_debt_service": 0,
+        "currency": "EUR",
+        "period": "month",
+        "status": "CLOSED"
+      },
+      {
+        "facility_id": "new",
+        "release_seq": 1,
+        "known_at": "2024-02-02",
+        "observed_at": "2024-02-02",
+        "source_id": "bank",
+        "debt_stock": 10000,
+        "scheduled_debt_service": 350,
+        "currency": "EUR",
+        "period": "month",
+        "status": "ACTIVE"
+      }
+    ],
+    "coverage": {
+      "status": "COMPLETE",
+      "sources": [
+        "bank"
+      ],
+      "known_at": "2024-01-01"
+    },
+    "cutoffs": [
+      "2024-02-01",
+      "2024-02-02",
+      "2024-02-03"
+    ]
+  },
+  "prepayment": {
+    "contract": {
+      "facility_id": "paid_early",
+      "currency": "EUR",
+      "as_of": "2024-01-01",
+      "drawn_principal": 10000,
+      "credit_limit": 10000,
+      "accrued_interest": 0
+    },
+    "events": [
+      {
+        "event_id": "full_principal",
+        "event_date": "2024-01-31",
+        "known_at": "2024-01-01",
+        "sequence": 0,
+        "kind": "PRINCIPAL_REPAYMENT",
+        "amount": 10000
+      },
+      {
+        "event_id": "settled_interest",
+        "event_date": "2024-01-31",
+        "known_at": "2024-01-01",
+        "sequence": 1,
+        "kind": "INTEREST_PAYMENT",
+        "amount": 49.31506849315068
+      }
+    ],
+    "annual_interest_rates": [
+      0.06,
+      0.06
+    ],
+    "period_end_dates": [
+      "2024-01-31",
+      "2024-02-29"
+    ],
+    "day_count": "ACT/365F",
+    "default_timing": "AFTER_PERIOD_END_EVENTS",
+    "allow_overlimit": false,
+    "currency": "EUR"
+  },
+  "labels": {
+    "applications": [
+      {
+        "application_id": "new",
+        "customer_id": "customer_new",
+        "product_id": "unsecured_installment",
+        "population_id": "synthetic_new",
+        "application_at": "2024-02-01",
+        "information_cutoff": "2024-02-01",
+        "requested_terms": {
+          "amount": 10000,
+          "currency": "EUR",
+          "term_months": 36
+        }
+      },
+      {
+        "application_id": "existing",
+        "customer_id": "customer_existing",
+        "product_id": "unsecured_installment",
+        "population_id": "synthetic_existing",
+        "application_at": "2024-02-01",
+        "information_cutoff": "2024-02-01",
+        "requested_terms": {
+          "amount": 10000,
+          "currency": "EUR",
+          "term_months": 36
+        }
+      },
+      {
+        "application_id": "consolidation",
+        "customer_id": "customer_consolidation",
+        "product_id": "unsecured_installment",
+        "population_id": "synthetic_consolidation",
+        "application_at": "2024-02-01",
+        "information_cutoff": "2024-02-01",
+        "requested_terms": {
+          "amount": 10000,
+          "currency": "EUR",
+          "term_months": 36
+        }
+      }
+    ],
+    "decisions": [
+      {
+        "decision_id": "d_new",
+        "application_id": "new",
+        "status": "approved",
+        "decided_at": "2024-02-01",
+        "known_at": "2024-02-01",
+        "accepted_at": "2024-02-02",
+        "accepted_known_at": "2024-02-02"
+      },
+      {
+        "decision_id": "d_existing",
+        "application_id": "existing",
+        "status": "approved",
+        "decided_at": "2024-02-01",
+        "known_at": "2024-02-01",
+        "accepted_at": "2024-02-02",
+        "accepted_known_at": "2024-02-02"
+      },
+      {
+        "decision_id": "d_consolidation",
+        "application_id": "consolidation",
+        "status": "approved",
+        "decided_at": "2024-02-01",
+        "known_at": "2024-02-01",
+        "accepted_at": "2024-02-02",
+        "accepted_known_at": "2024-02-02"
+      }
+    ],
+    "bookings": [
+      {
+        "application_id": "new",
+        "facility_id": "facility_new",
+        "booked_at": "2024-02-02",
+        "known_at": "2024-02-02",
+        "first_draw_at": "2024-02-03",
+        "first_draw_known_at": "2024-02-03",
+        "followup_end": "2024-10-01"
+      },
+      {
+        "application_id": "existing",
+        "facility_id": "facility_existing",
+        "booked_at": "2024-02-02",
+        "known_at": "2024-02-02",
+        "first_draw_at": "2024-02-03",
+        "first_draw_known_at": "2024-02-03",
+        "followup_end": "2024-10-01"
+      },
+      {
+        "application_id": "consolidation",
+        "facility_id": "facility_consolidation",
+        "booked_at": "2024-02-02",
+        "known_at": "2024-02-02",
+        "first_draw_at": "2024-02-03",
+        "first_draw_known_at": "2024-02-03",
+        "followup_end": "2024-03-03"
+      }
+    ],
+    "default_events": [
+      {
+        "event_id": "first_payment_default",
+        "facility_id": "facility_new",
+        "default_at": "2024-03-03",
+        "known_at": "2024-03-03"
+      },
+      {
+        "event_id": "later_default",
+        "facility_id": "facility_existing",
+        "default_at": "2024-09-01",
+        "known_at": "2024-09-01"
+      }
+    ],
+    "exits": [],
+    "horizon_days": 365,
+    "evaluation_cutoff": "2024-10-01"
+  }
+}

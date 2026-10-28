@@ -1,0 +1,270 @@
+{
+  "data_origin": "SYNTHETIC",
+  "product": "COUNTERPARTY_EXPOSURE",
+  "subject_id": "COUNTERPARTY_EXPOSURE-position",
+  "lineage_config": {
+    "origin": "SYNTHETIC",
+    "left_schema": {
+      "version": "1.0",
+      "columns": {
+        "record_id": {
+          "type": "string"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "product_id": {
+          "type": "string"
+        },
+        "as_of": {
+          "type": "date"
+        },
+        "known_at": {
+          "type": "date"
+        },
+        "balance": {
+          "type": "number",
+          "unit": "EUR"
+        }
+      },
+      "primary_key": "record_id"
+    },
+    "right_schema": {
+      "version": "1.0",
+      "columns": {
+        "entity_id": {
+          "type": "string"
+        },
+        "release_id": {
+          "type": "string"
+        },
+        "observed_at": {
+          "type": "date"
+        },
+        "available_at": {
+          "type": "date"
+        },
+        "x": {
+          "type": "number",
+          "unit": "score"
+        }
+      },
+      "primary_key": "release_id"
+    },
+    "controls": {
+      "record_ids": [
+        "COUNTERPARTY_EXPOSURE-position-source"
+      ],
+      "total_weight": 1,
+      "total_balance": 80,
+      "product_ids": [
+        "COUNTERPARTY_EXPOSURE"
+      ]
+    },
+    "cutoffs": [
+      {
+        "name": "original",
+        "known_at": "2024-01-01",
+        "revision": "original"
+      }
+    ],
+    "vintage": "2024-01"
+  },
+  "benchmark": {
+    "internal_ratings": [
+      {
+        "prediction_id": "COUNTERPARTY_EXPOSURE-position-jan15",
+        "entity_id": "COUNTERPARTY_EXPOSURE-position",
+        "cluster_id": "COUNTERPARTY_EXPOSURE-position",
+        "segment": "COUNTERPARTY_EXPOSURE",
+        "as_of": "2024-01-15",
+        "forecast_known_at": "2024-01-15",
+        "horizon_end": "2024-02-14",
+        "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+        "model_version": "v1",
+        "parameter_version": "1",
+        "rating_unit_id": "COUNTERPARTY_EXPOSURE-position",
+        "scale_id": "illustrative-internal",
+        "scale_version": "1",
+        "rating_status": "ACTIVE",
+        "grade": "MID",
+        "rating_type": "issuer",
+        "support_concept": "standalone",
+        "currency": "EUR",
+        "rating_philosophy": "PIT"
+      }
+    ],
+    "benchmark_records": [],
+    "scale_mapping": {
+      "mapping_id": "unavailable-external-map",
+      "version": "1",
+      "reference": "No external rating supplied; identity schema solely declares potential comparison scale",
+      "known_at": "2023-12-31",
+      "common_grades": [
+        "LOW",
+        "MID",
+        "HIGH"
+      ],
+      "internal": {
+        "scale_id": "illustrative-internal",
+        "scale_version": "1",
+        "grades": [
+          "LOW",
+          "MID",
+          "HIGH"
+        ]
+      },
+      "benchmark": {
+        "scale_id": "external-unsupplied",
+        "scale_version": "1",
+        "grades": [
+          "LOW",
+          "MID",
+          "HIGH"
+        ]
+      },
+      "internal_to_common": {
+        "LOW": "LOW",
+        "MID": "MID",
+        "HIGH": "HIGH"
+      },
+      "benchmark_to_common": {
+        "LOW": "LOW",
+        "MID": "MID",
+        "HIGH": "HIGH"
+      }
+    },
+    "matching_policy": {
+      "benchmark_origin": "EXTERNAL_JUDGEMENT",
+      "method": "latest_known",
+      "watch_policy": "include",
+      "kappa_weighting": "quadratic",
+      "provider_id": "NOT_SUPPLIED",
+      "max_age_days": 365
+    },
+    "design": {
+      "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+      "model_version": "v1",
+      "parameter_version": "1",
+      "data_fingerprint": "actual-2024-counterparty-claim-ledger",
+      "population_id": "COUNTERPARTY_EXPOSURE-position",
+      "split_id": "heldout2024",
+      "prediction_origin": "HOLDOUT",
+      "evaluation_cutoff": "2024-05-02",
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "currency": "EUR"
+    },
+    "uncertainty": "none"
+  },
+  "support": {
+    "records": [
+      {
+        "prediction_id": "COUNTERPARTY_EXPOSURE-position-jan15",
+        "entity_id": "COUNTERPARTY_EXPOSURE-position",
+        "cluster_id": "COUNTERPARTY_EXPOSURE-position",
+        "segment": "COUNTERPARTY_EXPOSURE",
+        "as_of": "2024-01-15",
+        "forecast_known_at": "2024-01-15",
+        "horizon_end": "2024-02-14",
+        "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+        "model_version": "v1",
+        "parameter_version": "1",
+        "stage_predictions": {
+          "entity": 0.5,
+          "transfer": 0,
+          "joint": 0,
+          "final": 0.5,
+          "unsupported_counterfactual": 0.5
+        },
+        "stage_outcomes": {
+          "entity": {
+            "value": 1,
+            "known_at": "2024-02-15",
+            "complete_through": "2024-02-14",
+            "event_ids": [
+              "COUNTERPARTY_EXPOSURE-position-default"
+            ],
+            "event_times": [
+              "2024-02-01"
+            ]
+          },
+          "final": {
+            "value": 1,
+            "known_at": "2024-02-15",
+            "complete_through": "2024-02-14",
+            "event_ids": [
+              "COUNTERPARTY_EXPOSURE-position-default"
+            ],
+            "event_times": [
+              "2024-02-01"
+            ]
+          }
+        }
+      }
+    ],
+    "stage_contract": {
+      "entity": {
+        "kind": "binary",
+        "observable": true,
+        "event_definition": "observed-counterparty-default",
+        "reference": "Same actual February1 default; no transfer restriction evidence or parent-support counterfactual"
+      },
+      "transfer": {
+        "kind": "binary",
+        "observable": false,
+        "event_definition": "not-observed-transfer",
+        "reference": "Same actual February1 default; no transfer restriction evidence or parent-support counterfactual"
+      },
+      "joint": {
+        "kind": "binary",
+        "observable": false,
+        "event_definition": "not-observed-joint",
+        "reference": "Same actual February1 default; no transfer restriction evidence or parent-support counterfactual"
+      },
+      "final": {
+        "kind": "binary",
+        "observable": true,
+        "event_definition": "observed-counterparty-default",
+        "reference": "Same actual February1 default; no transfer restriction evidence or parent-support counterfactual"
+      },
+      "unsupported_counterfactual": {
+        "kind": "binary",
+        "observable": false,
+        "event_definition": "not-observed-unsupported_counterfactual",
+        "reference": "Same actual February1 default; no transfer restriction evidence or parent-support counterfactual"
+      }
+    },
+    "union_contract": {
+      "component_a": "entity",
+      "component_b": "transfer",
+      "joint": "joint",
+      "union": "final"
+    },
+    "design": {
+      "model_id": "COUNTERPARTY_EXPOSURE-monitor",
+      "model_version": "v1",
+      "parameter_version": "1",
+      "data_fingerprint": "actual-2024-counterparty-claim-ledger",
+      "population_id": "COUNTERPARTY_EXPOSURE-position",
+      "split_id": "heldout2024",
+      "prediction_origin": "HOLDOUT",
+      "evaluation_cutoff": "2024-05-02",
+      "target": {
+        "event": "default",
+        "horizon": 30,
+        "time_unit": "days",
+        "probability_measure": "PHYSICAL",
+        "conditioning": "PIT"
+      },
+      "currency": "EUR"
+    },
+    "uncertainty": "none"
+  },
+  "interpretation": "Transfer overlay disabled in this domestic-EUR scenario, not estimated zero transfer risk. No separately observed transfer or support counterfactual labels; these stages remain non-estimable. External ratings absent, not fabricated."
+}

@@ -1,0 +1,93 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "insurer_exposure-life-scorecard",
+    "model_version": "1",
+    "method_id": "scorecard.fit_scorecard",
+    "feature_order": [
+      "risk_ratio"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -2.882371587222937,
+        0.2956822431249959
+      ],
+      "covariance": [
+        [
+          0.10350662442396236,
+          -0.0267017089093695
+        ],
+        [
+          -0.0267017089093695,
+          0.10350662442396232
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 1,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "data_fingerprint": "insurer_exposure-life-historical-weighted-default-counts",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 6,
+      "log_likelihood": -42.158309465586434,
+      "deviance": 84.31661893117287,
+      "aic": 88.31661893117287,
+      "bic": 94.91325366426894,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 200.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 1.0000000000000002,
+      "scaled_gradient": 1.822107423280426e-14,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        -5.861977570020827e-14,
+        3.907985046680551e-14
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "scorecard_spec": {
+      "neutral_profile": [
+        -1.0
+      ],
+      "feature_kinds": [
+        "expert"
+      ],
+      "design_status": "CALLER_FROZEN",
+      "design_fingerprint": "44181ffd92cffe3c2f5b762aafa895784652e353d432a6becfbe960e6a207b30"
+    }
+  },
+  "sha256": "236f030db9968ea306b36849cb179d5524fc88f5d8e5b6695ab754c2bbc451f3"
+}

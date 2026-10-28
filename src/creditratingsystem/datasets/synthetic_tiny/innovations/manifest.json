@@ -1,0 +1,103 @@
+{
+  "format": "creditratingsystem-u32le-v1",
+  "authoring_method": "NumPy PCG64, independent stream SeedSequence [20261013, stream index]; no outcome reselection",
+  "uniform_mapping": "(uint32 + 0.5) / 2**32",
+  "streams": {
+    "macro_history": {
+      "file": "macro_history.u32le",
+      "shape": [
+        36,
+        10
+      ],
+      "sha256": "34f6d197c11be91bc9a2396760384aae24b9a2072d970eaa50c725b475cb9c45"
+    },
+    "macro_revision": {
+      "file": "macro_revision.u32le",
+      "shape": [
+        36,
+        8
+      ],
+      "sha256": "4cffe2f20945a8af2ca625c0403bdfe5933927e1c14bbd267057040cf06dbd6b"
+    },
+    "macro_paths": {
+      "file": "macro_paths.u32le",
+      "shape": [
+        12288,
+        10
+      ],
+      "sha256": "b5fccf3a45b781dddf518f8a021ea8b3cf061e709cd59c942e76a211e4d1173c"
+    },
+    "obligor_static": {
+      "file": "obligor_static.u32le",
+      "shape": [
+        64,
+        16
+      ],
+      "sha256": "eeabf7338f8bdd5d62f0fa2d04b3301428c233a40ff423ea71486aca7e8a2add"
+    },
+    "obligor_year": {
+      "file": "obligor_year.u32le",
+      "shape": [
+        192,
+        16
+      ],
+      "sha256": "9f0f3cbe04714da7f71433c7958328e1351ee9f7e802d1456aa29d2598893e07"
+    },
+    "obligor_groups": {
+      "file": "obligor_groups.u32le",
+      "shape": [
+        48,
+        2
+      ],
+      "sha256": "afa8de981cb9edeb21c448e9fdc60483ee2155fd5ee84ebb8af74fc9e5e5d3e1"
+    },
+    "facilities": {
+      "file": "facilities.u32le",
+      "shape": [
+        64,
+        16
+      ],
+      "sha256": "39ea9fdc5a2b6d1a964f1484a54e4874d6eb78cbe2c2ac8847276645e88e35d1"
+    },
+    "country_transfer": {
+      "file": "country_transfer.u32le",
+      "shape": [
+        18,
+        2
+      ],
+      "sha256": "51616046fc8cb96df213eb625f52a15533095b5f2d8c8654e2c7663b11bbc0bc"
+    },
+    "retail_households": {
+      "file": "retail_households.u32le",
+      "shape": [
+        160,
+        16
+      ],
+      "sha256": "0eb7b6aac988366b0fa3dfa49a2ba6a93fba4266057705aa89053d4c238dfa0e"
+    },
+    "retail_apps": {
+      "file": "retail_apps.u32le",
+      "shape": [
+        320,
+        24
+      ],
+      "sha256": "e03dd54db763c6ad7e8a22e398be738d022c1ff07b95fd4bf92bf265113babbd"
+    },
+    "retail_account": {
+      "file": "retail_account.u32le",
+      "shape": [
+        7680,
+        8
+      ],
+      "sha256": "e53c0f6d4cb1611eb28252aa311bb2d509c8b617831974fc81e019af46672d08"
+    },
+    "pool_servicing": {
+      "file": "pool_servicing.u32le",
+      "shape": [
+        1920,
+        4
+      ],
+      "sha256": "b25141af2eef289b147f738589e30b431470f3ada0156eb1d021d54053cbc7d1"
+    }
+  }
+}

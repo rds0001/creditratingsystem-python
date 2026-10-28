@@ -1,0 +1,83 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "wholesale-revolver",
+    "model_version": "1",
+    "method_id": "classification.fit_binary_glm",
+    "feature_order": [
+      "net_debt_ebitda"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -2.197224577336217,
+        -9.992007221626409e-16
+      ],
+      "covariance": [
+        [
+          2.777777777777777,
+          -1.111111111111111
+        ],
+        [
+          -1.111111111111111,
+          0.5555555555555556
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 30,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "data_fingerprint": "synthetic-revolver-observed-2020",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 5,
+      "log_likelihood": -6.501659467828965,
+      "deviance": 13.00331893565793,
+      "aic": 17.00331893565793,
+      "bic": 18.99478348276591,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 20.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 5.828427124746189,
+      "scaled_gradient": 6.62009107532606e-16,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        -8.881784197001252e-16,
+        0.0
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    }
+  },
+  "sha256": "e3ce5a11b36f3e5d3eb21b70dc57724ca21db72ae12f545b9484eddab2293fbf"
+}

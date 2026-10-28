@@ -1,0 +1,362 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "RETAIL_OVERDRAFT",
+  "cases": {
+    "authorized_line": {
+      "opening_signed_balance": -800,
+      "credit_limit": 1000,
+      "contractual_demand_reference": "signed-overdraft-agreement-authorized",
+      "transaction_features": {
+        "transactions": [
+          {
+            "transaction_id": "expense",
+            "release_seq": 1,
+            "account_id": "account",
+            "posted_at": "2025-01-02",
+            "value_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "amount": -100,
+            "currency": "EUR",
+            "kind": "ORIGINAL",
+            "category_code": "spend"
+          }
+        ],
+        "daily_balances": [
+          {
+            "balance_id": "2025-01-02",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "closing_balance": -900,
+            "currency": "EUR"
+          },
+          {
+            "balance_id": "2025-01-03",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-03",
+            "known_at": "2025-01-03",
+            "closing_balance": -900,
+            "currency": "EUR"
+          }
+        ],
+        "category_mapping": {
+          "mapping_id": "bank-local",
+          "version": "1",
+          "known_at": "2025-01-01",
+          "categories": {
+            "spend": "CONSUMPTION",
+            "wage": "SALARY"
+          }
+        },
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-01-03",
+          "observed_from": "2025-01-01",
+          "complete_through": "2025-01-03"
+        },
+        "customer_id": "person",
+        "own_account_ids": [
+          "account"
+        ],
+        "as_of": "2025-01-03",
+        "information_cutoff": "2025-01-03",
+        "lookback_days": 2,
+        "currency": "EUR"
+      },
+      "payment_contract": {
+        "obligations": [
+          {
+            "obligation_id": "demand",
+            "account_id": "account",
+            "due_at": "2025-02-01",
+            "known_at": "2025-01-02",
+            "amount": 900,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2025-01-03",
+        "known_at": "2025-01-03",
+        "currency": "EUR"
+      }
+    },
+    "unauthorized_excess": {
+      "opening_signed_balance": -800,
+      "credit_limit": 1000,
+      "contractual_demand_reference": "signed-overdraft-agreement-excess",
+      "transaction_features": {
+        "transactions": [
+          {
+            "transaction_id": "expense",
+            "release_seq": 1,
+            "account_id": "account",
+            "posted_at": "2025-01-02",
+            "value_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "amount": -400,
+            "currency": "EUR",
+            "kind": "ORIGINAL",
+            "category_code": "spend"
+          }
+        ],
+        "daily_balances": [
+          {
+            "balance_id": "2025-01-02",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "closing_balance": -1200,
+            "currency": "EUR"
+          },
+          {
+            "balance_id": "2025-01-03",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-03",
+            "known_at": "2025-01-03",
+            "closing_balance": -1200,
+            "currency": "EUR"
+          }
+        ],
+        "category_mapping": {
+          "mapping_id": "bank-local",
+          "version": "1",
+          "known_at": "2025-01-01",
+          "categories": {
+            "spend": "CONSUMPTION",
+            "wage": "SALARY"
+          }
+        },
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-01-03",
+          "observed_from": "2025-01-01",
+          "complete_through": "2025-01-03"
+        },
+        "customer_id": "person",
+        "own_account_ids": [
+          "account"
+        ],
+        "as_of": "2025-01-03",
+        "information_cutoff": "2025-01-03",
+        "lookback_days": 2,
+        "currency": "EUR"
+      },
+      "payment_contract": {
+        "obligations": [
+          {
+            "obligation_id": "demand",
+            "account_id": "account",
+            "due_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2025-01-03",
+        "known_at": "2025-01-03",
+        "currency": "EUR"
+      }
+    },
+    "salary_linked_received": {
+      "opening_signed_balance": -800,
+      "credit_limit": 1500,
+      "contractual_demand_reference": "signed-overdraft-agreement-salary",
+      "transaction_features": {
+        "transactions": [
+          {
+            "transaction_id": "expense",
+            "release_seq": 1,
+            "account_id": "account",
+            "posted_at": "2025-01-02",
+            "value_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "amount": -400,
+            "currency": "EUR",
+            "kind": "ORIGINAL",
+            "category_code": "spend"
+          },
+          {
+            "transaction_id": "salary",
+            "release_seq": 1,
+            "account_id": "account",
+            "posted_at": "2025-01-02",
+            "value_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "amount": 1000,
+            "currency": "EUR",
+            "kind": "ORIGINAL",
+            "category_code": "wage"
+          }
+        ],
+        "daily_balances": [
+          {
+            "balance_id": "2025-01-02",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "closing_balance": -200,
+            "currency": "EUR"
+          },
+          {
+            "balance_id": "2025-01-03",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-03",
+            "known_at": "2025-01-03",
+            "closing_balance": -200,
+            "currency": "EUR"
+          }
+        ],
+        "category_mapping": {
+          "mapping_id": "bank-local",
+          "version": "1",
+          "known_at": "2025-01-01",
+          "categories": {
+            "spend": "CONSUMPTION",
+            "wage": "SALARY"
+          }
+        },
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-01-03",
+          "observed_from": "2025-01-01",
+          "complete_through": "2025-01-03"
+        },
+        "customer_id": "person",
+        "own_account_ids": [
+          "account"
+        ],
+        "as_of": "2025-01-03",
+        "information_cutoff": "2025-01-03",
+        "lookback_days": 2,
+        "currency": "EUR"
+      },
+      "payment_contract": {
+        "obligations": [
+          {
+            "obligation_id": "demand",
+            "account_id": "account",
+            "due_at": "2025-02-01",
+            "known_at": "2025-01-02",
+            "amount": 200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2025-01-03",
+        "known_at": "2025-01-03",
+        "currency": "EUR"
+      }
+    },
+    "salary_linked_missing": {
+      "opening_signed_balance": -800,
+      "credit_limit": 1500,
+      "contractual_demand_reference": "signed-overdraft-agreement-salary",
+      "transaction_features": {
+        "transactions": [
+          {
+            "transaction_id": "expense",
+            "release_seq": 1,
+            "account_id": "account",
+            "posted_at": "2025-01-02",
+            "value_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "amount": -400,
+            "currency": "EUR",
+            "kind": "ORIGINAL",
+            "category_code": "spend"
+          }
+        ],
+        "daily_balances": [
+          {
+            "balance_id": "2025-01-02",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-02",
+            "known_at": "2025-01-02",
+            "closing_balance": -1200,
+            "currency": "EUR"
+          },
+          {
+            "balance_id": "2025-01-03",
+            "release_seq": 1,
+            "account_id": "account",
+            "observed_at": "2025-01-03",
+            "known_at": "2025-01-03",
+            "closing_balance": -1200,
+            "currency": "EUR"
+          }
+        ],
+        "category_mapping": {
+          "mapping_id": "bank-local",
+          "version": "1",
+          "known_at": "2025-01-01",
+          "categories": {
+            "spend": "CONSUMPTION",
+            "wage": "SALARY"
+          }
+        },
+        "coverage": {
+          "status": "COMPLETE",
+          "known_at": "2025-01-03",
+          "observed_from": "2025-01-01",
+          "complete_through": "2025-01-03"
+        },
+        "customer_id": "person",
+        "own_account_ids": [
+          "account"
+        ],
+        "as_of": "2025-01-03",
+        "information_cutoff": "2025-01-03",
+        "lookback_days": 2,
+        "currency": "EUR"
+      },
+      "payment_contract": {
+        "obligations": [
+          {
+            "obligation_id": "demand",
+            "account_id": "account",
+            "due_at": "2025-02-01",
+            "known_at": "2025-01-02",
+            "amount": 1200,
+            "currency": "EUR"
+          }
+        ],
+        "payments": [],
+        "as_of": "2025-01-03",
+        "known_at": "2025-01-03",
+        "currency": "EUR"
+      }
+    }
+  },
+  "ccf_episodes": {
+    "positive_undrawn": {
+      "reference_drawn": 800,
+      "reference_limit": 1500,
+      "ead_at_default": 1200,
+      "reference_date": "2024-01-01",
+      "reference_known_at": "2024-01-01",
+      "default_date": "2024-02-01",
+      "default_known_at": "2024-02-01",
+      "evaluation_cutoff": "2024-02-01",
+      "currency": "EUR"
+    },
+    "no_available_undrawn": {
+      "reference_drawn": 1200,
+      "reference_limit": 1000,
+      "ead_at_default": 1250,
+      "reference_date": "2024-01-01",
+      "reference_known_at": "2024-01-01",
+      "default_date": "2024-02-01",
+      "default_known_at": "2024-02-01",
+      "evaluation_cutoff": "2024-02-01",
+      "currency": "EUR"
+    }
+  }
+}

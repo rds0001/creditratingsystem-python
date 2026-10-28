@@ -1,0 +1,525 @@
+{
+  "product": "FUND_FINANCE",
+  "data_origin": "SYNTHETIC",
+  "target": {
+    "event": "default",
+    "horizon": 1,
+    "time_unit": "years",
+    "probability_measure": "PHYSICAL",
+    "conditioning": "PIT"
+  },
+  "rating_scale": {
+    "schema_version": "1.0",
+    "scale_id": "synthetic-corporate",
+    "version": "1",
+    "boundary_convention": "left_closed",
+    "grades": [
+      {
+        "grade": "A",
+        "lower": 0,
+        "upper": 0.2,
+        "representative_pd": 0.1,
+        "is_default": false
+      },
+      {
+        "grade": "B",
+        "lower": 0.2,
+        "upper": 1,
+        "representative_pd": 0.4,
+        "is_default": false
+      }
+    ]
+  },
+  "precision_contract": {
+    "pd_decimal_places": 6,
+    "raw_fit_oracle_absolute_tolerance": 1e-07
+  },
+  "scenario_ids": [
+    "normal",
+    "stress"
+  ],
+  "scenario_weights": [
+    0.8,
+    0.2
+  ],
+  "scenario_law": "Explicit synthetic finite physical law for underlying asset loss only; not a fund-default probability",
+  "cases": [
+    {
+      "variant": "NAV_backed",
+      "case_id": "fund-NAV_backed",
+      "borrowing_base_basis": "ELIGIBLE_NAV",
+      "legal_claim": "ELIGIBLE_ASSET_SECURITY",
+      "assets": [
+        {
+          "asset_id": "asset-A",
+          "value": 60,
+          "stress_price": 0.5,
+          "eligible": true,
+          "haircut": 0.8
+        },
+        {
+          "asset_id": "asset-B",
+          "value": 40,
+          "stress_price": 0.8,
+          "eligible": true,
+          "haircut": 0.6
+        }
+      ],
+      "commitments": [
+        {
+          "investor_id": "investor-A",
+          "committed": 80,
+          "paid_in": 30,
+          "eligible": true,
+          "haircut": 0.8,
+          "stress_performing": false,
+          "legal_reference": "Enforceable uncalled commitment assigned to lender"
+        },
+        {
+          "investor_id": "investor-B",
+          "committed": 40,
+          "paid_in": 10,
+          "eligible": false,
+          "haircut": 0.7,
+          "stress_performing": true,
+          "legal_reference": "Conditional subscription excluded until enforceability established"
+        }
+      ],
+      "advance_rate": 0.5,
+      "drawn": 30,
+      "cash": 5,
+      "distributions": 6,
+      "operating_cost": 0,
+      "stress_redemptions": 8,
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          98,
+          2,
+          90,
+          10
+        ],
+        "feature_order": [
+          "borrowing_base_utilization"
+        ],
+        "training": {
+          "data_fingerprint": "fund-NAV_backed-historic-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.02,
+          0.02,
+          0.1,
+          0.1
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          98,
+          2,
+          90,
+          10
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic NAV_backed fund/default holdout, not underlying asset loss labels",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "preprocessor_training": [
+        {
+          "borrowing_base_utilization": 0.5
+        },
+        {
+          "borrowing_base_utilization": 0.5
+        },
+        {
+          "borrowing_base_utilization": 1.5
+        },
+        {
+          "borrowing_base_utilization": 1.5
+        }
+      ],
+      "reference": {
+        "initial_base": 36,
+        "stress_base": 21.6,
+        "stress_margin": 8.4,
+        "stress_liquidity_gap": 5.4,
+        "underlying_stress_loss": 38
+      }
+    },
+    {
+      "variant": "subscription_line",
+      "case_id": "fund-subscription_line",
+      "borrowing_base_basis": "UNCALLED_COMMITMENTS",
+      "legal_claim": "ASSIGNED_UNCALLED_COMMITMENTS",
+      "assets": [
+        {
+          "asset_id": "asset-A",
+          "value": 60,
+          "stress_price": 0.5,
+          "eligible": true,
+          "haircut": 0.8
+        },
+        {
+          "asset_id": "asset-B",
+          "value": 40,
+          "stress_price": 0.8,
+          "eligible": true,
+          "haircut": 0.6
+        }
+      ],
+      "commitments": [
+        {
+          "investor_id": "investor-A",
+          "committed": 80,
+          "paid_in": 30,
+          "eligible": true,
+          "haircut": 0.8,
+          "stress_performing": false,
+          "legal_reference": "Enforceable uncalled commitment assigned to lender"
+        },
+        {
+          "investor_id": "investor-B",
+          "committed": 40,
+          "paid_in": 10,
+          "eligible": false,
+          "haircut": 0.7,
+          "stress_performing": true,
+          "legal_reference": "Conditional subscription excluded until enforceability established"
+        }
+      ],
+      "advance_rate": 0.9,
+      "drawn": 30,
+      "cash": 2,
+      "distributions": 3,
+      "operating_cost": 0,
+      "stress_redemptions": 0,
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          97,
+          3,
+          89,
+          11
+        ],
+        "feature_order": [
+          "borrowing_base_utilization"
+        ],
+        "training": {
+          "data_fingerprint": "fund-subscription_line-historic-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.03,
+          0.03,
+          0.11,
+          0.11
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          97,
+          3,
+          89,
+          11
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic subscription_line fund/default holdout, not underlying asset loss labels",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "preprocessor_training": [
+        {
+          "borrowing_base_utilization": 0.5
+        },
+        {
+          "borrowing_base_utilization": 0.5
+        },
+        {
+          "borrowing_base_utilization": 1.5
+        },
+        {
+          "borrowing_base_utilization": 1.5
+        }
+      ],
+      "reference": {
+        "initial_base": 36,
+        "stress_base": 0,
+        "stress_margin": 30,
+        "stress_liquidity_gap": 25,
+        "underlying_stress_loss": 38
+      }
+    },
+    {
+      "variant": "levered_fund",
+      "case_id": "fund-levered_fund",
+      "borrowing_base_basis": "ELIGIBLE_NAV",
+      "legal_claim": "ELIGIBLE_ASSET_SECURITY",
+      "assets": [
+        {
+          "asset_id": "asset-A",
+          "value": 70,
+          "stress_price": 0.7,
+          "eligible": true,
+          "haircut": 1
+        },
+        {
+          "asset_id": "asset-B",
+          "value": 30,
+          "stress_price": 0.4,
+          "eligible": true,
+          "haircut": 1
+        }
+      ],
+      "commitments": [
+        {
+          "investor_id": "investor-A",
+          "committed": 80,
+          "paid_in": 30,
+          "eligible": true,
+          "haircut": 0.8,
+          "stress_performing": false,
+          "legal_reference": "Enforceable uncalled commitment assigned to lender"
+        },
+        {
+          "investor_id": "investor-B",
+          "committed": 40,
+          "paid_in": 10,
+          "eligible": false,
+          "haircut": 0.7,
+          "stress_performing": true,
+          "legal_reference": "Conditional subscription excluded until enforceability established"
+        }
+      ],
+      "advance_rate": 0.7,
+      "drawn": 60,
+      "cash": 4,
+      "distributions": 7,
+      "operating_cost": 2,
+      "stress_redemptions": 15,
+      "score_training": {
+        "X": [
+          [
+            -1
+          ],
+          [
+            -1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ],
+        "y": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          96,
+          4,
+          88,
+          12
+        ],
+        "feature_order": [
+          "borrowing_base_utilization"
+        ],
+        "training": {
+          "data_fingerprint": "fund-levered_fund-historic-default-counts",
+          "split_id": "train_2020",
+          "known_at": "2021-01-01",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_spec": {
+          "feature_kinds": [
+            "expert"
+          ],
+          "neutral_profile": [
+            -1
+          ]
+        }
+      },
+      "calibration": {
+        "values": [
+          0.04,
+          0.04,
+          0.12,
+          0.12
+        ],
+        "outcomes": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "weights": [
+          96,
+          4,
+          88,
+          12
+        ],
+        "metadata": {
+          "target": {
+            "event": "default",
+            "horizon": 1,
+            "time_unit": "years",
+            "probability_measure": "PHYSICAL",
+            "conditioning": "PIT"
+          },
+          "calibration": {
+            "start": "2021-01-01",
+            "end": "2022-01-01",
+            "known_at": "2022-01-02",
+            "split_id": "calibration_2021",
+            "prediction_origin": "HOLDOUT"
+          },
+          "base_model_version": "1",
+          "population_definition": "Independent synthetic levered_fund fund/default holdout, not underlying asset loss labels",
+          "outcome_policy": "Fully mature observed obligor default over one year",
+          "weight_type": "frequency",
+          "data_origin": "SYNTHETIC"
+        },
+        "fit_controls": {
+          "tolerance": 1e-09,
+          "max_iterations": 100
+        }
+      },
+      "preprocessor_training": [
+        {
+          "borrowing_base_utilization": 0.5
+        },
+        {
+          "borrowing_base_utilization": 0.5
+        },
+        {
+          "borrowing_base_utilization": 1.5
+        },
+        {
+          "borrowing_base_utilization": 1.5
+        }
+      ],
+      "reference": {
+        "initial_base": 70,
+        "stress_base": 42.7,
+        "stress_margin": 17.3,
+        "stress_liquidity_gap": 23.3,
+        "underlying_stress_loss": 39
+      }
+    }
+  ]
+}

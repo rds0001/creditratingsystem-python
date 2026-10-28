@@ -1,0 +1,334 @@
+{
+  "data_origin": "SYNTHETIC_ANALYTICAL_EXAMPLE",
+  "product": "RETAIL_MICRO_LOAN",
+  "debt": {
+    "loan_terms": {
+      "facility_id": "weekly",
+      "currency": "EUR",
+      "principal": 400,
+      "rate_type": "fixed",
+      "annual_rate": 0,
+      "rate_convention": "nominal_simple",
+      "day_count": "ACT/365F",
+      "amortization": "equal_principal",
+      "maturity_date": "2025-01-29"
+    },
+    "calendar": [
+      {
+        "start_date": "2025-01-01",
+        "end_date": "2025-01-08",
+        "payment_date": "2025-01-08"
+      },
+      {
+        "start_date": "2025-01-08",
+        "end_date": "2025-01-15",
+        "payment_date": "2025-01-15"
+      },
+      {
+        "start_date": "2025-01-15",
+        "end_date": "2025-01-22",
+        "payment_date": "2025-01-22"
+      },
+      {
+        "start_date": "2025-01-22",
+        "end_date": "2025-01-29",
+        "payment_date": "2025-01-29"
+      }
+    ]
+  },
+  "payments": [
+    {
+      "payment_id": "week1",
+      "account_id": "weekly",
+      "paid_at": "2025-01-08",
+      "known_at": "2025-01-08",
+      "amount": 100,
+      "currency": "EUR",
+      "kind": "payment"
+    }
+  ],
+  "observed_at": "2025-01-20",
+  "residual": {
+    "net_income": [
+      0,
+      0,
+      900,
+      0,
+      0,
+      900,
+      0,
+      0,
+      900,
+      0,
+      0,
+      900
+    ],
+    "recurring_expenses": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "existing_debt_service": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "new_debt_service": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ],
+    "period": "monthly",
+    "currency": "EUR"
+  },
+  "graph": {
+    "entities": [
+      {
+        "entity_id": "memberA"
+      },
+      {
+        "entity_id": "memberB"
+      },
+      {
+        "entity_id": "group"
+      }
+    ],
+    "edges": [
+      {
+        "edge_id": "support-memberA",
+        "source_id": "group",
+        "target_id": "memberA",
+        "edge_type": "SUPPORT",
+        "valid_from": "2025-01-01",
+        "valid_until": null,
+        "known_at": "2025-01-01",
+        "evidence_reference": "support-only-no-cross-default"
+      },
+      {
+        "edge_id": "support-memberB",
+        "source_id": "group",
+        "target_id": "memberB",
+        "edge_type": "SUPPORT",
+        "valid_from": "2025-01-01",
+        "valid_until": null,
+        "known_at": "2025-01-01",
+        "evidence_reference": "support-only-no-cross-default"
+      }
+    ],
+    "relationship_policy": {
+      "policy_id": "micro-links",
+      "version": "1",
+      "edge_types": [
+        "SUPPORT",
+        "CROSS_DEFAULT"
+      ]
+    },
+    "as_of": "2025-01-01",
+    "known_at": "2025-01-01"
+  },
+  "default_policy": {
+    "policy_id": "micro-defaults",
+    "version": "1",
+    "edge_types": [
+      "CROSS_DEFAULT"
+    ],
+    "direction_policy": "mutual_only",
+    "transitive": true
+  },
+  "facility_mappings": [
+    {
+      "facility_id": "loan-memberA",
+      "entity_id": "memberA"
+    },
+    {
+      "facility_id": "loan-memberB",
+      "entity_id": "memberB"
+    }
+  ],
+  "observed_default_entities": [
+    "memberA"
+  ],
+  "allocation": {
+    "guarantees": [
+      {
+        "guarantee_id": "shared",
+        "guarantor_id": "group",
+        "currency": "EUR",
+        "cap": 100,
+        "cap_used": 0,
+        "coverage_fraction": 1,
+        "covered_claim_ids": [
+          "memberA",
+          "memberB"
+        ],
+        "valid_from": "2025-01-01",
+        "valid_until": "2026-01-01",
+        "known_at": "2025-01-01",
+        "legally_effective": true,
+        "evidence_reference": "shared-aggregate-cap"
+      }
+    ],
+    "claims": [
+      {
+        "claim_id": "memberA",
+        "entity_id": "memberA",
+        "amount": 80,
+        "currency": "EUR",
+        "due_at": "2025-02-01",
+        "known_at": "2025-01-01"
+      },
+      {
+        "claim_id": "memberB",
+        "entity_id": "memberB",
+        "amount": 80,
+        "currency": "EUR",
+        "due_at": "2025-02-01",
+        "known_at": "2025-01-01"
+      }
+    ],
+    "allocation_policy": {
+      "policy_id": "priority",
+      "version": "1",
+      "guarantee_priority": [
+        "shared"
+      ],
+      "claim_priority": [
+        "memberA",
+        "memberB"
+      ],
+      "cap_convention": "non_reinstating_total"
+    },
+    "as_of": "2025-01-01",
+    "known_at": "2025-01-01",
+    "currency": "EUR"
+  },
+  "guarantee_risks": {
+    "memberA": {
+      "borrower_risk": {
+        "entity_id": "memberA",
+        "pd": 0.1,
+        "stage": "PRE_TRANSFER",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "performing",
+          "exposure_id": "memberA"
+        },
+        "applied_effects": []
+      },
+      "guarantor_risk": {
+        "entity_id": "group",
+        "pd": 0.2,
+        "stage": "PRE_TRANSFER",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "performing"
+        },
+        "applied_effects": []
+      },
+      "claim_id": "memberA",
+      "loss_contract": {
+        "effect_id": "payment-memberA",
+        "currency": "EUR",
+        "assumption_reference": "declared-joint-probability",
+        "stage": "PRE_GUARANTEE",
+        "valuation_date": "2025-02-01",
+        "states": {
+          "borrower_only": {
+            "loss_before_guarantee": 80,
+            "payout_fraction": 1,
+            "evidence_reference": "available-group-funds"
+          },
+          "joint_default": {
+            "loss_before_guarantee": 80,
+            "payout_fraction": 0,
+            "evidence_reference": "group-failure"
+          }
+        }
+      },
+      "joint_default_probability": 0.02
+    },
+    "memberB": {
+      "borrower_risk": {
+        "entity_id": "memberB",
+        "pd": 0.1,
+        "stage": "PRE_TRANSFER",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "performing",
+          "exposure_id": "memberB"
+        },
+        "applied_effects": []
+      },
+      "guarantor_risk": {
+        "entity_id": "group",
+        "pd": 0.2,
+        "stage": "PRE_TRANSFER",
+        "target": {
+          "event": "default",
+          "horizon": 1,
+          "time_unit": "years",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "performing"
+        },
+        "applied_effects": []
+      },
+      "claim_id": "memberB",
+      "loss_contract": {
+        "effect_id": "payment-memberB",
+        "currency": "EUR",
+        "assumption_reference": "declared-joint-probability",
+        "stage": "PRE_GUARANTEE",
+        "valuation_date": "2025-02-01",
+        "states": {
+          "borrower_only": {
+            "loss_before_guarantee": 80,
+            "payout_fraction": 1,
+            "evidence_reference": "available-group-funds"
+          },
+          "joint_default": {
+            "loss_before_guarantee": 80,
+            "payout_fraction": 0,
+            "evidence_reference": "group-failure"
+          }
+        }
+      },
+      "joint_default_probability": 0.02
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "service-housing_association",
+    "model_version": "1",
+    "method_id": "scorecard.fit_scorecard",
+    "feature_order": [
+      "debt_service_to_unrestricted_cfads"
+    ],
+    "parameters": {
+      "link": "logit",
+      "fit_intercept": true,
+      "coefficients": [
+        -3.0445224377234243,
+        0.8472978603872043
+      ],
+      "covariance": [
+        [
+          0.15532879818594128,
+          -0.09977324263038571
+        ],
+        [
+          -0.09977324263038571,
+          0.15532879818594128
+        ]
+      ],
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "offset_required": false
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "default",
+      "horizon": 1,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "data_fingerprint": "fund-NAV_backed-historic-default-counts",
+      "split_id": "train_2020",
+      "known_at": "2021-01-01",
+      "data_origin": "SYNTHETIC"
+    },
+    "diagnostics": {
+      "converged": true,
+      "iterations": 7,
+      "log_likelihood": -42.31220866711803,
+      "deviance": 84.62441733423606,
+      "aic": 88.62441733423606,
+      "bic": 95.22105206733212,
+      "n_rows": 4,
+      "n_active_rows": 4,
+      "frequency_total": 200.0,
+      "rank": 2,
+      "rank_tolerance": 1e-10,
+      "condition_number": 1.0000000000000002,
+      "scaled_gradient": 2.8840541081096148e-15,
+      "gradient_tolerance": 1e-05,
+      "score": [
+        9.547918011776346e-15,
+        1.1102230246251565e-15
+      ],
+      "separation_mean_margin": 0.0,
+      "separation_tolerance": 1e-08,
+      "covariance_type": "EXPECTED_FISHER_IID",
+      "weight_type": "frequency",
+      "solver": "IRLS",
+      "max_iter": 100,
+      "tolerance": 1e-10,
+      "warnings": []
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "scorecard_spec": {
+      "neutral_profile": [
+        -1.0
+      ],
+      "feature_kinds": [
+        "expert"
+      ],
+      "design_status": "CALLER_FROZEN",
+      "design_fingerprint": "44181ffd92cffe3c2f5b762aafa895784652e353d432a6becfbe960e6a207b30"
+    }
+  },
+  "sha256": "16af638b22ee5ccb2afd18c7c48b1f46003d23be246e474696f721c412a1bbf9"
+}

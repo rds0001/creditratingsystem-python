@@ -1,0 +1,276 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "model_id": "corporate-workout",
+    "model_version": "1",
+    "method_id": "lgd.fit_recovery_hurdle",
+    "feature_order": [],
+    "parameters": {
+      "fit_intercept": true,
+      "default_condition": "given_default",
+      "currency": "EUR",
+      "stage_spec": {
+        "payout_definition": "RESIDUAL_TERMINAL_GROSS_RECOVERY_OR_CURE_VALUE",
+        "cashflow_pattern": "SINGLE_TERMINAL_PAYOUT_AFTER_REFERENCE",
+        "timing_outcome_independence": "CONDITIONAL_ON_REFERENCE_COVARIATES",
+        "positive_distribution": "lognormal",
+        "cashflow_completeness": "COMPLETE_THROUGH_OBSERVATION_END",
+        "payout_horizon": "ULTIMATE",
+        "timing_distribution": "weibull",
+        "cure_residual_value_ratio": 1.0,
+        "landmark_definition": "Residual terminal corporate settlement stage"
+      },
+      "feature_min": [],
+      "feature_max": [],
+      "positive_feature_min": [],
+      "positive_feature_max": [],
+      "cure_gate": {
+        "schema_version": "1.0",
+        "model_id": "corporate-workout.cure",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            -0.6931471805599454
+          ],
+          "covariance": [
+            [
+              0.75
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365.0,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "observed-historical-terminal-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0.0,
+          "quasi_log_likelihood": -3.819085009768877,
+          "frequency_total": 6.0,
+          "n_active_rows": 6.0,
+          "rank": 1.0,
+          "maximum_mean_score": 5.551115123125783e-17,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200.0,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "699fbbd846e1ed6f6d0a172062f3b59c97a7213aa055b84e4cc530f7e2bdca73"
+      },
+      "positive_gate": {
+        "schema_version": "1.0",
+        "model_id": "corporate-workout.positive",
+        "model_version": "1",
+        "method_id": "lgd.fit_fractional_lgd",
+        "feature_order": [],
+        "parameters": {
+          "fit_intercept": true,
+          "default_condition": "given_default",
+          "feature_min": [],
+          "feature_max": [],
+          "weight_type": "frequency",
+          "link": "logit",
+          "coefficients": [
+            0.0
+          ],
+          "covariance": [
+            [
+              1.0
+            ]
+          ],
+          "covariance_type": "HC0"
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "residual_terminal_loss_fraction",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365.0,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "observed-historical-terminal-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "closed_defaulted_episodes"
+        },
+        "diagnostics": {
+          "converged": true,
+          "iterations": 0.0,
+          "quasi_log_likelihood": -2.772588722239781,
+          "frequency_total": 4.0,
+          "n_active_rows": 4.0,
+          "rank": 1.0,
+          "maximum_mean_score": 0.0,
+          "separation_mean_margin": 0.0,
+          "covariance_type": "HC0",
+          "weight_type": "frequency",
+          "solver": "damped_newton",
+          "max_iter": 200.0,
+          "tolerance": 1e-10,
+          "distribution_identified": false
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        },
+        "training_input_fingerprint": "0342c26178e323e17254a256e28eaee94db0f86475773c4c880acd4d5040066e"
+      },
+      "amount_regression": {
+        "coefficients": [
+          7.065416064076988e-16
+        ],
+        "covariance": [
+          [
+            0.1250000000000001
+          ]
+        ],
+        "covariance_type": "HC0_FREQUENCY_IID",
+        "residual_variance": 0.2500000000000002,
+        "rank": 1.0,
+        "frequency_total": 2.0
+      },
+      "timing_model": {
+        "schema_version": "1.0",
+        "model_id": "corporate-workout.timing",
+        "model_version": "1",
+        "method_id": "survival.fit_aft_model",
+        "feature_order": [],
+        "parameters": {
+          "kind": "aft",
+          "distribution": "weibull",
+          "coefficients": [
+            3.9603640159451956
+          ],
+          "log_time_scale": 0.9385374494357235,
+          "covariance_beta_log_scale": [
+            [
+              0.14681659779293457,
+              -0.0009255023747842715
+            ],
+            [
+              -0.0009255023747842715,
+              0.10924799916560864
+            ]
+          ],
+          "support_start": 0.0,
+          "support_end": 90.0
+        },
+        "preprocessing": {
+          "transformation": "identity"
+        },
+        "target": {
+          "event": "workout_resolution",
+          "horizon_role": "TIMING_REPORTING_REFERENCE",
+          "horizon": 365.0,
+          "time_unit": "days",
+          "probability_measure": "PHYSICAL",
+          "conditioning": "given_default",
+          "currency": "EUR"
+        },
+        "training": {
+          "data_fingerprint": "observed-historical-terminal-settlements-2018",
+          "split_id": "train_2018",
+          "known_at": "2019-01-01",
+          "data_origin": "SYNTHETIC",
+          "workout_population": "open_and_closed_defaulted_landmarks"
+        },
+        "diagnostics": {
+          "backend": "survival::survreg",
+          "parameterization": "log(T)=intercept+X beta+scale*epsilon",
+          "log_likelihood": -29.747035580525527,
+          "row_log_likelihood": [
+            -4.176452493882427,
+            -4.242278416666242,
+            -4.317895013628611,
+            -4.399313475675843,
+            -4.48467966837667,
+            -4.5729634375286325,
+            -1.7767265373835501,
+            -1.7767265373835501
+          ],
+          "converged": true,
+          "warnings": [],
+          "censoring": "independent_right_censoring",
+          "extrapolation": "parametric_tail_requires_explicit_prediction_policy"
+        },
+        "provenance": {
+          "data_origin": "SYNTHETIC",
+          "parameter_origin": "ESTIMATED"
+        }
+      }
+    },
+    "preprocessing": {
+      "transformation": "identity"
+    },
+    "target": {
+      "event": "residual_terminal_loss_fraction",
+      "horizon_role": "TIMING_REPORTING_REFERENCE",
+      "horizon": 365.0,
+      "time_unit": "days",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "given_default",
+      "currency": "EUR"
+    },
+    "training": {
+      "data_fingerprint": "observed-historical-terminal-settlements-2018",
+      "split_id": "train_2018",
+      "known_at": "2019-01-01",
+      "data_origin": "SYNTHETIC",
+      "workout_population": "open_and_closed_defaulted_landmarks"
+    },
+    "diagnostics": {
+      "observed_count": 6.0,
+      "censored_count": 2.0,
+      "cure_count": 2.0,
+      "positive_noncure_count": 2.0,
+      "zero_noncure_count": 2.0,
+      "identification": "Outcome and payout independent of resolution time and independent right censoring, conditional on landmark covariates"
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    },
+    "training_input_fingerprint": "2acb4c227b192af2415cd73b05653f1f3d35226447026fe6693b6e72740a65cf"
+  },
+  "sha256": "9ed3f6a8d5910650f5767d737a1335fa01dd76b53344cd7e16285e1c04e9f9d4"
+}

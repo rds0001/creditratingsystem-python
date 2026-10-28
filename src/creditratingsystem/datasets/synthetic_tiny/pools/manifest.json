@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "world_type": "asset_pool_reference_world",
+  "generator_version": "1.0",
+  "data_origin": "SYNTHETIC",
+  "specification": {
+    "tier": "tiny",
+    "dgp_family": "misspecified",
+    "selection_mechanism": "MNAR",
+    "start_date": "2000-01-01",
+    "observation_cutoff": "2026-01-01"
+  },
+  "innovation_manifest_hash": "65563ec95592289a24303f2200255211f00d6611fb5a2efcb6464a57cc064859",
+  "chunk_rows": 1000,
+  "memory_budget_mb": 256,
+  "estimated_working_mb": 36.128,
+  "layers": [
+    "observable_inputs",
+    "latent_truth",
+    "frozen_predictions",
+    "decision_history",
+    "observed_outcomes"
+  ],
+  "tables": {
+    "observable_inputs/pool_memberships": {
+      "file": "observable_inputs/pool_memberships.jsonl.gz",
+      "rows": 80,
+      "columns": [
+        "membership_id",
+        "pool_id",
+        "source_world_type",
+        "source_asset_id",
+        "asset_type",
+        "partition_share",
+        "original_principal",
+        "valid_from",
+        "valid_to",
+        "known_at"
+      ],
+      "sha256": "c0ff3ae2d26e6432ef0783529c0d28cd988b3670c685b0a49b8c810ddcf91465"
+    },
+    "latent_truth/contractual_asset_cashflows": {
+      "file": "latent_truth/contractual_asset_cashflows.jsonl.gz",
+      "rows": 1920,
+      "columns": [
+        "cashflow_id",
+        "pool_id",
+        "source_asset_id",
+        "event_at",
+        "opening_principal",
+        "scheduled_principal",
+        "interest",
+        "closing_principal",
+        "assumption"
+      ],
+      "sha256": "57cd4257dd83d043482796a8e99b897fe27298860642086a6b363df3313225ad"
+    },
+    "observed_outcomes/servicing_cashflows": {
+      "file": "observed_outcomes/servicing_cashflows.jsonl.gz",
+      "rows": 971,
+      "columns": [
+        "cashflow_id",
+        "pool_id",
+        "source_asset_id",
+        "source_table",
+        "event_at",
+        "known_at",
+        "component",
+        "amount",
+        "currency"
+      ],
+      "sha256": "663780dbd8e4c7fcdc0909b7de67dc8b87b1979b582e292e755c754bd393eca2"
+    },
+    "observable_inputs/pools": {
+      "file": "observable_inputs/pools.jsonl.gz",
+      "rows": 2,
+      "columns": [
+        "pool_id",
+        "currency",
+        "created_at",
+        "known_at",
+        "initial_principal",
+        "notional_basis",
+        "revolving",
+        "clean_up_call_fraction"
+      ],
+      "sha256": "df3cf9cceee308ad93bb0ece111beb723b1d46578b271da08a6441f6f53c1b6b"
+    },
+    "observable_inputs/tranches": {
+      "file": "observable_inputs/tranches.jsonl.gz",
+      "rows": 8,
+      "columns": [
+        "tranche_id",
+        "pool_id",
+        "seniority_rank",
+        "original_principal",
+        "coupon_rate",
+        "known_at"
+      ],
+      "sha256": "b0f45fbce1189590706e158c61b355dc426b23f6aa63d05abb10977a74387f06"
+    }
+  },
+  "binary_resources": {},
+  "limitations": [
+    "Synthetic engineering evidence does not establish real portfolio performance."
+  ],
+  "actual_rows": 2981,
+  "runtime_seconds": 0.6731158139991749,
+  "actual_source_assets": 80,
+  "asset_capacity": 80,
+  "dependencies": {
+    "source_manifest_hashes": [
+      "01f65c80da9eb5976d3ba746645c576c1425409bb4e28b834000e70c96176976",
+      "cf90eb08ed19d3b268f9a200728d9475706a925c9a5d25a995005cc131845e86"
+    ]
+  },
+  "dgp": {
+    "membership_partition_share": 1,
+    "source_reuse": false,
+    "tranches_per_pool": 4,
+    "servicing_origin": "actual source ledgers",
+    "contractual_projection": "no default or prepayment; latent only"
+  }
+}

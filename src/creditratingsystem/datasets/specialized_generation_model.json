@@ -1,0 +1,127 @@
+{
+  "format": "creditratingsystem-model",
+  "schema_version": "1.0",
+  "hash_format": "cr-canonical-v1",
+  "model": {
+    "schema_version": "1.0",
+    "method_id": "macro.fit_var",
+    "model_id": "specialized-macro",
+    "model_version": "1",
+    "feature_order": [
+      "market"
+    ],
+    "parameters": {
+      "dynamics": "var",
+      "lags": 1,
+      "lag_coefficients": [
+        [
+          [
+            -0.6666666666666667
+          ]
+        ]
+      ],
+      "intercept": [
+        -0.14285714285714285
+      ],
+      "trend": [
+        0.0
+      ],
+      "covariance": [
+        [
+          0.31292517006802717
+        ]
+      ],
+      "initial_history": [
+        [
+          0.0
+        ]
+      ],
+      "next_time_index": 9,
+      "deterministic": "constant",
+      "covariance_estimator": "mle"
+    },
+    "preprocessing": {
+      "frequency": "annual",
+      "units": [
+        "index"
+      ],
+      "inverse_state": null,
+      "training_end": "2023-01-01",
+      "training_observation_count": 8
+    },
+    "target": {
+      "event": "macro_state",
+      "horizon": 2.0,
+      "time_unit": "years",
+      "probability_measure": "PHYSICAL",
+      "conditioning": "PIT"
+    },
+    "training": {
+      "start": "2016-01-01",
+      "end": "2023-01-01",
+      "known_at": "2023-01-01",
+      "split_id": "synthetic_macro_2016_2023",
+      "data_origin": "SYNTHETIC",
+      "data_fingerprint": "84b39adaf9981ca8ebcd826732e0ad03501b02373e0176745276451e642eaf03"
+    },
+    "diagnostics": {
+      "backend": "statsmodels.OLS (univariate AR)",
+      "observations": 7,
+      "residual_df": 5,
+      "residuals": [
+        [
+          -0.19047619047619047
+        ],
+        [
+          0.47619047619047605
+        ],
+        [
+          -0.19047619047619047
+        ],
+        [
+          -0.523809523809524
+        ],
+        [
+          1.1428571428571428
+        ],
+        [
+          -0.19047619047619047
+        ],
+        [
+          -0.523809523809524
+        ]
+      ],
+      "residual_dates": [
+        "2017-01-01",
+        "2018-01-01",
+        "2019-01-01",
+        "2020-01-01",
+        "2021-01-01",
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "companion_eigenvalues": [
+        [
+          -0.6666666666666667,
+          0.0
+        ]
+      ],
+      "spectral_radius": 0.6666666666666667,
+      "stable": true,
+      "stationarity_assumed": true,
+      "eigenvalue_repair": "NONE",
+      "factorization": {
+        "factorization": "CORRELATION_STANDARDIZED_PSD_FACTOR",
+        "minimum_correlation_eigenvalue": 1.0,
+        "roundoff_clipped_eigenvalues": [],
+        "maximum_covariance_roundoff": 0.0
+      },
+      "training_only": true
+    },
+    "provenance": {
+      "data_origin": "SYNTHETIC",
+      "parameter_origin": "ESTIMATED"
+    }
+  },
+  "sha256": "13dbade10d09d1136fb186e62654faef336c7f624d653d30089562e9df528425"
+}

@@ -1,0 +1,77 @@
+{
+  "macro": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 4080,
+    "table_counts": {
+      "latent_truth/macro_factors": 240,
+      "observable_inputs/macro_releases": 3840
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 0,
+      "sum_conditional_pd": 0.0,
+      "latent_default_count": 0,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  },
+  "obligors": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 237409,
+    "table_counts": {
+      "latent_truth/country_transfer": 60,
+      "observable_inputs/obligors": 3000,
+      "observable_inputs/financial_statements": 27254,
+      "observable_inputs/external_opinions": 27254,
+      "frozen_predictions/obligor_predictions": 27254,
+      "latent_truth/obligor_period": 27254,
+      "latent_truth/foreign_currency_risk": 27254,
+      "observed_outcomes/obligor_labels": 27254,
+      "observable_inputs/operating_assets": 27254,
+      "observable_inputs/operating_contracts": 38282,
+      "observable_inputs/rating_overrides": 2478,
+      "observable_inputs/support_edges": 2250,
+      "observed_outcomes/default_events": 561
+    },
+    "realized_defaults": 561,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 27254,
+      "sum_conditional_pd": 579.8388178132919,
+      "latent_default_count": 561,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  },
+  "workouts": {
+    "passed": true,
+    "issues": [],
+    "rows_checked": 683671,
+    "table_counts": {
+      "observable_inputs/facilities": 6000,
+      "observable_inputs/collateral": 6000,
+      "observable_inputs/facility_exposures": 662690,
+      "latent_truth/future_recoveries": 3366,
+      "observed_outcomes/recovery_cashflows": 3366,
+      "observed_outcomes/workouts": 1122,
+      "latent_truth/workout_parameters": 1122,
+      "latent_truth/analytical_workout_fixtures": 4,
+      "latent_truth/constructed_open_workouts": 1
+    },
+    "realized_defaults": 0,
+    "actual_funded_account_defaults": 0,
+    "design_vs_realized": {
+      "risk_observations": 0,
+      "sum_conditional_pd": 0.0,
+      "latent_default_count": 0,
+      "interpretation": "Descriptive conditional hazard sum; dependent observations do not imply a binomial test"
+    },
+    "diagnostic_policy": "Report realized outcomes without reseeding or target-rate adjustment",
+    "data_origin": "SYNTHETIC"
+  }
+}
